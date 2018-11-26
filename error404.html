@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <base href="">
+    <title>Vvveb admin</title>
+
+
+    <link href="http://fonts.googleapis.com/css?family=Comfortaa|Varela Round:400,600|Arimo:400,600,700|Poppins:400,600|Merriweather:400,300,300italic,700" rel="stylesheet" type="text/css">
+    
+    <link href="css/admin.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+      <div id="container">
+        <div class="sidebar bg-faded">
+         
+			<div class="logo">
+				<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+				<div class="img"></div>
+				<!-- img src="img/logo-small.png" class="logo-small" -->
+
+				<a class="menu-toggle" href=""><i class="ion-navicon"></i></a>
+			</div>
+         
+			<nav class="navbar navbar-expand-sm">
+
+				<div class="logo">
+					<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+					<img src="img/logo.png">
+				</div>
+
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon ion-navicon"></span>
+				</button>
+				  
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					
+
+			  <ul class="nav navbar-nav flex-column" data-menu=""><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/" data-toggle="" data-target="#dashboard" data-menu-item-url="">
+						
+						<i class="ion-ios-pulse" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Dashboard</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="dashboard" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=editor" data-toggle="" data-target="#edit" data-menu-item-url="">
+						
+						<i class="ion-ios-color-wand-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Edit website</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="edit" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#content" data-menu-item-url="">
+						
+						<i class="ion-ios-photos-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Content</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade" aria-labelledby="Preview" id="content" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=posts" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Posts</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=post" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new Post</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Pages</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=page" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new page</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=category" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#ecommerce" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Ecommerce</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="ecommerce" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=orders" data-toggle="" data-target="#orders" data-menu-item-url="">
+						
+						<i class="ion-ios-cart-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Orders</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="orders" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#commerce" data-menu-item-url="">
+						
+						<i class="ion-ios-pricetag-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Products</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="commerce" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=products" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Products</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=product" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new product</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=categories" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=media" data-toggle="" data-target="#medialibrary" data-menu-item-url="">
+						
+						<i class="ion-ios-albums-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Media library</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="medialibrary" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#configuration" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Configuration</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="configuration" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#plugins" data-menu-item-url="">
+						
+						<i class="ion-ios-gear-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Plugins</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="plugins" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=plugins" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Plugins</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=components" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Components</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=widgets" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Widgets</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=market" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Marketplace</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="settings" data-toggle="collapse" data-target="#settings" data-menu-item-url="">
+						
+						<i class="ion-ios-settings" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Settings</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="settings" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=settings" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">General Settings</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=users" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Users 2</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=checkout" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Checkout &amp;amp; payments</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=shipping" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Shipping</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Email notifications</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Discount coupons</a>
+						</li>					  </ul></li>			</ul></div>
+
+		  </nav> <!-- /navbar -->
+
+        </div>
+
+
+        <div class="main">
+			
+
+    <div class="clearfix top-header">
+		<!-- ol class="breadcrumb float-xs-left">
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-home-outline"> Home</a></li>
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-cart-outline"> Ecommerce</a></li>
+		  <li class="breadcrumb-item active">Products</li>
+		</ol -->
+		
+		
+		
+		<div class="btn-group float-right user-dropdown">
+		  <button type="button" class="btn btn-link dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			 <i class="ion-ios-person-outline img-circle"></i> littlebubu.ro
+		  </button>
+		  <div class="dropdown-menu dropdown-menu-right">
+			<a class="dropdown-item" href="#">Action</a>
+			<a class="dropdown-item" href="#">Another action</a>
+			<a class="dropdown-item" href="#">Something else here</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Separated link</a>
+		  </div>
+		</div>
+	</div>
+	
+
+		<div id="content" class="text-center align-middle d-flex align-items-center">
+		
+			 <div class="screen mx-auto">
+				<h1 class="heading1">Page not found!</h1>
+				<h4 class="text-muted">(error 404)</h4>
+				<br/>
+				<img src="img/globe.png">
+			</div> 
+			
+		 
+		</div>
+	</div>
+	
+
+    </div>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

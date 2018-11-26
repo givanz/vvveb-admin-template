@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+   <base href="">
+    <title>Vvveb admin</title>
+
+    <link href="css/admin.css" rel="stylesheet">
+  </head>
+
+<body>
+
+    <div id="container" class="small-nav">
+        <div class="sidebar">
+         
+			<div class="logo">
+				<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+				<div class="img"></div>
+				<!-- img src="img/logo-small.png" class="logo-small" -->
+
+				<a class="menu-toggle" href=""><i class="ion-navicon"></i></a>
+			</div>
+         
+			<nav class="navbar navbar-expand-sm">
+
+				<div class="logo">
+					<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+					<img src="img/logo.png">
+				</div>
+
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon ion-navicon"></span>
+				</button>
+				  
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					
+
+			  <ul class="nav navbar-nav flex-column" data-menu=""><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/" data-toggle="" data-target="#dashboard" data-menu-item-url="">
+						
+						<i class="ion-ios-pulse" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Dashboard</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="dashboard" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=editor" data-toggle="" data-target="#edit" data-menu-item-url="">
+						
+						<i class="ion-ios-color-wand-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Edit website</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="edit" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#content" data-menu-item-url="">
+						
+						<i class="ion-ios-photos-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Content</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade" aria-labelledby="Preview" id="content" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=posts" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Posts</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=post" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new Post</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Pages</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=page" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new page</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=category" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#ecommerce" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Ecommerce</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="ecommerce" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=orders" data-toggle="" data-target="#orders" data-menu-item-url="">
+						
+						<i class="ion-ios-cart-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Orders</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="orders" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#commerce" data-menu-item-url="">
+						
+						<i class="ion-ios-pricetag-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Products</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="commerce" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=products" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Products</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=product" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new product</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=categories" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=media" data-toggle="" data-target="#medialibrary" data-menu-item-url="">
+						
+						<i class="ion-ios-albums-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Media library</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="medialibrary" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#configuration" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Configuration</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="configuration" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#plugins" data-menu-item-url="">
+						
+						<i class="ion-ios-gear-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Plugins</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="plugins" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=plugins" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Plugins</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=components" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Components</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=widgets" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Widgets</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=market" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Marketplace</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="settings" data-toggle="collapse" data-target="#settings" data-menu-item-url="">
+						
+						<i class="ion-ios-settings" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Settings</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="settings" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=settings" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">General Settings</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=users" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Users 2</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=checkout" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Checkout &amp;amp; payments</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=shipping" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Shipping</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Email notifications</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Discount coupons</a>
+						</li>					  </ul></li>			</ul></div>
+
+
+		  </nav> <!-- /navbar -->
+			<!-- table style="height: 50%;width: 100%;">
+				<tr><td style="text-align: center;vertical-align: bottom;"><img src="img/satchidananda.jpg" alt="Preview image" class="rounded-circle bg-gray mr-2" style="width:100px;height:100px;opacity: 0.8;border: 1px solid #ccc;padding: 3px;"></td></tr>
+			</table -->
+			<div id="user-info">
+			<i class="ion-ios-person-outline rounded-circle"></i>	
+				&ensp;
+				<span>Vasile Georgescu</span>
+			</div>
+        </div>
+
+
+        <div class="main">
+			
+			
+	<div id="vvveb-builder">
+				
+				<div id="top-panel">
+					
+					
+					<div class="btn-group mr-3" role="group">
+					  <button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)" id="undo-btn" data-vvveb-action="undo" data-vvveb-shortcut="ctrl+z">
+						  <i class="la la-undo"></i>
+					  </button>
+
+					  <button class="btn btn-light"  title="Redo (Ctrl/Cmd + Shift + Z)" id="redo-btn" data-vvveb-action="redo" data-vvveb-shortcut="ctrl+shift+z">
+						  <i class="la la-undo la-flip-horizontal"></i>
+					  </button>
+					</div>
+										
+					
+					<div class="btn-group mr-3" role="group">
+					  <button class="btn btn-light" title="Fullscreen (F11)" id="fullscreen-btn" data-toggle="button" aria-pressed="false" data-vvveb-action="fullscreen">
+						  <i class="la la-arrows"></i>
+					  </button>
+
+					  <button class="btn btn-light" title="Preview" id="preview-btn" type="button" data-toggle="button" aria-pressed="false" data-vvveb-action="preview">
+						  <i class="la la-eye"></i>
+					  </button>
+
+					  <button class="btn btn-light" title="Export (Ctrl + E)" id="save-btn" data-vvveb-action="save" data-vvveb-shortcut="ctrl+e">
+						  <i class="la la-save"></i>
+					  </button>
+					</div>	
+
+
+					<div class="btn-group float-right" role="group">
+		 			 <button id="mobile-view" data-view="mobile" class="btn btn-light"  title="Mobile view" data-vvveb-action="viewport">
+						  <i class="ion-iphone"></i>
+					  </button>
+
+					  <button id="tablet-view"  data-view="tablet" class="btn btn-light"  title="Tablet view" data-vvveb-action="viewport">
+						  <i class="ion-ipad"></i>
+					  </button>
+					  
+					  <button id="desktop-view"  data-view="" class="btn btn-light"  title="Desktop view" data-vvveb-action="viewport">
+						  <i class="ion-monitor"></i>
+					  </button>
+
+					</div>
+										
+				</div>	
+				
+				<div id="left-panel">
+
+					  <div id="filemanager"> 
+							<div class="header"><a href="#">Pages</a></div>
+
+								<div class="tree">
+									<ol>
+										<!-- 
+										<li>
+											<label for="folder1"><span>Folder 1</span></label> <input type="checkbox" checked id="folder1" /> 
+											<ol>
+												<li class="file"><a href="document.html.pdf">File 1</a></li>
+												<li>
+													<label for="subfolder1">Subfolder 1</label> <input type="checkbox" id="subfolder1" /> 
+													<ol>
+														<li class="file"><a href="#"><span>Filey 1</span></a></li>
+														<li>
+															<label for="subsubfolder1">Subfolder 1</label> <input type="checkbox" id="subsubfolder1" /> 
+															<ol>
+																<li class="file"><a href="#">File 1</a></li>
+																<li>
+																	<label for="subsubfolder2">Subfolder 1</label> <input type="checkbox" id="subsubfolder2" /> 
+																	<ol>
+																		<li class="file"><a href="#">Subfile 1</a></li>
+																		<li class="file"><a href="#">Subfile 2</a></li>
+																		<li class="file"><a href="#">Subfile 3</a></li>
+																		<li class="file"><a href="#">Subfile 4</a></li>
+																		<li class="file"><a href="#">Subfile 5</a></li>
+																		<li class="file"><a href="#">Subfile 6</a></li>
+																	</ol>
+																</li>
+															</ol>
+														</li>
+														<li class="file"><a href="#">File 3</a></li>
+														<li class="file"><a href="#">File 4</a></li>
+														<li class="file"><a href="#">File 5</a></li>
+														<li class="file"><a href="#">File 6</a></li>
+													</ol>
+												</li>
+											</ol>
+										</li>
+										<li>
+											<label for="folder2"><span>Folder 2</span></label> <input type="checkbox" id="folder2" /> 
+											<ol>
+												<li class="file active"><a href="#"><span>File 1</span></a></li>
+												<li>
+													<label for="subfolder2">Subfolder 1</label> <input type="checkbox" id="subfolder2" /> 
+													<ol>
+														<li class="file"><a href="#">Subfile 1</a></li>
+														<li class="file"><a href="#">Subfile 2</a></li>
+														<li class="file"><a href="#">Subfile 3</a></li>
+														<li class="file"><a href="#">Subfile 4</a></li>
+														<li class="file"><a href="#">Subfile 5</a></li>
+														<li class="file"><a href="#">Subfile 6</a></li>
+													</ol>
+												</li>
+											</ol>
+										</li>
+										<li class="active">
+											<label for="folder3"><span>Folder 3</span></label> <input type="checkbox" id="folder3" /> 
+											<ol>
+												<li class="file"><a href="#"><span>File 1</span></a></li>
+												<li>
+													<label for="subfolder3">Subfolder 1</label> <input type="checkbox" id="subfolder3" /> 
+													<ol>
+														<li class="file"><a href="#">Subfile 1</a></li>
+														<li class="file"><a href="#">Subfile 2</a></li>
+														<li class="file"><a href="#">Subfile 3</a></li>
+														<li class="file"><a href="#">Subfile 4</a></li>
+														<li class="file"><a href="#">Subfile 5</a></li>
+														<li class="file"><a href="#">Subfile 6</a></li>
+													</ol>
+												</li>
+											</ol>
+										</li>
+										<li>
+											<label for="folder4">Folder 4</label> <input type="checkbox" id="folder4" /> 
+											<ol>
+												<li class="file"><a href="#">File 1</a></li>
+												<li>
+													<label for="subfolder4">Subfolder 1</label> <input type="checkbox" id="subfolder4" /> 
+													<ol>
+														<li class="file"><a href="#">Subfile 1</a></li>
+														<li class="file"><a href="#">Subfile 2</a></li>
+														<li class="file"><a href="#">Subfile 3</a></li>
+														<li class="file"><a href="#">Subfile 4</a></li>
+														<li class="file"><a href="#">Subfile 5</a></li>
+														<li class="file"><a href="#">Subfile 6</a></li>
+													</ol>
+												</li>
+											</ol>
+										</li>
+										<li>
+											<label for="folder5">Folder 5</label> <input type="checkbox" id="folder5" /> 
+											<ol>
+												<li class="file"><a href="#">File 1</a></li>
+												<li>
+													<label for="subfolder5">Subfolder 1</label> <input type="checkbox" id="subfolder5" /> 
+													<ol>
+														<li class="file"><a href="#">Subfile 1</a></li>
+														<li class="file"><a href="#">Subfile 2</a></li>
+														<li class="file"><a href="#">Subfile 3</a></li>
+														<li class="file"><a href="#">Subfile 4</a></li>
+														<li class="file"><a href="#">Subfile 5</a></li>
+														<li class="file"><a href="#">Subfile 6</a></li>
+													</ol>
+												</li>
+											</ol>
+										</li>
+										-->
+									</ol>
+								</div>
+					  </div>
+					  	
+					  <div id="components">
+						
+						<div class="header">
+						  
+							  <input class="form-control form-control-sm" placeholder="" type="text" id="component-search"  data-vvveb-action="componentSearch" data-vvveb-on="keyup">
+							  <button id="clear-backspace"  data-vvveb-action="clearComponentSearch">
+								  <i class="ion-backspace"></i>
+							  </button>
+						  
+						</div>
+
+						<div id="components-sidepane" class="sidepane">
+						  <div>
+							  
+							<ul id="components-list" class="clearfix">
+							</ul>
+
+						  </div>
+						</div>
+					  </div>
+
+
+				</div>
+
+				<div id="canvas">
+					<div id="iframe-wrapper">
+						<div id="iframe-layer">
+							
+							<div id="highlight-box">
+								<div id="highlight-name"></div>
+								
+							</div>
+
+							<div id="select-box">
+
+								<div id="wysiwyg-editor">
+										<a id="bold-btn" href="" title="Bold"><i><strong>B</strong></i></a>
+										<a id="italic-btn" href="" title="Italic"><i>I</i></a>
+										<a id="underline-btn" href="" title="Underline"><u>u</u></a>
+										<a id="strike-btn" href="" title="Strikeout"><strike>S</strike></a>
+										<a id="link-btn" href="" title="Create link"><strong>a</strong></a>
+								</div>
+
+								<div id="select-actions">
+									<a id="drag-box" href="" title="Drag element"><i class="ion-arrow-move"></i></a>
+									<a id="parent-box" href="" title="Select parent"><i class="ion-reply"></i></a>
+									
+									<a id="up-box" href="" title="Move element up"><i class="ion-arrow-up-a"></i></a>
+									<a id="down-box" href="" title="Move element down"><i class="ion-arrow-down-a"></i></a>
+									<a id="clone-box" href="" title="Clone element"><i class="ion-ios-copy"></i></a>
+									<a id="delete-box" href="" title="Remove element"><i class="ion-trash-a"></i></a>
+								</div>
+							</div>
+							
+						
+						</div>
+						<iframe src="about:none" id="iframe1"></iframe>
+					</div>
+					
+					
+				</div>
+
+				<div id="right-panel">
+					<div id="component-properties">
+					</div>
+				</div>
+				
+				<div id="bottom-panel">
+
+				<div class="btn-group" role="group">
+
+		 			 <button id="code-editor-btn" data-view="mobile" class="btn btn-light btn-sm"  title="Code editor" data-vvveb-action="toggleEditor">
+						  <i class="ion-code"></i> Code editor
+					  </button>
+
+					</div>
+					
+					<div id="vvveb-code-editor">
+						<textarea class="form-control"></textarea>
+					<div>
+
+				</div>	
+			</div>
+		</div>
+
+
+<!-- templates -->
+
+<script id="vvveb-input-textinput" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="text" class="form-control"/>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-checkboxinput" type="text/html">
+	
+	<div class="custom-control custom-checkbox">
+		  <input name="{%=key%}" class="custom-control-input" type="checkbox" id="{%=key%}_check">
+		  <label class="custom-control-label" for="{%=key%}_check">{% if (typeof text !== 'undefined') { %} {%=text%} {% } %}</label>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-radioinput" type="text/html">
+	
+	<div>
+	
+		{% for ( var i = 0; i < options.length; i++ ) { %}
+
+		<label class="custom-control custom-radio  {% if (typeof inline !== 'undefined' && inline == true) { %}custom-control-inline{% } %}"  title="{%=options[i].title%}">
+		  <input name="{%=key%}" class="custom-control-input" type="radio" value="{%=options[i].value%}" id="{%=key%}{%=i%}" {%if (options[i].checked) { %}checked="{%=options[i].checked%}"{% } %}>
+		  <label class="custom-control-label" for="{%=key%}{%=i%}">{%=options[i].text%}</label>
+		</label>
+
+		{% } %}
+
+	</div>
+	
+</script>
+
+<script id="vvveb-input-radiobuttoninput" type="text/html">
+	
+	<div class="btn-group btn-group-toggle  {%if (extraclass) { %}{%=extraclass%}{% } %} clearfix" data-toggle="buttons">
+	
+		{% for ( var i = 0; i < options.length; i++ ) { %}
+
+		<label class="btn btn-light  {%if (options[i].checked) { %}active{% } %}" for="{%=key%}{%=i%} " title="{%=options[i].title%}">
+		  <input name="{%=key%}" class="custom-control-input" type="radio" value="{%=options[i].value%}" id="{%=key%}{%=i%}" {%if (options[i].checked) { %}checked="{%=options[i].checked%}"{% } %}>
+		  {%if (options[i].icon) { %}<i class="{%=options[i].icon%}"></i>{% } %}
+		  {%=options[i].text%}
+		</label>
+
+		{% } %}
+				
+	</div>
+	
+</script>
+
+
+<script id="vvveb-input-toggle" type="text/html">
+	
+    <div class="toggle">
+        <input type="checkbox" name="{%=key%}" value="{%=on%}" data-value-off="{%=off%}" data-value-on="{%=on%}" class="toggle-checkbox" id="{%=key%}">
+        <label class="toggle-label" for="{%=key%}">
+            <span class="toggle-inner"></span>
+            <span class="toggle-switch"></span>
+        </label>
+    </div>
+	
+</script>
+
+<script id="vvveb-input-header" type="text/html">
+
+		<h6 class="header">{%=header%}</h6>
+	
+</script>
+
+	
+<script id="vvveb-input-select" type="text/html">
+
+	<div>
+
+		<select class="form-control custom-select">
+			{% for ( var i = 0; i < options.length; i++ ) { %}
+			<option value="{%=options[i].value%}">{%=options[i].text%}</option>
+			{% } %}
+		</select>
+	
+	</div>
+	
+</script>
+
+
+<script id="vvveb-input-listinput" type="text/html">
+
+	<div class="row">
+
+		{% for ( var i = 0; i < options.length; i++ ) { %}
+		<div class="col-6">
+			<div class="input-group">
+				<input name="{%=key%}_{%=i%}" type="text" class="form-control" value="{%=options[i].text%}"/>
+				<div class="input-group-append">
+					<button class="input-group-text btn btn-sm btn-danger">
+						<i class="ion-trash-a"></i>
+					</button>
+				</div>
+			  </div>
+			  <br/>
+		</div>
+		{% } %}
+
+
+		{% if (typeof hide_remove === 'undefined') { %}
+		<div class="col-12">
+		
+			<button class="btn btn-sm btn-outline-primary">
+				<i class="ion-trash-a"></i> Add new
+			</button>
+			
+		</div>
+		{% } %}
+			
+	</div>
+	
+</script>
+
+<script id="vvveb-input-grid" type="text/html">
+
+	<div class="row">
+		<div class="mb-1 col-12">
+		
+			<label>Flexbox</label>
+			<select class="form-control custom-select" name="col">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col !== 'undefined') && col == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+			<br/>
+		</div>
+
+		<div class="col-6">
+			<label>Extra small</label>
+			<select class="form-control custom-select" name="col-xs">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_xs !== 'undefined') && col_xs == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+			<br/>
+		</div>
+		
+		<div class="col-6">
+			<label>Small</label>
+			<select class="form-control custom-select" name="col-sm">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_sm !== 'undefined') && col_sm == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+			<br/>
+		</div>
+		
+		<div class="col-6">
+			<label>Medium</label>
+			<select class="form-control custom-select" name="col-md">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_md !== 'undefined') && col_md == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+			<br/>
+		</div>
+		
+		<div class="col-6 mb-1">
+			<label>Large</label>
+			<select class="form-control custom-select" name="col-lg">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_lg !== 'undefined') && col_lg == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+			<br/>
+		</div>
+		
+		{% if (typeof hide_remove === 'undefined') { %}
+		<div class="col-12">
+		
+			<button class="btn btn-sm btn-outline-light text-danger">
+				<i class="ion-trash-a"></i> Remove
+			</button>
+			
+		</div>
+		{% } %}
+		
+	</div>
+	
+</script>
+
+<script id="vvveb-input-textvalue" type="text/html">
+	
+	<div class="row">
+		<div class="col-6 mb-1">
+			<label>Value</label>
+			<input name="value" type="text" value="{%=value%}" class="form-control"/>
+		</div>
+
+		<div class="col-6 mb-1">
+			<label>Text</label>
+			<input name="text" type="text" value="{%=text%}" class="form-control"/>
+		</div>
+
+		{% if (typeof hide_remove === 'undefined') { %}
+		<div class="col-12">
+		
+			<button class="btn btn-sm btn-outline-light text-danger">
+				<i class="ion-trash-a"></i> Remove
+			</button>
+			
+		</div>
+		{% } %}
+
+	</div>
+	
+</script>
+
+<script id="vvveb-input-rangeinput" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="range" min="{%=min%}" max="{%=max%}" step="{%=step%}" class="form-control"/>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-colorinput" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="color" value="{%=value%}" pattern="#[a-f0-9]{6}" class="form-control"/>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-numberinput" type="text/html">
+	<div>
+		<input name="{%=key%}" type="number" value="{%=value%}" 
+			  {% if (typeof min !== 'undefined' && min != false) { %}min="{%=min%}"{% } %} 
+			  {% if (typeof max !== 'undefined' && max != false) { %}max="{%=max%}"{% } %} 
+			  {% if (typeof step !== 'undefined' && step != false) { %}step="{%=step%}"{% } %} 
+		class="form-control"/>
+	</div>
+</script>
+
+<script id="vvveb-input-button" type="text/html">
+	<div>
+		<button class="btn btn-sm btn-primary">
+			<i class="ion-trash-a"></i> {%=text%}
+		</button>
+	</div>		
+</script>
+
+<script id="vvveb-input-cssunitinput" type="text/html">
+	<div class="input-group" id="cssunit-{%=key%}">
+		<input name="number" type="number" value="{%=value%}" 
+			  {% if (typeof min !== 'undefined' && min != false) { %}min="{%=min%}"{% } %} 
+			  {% if (typeof max !== 'undefined' && max != false) { %}max="{%=max%}"{% } %} 
+			  {% if (typeof step !== 'undefined' && step != false) { %}step="{%=step%}"{% } %} 
+		class="form-control"/>
+		 <div class="input-group-append">
+		<select class="form-control custom-select small-arrow" name="unit">
+			<option>em&ensp;</option>
+			<option>px</option>
+			<option>%</option>
+			<option>rem</option>
+			<option>auto</option>
+		</select>
+		</div>
+	</div>
+	
+</script>
+
+
+<script id="vvveb-filemanager-page" type="text/html">
+	<li data-url="{%=url%}" data-page="{%=name%}">
+		<label for="{%=name%}"><span>{%=title%}</span></label> <input type="checkbox" checked id="{%=name%}" />
+		<ol></ol>
+	</li>
+</script>
+
+<script id="vvveb-filemanager-component" type="text/html">
+	<li data-url="{%=url%}" data-component="{%=name%}" class="file">
+		<a href="{%=url%}"><span>{%=title%}</span></a>
+	</li>
+</script>
+
+<script id="vvveb-input-sectioninput" type="text/html">
+
+		<label class="header" data-header="{%=key%}" for="header_{%=key%}"><span>&ensp;{%=header%}</span> <div class="header-arrow"></div></label> 
+		<input class="header_check" type="checkbox" {% if (typeof expanded !== 'undefined' && expanded == false) { %} {% } else { %}checked="true"{% } %} id="header_{%=key%}"> 
+		<div class="section" data-section="{%=key%}"></div>		
+
+</script>
+
+
+<script id="vvveb-property" type="text/html">
+
+	<div class="form-group {% if (typeof col !== 'undefined' && col != false) { %} col-sm-{%=col%}  {% } else { %}row{% } %}" data-key="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %} {% if (typeof col !== 'undefined' && col != false) { %}style="display:inline-block" {% } %}>
+		
+		{% if (typeof name !== 'undefined' && name != false) { %}<label class="{% if (typeof inline === 'undefined' ) { %}col-sm-4{% } %} control-label" for="input-model">{%=name%}</label>{% } %}
+		
+		<div class="{% if (typeof inline === 'undefined') { %}col-sm-{% if (typeof name !== 'undefined' && name != false) { %}8{% } else { %}12{% } } %} input"></div>
+		
+	</div>		 
+	
+</script>
+
+<script id="vvveb-input-autocompletelist" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="text" class="form-control"/>
+		
+		<div class="form-control autocomplete-list" style="min=height: 150px; overflow: auto;">
+                  <div id="featured-product43"><i class="la la-close"></i> MacBook
+                    <input name="product[]" value="43" type="hidden">
+                  </div>
+                                  <div id="featured-product40"><i class="la la-close"></i> iPhone
+                    <input name="product[]" value="40" type="hidden">
+                  </div>
+                                  <div id="featured-product42"><i class="la la-close"></i> Apple Cinema 30"
+                    <input name="product[]" value="42" type="hidden">
+                  </div>
+                                  <div id="featured-product30"><i class="la la-close"></i> Canon EOS 5D
+                    <input name="product[]" value="30" type="hidden">
+                  </div>
+		</div>
+	</div>
+	
+</script>
+
+
+<!--// end templates -->
+
+
+<!-- export html modal-->
+<div class="modal fade" id="textarea-modal" tabindex="-1" role="dialog" aria-labelledby="textarea-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Export html</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <textarea rows="25" cols="150" class="form-control"></textarea>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+<!-- jquery-->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.hotkeys.js"></script>
+
+<!-- bootstrap-->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- builder code-->
+<script src="libs/builder/builder.js"></script>	
+<!-- undo manager-->
+<script src="libs/builder/undo.js"></script>	
+<!-- inputs-->
+<script src="libs/builder/inputs.js"></script>	
+<!-- components-->
+<script src="libs/builder/components-server.js"></script>
+<script src="libs/builder/components-bootstrap4.js"></script>	
+<script src="libs/builder/components-widgets.js"></script>	
+
+
+<!-- plugins -->
+
+<!-- code mirror - code editor syntax highlight -->
+<link href="libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
+<link href="libs/codemirror/theme/material.css" rel="stylesheet"/>
+<script src="libs/codemirror/lib/codemirror.js"></script>
+<script src="libs/codemirror/lib/xml.js"></script>
+<script src="libs/codemirror/lib/formatting.js"></script>
+<script src="libs/builder/plugin-codemirror.js"></script>	
+
+<!-- autocomplete plugin used by autocomplete input-->
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+
+<script src="js/main.js"></script>
+
+<script>
+$(document).ready(function() 
+{
+	//Vvveb.Builder.init('//vvveb_install.givan.ro/admin/public/themes/default/landio/index.html', function() {
+	Vvveb.Builder.init('//vvveb_install.givan.ro/', function() {
+		//load code after page is loaded here
+	});
+
+	Vvveb.Gui.init();
+	Vvveb.FileManager.init();
+	Vvveb.FileManager.addPages(
+	[
+		{name:"homepage", title:"Home page",  url: "//vvveb_install.givan.ro/", componentsTreeGroup: ["Server Components"]},
+		{name:"product", title:"Product page",  url: "//vvveb_install.givan.ro/"},
+	]);
+	
+	Vvveb.FileManager.loadPage("homepage");
+});
+</script>
+</body>
+</html>

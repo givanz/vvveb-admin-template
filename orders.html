@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+	<base href="">
+    <title>Vvveb admin</title>
+
+
+    <link href="http://fonts.googleapis.com/css?family=Comfortaa|Varela Round:400,600|Arimo:400,600,700|Poppins:400,600|Merriweather:400,300,300italic,700" rel="stylesheet" type="text/css">
+    
+    <link href="css/admin.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+    <div id="container">
+        <div class="sidebar">
+         
+			<div class="logo">
+				<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+				<div class="img"></div>
+				<!-- img src="img/logo-small.png" class="logo-small" -->
+
+				<a class="menu-toggle" href=""><i class="ion-navicon"></i></a>
+			</div>
+         
+			<nav class="navbar navbar-expand-sm">
+
+				<div class="logo">
+					<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+					<img src="img/logo.png">
+				</div>
+
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon ion-navicon"></span>
+				</button>
+				  
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					
+
+			  <ul class="nav navbar-nav flex-column" data-menu=""><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/" data-toggle="" data-target="#dashboard" data-menu-item-url="">
+						
+						<i class="ion-ios-pulse" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Dashboard</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="dashboard" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=editor" data-toggle="" data-target="#edit" data-menu-item-url="">
+						
+						<i class="ion-ios-color-wand-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Edit website</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="edit" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#content" data-menu-item-url="">
+						
+						<i class="ion-ios-photos-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Content</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade" aria-labelledby="Preview" id="content" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=posts" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Posts</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=post" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new Post</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Pages</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=page" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new page</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=category" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#ecommerce" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Ecommerce</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="ecommerce" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=orders" data-toggle="" data-target="#orders" data-menu-item-url="">
+						
+						<i class="ion-ios-cart-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Orders</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="orders" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#commerce" data-menu-item-url="">
+						
+						<i class="ion-ios-pricetag-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Products</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="commerce" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=products" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Products</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=product" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new product</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=categories" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=media" data-toggle="" data-target="#medialibrary" data-menu-item-url="">
+						
+						<i class="ion-ios-albums-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Media library</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="medialibrary" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#configuration" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Configuration</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="configuration" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#plugins" data-menu-item-url="">
+						
+						<i class="ion-ios-gear-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Plugins</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="plugins" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=plugins" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Plugins</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=components" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Components</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=widgets" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Widgets</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=market" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Marketplace</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="settings" data-toggle="collapse" data-target="#settings" data-menu-item-url="">
+						
+						<i class="ion-ios-settings" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Settings</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="settings" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=settings" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">General Settings</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=users" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Users 2</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=checkout" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Checkout &amp;amp; payments</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=shipping" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Shipping</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Email notifications</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Discount coupons</a>
+						</li>					  </ul></li>			</ul></div>
+
+		  </nav> <!-- /navbar -->
+			<!-- table style="height: 50%;width: 100%;">
+				<tr><td style="text-align: center;vertical-align: bottom;"><img src="img/satchidananda.jpg" alt="Preview image" class="rounded-circle bg-gray mr-2" style="width:100px;height:100px;opacity: 0.8;border: 1px solid #ccc;padding: 3px;"></td></tr>
+			</table -->
+			<div id="user-info">
+			<i class="ion-ios-person-outline rounded-circle"></i>	
+				&ensp;
+				<span>Vasile Georgescu</span>
+			</div>
+        </div>
+
+
+        <div class="main">
+			
+
+    <div class="clearfix top-header">
+		<!-- ol class="breadcrumb float-xs-left">
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-home-outline"> Home</a></li>
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-cart-outline"> Ecommerce</a></li>
+		  <li class="breadcrumb-item active">Products</li>
+		</ol -->
+		
+		
+		
+		<div class="btn-group float-right user-dropdown">
+		  <button type="button" class="btn btn-link dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			 <i class="ion-ios-person-outline img-circle"></i> littlebubu.ro
+		  </button>
+		  <div class="dropdown-menu dropdown-menu-right">
+			<a class="dropdown-item" href="#">Action</a>
+			<a class="dropdown-item" href="#">Another action</a>
+			<a class="dropdown-item" href="#">Something else here</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Separated link</a>
+		  </div>
+		</div>
+	</div>
+	
+	
+	<div id="content">
+	<!-- form class="filters row" method="get">
+
+					<div class="col-md-8 col-lg-6 row">
+					<h4 class="float-md-left text-muted text-left mb-3">Products</h4>
+
+ 
+						<input type="hidden" value="products" name="module">
+
+						<div class="col-md-4">
+							<select class="custom-select">
+							  <option selected>5 products</option>
+							  <option value="1">One</option>
+							  <option value="2">Two</option>
+							  <option value="3">Three</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="custom-select">
+							  <option selected>all categories</option>
+							  <option value="1">One</option>
+							  <option value="2">Two</option>
+							  <option value="3">Three</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="custom-select">
+							  <option selected>5 products</option>
+							  <option value="1">One</option>
+							  <option value="2">Two</option>
+							  <option value="3">Three</option>
+							</select>
+						</div>
+
+
+						 <input type="text"  class="form-control form-focus-info" name="price_min" value="0" size=5 /> and <input class="form-control form-focus-info" size=5 name="price_max" type="text" value="&#8734;"/>
+						ordered by <select  class="form-control"><option>price</option></select>
+												<label for="quick_edit">quick edit</label><input id="quick_edit" type="checkbox" name="quick_edit"> 
+
+						
+
+
+					</div>						
+
+					<div class="btns float-md-right col-md-4 col-lg-6">
+							
+						<button type="button" data-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-outline-dark btn-icon-single pr-3">
+							<i class="ion-funnel"></i>&nbsp;
+							<i class="ion-chevron-down small"></i>
+						</button>
+
+						<button type="button" data-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Bulk edit" class="btn btn-icon-single btn-outline-dark">
+							<i class="ion-edit"></i>
+						</button>
+
+						<button type="button" data-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Delete selected" class="btn btn-icon-single btn-outline-dark">
+							<i class="ion-trash-a"></i>
+						</button>
+						
+
+							
+						<button type="button" href="" data-toggle="tooltip" title="Add new" class="btn btn-primary btn-icon-single" data-original-title="Add New"><i class="ion-android-add-circle"></i></button>
+							
+
+					</div>
+
+					</div>						
+				</form -->
+				
+				
+				
+	<div class="actions">
+		<h4 class="float-md-left text-muted text-left mt-2">Orders</h4>	
+		
+		<button type="button" data-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-outline-primary form-group btn-icon-single pr-3 border-white">
+			<i class="ion-funnel"></i>&nbsp;
+			<i class="ion-chevron-down small"></i>
+		</button>
+
+		<button type="button" data-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Bulk edit" class="btn btn-icon-single form-group btn-outline-primary border-white">
+			<i class="ion-edit"></i>
+		</button>
+
+		<button type="button" data-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Delete selected" class="btn  btn-outline-primary btn-icon-single form-group btn-outline-danger border-white">
+			<i class="ion-trash-a"></i>
+		</button>
+						
+
+		
+		<!-- button type="button" href="" data-toggle="tooltip" title="" class="btn btn-outline-primary form-group btn-icon" data-original-title="Preview" onclick="document.getElementById('action').value ='preview';if (validator(validator_json)) document.getElementById('form').submit();"><i class="ion-eye"></i>&nbsp; Preview</button>&nbsp;
+		<button type="button" href="" data-toggle="tooltip" title="" class="btn btn-outline-primary form-group btn-icon" data-original-title="Save draft" onclick="document.getElementById('action').value ='draft';if (validator(validator_json)) document.getElementById('form').submit();"><i class="ion-document"></i>&nbsp; Save draft</button -->&nbsp;
+		<button type="submit" href="" data-toggle="tooltip" title="" class="btn btn-primary form-group btn-icon ml-1" data-original-title="Save post" onclick="document.getElementById('action').value ='save';if (validator('#product_form')) document.getElementById('product_form').submit();"><i class="ion-android-add-circle"></i>&nbsp; Add product</button>
+	</div>						
+	    
+    
+    <div id="filters" class="collapse mx-3">
+		 <div class="card card-block p-3">
+				
+				
+			<div class="row">
+				<div class="col-sm-4">
+				  <div class="form-group">
+					<label class="control-label" for="input-name">Product Name</label>
+					<input name="filter_name" value="" placeholder="Product Name" id="input-name" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu" style="top: 72.15px; left: 15px; display: none;"><li data-value="42"><a href="#">Apple Cinema 30" 23</a></li><li data-value="30"><a href="#">Canon EOS 5D</a></li><li data-value="47"><a href="#">HP LP3065</a></li><li data-value="28"><a href="#">HTC Touch HD</a></li><li data-value="41"><a href="#">iMac</a></li></ul>
+				  </div>
+				  <div class="form-group">
+					<label class="control-label" for="input-model">Model</label>
+					<input name="filter_model" value="" placeholder="Model" id="input-model" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu" style="top: 160.3px; left: 15px; display: none;"><li data-value="42"><a href="#">Product 15</a></li><li data-value="30"><a href="#">Product 3</a></li><li data-value="47"><a href="#">Product 21</a></li><li data-value="28"><a href="#">Product 1</a></li><li data-value="41"><a href="#">Product 14</a></li></ul>
+				  </div>
+				</div>
+				<div class="col-sm-4">
+				  <div class="form-group">
+					<label class="control-label" for="input-price">Price</label>
+					<input name="filter_price" value="" placeholder="Price" id="input-price" class="form-control" type="text">
+				  </div>
+				  <div class="form-group">
+					<label class="control-label" for="input-quantity">Quantity</label>
+					<input name="filter_quantity" value="" placeholder="Quantity" id="input-quantity" class="form-control" type="text">
+				  </div>
+				</div>
+				<div class="col-sm-4">
+				  <div class="form-group">
+					<label class="control-label" for="input-status">Status</label>
+					<select name="filter_status" id="input-status" class="form-control">
+					  <option value=""></option>
+						<option value="1">Enabled</option>
+						  <option value="0">Disabled</option>
+					  </select>
+				  </div>
+				  <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> Filter</button>
+				</div>
+			  </div>
+				
+				
+
+			<label class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input">
+			  <span class="custom-control-label"></span>
+			  <span class="custom-control-description">Check this custom checkbox</span>
+			</label>
+
+			<label class="custom-control custom-radio">
+			  <input id="radio1" name="radio" type="radio" class="custom-control-input">
+			  <span class="custom-control-label"></span>
+			  <span class="custom-control-description">Toggle this custom radio</span>
+			</label>
+			<label class="custom-control custom-radio">
+			  <input id="radio2" name="radio" type="radio" class="custom-control-input">
+			  <span class="custom-control-label"></span>
+			  <span class="custom-control-description">Or toggle this other custom radio</span>
+			</label>
+		
+		</div>
+    </div>
+    
+    <div>
+					
+					<div class="products card-block" data-products>
+						<form action="" method="post">
+							<table class="table table-hover middle-align" data-component-products>
+								<thead>
+									<tr>
+										<th class="col-cb">
+											<div class="checkbox_outer">
+
+												<label class="custom-control custom-checkbox">
+												  <input type="checkbox" class="custom-control-input" value="4" name="product[]"> 
+												  <span class="custom-control-label"></span>
+												  <span class="custom-control-description">&nbsp;</span>
+												</label>
+																				
+											</div>
+										</th>
+										<th>Order ID </th>
+										<th>Customer</th>
+										<th>Status</th>
+										<th>Total</th>
+										<th>Date Added</th>
+										<th>Date Modified</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<td>
+									<label class="custom-control custom-checkbox">
+									  <input type="checkbox" class="custom-control-input" value="4" name="order[]"> 
+									  <span class="custom-control-label"></span>
+									  <span class="custom-control-description">&nbsp;</span>
+									</label>
+									</td>
+									<td>
+										<a href="/admin/?module=products&amp;action=product&amp;id=4">01</a>
+									</td>
+									<td><span class="price">John Doe</span></td>
+									<td><span class="stock badge badge-primary">New</span></td>
+									<td><span class="price">100%</span></td>
+									<td><span class="price">Today 17:10</span></td>
+									<td><span class="price">Today 17:10</span></td>
+								</tr>
+									<tr>
+									<td>
+									<label class="custom-control custom-checkbox">
+									  <input type="checkbox" class="custom-control-input" value="4" name="order[]"> 
+									  <span class="custom-control-label"></span>
+									  <span class="custom-control-description">&nbsp;</span>
+									</label>
+									</td>
+									<td>
+										<a href="/admin/?module=products&amp;action=product&amp;id=4">01</a>
+									</td>
+									<td><span class="price">John Doe</span></td>
+									<td><span class="stock badge badge-primary">New</span></td>
+									<td><span class="price">100%</span></td>
+									<td><span class="price">Today 17:10</span></td>
+									<td><span class="price">Today 17:10</span></td>
+								</tr>
+									<tr>
+									<td>
+									<label class="custom-control custom-checkbox">
+									  <input type="checkbox" class="custom-control-input" value="4" name="order[]"> 
+									  <span class="custom-control-label"></span>
+									  <span class="custom-control-description">&nbsp;</span>
+									</label>
+									</td>
+									<td>
+										<a href="/admin/?module=products&amp;action=product&amp;id=4">01</a>
+									</td>
+									<td><span class="price">John Doe</span></td>
+									<td><span class="stock badge badge-primary">New</span></td>
+									<td><span class="price">100%</span></td>
+									<td><span class="price">Today 17:10</span></td>
+									<td><span class="price">Today 17:10</span></td>
+								</tr>
+								</tbody></table>
+								
+								
+								<div class="bottom clearfix">
+								<div class="pagination float-left">
+							</div>
+								<nav class="float-right">
+						  <ul class="pagination">
+							<li class="page-item prev">
+							  <a class="page-link" href="#" aria-label="Previous">
+								<span aria-hidden="true" class="ion-ios-arrow-left"></span>
+								<span class="sr-only">Previous</span>
+							  </a>
+							</li>
+							<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#">4</a></li>
+							<li class="page-item"><a class="page-link" href="#">5</a></li>
+							<li class="page-item pager-next">
+							  <a class="page-link" href="#" aria-label="Next">
+								<span aria-hidden="true" class="ion-ios-arrow-right"></span>
+								<span class="sr-only">Next</span>
+							  </a>
+							</li>
+						  </ul>
+						</nav>
+								</div>
+
+							</form>
+						</div>
+				
+				
+				</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      </div>
+    </div>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="libs/js-storage/js.storage.min.js"></script>	
+    <script src="js/main.js"></script>
+    <script>
+		$('textarea').trumbowyg({
+			
+		});
+		
+		jQuery(".collapse").collapse('toggle');
+    </script>
+  </body>
+</html>

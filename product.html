@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <base href="">
+    <title>Vvveb admin</title>
+
+
+    <link href="http://fonts.googleapis.com/css?family=Open Sans:300,400,600|Varela Round:400,600|Montserrat|Arimo:400,600,700|Poppins:400,600|Merriweather:400,300,300italic,700" rel="stylesheet" type="text/css">
+    
+    <link href="css/admin.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+    <div id="container">
+        <div class="sidebar">
+         
+			<div class="logo">
+				<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+				<div class="img"></div>
+				<!-- img src="img/logo-small.png" class="logo-small" -->
+
+				<a class="menu-toggle" href=""><i class="ion-navicon"></i></a>
+			</div>
+         
+			<nav class="navbar navbar-expand-sm">
+
+				<div class="logo">
+					<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+					<img src="img/logo.png">
+				</div>
+
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon ion-navicon"></span>
+				</button>
+				  
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					
+
+			  <ul class="nav navbar-nav flex-column" data-menu=""><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/" data-toggle="" data-target="#dashboard" data-menu-item-url="">
+						
+						<i class="ion-ios-pulse" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Dashboard</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="dashboard" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=editor" data-toggle="" data-target="#edit" data-menu-item-url="">
+						
+						<i class="ion-ios-color-wand-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Edit website</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="edit" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#content" data-menu-item-url="">
+						
+						<i class="ion-ios-photos-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Content</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade" aria-labelledby="Preview" id="content" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=posts" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Posts</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=post" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new Post</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Pages</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=page" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new page</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=category" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#ecommerce" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Ecommerce</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="ecommerce" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=orders" data-toggle="" data-target="#orders" data-menu-item-url="">
+						
+						<i class="ion-ios-cart-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Orders</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="orders" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#commerce" data-menu-item-url="">
+						
+						<i class="ion-ios-pricetag-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Products</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="commerce" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=products" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Products</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=product" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new product</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=categories" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=media" data-toggle="" data-target="#medialibrary" data-menu-item-url="">
+						
+						<i class="ion-ios-albums-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Media library</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="medialibrary" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#configuration" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Configuration</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="configuration" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#plugins" data-menu-item-url="">
+						
+						<i class="ion-ios-gear-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Plugins</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="plugins" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=plugins" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Plugins</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=components" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Components</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=widgets" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Widgets</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=market" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Marketplace</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="settings" data-toggle="collapse" data-target="#settings" data-menu-item-url="">
+						
+						<i class="ion-ios-settings" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Settings</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="settings" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=settings" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">General Settings</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=users" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Users 2</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=checkout" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Checkout &amp;amp; payments</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=shipping" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Shipping</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Email notifications</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Discount coupons</a>
+						</li>					  </ul></li>			</ul></div>
+
+		  </nav> <!-- /navbar -->
+			<!-- table style="height: 50%;width: 100%;">
+				<tr><td style="text-align: center;vertical-align: bottom;"><img src="img/satchidananda.jpg" alt="Preview image" class="rounded-circle bg-gray mr-2" style="width:100px;height:100px;opacity: 0.8;border: 1px solid #ccc;padding: 3px;"></td></tr>
+			</table -->
+			<div id="user-info">
+			<i class="ion-ios-person-outline rounded-circle"></i>	
+				&ensp;
+				<span>John Doe</span>
+			</div>
+        </div>
+
+
+        <div class="main">
+			
+
+    <div class="clearfix top-header">
+		<!-- ol class="breadcrumb float-xs-left">
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-home-outline"> Home</a></li>
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-cart-outline"> Ecommerce</a></li>
+		  <li class="breadcrumb-item active">Products</li>
+		</ol -->
+		
+		
+		
+		<div class="btn-group float-right user-dropdown">
+		  <button type="button" class="btn btn-link dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			 <i class="ion-ios-person-outline img-circle"></i> littlebubu.ro
+		  </button>
+		  <div class="dropdown-menu dropdown-menu-right">
+			<a class="dropdown-item" href="#">Action</a>
+			<a class="dropdown-item" href="#">Another action</a>
+			<a class="dropdown-item" href="#">Something else here</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Separated link</a>
+		  </div>
+		</div>
+	</div>
+	
+	<div id="content">
+	<div class="notifications mx-5"  data-notifications>
+		
+
+		<div class="alert alert-info alert-dismissable" role="alert" data-notification-error>
+			
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			
+			<p data-notification-text> 
+				Vvveb 0.2 is now available! <a href="update">Update now</a>
+			</p>
+		</div>
+
+		<div class="alert alert-success alert-dismissable" role="alert" data-notification-success>
+			
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			
+			<p data-notification-text> 
+				You successfully read this important alert message.
+			</p>
+		</div>
+	
+	</div>
+	
+	<div class="actions">
+		<h4 class="float-md-left text-muted text-left mb-3">Add new product</h4>	
+		<button type="button" href="" data-toggle="tooltip" title="" class="btn btn-outline-primary form-group btn-icon" data-original-title="Preview" onclick="document.getElementById('action').value ='preview';if (validator(validator_json)) document.getElementById('form').submit();"><i class="ion-eye"></i>&nbsp; Preview</button>&nbsp;
+		<button type="button" href="" data-toggle="tooltip" title="" class="btn btn-outline-primary form-group btn-icon" data-original-title="Save draft" onclick="document.getElementById('action').value ='draft';if (validator(validator_json)) document.getElementById('form').submit();"><i class="ion-document"></i>&nbsp; Save draft</button>&nbsp;
+		<button type="submit" href="" data-toggle="tooltip" title="" class="btn btn-primary form-group btn-icon ml-1" data-original-title="Save post" onclick="document.getElementById('action').value ='save';if (validator('#product_form')) document.getElementById('product_form').submit();"><i class="ion-edit"></i>&nbsp; Save post</button>
+	</div>						
+	
+	<div class="content clearfix">
+
+					
+   
+   <form id="product_form" action="" method="post" class="needs-validation" novalidate data-product>
+   
+   <input type="hidden" name="action" id="action" value="save">   
+    
+    <div class="columns">
+    <div class="left-column">
+		
+			<div class="validation-errors" data-validation-errors>
+				
+				<div class="alert alert-danger alert-dismissable" role="alert" data-validation-error>
+					
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					
+					
+					<div> 
+						<i class="ion-alert-circled"></i>
+						<span data-validation-error-text>Validation error</span>
+					</div>
+					
+				</div>
+
+			</div>
+	
+	
+	<ul class="nav nav-tabs">
+		<li class="nav-item"><a class="nav-link active" href="#tab-general" data-toggle="tab">General</a></li>
+		<li class="nav-item"><a class="nav-link" href="#tab-data" data-toggle="tab">Data</a></li>
+		<li class="nav-item"><a class="nav-link" href="#tab-links" data-toggle="tab">Links</a></li>
+		<!-- li class="nav-item"><a class="nav-link" href="#tab-attribute" data-toggle="tab">Attribute</a></li -->
+		<!-- class="nav-item"><a class="nav-link" href="#tab-option" data-toggle="tab">Option</a></li -->
+		<!-- class="nav-item"><a class="nav-link" href="#tab-recurring" data-toggle="tab">Recurring</a></li -->
+		<!-- class="nav-item"><a class="nav-link" href="#tab-discount" data-toggle="tab">Discount</a></li -->
+		<!-- class="nav-item"><a class="nav-link" href="#tab-special" data-toggle="tab">Special</a></li -->
+		<li class="nav-item"><a class="nav-link" href="#tab-image" data-toggle="tab">Image</a></li>
+		<!-- class="nav-item"><a class="nav-link" href="#tab-reward" data-toggle="tab">Reward Points</a></li -->
+		<!-- li class="nav-item"><a class="nav-link" href="#tab-design" data-toggle="tab">Design</a></li -->
+	  </ul>
+
+
+   <div class="tab-content">			  
+			<div class="tab-pane active" id="tab-general">				  
+
+				  <ul class="nav nav-pills" id="language" data-languages="desc">
+					<li class="nav-item" data-language>
+						<a href="#language1" class="nav-link" data-toggle="tab" aria-expanded="true" data-language-link>
+							<!-- img src="language/en-gb/en-gb.png" title="English" data-language-img --> 
+							<span class="" data-language-name></span>
+						</a>
+					</li>
+				 </ul>
+				 
+				 
+				 
+				   <div class="tab-content" data-languages="desc">
+					<div class="tab-pane" id="language1" data-language data-language-id>
+					  <input name="product_description[1][language_id]" type="hidden" data-product-description-language_id>
+					  <div class="form-group required">
+						<label class="control-label" for="input-name1">Product Name</label>
+						<div class="">
+						  <input name="product_description[1][name]" value="Apple Cinema 30&quot;" placeholder="Product Name" id="input-name1" class="form-control" type="text" data-product-description-name required data-validate='[{"rule":"not_empty"}, {"rule":"max_length", "parameters":100}]'/>
+						</div>
+					  </div>
+					  <div class="form-group">
+						<label class="control-label" for="input-description1">Description</label>
+						<div class="">
+						   <button type="button" href="" data-toggle="tooltip" title="" class="btn btn-success form-group ml-1 btn-icon" data-original-title="Add New"><i class="ion-ios-color-wand"></i>&nbsp; Design content</button>
+							
+						  <textarea name="product_description[1][description]" placeholder="Description" id="input-description1" class="form-control summernote" data-product-description-description required data-validate='[{"rule":"not_empty"}]'></textarea>
+						</div>
+					  </div>
+
+					  <div class="form-group required">
+						<label class="control-label" for="input-name1">Product Name</label>
+						<div class="">
+						  <input name="product_description[1][tag]" value="Apple Cinema 30&quot;" placeholder="Product Name" id="input-name1" class="form-control" type="text" data-product-description-tag required data-validate='[{"rule":"not_empty"}, {"rule":"max_length", "parameters":100}]' value=" "/>
+						</div>
+					  </div>
+
+					</div>
+					</div>
+					
+					
+			</div>
+
+			<div class="tab-pane" id="tab-data">
+				  <div class="form-group row required">
+					<label class="col-sm-2 control-label" for="input-model">Model</label>
+					<div class="col-sm-4">
+					  <input name="model" value="Product 15" placeholder="Model" id="input-model" class="form-control" type="text" data-product-model>
+					</div>
+					<label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="" data-original-title="Stock Keeping Unit">SKU</span></label>
+					<div class="col-sm-4">
+					  <input name="sku" value="" placeholder="SKU" id="input-sku" class="form-control" type="text" data-product-sku>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-upc"><span data-toggle="tooltip" title="" data-original-title="Universal Product Code">UPC</span></label>
+					<div class="col-sm-4">
+					  <input name="upc" value="" placeholder="UPC" id="input-upc" class="form-control" type="text" data-product-upc>
+					</div>
+					<label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="" data-original-title="European Article Number">EAN</span></label>
+					<div class="col-sm-4">
+					  <input name="ean" value="" placeholder="EAN" id="input-ean" class="form-control" type="text" data-product-ean>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-jan"><span data-toggle="tooltip" title="" data-original-title="Japanese Article Number">JAN</span></label>
+					<div class="col-sm-4">
+					  <input name="jan" value="" placeholder="JAN" id="input-jan" class="form-control" type="text" data-product-jan>
+					</div>
+					<label class="col-sm-2 control-label" for="input-isbn"><span data-toggle="tooltip" title="" data-original-title="International Standard Book Number">ISBN</span></label>
+					<div class="col-sm-4">
+					  <input name="isbn" value="" placeholder="ISBN" id="input-isbn" class="form-control" type="text" data-product-isbn>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-mpn"><span data-toggle="tooltip" title="" data-original-title="Manufacturer Part Number">MPN</span></label>
+					<div class="col-sm-4">
+					  <input name="mpn" value="" placeholder="MPN" id="input-mpn" class="form-control" type="text" data-product-mpn>
+					</div>
+					<label class="col-sm-2 control-label" for="input-location">Location</label>
+					<div class="col-sm-4">
+					  <input name="location" value="" placeholder="Location" id="input-location" class="form-control" type="text" data-product-location>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-price">Price</label>
+					<div class="col-sm-4">
+					  <input name="price" value="" placeholder="Price" id="input-price" class="form-control" type="text" data-product-price>
+					</div>
+					<label class="col-sm-2 control-label" for="input-tax-class">Tax Class</label>
+					<div class="col-sm-4">
+					  <select name="tax_class_id" id="input-tax-class" class="custom-select form-control">
+						<option value="0"> --- None --- </option>
+						<option value="9" selected="selected">Taxable Goods</option>
+						<option value="10">Downloadable Products</option>
+				  </select>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-quantity">Quantity</label>
+					<div class="col-sm-4">
+					  <input name="quantity" value="990" placeholder="Quantity" id="input-quantity" class="form-control" type="text" data-product-quantity>
+					</div>
+					<label class="col-sm-2 control-label" for="input-minimum"><span data-toggle="tooltip" title="" data-original-title="Force a minimum ordered amount">Minimum Quantity</span></label>
+					<div class="col-sm-4">
+					  <input name="minimum" value="2" placeholder="Minimum Quantity" id="input-minimum" class="form-control" type="text" data-product-minimum>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-subtract">Subtract Stock</label>
+					<div class="col-sm-4">
+					  <select name="subtract" id="input-subtract" class="custom-select form-control">
+											<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+										  </select>
+					</div>
+					<label class="col-sm-2 control-label" for="input-stock-status"><span data-toggle="tooltip" title="" data-original-title="Status shown when a product is out of stock">Out Of Stock Status</span></label>
+					<div class="col-sm-4">
+					  <select name="stock_status_id" id="input-stock-status" class="custom-select form-control">
+						<option value="6">2-3 Days</option>
+											<option value="7">In Stock</option>
+											<option value="5" selected="selected">Out Of Stock</option>
+											<option value="8">Pre-Order</option>
+					  </select>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label">Requires Shipping</label>
+					<div class="col-sm-10">
+						
+						
+					  <label class="radio-inline custom-control custom-radio">
+							<input name="shipping" value="1" checked="checked" type="radio" class="custom-control-input">
+							<span class="custom-control-label"></span>
+							<span class="custom-control-description">Yes</span>
+					  </label>
+					  <label class="radio-inline custom-control custom-radio">
+							<input name="shipping" value="0" type="radio" class="custom-control-input">
+							<span class="custom-control-label"></span>
+							<span class="custom-control-description">No</span>
+
+					</label>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="" data-original-title="Do not use spaces, instead replace spaces with - and make sure the SEO URL is globally unique.">SEO URL</span></label>
+					<div class="col-sm-10">
+					  <input name="keyword" value="test" placeholder="SEO URL" id="input-keyword" class="form-control" type="text">
+									  </div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-date-available">Date Available</label>
+					<div class="col-sm-3">
+					  <div class="input-group date">
+						<input name="date_available" value="2009-02-04" placeholder="Date Available" data-date-format="YYYY-MM-DD" id="input-date-available" class="form-control" type="text">
+						<span class="input-group-btn">
+						<button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+						</span></div>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-length">Dimensions (L x W x H)</label>
+					<div class="col-sm-6">
+					  <div class="row">
+						<div class="col-sm-4">
+						  <input name="length" value="1.00000000" placeholder="Length" id="input-length" class="form-control" type="text">
+						</div>
+						<div class="col-sm-4">
+						  <input name="width" value="2.00000000" placeholder="Width" id="input-width" class="form-control" type="text">
+						</div>
+						<div class="col-sm-4">
+						  <input name="height" value="3.00000000" placeholder="Height" id="input-height" class="form-control" type="text">
+						</div>
+					  </div>
+					</div>
+					<label class="col-sm-1 control-label" for="input-length-class">Length Class</label>
+					<div class="col-sm-3">
+					  <select name="length_class_id" id="input-length-class" class="custom-select form-control">
+																<option value="1" selected="selected">Centimeter</option>
+																					<option value="2">Millimeter</option>
+																					<option value="3">Inch</option>
+															  </select>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-weight">Weight</label>
+					<div class="col-sm-4">
+					  <input name="weight" value="12.50000000" placeholder="Weight" id="input-weight" class="form-control" type="text">
+					</div>
+					<label class="col-sm-2 control-label" for="input-weight-class">Weight Class</label>
+					<div class="col-sm-4">
+					  <select name="weight_class_id" id="input-weight-class" class="custom-select form-control">
+																<option value="1" selected="selected">Kilogram</option>
+																					<option value="2">Gram</option>
+																					<option value="5">Pound </option>
+																					<option value="6">Ounce</option>
+															  </select>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-status">Status</label>
+					<div class="col-sm-4">
+					  <select name="status" id="input-status" class="custom-select form-control">
+											<option value="1" selected="selected">Enabled</option>
+						<option value="0">Disabled</option>
+										  </select>
+					</div>
+					<label class="col-sm-2 control-label" for="input-sort-order">Sort Order</label>
+					<div class="col-sm-4">
+					  <input name="sort_order" value="0" placeholder="Sort Order" id="input-sort-order" class="form-control" type="text">
+					</div>
+				  </div>
+			</div>
+			<div class="tab-pane" id="tab-links">
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-manufacturer"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Manufacturer</span></label>
+					<div class="col-sm-10">
+					  <input name="manufacturer" value="Apple" placeholder="Manufacturer" id="input-manufacturer" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu"></ul>
+					  <input name="manufacturer_id" value="8" type="hidden">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-category"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Categories</span></label>
+					<div class="col-sm-10">
+					  <input name="category" value="" placeholder="Categories" id="input-category" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu"></ul>
+					  <div id="product-category" class="well well-sm" style="height: 150px; overflow: auto;">
+											<div id="product-category20"><i class="fa fa-minus-circle"></i> Desktops                      <input name="product_category[]" value="20" type="hidden">
+						</div>
+											<div id="product-category28"><i class="fa fa-minus-circle"></i> Components &gt; Monitors                      <input name="product_category[]" value="28" type="hidden">
+						</div>
+										  </div>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-filter"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Filters</span></label>
+					<div class="col-sm-10">
+					  <input name="filter" value="" placeholder="Filters" id="input-filter" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu"></ul>
+					  <div id="product-filter" class="well well-sm" style="height: 150px; overflow: auto;">
+										  </div>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label">Stores</label>
+					<div class="col-sm-10">
+					  <div class="well well-sm" style="height: 150px; overflow: auto;">
+						<div class="checkbox">
+						  <label>
+													<input name="product_store[]" value="0" checked="checked" type="checkbox">
+							Default                                              </label>
+						</div>
+										  </div>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-download"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Downloads</span></label>
+					<div class="col-sm-10">
+					  <input name="download" value="" placeholder="Downloads" id="input-download" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu"></ul>
+					  <div id="product-download" class="well well-sm" style="height: 150px; overflow: auto;">
+										  </div>
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-related"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Related Products</span></label>
+					<div class="col-sm-10">
+					  <input name="related" value="" placeholder="Related Products" id="input-related" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu"></ul>
+					  <div id="product-related" class="well well-sm" style="height: 150px; overflow: auto;">
+											<div id="product-related40"><i class="fa fa-minus-circle"></i> iPhone                      <input name="product_related[]" value="40" type="hidden">
+						</div>
+											<div id="product-related41"><i class="fa fa-minus-circle"></i> iMac                      <input name="product_related[]" value="41" type="hidden">
+						</div>
+										  </div>
+					</div>
+				  </div>
+				</div>
+			<div class="tab-pane" id="tab-attribute">
+				  <div class="table-responsive">
+					<table id="attribute" class="table table-striped table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Attribute</td>
+						  <td class="text-left">Text</td>
+						  <td></td>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr id="attribute-row0">
+						  <td class="text-left" style="width: 40%;"><input name="product_attribute[0][name]" value="Clockspeed" placeholder="Attribute" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu"></ul>
+							<input name="product_attribute[0][attribute_id]" value="3" type="hidden">
+						  </td>
+						  <td class="text-left">                        <div class="input-group"><span class="input-group-addon"><img src="language/en-gb/en-gb.png" title="English"></span>
+							  <textarea name="product_attribute[0][product_attribute_description][1][text]" rows="5" placeholder="Text" class="form-control">100mhz</textarea>
+							</div>
+						  </td>
+						  <td class="text-left">
+							  <button type="button" onclick="$('#attribute-row0').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button>
+						  </td>
+						</tr>
+						</tbody>
+					  <tfoot>
+						<tr>
+						  <td colspan="2"></td>
+						  <td class="text-left"><button type="button" onclick="addAttribute();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Attribute"><i class="fa fa-plus-circle"></i></button></td>
+						</tr>
+					  </tfoot>
+					</table>
+				  </div>
+				</div>
+			<div class="tab-pane" id="tab-option">
+				  <div class="row">
+					<div class="col-sm-2">
+					  <ul class="nav nav-pills nav-stacked" id="option">
+																<li class="active"><a href="#tab-option0" data-toggle="tab" aria-expanded="true"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option0\']').parent().remove(); $('#tab-option0').remove(); $('#option a:first').tab('show');"></i> Checkbox</a></li>
+																<li><a href="#tab-option1" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option1\']').parent().remove(); $('#tab-option1').remove(); $('#option a:first').tab('show');"></i> Select</a></li>
+																<li><a href="#tab-option2" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option2\']').parent().remove(); $('#tab-option2').remove(); $('#option a:first').tab('show');"></i> Textarea</a></li>
+																<li><a href="#tab-option3" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option3\']').parent().remove(); $('#tab-option3').remove(); $('#option a:first').tab('show');"></i> Radio</a></li>
+																<li><a href="#tab-option4" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option4\']').parent().remove(); $('#tab-option4').remove(); $('#option a:first').tab('show');"></i> Text</a></li>
+																<li><a href="#tab-option5" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option5\']').parent().remove(); $('#tab-option5').remove(); $('#option a:first').tab('show');"></i> Date</a></li>
+																<li><a href="#tab-option6" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option6\']').parent().remove(); $('#tab-option6').remove(); $('#option a:first').tab('show');"></i> File</a></li>
+																<li><a href="#tab-option7" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option7\']').parent().remove(); $('#tab-option7').remove(); $('#option a:first').tab('show');"></i> Time</a></li>
+																<li><a href="#tab-option8" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option8\']').parent().remove(); $('#tab-option8').remove(); $('#option a:first').tab('show');"></i> Date &amp; Time</a></li>
+																<li>
+						  <input name="option" value="" placeholder="Option" id="input-option" class="form-control" autocomplete="off" type="text"><ul class="dropdown-menu"></ul>
+						</li>
+					  </ul>
+					</div>
+					<div class="col-sm-10">
+					  <div class="tab-content">
+																					<div class="tab-pane active" id="tab-option0">
+						  <input name="product_option[0][product_option_id]" value="223" type="hidden">
+						  <input name="product_option[0][name]" value="Checkbox" type="hidden">
+						  <input name="product_option[0][option_id]" value="2" type="hidden">
+						  <input name="product_option[0][type]" value="checkbox" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required0">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[0][required]" id="input-required0" class="custom-select form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																																													<div class="table-responsive">
+							<table id="option-value0" class="table table-striped table-bordered table-hover">
+							  <thead>
+								<tr>
+								  <td class="text-left">Option Value</td>
+								  <td class="text-right">Quantity</td>
+								  <td class="text-left">Subtract Stock</td>
+								  <td class="text-right">Price</td>
+								  <td class="text-right">Points</td>
+								  <td class="text-right">Weight</td>
+								  <td></td>
+								</tr>
+							  </thead>
+							  <tbody>
+															<tr id="option-value-row0">
+								  <td class="text-left"><select name="product_option[0][product_option_value][0][option_value_id]" class="custom-select form-control">
+																																			<option value="23" selected="selected">Checkbox 1</option>
+																																			<option value="24">Checkbox 2</option>
+																																			<option value="44">Checkbox 3</option>
+																																			<option value="45">Checkbox 4</option>
+																																		  </select>
+									<input name="product_option[0][product_option_value][0][product_option_value_id]" value="8" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[0][product_option_value][0][quantity]" value="48" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[0][product_option_value][0][subtract]" class="custom-select form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][0][price_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][0][price]" value="10.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][0][points_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][0][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][0][weight_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][0][weight]" value="10.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row0').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row1">
+								  <td class="text-left"><select name="product_option[0][product_option_value][1][option_value_id]" class="custom-select form-control">
+																																			<option value="23">Checkbox 1</option>
+																																			<option value="24" selected="selected">Checkbox 2</option>
+																																			<option value="44">Checkbox 3</option>
+																																			<option value="45">Checkbox 4</option>
+																																		  </select>
+									<input name="product_option[0][product_option_value][1][product_option_value_id]" value="9" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[0][product_option_value][1][quantity]" value="194" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[0][product_option_value][1][subtract]" class="custom-select form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][1][price_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][1][price]" value="20.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][1][points_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][1][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][1][weight_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][1][weight]" value="20.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row1').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row2">
+								  <td class="text-left"><select name="product_option[0][product_option_value][2][option_value_id]" class="custom-select form-control">
+																																			<option value="23">Checkbox 1</option>
+																																			<option value="24">Checkbox 2</option>
+																																			<option value="44" selected="selected">Checkbox 3</option>
+																																			<option value="45">Checkbox 4</option>
+																																		  </select>
+									<input name="product_option[0][product_option_value][2][product_option_value_id]" value="10" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[0][product_option_value][2][quantity]" value="2696" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[0][product_option_value][2][subtract]" class="custom-select form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][2][price_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][2][price]" value="30.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][2][points_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][2][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][2][weight_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][2][weight]" value="30.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row2').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row3">
+								  <td class="text-left"><select name="product_option[0][product_option_value][3][option_value_id]" class="custom-select form-control">
+																																			<option value="23">Checkbox 1</option>
+																																			<option value="24">Checkbox 2</option>
+																																			<option value="44">Checkbox 3</option>
+																																			<option value="45" selected="selected">Checkbox 4</option>
+																																		  </select>
+									<input name="product_option[0][product_option_value][3][product_option_value_id]" value="11" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[0][product_option_value][3][quantity]" value="3998" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[0][product_option_value][3][subtract]" class="custom-select form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][3][price_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][3][price]" value="40.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][3][points_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][3][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[0][product_option_value][3][weight_prefix]" class="custom-select form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[0][product_option_value][3][weight]" value="40.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row3').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																					  </tbody>
+							  <tfoot>
+								<tr>
+								  <td colspan="6"></td>
+								  <td class="text-left"><button type="button" onclick="addOptionValue('0');" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Option Value"><i class="fa fa-plus-circle"></i></button></td>
+								</tr>
+							  </tfoot>
+							</table>
+						  </div>
+						  <select id="option-values0" style="display: none;">
+																			<option value="23">Checkbox 1</option>
+													<option value="24">Checkbox 2</option>
+													<option value="44">Checkbox 3</option>
+													<option value="45">Checkbox 4</option>
+																		  </select>
+											  </div>
+																<div class="tab-pane" id="tab-option1">
+						  <input name="product_option[1][product_option_id]" value="217" type="hidden">
+						  <input name="product_option[1][name]" value="Select" type="hidden">
+						  <input name="product_option[1][option_id]" value="5" type="hidden">
+						  <input name="product_option[1][type]" value="select" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required1">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[1][required]" id="input-required1" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																																													<div class="table-responsive">
+							<table id="option-value1" class="table table-striped table-bordered table-hover">
+							  <thead>
+								<tr>
+								  <td class="text-left">Option Value</td>
+								  <td class="text-right">Quantity</td>
+								  <td class="text-left">Subtract Stock</td>
+								  <td class="text-right">Price</td>
+								  <td class="text-right">Points</td>
+								  <td class="text-right">Weight</td>
+								  <td></td>
+								</tr>
+							  </thead>
+							  <tbody>
+															<tr id="option-value-row4">
+								  <td class="text-left"><select name="product_option[1][product_option_value][4][option_value_id]" class="form-control">
+																																			<option value="39" selected="selected">Red</option>
+																																			<option value="40">Blue</option>
+																																			<option value="41">Green</option>
+																																			<option value="42">Yellow</option>
+																																		  </select>
+									<input name="product_option[1][product_option_value][4][product_option_value_id]" value="4" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[1][product_option_value][4][quantity]" value="92" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[1][product_option_value][4][subtract]" class="form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][4][price_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][4][price]" value="4.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][4][points_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][4][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][4][weight_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][4][weight]" value="4.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row4').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row5">
+								  <td class="text-left"><select name="product_option[1][product_option_value][5][option_value_id]" class="form-control">
+																																			<option value="39">Red</option>
+																																			<option value="40" selected="selected">Blue</option>
+																																			<option value="41">Green</option>
+																																			<option value="42">Yellow</option>
+																																		  </select>
+									<input name="product_option[1][product_option_value][5][product_option_value_id]" value="3" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[1][product_option_value][5][quantity]" value="300" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[1][product_option_value][5][subtract]" class="form-control">
+																		<option value="1">Yes</option>
+									  <option value="0" selected="selected">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][5][price_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][5][price]" value="3.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][5][points_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][5][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][5][weight_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][5][weight]" value="3.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row5').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row6">
+								  <td class="text-left"><select name="product_option[1][product_option_value][6][option_value_id]" class="form-control">
+																																			<option value="39">Red</option>
+																																			<option value="40">Blue</option>
+																																			<option value="41" selected="selected">Green</option>
+																																			<option value="42">Yellow</option>
+																																		  </select>
+									<input name="product_option[1][product_option_value][6][product_option_value_id]" value="1" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[1][product_option_value][6][quantity]" value="100" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[1][product_option_value][6][subtract]" class="form-control">
+																		<option value="1">Yes</option>
+									  <option value="0" selected="selected">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][6][price_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][6][price]" value="1.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][6][points_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][6][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][6][weight_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][6][weight]" value="1.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row6').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row7">
+								  <td class="text-left"><select name="product_option[1][product_option_value][7][option_value_id]" class="form-control">
+																																			<option value="39">Red</option>
+																																			<option value="40">Blue</option>
+																																			<option value="41">Green</option>
+																																			<option value="42" selected="selected">Yellow</option>
+																																		  </select>
+									<input name="product_option[1][product_option_value][7][product_option_value_id]" value="2" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[1][product_option_value][7][quantity]" value="200" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[1][product_option_value][7][subtract]" class="form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][7][price_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][7][price]" value="2.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][7][points_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][7][points]" value="0" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[1][product_option_value][7][weight_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[1][product_option_value][7][weight]" value="2.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row7').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																					  </tbody>
+							  <tfoot>
+								<tr>
+								  <td colspan="6"></td>
+								  <td class="text-left"><button type="button" onclick="addOptionValue('1');" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Option Value"><i class="fa fa-plus-circle"></i></button></td>
+								</tr>
+							  </tfoot>
+							</table>
+						  </div>
+						  <select id="option-values1" style="display: none;">
+																			<option value="39">Red</option>
+													<option value="40">Blue</option>
+													<option value="41">Green</option>
+													<option value="42">Yellow</option>
+																		  </select>
+											  </div>
+																<div class="tab-pane" id="tab-option2">
+						  <input name="product_option[2][product_option_id]" value="209" type="hidden">
+						  <input name="product_option[2][name]" value="Textarea" type="hidden">
+						  <input name="product_option[2][option_id]" value="6" type="hidden">
+						  <input name="product_option[2][type]" value="textarea" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required2">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[2][required]" id="input-required2" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																	  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-value2">Option Value</label>
+							<div class="col-sm-10">
+							  <textarea name="product_option[2][value]" rows="5" placeholder="Option Value" id="input-value2" class="form-control"></textarea>
+							</div>
+						  </div>
+																																							</div>
+																<div class="tab-pane" id="tab-option3">
+						  <input name="product_option[3][product_option_id]" value="218" type="hidden">
+						  <input name="product_option[3][name]" value="Radio" type="hidden">
+						  <input name="product_option[3][option_id]" value="1" type="hidden">
+						  <input name="product_option[3][type]" value="radio" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required3">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[3][required]" id="input-required3" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																																													<div class="table-responsive">
+							<table id="option-value3" class="table table-striped table-bordered table-hover">
+							  <thead>
+								<tr>
+								  <td class="text-left">Option Value</td>
+								  <td class="text-right">Quantity</td>
+								  <td class="text-left">Subtract Stock</td>
+								  <td class="text-right">Price</td>
+								  <td class="text-right">Points</td>
+								  <td class="text-right">Weight</td>
+								  <td></td>
+								</tr>
+							  </thead>
+							  <tbody>
+															<tr id="option-value-row8">
+								  <td class="text-left"><select name="product_option[3][product_option_value][8][option_value_id]" class="form-control">
+																																			<option value="32" selected="selected">Small</option>
+																																			<option value="31">Medium</option>
+																																			<option value="43">Large</option>
+																																		  </select>
+									<input name="product_option[3][product_option_value][8][product_option_value_id]" value="5" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[3][product_option_value][8][quantity]" value="96" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[3][product_option_value][8][subtract]" class="form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][8][price_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][8][price]" value="10.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][8][points_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][8][points]" value="1" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][8][weight_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][8][weight]" value="10.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row8').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row9">
+								  <td class="text-left"><select name="product_option[3][product_option_value][9][option_value_id]" class="form-control">
+																																			<option value="32">Small</option>
+																																			<option value="31" selected="selected">Medium</option>
+																																			<option value="43">Large</option>
+																																		  </select>
+									<input name="product_option[3][product_option_value][9][product_option_value_id]" value="6" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[3][product_option_value][9][quantity]" value="146" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[3][product_option_value][9][subtract]" class="form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][9][price_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][9][price]" value="20.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][9][points_prefix]" class="form-control">
+																		<option value="+">+</option>
+																										  <option value="-" selected="selected">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][9][points]" value="2" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][9][weight_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][9][weight]" value="20.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row9').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																						<tr id="option-value-row10">
+								  <td class="text-left"><select name="product_option[3][product_option_value][10][option_value_id]" class="form-control">
+																																			<option value="32">Small</option>
+																																			<option value="31">Medium</option>
+																																			<option value="43" selected="selected">Large</option>
+																																		  </select>
+									<input name="product_option[3][product_option_value][10][product_option_value_id]" value="7" type="hidden"></td>
+								  <td class="text-right"><input name="product_option[3][product_option_value][10][quantity]" value="300" placeholder="Quantity" class="form-control" type="text"></td>
+								  <td class="text-left"><select name="product_option[3][product_option_value][10][subtract]" class="form-control">
+																		<option value="1" selected="selected">Yes</option>
+									  <option value="0">No</option>
+																	  </select></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][10][price_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][10][price]" value="30.0000" placeholder="Price" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][10][points_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][10][points]" value="3" placeholder="Points" class="form-control" type="text"></td>
+								  <td class="text-right"><select name="product_option[3][product_option_value][10][weight_prefix]" class="form-control">
+																		<option value="+" selected="selected">+</option>
+																										  <option value="-">-</option>
+																	  </select>
+									<input name="product_option[3][product_option_value][10][weight]" value="30.00000000" placeholder="Weight" class="form-control" type="text"></td>
+								  <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row10').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+								</tr>
+																					  </tbody>
+							  <tfoot>
+								<tr>
+								  <td colspan="6"></td>
+								  <td class="text-left"><button type="button" onclick="addOptionValue('3');" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Option Value"><i class="fa fa-plus-circle"></i></button></td>
+								</tr>
+							  </tfoot>
+							</table>
+						  </div>
+						  <select id="option-values3" style="display: none;">
+																			<option value="32">Small</option>
+													<option value="31">Medium</option>
+													<option value="43">Large</option>
+																		  </select>
+											  </div>
+																<div class="tab-pane" id="tab-option4">
+						  <input name="product_option[4][product_option_id]" value="208" type="hidden">
+						  <input name="product_option[4][name]" value="Text" type="hidden">
+						  <input name="product_option[4][option_id]" value="4" type="hidden">
+						  <input name="product_option[4][type]" value="text" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required4">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[4][required]" id="input-required4" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+												<div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-value4">Option Value</label>
+							<div class="col-sm-10">
+							  <input name="product_option[4][value]" value="test" placeholder="Option Value" id="input-value4" class="form-control" type="text">
+							</div>
+						  </div>
+																																												  </div>
+																<div class="tab-pane" id="tab-option5">
+						  <input name="product_option[5][product_option_id]" value="219" type="hidden">
+						  <input name="product_option[5][name]" value="Date" type="hidden">
+						  <input name="product_option[5][option_id]" value="8" type="hidden">
+						  <input name="product_option[5][type]" value="date" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required5">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[5][required]" id="input-required5" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																												  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-value5">Option Value</label>
+							<div class="col-sm-3">
+							  <div class="input-group date">
+								<input name="product_option[5][value]" value="2011-02-20" placeholder="Option Value" data-date-format="YYYY-MM-DD" id="input-value5" class="form-control" type="text">
+								<span class="input-group-btn">
+								<button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+								</span></div>
+							</div>
+						  </div>
+																												</div>
+																<div class="tab-pane" id="tab-option6">
+						  <input name="product_option[6][product_option_id]" value="222" type="hidden">
+						  <input name="product_option[6][name]" value="File" type="hidden">
+						  <input name="product_option[6][option_id]" value="7" type="hidden">
+						  <input name="product_option[6][type]" value="file" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required6">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[6][required]" id="input-required6" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																							<div class="form-group row" style="display: none;">
+							<label class="col-sm-2 control-label" for="input-value6">Option Value</label>
+							<div class="col-sm-10">
+							  <input name="product_option[6][value]" value="" placeholder="Option Value" id="input-value6" class="form-control" type="text">
+							</div>
+						  </div>
+																																	  </div>
+																<div class="tab-pane" id="tab-option7">
+						  <input name="product_option[7][product_option_id]" value="221" type="hidden">
+						  <input name="product_option[7][name]" value="Time" type="hidden">
+						  <input name="product_option[7][option_id]" value="9" type="hidden">
+						  <input name="product_option[7][type]" value="time" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required7">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[7][required]" id="input-required7" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																																		<div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-value7">Option Value</label>
+							<div class="col-sm-10">
+							  <div class="input-group time">
+								<input name="product_option[7][value]" value="22:25" placeholder="Option Value" data-date-format="HH:mm" id="input-value7" class="form-control" type="text">
+								<span class="input-group-btn">
+								<button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+								</span></div>
+							</div>
+						  </div>
+																						  </div>
+																<div class="tab-pane" id="tab-option8">
+						  <input name="product_option[8][product_option_id]" value="220" type="hidden">
+						  <input name="product_option[8][name]" value="Date &amp; Time" type="hidden">
+						  <input name="product_option[8][option_id]" value="10" type="hidden">
+						  <input name="product_option[8][type]" value="datetime" type="hidden">
+						  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-required8">Required</label>
+							<div class="col-sm-10">
+							  <select name="product_option[8][required]" id="input-required8" class="form-control">
+															<option value="1" selected="selected">Yes</option>
+								<option value="0">No</option>
+														  </select>
+							</div>
+						  </div>
+																																							  <div class="form-group row">
+							<label class="col-sm-2 control-label" for="input-value8">Option Value</label>
+							<div class="col-sm-10">
+							  <div class="input-group datetime">
+								<input name="product_option[8][value]" value="2011-02-20 22:25" placeholder="Option Value" data-date-format="YYYY-MM-DD HH:mm" id="input-value8" class="form-control" type="text">
+								<span class="input-group-btn">
+								<button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+								</span></div>
+							</div>
+						  </div>
+																	</div>
+															  </div>
+					</div>
+				  </div>
+				</div>
+			<div class="tab-pane" id="tab-recurring">
+				  <div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Recurring Profile</td>
+						  <td class="text-left">Customer Group</td>
+						  <td class="text-left"></td>
+						</tr>
+					  </thead>
+					  <tbody>
+															  </tbody>
+					  <tfoot>
+						<tr>
+						  <td colspan="2"></td>
+						  <td class="text-left"><button type="button" onclick="addRecurring()" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Recurring"><i class="fa fa-plus-circle"></i></button></td>
+						</tr>
+					  </tfoot>
+					</table>
+				  </div>
+				</div>
+			<div class="tab-pane" id="tab-discount">
+				  <div class="table-responsive">
+					<table id="discount" class="table table-striped table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Customer Group</td>
+						  <td class="text-right">Quantity</td>
+						  <td class="text-right">Priority</td>
+						  <td class="text-right">Price</td>
+						  <td class="text-left">Date Start</td>
+						  <td class="text-left">Date End</td>
+						  <td></td>
+						</tr>
+					  </thead>
+					  <tbody>
+																<tr id="discount-row0">
+						  <td class="text-left"><select name="product_discount[0][customer_group_id]" class="form-control">
+																				  <option value="1" selected="selected">Default</option>
+																				</select></td>
+						  <td class="text-right"><input name="product_discount[0][quantity]" value="10" placeholder="Quantity" class="form-control" type="text"></td>
+						  <td class="text-right"><input name="product_discount[0][priority]" value="1" placeholder="Priority" class="form-control" type="text"></td>
+						  <td class="text-right"><input name="product_discount[0][price]" value="88.0000" placeholder="Price" class="form-control" type="text"></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_discount[0][date_start]" value="" placeholder="Date Start" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_discount[0][date_end]" value="" placeholder="Date End" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left"><button type="button" onclick="$('#discount-row0').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+																<tr id="discount-row1">
+						  <td class="text-left"><select name="product_discount[1][customer_group_id]" class="form-control">
+																				  <option value="1" selected="selected">Default</option>
+																				</select></td>
+						  <td class="text-right"><input name="product_discount[1][quantity]" value="20" placeholder="Quantity" class="form-control" type="text"></td>
+						  <td class="text-right"><input name="product_discount[1][priority]" value="1" placeholder="Priority" class="form-control" type="text"></td>
+						  <td class="text-right"><input name="product_discount[1][price]" value="77.0000" placeholder="Price" class="form-control" type="text"></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_discount[1][date_start]" value="" placeholder="Date Start" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_discount[1][date_end]" value="" placeholder="Date End" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left"><button type="button" onclick="$('#discount-row1').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+																<tr id="discount-row2">
+						  <td class="text-left"><select name="product_discount[2][customer_group_id]" class="form-control">
+																				  <option value="1" selected="selected">Default</option>
+																				</select></td>
+						  <td class="text-right"><input name="product_discount[2][quantity]" value="30" placeholder="Quantity" class="form-control" type="text"></td>
+						  <td class="text-right"><input name="product_discount[2][priority]" value="1" placeholder="Priority" class="form-control" type="text"></td>
+						  <td class="text-right"><input name="product_discount[2][price]" value="66.0000" placeholder="Price" class="form-control" type="text"></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_discount[2][date_start]" value="" placeholder="Date Start" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_discount[2][date_end]" value="" placeholder="Date End" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left"><button type="button" onclick="$('#discount-row2').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+															  </tbody>
+					  <tfoot>
+						<tr>
+						  <td colspan="6"></td>
+						  <td class="text-left"><button type="button" onclick="addDiscount();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Discount"><i class="fa fa-plus-circle"></i></button></td>
+						</tr>
+					  </tfoot>
+					</table>
+				  </div>
+				</div>
+			<div class="tab-pane" id="tab-special">
+				  <div class="table-responsive">
+					<table id="special" class="table table-striped table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Customer Group</td>
+						  <td class="text-right">Priority</td>
+						  <td class="text-right">Price</td>
+						  <td class="text-left">Date Start</td>
+						  <td class="text-left">Date End</td>
+						  <td></td>
+						</tr>
+					  </thead>
+					  <tbody>
+																<tr id="special-row0">
+						  <td class="text-left"><select name="product_special[0][customer_group_id]" class="form-control">
+																				  <option value="1" selected="selected">Default</option>
+																				</select></td>
+						  <td class="text-right"><input name="product_special[0][priority]" value="1" placeholder="Priority" class="form-control" type="text"></td>
+						  <td class="text-right"><input name="product_special[0][price]" value="90.0000" placeholder="Price" class="form-control" type="text"></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_special[0][date_start]" value="" placeholder="Date Start" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left" style="width: 20%;"><div class="input-group date">
+							  <input name="product_special[0][date_end]" value="" placeholder="Date End" data-date-format="YYYY-MM-DD" class="form-control" type="text">
+							  <span class="input-group-btn">
+							  <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+							  </span></div></td>
+						  <td class="text-left"><button type="button" onclick="$('#special-row0').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+															  </tbody>
+					  <tfoot>
+						<tr>
+						  <td colspan="5"></td>
+						  <td class="text-left"><button type="button" onclick="addSpecial();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Special"><i class="fa fa-plus-circle"></i></button></td>
+						</tr>
+					  </tfoot>
+					</table>
+				  </div>
+				</div>
+			<div class="tab-pane" id="tab-image">
+				  <div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Image</td>
+						</tr>
+					  </thead>
+					  
+					  <tbody>
+						<tr>
+						  <td class="text-left"><a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="http://opencart2300.givan.ro/image/cache/catalog/product_images/42-109_main-100x100.jpg" alt="" title="" data-placeholder="http://opencart2300.givan.ro/image/cache/no_image-100x100.png"></a><input name="image" value="catalog/product_images/42-109_main.jpg" id="input-image" type="hidden"></td>
+					  </tr>
+					  </tbody>
+					</table>
+				  </div>
+				  <div class="table-responsive">
+					<table id="images" class="table table-striped table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Additional Images</td>
+						  <td class="text-right">Sort Order</td>
+						  <td></td>
+						</tr>
+					  </thead>
+					  <tbody>
+																<tr id="image-row0">
+						  <td class="text-left"><a href="" id="thumb-image0" data-toggle="image" class="img-thumbnail"><img src="http://opencart2300.givan.ro/image/cache/catalog/demo/canon_eos_5d_2-100x100.jpg" alt="" title="" data-placeholder="http://opencart2300.givan.ro/image/cache/no_image-100x100.png"></a> <label class="help">Enter video url to override image</label> <input name="product_image[0][image]" value="catalog/demo/canon_eos_5d_2.jpg" id="input-image0" type="text"></td>
+						  <td class="text-right"><input name="product_image[0][sort_order]" value="0" placeholder="Sort Order" class="form-control" type="text"></td>
+						  <td class="text-left"><button type="button" onclick="$('#image-row0').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+																<tr id="image-row1">
+						  <td class="text-left"><a href="" id="thumb-image1" data-toggle="image" class="img-thumbnail"><img src="http://opencart2300.givan.ro/image/cache/catalog/product_images/42_2407-100x100.jpg" alt="" title="" data-placeholder="http://opencart2300.givan.ro/image/cache/no_image-100x100.png"></a> <label class="help">Enter video url to override image</label> <input name="product_image[1][image]" value="catalog/product_images/42_2407.jpg" id="input-image1" type="text"></td>
+						  <td class="text-right"><input name="product_image[1][sort_order]" value="0" placeholder="Sort Order" class="form-control" type="text"></td>
+						  <td class="text-left"><button type="button" onclick="$('#image-row1').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+																<tr id="image-row2">
+						  <td class="text-left"><a href="" id="thumb-image2" data-toggle="image" class="img-thumbnail"><img src="http://opencart2300.givan.ro/image/cache/catalog/product_images/42_2408-100x100.jpg" alt="" title="" data-placeholder="http://opencart2300.givan.ro/image/cache/no_image-100x100.png"></a> <label class="help">Enter video url to override image</label> <input name="product_image[2][image]" value="catalog/product_images/42_2408.jpg" id="input-image2" type="text"></td>
+						  <td class="text-right"><input name="product_image[2][sort_order]" value="0" placeholder="Sort Order" class="form-control" type="text"></td>
+						  <td class="text-left"><button type="button" onclick="$('#image-row2').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+																<tr id="image-row3">
+						  <td class="text-left"><a href="" id="thumb-image3" data-toggle="image" class="img-thumbnail"><img src="http://opencart2300.givan.ro/image/cache/catalog/product_images/42_2409-100x100.jpg" alt="" title="" data-placeholder="http://opencart2300.givan.ro/image/cache/no_image-100x100.png"></a> <label class="help">Enter video url to override image</label> <input name="product_image[3][image]" value="catalog/product_images/42_2409.jpg" id="input-image3" type="text"></td>
+						  <td class="text-right"><input name="product_image[3][sort_order]" value="0" placeholder="Sort Order" class="form-control" type="text"></td>
+						  <td class="text-left"><button type="button" onclick="$('#image-row3').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+																<tr id="image-row4">
+						  <td class="text-left"><a href="" id="thumb-image4" data-toggle="image" class="img-thumbnail"><img src="http://opencart2300.givan.ro/image/cache/catalog/product_images/42_2410-100x100.jpg" alt="" title="" data-placeholder="http://opencart2300.givan.ro/image/cache/no_image-100x100.png"></a> <label class="help">Enter video url to override image</label> <input name="product_image[4][image]" value="catalog/product_images/42_2410.jpg" id="input-image4" type="text"></td>
+						  <td class="text-right"><input name="product_image[4][sort_order]" value="0" placeholder="Sort Order" class="form-control" type="text"></td>
+						  <td class="text-left"><button type="button" onclick="$('#image-row4').remove();" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-minus-circle"></i></button></td>
+						</tr>
+															  </tbody>
+					  <tfoot>
+						<tr>
+						  <td colspan="2"></td>
+						  <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Image"><i class="fa fa-plus-circle"></i></button></td>
+						</tr>
+					  </tfoot>
+					</table>
+				  </div>
+			</div>
+			<div class="tab-pane" id="tab-reward">
+				  <div class="form-group row">
+					<label class="col-sm-2 control-label" for="input-points"><span data-toggle="tooltip" title="" data-original-title="Number of points needed to buy this item. If you don't want this product to be purchased with points leave as 0.">Points</span></label>
+					<div class="col-sm-10">
+					  <input name="points" value="400" placeholder="Points" id="input-points" class="form-control" type="text">
+					</div>
+				  </div>
+				  <div class="table-responsive">
+					<table class="table table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Customer Group</td>
+						  <td class="text-right">Reward Points</td>
+						</tr>
+					  </thead>
+					  <tbody>
+											<tr>
+						  <td class="text-left">Default</td>
+						  <td class="text-right"><input name="product_reward[1][points]" value="100" class="form-control" type="text"></td>
+						</tr>
+										  </tbody>
+					</table>
+				  </div>
+			</div>
+			<div class="tab-pane" id="tab-design">
+				  <div class="table-responsive">
+					<table class="table table-bordered table-hover">
+					  <thead>
+						<tr>
+						  <td class="text-left">Stores</td>
+						  <td class="text-left">Layout Override</td>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+						  <td class="text-left">Default</td>
+						  <td class="text-left"><select name="product_layout[0]" class="form-control">
+							  <option value=""></option>
+																				  <option value="6">Account</option>
+																											<option value="10">Affiliate</option>
+																											<option value="99999">All pages</option>
+																											<option value="3">Category</option>
+																											<option value="7">Checkout</option>
+																											<option value="12">Compare</option>
+																											<option value="8">Contact</option>
+																											<option value="4">Default</option>
+																											<option value="1">Home</option>
+																											<option value="11">Information</option>
+																											<option value="5">Manufacturer</option>
+																											<option value="2">Product</option>
+																											<option value="13">Search</option>
+																											<option value="9">Sitemap</option>
+																				</select></td>
+						</tr>
+										  </tbody>
+					</table>
+				  </div>
+				</div>
+	  </div>
+	</form>
+	</div>
+	<div class="right-column flat">
+		
+		<div class="card">
+		  <div class="card-header">
+			Post options
+		  </div>
+		  <div class="card-block">
+			
+			
+			  <div class="form-group">
+				<label class="sr-only"><i class="ion-android-drafts"></i> Status</label>
+
+				 <div class="input-group">
+					<!-- div class="input-group-addon"><i class="ion-document"></i></div -->				
+						<select class="custom-select form-control"  placeholder="Status" name="post_status" data-post-status>
+						  <option value="publish">Published</option>
+						  <option value="draft">Draft</option>
+						  <option value="pending">Pending preview</option>
+						</select>
+					</div>
+			  </div>
+
+			  <div class="form-group">
+				<label class="sr-only">Visibility</label>
+				
+				 <div class="input-group">
+					<!-- div class="input-group-addon"><i class="ion-eye"></i></div-->				
+						<select class="custom-select form-control"  placeholder="Visibility" name="post_visibility"  data-post-visibility>
+						  <option value="public">Public</option>
+						  <option value="private">Private</option>
+						  <option value="password">Password protected</option>
+						</select>
+				</div>
+			  </div>
+			
+				  <label class="custom-control custom-radio">
+				  <input id="radio1" type="radio" class="custom-control-input" name="custom_date" value="false" checked>
+				  <span class="custom-control-label"></span>
+				  <span class="custom-control-description">Publish immediately</span>
+				</label>
+				<label class="custom-control custom-radio">
+				  <input id="radio2" type="radio" class="custom-control-input"  name="custom_date" value="true">
+				  <span class="custom-control-label"></span>
+				  <span class="custom-control-description">On choosen date</span>
+				</label>
+				  
+			  <div class="publish-date" style="display:none">
+				<label class="sr-only">Publish date</label>
+				 <div class="input-group" >
+					<input type="datetime-local" name="publish-date" class="form-control" placeholder="Publish date">
+					<div class="input-group-addon"><i class="la la-calendar-o"></i></div>				
+				</div>
+			  </div>		
+		  </div>
+		</div>
+		<br/>
+		<div class="card">
+		  <div class="card-header">
+			Categories
+		  </div>
+		  <div class="card-block">
+			
+			<ul class="list-unstyled" data-post-categories>
+				<li data-post-category>
+					<label class="custom-control custom-checkbox">
+					  <input type="checkbox" class="custom-control-input">
+					  <span class="custom-control-label"></span>
+					  <span class="custom-control-description" data-post-category-name>Fashion</span>
+					</label>
+				</li>
+				<li data-post-category>
+					<label class="custom-control custom-checkbox">
+					  <input type="checkbox" class="custom-control-input">
+					  <span class="custom-control-label"></span>
+					  <span class="custom-control-description" data-post-category-name>News</span>
+					</label>
+				</li>
+				<li data-post-category>
+					<label class="custom-control custom-checkbox">
+					  <input type="checkbox" class="custom-control-input">
+					  <span class="custom-control-label"></span>
+					  <span class="custom-control-description" data-post-category-name>Uncategorized</span>
+					</label>
+				</li>
+			
+			</ul>
+			
+			
+			<a href="#" class="btn btn-light btn-icon btn-sm"><i class="ion-image"></i>  Go somewhere</a>
+		  </div>
+		</div>
+		<br/>
+		<div class="card">
+		  <div class="card-header">
+			Tags
+		  </div>
+		  <div class="card-block">
+
+			  <div class="">
+				<label class="sr-only">Tags</label>
+				<input type="text" data-role="tagsinput" class="form-control" name="post_tags" placeholder="Comma separated tags" value="bla,gigi,das"/>
+			  </div>
+
+
+		  </div>
+		</div>
+		<br/>
+		<div class="card">
+		  <div class="card-header">
+			Featured Image
+		  </div>
+		  <div class="card-block">
+			<img src="" alt="Preview image" class="img-thumbnail mr-2">&nbsp;
+			<br/>
+			<button type="button" href="" data-toggle="tooltip" title="" class="btn btn-light btn-icon btn-sm"><i class="ion-image"></i> Set featured image</button>
+		  </div>
+		</div>
+	</div>	
+	</div>	
+
+	</form>
+</div>
+ </div>
+ 
+</div>
+ 
+</div>
+
+	<script data-validator-json=""></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="libs/js-storage/js.storage.min.js"></script>	
+    <script src="js/validator.js"></script>
+    <script src="js/main.js"></script>
+
+    
+    <!-- Bootstrap tagsInput field -->
+    <link href="libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    <script src="libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+
+    <!-- Bootstrap date range field -->
+    <link href="libs/bootstrap-daterange-picker/daterangepicker.css" rel="stylesheet">
+    <script src="libs/momentjs/moment.min.js"></script>
+    <script src="libs/bootstrap-daterange-picker/daterangepicker.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('input[type=datetime-local]').daterangepicker({
+					singleDatePicker: true,
+					timePicker: true,
+					timePicker24Hour: true,
+					locale: {
+						format: 'MM/DD/YYYY HH:mm'
+					}
+				});
+		});
+	</script> 
+	<script> 
+		$(function () {
+			jQuery("input[name=custom-date]").change(function() { 
+					jQuery(".publish-date").css("display", (this.value == "true")?"block":"none");
+				});
+		});
+	</script> 
+
+    <!-- Bootstrap tagsInput field -->
+    <link href="libs/trumbowyg/ui/trumbowyg.css" rel="stylesheet">
+    <script src="libs/trumbowyg/trumbowyg.min.js"></script>
+    <script>
+		$('textarea').trumbowyg({
+			
+		});
+		
+		//jQuery(".collapse").collapse('toggle');
+    </script>
+	
+
+    <!-- Bootstrap date time field 
+    <link href="libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <script src="libs/momentjs/moment.min.js"></script>
+    <script src="libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('input[type=datetime-local]').datetimepicker();
+		});
+	</script -->    
+
+  </body>
+</html>

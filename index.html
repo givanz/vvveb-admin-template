@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <base href="">
+    <title>Vvveb admin</title>
+
+
+    <link href="http://fonts.googleapis.com/css?family=Open Sans:400,600Comfortaa|Varela Round:400,600|Arimo:400,600,700|Poppins:400,600|Merriweather:400,300,300italic,700" rel="stylesheet" type="text/css">
+    
+    <link href="css/admin.css" rel="stylesheet">
+  </head>
+  <script>
+  var chartjs = {};
+  </script>
+
+  <body>
+
+
+    <div id="container">
+        <div class="sidebar">
+         
+			<div class="logo">
+				<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+				<div class="img"></div>
+				<!-- img src="img/logo-small.png" class="logo-small" -->
+
+				<a class="menu-toggle" href=""><i class="ion-navicon"></i></a>
+			</div>
+         
+			<nav class="navbar navbar-expand-sm">
+
+				<div class="logo">
+					<!-- h1 class="display-5"><a class="" href="#">M.</a></h1-->
+					<img src="img/logo.png">
+				</div>
+
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon ion-navicon"></span>
+				</button>
+				  
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					
+
+			  <ul class="nav navbar-nav flex-column" data-menu=""><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/" data-toggle="" data-target="#dashboard" data-menu-item-url="">
+						
+						<i class="ion-ios-pulse" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Dashboard</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="dashboard" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=editor" data-toggle="" data-target="#edit" data-menu-item-url="">
+						
+						<i class="ion-ios-color-wand-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Edit website</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="edit" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#content" data-menu-item-url="">
+						
+						<i class="ion-ios-photos-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Content</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade" aria-labelledby="Preview" id="content" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=posts" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Posts</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=post" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new Post</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Pages</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=page" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new page</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=category" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#ecommerce" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Ecommerce</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="ecommerce" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=orders" data-toggle="" data-target="#orders" data-menu-item-url="">
+						
+						<i class="ion-ios-cart-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Orders</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="orders" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#commerce" data-menu-item-url="">
+						
+						<i class="ion-ios-pricetag-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Products</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="commerce" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=products" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Products</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=product" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Add new product</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=categories" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Categories</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="/admin/?module=media" data-toggle="" data-target="#medialibrary" data-menu-item-url="">
+						
+						<i class="ion-ios-albums-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Media library</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="medialibrary" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link   heading" href="" data-toggle="" data-target="#configuration" data-menu-item-url="">
+						
+						<i class="" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Configuration</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="configuration" data-submenu="">					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="" data-toggle="collapse" data-target="#plugins" data-menu-item-url="">
+						
+						<i class="ion-ios-gear-outline" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Plugins</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="plugins" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=plugins" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Plugins</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=components" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Components</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=widgets" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Widgets</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=market" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Marketplace</a>
+						</li>					  </ul></li><li class="nav-item" data-menu-item="">
+					<a class="nav-link  " href="settings" data-toggle="collapse" data-target="#settings" data-menu-item-url="">
+						
+						<i class="ion-ios-settings" data-menu-item-icon=""></i>
+						<span class="title" data-menu-item-name="">Settings</span>
+					</a>
+					
+					
+					 <ul class="collapse sub-menu fade " aria-labelledby="Preview" id="settings" data-submenu=""><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=settings" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">General Settings</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=users" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Users 2</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=checkout" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Checkout &amp;amp; payments</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=shipping" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Shipping</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Email notifications</a>
+						</li><li class="nav-item" data-submenu-item="">
+						  <a href="/admin/?module=pages" class="nav-link" data-submenu-item-name="" data-submenu-item-url="">Discount coupons</a>
+						</li>					  </ul></li>			</ul></div>
+
+		  </nav> <!-- /navbar -->
+			<!-- table style="height: 50%;width: 100%;">
+				<tr><td style="text-align: center;vertical-align: bottom;"><img src="img/satchidananda.jpg" alt="Preview image" class="rounded-circle bg-gray mr-2" style="width:100px;height:100px;opacity: 0.8;border: 1px solid #ccc;padding: 3px;"></td></tr>
+			</table -->
+			<div style="position:absolute;bottom:0px;width:100%;" class="mb-3">
+			<i class="ion-ios-person-outline rounded-circle bg-light" style="width: 50px;display: inline-block;text-align: center;height: 50px;vertical-align: middle;font-size:32px;"></i>	
+				&ensp;
+				<span style="color:#999;font-size:11px;">Vasile Georgescu</span>
+			</div>
+        </div>
+
+
+        <div class="main">
+			
+
+    <div class="clearfix top-header">
+		<!-- ol class="breadcrumb float-xs-left">
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-home-outline"> Home</a></li>
+		  <li class="breadcrumb-item"><a href="#" class="ion-ios-cart-outline"> Ecommerce</a></li>
+		  <li class="breadcrumb-item active">Products</li>
+		</ol -->
+		
+		
+		
+		<div class="btn-group float-right user-dropdown">
+		  <button type="button" class="btn btn-link dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			 <i class="ion-ios-person-outline img-circle"></i> littlebubu.ro
+		  </button>
+		  <div class="dropdown-menu dropdown-menu-right">
+			<a class="dropdown-item" href="#">Action</a>
+			<a class="dropdown-item" href="#">Another action</a>
+			<a class="dropdown-item" href="#">Something else here</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Separated link</a>
+		  </div>
+		</div>
+	</div>
+	
+
+		<div class="p-4">
+		
+                    <div class="grid-stack">
+                        <div class="grid-stack-item"
+                             data-gs-x="0" data-gs-y="0"
+                             data-gs-width="3" data-gs-height="2">
+                            <div class="grid-stack-item-content">
+								<div class="card">
+								  <div class="card-header">Orders</div>
+								  <div class="card-body">
+									<h5 class="card-title">Total orders</h5>
+									<p class="card-text">
+									<div class="float-left">
+										<i class="la la-shopping-cart icon text-primary"></i>
+									</div>
+										<h3 class="number float-right px-2">5</h3>
+									</p>
+								  </div>
+								</div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item"
+                             data-gs-x="3" data-gs-y="0"
+                             data-gs-width="3" data-gs-height="2">
+                            <div class="grid-stack-item-content">
+								<div class="card">
+									  <div class="card-header">Customers</div>
+									  <div class="card-body">
+										<h5 class="card-title">Total customers</h5>
+										<p class="card-text">
+										<div class="float-left">
+											<i class="la la-user icon text-success"></i>
+										</div>
+											<h3 class="number float-right px-2">37</h3>
+										</p>
+									  </div>
+								</div>
+                            </div>                        
+						</div>
+                        <div class="grid-stack-item"
+                             data-gs-x="6" data-gs-y="0"
+                             data-gs-width="3" data-gs-height="2">
+                            <div class="grid-stack-item-content">
+								<div class="card">
+									  <div class="card-header">Comments</div>
+									  <div class="card-body">
+										<h5 class="card-title">Total Comments</h5>
+										<p class="card-text"></p>
+										<div class="float-left">
+										<i class="la la-comments-o icon text-info"></i>
+										</div>
+											<h3 class="number float-right px-2">5</h3>
+									  </div>
+								</div>
+                            </div>  
+                        </div>
+                        <div class="grid-stack-item"
+                             data-gs-x="9" data-gs-y="0"
+                             data-gs-width="3" data-gs-height="2">
+                            <div class="grid-stack-item-content">
+								<div class="card">
+									  <div class="card-header">Reviews</div>
+										<div class="card-body">
+										<h5 class="card-title">Total reviews</h5>
+										<p class="card-text">
+										<div class="float-left">
+										<i class="la la-star-o icon text-warning"></i>
+										</div>
+											<h3 class="number float-right px-2">0</h3>
+										</p>
+									  </div>
+								</div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item"
+                             data-gs-x="0" data-gs-y="2"
+                             data-gs-width="6" data-gs-height="4">
+                            <div class="grid-stack-item-content">
+                                <div  class="card">
+                                    <div class="card-header">
+                                        Bar chart
+                                    </div>
+                                    <div class="card-body">
+                                        
+										<div class="chartjs" data-chartjs="orders_customers" style="height:100%">
+											<canvas></canvas>
+										</div>
+										<script>
+										chartjs['orders_customers'] = {
+												type: 'line',
+												data: {
+													labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+													datasets: [
+													{
+														label: 'Orders',
+														data: [12, 19, 3, 5, 2, 3],
+														fill: true,
+														borderColor:'rgba(255, 99, 132, 0.5)',
+														backgroundColor:'rgba(255, 99, 132, 0.2)',
+													}, {
+														label: 'Customers',
+														fill: true,
+														data: [3, 15, 7, 4, 19, 12],
+														borderColor: 'rgba(54, 162, 235, 0.5)',
+														backgroundColor: 'rgba(54, 162, 235, 0.2)',
+													}]
+												},
+											   options: {
+													maintainAspectRatio: false,
+													responsive: true,
+													legend: {
+														position: 'bottom',
+													},
+													title: {
+														display: true,
+														//text: 'Sales'
+													},
+													tooltips: {
+														mode: 'index'
+													},
+													scales: {
+														xAxes: [{
+															display: true,
+															scaleLabel: {
+																display: true
+															}
+														}],
+														yAxes: [{
+															display: true,
+															scaleLabel: {
+																display: true,
+																//labelString: 'Sales'
+															},
+														}]
+													}
+											   }
+										};
+										</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item"
+                             data-gs-x="6" data-gs-y="2"
+                             data-gs-width="6" data-gs-height="4">
+                            <div class="grid-stack-item-content">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Line chart
+                                    </div>
+                                    <div class="card-body">
+                                        
+										<div class="chartjs" data-chartjs="sales"  style="height:100%">
+											<canvas></canvas>
+										</div>
+										<script>
+										chartjs['sales'] = {
+												type: 'line',
+												data: {
+													labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+													datasets: [
+													{
+														label: 'Orders',
+														data: [12, 19, 3, 5, 2, 3],
+														fill: true,
+														borderColor:'rgba(255, 99, 132, 0.5)',
+														backgroundColor:'rgba(255, 99, 132, 0.2)',
+													}, {
+														label: 'Customers',
+														fill: true,
+														data: [3, 15, 7, 4, 19, 12],
+														borderColor: 'rgba(54, 162, 235, 0.5)',
+														backgroundColor: 'rgba(54, 162, 235, 0.2)',
+													}]
+												},
+											   options: {
+													maintainAspectRatio: false,
+													responsive: true,
+													legend: {
+														position: 'bottom',
+													},
+													title: {
+														display: true,
+														//text: 'Sales'
+													},
+													tooltips: {
+														mode: 'index'
+													},
+													scales: {
+														xAxes: [{
+															display: true,
+															scaleLabel: {
+																display: true
+															}
+														}],
+														yAxes: [{
+															display: true,
+															scaleLabel: {
+																display: true,
+																//labelString: 'Sales'
+															},
+														}]
+													}
+											   }
+										};
+										</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+						
+                        <div class="grid-stack-item"
+                             data-gs-x="0" data-gs-y="12"
+                             data-gs-width="6" data-gs-height="4">
+                            <div class="grid-stack-item-content">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Latest orders
+                                    </div>
+                                    <div class="card-block " data-height="320">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th width="1">#</th>
+                                                <th>Customer</th>
+                                                <th>Status</th>
+                                                <th>Date added</th>
+                                                <th>Total</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+												<tr>
+												  <td scope="row" class="text-right">1</td>
+												  <td width="100">John Doe</td>
+												  <td>Pending</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right">$1,005.00</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+												<tr>
+												  <td scope="row" class="text-right">1</td>
+												  <td width="100">John Doe</td>
+												  <td>Pending</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right">$1,005.00</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>												
+												<tr>
+												  <td scope="row" class="text-right">1</td>
+												  <td width="100">John Doe</td>
+												  <td>Pending</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right">$1,005.00</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item"
+                             data-gs-x="6" data-gs-y="12"
+                             data-gs-width="3" data-gs-height="4">
+                            <div class="grid-stack-item-content">
+                               
+							    <div class="card">
+                                    <div class="card-header">
+                                        Top products sales
+                                    </div>
+                                    <div class="card-block " data-height="320">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Quantity</th>
+                                                <th>Trend</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>5</td>
+												  <td>31/05/2018</td>
+												</tr>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>5</td>
+												  <td>31/05/2018</td>
+												</tr>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>5</td>
+												  <td>31/05/2018</td>
+												</tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+							   
+                            </div>
+                        </div>
+                        <div class="grid-stack-item"
+                             data-gs-x="9" data-gs-y="12"
+                             data-gs-width="3" data-gs-height="4">
+                            <div class="grid-stack-item-content">
+
+								<div class="card">
+                                    <div class="card-header">
+                                        New customers
+                                    </div>
+                                    <div class="card-block " data-height="320">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>Customer</th>
+                                                <th>Date joined</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+												<tr>
+												  <td width="100">John Doe</td>
+												  <td>31/05/2018</td>
+												  <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="View"><i class="la la-hand-pointer-o"></i></a></td>
+												</tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+		 
+		</div>
+	</div>
+	
+
+
+	</div>
+    </div>
+
+	<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack-extra.min.css">
+    <link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">
+	<script src="libs/lodash/lodash.js"></script>
+	<script src="libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="libs/gridstack/gridstack.min.js"></script>
+	<script src="libs/gridstack/gridstack.jQueryUI.min.js"></script>
+	<script src="libs/js-storage/js.storage.min.js"></script>	
+	<script id="chartjs-script" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+	
+	<script type="text/javascript">
+	$(function () {
+		var options = {
+			cell_height: 80,
+			vertical_margin: 10
+		};
+		$('.grid-stack').gridstack(options);
+	});
+	</script>
+	<script>
+		$(document).ready(function() {
+			chartjs_instance = {};
+			$(".chartjs").each(function () {
+				
+				ctx = $("canvas", this).get(0).getContext("2d");
+				chartjs_instance[this.dataset.chartjs] = new Chart(ctx, chartjs[this.dataset.chartjs]);
+			});
+		});
+	</script>										
+  </body>
+</html>
+
+
+
+
+
+
+
