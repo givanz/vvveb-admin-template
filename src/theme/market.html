@@ -1,0 +1,327 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Themes","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+				
+		<div class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-copy-outline"></i>&ensp;
+					<span>Themes</span>
+				</h4>
+			</div>
+			<!--
+			 <a href data-v-url-params='{"module":"theme/market"}' 
+					class="btn btn-outline-secondary btn-icon ms-1" data-bs-toggle="collapse" data-bs-target=".upload-collapse" > 
+					<i class="la la-arrow-up"></i> Upload theme
+			</a>
+			-->
+			 <!-- a href data-v-url-params='{"module":"product/product"}' 
+					class="btn btn-primary btn-icon ms-1">
+				<i class="icon-add-circle-outline"></i> Install theme
+			</a -->
+		</div>
+
+					
+<div class="themes" id="main-content" >
+    
+    @@include('../_includes/upload-form.html')
+    
+    <form action="" method="post">		
+    
+		@@include('../_includes/notifications.html')
+                                                                            
+             <div class="list clearfix" data-v-themes>
+                 
+                 
+                    <div class="list-card" data-v-theme>
+                        <!-- Card-->
+                        <div class="card">
+                            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
+                            <div class="card-body">
+                                <div class="info">
+                                    <a href="#" target="_blank" data-v-theme-homepage><h5 class="card-title" data-v-theme-name>Theme name</h5></a>
+                                    by <h6 class="card-subtitle mb-2 text-muted d-inline" data-v-theme-author>Author</h6>					
+                                </div>
+								<!--
+                                <div class="buttons">
+								
+                                    
+									
+									<button class="btn btn-primary" title="Install theme" data-v-vvveb-action="themes.install" data-slug="landing" data-market="vvveb">
+										<span class="loading d-none">
+										  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+										  <span>Downloading </span> ... </span>
+
+										<span class="button-text">
+										  <i class="icon-color-wand-outline"></i> <span>Install</span>
+										</span>				
+									</button>
+				
+
+                                </div>
+								-->
+                            </div>
+                              <div class="card-footer text-muted">
+									<div class="float-start">
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-copy-outline"></i>
+											<span>Theme details</span>
+										</a>
+										
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-eye-outline"></i>
+											<span>Preview</span>
+										</a>
+                        
+									</div>   
+									<div class="float-end">
+									
+
+										<a data-v-if-not="theme.installed" title="Install theme" data-v-vvveb-action2="themes.install" data-slug="landing" data-market="vvveb" <button data-v-if-not="plugin.installed" class="btn btn-primary btn-sm" title="Install theme" data-slug="landing" data-market="vvveb" data-v-theme-install-url>
+											<span class="loading d-none">
+											  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+											  <span>Downloading </span> ... </span>
+
+											<span class="button-text">
+											  <i class="icon-color-wand-outline"></i> <span>Install</span>
+											</span>				
+										</a>
+				   
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm border" disabled>
+											<i class="icon-color-wand-outline"></i> <span>Installed</span>
+										</button>
+
+									</div>   
+									
+             
+                              </div>                
+                        </div>
+                    </div>
+                                     
+                    <div class="list-card" data-v-theme>
+                        <!-- Card-->
+                        <div class="card">
+                            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
+                            <div class="card-body">
+                                <div class="info">
+                                    <a href="#" target="_blank" data-v-theme-homepage><h5 class="card-title" data-v-theme-name>Theme name</h5></a>
+                                    by <h6 class="card-subtitle mb-2 text-muted d-inline" data-v-theme-author>Author</h6>					
+                                </div>
+								<!--
+                                <div class="buttons">
+								
+                                    
+									
+									<button class="btn btn-primary" title="Install theme" data-v-vvveb-action="themes.install" data-slug="landing" data-market="vvveb">
+										<span class="loading d-none">
+										  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+										  <span>Downloading </span> ... </span>
+
+										<span class="button-text">
+										  <i class="icon-color-wand-outline"></i> <span>Install</span>
+										</span>				
+									</button>
+				
+
+                                </div>
+								-->
+                            </div>
+                              <div class="card-footer text-muted">
+									<div class="float-start">
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-copy-outline"></i>
+											<span>Theme details</span>
+										</a>
+										
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-eye-outline"></i>
+											<span>Preview</span>
+										</a>
+                        
+									</div>   
+									<div class="float-end">
+									
+
+										<a data-v-if-not="theme.installed" title="Install theme" data-v-vvveb-action2="themes.install" data-slug="landing" data-market="vvveb" <button data-v-if-not="plugin.installed" class="btn btn-primary btn-sm" title="Install theme" data-slug="landing" data-market="vvveb" data-v-theme-install-url>
+											<span class="loading d-none">
+											  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+											  <span>Downloading </span> ... </span>
+
+											<span class="button-text">
+											  <i class="icon-color-wand-outline"></i> <span>Install</span>
+											</span>				
+										</a>
+				   
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm border" disabled>
+											<i class="icon-color-wand-outline"></i> <span>Installed</span>
+										</button>
+
+									</div>   
+									
+             
+                              </div>                
+                        </div>
+                    </div>
+                                     
+                    <div class="list-card" data-v-theme>
+                        <!-- Card-->
+                        <div class="card">
+                            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
+                            <div class="card-body">
+                                <div class="info">
+                                    <a href="#" target="_blank" data-v-theme-homepage><h5 class="card-title" data-v-theme-name>Theme name</h5></a>
+                                    by <h6 class="card-subtitle mb-2 text-muted d-inline" data-v-theme-author>Author</h6>					
+                                </div>
+								<!--
+                                <div class="buttons">
+								
+                                    
+									
+									<button class="btn btn-primary" title="Install theme" data-v-vvveb-action="themes.install" data-slug="landing" data-market="vvveb">
+										<span class="loading d-none">
+										  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+										  <span>Downloading </span> ... </span>
+
+										<span class="button-text">
+										  <i class="icon-color-wand-outline"></i> <span>Install</span>
+										</span>				
+									</button>
+				
+
+                                </div>
+								-->
+                            </div>
+                              <div class="card-footer text-muted">
+									<div class="float-start">
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-copy-outline"></i>
+											<span>Theme details</span>
+										</a>
+										
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-eye-outline"></i>
+											<span>Preview</span>
+										</a>
+                        
+									</div>   
+									<div class="float-end">
+									
+
+										<a data-v-if-not="theme.installed" title="Install theme" data-v-vvveb-action2="themes.install" data-slug="landing" data-market="vvveb" <button data-v-if-not="plugin.installed" class="btn btn-primary btn-sm" title="Install theme" data-slug="landing" data-market="vvveb" data-v-theme-install-url>
+											<span class="loading d-none">
+											  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+											  <span>Downloading </span> ... </span>
+
+											<span class="button-text">
+											  <i class="icon-color-wand-outline"></i> <span>Install</span>
+											</span>				
+										</a>
+				   
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm border" disabled>
+											<i class="icon-color-wand-outline"></i> <span>Installed</span>
+										</button>
+
+									</div>   
+									
+             
+                              </div>                
+                        </div>
+                    </div>
+                                     
+                    <div class="list-card" data-v-theme>
+                        <!-- Card-->
+                        <div class="card">
+                            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
+                            <div class="card-body">
+                                <div class="info">
+                                    <a href="#" target="_blank" data-v-theme-homepage><h5 class="card-title" data-v-theme-name>Theme name</h5></a>
+                                    by <h6 class="card-subtitle mb-2 text-muted d-inline" data-v-theme-author>Author</h6>					
+                                </div>
+								<!--
+                                <div class="buttons">
+								
+                                    
+									
+									<button class="btn btn-primary" title="Install theme" data-v-vvveb-action="themes.install" data-slug="landing" data-market="vvveb">
+										<span class="loading d-none">
+										  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+										  <span>Downloading </span> ... </span>
+
+										<span class="button-text">
+										  <i class="icon-color-wand-outline"></i> <span>Install</span>
+										</span>				
+									</button>
+				
+
+                                </div>
+								-->
+                            </div>
+                              <div class="card-footer text-muted">
+									<div class="float-start">
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-copy-outline"></i>
+											<span>Theme details</span>
+										</a>
+										
+										<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-url>
+											<i class="icon-eye-outline"></i>
+											<span>Preview</span>
+										</a>
+                        
+									</div>   
+									<div class="float-end">
+									
+
+										<a data-v-if-not="theme.installed" title="Install theme" data-v-vvveb-action2="themes.install" data-slug="landing" data-market="vvveb" <button data-v-if-not="plugin.installed" class="btn btn-primary btn-sm" title="Install theme" data-slug="landing" data-market="vvveb" data-v-theme-install-url>
+											<span class="loading d-none">
+											  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+											  <span>Downloading </span> ... </span>
+
+											<span class="button-text">
+											  <i class="icon-color-wand-outline"></i> <span>Install</span>
+											</span>				
+										</a>
+				   
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm border" disabled>
+											<i class="icon-color-wand-outline"></i> <span>Installed</span>
+										</button>
+
+									</div>   
+									
+             
+                              </div>                
+                        </div>
+                    </div>
+                    
+        
+            </div>
+
+    					
+              <div class="bottom clearfix mb-3">
+				<div class="float-start"></div>
+					<div class="float-end">
+				
+						@@include('../_includes/pagination.html')
+
+					</div>
+
+                    </div>
+                    
+                </form>
+           </div>
+	</div>
+
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+@@include('../_includes/footer.html')

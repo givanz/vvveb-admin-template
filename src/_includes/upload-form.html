@@ -1,0 +1,10 @@
+<form id="upload" method="post" enctype="multipart/form-data"class="upload-collapse collapse">
+	<input type="hidden" name="action" value="upload">
+	<div>
+		<h3>Drop or choose files to upload</h3>
+
+		<input type="file" name="file"  onchange="upload.submit()"  @@if (typeof accept !== 'undefined') {accept="@@accept"} @@if (typeof  multiple !== 'undefined') { multiple}>
+		
+		<div class="status"></div>
+	</div>
+</form>

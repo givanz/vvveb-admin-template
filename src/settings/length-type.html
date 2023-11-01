@@ -1,0 +1,75 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Length type","scripts":"","base_href":"../"})
+
+<body class="length_type">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-length_type>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-people-outline"></i>&ensp;
+						<span>Length type</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=settings/length-types" title="Length type list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Length type list</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="length_type_id" data-v-length_type-length_type_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="length_type[name]" maxlength="32" data-v-length_type-name required>
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-unit" class="col-sm-2 col-form-label">Unit</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-unit" placeholder="Unit" name="length_type[unit]" maxlength="4" data-v-length_type-unit required>
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-value" class="col-sm-2 col-form-label">Value</label>
+					<div class="col-sm-10">
+					  <input type="number" step="0.00000001" min="0" class="form-control" id="input-value" placeholder="Value" name="length_type[value]" data-v-length_type-value required>
+					</div>
+				 </div>		 
+
+		
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html')

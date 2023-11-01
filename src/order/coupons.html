@@ -1,0 +1,189 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Coupons","scripts":"","base_href":"../"})
+
+<body class="coupon">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+	
+        <div id="content">
+            <div class="actions">
+				
+				<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-pricetags-outline"></i>&ensp;
+						<span>Coupons</span>
+					</h4>
+				</div>
+				
+				<div class="btns">
+					 <a href data-v-url-params='{"module":"order/coupon"}' 
+							class="btn btn-primary btn-icon ms-1">
+						<i class="icon-add-circle-outline"></i> <span>Add coupon</span>
+					</a>
+				</div>
+            </div>
+
+            <div id="main-content">
+                @@include('../_includes/notifications.html')
+
+                <div class="coupon card-block">
+                    <form action="" method="post">
+						
+						<div class="bulk-actions px-2 mb-2" style="display:none">
+						   <button type="submit" name="action" value="delete" aria-expanded="false" 
+									title="Delete selected"
+									class="btn btn-outline-secondary bg-body-tertiary text-danger">
+								<i class="icon-trash-outline"></i> Delete selected
+							</button>
+						</div>
+						
+                        <div class="table-responsive">
+                        <table class="table table-hover middle-align" data-v-coupon>
+
+                            <thead>
+                            <tr>
+                                <th class="col-cb">
+                                    <div class="checkbox_outer">
+
+                                        <label class="form-check">
+                                            <input type="checkbox" class="form-check-input" value="4"
+                                                   name="coupon[]"
+                                                   data-v-vvveb-action="table.bulkSelect">
+                                            <span class="form-check-label"></span>
+                                            <span class="custom-control-description">&nbsp;</span>
+                                        </label>
+
+
+                                    </div>
+                                </th>
+								
+                                <th class="coupon">
+									<i class="icon-cube-outline"></i>&ensp;<span>Name</span>
+								</th>
+
+                                <th class="code text-center">
+									<i class="icon-cube-outline"></i>&ensp;<span>Code</span>
+								</th>
+								
+								<th class="discount text-center">
+									<i class="icon-cube-outline"></i>&ensp;<span>Discount</span>
+								</th>
+
+								<th class="type text-center">
+									<i class="icon-cube-outline"></i>&ensp;<span>Type</span>
+								</th>
+
+                                <th class="free_shipping text-center">
+									<i class="icon-cube-outline"></i>&ensp;<span>Free Shipping</span>
+								</th>                                
+								
+                                <th class="status text-center">
+									<i class="icon-cube-outline"></i>&ensp;<span>Status</span>
+								</th>
+
+                                <th class="actions text-center" style="width:150px">
+									<i class="la la-edit"></i>&ensp;<span>Actions</span>
+								</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="coupon" data-v-coupon>
+                                <td class="checkbox">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input" value="4" name="coupon_id[]" data-v-vvveb-action="table.selectRow" data-v-coupon-coupon_id>
+                                        <span class="form-check-label"></span>
+                                        <span class="custom-control-description">&nbsp;</span>
+                                    </label>
+
+                                </td>
+							
+                                <td class="coupon position-relative">
+                                    <a href="/admin?module=coupon&amp;action=coupon&amp;id=4" data-v-coupon-url><span data-v-coupon-name>Coupon</span></a>
+                                </td>
+														
+								<td class="code" style="width:200px;text-align:center;">
+                                    <span  class="badge bg-light text-body" data-v-coupon-code>discount10</span>
+                                </td>
+
+								<td class="discount" style="width:200px;text-align:center;">
+                                    <span data-v-coupon-discount>10</span>
+									<span data-v-if="coupon.type = 'P'">%</span>
+                                </td>
+							
+								<td style="width:200px;text-align:center;">
+									<span class="price badge small bg-warning-subtle text-dark" data-v-if="coupon.type = 'P'"><span>Percentage</span></span>
+									<span class="price badge small bg-info-subtle text-dark" data-v-if="coupon.type = 'F'"><span>Fixed</span></span>
+                                </td>		
+								
+								<td style="width:200px;text-align:center;">
+									<span class="price badge small bg-success-subtle text-dark" data-v-if="coupon.free_shipping = 1"><span>Yes</span></span>
+									<span class="price badge small bg-body-tertiary text-muted" data-v-if="coupon.free_shipping = 0"><span>No</span></span>
+                                </td>		
+								
+								
+								<td style="width:200px;text-align:center;">
+									<span class="price badge small bg-success" data-v-if="coupon.status = 1"><span>Active</span></span>
+									<span class="price badge small bg-body-tertiary text-muted" data-v-if="coupon.status = 0"><span>Disabled</span></span>
+                                </td>		
+						
+
+                                <td class="actions" style="width:200px;">
+
+									<div class="btn-group">
+										<a type="button" class="btn btn-outline-secondary" data-v-coupon-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+											
+											data-bs-toggle="dropdown" 
+											aria-expanded="false" 
+											data-bs-reference="parent">
+											
+										  <span class="visually-hidden">Toggle primary</span>
+										</button>
+										<ul class="dropdown-menu">
+
+										  <li><a class="dropdown-item text-danger" data-v-coupon-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+										</ul>
+									 </div>
+
+                                </td>
+                            </tr>
+							<tr data-v-if-not="this.count > 0">
+								<td colspan="100">
+									<div class="text-center p-4 bg-body-tertiary border">
+										<div>
+											<i class="icon-pricetags-outline fs-1 mb-2"></i>
+											<div class="mt-3">No coupon to display!</div>
+										</div>
+
+										<a href data-v-url-params='{"module":"order/coupon"}' 
+												class="btn btn-primary btn-icon mt-3">
+											<i class="icon-add-circle-outline"></i> <span>Add coupon</span>
+										</a>
+									</div>
+								</td>
+							</tr>
+                            </tbody>
+                        </table>
+                        </div>
+
+						<div class="bottom clearfix">
+							<div class="float-start"></div>
+							<div class="float-end">
+								@@include('../_includes/pagination.html')
+							</div>
+		                </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html')

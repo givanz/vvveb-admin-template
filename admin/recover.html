@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <base href="../">
+
+  <title>Vvveb - Recover password</title>
+
+
+
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+
+
+<body class="login recover">
+  <div class="d-flex align-items-center justify-content-center h-100">
+
+    <div class="login-container">
+      <!-- Add class "fade-in-effect" for login form effect -->
+
+      <form method="post" role="form" id="login" class="login-form fade-in-effect" enctype="multipart/form-data" action="/admin?module=user/login">
+        <input type="hidden" name="csrf" data-v-csrf>
+        <div class="logo-content">
+          <a href="//www.vvveb.com" target="blank">
+            <img src="img/logom.png" />
+          </a>
+        </div>
+        <div class="login-form-content">
+          <div class="error alert alert-danger mb-3" id="errors" data-v-errors>
+            <div data-v-error>
+              <span data-v-error-text> Can't connect to database </span>
+            </div>
+          </div>
+          <div class="error alert alert-success mb-3" id="messages" data-v-messages>
+            <div data-v-message>
+              <span class="text-success"> &#10006; </span>
+              <span data-v-message-text> Login succesfull! </span>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label>Username or email</label>
+            <input type="text" class="form-control" name="user" id="username" autocomplete="off" required />
+          </div>
+
+          <div class="mb-4">
+            <label>Password</label>
+            <div class="input-group">
+              <input type="password" minlength="4" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
+              <!-- div class="input-group-append">
+							<button class="btn btn-light btn-sm py-0 btn-toggle" type="button" onclick="togglePasswordInput(this)">&#x1f441;</button>
+						  </div -->
+            </div>
+          </div>
+
+          <div class="mb-4 mt-4">
+            <button type="submit" class="btn btn-primary btn-icon w-100"> Send reset link <i class="icon-chevron-forward-outline float-end ms-2"></i>
+            </button>
+          </div>
+          <div class="login-footer ">
+            <!-- div class="info-links">
+							<a href="#" class="text-muted"><small>ToS</small></a> -
+							<a href="#" class="text-muted"><small>Privacy Policy</small></a>
+						</div -->
+          </div>
+        </div>
+      </form>
+      <!-- a class="d-block m-3" href="/admin?module=recover" >Forgot your password?</a -->
+    </div>
+  </div>
+
+
+  <script>
+	function togglePasswordInput(element)
+	{
+		var password = document.getElementById("password");
+		if (password.type == "password") {
+			password.type = "text"; 
+			element.innerHTML = "&#128683;";
+		} else {
+			password.type = "password";
+			element.innerHTML = "&#x1f441;";
+		}
+	}
+	</script>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title" id="heartBeatLogin">
+            <h5>Session has expired</h5>
+            <span>Login to resume your work</span>
+          </span>
+
+          <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- save toast -->
+  <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header text-white">
+        <strong class="me-auto">Page save</strong>
+        <!-- <small class="badge bg-success">status</small> -->
+        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body ">
+        <div class="flex-grow-1">
+          <div class="message">Elements saved!
+            <div>Template backup was saved!</div>
+            <div>Template was saved!</div>
+          </div>
+          <div>
+            <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

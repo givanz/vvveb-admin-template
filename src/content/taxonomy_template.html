@@ -1,0 +1,59 @@
+<!-- languages -->  
+
+<ul class="nav nav-tabs language-nav" data-v-languages="taxonomy">
+  <li class="nav-item" data-v-language>
+    <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+      <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
+      <span data-v-language-lang-name></span>
+    </a>
+  </li>
+</ul>		
+
+<div class="tab-content" data-v-languages="taxonomy" style="clear:both">
+  <div class="tab-pane" id="language1" data-v-language data-v-language-id>
+
+
+    <input name="taxonomy_content[1][language_id]" type="hidden" data-v-taxonomy-content-language_id>
+    <div class="mb-3 required">
+      <label class="form-label">Title</label>
+      <input name="taxonomy_content[1][name]" value="" placeholder="Content" class="form-control" type="text" data-v-language-name required />
+    </div>
+
+
+    <div class="required float-end">
+      <label class="form-label" for="input-name1">Category Url</label>
+      <a href="" target="_blank" data-v-url>url</a>
+    </div>
+
+    <div class="mb-3 required">
+      <label class="form-label">Slug</label>
+      <div>
+        <input name="taxonomy_content[1][slug]" value="slug" placeholder="Name" class="form-control" type="text" data-v-language-slug required />
+      </div>
+    </div>
+
+    <div class="mb-3 required">
+      <label class="form-label">Meta title</label>
+      <div>
+        <input name="taxonomy_content[1][meta_title]" value="slug" placeholder="Name" class="form-control" type="text" data-v-language-meta_title required />
+      </div>
+    </div>
+    
+    <div class="mb-3 required">
+      <label class="form-label">Meta description</label>
+      <div>
+        <input name="taxonomy_content[1][meta_description]" value="slug" placeholder="Name" class="form-control" type="text" data-v-language-meta_description required />
+      </div>
+    </div>		
+
+    <div class="mb-3 required">
+      <label class="form-label">Meta keywords</label>
+      <div>
+        <input name="taxonomy_content[1][meta_keywords]" value="slug" placeholder="Name" class="form-control" type="text" data-v-language-meta_keywords required />
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- languages end -->

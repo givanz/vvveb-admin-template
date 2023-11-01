@@ -1,0 +1,156 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Media","scripts":'<link href="libs/media/media.css" rel="stylesheet">',"base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+       @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+			
+
+		<div id="content" class="p-4">
+		
+			<div id="MediaModal"
+			
+				data-target-input="#featured-image-input"
+				data-target-thumb="#featured-image-thumb" 
+				data-type="multiple">
+			
+					<div class="filemanager">
+
+						<div class="top-right d-flex justify-content-between">
+                             
+                            <div class="align-left">          
+								<div class="breadcrumbs"></div>
+							</div>
+                                       
+                                   
+                            <div class="align-right">       
+								<div class="bulk-actions px-2" style="display:none">
+									<!--
+								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+											aria-controls="filters" title="Delete selected"
+											class="btn btn-primary">
+										<i class="icon-create-outline"></i> Edit selected
+									</button>
+									-->
+								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+											aria-controls="filters" title="Delete selected"
+											class="btn btn-outline-secondary bg-body-tertiary text-danger">
+										<i class="icon-trash-outline"></i> Delete selected
+									</button>
+								
+								</div>
+            
+								<div class="search">
+									<input type="search" id="media-search-input" placeholder="Find a file.." />
+								</div>
+								
+								<button class="btn btn-outline-secondary btn-icon me-5 float-end" 
+								   data-bs-toggle="collapse" 
+								   data-bs-target=".upload-collapse" 
+								   aria-expanded="false" 
+								   >
+								   <i class="la la-image la-lg"></i>
+									Upload new file
+								</button>
+							</div>
+							
+						</div>
+
+						<div class="top-panel">
+
+							<div class="upload-collapse collapse">
+							   <h3>Drop or choose files to upload</h3>
+							   
+							   <input type="file" multiple> 
+							   
+							   <div class="status"></div>
+							</div>
+
+
+						</div>
+						
+						<div class="display-panel">
+							
+							<ul class="data" id="media-files"></ul>
+						
+							<div class="nothingfound">
+								<div class="nofiles"></div>
+								<span>No files here.</span>
+							</div>
+						</div>
+					</div>
+
+	 
+				   <div class="gallery-footer">
+				   
+						<div class="align-left">
+			
+						</div>
+					  
+						<div class="align-right">
+						</div>				   
+				   
+				   
+				   </div>
+	 
+			</div>
+		</div>
+	</div>
+
+</div>
+    
+<!-- save status toast -->
+<div class="toast-container position-fixed end-0 top-0 me-3 mt-3" id="top-toast">
+  <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+	  <div class="d-flex">
+		<div class="toast-body">
+		  Save status
+		</div>
+		<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+	  </div>
+	</div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let deleteUrl = '{ $this->deleteUrl }';
+let renameUrl = '{ $this->renameUrl }';
+/*
+$(document).ready(function () {
+	if ($("#MediaModal").length) {
+
+		if (!Vvveb.MediaModal) {
+			Vvveb.MediaModal = new MediaModal(false);
+		}
+		Vvveb.MediaModal.mediaPath = mediaPath;
+		Vvveb.MediaModal.type = "multiple";
+		Vvveb.MediaModal.open($("#MediaModal")[0]);
+	}
+});
+*/	
+
+$(document).on('click', 'input[type="checkbox"][name="file[]"]', function (e) {
+let selectedCount = $('input[type="checkbox"][name="file[]"]:checked').length;
+
+if (selectedCount > 0) {
+	$('.bulk-actions').fadeIn();
+} else {
+	$('.bulk-actions').fadeOut();
+}
+});
+</script>
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script src="libs/vvveb/index.js"></script>
+
+@@include('../_includes/footer.html')

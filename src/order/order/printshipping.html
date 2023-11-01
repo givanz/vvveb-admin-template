@@ -1,0 +1,65 @@
+@@include('../../_includes/html-head.html', {"title": "Vvveb - Order","scripts":"","base_href":"../../"})
+
+<body class="order">
+
+<div class="content clearfix" data-v-order>
+<div class="row">	
+<div class="col">	
+	<strong>Shipping address</strong>
+	<div class="display mb-1 lh-lg">
+	<table class="table table-borderless table-sm">
+	<tr>
+		<td><span class="text-muted">Name</span> </td>
+		<td><span data-v-order-shipping_first_name>First</span> <span class="" data-v-order-shipping_last_name>Last</span></td>
+	</tr>
+	<tr data-v-if="this.order.shipping_company">
+	<td><span class="text-muted">Company</span> </td>
+	<td>
+	  <span data-v-order-shipping_company>Company</span>
+	</td>
+	</tr>
+	<tr data-v-if="this.order.shipping_address_1">
+	<td><span class="text-muted">Shipping address 1</span> </td>
+	<td>
+	  <span data-v-order-shipping_address_1>shipping_address_1</span>
+	</td>
+	</tr>
+	<tr data-v-if="this.order.shipping_address_2">
+	<td><span class="text-muted">Shipping address 2</span> </td>
+	<td>
+	  <span data-v-order-shipping_address_2>shipping_address_2</span>
+	</td>
+	</tr>
+	<tr data-v-if="this.order.shipping_city">
+	<td><span class="text-muted">City</span> </td>
+	<td>
+	  <span data-v-order-shipping_city>city</span>
+	</td>
+	</tr>
+	<tr data-v-if="this.order.shipping_post_code">
+	<td><span class="text-muted">Postcode</span> </td>
+	<td>
+	  <span data-v-order-shipping_post_code>post_code</span>
+	</td>
+	</tr>
+	<tr data-v-if="this.order.shipping_country">
+	<td><span class="text-muted">Country</span> </td>
+	<td>
+	  <span data-v-order-shipping_country>country</span>
+	</td>
+	</tr>
+	<tr data-v-if="this.order.shipping_region">
+	<td><span class="text-muted">region</span> </td>
+	<td>
+	  <span data-v-order-shipping_region>region</span>
+	</td>
+	</tr>
+</table>	
+</div>
+</div>
+</div>	
+
+<script>print();</script>
+
+@@include('../../_includes/footer-scripts.html')
+@@include('../../_includes/footer.html')

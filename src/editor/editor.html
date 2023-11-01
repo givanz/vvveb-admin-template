@@ -1,0 +1,136 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Editor","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container" class="small-nav">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+			<div id="vvveb-builder">
+				
+				@@include('./_top-panel.html')
+				
+				@@include('./_left-panel.html')
+
+				@@include('./_canvas.html')
+			
+				@@include('./_right-panel.html')
+
+				@@include('./_bottom-panel.html')
+			</div>
+		</div>
+</div>		
+
+@@include('./_templates.html')
+
+@@include('./_modals.html')
+
+@@include('./_save-offcanvas.html')
+	
+@@include('../_includes/footer-scripts.html')
+
+<!-- builder code-->
+<script src="../../js/vvvebjs/builder.js"></script>	
+<script>
+Vvveb.themeBaseUrl = '{ $this->themeBaseUrl }';
+</script>
+<!-- undo manager-->
+<script src="../../js/vvvebjs/undo.js"></script>	
+
+<!-- media gallery -->
+<link href="libs/media/media.css" rel="stylesheet">
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let saveUrl = '{ $this->saveUrl }';
+let renameUrl = '{ $this->renameUrl }';
+let saveReusableUrl = '{ $this->saveReusableUrl }';
+let deleteUrl = '{ $this->deleteUrl }';
+</script>
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<script src="../../js/vvvebjs/resources.js"></script>		
+
+
+<!-- inputs-->
+<script src="../../js/vvvebjs/inputs.js"></script>	
+<script data-v-theme-inputs src="../../js/vvvebjs/inputs.js"></script>	
+<script src="../../js/vvvebjs/plugin-media.js"></script>	
+
+<!-- components-->
+<script src="../../js/vvvebjs/plugin-google-fonts.js"></script>
+<script src="../../js/vvvebjs/components-common.js"></script>
+<script src="../../js/vvvebjs/plugin-aos.js"></script>
+<script src="../../js/vvvebjs/components-html.js"></script>	
+<script src="../../js/vvvebjs/components-elements.js"></script>		
+<script src="../../js/vvvebjs/section.js"></script>		
+<script type="module" src="../../js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
+<script type="module" src="../../js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
+<script src="../../js/vvvebjs/components-widgets.js"></script>	
+<script src="../../js/vvvebjs/components-bootstrap5.js"></script>	
+<script data-v-theme-components src="../../js/vvvebjs/components.js"></script>	
+
+<!-- sections-->
+<script data-v-theme-sections src="../../js/vvvebjs/sections.js"></script>	
+<script src="../../js/vvvebjs/sections-bootstrap4.js"></script>	
+
+<!-- blocks-->
+<script data-v-theme-blocks src="../../js/vvvebjs/blocks.js"></script>	
+<script src="../../js/vvvebjs/blocks-bootstrap4.js"></script>	
+
+
+<!-- plugins -->
+
+<!-- code mirror - code editor syntax highlight -->
+<link href="libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
+<link href="libs/codemirror/lib/merge.css" rel="stylesheet"/>
+<link href="libs/codemirror/theme/material.css" rel="stylesheet"/>
+<script src="libs/codemirror/lib/codemirror.js"></script>
+<script src="libs/codemirror/lib/xml.js"></script>
+<script src="libs/codemirror/lib/formatting.js"></script>
+<script src="../../js/vvvebjs/plugin-codemirror.js"></script>	
+<!-- jszip - download page as zip -->
+<!-- script src="libs/jszip/jszip.min.js"></script>
+<script src="../../js/vvvebjs/plugin-jszip.js"></script -->
+
+
+<!-- autocomplete plugin used by autocomplete input-->
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script type="module"  src="../../js/admin.js"></script>
+<script src="../../js/vvvebjs/elements-changes.js"></script>	
+
+<script data-v-theme-js src="editor.js"></script>	
+
+<script>
+
+let pages =  { $this->pages };
+Vvveb.data =  { $this->data };
+
+$(function() {
+
+	let firstPage = Object.keys(pages)[0];
+	Vvveb.Builder.init(pages[firstPage]["url"], function() {
+		//load code after page is loaded here
+	});
+
+	Vvveb.Gui.init();
+	Vvveb.Breadcrumb.init();
+
+	var fileManagerComponents = [];
+	fileManagerComponents = fileManagerComponents.concat(Vvveb.ComponentsGroup['Ecommerce'], Vvveb.ComponentsGroup['Content']);
+
+	Vvveb.FileManager.init(fileManagerComponents);
+	Vvveb.SectionList.init(fileManagerComponents);
+
+	Vvveb.FileManager.addPages(pages);
+
+	Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
+	Vvveb.Gui.toggleRightColumn(false);
+	Vvveb.Breadcrumb.init();
+});
+</script>
+
+@@include('../_includes/footer.html')

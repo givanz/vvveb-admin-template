@@ -1,0 +1,190 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Field Group","scripts":"","base_href":"../"})
+
+<body class="field_group">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="field-form" action="" method="post" class="needs-validation" data-v-field_group>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-reader-outline"></i>&ensp;
+						<span>Field Group</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=field/field-groups" title="Return to field groups"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to field groups</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					<i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="field_group_id" data-v-field_group-field_group_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field_group[name]" data-v-field_group-name required>
+					</div>
+				 </div>		 
+
+				<div class="fields" data-v-if="this.field_group_id">
+					<button type="button" id="add-field-group-btn" class="btn btn-primary" aria-label="Add Rule">
+						<i class="la la-lg la-plus-circle"></i> Add field
+					</button>
+
+	 
+					<table id="field-group" class="table table-hover mt-2" data-v-fields>
+					  <thead>
+						<tr>
+						  <th class="text-start">Country</th>
+						  <th class="text-start">Field</th>
+						  <th></th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr data-v-field>
+						  <td class="text-start">
+							<select name="field[0][country_id]" class="form-select" data-v-field-country_id data-v-countries disabled>
+							  <option value="1" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 1 (-2.00)</span>
+							  </option>
+							  <option value="2" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 2 (19%)</span>
+							  </option>
+							</select>
+						  </td>
+						  <td class="text-start">
+							<select name="field[0][field_id]" class="form-select" data-v-field-field_id disabled>
+							  <option value="0">All Fields</option>
+							  <option value="1" data-v-option>Field 1</option>
+							  <option value="2" data-v-option>Field 2</option>
+							  <option value="3" data-v-option>Field 3</option>
+							</select>
+						  </td>
+						  <td class="text-end">
+							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							  <i class="la la-lg la-minus-circle"></i>
+							</button>
+						  </td>
+						</tr>
+						
+						<tr class="d-none" id="field-group-template">
+						  <td class="text-start">
+							<select name="field-group_template[0][country_id]" class="form-select" data-v-countries disabled>
+							  <option value="1" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 1 (-2.00)</span>
+							  </option>
+							  <option value="2" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 2 (19%)</span>
+							  </option>
+							</select>
+						  </td>
+						  <td class="text-start">
+							<select name="field-group_template[0][field_id]" class="form-select" data-v-field-field_id disabled>
+							  <option value="0">All Fields</option>
+							  <option value="1" data-v-option>Field 1</option>
+							  <option value="2" data-v-option>Field 2</option>
+							  <option value="3" data-v-option>Field 3</option>
+							</select>
+						  </td>
+						  <td class="text-end">
+							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							  <i class="la la-lg la-minus-circle"></i>
+							</button>
+						  </td>
+						</tr>
+						
+					  </tbody>
+		
+					</table>
+					
+				</div>
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let fieldsUrl = '{ $this->fieldsUrl }';
+let fields = [];
+
+function addFieldsToSelect(fieldSelect, data, field_id = 0) {
+	fieldSelect.html('<option value="0">All Fields</option>');
+	for (i in data) {
+		let field = data[i];
+		fieldSelect.append('<option value="' + field.field_id + '">' + field.name + '</option>');
+	}
+	fieldSelect.val(field_id);
+	fieldSelect.removeAttr("disabled");
+	
+}
+
+$("body").on("change", "[data-v-countries]", function () {
+	let fieldGroup = $(this).parents("tr");
+	let fieldSelect = $("[data-v-field-field_id]", fieldGroup);
+	let country_id = this.value;
+	let field_id = this.dataset.vFieldId;
+	this.disabled = false;
+
+	if (fields[country_id]) {
+		addFieldsToSelect(fieldSelect, fields[country_id], field_id);
+		$("[data-v-field] [data-v-countries]:disabled:first").change();
+	} else {
+		$.get(fieldsUrl + "&country_id=" + country_id).done(function( data ) {
+			fields[country_id] = data;
+			addFieldsToSelect(fieldSelect, data, field_id);
+			$("[data-v-field] [data-v-countries]:disabled:first").change();
+		});
+	}
+	
+	this.dataset.vFieldId = 0;
+});
+
+$("#add-field-group-btn").click(function () {
+	
+	let template = $("#field-group-template")[0].outerHTML;
+	let id = Math.floor(Math.random() * 10000);
+	template = template.replaceAll('field-group_template[0]', 'field[' + id + ']').replace('class="d-none"', 'data-v-field').replace('id="field-group-template"', '');
+	
+	$("#field-group tbody").append(template);
+	$("[data-v-field] [data-v-countries]:disabled:first").change();	
+});
+
+//$("[data-v-field] [data-v-countries]:disabled:first").change();
+</script>
+
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+@@include('../_includes/footer.html')

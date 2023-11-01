@@ -1,0 +1,85 @@
+<div class="tab-pane active" id="tab-general">
+
+  <ul class="nav nav-tabs" id="language-nav" data-v-languages="desc">
+	<li class="nav-item" data-v-language>
+		<a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+			<!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img --> 
+			<span data-v-language-name>English</span>
+		</a>
+	</li>
+ </ul>
+ 
+ 
+ 
+   <div class="tab-content" data-v-languages="desc" style="clear:both">
+	<div class="tab-pane" id="language1" data-v-language data-v-language-id>
+	  
+	  
+		
+	  <input name="post_content[1][language_id]" type="hidden" data-v-post-content-language_id>
+	  <div class="mb-3 required">
+		<label class="form-label">Name</label>
+		<input name="post_content[1][name]" value="" placeholder="Name" class="form-control" type="text" data-v-post-content-name required />
+	  </div>					  
+
+
+	  <div class="required float-end">
+		<label class="form-label" for="input-name1">Post Url</label>
+		<a href="" target="_blank" data-v-post-content-url>url</a>
+	  </div>					  
+
+	  <div class="mb-3 required">
+		<label class="form-label">Slug</label>
+		<div>
+		  <input name="post_content[1][slug]" value="slug" placeholder="Name" class="form-control" type="text" data-v-post-content-slug required />
+		</div>
+	  </div>
+
+	  <div class="mb-3">
+		<label class="form-label" for="input-content">Content</label>
+		<div>
+			<div class="d-flex justify-content-between py-2" data-v-if="this.post.post_id">
+				 <a data-v-design_url href="" class="btn btn-sm btn-success mb-3 ms-1 btn-icon page-editor-btn">
+					<i class="icon-color-wand-outline"></i> <span>Open in Page Editor</span>
+				 </a>
+
+				@@include('../_includes/revisions_dropdown.html', {"type":"post"})
+			
+			</div>
+			
+			
+			<div class="content-editor">
+				<textarea name="post_content[1][content]" placeholder="Content" class="form-control" data-v-post-content-content required></textarea>
+				<input name="post_content[1][has_changes]" value="1" class="has_changes" data-v-post-content-has_changes type="hidden"/>
+			</div>
+			
+		</div>
+	  </div>
+ 
+		<div class="mb-3 required">
+			<label class="form-label">Excerpt <small class="text-muted">(optional)</small></label>
+			<div>
+			  <input name="post_content[1][excerpt]" placeholder="excerpt" placeholder="excerpt" class="form-control" type="text" data-v-post-content-excerpt/>
+			</div>
+		</div> 
+	  
+	  <div class="mb-3 required">
+		<label class="form-label">Meta keywords</label>
+		<div>
+		  <input name="post_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-post-content-meta_keywords required />
+		</div>
+	  </div>	  
+	  
+	  <div class="mb-3 required">
+		<label class="form-label">Meta description</label>
+		<div>
+		  <input name="post_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-post-content-meta_description required />
+		</div>
+	  </div>
+	  
+
+	</div>
+</div>
+			
+</div>
+	

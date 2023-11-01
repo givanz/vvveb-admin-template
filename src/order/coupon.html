@@ -1,0 +1,214 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Coupon","scripts":"","base_href":"../"})
+
+<body class="coupon">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-coupon>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-pricetag-outline"></i>&ensp;
+						<span>Coupon</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=order/coupons" title="Return coupons"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to coupons</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="coupon_id" data-v-coupon-coupon_id>
+					
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="coupon[name]" data-v-coupon-name required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-type" class="col-sm-2 col-form-label">Type</label>
+					<div class="col-sm-10">
+					  	<select name="coupon[type]" id="input-coupon-type" class="form-control" data-v-coupon-type required>
+							<option value="P" data-v-option>Percentage</option>
+							<option value="F" data-v-option>Fixed</option>
+						</select>
+					</div>
+				 </div>		
+ 
+				<div class="mb-3 row">
+					<label for="input-discount" class="col-sm-2 col-form-label">Discount</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-discount" placeholder="Discount" name="coupon[discount]" data-v-coupon-discount required>
+					</div>
+				 </div>		 
+				 
+
+				<div class="mb-3 row">
+					<label for="input-free_shipping" class="col-sm-2 col-form-label">Free shipping</label>
+					<div class="col-sm-10">
+					  
+						<select name="coupon[free_shipping]" id="input-coupon-free_shipping" class="form-control" data-v-coupon-free_shipping required>
+							<option value="0" data-v-option>No</option>
+							<option value="1" data-v-option>Yes</option>
+						</select>					  
+					</div>
+				 </div>					
+
+				  <div class="mb-3 row">
+					<label for="input-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="coupon[status]" id="input-status" class="form-control" data-v-coupon-status>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				  </div>
+		
+				<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Restrictions</label>
+				
+				<div class="mb-3 row">
+					<label for="input-logged_in" class="col-sm-2 col-form-label"><span>Registered user</span><br>
+						<span class="form-text">Coupon does not work for guest checkout.</span>
+					</label>
+					
+					<div class="col-sm-10">
+					  
+						<select name="coupon[logged_in]" id="input-coupon-logged_in" class="form-control" data-v-coupon-logged_in required>
+							<option value="0" data-v-option>No</option>
+							<option value="1" data-v-option>Yes</option>
+						</select>					  
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-total" class="col-sm-2 col-form-label pb-0"><span>Cart total</span><br>
+					<span class="form-text">The total cart value that must be reached for the coupon to be applied.</span>
+					</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-total" placeholder="Cart total" name="coupon[total]" data-v-coupon-total required>
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-shipping" class="col-sm-2 col-form-label"><span>Products</span><br>
+					<span class="form-text">Limit to these products only.</span></label>
+					<div class="col-sm-10">
+
+						<input name="coupon_product" placeholder="Coupon product" type="text" class="form-control autocomplete-list"
+							data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="coupon_product"/>
+
+						<div class="autocomplete-list card border-top-0" data-v-coupon-product>
+							<div data-v-product>				
+								<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
+								<span data-v-product-name>Product 1</span>				
+								<input name="coupon_product[]" value="14" type="hidden" data-v-product-product_id>			 
+							</div>
+						</div>
+
+					</div>
+				 </div>	
+				 
+				<div class="mb-3 row">
+					<label for="input-shipping" class="col-sm-2 col-form-label"><span>Categories</span><br/>
+					<span class="form-text">Limit to the products from these catgeories only.</span></label></label>
+					<div class="col-sm-10">
+
+						<input name="coupon_taxonomy" placeholder="Coupon taxonomy" type="text" class="form-control autocomplete-list"
+							data-url="/admin?module=product/product&action=categoriesAutocomplete" data-list-name="coupon_taxonomy"/>
+
+						<div class="autocomplete-list card border-top-0" data-v-coupon-taxonomy>
+							<div data-v-taxonomy>				
+								<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
+								<span data-v-taxonomy-name>Category 1</span>				
+								<input name="coupon_taxonomy[]" value="14" type="hidden" data-v-taxonomy-taxonomy_id>			 
+							</div>
+						</div>
+
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-date_start" class="col-sm-2 col-form-label">Date start</label>
+					<div class="col-sm-10">
+					  <input type="date" class="form-control" id="input-date_start" placeholder="Shipping" name="coupon[date_start]" data-v-coupon-date_start required>
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-shipping" class="col-sm-2 col-form-label">Date end</label>
+					<div class="col-sm-10">
+					  <input type="date" class="form-control" id="input-date_start" placeholder="Shipping" name="coupon[date_start]" data-v-coupon-date_start required>
+					</div>
+				 </div>		 
+
+				<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Limits</label>
+				 
+				<div class="mb-3 row">
+					<label for="input-limit" class="col-sm-2 col-form-label pb-0">Coupon limit<br>
+					<span class="form-text">The maximum number of times the coupon can be used. Zero is unlimited</span></label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-shipping" placeholder="Shipping" name="coupon[limit]" data-v-coupon-limit required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-limit_user" class="col-sm-2 col-form-label pb-0">Coupon user limit<br>
+						<span class="form-text">The maximum number of times the coupon can be used by a user. Zero is unlimited.</span>
+					</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-limit_user" placeholder="Shipping" name="coupon[limit_user]" data-v-coupon-limit_user required>
+					</div>
+				 </div>		 
+
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+
+<script> 
+$(function () {
+	$('input.autocomplete').autocomplete();
+	$('input.autocomplete-list').autocompleteList();
+});
+</script>
+<!-- date time picker -->
+<script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
+<script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
+<link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+<script id="functions-js" src="../../js/admin/functions.js"></script>
+
+@@include('../_includes/footer.html')

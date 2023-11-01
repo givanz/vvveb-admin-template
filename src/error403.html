@@ -1,0 +1,62 @@
+@@include('./_includes/html-head.html', {"title": "Vvveb - Permission denied!","scripts":"","base_href":""})
+
+<body>
+
+<div id="container">
+       
+    @@include('./_includes/sidebar.html')
+
+    <div class="main h-100">
+
+	@@include('./_includes/top-header.html')
+	
+	
+		<div id="content" class="h-75">
+		
+			 <div class="d-flex align-items-center justify-content-center h-100">
+				
+				 <div class="container">
+					<div class="text-center">
+						<i class="la display-1 text-danger la-exclamation-circle"></i>
+					</div>
+
+					<h2 class="heading1 text-center fw-normal mb-3">Permission denied!</h2>
+					<h4 class="text-muted text-center fw-normal">You don't have permission to access this page.</h4>
+					
+					<p data-v-message></p>
+
+						<div data-debug>
+
+							<div class="card border-0" data-v-if="this.message">
+								<hr>
+								<div class="card-body text-center">
+								<p data-v-exception-message style="white-space: pre-wrap;">Message</p>
+								</div>		
+							</div>		
+
+							<div class="card border-0 my-2" data-v-if="this.file">
+								<hr>
+								<div class="card-body text-center">
+									<span data-v-exception-file>File</span> on line <strong data-v-exception-line_no>1</strong>
+								</div>
+							</div>
+								
+						</div>
+			  
+
+					<div class="mx-auto text-center">
+						<a href="/admin" onclick="return window.history.back()" class="btn btn-primary"><i class="la la-arrow-left"></i> Go back</a>
+					</div>
+
+				</div> 
+			</div> 
+			
+		 
+		</div>
+	</div>
+
+
+</div>
+
+@@include('./_includes/footer-scripts.html')
+@@include('./_includes/footer.html') 

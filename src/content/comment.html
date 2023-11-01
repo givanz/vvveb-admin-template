@@ -1,0 +1,93 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Comment","scripts":"","base_href":"../"})
+
+<body class="comment">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" novalidate data-v-comment>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-chatbox-outline"></i>&ensp;
+						<span>Comment</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=content/comments&status=0" title="Comment list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Comment list</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> Save
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="comment_id" data-v-comment-comment_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Author</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="input-site-title" placeholder="Author" name="comment[author]" data-v-comment-author>
+					</div>
+				 </div>		 
+
+				 <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="input-site-title" placeholder="Email" name="comment[email]" data-v-comment-email>
+					</div>
+				  </div>		 
+
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label" >Url</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="input-site-title" placeholder="Url" name="comment[url]" data-v-comment-url>
+					</div>
+				  </div>
+				  
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label" >Content</label>
+					<div class="col-sm-10">
+					  <textarea type="email" class="form-control" id="input-site-title" placeholder="Display name" name="comment[content]" rows="10" data-v-comment-content></textarea>
+					</div>
+				  </div>
+
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="comment[status]" id="input-status" class="form-control" data-v-comment-status>
+							<option value="0">Pending</option>
+							<option value="1">Approved</option>
+							<option value="2">Spam</option>
+							<option value="3">Trash</option>
+						</select>
+					</div>
+				  </div>
+
+	
+			</div>
+        </div>
+</form>
+
+</div>
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html')

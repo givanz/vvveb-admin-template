@@ -1,0 +1,110 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Vendor","scripts":"","base_href":"../"})
+
+<body class="vendor">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-vendor>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-people-outline" data-v-menu-item-icon=""></i>&ensp;
+						<span>Vendor</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=product/vendors" title="Vendor list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Vendor list</span>
+				 </a>
+				  
+				  <button type="submit" href="" data-bs-toggle="tooltip" title=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="vendor_id" data-v-vendor-vendor_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="vendor[name]" data-v-vendor-name required>
+					</div>
+				 </div>		 
+
+				 <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Slug</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Slug" name="vendor[slug]" data-v-vendor-slug required>
+					</div>
+				  </div>		 
+
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label" >Image</label>
+					<div class="col-sm-10">
+
+						<input type="hidden" data-v-image name="vendor[image]" id="featured-image-input" value="">
+									
+						<img data-v-image src="img/placeholder.svg" alt="" title=""
+						 id="featured-image-thumb"
+						 data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" 
+						 data-type="single"
+						 class="img-thumbnail bg-light"
+						 style="max-width:200px;"
+						 >
+							
+
+							<div class="py-3">
+								<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+									data-media-gallery 
+									data-target-input="#featured-image-input"
+									data-target-thumb="#featured-image-thumb" 
+									data-type="single">
+									<i class="la la-image la-lg"></i> <span>Set image</span>
+								</button>
+							</div>
+							
+					  
+					</div>
+				  </div>
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+@@include('../_includes/footer.html')

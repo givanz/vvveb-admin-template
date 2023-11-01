@@ -1,0 +1,78 @@
+@@include('./_includes/html-head.html', {"title": "Vvveb - Internal server error","scripts":"","base_href":""})
+
+<body>
+
+<div id="container">
+       
+    @@include('./_includes/sidebar.html')
+
+    <div class="main min-vh-100">
+
+	@@include('./_includes/top-header.html')
+
+
+		<div id="content" class="h-75">
+		
+			 <div class="d-flex align-items-center justify-content-center">
+				 <div class="container">
+					<div class="text-center">
+						<i class="la display-1 text-danger la-exclamation-circle"></i>
+					</div>
+
+					<h1 class="heading1 text-center fw-normal mb-r">Internal server error!</h1>
+					<h4 class="text-muted text-center fw-normal" data-v-message>(error 500)</h4>
+
+
+					<div data-debug class="my-3">
+
+							<div class="card border-0" data-v-if="this.message">
+								<hr>
+								<div class="card-body text-center">
+								<p data-v-exception-message style="white-space: pre-wrap;">Message</p>
+							</div>		
+						</div>
+
+						<div class="card border-0 my-2" data-v-if="this.file">
+								<hr>
+								<div class="card-body text-center">
+									<span data-v-exception-file>File</span> on line <strong data-v-exception-line_no>1</strong>
+								</div>
+						</div>
+							
+
+						<h6>Code</h6>		
+						<p data-v-exception-line></p>
+						<div class="card">
+							<div class="card-body" data-v-exception-lines>
+								<p data-v-exception-line style="white-space: pre-wrap;">line</p>
+							</div>
+						</div>
+						<br/>		
+
+						<!-- div class="card">
+							<div class="card-body">
+								<p data-v-exception-code style="white-space: pre-wrap;"></p>
+							</div>						
+						</div -->						
+
+						<h6>Trace</h6>		
+						<div class="card">
+							<div class="card-body">
+								<p class="card-body" data-v-exception-trace style="white-space: pre-wrap;">Trace</p>
+							</div>
+						</div>
+					</div>
+           
+
+			</div> 
+		   </div> 
+			
+		 
+		</div>
+	</div>
+	
+
+</div>
+    
+@@include('./_includes/footer-scripts.html')
+@@include('./_includes/footer.html')

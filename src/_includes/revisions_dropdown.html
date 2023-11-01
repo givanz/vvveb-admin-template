@@ -1,0 +1,86 @@
+<div class="revisions">
+	<button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<i class="la la-lg la-history"></i> 
+		<strong class="small align-text-top" data-v-@@type-content-revision_count>-</strong> 
+		<span>Revisions</span>
+	</button>
+
+	<div class="dropdown-menu revisions-dropdown">
+		<div style="max-height:300px;overflow:auto;">
+		<div class="dropdown-item d-flex align-items-center" data-v-revision>
+			<span class="flex-grow-1 me-2">
+				<div class="flex-grow-1">
+					<span data-v-revision-created_at data-filter-friendly_date>Today</span>
+				</div>
+				<span class="small text-muted">
+					(<span data-v-revision-created_at>2023-06-04 10:30:31</span>)
+				</span>
+
+				<a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
+			</span>
+			<span>
+				<a class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
+					<i class="la la-arrow-up"></i>
+				</a>
+				<a class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare">
+					<i class="la la-exchange-alt"></i>
+				</a>
+				<a class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
+					<i class="la la-trash"></i>
+				</a>
+			</span>
+		</div>
+		<div class="dropdown-item d-flex align-items-center" data-v-revision>
+			<span class="flex-grow-1 me-2">
+				<div class="flex-grow-1">
+					Yesterday 
+				</div>
+				<span class="small text-muted">
+					(2023-06-03 10:30:31)
+				</span>
+
+				<a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
+			</span>
+			<span>
+				<button class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
+					<i class="la la-arrow-up"></i>
+				</button>
+				<button class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare">
+					<i class="la la-exchange-alt"></i>
+				</button>
+				<button class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
+					<i class="la la-trash"></i>
+				</button>
+			</span>
+		</div>
+		<div class="dropdown-item d-flex align-items-center" data-v-revision>
+			<span class="flex-grow-1 me-2">
+				<div class="flex-grow-1">
+					3 Days ago 
+				</div>
+				<span class="small text-muted">
+					(2023-06-01 10:30:31)
+				</span>
+
+				<a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
+			</span>
+			<span>
+				<button class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
+					<i class="la la-arrow-up"></i>
+				</button>
+				<button class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare">
+					<i class="la la-exchange-alt"></i>
+				</button>
+				<button class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
+					<i class="la la-trash"></i>
+				</button>
+			</span>
+		</div>
+		</div>
+		<hr class="dropdown-divider">
+		<div class="dropdown-item d-flex">
+			 <span class="flex-grow-1"><a href="">Diff Compare</span> <i class="la la-exchange-alt text-muted"></i></a>
+		</div>
+		
+	</div>
+</div>

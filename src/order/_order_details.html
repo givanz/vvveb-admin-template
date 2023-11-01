@@ -1,0 +1,208 @@
+<div class="order_details">
+	<div class="clearfix">
+		<h6 class="float-start">Order Details</h6>
+		<div class="btn btn-outline-success btn-sm float-end" onclick="$('.order_details').toggleClass('edit');"><i class="la la-pen"></i> Edit</div>
+	</div>		
+
+	<div class="display">
+		<p class="mb-1 lh-lg">
+		  <table class="table table-borderless table-sm">
+			<tr>
+				<td><span class="text-muted">Order ID:</span> </td>
+				<td><span  data-v-order-order_id>V001</span></td>
+			</tr>
+			<tr>
+				<td><span class="text-muted">Order Date:</span> </td>
+			<td>
+			<details>
+			  <summary><span><span data-v-order-created_at data-created_at-text data-filter-friendly_date>23/10/2019</span></summary>
+			  <p><span class="badge bg-light text-muted" data-v-order-created_at>23/10/2019</span></span></p>
+			</details>	
+			</td>
+			</tr>
+			<tr>
+				<td><span class="text-muted">Payment method:</span> </td>
+				<td>
+				<details>
+				  <summary><span><span data-v-order-payment_title>Cash data-payment_title>Cash-text On Delivery</span></summary>
+				  <p>
+					<span class="badge bg-light text-muted" data-v-order-payment_method>Cash data-payment_method>Cash-text On Delivery</span></span><br/>
+					<span data-v-order-payment_description>Flat data-payment_description>Flat-text Shipping Rate</span><br/>
+				  </p>
+				</details>	
+				 </td>
+			</tr>
+			<tr>
+				<td><span class="text-muted">Shipping method:</span></td>
+				<td>
+				<details>
+				  <summary><span><span data-v-order-shipping_title>>Flat data-shipping_title>>Flat-text Shipping Rate</span></summary>
+				  <p>
+					<span class="badge bg-light text-muted" data-v-order-shipping_method>Flat data-shipping_method>Flat-text Shipping Rate</span></span><br/>
+					<span data-v-order-shipping_description>Flat data-shipping_description>Flat-text Shipping Rate</span><br/>
+				  </p>
+				</details>	
+				</td>
+			</tr>
+			<tr>
+				<td><span class="text-muted">Order Total:</span></td>
+				<td><span data-v-order-total_formatted>$734.28</span></td>
+			</tr>
+			<tr>
+				<td><span class="text-muted">Reward points:</span></td>
+				<td><span data-v-order-points>$734.28</span></td>
+			</tr>
+				<td><span class="text-muted">Status</span></td>
+				<td>
+				<span data-v-order-order_status>Pending</span> 
+				<!--
+				  <select class="form-select">
+					<option selected="">Status</option>
+					<option value="Success">Success</option>
+					<option value="Pending">Pending</option>
+					<option value="Cancel">Cancel</option>
+				  </select>
+				-->
+				</td>
+			</tr>
+		  </table>
+		</p>
+	</div>  
+	
+	<div class="edit">
+		<!--
+		<div class="mb-3 row"><label for="order_id" class="col-sm-4 col-form-label">Order id</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="order_id" name="order_id" data-v-order-order_id></div>
+		</div>
+		-->
+		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Status</label>
+			<div class="col-sm-8">
+			
+			<select class="form-control" id="status" name="order_status_id" data-text="data-v-order-order_status" data-v-order-order_status_id>
+				<option value="pending" data-v-option>Pending</option>
+				<option value="completed" data-v-option>Completed</option>
+				<option value="cancel"data-v-option>Cancel</option>
+			</select>
+			</div>
+		</div>		
+		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Payment</label>
+			<div class="col-sm-8">
+							
+				<div id="accordion" name="accordion" role="tablist" class="accordion accordion-flush mb-3"  data-v-payments>
+					
+					<div class="accordion-item" data-v-payment>
+						<div class="accordion-header" role="tab">
+							  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+								<input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
+								<span data-v-payment-title>Default payment</span>
+							  </label>                                        
+						</div>
+
+						<div class="collapse" role="tabpanel">
+							<div class="accordion-body">
+								<p><span data-v-payment-description>Payment description</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item" data-v-payment>
+						<div class="accordion-header" role="tab">
+							  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+								<input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
+								<span data-v-payment-title>Credit card payment</span>
+							  </label>                                        
+						</div>
+
+						<div class="collapse" role="tabpanel">
+							<div class="accordion-body">
+								<p><span data-v-payment-description>Credit cart description</span></p>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
+						<div class="icon align-middle me-2">
+							<i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+						</div>
+						<div class="flex-grow-1 align-self-center text-small" >
+							No payment methods enabled!
+						</div>
+						
+						<button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">
+								<!-- <i class="la la-times"></i> -->
+							</span>
+						</button>
+						
+					</div>	
+				</div>
+			
+			
+			</div>
+		</div>		
+		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Shipping</label>
+			<div class="col-sm-8">
+						
+			<div id="accordion" name="accordion" role="tablist" class="accordion accordion-flush mb-3"  data-v-shippings>
+				
+				<div class="accordion-item" data-v-shipping>
+					<div class="accordion-header" role="tab">
+						  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+							<input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
+							<span data-v-shipping-title>Default shipping</span>
+						  </label>                                        
+					</div>
+
+					<div class="collapse" role="tabpanel">
+						<div class="accordion-body">
+							<p><span data-v-shipping-description>Shipping description</span></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="accordion-item" data-v-shipping>
+					<div class="accordion-header" role="tab">
+						  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+							<input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
+							<span data-v-shipping-title>Fast shipping</span>
+						  </label>                                        
+					</div>
+
+					<div class="collapse" role="tabpanel">
+						<div class="accordion-body">
+							<p><span data-v-shipping-description>Lorem ipsum</span></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
+					<div class="icon align-middle me-2">
+						<i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+					</div>
+					<div class="flex-grow-1 align-self-center text-small" >
+						No shipping methods enabled!
+					</div>
+					
+					<button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">
+							<!-- <i class="la la-times"></i> -->
+						</span>
+					</button>
+					
+				</div>
+				</div>
+				
+			</div>
+			
+			
+		</div>
+		<!--		
+		<div classs="mt-3">
+			<button class="btn btn-success float-end">
+				<i class="la la-save"></i> <span>Save</span>
+			</button>
+		</div>
+		-->
+	</div>
+</div>  
+  

@@ -1,0 +1,94 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Email settings","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+	<div class="main">
+
+	@@include('../_includes/top-header.html')
+	
+	
+	<form id="settings-form" action="" method="post">
+	   <input type="hidden" name="action" id="action" value="save">
+	  
+		<div class="actions">
+		  <div class="title">
+			 <h4 class="text-muted my-3">
+				<i class="icon-mail-outline me-2" style="font-size: 1.8rem;"></i>
+				<span>Email settings</span>
+			 </h4>
+		  </div>
+		  <div class="btns">
+			  <button type="submit" href=""
+				 class="btn btn-primary btn-icon ms-1">
+						<i class="icon-create-outline me-2"></i>
+						<span>Save settings</span>
+			  </button>
+			</div>
+	   </div>
+
+		  <div id="main-content">
+			  
+			@@include('../_includes/notifications.html')
+			 
+			 <div class="content clearfix settings px-4">
+			 
+			 @@include('_settings_mail.html')
+			 
+			 </div>
+			 
+		</div>
+			 
+  </form>
+
+</div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+
+
+<script>
+let Form = document.getElementById('settings-form');
+
+document.addEventListener('invalid', function(e){
+	//e.target.className += ' is-invalid';
+	focusInvalidElement(e);
+}, true);
+	
+function focusInvalidElement(e) {
+	//if (Form.checkValidity() == false) {
+		$(".is-invalid").removeClass("is-invalid");
+		//get first invalid input
+		let element = Form.querySelector(':invalid');
+		let activeTab = $(element).parents(".tab-pane");
+		
+		element.className += ' is-invalid';
+		//activate tab panel
+		$(".tab-pane").removeClass("show active");
+		activeTab.addClass("show active");
+		
+		//activate tab 
+		$(".nav-link").removeClass("active");
+		$("#" + (activeTab.attr("id") + "-tab")).addClass("active");
+		element.focus();
+		//let list = Form.querySelectorAll(':invalid');
+		/*
+		for (var item of list) {
+			item.focus();
+		}*/
+	//}
+}
+
+$("#input-mail-driver").change(function (e) {
+	$(".mail-engine").hide();
+	$(".mail-engine." + this.value).show();
+}).change();
+
+</script>
+
+@@include('../_includes/footer.html')
+			 

@@ -1,0 +1,108 @@
+<div class="tab-pane" id="tab-inventory">
+	<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Model</label>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-model">Model</label>
+		<div class="col-sm-4">
+			<input name="model" value="" placeholder="Model" id="input-model" class="form-control" type="text" data-v-product-model>
+		</div>
+		<label class="col-sm-2 form-label" for="input-sku"><span>SKU</span></label>
+		<div class="col-sm-4">
+			<input name="sku" value="" placeholder="SKU" id="input-sku" class="form-control" type="text" data-v-product-sku>
+		</div>
+	</div>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-upc"><span >UPC</span></label>
+		<div class="col-sm-4">
+			<input name="upc" value="" placeholder="UPC" id="input-upc" class="form-control" type="text" data-v-product-upc>
+		</div>
+		<label class="col-sm-2 form-label" for="input-ean"><span>EAN</span></label>
+		<div class="col-sm-4">
+			<input name="ean" value="" placeholder="EAN" id="input-ean" class="form-control" type="text" data-v-product-ean>
+		</div>
+	</div>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-jan"><span>JAN</span></label>
+		<div class="col-sm-4">
+			<input name="jan" value="" placeholder="JAN" id="input-jan" class="form-control" type="text" data-v-product-jan>
+		</div>
+		<label class="col-sm-2 form-label" for="input-isbn"><span>ISBN</span></label>
+		<div class="col-sm-4">
+			<input name="isbn" value="" placeholder="ISBN" id="input-isbn" class="form-control" type="text" data-v-product-isbn>
+		</div>
+	</div>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-mpn"><span>MPN</span></label>
+		<div class="col-sm-4">
+			<input name="mpn" value="" placeholder="MPN" id="input-mpn" class="form-control" type="text" data-v-product-mpn>
+		</div>
+		<label class="col-sm-2 form-label" for="input-location">Storage location</label>
+		<div class="col-sm-4">
+			<input name="location" value="" placeholder="Storage location" id="input-location" class="form-control" type="text" data-v-product-location>
+		</div>
+	</div>
+	<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Price</label>	
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-price">Price</label>
+		<div class="col-sm-4">
+			<input name="price" value="0.00" placeholder="Price" id="input-price" class="form-control" type="number" data-v-product-price>
+		</div>
+		<label class="col-sm-2 form-label" for="input-tax-type">Tax Class</label>
+		<div class="col-sm-4">
+			<select name="tax_type_id" id="input-tax-type" class="form-select" data-v-product-tax_type_id>
+				<option value="0" data-v-option> --- None ---</option>
+				<option value="1" data-v-option>Taxable Goods</option>
+				<option value="2" data-v-option>Tax type</option>
+				<option value="3" data-v-option>Digital Products</option>
+			</select>
+		</div>
+	</div>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-points"><span title="">Points</span></label>
+		<div class="col-sm-4">
+			<input name="points" value="0" placeholder="Points" id="input-points" class="form-control" type="text" type="number" data-v-product-points>
+		</div>
+	</div>
+	<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Stock</label>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-quantity">Quantity</label>
+		<div class="col-sm-4">
+			<input name="stock_quantity" value="1" placeholder="Quantity" id="input-quantity" class="form-control" type="text" data-v-product-stock_quantity>
+		</div>
+		<label class="col-sm-2 form-label" for="input-minimum"><span>Minimum order quantity</span></label>
+		<div class="col-sm-4">
+			<input name="minimum" value="1" placeholder="Minimum Quantity" id="input-minimum" class="form-control" type="text" data-v-product-minimum>
+		</div>
+	</div>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-subtract">Subtract Stock</label>
+		<div class="col-sm-4">
+			<select name="subtract" id="input-subtract"  class="form-select" data-v-product-subtract>
+				<option value="1" data-v-option>Yes</option>
+				<option value="0" data-v-option>No</option>
+			</select>
+		</div>
+		<label class="col-sm-2 form-label" for="input-stock-status"><span>Out Of Stock Status</span></label>
+		<div class="col-sm-4">
+			<select name="stock_status_id" id="input-stock-status" class="form-select" data-v-product-stock_status_id>
+				<option value="1" data-v-option>2-3 Days</option>
+				<option value="2" data-v-option>In Stock</option>
+				<option value="3" data-v-option>Out Of Stock</option>
+				<option value="4" data-v-option>Pre-Order</option>
+			</select>
+		</div>		
+	</div>
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-date-available">Date Available</label>
+		<div class="col-sm-4">
+			<input name="date_available" value="1000-01-01" placeholder="Date Available" data-date-format="YYYY-MM-DD" 
+				id="input-date-available" class="form-control" type="date" data-v-product-date_available >
+		</div>
+		<label class="col-sm-2 form-label" for="input-status"><span>Status</span></label>
+		<div class="col-sm-4">
+			<select name="status" id="input-status" class="form-select" data-v-product-status>
+				<option value="0" data-v-option>Disabled</option>
+				<option value="1" data-v-option>Enabled</option>
+			</select>
+		</div>
+	</div>
+</div>

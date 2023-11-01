@@ -1,0 +1,187 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Option","scripts":"","base_href":"../"})
+
+<body class="option">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-option>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-people-outline"></i>&ensp;
+						<span>Option</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=product/options" title="Option list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Option list</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="option_id" data-v-option-option_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="option[name]" data-v-option-name required>
+					</div>
+				 </div>		 
+
+				 <div class="mb-3 row">
+					<label for="input-type" class="col-sm-2 col-form-label">Type</label>
+					<div class="col-sm-10">
+					  <select class="form-control" id="input-type" placeholder="Slug" name="option[type]" data-v-option-type required>
+						<option value="text" data-v-option>Text</option>
+					  </select>
+					</div>
+				  </div>		 
+
+				  <div class="mb-3">
+	
+					<table id="option-value" class="table table-bordered table-hover" data-v-option_values>
+					  <thead>
+						<tr>
+						  <th class="text-center" style="width:250px">Image</th>
+						  <th class="text-start required">Value Name</th>
+						  <th class="text-end" style="width:100px">Sort Order</th>
+						  <th class="text-end" style="width:100px">
+							<button type="button" onclick='addTemplate("option-template", "option_value", "option-value")' class="btn btn-sm btn-primary">
+							  <i class="la la-plus la-lg text-white"></i>
+							</button>
+						  </th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr data-v-option_value>
+						  <td class="text-center">
+
+								<input type="hidden" data-v-image name="option_value[0][image]" id="option_value0-input" value="">
+										
+								<img data-v-image src="img/placeholder.svg" alt=""
+								 id="option_value0-thumb"
+								 data-v-placeholder=""
+								 data-media-gallery 
+								 data-target-input="#option_value0-input"
+								 data-target-thumb="#option_value0-thumb" data-type="single"
+								 class="img-thumbnail bg-body-tertiary"
+								 style="width:150px;"
+								 >
+							
+								<button type="button" 
+									class="btn btn-outline-secondary btn-icon btn-sm mx-2"
+									data-media-gallery 
+									data-target-input="#option_value0-input"
+									data-target-thumb="#option_value0-thumb" 
+									data-type="single">
+									<i class="la la-image la-lg"></i> <span>Set image</span>
+								</button>
+								
+
+
+						  </td>
+						  <td class="text-center">
+								<input type="hidden" name="option_value[0][option_value_id]" value="" data-v-option_value-option_value_id>
+							  <input type="text" name="option_value[0][name]" value="" class="form-control" data-v-option_value-name>
+							</div>
+						  </td>
+						  <td class="text-end">
+							<input type="text" name="option_value[0][sort_order]" value="0" data-v-option_value-sort_order placeholder="Sort Order" class="form-control">
+						  </td>
+						  <td class="text-end">
+							<button type="button" onclick="removeRow(this, 'option_value_id')" class="btn btn-sm btn-danger">
+							  <i class="la la-minus-circle la-lg"></i>
+							</button>
+						  </td>
+						</tr>	
+						<tr class="d-none" id="option-template">
+						  <td class="text-center">
+							
+							<input type="hidden" data-v-image name="option_value[#][image]" id="option_value#-input" value="">
+									
+							<img data-v-image src="img/placeholder.svg" alt=""
+							 id="option_value#-thumb"
+							 data-v-placeholder=""
+							 data-media-gallery 
+							 data-target-input="#option_value#-input"
+							 data-target-thumb="#option_value#-thumb"
+							 data-type="single"
+							 class="img-thumbnail bg-body-tertiary"
+							 style="width:150px;">
+						
+							<button type="button" 
+								class="btn btn-outline-secondary btn-icon btn-sm mx-2"
+								data-media-gallery 
+								data-target-input="#option_value#-input"
+								data-target-thumb="#option_value#-thumb"
+								data-type="single">
+								<i class="la la-image la-lg"></i> <span>Set image</span>
+							</button>
+						
+							
+							
+						  </td>
+						  <td class="text-center">
+							<input type="hidden" name="option_value[#][option_value_id]" value="">
+							<input type="text" name="option_value[#][name]" value="" placeholder="Option Value Name"class="form-control">
+						  </td>
+						  <td class="text-end">
+							<input type="text" name="option_value[#][sort_order]" value="0" size="2" placeholder="Sort Order" class="form-control">
+						  </td>
+						  <td class="text-end">
+							<button type="button" onclick="removeRow(this, 'option_value_id')" class="btn btn-sm btn-danger">
+							  <i class="la la-minus-circle la-lg"></i>
+							</button>
+						  </td>
+						</tr>
+					  </tbody>
+					</table>	
+	
+				  </div>
+			
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+
+
+<script id="functions-js" src="../../js/admin/functions.js"></script>
+@@include('../_includes/footer.html')

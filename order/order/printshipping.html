@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <base href="../../">
+
+  <title>Vvveb - Order</title>
+
+
+
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+
+
+<body class="order">
+
+  <div class="content clearfix" data-v-order>
+    <div class="row">
+      <div class="col">
+        <strong>Shipping address</strong>
+        <div class="display mb-1 lh-lg">
+          <table class="table table-borderless table-sm">
+            <tr>
+              <td>
+                <span class="text-muted">Name</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_first_name>First</span>
+                <span class="" data-v-order-shipping_last_name>Last</span>
+              </td>
+            </tr>
+            <tr data-v-if="this.order.shipping_company">
+              <td>
+                <span class="text-muted">Company</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_company>Company</span>
+              </td>
+            </tr>
+            <tr data-v-if="this.order.shipping_address_1">
+              <td>
+                <span class="text-muted">Shipping address 1</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_address_1>shipping_address_1</span>
+              </td>
+            </tr>
+            <tr data-v-if="this.order.shipping_address_2">
+              <td>
+                <span class="text-muted">Shipping address 2</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_address_2>shipping_address_2</span>
+              </td>
+            </tr>
+            <tr data-v-if="this.order.shipping_city">
+              <td>
+                <span class="text-muted">City</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_city>city</span>
+              </td>
+            </tr>
+            <tr data-v-if="this.order.shipping_post_code">
+              <td>
+                <span class="text-muted">Postcode</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_post_code>post_code</span>
+              </td>
+            </tr>
+            <tr data-v-if="this.order.shipping_country">
+              <td>
+                <span class="text-muted">Country</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_country>country</span>
+              </td>
+            </tr>
+            <tr data-v-if="this.order.shipping_region">
+              <td>
+                <span class="text-muted">region</span>
+              </td>
+              <td>
+                <span data-v-order-shipping_region>region</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>print();</script>
+
+    <script id="jquery-js" src="js/jquery.min.js"></script>
+    <script id="popper-js" src="js/popper.min.js"></script>
+    <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+
+    <!--
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/popper.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+-->
+
+    <script id="admin-js" type="module" src="../../js/admin.js"></script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-title" id="heartBeatLogin">
+              <h5>Session has expired</h5>
+              <span>Login to resume your work</span>
+            </span>
+
+            <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-5">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- save toast -->
+    <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+        <div class="toast-header text-white">
+          <strong class="me-auto">Page save</strong>
+          <!-- <small class="badge bg-success">status</small> -->
+          <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body ">
+          <div class="flex-grow-1">
+            <div class="message">Elements saved!
+              <div>Template backup was saved!</div>
+              <div>Template was saved!</div>
+            </div>
+            <div>
+              <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

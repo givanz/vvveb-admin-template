@@ -1,0 +1,308 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Code Editor","scripts":'<link href="libs/media/media.css" rel="stylesheet">',"base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+       @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+			
+
+		<div id="content" class="p-4">
+		
+			<div id="MediaModal"
+			
+				data-target-input="#featured-image-input"
+				data-target-thumb="#featured-image-thumb" 
+				data-type="multiple">
+			
+					<div class="filemanager">
+
+						<div class="top-right d-flex justify-content-between">
+                             
+                            <div class="align-left">          
+								<div class="breadcrumbs"></div>
+							</div>
+                                       
+                                   
+                            <div class="align-right">       
+								<div class="bulk-actions px-2" style="display:none">
+									<!--
+								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+											aria-controls="filters" title="Delete selected"
+											class="btn btn-primary">
+										<i class="icon-create-outline"></i> Edit selected
+									</button>
+									-->
+								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+											aria-controls="filters" title="Delete selected"
+											class="btn btn-outline-secondary bg-body-tertiary text-danger">
+										<i class="icon-trash-outline"></i> Delete selected
+									</button>
+								
+								</div>
+            
+								<div class="search">
+									<input type="search" id="media-search-input" placeholder="Find a file.." />
+								</div>
+								
+								<button class="btn btn-outline-secondary btn-icon me-5 float-end" 
+								   data-bs-toggle="collapse" 
+								   data-bs-target=".upload-collapse" 
+								   aria-expanded="false" 
+								   >
+								   <i class="la la-image la-lg"></i>
+									Upload new file
+								</button>
+							</div>
+							
+						</div>
+
+						<div class="top-panel">
+
+							<div class="upload-collapse collapse">
+							   <h3>Drop or choose files to upload</h3>
+							   
+							   <input type="file" multiple> 
+							   
+							   <div class="status"></div>
+							</div>
+
+
+						</div>
+						
+						<div class="display-panel">
+							
+							<ul class="data" id="media-files"></ul>
+						
+							<div class="nothingfound">
+								<div class="nofiles"></div>
+								<span>No files here.</span>
+							</div>
+						</div>
+					</div>
+
+	 
+				   <div class="gallery-footer">
+				   
+						<div class="align-left">
+			
+						</div>
+					  
+						<div class="align-right">
+						</div>				   
+				   
+				   
+				   </div>
+	 
+			</div>
+		</div>
+	</div>
+
+</div>
+    
+<!-- Modal -->
+<div class="modal modal-full fade" id="codeEditorModal" tabindex="-1" aria-labelledby="codeEditorModal" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+	  <input type="hidden" name="file" value="">  	
+	
+      <div class="modal-header">
+        <span class="modal-title"><div class="fs-6 mb-1">Editing:</div> <span class="name fw-bold">file.php</span> (<span class="file text-muted text-small">file.php</span>)</span>
+		<div class="float-end">
+			<button type="button" class="btn btn-secondary btn-icon" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
+			
+			<button class="btn btn-primary btn-icon save-btn" title="Save changes" 
+				onclick="saveCodeEditor()"
+			>
+				<span class="loading d-none">
+				<i class="la la-save"></i>
+				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+				  </span>
+				  <span>Saving </span> ... </span>
+
+				<span class="button-text">
+				  <i class="la la-save"></i> <span>Save changes</span>
+				</span>				
+			</button>
+		</div>
+      </div>
+	  
+      <div class="modal-body p-0">
+        <textarea class="form-control h-100"></textarea>
+      </div>
+	  
+
+    </div>
+  </div>
+</div>
+<!-- save status toast -->
+<div class="toast-container position-fixed end-0 top-0 me-3 mt-3" id="top-toast">
+  <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+	  <div class="d-flex">
+		<div class="toast-body">
+		  Save status
+		</div>
+		<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+	  </div>
+	</div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+<!-- code mirror - code editor syntax highlight -->
+<link href="libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
+<link href="libs/codemirror/theme/material.css" rel="stylesheet"/>
+<script src="libs/codemirror/lib/codemirror.js"></script>
+
+
+<script src="libs/codemirror/lib/htmlmixed.js"></script>
+<script src="libs/codemirror/lib/xml.js"></script>
+<script src="libs/codemirror/lib/javascript.js"></script>
+<script src="libs/codemirror/lib/css.js"></script>
+<script src="libs/codemirror/lib/php.js"></script>
+<script src="libs/codemirror/lib/clike.js"></script>
+<script src="libs/codemirror/lib/formatting.js"></script>
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let loadFileUrl = '{ $this->loadFileUrl }';
+let saveUrl = '{ $this->saveUrl }';
+let type = '{ $this->type }';
+let codemirror = false;
+
+$(document).on('click', 'input[type="checkbox"][name="file[]"]', function (e) {
+let selectedCount = $('input[type="checkbox"][name="file[]"]:checked').length;
+
+if (selectedCount > 0) {
+	$('.bulk-actions').fadeIn();
+} else {
+	$('.bulk-actions').fadeOut();
+}
+});
+
+function saveCodeEditor() {
+	let codeModal = $('#codeEditorModal');
+	let file = $("input[name=file]", codeModal).val();;
+	let btn = $("btn-save", codeModal).val();;
+	let content = "";
+	let url = `${saveUrl}&file=${file}`;
+	
+	if (codemirror) {
+		content = codemirror.getValue();
+	} else {
+		content = $("textarea", codeModal).val();
+	}
+	
+	$(".loading", btn).toggleClass("d-none");
+	$(".button-text", btn).toggleClass("d-none");
+	
+	$.ajax({
+	  url,
+	  method:"POST",
+	  data:{content}
+	}).done(function(data) {
+		$(".loading", btn).toggleClass("d-none");
+		$(".button-text", btn).toggleClass("d-none");
+
+		let bg = "bg-success";
+		if (data.success) {		
+		} else {
+			bg = "bg-danger";
+		}
+		
+		$("#top-toast .toast-body").html(data.message)
+		$("#top-toast .toast").removeClass(["bg-danger", "bg-success"]).addClass(bg).addClass("show");
+		delay(() => $("#top-toast .toast").removeClass("show"), 5000)
+		
+		if (data.success) {		
+			codeModal.modal('hide');
+		}
+	}).fail(function (data) {
+			alert(data.responseText);
+	}).always(function (data) {
+		$(".loading", btn).toggleClass("d-none");
+		$(".button-text", btn).toggleClass("d-none");
+	});
+}
+
+function openCodeEditorModal(file = '', name = null, fileType = 'html') {
+	let url = `${loadFileUrl}&file=${file}`;
+	$.ajax({
+	  url
+	}).done(function(data) {
+		let codeModal = $('#codeEditorModal');
+		$(".modal-title .name", codeModal).html(name ?? file);
+		$(".modal-title .file", codeModal).html(file);
+		$("input[name=file]", codeModal).val(file);
+		
+		if (fileType == 'js') {
+			fileType = 'javascript';
+		} else if (fileType == 'php') { 
+			fileType = 'php';
+		} else if (fileType == 'css') { 
+			fileType = 'css';
+		} else if (fileType == 'html') { 
+			fileType = 'htmlmixed';
+		} else { 
+			fileType = 'null';
+		}
+
+		if (codemirror) {
+			var scrollInfo = codemirror.getScrollInfo();
+			codemirror.setOption("mode", fileType);
+			codemirror.setValue(data);
+			codemirror.scrollTo(scrollInfo.left, scrollInfo.top);
+			setTimeout(function() {
+				codemirror.refresh();
+			},300);
+
+		} else {
+			$("textarea", codeModal).val(data);
+		}
+		
+		codeModal.modal('show');
+	});
+}
+
+
+$(window).on( "mediaModal:fileActions", function( event, data ) { 
+	if (!data.isImage) {
+		return '<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm border-0" onclick="openCodeEditorModal(\'' + data.file + '\', \'' + data.name + '\', \'' + data.fileType + '\')"><i class="la la-edit"> Edit</i></a>';
+	} else {
+		return '';
+	}
+});
+
+
+if (codemirror == false) {
+	codemirror = CodeMirror.fromTextArea(document.querySelector("#codeEditorModal textarea"), {
+		mode: 'htmlmixed',
+		matchBrackets: true,
+		lineNumbers: true,
+		autofocus: true,
+		lineWrapping: true,
+		indentUnit: 4,
+        indentWithTabs: true,
+		viewportMargin:Infinity,
+		theme: 'material'
+	});
+	
+	this.isActive = true;
+	codemirror.getDoc().on("change", function (e, v) { 
+		//delay(Vvveb.Builder.setHtml(e.getValue()), 1000);
+	});
+}
+</script>
+
+<script id="media-js"src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+
+
+@@include('../_includes/footer.html')

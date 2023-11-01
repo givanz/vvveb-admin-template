@@ -1,0 +1,309 @@
+<div class="mb-3 row">
+   <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-site-name" placeholder="Title" name="site[name]" data-v-site-name  required>
+   </div>
+</div>
+<!--
+<div class="mb-3 row">
+   <div class="col-sm-2">
+	   <label for="input-site-host" class="col-form-label">
+		<span>Site domain/subdomain</span>
+		<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+		<br/>
+		<span class="form-text">Used to generate links for the site</span>
+	   </label>
+		<br/>
+		<a class="" data-bs-toggle="collapse" data-bs-target="#siteKeyInput" aria-expanded="false">
+			Advanced <i class="la la-lg la-arrow-down"></i>
+		</a>
+   </div>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-site-host" placeholder="subdomain.mysite.com" name="site[host]" data-v-site-host required />
+	  
+		<span class="form-text">Use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*</span>
+   </div>
+</div>
+-->
+<div class="mb-3 row">
+   
+   <label for="input-site-host" class="col-sm-2 col-form-label">		
+		<span>Site domain/subdomain</span>
+		<span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+		<br/>
+		<span class="form-text">Used to match site and generate links</span>
+   </label>
+   
+   <div class="col-sm-10">
+	  <div class="input-group">
+		<input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host  required>
+	  
+		<button class="input-group-text" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
+			<i class="la la-lg la-question-circle text-primary"></i>
+		  </button>
+	  
+	   </div>
+	   
+								
+		<div class="collapse" id="siteKeyInfo">
+		  <div class="card card-body text-bg-body-tertiary">
+			<span>
+			<i class="la la-info-circle fs-2 px-2 float-end"></i>
+			<span>Use * wildcard to match any subdomain or domain.</span><br>
+			<span>For example:</span> <span class="badge border text-body">shop.*.*</span><span>for your shop subdomain</span><br>
+			<span class="badge border text-body">blog.mydomain.*</span><span>to match blog on all tld's</span><br> 
+			<span class="badge border text-body">*.mydomain.*</span><span>to match all subdomains and tld.</span><br/>
+			<span>Use</span><span class="badge border text-body">*.*.*</span><span>to match all other hosts.</span><br/>
+			<span>Must be unique for each site.</span>
+			</span>
+		  </div>
+		</div>
+
+   </div>
+</div>
+
+
+<div class="mb-3 row">
+   <label for="input-site-theme" class="col-sm-2 col-form-label">Theme</label>
+   <div class="col-sm-10">
+		 
+		   <select class="theme-list form-select flex-fill" name="site[theme]" id="input-site-theme" data-v-theme-list>
+				<option value="1">
+					<img src="">
+					Theme 1
+				</option>
+
+				<option value="2">
+					<img src="">
+					Theme 2
+				</option>
+		   </select>
+	  
+   </div>
+</div>
+
+<div class="mb-3 row">
+   <label for="input-site-template" class="col-sm-2 col-form-label">Home template</label>
+   <div class="col-sm-10">
+		 
+		   <select class="template-list form-select flex-fill" name="site[template]" id="input-site-template"  data-v-template-list>
+				<option value="" title="Default template">-- Default template --</option>
+
+				<option value="published" data-v-option>Published</option>
+		   </select>
+	  
+   </div>
+</div>
+	 
+
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Description</label>
+
+<div class="mb-3 row">
+   <label for="input-title" class="col-sm-2 col-form-label">Site title</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-title" placeholder="Title" name="settings[title]" data-v-setting="title" required>
+   </div>
+</div>
+
+<div class="mb-3 row">
+   <label for="input-description" class="col-sm-2 col-form-label">Site description</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-description" placeholder="Description" name="settings[description]" data-v-setting="description" required>
+   </div>
+</div>
+	
+
+<div class="mb-3 row">
+	<label class="col-sm-2 col-form-label">Meta keywords</label>
+	<div class="col-sm-10">
+	  <input name="settings[meta-keywords]" value="" placeholder="keywords" class="form-control" type="text" data-v-setting="meta-keywords"/>
+	</div>
+  </div>	  
+  
+<div class="mb-3 row">
+	<label class="col-sm-2 col-form-label">Meta description</label>
+	<div class="col-sm-10">
+	  <input name="settings[meta-description]" value="" placeholder="description" class="form-control" type="text" data-v-setting="meta-description"/>
+	</div>
+</div>
+  
+  
+<div class="mb-3 row">
+   <label for="admin-email" class="col-sm-2 col-form-label">Administration Email Address</label>
+   <div class="col-sm-10">
+	  <input type="email" class="form-control" id="admin-email" placeholder="Administration Email Address" name="settings[admin-email]"  data-v-setting="admin-email" required>
+   </div>
+</div>			
+
+<div class="mb-3 row">
+   <label for="contact-email" class="col-sm-2 col-form-label">Contact Email Address</label>
+   <div class="col-sm-10">
+	  <input type="email" class="form-control" id="contact-email" placeholder="Administration Email Address" name="settings[contact-email]"  data-v-setting="contact-email">
+   </div>
+</div>			
+
+<div class="mb-3 row">
+   <label for="phone-number" class="col-sm-2 col-form-label">Phone number</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="phone-number" placeholder="Phone number" name="settings[phone-number]"  data-v-setting="phone-number">
+   </div>
+</div>
+
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Logo</label>
+
+<div class="mb-3 row">
+	<label for="input-title" class="col-sm-2 col-form-label">Site logo</label>
+		<div class="col-sm-10">
+
+		<div class="d-inline-block px-2">
+
+			<label for="input-title" class="form-label d-block mb-3">Fav icon</label>
+			
+			<input type="hidden" data-v-image name="settings[favicon]" name="settings[favicon]"  data-v-setting="favicon" id="favicon-input" value="">
+						
+			<img data-v-image src="img/placeholder.svg" alt=""
+			 id="favicon-thumb"
+			 data-v-placeholder=""
+			 data-media-gallery 
+			 data-target-input="#favicon-input"
+			 data-target-thumb="#favicon-thumb" 
+			 data-type="single"
+			 class="img-thumbnail bg-light"
+			 style="max-width:200px;"
+			 data-v-setting="favicon-src"
+			 >
+				
+
+				<div class="py-3">
+					<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
+						data-media-gallery 
+						data-target-input="#favicon-input"
+						data-target-thumb="#favicon-thumb" 
+						data-type="single">
+						<i class="la la-image la-lg"></i> <span>Set image</span>
+					</button>
+				</div>
+				
+		</div>
+
+		<div class="d-inline-block px-2">
+			<label for="input-title" class="form-label d-block mb-3">Site logo</label>
+			
+			<input type="hidden" data-v-image name="settings[logo]" name="settings[logo]"  data-v-setting="logo" id="logo-input" value="">
+						
+			<img data-v-image src="img/placeholder.svg" alt=""
+			 id="logo-thumb"
+			 data-v-placeholder=""
+			 data-media-gallery 
+			 data-target-input="#logo-input"
+			 data-target-thumb="#logo-thumb" 
+			 data-type="single"
+			 class="img-thumbnail bg-light"
+			 style="max-width:200px;"
+			 data-v-setting="logo-src"
+			 >
+				
+
+				<div class="py-3">
+					<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
+						data-media-gallery 
+						data-target-input="#logo-input"
+						data-target-thumb="#logo-thumb" 
+						data-type="single">
+						<i class="la la-image la-lg"></i> <span>Set image</span>
+					</button>
+				</div>
+				
+		</div>				
+		
+		<div class="d-inline-block px-2">
+			<label for="input-title" class="form-label d-block mb-3">Logo sticky</label>
+			
+			<input type="hidden" data-v-image name="settings[logo-sticky]" name="settings[logo-sticky]"  data-v-setting="logo-sticky" id="logo-sticky-input" value="">
+						
+			<img data-v-image src="img/placeholder.svg" alt=""
+			 id="logo-sticky-thumb"
+			 data-v-placeholder=""
+			 data-media-gallery 
+			 data-target-input="#logo-sticky-input"
+			 data-target-thumb="#logo-sticky-thumb" 
+			 data-type="single"
+			 class="img-thumbnail bg-light"
+			 style="max-width:200px;"
+			 data-v-setting="logo-sticky-src"
+			 >
+				
+
+				<div class="py-3">
+					<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
+						data-media-gallery 
+						data-target-input="#logo-sticky-input"
+						data-target-thumb="#logo-sticky-thumb" 
+						data-type="single">
+						<i class="la la-image la-lg"></i> <span>Set image</span>
+					</button>
+				</div>
+				
+		</div>				
+		
+		<div class="d-inline-block px-2">
+			<label for="input-title" class="form-label d-block mb-3">Logo dark</label>
+			
+			<input type="hidden" data-v-image name="settings[logo-dark]" name="settings[logo-dark]"  data-v-setting="logo-dark" id="logo-dark-input" value="">
+						
+			<img data-v-image src="img/placeholder.svg" alt=""
+			 id="logo-dark-thumb"
+			 data-v-placeholder=""
+			 data-media-gallery 
+			 data-target-input="#logo-dark-input"
+			 data-target-thumb="#logo-dark-thumb" 
+			 data-type="single"
+			 class="img-thumbnail bg-dark"
+			 style="max-width:200px;"
+			 data-v-setting="logo-dark-src"
+			 >
+				
+
+				<div class="py-3">
+					<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
+						data-media-gallery 
+						data-target-input="#logo-dark-input"
+						data-target-thumb="#logo-dark-thumb" 
+						data-type="single">
+						<i class="la la-image la-lg"></i> <span>Set image</span>
+					</button>
+				</div>
+				
+		</div>
+		
+		<div class="d-inline-block px-2">
+			<label for="input-title" class="form-label d-block mb-3">Logo dark sticky</label>
+			
+			<input type="hidden" data-v-image name="settings[logo-dark-sticky]" name="settings[logo-dark-sticky]"  data-v-setting="logo-dark-sticky" id="logo-dark-sticky-input" value="">
+						
+			<img data-v-image src="img/placeholder.svg" alt=""
+			 id="logo-dark-sticky-thumb"
+			 data-v-placeholder=""
+			 data-media-gallery 
+			 data-target-input="#logo-dark-sticky-input"
+			 data-target-thumb="#logo-dark-sticky-thumb" 
+			 data-type="single"
+			 class="img-thumbnail bg-dark"
+			 style="max-width:200px;"
+			 data-v-setting="logo-dark-sticky-src"
+			 >
+				
+
+				<div class="py-3">
+					<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
+						data-media-gallery 
+						data-target-input="#logo-dark-sticky-input"
+						data-target-thumb="#logo-dark-sticky-thumb" 
+						data-type="single">
+						<i class="la la-image la-lg"></i> <span>Set image</span>
+					</button>
+				</div>
+				
+		</div>
+	</div>
+</div>

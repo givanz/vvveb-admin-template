@@ -1,0 +1,60 @@
+<div class="mb-3 row">
+	<label class="col-sm-2 form-label" for="input-related">
+		<span>Taxonomy</span>
+	</label>
+		
+	<div class="col-sm-10">
+
+
+		<div class="taxonomies" data-v-taxonomies>
+			<div class="taxonomy" data-v-taxonomy_item>
+				
+				<label class="header" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label><span data-v-taxonomy_item-name>Categories</span>
+					<div class="header-arrow"></div>
+				</label>
+				<input class="header_check" type="checkbox" checked="true" id="header_categories" data-v-taxonomy_item-input>
+				<div class="" data-v-section="element_header">
+										
+										
+					<div class="categories-list" data-v-categories>
+						<div data-v-cats>
+							
+							<ul class="dd-list"  data-v-if="taxonomy_item.type = 'categories'">
+
+								<li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
+									<div class="dd3-content">
+
+										<label class="form-check">
+											<input type="checkbox" class="form-check-input" value="4" name="taxonomy_item[]" data-v-post-taxonomy_item-taxonomy_item_id>
+											<span class="form-check-label" data-v-taxonomy_item-name>Item 135</span>
+										</label>
+
+									</div>
+									
+								</li>
+							
+							</ul>
+						</div>
+						
+						<div data-v-tags>
+							
+							<div class="tags-input">
+								
+								<div class="tag" data-v-tag>
+									<span data-v-taxonomy_item-name>Product 10</span>				
+									<a href="#" class="btn-link remove-btn"><i class="la la-times"></i></a> 
+									<input type="hidden" value="4" name="tag[]" data-v-post-taxonomy_item-taxonomy_item_id data-v-taxonomy_item-list-name>
+								</div>
+								
+								<input type="text" name="text" class="tags-input form-control" data-taxonomy_id>
+							</div>
+
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

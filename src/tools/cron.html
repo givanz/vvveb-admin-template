@@ -1,0 +1,139 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Cron","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+				
+		<div class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-cube-outline"></i>&ensp;
+					<span>Cron</span>
+				</h4>
+			</div>
+
+		</div>
+
+    <div>
+
+    <div>
+	<div id="main-content" class="plugins card-block" data-v-plugins>
+		
+
+		@@include('../_includes/notifications.html')
+		
+		<div id="accordion" name="accordion" role="tablist" class="accordion mb-3">
+			
+			<div class="accordion-item">
+				<div class="accordion-header" role="tab">
+					  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+						<input class="form-check-input me-2" type="radio" name="type" value="default" data-bs-toggle="collapse" data-bs-target="#automatic" aria-expanded="true" aria-controls="automatic" checked>
+						Automatic</label>                                        
+				</div>
+
+				<div class="collapse accordion-collapse show" role="tabpanel" data-bs-parent="#accordion" id="automatic">
+					<div class="accordion-body">
+										
+						<div>
+							<p>Activated by site traffic on page load.</p> 
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			<div class="accordion-item">
+				<div class="accordion-header" role="tab">
+					  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+						<input class="form-check-input me-2" type="radio" name="type" value="default" data-bs-toggle="collapse" data-bs-target="#manual" aria-expanded="true" aria-controls="manual">
+						Manual configuration
+					  </label>                                        
+				</div>
+
+				<div class="collapse accordion-collapse" role="tabpanel" data-bs-parent="#accordion" id="manual">
+					<div class="accordion-body">
+										
+						<div>
+							<p>You need to run the following command every hour, if you don't have access then you need to call the url bellow every hour. For more info on how to configure cron jobs please read <a href="http://docs.vvveb.com/cat/cron/" target="_blank">Cron Documentation</a>.</p> 
+						</div>
+
+						<div class="card mb-3">
+							<div class="card-header">Manual call</div>
+							<div class="card-body">
+								<h6>CLI option</h6>
+								<div class="input-group mb-3">
+
+										<div class="input-group-text bg-body-tertiary">Command</div>
+										<input type="text" value="php cli.php app module=cron/index"class="form-control" id="cron-cli" data-v-cron-cli>
+										<button type="button" class="btn btn-outline-secondary bg-body-tertiary" title="Copy" onclick="copyText('cron-cli')">
+											<i class="la la-copy"></i>
+										</button>
+								</div>	
+								
+								<h6>Web url</h6>
+								<div class="input-group">
+
+										<div class="input-group-text bg-body-tertiary">URL</div>
+										<input type="text" value="https://demo.vvveb.com/run-cron/?key=fj4jf9dsi9acjd9j9m9483r"class="form-control" id="cron-url" data-v-cron-url>
+										<button type="button" class="btn btn-outline-secondary bg-body-tertiary" title="Copy" onclick="copyText('cron-url')">
+											<i class="la la-copy"></i>
+										</button>
+								</div>								
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<div class="accordion-header" role="tab">
+					  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+						<input class="form-check-input me-2" type="radio" name="type" value="default" data-bs-toggle="collapse" data-bs-target="#disabled" aria-expanded="true" aria-controls="disabled">
+						Disabled <small class="text-muted ms-2">not recommended</small>
+					  </label>                                        
+				</div>
+
+				<div class="collapse accordion-collapse" role="tabpanel" data-bs-parent="#accordion" id="disabled">
+					<div class="accordion-body">
+										
+						<div>
+							<p>Some functions that depend on background services may not work properly.</p> 
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		
+		
+		@@include('../_includes/upload-form.html')
+
+		
+		</div>
+	</div>
+
+      </div>
+  </div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+function copyText(id) {
+	let input = document.getElementById(id);
+    input.select();
+    document.execCommand("copy");
+}
+</script>
+
+
+@@include('../_includes/footer.html')

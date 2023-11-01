@@ -1,0 +1,239 @@
+$admin-bar-height: 32px !default;
+$admin-bar-background: rgba(var(--bs-body-bg-rgb, 255,255,255),0.9) !default;
+$admin-bar-color: var(--bs-body-color, #000) !default;
+$admin-bar-border-color: var(--bs-border-color, #ddd) !default;
+$admin-bar-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !default;
+$custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%555' d='M509.121,125.966c-3.838-3.838-10.055-3.838-13.893,0L256.005,365.194L16.771,125.966c-3.838-3.838-10.055-3.838-13.893,0	c-3.838,3.838-3.838,10.055,0,13.893l246.18,246.175c1.842,1.842,4.337,2.878,6.947,2.878c2.61,0,5.104-1.036,6.946-2.878 l246.17-246.175C512.959,136.021,512.959,129.804,509.121,125.966z'/%3E%3C/svg%3E");
+$la-font-path: '../fonts/line-awesome';
+$la-css-prefix-lar: 'la';
+$la-css-prefix-las: 'la';
+
+@import "ionicons";
+@import "line-awesome/line-awesome";
+
+html {
+	//margin-top:($admin-bar-height + 1) !important;
+}
+
+
+
+#vvveb-admin {
+	background: $admin-bar-background;
+	color: $admin-bar-color;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	min-height: 32px;
+	color:$admin-bar-color;
+	z-index:10000;
+	font-family:$admin-bar-font-family;
+
+	font-size:13px;
+	border-bottom:1px solid $admin-bar-border-color;  
+	box-shadow:0px 0px 2px 1px rgba(var(--bs-body-color-rgb), 0.07);
+
+	&::before {
+		width: 100%;
+		height: 100%;
+		content: " ";
+		position: absolute;
+		backdrop-filter: blur(14px);
+	}	
+
+	a {
+		text-decoration:none;
+		font-family:$admin-bar-font-family;
+		font-weight:500;
+		font-size:13px;
+	}
+
+	
+	.vvveb-logo {
+		width:100px;
+		height:32px;
+		background-image:url('../img/logo-small.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		//display:block;
+		
+		&:hover {
+			background-color:$admin-bar-color;
+		}
+	}
+	
+	
+	ul {
+		background: $admin-bar-background;
+		color: $admin-bar-color;
+		list-style:none;
+		border: 1px solid $admin-bar-border-color;
+		
+		li {
+		
+			position:relative;
+			min-width: 200px;		
+			vertical-align:middle;
+			
+			span {
+				display:block;
+				padding: 0.5rem;
+				color: #999;
+				font-size: 0.8rem;			
+				pointer-events:none;
+			}
+		
+			a {
+				display:block;
+				padding:0.1rem 0.7rem 0.1rem 0.7rem;
+				min-height:32px;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				line-height:32px;
+				
+				> i, > img {
+					font-size: 1.4rem;
+					color:#777;
+					margin-right:0.5rem;
+					vertical-align: sub;
+				}
+				
+				> img {
+					max-width:24px;
+					width:24px;
+					vertical-align:middle;
+				}
+				
+				&:hover {
+					color:$admin-bar-background;
+					background-color:$admin-bar-color;
+				}
+			}
+			
+			i.la {
+				font-style:normal;
+				vertical-align:middle;
+			}
+			
+			&:hover {
+				
+			}
+			
+			&.v-logo {
+				a {
+					padding:0;
+				}
+			}
+			
+			
+		}
+	}
+	
+	> ul {
+		display:inline-block;
+		border:none;
+		
+		> li {
+		
+			min-width:auto;
+			display:inline-block;
+			
+			> a, > button  {
+				//color:lighten($admin-bar-color, 0.2);
+				
+				> i {
+					//margin-bottom:0.2rem;
+					margin-right:0.3rem;
+				}
+			}			
+			
+			ul {
+				position: absolute;
+				z-index: 100;
+				display:none;		
+				background:$admin-bar-background;
+				min-width:200px;
+				margin-right: -2px;
+
+				li {
+
+					a {
+						padding:0.2rem 0.7rem 0.2rem 0.7rem;
+
+						&.has-submenu {
+							 :after 
+							  {
+									content: "\f105";
+									font-family:'Line Awesome Free';
+									font-weight:900;
+									margin-right:1rem;
+									position:absolute;
+									right:0.5rem;
+									top:0.2rem;
+									opacity:1;
+									font-style: normal;
+									font-size: 16px;
+								}	
+						}						
+					}
+					
+					ul {
+						display: none;
+						right: -100%;
+						top: -1px;
+						
+						
+					}
+					
+					&:hover > ul {
+						display:block;
+					}
+				}
+				
+			}
+		
+			&:hover > ul {
+				display:block;
+			}
+
+			&:hover {
+				> a, > button {
+					background-color:$admin-bar-color;
+					color:$admin-bar-background;
+				}
+			}
+		}
+	}
+	
+	
+	.float-end {
+		float:right;
+	}
+	
+	a, button {
+		color:$admin-bar-color;
+	}
+	
+	* {
+		height: auto;
+		margin: 0;
+		padding: 0;
+		//position: static;
+		//text-shadow: none;
+		//text-transform: none;
+		//letter-spacing: normal;
+		//font-size: 13px;
+		//font-weight: 400;
+		//font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		//line-height: 2.46153846;
+		//border-radius: 0;
+		//box-sizing: content-box;
+		//transition: none;
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: auto;
+	}
+	
+	
+	& + header, & + section, & + nav {
+		margin-top:$admin-bar-height;
+	} 
+}

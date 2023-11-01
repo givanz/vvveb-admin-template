@@ -1,0 +1,218 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Fields","scripts":"","base_href":"../"})
+
+<body class="field-groups">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+	
+        <div id="content">
+           
+
+            <div class="actions">
+				
+				<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-document-text-outline"></i>&ensp;
+						<span>Field Groups</span>
+					</h4>
+				</div>
+
+				<div class="btns">
+					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+							aria-controls="filters" title="Filter"
+							class="btn btn-outline-secondary pe-3">
+						<i class="icon-funnel-outline"></i>&nbsp;
+						<i class="icon-chevron-down-outline small"></i>
+					</button>
+
+					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+							aria-controls="filters" title="Bulk edit"
+							class="btn  btn-outline-secondary">
+						<i class="icon-create-outline"></i>
+					</button>
+
+					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+							aria-controls="filters" title="Delete selected"
+							class="btn btn-outline-secondary btn-outline-secondary">
+						<i class="icon-trash-outline"></i>
+					</button>
+
+					 <a href data-v-url-params='{"module":"content/field-group"}' 
+							class="btn btn-primary btn-icon ms-1">
+						<i class="icon-add-circle-outline"></i> <span>Add field group</span>
+					</a>
+				</div>
+            </div>
+
+           <div id="main-content">
+
+                <div class="field-groups card-block">
+                    <form action="" method="field-group">
+						
+						<div class="bulk-actions px-2 pb-4" style="display:none">
+						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+									aria-controls="filters" title="Delete selected"
+									class="btn btn-primary btn-sm">
+								<i class="icon-create-outline"></i> Edit selected
+							</button>
+
+						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+									aria-controls="filters" title="Delete selected"
+									class="btn btn-outline-secondary btn-sm bg-body-tertiary text-danger">
+								<i class="icon-trash-outline"></i> Delete selected
+							</button>
+						
+						</div>
+						
+						
+                        <table class="table table-hover middle-align"
+                               data-v-field-groups>
+
+
+                            <thead>
+                            <tr>
+                                <th class="col-cb">
+                                    <div class="checkbox_outer">
+
+                                        <label class="form-check">
+                                            <input type="checkbox" class="form-check-input" value="4"
+                                                   name="product[]"
+                                                   data-v-vvveb-action="table.bulkSelect">
+                                            <span class="form-check-label"></span>
+                                            <span class="custom-control-description">&nbsp;</span>
+                                        </label>
+
+
+                                    </div>
+                                </th>
+                                <th style="width:200px;text-align:center;">
+									<i class="la la-image"></i>&ensp;<span>Thumbnail</span>
+								</th>
+                                <th class="field-group">
+									<i class="icon-cube-outline"></i>&ensp;<span>Name</span>
+								</th>
+                                <th style="width:200px;text-align:center;" class="author">
+									<i class="la la-user"></i>&ensp;<span>Author</span>
+								</th>
+                                <th class="field-groups">
+									<i class="la la-field-groups"></i>&ensp;<span>Comments</span>
+								</th>	
+                                <th class="date">
+									<i class="la la-calendar"></i>&ensp;<span>Date</span>
+								</th>
+                                <th class="actions text-center" style="width:200px">
+									<i class="la la-edit"></i>&ensp;<span>Actions</span>
+								</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+								
+                            <tr class="field-group" data-v-field-group>
+                                <td class="checkbox">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input" value="4" name="field-group[]" data-v-vvveb-action="table.selectRow">
+                                        <span class="form-check-label"></span>
+                                        <span class="custom-control-description">&nbsp;</span>
+                                    </label>
+
+                                </td>
+
+                                <td class="img" style="width:200px;text-align:center;">
+									<a href="/admin?module=products&amp;action=product&amp;id=4">
+                                        <img class="rounded" data-v-img src="#">
+									</a>
+                                </td>
+
+							
+                                <td class="field-group">
+                                    <a href="/admin?module=field-groups&amp;action=field-group&amp;id=4" data-v-url data-v-name>Article
+                                        title</a>
+									<div class="secondary-actions">
+														 
+									 
+										<a aria-expanded="false" data-v-edit-url title="Edit"
+												class="btn btn-icon-single btn-outline-secondary btn-sm">
+											<i class="la la-pen"></i> <span> Edit</span> 
+										</a>
+
+										<a title="View" data-v-view-url target="_blank"
+											class="btn btn-icon-single btn-outline-secondary btn-sm">
+											<i class="icon-eye-outline"></i> <span>View</span> 
+										</a>
+
+									</div>
+                                </td>
+
+
+                                <td style="width:200px;text-align:center;" class="author">
+                                    <a href="/admin?module=field-groups&amp;action=field-group&amp;id=4" data-v-author-url
+                                       data-v-display_name>Admin</a>
+                                </td>
+                                <td class="field-groups">
+									<div class="badge bg-secondary" data-v-field-groups>0</div>
+                                </td>
+                                <td class="date">
+                                    <span data-v-created_at data-filter-friendly_date title="data-v-created_at" href="">Date</span>
+                                </td>
+
+                                <td class="actions">
+
+									<div class="btn-group">
+										<a type="button" class="btn btn-outline-secondary" data-v-edit-url><i class="la la-pencil-alt"></i><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+											
+											data-bs-toggle="dropdown" 
+											aria-expanded="false" 
+											data-bs-reference="parent">
+											
+										  <span class="visually-hidden">Toggle primary</span>
+										</button>
+										<ul class="dropdown-menu">
+										  
+										  <li><a class="dropdown-item" href="#" data-v-view-url target="_blank"><i class="icon-eye-outline text-secondary">&ensp;</i><span>View</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-design-url target="_blank"><i class="icon-brush-outline text-secondary">&ensp;</i> <span>Design</span></a></li>
+										  <li><hr class="dropdown-divider"></li>
+										  <li><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+										</ul>
+									 </div>
+
+                                </td>
+                            </tr>
+                            </tbody>
+							<tr data-v-if-not="this.count > 0">
+								<td colspan="100">
+									<div class="text-center">
+										<div class="mt-3">No fields to display!</div>
+									</div>
+								</td>
+							</tr>
+
+                        </table>
+        <div class="bottom clearfix">
+                                <div class="float-start"></div>
+								<div class="float-end">
+							
+									@@include('../_includes/pagination.html')
+
+								</div>
+
+		                </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+@@include('../_includes/footer.html')

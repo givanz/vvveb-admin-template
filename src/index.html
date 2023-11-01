@@ -1,0 +1,773 @@
+@@include('./_includes/html-head.html', {"title": "Vvveb - Dasboard","scripts":'<link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack-extra.min.css"><link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">'})
+
+<body class="home">
+
+<script>
+    var chartjs = {};
+</script>
+
+
+<div id="container">
+       
+       @@include('./_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('./_includes/top-header.html')
+
+
+        <div class="p-4">
+
+		@@include('./_includes/notifications.html')
+
+		<div class="grid-stack">
+                
+                <div class="grid-stack-item"
+                     data-gs-x="0" data-gs-y="0"
+                     data-gs-width="3" data-gs-height="2"
+                     data-v-component-notifications>
+					<!-- set count to 0 to not fetch orders, we only need the number of orders -->
+				
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body card-block info">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">
+										<i class="la la-times"></i>
+									</span>
+                                </button>
+                                <h5 class="card-title">Orders</h5>
+
+								<i class="la la-shopping-cart icon bg-orange text-white d-inline-block "></i>
+								<h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
+
+                                <div class="card-text float-end">
+									<ul class="list-unstyled">
+										<li data-v-orders>
+											<a href="" class="text-body"><strong data-v-notification-orders-processing-count>0</strong> <span data-v-orders-name>Processing</span></a>
+										</li>
+										<li data-v-orders>
+											<a href="" class="text-body"><strong data-v-notification-orders-complete-count>0</strong> <span data-v-orders-name>Complete</span></a>
+										</li>
+										<li data-v-orders>
+											<a href="" class="text-body"><strong data-v-notification-orders-processed-count>0</strong> <span data-v-orders-name>Processed</span></a>
+										</li>
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-stack-item"
+                     data-gs-x="3" data-gs-y="0"
+                     data-gs-width="3" data-gs-height="2"
+                     data-v-component-notifications>
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body card-block info">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+
+                                <h5 class="card-title">Users</h5>
+
+                                <i class="la la-user icon bg-purple text-white d-inline-block"></i>
+                                <h3 class="number d-inline-block" data-v-notification-users-new-count>37</h3>
+
+								<div class="card-text float-end">
+									<ul class="list-unstyled">
+										<li>
+											<a href="" class="text-body"><strong data-v-notification-users-month-count>0</strong> this month</a>
+										</li>
+										<li>
+											<a href="" class="text-body"><strong data-v-notification-users-year-count>1</strong> this year</a>
+										</li>
+									</ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-stack-item"
+                     data-gs-x="6" data-gs-y="0"
+                     data-gs-width="3" data-gs-height="2"
+                     data-v-component-notifications>
+                    
+                    <div class="grid-stack-item-content">
+                        <div class="card bg-info-semi">
+                            <div class="card-body card-block info">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                                
+                                <h5 class="card-title">Comments</h5>
+
+                                <i class="la la-comments icon bg-success text-white d-inline-block"></i>
+                                <h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
+
+								<div class="card-text float-end">
+									<ul class="list-unstyled">
+										<li>
+											<a href="/admin/?module=content/comments&status=0&type=post" class="text-body"><strong data-v-notification-comments-pending-count>0</strong> pending</a>
+										</li>
+										<li>
+											<a href="/admin/?module=content/comments&status=2&type=post" class="text-body"><strong data-v-notification-comments-approved-count>0</strong> approved</a>
+										</li>
+										<li>
+											<a href="/admin/?module=content/comments&status=2&type=post" class="text-body"><strong data-v-notification-comments-spam-count>0</strong> spam</a>
+										</li>
+									</ul>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-stack-item"
+                     data-gs-x="9" data-gs-y="0"
+                     data-gs-width="3" data-gs-height="2"
+                     data-v-count=0
+                     data-v-component-notifications>
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body card-block info">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                                
+                                <h5 class="card-title">Reviews</h5>
+
+                                <i class="la la-sms icon bg-warning text-white d-inline-block"></i>
+                                <h3 class="number d-inline-block" data-v-reviews-pending-count>8</h3>
+
+								<div class="card-text float-end">
+									<ul class="list-unstyled">
+										<li>
+											<a href="/admin/?module=product/product-reviews&status=0" class="text-body"><strong data-v-notification-reviews-pending-count>0</strong> pending</a>
+										</li>
+										<li>
+											<a href="/admin/?module=product/product-reviews&status=1" class="text-body"><strong data-v-notification-reviews-approved-count>0</strong> approved</a>
+										</li>
+										<li>
+											<a href="/admin/?module=product/product-reviews&status=2" class="text-body"><strong data-v-notification-reviews-spam-count>0</strong> spam</a>
+										</li>
+									</ul>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-stack-item"
+                     data-gs-x="0" data-gs-y="2"
+                     data-gs-width="6" data-gs-height="4"
+                     data-v-component-stats>
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-header">
+                                Sales
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+
+                            </div>
+                            
+                            
+                            <div class="card-body">
+
+                                <div class="chartjs" data-chartjs="orders_users" style="height:100%">
+                                    <canvas></canvas>
+                                </div>
+                                <script>
+                                    chartjs['orders_users'] = {
+                                        type: 'line',
+                                        data: {
+                                            labels: {$stats.labels},
+                                            datasets: [
+                                                {
+                                                    label: 'Orders',
+                                                    //data: [12, 19, 3, 5, 2, 3],
+                                                    data: {$stats.orders},
+                                                    fill: true,
+                                                    borderColor: 'rgba(255, 99, 132, 0.5)',
+                                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                                }, {
+                                                    label: 'Users',
+                                                    fill: true,
+                                                    //data: [3, 15, 7, 4, 19, 12],
+                                                    data: {$stats.users},
+                                                    borderColor: 'rgba(54, 162, 235, 0.5)',
+                                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                                }]
+                                        },
+                                        options: {
+                                            maintainAspectRatio: false,
+                                            responsive: true,
+                                            legend: {
+                                                position: 'bottom',
+                                            },
+                                            title: {
+                                                display: true,
+                                                //text: 'Sales'
+                                            },
+                                            tooltips: {
+                                                mode: 'index'
+                                            },
+                                            scales: {
+                                                xAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true
+                                                    }
+                                                }],
+                                                yAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true,
+                                                        //labelString: 'Sales'
+                                                    },
+                                                }]
+                                            }
+                                        }
+                                    };
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-stack-item"
+                     data-gs-x="6" data-gs-y="2"
+                     data-gs-width="6" data-gs-height="4">
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-header">
+                                Orders
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="chartjs" data-chartjs="sales" style="height:100%">
+                                    <canvas></canvas>
+                                </div>
+                                <script>
+                                    chartjs['sales'] = {
+                                        type: 'line',
+										data: {
+                                            labels: {$stats.labels},
+                                            datasets: [
+                                                {
+                                                    label: 'Orders',
+                                                    //data: [12, 19, 3, 5, 2, 3],
+                                                    data: {$stats.orders},
+                                                    fill: true,
+                                                    borderColor: 'rgba(255, 99, 132, 0.5)',
+                                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                                }, {
+                                                    label: 'Users',
+                                                    fill: true,
+                                                    //data: [3, 15, 7, 4, 19, 12],
+                                                    data: {$stats.users},
+                                                    borderColor: 'rgba(54, 162, 235, 0.5)',
+                                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                                }]
+                                        },
+                                        options: {
+                                            maintainAspectRatio: false,
+                                            responsive: true,
+                                            legend: {
+                                                position: 'bottom',
+                                            },
+                                            title: {
+                                                display: true,
+                                                //text: 'Sales'
+                                            },
+                                            tooltips: {
+                                                mode: 'index'
+                                            },
+                                            scales: {
+                                                xAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true
+                                                    }
+                                                }],
+                                                yAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true,
+                                                        //labelString: 'Sales'
+                                                    },
+                                                }]
+                                            }
+                                        }
+                                    };
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid-stack-item"
+                     data-gs-x="0" data-gs-y="6"
+                     data-gs-width="6" data-gs-height="4"
+                     data-v-component-orders>
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-header">
+                                Latest orders
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div>
+                            <div class="card-block">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th width="1">#</th>
+                                        <th>User</th>
+                                        <th>Status</th>
+                                        <th>Date added</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-v-order>
+                                        <td scope="row" class="text-center">1</td>
+                                        <td><span data-v-order-first_name>John</span> <span data-v-order-last_name>Doe</span></td>
+                                        <td width="100" data-v-order-order_status>Pending</td>
+                                        <td width="150" data-v-order-created_at data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
+                                        <td width="150"><span data-v-currency_code></span> <span class="price" data-v-order-total>100%</span></td>
+                                        <td class="text-center" width="70">
+											
+											
+											<a href="#"
+											   class="btn btn-primary btn-sm"
+                                               
+                                               data-v-order-url>
+													<i class="la la-hand-pointer"></i>
+											</a>
+                                                
+                                        </td>
+                                    </tr>
+                                    <tr data-v-order>
+                                        <td scope="row" class="text-center">1</td>
+                                        <td width="100">John Doe</td>
+                                        <td>Pending</td>
+                                        <td>31/05/2018</td>
+                                        <td class="text-center">$1,005.00</td>
+                                        <td class="text-center"><a href="#"
+                                                                  class="btn btn-primary btn-sm"
+                                                                 ><i
+                                                class="la la-hand-pointer"></i></a></td>
+                                    </tr>
+                                    <tr data-v-order>
+                                        <td scope="row" class="text-center">1</td>
+                                        <td width="100">John Doe</td>
+                                        <td>Pending</td>
+                                        <td>31/05/2018</td>
+                                        <td class="text-center">$1,005.00</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm">
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    </tbody>
+									<tr data-v-if-not="count > 0">
+										<td colspan="100">
+											<div class="text-center">
+												<small class="text-muted">No orders to display!</small>
+											</div>
+										</td>
+									</tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="grid-stack-item"
+                     data-gs-x="6" data-gs-y="12"
+                     data-gs-width="3" data-gs-height="4"
+                     data-v-component-products>
+                     
+                    <div class="grid-stack-item-content">
+
+                        <div class="card">
+                            <div class="card-header">
+                                Top products sales
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div>
+                            <div class="card-block">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Thumb</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-v-product>
+                                        <td class="img"  width="70">
+											<img class="rounded" data-v-product-image src="#">
+										</td>
+                                        <td width="100" data-v-product-name>Product name</td>
+                                        <td data-v-product-price  width="70">5</td>
+                                        <td class="text-center" width="70">
+											
+											
+											<a href="#"
+											   class="btn btn-primary btn-sm"
+                                               
+                                               data-v-producta-url>
+													<i class="la la-hand-pointer"></i>
+											</a>
+                                                
+                                        </td>
+                                    </tr>
+                                    </tbody>
+									
+									<tr data-v-if-not="count > 0">
+										<td colspan="100">
+											<div class="text-center">
+												<small class="text-muted">No prodcuts to display!</small>
+											</div>
+										</td>
+									</tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+               
+                <div class="grid-stack-item"
+                     data-gs-x="9" data-gs-y="12"
+                     data-gs-width="3" data-gs-height="4" 
+					 data-v-component-users>
+					
+                    <div class="grid-stack-item-content">
+
+                        <div class="card">
+                            <div class="card-header">
+                                New users
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div>
+                            <div class="card-block">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Date joined</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-v-user>
+                                        <td><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
+                                        <td width="150" data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
+                                        <td class="text-center" width="70">
+											<a href="#" class="btn btn-primary btn-sm"  data-v-user-url>
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    <tr data-v-user>
+                                        <td width="100"><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
+                                        <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm" >
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    <tr data-v-user>
+                                        <td width="100"><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
+                                        <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm" >
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    <tr data-v-user>
+                                        <td width="100"><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
+                                        <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm"  data-v-comment-url>
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+
+
+
+
+                                    </tbody>
+									<tr data-v-if-not="count > 0">
+										<td colspan="100">
+											<div class="text-center">
+												<small class="text-muted">No users to display!</small>
+											</div>
+										</td>
+									</tr>
+                                </table>
+                            </div>
+                        </div>
+                   </div>
+                   </div>
+                        
+                        
+                <div class="grid-stack-item"
+					 data-gs-x="0" 
+					 data-gs-y="10" 
+					 data-gs-width="6" 
+					 data-gs-height="4"
+                     >
+                     
+                    <div class="grid-stack-item-content" data-v-component-comments data-v-status="0">
+
+                        <div class="card">
+                            <div class="card-header">
+                                New comments
+
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div>
+                            <div class="card-block">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Date added</th>
+                                        <th>Comment</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-v-comment>
+                                        <td width="100"><span data-v-comment-author>John</span></td>
+                                        <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
+                                        <td data-v-comment-content>31/05/2018</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm"  data-v-comment-url>
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    <tr data-v-comment>
+                                        <td width="100"><span data-v-comment-author>John</span></td>
+                                        <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
+                                        <td data-v-comment-content>31/05/2018</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm" >
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    <tr data-v-comment>
+                                        <td width="100"><span data-v-comment-author>John</span></td>
+                                        <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
+                                        <td data-v-comment-content>31/05/2018</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm" >
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    <tr data-v-comment>
+                                        <td width="100"><span data-v-comment-author>John</span></td>
+                                        <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
+                                        <td data-v-comment-content>31/05/2018</td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm" >
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
+                                    </tr>
+                                    </tbody>
+									<tr data-v-if-not="count > 0">
+										<td colspan="100">
+											<div class="text-center">
+												<small class="text-muted">No comments to display!</small>
+											</div>
+										</td>
+									</tr>
+                                </table>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        
+                        
+                        
+                <div class="grid-stack-item"
+					 data-gs-x="7" 
+					 data-gs-y="12" 
+					 data-gs-width="6" 
+					 data-gs-height="4"
+                     data-v-component-news>
+                     
+                    <div class="grid-stack-item-content">
+
+                        <div class="card">
+                            <div class="card-header">
+                                News
+
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div>
+                            <div class="card-block">
+                                <table class="table">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-v-news>
+                                        <td class="img">
+											<img class="rounded" data-v-news-img src="#" data-v-if="news.img"  width="32" height="32">
+											<img class="rounded" data-v-news-img src="img/logo-small.png" data-v-if-not="news.img">
+										</td>
+                                        <td><a href="" target="_blank"  data-v-news-link><span data-v-news-title>What's new in 0.1</span></a></td>
+                                    </tr>
+                                    <tr data-v-news>
+                                        <td class="img">
+											<img class="rounded" data-v-news-img src="#" data-v-if="news.img">
+											<img class="rounded" data-v-news-img src="#" data-v-if-not="news.img">
+										</td>
+                                        <td><a data-v-news-url href="" target="_blank"><span data-v-news-title>New features planned for the next version</span></a></td>
+                                    </tr>
+                                    <tr data-v-news>
+                                        <td class="img">
+											<img class="rounded" data-v-news-img src="#" data-v-if="news.img">
+										</td>
+                                        <td><a data-v-news-url href="" target="_blank"><span data-v-news-title>Introducing the new multi site feature</span></a></td>
+                                    </tr>
+                                    <tr data-v-news>
+                                        <td class="img">
+											<img class="rounded" data-v-news-img src="#" data-v-if="news.img">
+										</td>
+                                        <td><a data-v-news-url href="" target="_blank"><span data-v-news-title>How to use media library</span></a></td>
+                                    </tr>
+                                    </tbody>
+									<tr data-v-if-not="count > 0">
+										<td colspan="100">
+											<div class="text-center">
+												<small class="text-muted">No news to display!</small>
+											</div>
+										</td>
+									</tr>
+                                </table>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        
+                        
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+
+@@include('./_includes/footer-scripts.html')
+
+<!-- Modal -->
+<div class="modal fade" id="widgetModal" tabindex="-1" role="dialog" aria-labelledby="widgetModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="widgetModalLabel">Widgets</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <select class="form-select">
+
+                    <option value="publish">Published</option>
+                    <option value="draft">Draft</option>
+                    <option value="pending">Pending preview</option>
+
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add widget</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="libs/jquery-ui/jquery-ui.min.js"></script>
+<script src="libs/gridstack/gridstack.min.js"></script>
+<script src="libs/gridstack/gridstack.jQueryUI.min.js"></script>
+<script id="chartjs-script"  src="libs/chart-js/chart.bundle.min.js"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        var options = {
+            cellHeight: 80,
+            verticalMargin: 10,
+			cellHeightThrottle: 100,
+			minWidth: 1200,
+        };
+        $('.grid-stack').gridstack(options);
+
+        $('.grid-stack').on('change', function (event, items) {
+            console.log(items);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        chartjs_instance = {};
+        $(".chartjs").each(function () {
+
+            ctx = $("canvas", this).get(0).getContext("2d");
+            chartjs_instance[this.dataset.chartjs] = new Chart(ctx, chartjs[this.dataset.chartjs]);
+        });
+    });
+</script>
+
+@@include('./_includes/footer.html')

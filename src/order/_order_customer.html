@@ -1,0 +1,40 @@
+<div class="customer_details">
+	<div class="clearfix">
+		<h6 class="float-start">Customer Details</h6>
+		<div class="btn btn-outline-success btn-sm float-end" onclick="$('.customer_details').toggleClass('edit');"><i class="la la-pen"></i> Edit</div>
+	</div>		
+	<div class="display mb-1 lh-lg">
+	    <div data-v-order-first_name data-first_name-text>First Name</div> 
+	    <div data-v-order-last_name data-last_name-text>Last Name</div>
+	    <div data-v-order-email data-email-text>mail@mail.com</div>
+	    <div data-v-order-phone_number data-phone_number-text>12345678</div>
+				
+		<a href="#">View Profile</a>
+		
+		<div data-v-if="this.order.comment">
+			<h6 class="mt-2">Order note</h6>
+			<div data-v-order-comment>12345678</div>
+		</div>
+	</div>	
+	<div class="edit">
+		<div class="mb-3 row"><label for="first_name" class="col-sm-4 col-form-label">First name</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="first_name" name="first_name" data-v-order-first_name></div>
+		</div>
+		<div class="mb-3 row"><label for="last_name" class="col-sm-4 col-form-label">Last name</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="last_name" name="last_name" data-v-order-last_name></div>
+		</div>
+		<div class="mb-3 row"><label for="email" class="col-sm-4 col-form-label">Email</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="email" name="email" data-v-order-email></div>
+		</div>
+		<div class="mb-3 row"><label for="phone_number" class="col-sm-4 col-form-label">Phone number</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="phone_number" name="phone_number" data-v-order-phone_number></div>
+		</div>
+		<!--		
+		<div classs="mt-3">
+			<button class="btn btn-success float-end">
+				<i class="la la-save"></i> <span>Save</span>
+			</button>
+		</div>
+		-->
+	</div>
+</div>

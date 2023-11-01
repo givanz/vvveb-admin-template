@@ -4,10 +4,13 @@
 -------------------------*/
 
 
-.filemanager {
-	position: relative;
+#MediaModal .modal-body, .filemanager {
+	position: static;
 }
 
+#MediaModal .modal-body {
+	min-height:50vh;
+}
 
 /*-------------------------
 	Breadcrumps
@@ -15,15 +18,15 @@
 
 
 .filemanager .breadcrumbs {
-	color: #333;
+	color: var(--bs-primary-text);
 	margin-left:20px;
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 1.2rem;
+	//font-weight: 500;
 	line-height: 35px;
 }
 
 .filemanager .breadcrumbs a:link, .breadcrumbs a:visited {
-	color: #333;
+	color: var(--bs-primary-text);
 	text-decoration: none;
 }
 
@@ -32,9 +35,9 @@
 }
 
 .filemanager .breadcrumbs .arrow {
-	color:  #ccc;
+	color: var(--bs-border-color);
 	font-size: 24px;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 20px;
 }
 
@@ -44,38 +47,110 @@
 -------------------------*/
 
 
-.filemanager .search {
-	position: absolute;
-	padding-right: 30px;
-	cursor: pointer;
+.filemanager .top-right {
 	right: 0;
 	font-size: 17px;
-	color: #333;
+	background-color: var(--bs-body-bg);
+	color: var(--bs-primary-text);
 	display: block;
-	width: 40px;
-	height: 40px;
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+	z-index:2;
 }
+
+.filemanager .search {
+	float:right;
+    position:relative;
+	cursor: pointer;
+}
+
+
+.filemanager .upload {
+    margin:3rem;
+    padding:0rem;
+    padding:1rem;
+    border:3px dashed var(--bs-border-color);
+    position:relative;
+    min-height:200px;
+}
+
+.filemanager .upload h3 {
+    padding:1rem 4rem;
+}
+
+.filemanager .upload button#upload-close {
+	position:absolute;
+	right:1rem;
+	z-index:1000
+}
+
+.filemanager .upload input[type=file] {
+    position:absolute;
+    z-index:100;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding:7rem 5rem 5rem;
+    display:block !important;
+    font-size:1rem;
+}
+
+.filemanager .upload input[type=file]::-webkit-file-upload-button
+/*,.filemanager .upload input[type=file]::file-selector-button */
+{
+  visibility: hidden;
+}
+
+.filemanager .upload input[type=file]::before {
+  content: 'Choose files';
+  color: white;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #0d6efd, #0a58ca);
+  border: 1px solid #0d6efd;
+  border-radius: 3px;
+  padding: 0.7rem 1.4rem;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  //text-shadow: 1px 1px var(--bs-body-bg);
+  font-size: 1rem;
+  font-weight:500;
+  box-shadow:1px 1px 2px 1px rgba(0, 0, 0, 0.07), -1px 1px 2px 0px rgba(255, 255, 255, 0.15) inset;
+}
+.filemanager .upload input[type=file]:hover::before {
+  border-color: black;
+}
+.filemanager .upload input[type=file]:active {
+  outline: 0;
+}
+.filemanager .upload input[type=file]:active::before {
+  background: -webkit-linear-gradient(top, #0a58ca, #0d6efd); 
+}
+
 
 .filemanager .search:before {
 	content: '';
 	position: absolute;
-	margin-top:12px;
-	width: 10px;
-	height: 11px;
+	margin-top:7px;
+	width: 14px;
+	height: 14px;
 	border-radius: 50%;
-	border: 2px solid #333;
-	right: 8px;
+	border: 2px solid var(--bs-border-color);
+	right: 10px;
 }
 
 .filemanager .search:after {
 	content: '';
 	width: 3px;
 	height: 10px;
-	background-color: #333;
+	background-color: var(--bs-border-color);
 	border-radius: 2px;
 	position: absolute;
-	top: 23px;
-	right: 6px;
+	top: 18px;
+	right: 9px;
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
@@ -83,13 +158,12 @@
 .filemanager .search input[type=search] {
 	border-radius: 2px;
 	color: #4D535E;
-	background-color: #FFF;
+	background-color: #f5f5f5;
 	width: 250px;
-	height: 44px;
-	margin-left: -215px;
+	height: 35px;
 	padding-left: 20px;
 	text-decoration-color: #4d535e;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
 	line-height: 20px;
 	display: none;
@@ -120,7 +194,8 @@
 -------------------------*/
 
 .filemanager .data {
-	margin-top: 60px;
+	margin: 0px;
+	padding: 0px;
 	z-index: -3;
 }
 
@@ -131,67 +206,85 @@
 
 .filemanager .data li {
 	border-radius: 3px;
-	background-color: #fafafa;
-	width: 307px;
+	/*background-color: #fafafa;*/
+	border: 1px solid var(--bs-border-color);
+	width: 300px;
 	height: 118px;
 	list-style-type: none;
 	margin: 10px;
 	display: inline-block;
+	/*
 	position: relative;
+	*/
 	overflow: hidden;
 	padding: 0.3em;
 	z-index: 1;
 	cursor: pointer;
 	box-sizing: border-box;
 	transition: 0.3s background-color;
+	padding:0;
 }
 
 .filemanager .data li:hover {
-	background-color: #eee;
+	padding:0px;
+	border-color: #007bff;
+	border-width: 1px;
+	outline: 1px solid #007bff;	
+	box-shadow:0px 0px 1px 3px rgba(0, 0, 0, 0.07);
 
+}
+
+.filemanager .data li.folders {
+	padding-top:1.5rem;
+	padding-left:1.5rem;
 }
 
 .filemanager .data li a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	text-decoration:none;
+}
+
+.filemanager .data li label.form-check {
+	font-size:1.2rem;
+	height:100%;
+	padding:0;
+}
+
+.filemanager .data li label.form-check .form-check-input {
+    border-color: #ddd;
+    float:right;
+}
+
+.filemanager .data li .info {
+	//margin-top:1rem;
+	//margin-top: 15px;
 }
 
 .filemanager .data li .name {
-	color: #333;
-	font-size: 15px;
-	font-weight: 700;
-	line-height: 20px;
-	width: 150px;
-	white-space: nowrap;
-	display: inline-block;
-	position: absolute;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.4rem;
+	max-height:3rem;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	top: 40px;
 }
 
 .filemanager .data li .details {
-	color: #777;
+	color:var(--bs-secondary-text);
 	font-size: 13px;
 	font-weight: 400;
-	width: 55px;
-	height: 10px;
-	top: 64px;
 	white-space: nowrap;
-	position: absolute;
-	display: inline-block;
+	display:block;
 }
 
 .filemanager .nothingfound {
 	background-color: #373743;
+	background-color: var(--bs-light-border-subtle);
 	width: 23em;
 	height: 21em;
 	margin: 0 auto;
 	display: none;
-	font-family: Arial;
+	border-radius:20px;
+	text-align:center;
 	-webkit-animation: showSlowlyElement 700ms; /* Chrome, Safari, Opera */
 	animation: showSlowlyElement 700ms; /* Standard syntax */
 }
@@ -207,19 +300,21 @@
 	line-height: 11.4em;
 }
 .filemanager .nothingfound .nofiles:after {
-	content: '×';
-	position: absolute;
-	color: #ffffff;
-	font-size: 14em;
-	margin-right: 0.092em;
-	right: 0;
+    content: 'x';
+    position: absolute;
+    color: var(--bs-body-bg);
+    font-size: 12em;
+    margin-right: 2rem;
+    line-height: 0.76;
+    font-weight: 600;
+    right: 0;
 }
 
 .filemanager .nothingfound span {
-	margin: 0 auto auto 6.8em;
-	color: #ffffff;
+	margin: 0 auto auto;
+	//color: var(--bs-body-bg);
 	font-size: 16px;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 20px;
 	height: 13px;
 	position: relative;
@@ -238,13 +333,13 @@
 /* Chrome, Safari, Opera */
 @-webkit-keyframes showSlowlyElement {
 	100%   	{ transform: scale(1); opacity: 1; }
-	0% 		{ transform: scale(1.2); opacity: 0; }
+	0% 		{ transform: scale(0.9); opacity: 0; }
 }
 
 /* Standard syntax */
 @keyframes showSlowlyElement {
 	100%   	{ transform: scale(1); opacity: 1; }
-	0% 		{ transform: scale(1.2); opacity: 0; }
+	0% 		{ transform: scale(0.9); opacity: 0; }
 }
 
 
@@ -252,19 +347,63 @@
 		Icons
 -------------------------*/
 
+.files .image
+{
+	display:inline-block;
+	margin:0px 10px 0px 0px;
+	max-width:200px;
+	max-height:120px;
+	background-position: center center;
+	background-size: 100%; 
+	background-repeat:no-repeat;
+	float:left;
+}
+.files .preview 
+{
+	display:none;
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:10000;
+	max-width:50%;
+	max-height:100%;
+	background-color:var(--bs-body-bg);
+	border-left:1px solid var(--bs-border-color);
+	border-bottom:1px solid var(--bs-border-color);
+}
+
+.files .preview img {
+	max-width:100%;
+}
+
+.files .preview-link:hover + .preview, 
+.files .preview-link:focus + .preview, 
+.files .preview-link + .preview:hover {
+	display:block;
+}
+
+.files .preview > img {
+	display:block;
+	margin:auto;
+}
+.files .preview > div {
+    padding: 2rem; 
+}
+
 .icon {
 	font-size: 23px;
+	float:left;
 }
 .icon.folder {
 	display: inline-block;
-	margin: 1em;
+	margin:0px 20px 0px 5px;
 	background-color: transparent;
 	overflow: hidden;
 }
 .icon.folder:before {
 	content: '';
 	float: left;
-	background-color: #7ba1ad;
+	background-color: rgba(var(--bs-primary-rgb), 0.5);
 
 	width: 1.5em;
 	height: 0.45em;
@@ -275,14 +414,14 @@
 	border-top-left-radius: 0.1em;
 	border-top-right-radius: 0.1em;
 
-	box-shadow: 1.25em 0.25em 0 0em #7ba1ad;
+	box-shadow: 1.25em 0.25em 0 0em rgba(var(--bs-primary-rgb), 0.6);
 }
 .icon.folder:after {
 	content: '';
 	float: left;
 	clear: left;
 
-	background-color: #a0d4e4;
+	background-color: rgba(var(--bs-primary-rgb), 1);
 	width: 3em;
 	height: 2.25em;
 
@@ -293,7 +432,7 @@
 }
 .icon.folder.full:after {
 	height: 2.15em;
-	box-shadow: 0 -0.12em 0 0 #ffffff;
+	box-shadow: 0 -0.12em 0 0 var(--bs-body-bg);
 }
 
 .icon.file {
@@ -302,16 +441,16 @@
 	line-height: 3em;
 	text-align: center;
 	border-radius: 0.25em;
-	color: #FFF;
+	color: var(--bs-body-bg);
 	display: inline-block;
-	margin: 0.9em 1.2em 0.8em 1.3em;
+	margin: 15px 20px 0px 5px;
 	position: relative;
 	overflow: hidden;
 	box-shadow: 1.74em -2.1em 0 0 #A4A7AC inset;
 }
 .icon.file:first-line {
 	font-size: 13px;
-	font-weight: 700;
+	font-weight: 500;
 }
 .icon.file:after {
 	content: '';
@@ -438,4 +577,3 @@
 .icon.file.f-scss:after {
 	border-bottom-color: #30837c;
 }
-

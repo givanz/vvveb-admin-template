@@ -1,0 +1,325 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - @@title", "scripts":'<link href="libs/nestable/jquery.nestable.css" rel="stylesheet">',"base_href":"../"})
+
+<body class="products">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+
+			
+		<div class="actions clearfix">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-cube-outline"></i>&ensp;
+					<span>@@title</span>
+				</h4>
+			</div>
+			
+			<div>
+				<a href="/admin/?module=content/menus" title="Comment list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Menu list</span>
+				 </a>
+			 </div>
+			 
+			<div @@add_button>
+				<button type="submit" href="" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
+					<i class="la la-pen"></i> <span>Add item</span>
+				</button>
+			</div>
+
+		</div>
+
+        <div id="content">
+	
+			<div class="content">
+		
+		
+            <div class="col-md-12">
+
+				@@include('../_includes/notifications.html')
+
+				@@if (prefix !== "taxonomy"){ 
+				<form method="post">
+					
+					<input type="hidden" name="@@prefix_id" value="" data-v-taxonomy_id>
+					
+					<div class="container-fluid m-3 pe-5">
+						<div class="row">
+						  <div class="col-auto">
+							<label class="col-form-label">Name</label>
+						  </div>
+						  <div class="col">
+							<input type="text" class="form-control" placeholder="Name" aria-label="Name" name="menu_data[name]" data-v-name>
+						  </div>
+						  <div class="col-auto">
+							<label class="col-form-label">Slug</label>
+						  </div>
+						  <div class="col">
+							<input type="text" class="form-control" placeholder="Slug" aria-label="Slug" name="menu_data[slug]" data-v-slug>
+						  </div>
+						  <div class="col-auto">
+							<button type="submit" class="btn btn-primary w-100"><i class="la la-save"></i> Save</button>
+						  </div>
+						</div>
+					</div>
+				</form>
+				}
+				
+                <div class="dd" id="taxonomies" data-v-categories>
+                    <ol class="dd-list" data-v-cats>
+                        
+						<input type="hidden" name="@@prefix_id" value="" data-v-taxonomy_id>
+						
+						@@include('_taxonomy_item.html', {"taxonomy_template": '@@taxonomy_template'})
+					 
+                    </ol>
+                </div>
+
+
+				<div data-v-if="this.menu_id">
+					<div data-v-if-not="this.count > 0">
+						<div colspan="100">
+							<div class="text-center">
+								<div class="mt-3">No taxonomies to display!</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+            </div>
+
+		<div id="taxonomy-item-template" style="display:none">
+			@@include('_taxonomy_item.html', {"taxonomy_template": '@@taxonomy_template'})
+		</div>
+
+		<div id="taxonomy-fields-template" style="display:none">
+			@@include('@@taxonomy_template')
+		</div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      <span class="message">Hello, world! This is a toast message.</span>
+	  <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
+<script id="nestable-js" src="libs/nestable/jquery.nestable.js"></script>
+<script>
+var nestable = $('#taxonomies').nestable({
+	 callback: function(l,e){
+		 saveOrder(e);
+	}
+});
+
+//nestable.nestable('collapseAll');
+$("#taxonomies").on("click", ".expand-btn",function () {
+	$("> .expand", $(this).closest(".dd3-item")).toggle();
+});
+
+//change menu item text when the text is edited
+$("#taxonomies").on("keyup", ".dd3-item .dd-title",function (e) {
+	let self = this;
+	delay(() => $(".dd3-content:first span", $(self).parents(".dd3-item:first")).html(this.value), 500);
+});
+
+
+const toastLiveExample = document.getElementById('liveToast');
+const toast = new bootstrap.Toast(toastLiveExample);
+
+function getOrder(item) {
+	let parent = $(item).parents(".dd3-item:first");
+	let parent_id = parent.data("vId") ?? 0;
+	let @@prefix_items = $("> .dd3-item", item.parent());
+	let data = [];
+	
+	@@prefix_items.each((i, @@prefix_item) => {
+		let @@prefix_item_id = @@prefix_item.dataset.vId;
+		let sort_order = i;
+		
+		data.push({@@prefix_item_id, parent_id, sort_order, name: $(".dd3-content span", @@prefix_item).html()});
+	});
+	
+	return data;
+}
+
+function saveOrder(item) {
+	let data =  getOrder(item);
+
+		$.ajax({
+			url: location.href + "&action=reorder",
+			type: 'post',
+			data: {@@prefix_items:data},
+			//dataType: 'json',
+			complete: function(data) {
+				$("#liveToast .message").html('<i class="la la-info-circle fs-2"></i>&ensp;<span class="fs-6">' + data.responseText + '</span>');
+				toast.show();
+				//$('#cart > button').button('reset');
+			},
+			success: function(data) {
+				//$("header [data-v-component-cart]")[0].outerHTML = data;
+				//if (callback) callback(data);
+			},
+			error: function(xhr, ajaxOptions, thrownError) {
+				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			}
+		})
+		.always(function(data) {
+		})
+		.done(function(data) {
+			//$("> .expand", item).toggle();
+		})
+		.fail(function(xhr, ajaxOptions, thrownError) {
+				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		});
+}
+
+function deleteItem(item) {
+		$.ajax({
+			url: location.href + "&action=delete",
+			type: 'post',
+			data: {@@prefix_item_id:item.data("vId")},
+			//dataType: 'json',
+			complete: function(data) {
+				$("#liveToast .message").html(data.responseText);
+				toast.show();
+				item.remove();
+				//$('#cart > button').button('reset');
+			},
+			success: function(data) {
+				//$("header [data-v-component-cart]")[0].outerHTML = data;
+				//if (callback) callback(data);
+			},
+			error: function(xhr, ajaxOptions, thrownError) {
+				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			}
+		})
+		.always(function(data) {
+		})
+		.done(function(data) {
+			//$("> .expand", item).toggle();
+		})
+		.fail(function(xhr, ajaxOptions, thrownError) {
+				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		});
+}
+
+function save() {
+	let element = this;
+	let item = $(this).closest(".dd3-item");
+	let @@prefix_item_id = item.data("vId");
+	let parent = $(item).parents(".dd3-item:first");
+	let parent_id = parent.data("vId");
+	let @@prefix_id = $("input[name='@@prefix_id']").val();
+	let data = $("> .expand input, > .expand select, > .expand textarea", item).serializeArray();
+
+	if (@@prefix_item_id) data.push({"name":"@@prefix_item_id", "value": @@prefix_item_id});
+	data.push({"name":"@@prefix_id", "value": @@prefix_id});
+	data.push({"name":"parent_id", "value": parent_id ?? 0});
+	console.log(data);
+
+	$.ajax({
+			url: location.href + "&action=add",
+			type: 'post',
+			data: data,
+			//dataType: 'json',
+			beforeSend: function() {
+				$('.loading', element).removeClass('d-none');
+				$('.button-text', element).addClass('d-none');
+				if ($(element).is('button'))  {
+					$(element).attr("disabled", "true");
+				}
+			},
+			complete: function(data) {
+				$('.loading', element).addClass('d-none');
+				$('.button-text', element).removeClass('d-none');
+				if ($(element).is('button'))  {
+					$(element).removeAttr("disabled");
+				}
+
+				$("#liveToast .message").html(data.responseText);
+				toast.show();
+				//$('#cart > button').button('reset');
+			},
+			success: function(data) {
+				//$("header [data-v-component-cart]")[0].outerHTML = data;
+				//if (callback) callback(data);
+			},
+			error: function(xhr, ajaxOptions, thrownError) {
+				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			}
+		})
+		.always(function(data) {
+		})
+		.done(function(data) {
+			$("> .expand", item).toggle();
+		})
+		.fail(function(xhr, ajaxOptions, thrownError) {
+				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		});
+	
+	//$("> .expand", item).toggle();
+}
+
+$("#taxonomies").on("click", ".btn-save", save);
+
+function addTaxonomy(button) {
+	let parent = $(button).closest(".dd3-item");
+
+	if (!parent.length) {
+		parent = $("#taxonomies > ol");
+		//if list empty create it
+		if (!parent.length) {
+			parent = $("#taxonomies").append('<ol class="dd-list"></ol>');
+		}
+	} else  {
+		if ($("> ol.dd-list", parent).length) {
+			$('> .dd-expand', parent)[0].click();
+			parent = $("> ol.dd-list", parent);
+		} else {
+			let list = $("<ol class='dd-list'></ol>");
+			let collapse = $('<button class="dd-collapse" data-action="collapse" type="button">Collapse</button>');
+			let expand = $('<button class="dd-expand" data-action="expand" type="button">Expand</button>');
+			parent.append(list);			
+			parent.prepend(collapse);			
+			parent.prepend(expand);			
+			parent = list;
+			expand[0].click();
+		}
+	}
+	let item = $($("#taxonomy-item-template").html());
+	parent.append(item);
+	$(".expand-btn", item).click();
+	
+	$([document.documentElement, document.body]).animate({
+        scrollTop: item.offset().top
+    }, 2000);
+	
+	item.delay(100).fadeOut().fadeIn('slow');
+}
+
+function removeTaxonomy(btnDelete) {
+	if (confirm("Are you sure?")) {
+		deleteItem($(btnDelete).parents(".dd3-item:first"));
+	}
+}
+</script>
+
+@@include('../_includes/footer.html')

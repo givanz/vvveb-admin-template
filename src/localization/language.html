@@ -1,0 +1,168 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Language","scripts":"","base_href":"../"})
+
+<body class="language">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="localization-form" action="" method="post" class="needs-validation" data-v-language>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-language-outline"></i>&ensp;
+						<span>Language</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=localization/languages" data-v-url-params='{"module":"localization/languages"}' title="Language list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Language list</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="language_id" data-v-language-language_id>
+					
+				  <div class="mb-3 row">
+					<label for="input-language" class="col-sm-2 col-form-label">Language</label>
+					<div class="col-sm-10">
+						<select name="" id="input-language" class="form-select">
+							<option value="">Custom</option>
+						</select>
+						
+					</div>
+				  </div>
+				 
+				 <div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">
+						<span>Language pack</span><br>
+						<span class="form-text">Translations</span>
+					</label>
+					<div class="col-sm-10">
+  						<div id="installed" class="mt-2 d-none">✅ Installed</div>
+						<div id="not-installed" class="mt-2 d-none">
+								<input type="hidden" name="code" value="" data-v-language-code>
+								<button name="action" value="install" class="btn btn-outline-secondary btn-icon btn-sm me-2">
+									Install language pack <i class="la la-flag"></i>
+								</button>
+						</div>
+					</div>
+				 </div>		 
+
+				 <div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-language-name maxlength="32" required>
+					</div>
+				 </div>		 
+
+				 <div class="mb-3 row">
+					<label for="input-code" class="col-sm-2 col-form-label">Code</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-code" placeholder="Code" name="language[code]" data-v-language-code maxlength="5" required>
+					</div>
+				  </div>	
+				  	 
+				 <div class="mb-3 row">
+					<label for="input-locale" class="col-sm-2 col-form-label">Locale</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-locale" placeholder="Locale" name="language[locale]" data-v-language-locale maxlength="20" required>
+					</div>
+				  </div>		 
+
+				  <div class="mb-3 row">
+					<label for="input-site-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="language[status]" id="input-status" class="form-control" data-v-language-status>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				  </div>
+				  
+				  <div class="mb-3 row">
+					<label for="input-site-status" class="col-sm-2 col-form-label">Default</label>
+					<div class="col-sm-10">
+						<select name="language[default]" id="input-status" class="form-control" data-v-language-default>
+							<option value="0" data-v-option>No</option>
+							<option value="1" data-v-option>Yes</option>
+						</select>
+					</div>
+				  </div>
+
+			
+			
+			</div>
+        </div>
+</form>
+
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let language_list = { $this->language_list };
+let languageSelect = $("#input-language");
+
+for (let code in language_list) {
+	let language = language_list[code];
+	languageSelect.append(new Option(
+		(language.emoji ? language.emoji + " " :"") + language.name + (language.installed ? " ✅" :""), code
+	));
+}
+
+let currentCode = $("#input-code").val();
+
+if (currentCode) {
+	let language = language_list[currentCode];
+
+	languageSelect.val(currentCode);
+
+	if (language.installed) {
+		$("#installed").removeClass("d-none");
+		$("#not-installed").addClass("d-none");
+	} else {
+		$("#installed").addClass("d-none");
+		$("#not-installed").removeClass("d-none");
+	}
+}
+
+languageSelect.change(function (e) {
+	let code = this.value;
+	let language = language_list[code];
+
+	$("#input-code").val(code);
+	$("#input-name").val(language.name);
+	$("#input-locale").val(language.code);
+	
+	if (currentCode) {
+		if (language.installed) {
+			$("#installed").removeClass("d-none");
+			$("#not-installed").addClass("d-none");
+		} else {
+			$("#installed").addClass("d-none");
+			$("#not-installed").removeClass("d-none");
+		}
+	}
+})
+</script>
+@@include('../_includes/footer.html')

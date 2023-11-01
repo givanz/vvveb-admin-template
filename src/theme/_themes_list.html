@@ -1,0 +1,259 @@
+ <div class="list themes clearfix" data-v-themes>
+	 
+		<div class="list-card" data-v-theme data-v-class-if-active="theme.active">
+
+			<label class="form-check theme-check">						  
+				<input type="checkbox" class="form-check-input" value="/placeholder.svg" name="file[]"><span class="form-check-label"></span>		
+			</label>				  
+
+			<!-- Card-->
+			<div class="card">
+				<div class="card-img-top">
+					<img class=" img-fluid" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-screenshot_url data-v-theme-screenshot>
+				</div>
+				<div class="card-body">
+					<div class="info">
+						<h6 class="card-title text-primary" data-v-theme-name>Theme name</h6>
+						<div class="text-muted"><span>by</span><span data-v-theme-author>Author</span></div>					
+					</div>
+
+					@@if (actions) {
+					<div class="buttons">
+						
+						
+						<!-- div href="#" class="btn-success btn-sm" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!--	
+						<a href="#" class="btn btn-outline-primary btn-sm btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						
+							<span class="loading d-none">
+								<span class="progress-text">Downloading 10%</span>
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Installing</span>...
+							</span>
+
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Activate & Import Content</span>
+							</span>
+							
+						</a> -->
+
+						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active">
+							<i class="icon-eye-outline"></i>
+							<span>Preview</span>
+						</a>
+						
+						<a href="#" class="btn btn-primary btn-sm"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						
+							<span class="loading d-none">
+								<span class="progress-text">Downloading 10%</span>
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Installing</span>...
+							</span>
+
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Activate</span>
+							</span>
+							
+						</a>
+						
+					</div>
+					}
+				</div>
+				@@if (actions) {
+
+				  <div class="card-footer text-muted d-flex justify-content-between">
+						<div>
+						<a href="#" class="btn btn-outline-primary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
+<!--
+						<a href="#" class="btn btn-outline-primary btn-sm" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
+							</span>
+						</a>
+-->						
+						</div>
+
+						<div>
+							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
+							<a href="#" class="btn btn-outline-danger btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
+						</div>
+			
+				  </div>                
+				
+				}
+			</div>
+		</div>	 
+		<div class="list-card" data-v-theme data-v-class-if-active="theme.active">
+
+			<label class="form-check theme-check">						  
+				<input type="checkbox" class="form-check-input" value="/placeholder.svg" name="file[]"><span class="form-check-label"></span>		
+			</label>				  
+
+			<!-- Card-->
+			<div class="card">
+				<div class="card-img-top">
+					<img class=" img-fluid" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-screenshot_url data-v-theme-screenshot>
+				</div>
+				<div class="card-body">
+					<div class="info">
+						<h6 class="card-title text-primary" data-v-theme-name>Theme name</h6>
+						<div class="text-muted"><span>by</span><span data-v-theme-author>Author</span></div>					
+					</div>
+
+					@@if (actions) {
+					<div class="buttons">
+						
+						
+						<!-- div href="#" class="btn-success btn-sm" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!--	
+						<a href="#" class="btn btn-outline-primary btn-sm btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						
+							<span class="loading d-none">
+								<span class="progress-text">Downloading 10%</span>
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Installing</span>...
+							</span>
+
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Activate & Import Content</span>
+							</span>
+							
+						</a> -->
+
+						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active">
+							<i class="icon-eye-outline"></i>
+							<span>Preview</span>
+						</a>
+						
+						<a href="#" class="btn btn-primary btn-sm"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						
+							<span class="loading d-none">
+								<span class="progress-text">Downloading 10%</span>
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Installing</span>...
+							</span>
+
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Activate</span>
+							</span>
+							
+						</a>
+						
+					</div>
+					}
+				</div>
+				@@if (actions) {
+
+				  <div class="card-footer text-muted d-flex justify-content-between">
+						<div>
+						<a href="#" class="btn btn-outline-primary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
+<!--
+						<a href="#" class="btn btn-outline-primary btn-sm" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
+							</span>
+						</a>
+-->						
+						</div>
+
+						<div>
+							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
+							<a href="#" class="btn btn-outline-danger btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
+						</div>
+			
+				  </div>                
+				
+				}
+			</div>
+		</div>	 
+		<div class="list-card" data-v-theme data-v-class-if-active="theme.active">
+
+			<label class="form-check theme-check">						  
+				<input type="checkbox" class="form-check-input" value="/placeholder.svg" name="file[]"><span class="form-check-label"></span>		
+			</label>				  
+
+			<!-- Card-->
+			<div class="card">
+				<div class="card-img-top">
+					<img class=" img-fluid" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-screenshot_url data-v-theme-screenshot>
+				</div>
+				<div class="card-body">
+					<div class="info">
+						<h6 class="card-title text-primary" data-v-theme-name>Theme name</h6>
+						<div class="text-muted"><span>by</span><span data-v-theme-author>Author</span></div>					
+					</div>
+
+					@@if (actions) {
+					<div class="buttons">
+						
+						
+						<!-- div href="#" class="btn-success btn-sm" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!--	
+						<a href="#" class="btn btn-outline-primary btn-sm btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						
+							<span class="loading d-none">
+								<span class="progress-text">Downloading 10%</span>
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Installing</span>...
+							</span>
+
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Activate & Import Content</span>
+							</span>
+							
+						</a> -->
+
+						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active">
+							<i class="icon-eye-outline"></i>
+							<span>Preview</span>
+						</a>
+						
+						<a href="#" class="btn btn-primary btn-sm"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						
+							<span class="loading d-none">
+								<span class="progress-text">Downloading 10%</span>
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Installing</span>...
+							</span>
+
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Activate</span>
+							</span>
+							
+						</a>
+						
+					</div>
+					}
+				</div>
+				@@if (actions) {
+
+				  <div class="card-footer text-muted d-flex justify-content-between">
+						<div>
+						<a href="#" class="btn btn-outline-primary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
+<!--
+						<a href="#" class="btn btn-outline-primary btn-sm" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
+							<span class="button-text">
+								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
+							</span>
+						</a>
+-->						
+						</div>
+
+						<div>
+							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
+							<a href="#" class="btn btn-outline-danger btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
+						</div>
+			
+				  </div>                
+				
+				}
+			</div>
+		</div>	 
+				
+</div>

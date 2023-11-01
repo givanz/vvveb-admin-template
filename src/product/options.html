@@ -1,0 +1,180 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Options","scripts":"","base_href":"../"})
+
+<body class="option">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+	
+        <div id="content">
+           
+
+            <div class="actions">
+				
+				<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-checkbox-outline"></i>&ensp;
+						<span>Options</span>
+					</h4>
+				</div>
+
+
+				<div class="btns">
+					<div class="bulk-actions px-2" style="display:none">
+						<!--
+					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+								aria-controls="filters" title="Delete selected"
+								class="btn btn-primary">
+							<i class="icon-create-outline"></i> Edit selected
+						</button>
+						-->
+					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+								aria-controls="filters" title="Delete selected"
+								class="btn btn-outline-secondary bg-body-tertiary text-danger">
+							<i class="icon-trash-outline"></i> <span>Delete selected</span>
+						</button>
+					</div>
+
+					<a href data-v-url-params='{"module":"product/option"}' data-v-check-permission="product/option/save"
+							class="btn btn-primary btn-icon ms-1">
+						<i class="icon-add-circle-outline"></i> <span>Add option</span>
+					</a>
+					
+				</div>
+
+            </div>
+
+
+               <div id="main-content">
+
+                @@include('../_includes/notifications.html')
+
+				
+                <div class="option card-block">
+                    <form action="" method="post">
+						
+						<div class="bulk-actions px-2 mb-2" style="display:none">
+							<!--
+						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+									aria-controls="filters" title="Edit selected"
+									class="btn btn-primary btn-sm">
+								<i class="icon-create-outline"></i> Edit selected
+							</button>
+							-->
+						   <button type="submit" name="action" value="delete" aria-expanded="false" 
+									title="Delete selected"
+									class="btn btn-outline-secondary bg-body-tertiary text-danger">
+								<i class="icon-trash-outline"></i> Delete selected
+							</button>
+						
+						</div>
+
+                        <table class="table table-hover middle-align"
+                               data-v-option>
+
+
+                            <thead>
+                            <tr>
+                                <th class="col-cb">
+                                    <div class="checkbox_outer">
+
+                                        <label class="form-check">
+                                            <input type="checkbox" class="form-check-input" value="4"
+                                                   name="option[]"
+                                                   data-v-vvveb-action="table.bulkSelect">
+                                            <span class="form-check-label"></span>
+                                            <span class="custom-control-description">&nbsp;</span>
+                                        </label>
+
+                                    </div>
+                                </th>
+                                <th class="option">
+									<i class="icon-cube-outline"></i>&ensp;<span>Name</span>
+								</th>
+                                <th class="actions text-center" style="width:200px">
+									<i class="la la-edit"></i>&ensp;<span>Actions</span>
+								</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="option" data-v-option>
+                                <td class="checkbox">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input" value="4" name="option_id[]" data-v-vvveb-action="table.selectRow" data-v-option-option_id>
+                                        <span class="form-check-label"></span>
+                                        <span class="custom-control-description">&nbsp;</span>
+                                    </label>
+
+                                </td>
+
+							
+                                <td class="option position-relative">
+									<a href="#" data-v-option-edit-url><span data-v-option-name></span></a>
+
+                                </td>
+
+                                <td class="actions">
+
+									<div class="btn-group">
+										<a type="button" class="btn btn-outline-secondary" data-v-option-edit-url><i class="la la-pencil-alt"></i><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+											
+											data-bs-toggle="dropdown" 
+											aria-expanded="false" 
+											data-bs-reference="parent">
+											
+										  <span class="visually-hidden">Toggle primary</span>
+										</button>
+										<ul class="dropdown-menu">
+										  
+										  <li><a class="dropdown-item" href="#" data-v-option-approve-url target="_blank"><i class="la la-check text-secondary">&ensp;</i><span>Approve</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-option-spam-url target="_blank"><i class="la la-trash text-secondary">&ensp;</i> <span>Spam</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-option-trash-url target="_blank"><i class="la la-trash text-secondary">&ensp;</i> <span>Trash</span></a></li>
+										  <li><hr class="dropdown-divider"></li>
+										  <li><a class="dropdown-item text-danger" data-v-option-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+										</ul>
+									 </div>
+
+                                </td>
+                            </tr>
+                            </tbody>
+							<tr data-v-if-not="this.count >= 1">
+								<td colspan="100">
+									<div class="text-center p-4 bg-body-tertiary border">
+										<div>
+											<i class="la la-option-alt fs-1 mb-2"></i>
+											
+										</div>
+									</div>
+								</td>
+							</tr>
+
+                        </table>
+								<div class="bottom clearfix">
+                                <div class="float-start"></div>
+								<div class="float-end">
+							
+									@@include('../_includes/pagination.html')
+
+								</div>
+
+		                </div>
+
+                  </form>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+@@include('../_includes/footer.html')

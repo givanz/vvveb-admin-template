@@ -1,0 +1,183 @@
+<!-- save changes offcanvas -->
+<style>
+
+.form-group .form-check-input ~ label input, 
+.form-group .form-check-input ~ label div, 
+.form-group .form-check-input ~ label select {
+	display:none;
+}
+
+.form-group .form-check-input:checked ~ label input,
+.form-group .form-check-input:checked ~ label div,
+.form-group .form-check-input:checked ~ label select {
+	display:block;
+}
+</style>
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="save-offcanvas">
+	<div class="offcanvas-header">
+		<span class="offcanvas-title">
+
+			<button class="btn btn-primary btn-icon save-btn save-offcanvas" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="/admin/?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+e" >
+				<span class="loading d-none">
+				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+				  <span class="progress-text"><span>Saving changes</span> ... </span>
+				</span>
+				<span class="button-text">
+				  <i class="icon-save-outline fs-5"></i> <span>Save changes</span>
+				</span>				
+			</button>
+
+		</span>
+
+		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+
+	<div class="offcanvas-body">
+
+	<div class="form-group mb-4">
+		<div class="form-check">
+		  <input id="global-template-radio" class="form-check-input" name="template" type="radio" value="global" checked>
+		  <label class="form-check-label" for="global-template-radio">
+		  <h6 class="mb-0">Default template</h6>
+		  <p class="fs-6 text-muted">Applies to all pages using template</p>
+		  <small class="p-1 bg-body-tertiary border" data-v-filename>product/product.html</small>
+		  </label>
+		</div>
+	  </div>
+
+	<div class="form-group mb-4">
+		<div class="form-check">
+		  <input id="new-template-radio" class="form-check-input" name="template" type="radio" value="new">
+		  <label class="form-check-label d-block" for="new-template-radio">
+		  <h6 class="mb-0">Save as new template</h6>
+		  <p class="fs-6 text-muted">Applies to this page only</p>
+
+				<select class="form-select" placeholder="Visibility" name="folder" data-v-theme-folders>
+					<option value="/" data-v-option>/</option>        
+					<option value="content" data-v-option>Content</option>       
+					<option value="product" data-v-option>Product</option>       
+					<option value="checkout" data-v-option>Checkout</option>       
+				</select>   
+
+			  <input type="text" class="form-control  mt-2" name="file" value="product/product-one.html" data-v-basename>
+			
+			  <div class="form-check mt-3">
+				<input class="form-check-input" id="setTemplate" name="setTemplate" type="checkbox" value="true" checked>
+				<label class="form-check-label" for="setTemplate">Set as template for this page</label>
+		  </label>
+		</div>
+	  </div>
+	<div class="accordion accordion-flush components">
+	  <div class="accordion-item">
+		  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			 <div>
+			  <h6>
+				<input class="form-check-input me-1" type="checkbox" value="" checked>
+				Product lorem ipsum
+			  </h6>
+			  <small class="p-1 bg-body-tertiary">Product</small>
+			</div>
+		  </button>
+		<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+		  <div class="accordion-body">
+
+				<ul class="list-unstyled">
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Title</span>
+					</h6>
+					<span>Lorem ipsum</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Url</span>
+					</h6>
+					<span>/product6/</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Price</span>
+					</h6>
+					<span>500</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Image</span>
+					</h6>
+					<span>/media/image.jpg</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Title</span>
+					</h6>
+					<span>Lorem ipsum</span>
+				  </li>
+				</ul>
+				
+		  </div>
+		</div>
+	  </div>
+	  <div class="accordion-item">
+		  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			 <div>
+			  <h6>
+				<input class="form-check-input me-1" type="checkbox" value="" checked>
+				Product lorem ipsum
+			  </h6>
+			  <small class="p-1 bg-body-tertiary">Product</small>
+			</div>
+		   </button>
+		<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+		  <div class="accordion-body">
+				
+				<ul class="list-unstyled">
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Title</span>
+					</h6>
+					<span>Perfume test 1</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Url</span>
+					</h6>
+					<span>/product6/</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Price</span>
+					</h6>
+					<span>500</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Image</span>
+					</h6>
+					<span>/media/image.jpg</span>
+				  </li>
+				  <li class="p-2">
+					<h6 class="d-inline">
+						<input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+						<span>Title</span>
+					</h6>
+					<span>Perfume test 1</span>
+				  </li>
+				</ul>			
+		  </div>
+		</div>
+	  </div>
+	</div>
+	</div>
+	<hr>
+	
+	</div>
+</div>

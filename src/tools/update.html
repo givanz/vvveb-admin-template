@@ -1,0 +1,240 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Updates","scripts":'<link href="libs/media/media.css" rel="stylesheet">',"base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+			
+		<div class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-cube-outline"></i>&ensp;
+					<span>Updates</span>
+				</h4>
+			</div>
+			<!--
+			<div class="btns">
+				 <a href data-v-url-params='{"module":"tools/update", "action":"check", "type":"all"}' 
+						class="btn btn-primary btn-icon ms-1">
+						<i class="la la-sync-alt la-lg"></i> <span>Check all</span>
+				</a>
+			</div>			
+			-->
+		</div>			
+
+		<div id="content" class="px-4">
+					
+					
+			@@include('../_includes/notifications.html')
+
+
+			<div id="progress" class="px-2 d-none">
+				<div id="progress-backup" class="progress">
+					<div id="progress-bar" class="progress-bar bg-primary" style="width: 0%;"></div>
+				  </div>
+				
+				<div class="mt-2 mb-5">
+					<strong id="progress-message"></strong>
+					<strong id="progress-success"></strong>
+					<strong id="progress-error"></strong>
+					<strong id="progress-status">Processing ...</strong>
+				</div>
+			</div>
+			
+			
+			<div class="row">
+                
+                <div class="col-lg-12 col-md-12 mb-4">
+				
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body info">
+								<div class="d-flex align-items-center">
+
+									<i class="la la-atom icon bg-orange text-white d-inline-block rounded-2"></i>
+									<div class="d-inline-block mx-4" >
+										<h5>Core</h5>
+									</div>
+
+									<div class="card-text">
+										<div class="d-inline-block mx-4" >
+											<h3 data-v-update-core-current>2.1</h3>
+											Current version
+										</div>
+										
+									</div>							
+
+									<div class="card-text">
+
+										<div class="d-inline-block mx-4" >
+											<h3 class="text-success" data-v-update-core-latest>2.8</h3>
+											Lastest version
+										</div>
+
+									</div>
+
+									<div class="flex-fill mx-5" data-v-if="this.update.core.hasUpdate">
+
+										<a class="btn btn-outline-success btn-icon update-core-btn" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}'>
+										
+											<span class="loading d-none">
+												<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+												</span>
+												<span>Updating</span>...
+											</span>
+
+											<span class="button-text">
+												<i class="la la-redo-alt la-lg"></i> Update now
+											</span>
+										
+											
+										</a>
+										<!--
+										<a class="btn btn-success btn-icon ms-2" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}' ><i class="la la-redo-alt la-lg"></i> Upgrade to 2.0.1</a>
+										-->
+
+									</div>
+
+									<div class="separator"></div>
+
+									<div>
+										<a class="btn btn-outline-secondary btn-icon" data-v-url-params='{"module":"tools/update", "action":"check", "type":"core"}'>
+											<i class="la la-sync-alt la-lg"></i> Check now
+										</a>
+										
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12 col-md-12 mb-4">
+				
+                    <div class="grid-stack-item-content pe-none opacity-25">
+                        <div class="card">
+                            <div class="card-body info">
+								<div class="d-flex align-items-center">
+
+									<i class="la la-puzzle-piece icon bg-purple text-white d-inline-block rounded-2"></i>
+
+									<div>
+										<div class="d-inline-block mx-4" >
+											<h5>Plugins</h5>
+											<h3>37</h3>
+											Updates available
+										</div>
+										
+									</div>							
+
+									<div class="card-text mx-4">
+										<ul class="list-unstyled">
+											<li>
+												<a href="" class="text-dark">Last check: <strong data-core-check_date data-v-filter-friendly_date>today</strong> </a>
+											</li>
+											<li>
+												<a href="" class="text-dark">Total plugins: <strong data-core-latest>40</strong> </a>
+											</li>
+										</ul>
+
+									</div>
+
+									<div class="flex-fill mx-4">
+
+										<a class="btn btn-outline-success btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"plugins"}' ><i class="la la-redo-alt la-lg"></i> Update now</a>
+
+									</div>
+
+									<div class="separator"></div>
+									
+									<div class="">
+										
+											<button class="btn btn-outline-secondary btn-icon"><i class="la la-sync-alt la-lg"></i> Check now</button>
+										
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12 col-md-12 mb-4">
+				
+                    <div class="grid-stack-item-content pe-none opacity-25">
+                        <div class="card">
+                            <div class="card-body info">
+								<div class="d-flex align-items-center">
+
+									<i class="icon-copy-outline icon bg-success text-white d-inline-block rounded-2"></i>
+
+									<div>
+										<div class="d-inline-block mx-4" >
+											<h5>Themes</h5>
+											<h3>2</h3>
+											Updates available
+										</div>
+										
+									</div>							
+
+									<div class="card-text mx-4">
+										<ul class="list-unstyled">
+											<li>
+												<a href="" class="text-dark">Last check: <strong data-core-check_date data-v-filter-friendly_date>today</strong> </a>
+											</li>
+											<li>
+												<a href="" class="text-dark">Total plugins: <strong data-core-latest>40</strong> </a>
+											</li>
+										</ul>
+
+									</div>
+
+									<div class="flex-fill mx-4">
+
+										<a class="btn btn-outline-success btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"themes"}' ><i class="la la-redo-alt la-lg"></i> Update now</a>
+
+									</div>
+
+									<div class="separator"></div>
+
+									<div>
+										<button class="btn btn-outline-secondary btn-icon"><i class="la la-sync-alt la-lg"></i> Check now</button>
+										
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              
+              
+              </div>
+			
+	 
+			</div>
+		</div>
+	</div>
+</div>
+    
+
+@@include('../_includes/footer-scripts.html')
+<script type="module" src="../../js/admin/controller/update.js"></script>
+<script>
+$(function() { 
+	$(".update-core-btn").click( function(e) {
+		if (Update.core) {
+			e.preventDefault();
+			return Update.core(this.attributes.href.value ?? false, this);
+		}
+	});
+});
+</script>
+
+@@include('../_includes/footer.html') 

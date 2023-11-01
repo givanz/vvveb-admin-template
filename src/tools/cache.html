@@ -1,0 +1,244 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Cache","scripts":'<link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack-extra.min.css"><link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">',"base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+       @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+
+		<div class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-reload-circle-outline"></i>&ensp;
+					<span>Cache</span>
+				</h4>
+			</div>
+
+			<div class="btns">
+				<!--
+				 <a href data-v-url-params='{"module":"tools/cache", "action":"stale"}' 
+						class="btn btn-outline-secondary btn-icon ms-1">
+						<i class="la la-quidditch la-lg"></i><span>Clear old cache</span>
+				</a>
+				-->
+				
+				 <a href data-v-url-params='{"module":"tools/cache", "action":"delete"}' 
+						class="btn btn-primary btn-icon ms-1">
+						<i class="la la-broom la-lg"></i><span>Clear all cache</span>
+				</a>
+			</div>			
+		</div>			
+
+		<div id="content" class="p-4">
+		
+			@@include('../_includes/notifications.html')
+		
+			<div class="row">
+                
+                <div class="col-lg-6 col-md-12 mb-4">
+				
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body info">
+                                <h5 class="card-title">Frontend assets cache</h5>
+
+								<i class="icon-document-text-outline icon bg-orange text-white d-inline-block rounded-2"></i>
+								<!--
+								<h3 class="number d-inline-block" data-v-orders-count>7</h3>
+
+                                <div class="card-text d-inline-block">
+									<ul class="list-unstyled">
+										<li>
+											<span class="text-dark"><strong>0</strong> Javascript files</span>
+										</li>
+										<li>
+											<span class="text-dark"><strong>0</strong> CSS Stylesheets</span>
+										</li>
+									</ul>
+									
+                                </div>
+								-->
+
+								<a href data-v-url-params='{"module":"tools/cache", "action":"assets"}' class="btn btn-outline-secondary btn-icon float-end"><i class="la la-broom"></i> Clear cache</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-6 col-md-12 mb-4">
+                     
+                       <div class="grid-stack-item-content">
+						<div class="card">
+                            <div class="card-body info">
+
+                                <h5 class="card-title">Compiled templates</h5>
+
+                                <i class="icon-code-slash-outline icon bg-purple text-white d-inline-block rounded-2"></i>
+								<!--
+                                <h3 class="number d-inline-block" data-v-users-count>37</h3>
+
+                                <div class="card-text d-inline-block">
+									<ul class="list-unstyled">
+										<li>
+											<span class="text-dark"><strong>0</strong> Javascript files</span>
+										</li>
+										<li>
+											<span class="text-dark"><strong>0</strong> CSS Stylesheets</span>
+										</li>
+									</ul>
+									
+                                </div>
+								-->
+
+								<a href data-v-url-params='{"module":"tools/cache", "action":"template"}' class="btn btn-outline-secondary btn-icon float-end"><i class="la la-broom"></i> Clear cache</a>
+                            </div>
+                        </div>
+                       </div>
+
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4">
+                    
+                    <div class="grid-stack-item-content">
+                        <div class="card bg-info-semi">
+                            <div class="card-body info">
+                                
+                                <h5 class="card-title">Database</h5>
+
+                                <i class="icon-server-outline icon bg-success text-white d-inline-block rounded-2"></i>
+								<!--
+                                <h3 class="number d-inline-block" data-v-comments-count>5</h3>
+
+                                <div class="card-text d-inline-block">
+									<ul class="list-unstyled">
+										<li>
+											<span class="text-dark"><strong>0</strong> Javascript files</span>
+										</li>
+										<li>
+											<span class="text-dark"><strong>0</strong> CSS Stylesheets</span>
+										</li>
+									</ul>
+									
+                                </div>
+								-->
+
+								<a href data-v-url-params='{"module":"tools/cache", "action":"database"}' class="btn btn-outline-secondary btn-icon float-end"><i class="la la-broom"></i> Clear cache</a>
+                            </div>
+                        </div>
+                      </div>
+
+                </div>
+                
+                <div class="col-lg-6 col-md-12 mb-4">
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body info">
+                                
+                                <h5 class="card-title">Full page cache</h5>
+
+                                <i class="icon-document-outline icon bg-warning text-dark d-inline-block rounded-2"></i>
+								<!--
+                                <h3 class="number d-inline-block">5</h3>
+
+                                <div class="card-text d-inline-block">
+									<ul class="list-unstyled">
+										<li>
+											<span class="text-dark"><strong>0</strong> Javascript files</span>
+										</li>
+										<li>
+											<span class="text-dark"><strong>0</strong> CSS Stylesheets</span>
+										</li>
+									</ul>
+									
+                                </div>
+								-->
+
+								<a href data-v-url-params='{"module":"tools/cache", "action":"page"}'  class="btn btn-outline-secondary btn-icon float-end"><i class="la la-broom"></i> Clear cache</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>	                
+				
+				
+				<div class="col-lg-6 col-md-12 mb-4">
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body info">
+                                
+                                <h5 class="card-title">Image resize cache</h5>
+
+                                <i class="icon-image-outline icon bg-primary text-white d-inline-block rounded-2"></i>
+								<!--
+                                <h3 class="number d-inline-block">5</h3>
+
+                                <div class="card-text d-inline-block">
+									<ul class="list-unstyled">
+										<li>
+											<span class="text-dark"><strong>0</strong> Javascript files</span>
+										</li>
+										<li>
+											<span class="text-dark"><strong>0</strong> CSS Stylesheets</span>
+										</li>
+									</ul>
+									
+                                </div>
+								-->
+
+								<a href data-v-url-params='{"module":"tools/cache", "action":"image"}' class="btn btn-outline-secondary btn-icon float-end"><i class="la la-broom"></i> Clear cache</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+				
+				
+				<div class="col-lg-6 col-md-12 mb-4">
+                     
+                    <div class="grid-stack-item-content">
+                        <div class="card">
+                            <div class="card-body info">
+                                
+                                <h5 class="card-title">Model cache</h5>
+
+                                <i class="icon-paper-plane-outline icon bg-info text-white d-inline-block rounded-2"></i>
+								<!--
+                                <h3 class="number d-inline-block">5</h3>
+
+                                <div class="card-text d-inline-block">
+									<ul class="list-unstyled">
+										<li>
+											<span class="text-dark"><strong>0</strong> Javascript files</span>
+										</li>
+										<li>
+											<span class="text-dark"><strong>0</strong> CSS Stylesheets</span>
+										</li>
+									</ul>
+									
+                                </div>
+								-->
+
+								<a href data-v-url-params='{"module":"tools/cache", "action":"model"}'  class="btn btn-outline-secondary btn-icon float-end"><i class="la la-broom"></i> Clear cache</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>			
+	 
+			</div>
+			
+			</div>
+
+		</div>
+	</div>
+
+</div>
+    
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html') 

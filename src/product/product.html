@@ -1,0 +1,285 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Edit product","scripts":"","base_href":"../"})
+
+<body class="product">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+        
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+
+        <div class="actions flex-column flex-md-row">
+
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-cube-outline"></i>&ensp;
+					<span data-v-type-name>Product</span>
+				</h4>
+			</div>
+
+            <div class="btns">
+		
+				<a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i>
+						<span>
+							<span data-v-type-name>Product</span> 
+							<span>list</span>
+						</span>
+				 </a>
+
+                <button type="submit" href=""
+                        class="btn btn-primary btn-icon ms-1"
+                        onclick="document.getElementById('action').value ='save';document.getElementById('form').submit();">
+                    <i class="icon-create-outline"></i> <span>Save</span> <span data-v-type-name>product</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="content">
+
+
+            <div class="content clearfix">
+
+			@@include('../_includes/notifications.html')
+
+                <form id="form" action="" method="post" class="needs-validation" novalidate data-v-product>
+
+                    <input type="hidden" name="action" id="action" value="save">
+					<input type="hidden" name="product_id" id="product_id" value="" data-v-if="this.product.product_id" data-v-product-product_id>   
+
+                    <div class="columns">
+                        <div class="left-column">
+
+    						<ul class="nav nav-tabs">
+								<li class="nav-item"><a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-relations" data-bs-toggle="tab">Relations</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-attribute" data-bs-toggle="tab">Attribute</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-option" data-bs-toggle="tab">Option</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-inventory" data-bs-toggle="tab">Inventory</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-shipping" data-bs-toggle="tab">Shipping</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-image" data-bs-toggle="tab">Image gallery</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-subscription" data-bs-toggle="tab">Subscription</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-discount" data-bs-toggle="tab">Discount</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-promotion" data-bs-toggle="tab">Promotion</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-points" data-bs-toggle="tab">Points</a></li>
+								<!--
+								<li class="nav-item"><a class="nav-link" href="#tab-digital-assets" data-bs-toggle="tab">Digital assets</a></li>
+								-->
+							</ul>
+
+
+                            <div class="tab-content">
+								
+								@@include('_product-general.html')
+								@@include('_product-relations.html')
+								@@include('_product-attribute.html')
+								@@include('_product-option.html')
+								@@include('_product-inventory.html')
+								@@include('_product-shipping.html')
+								@@include('_product-image.html')
+								@@include('_product-subscription.html')
+								@@include('_product-discount.html')
+								@@include('_product-promotion.html')
+								@@include('_product-points.html')
+								<!-- 
+								@@include('_product-digital-assets.html')
+								-->
+
+                            </div>
+                </form>
+            </div>
+            <div class="right-column flat">
+
+                <label class="header" data-v-header="element_header"
+                       for="header_featured_image"><span>Featured Media</span>
+                    <div class="header-arrow"></div>
+                </label>
+                <input class="header_check" type="checkbox" checked="true" id="header_featured_image">
+                <div class="section" data-v-section="element_header">
+
+                    <input type="hidden" data-v-image name="image" id="featured-image-input" value="">
+
+				    <img data-v-image src="" alt=""
+                         id="featured-image-thumb"
+                         data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" data-type="single"                         
+						 class="img-thumbnail border-0 p-0 bg-light-subtle">
+
+
+                    <div class="py-3 text-center">
+							<div class="btn-group w-100">
+								<button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100"
+										data-media-gallery data-target-input="#featured-image-input"
+										data-target-thumb="#featured-image-thumb" data-type="single">
+										<i class="la la-image la-lg"></i> Set featured media
+								</button>
+
+								<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearFeaturedMedia()">
+									<i class="la la-times"></i>
+								</button>
+							</div>
+                    </div>
+
+
+                </div>
+
+                 <!-- @-@include('_product_taxonomies.html') -->
+                 
+				<label class="header mt-4" data-v-header="default" for="header_template">Template
+					<div class="header-arrow"></div>
+				</label>
+				<input class="header_check" type="checkbox" checked="true" id="header_template">
+				<div class="section" data-v-section="default">
+
+					<div class="mb-3">
+
+						<div class="input-group">
+							<!-- div class="input-group-addon"><i class="icon-eye-outline"></i></div-->
+							<select class="form-select" placeholder="Visibility" name="template" data-v-templates>
+									<option value="" title="Default template used for this page">-- Default template --</option>
+									<option value="published" data-v-option>Published</option>
+									<option value="pending" data-v-option>Pending</option>
+									<option value="draft" data-v-option>Draft</option>
+									<option value="private" data-v-option>Private</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="mb-3" data-v-if="this.template_missing">
+						<div class="alert alert-warning" role="alert">
+							<div data-v-template_missing></div>
+						</div>
+					</div>					
+				</div>
+
+            </div>
+        </div>
+    </div>
+
+    </form>
+</div>
+</div>
+
+</div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+
+
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let productOption = { $this->option };
+</script>
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link id="media-css" href="libs/media/media.css" rel="stylesheet">
+
+<script> 
+	$(function () {
+        jQuery("input[name=custom-date]").change(function () {
+            jQuery(".publish-date").css("display", (this.value == "true") ? "block" : "none");
+        });
+
+        $('input.autocomplete').autocomplete();
+        $('input.autocomplete-list').autocompleteList();
+
+        $('.taxonomies input.tags-input').each(function (i,element) {
+			/*
+			let params = "";
+			
+			for (name in element.dataset) { 
+				if (name) {
+					params += name + "=" + element.dataset[name];
+				}
+			}*/
+			$(element).tagsInput({
+				url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags",
+				parameters:element.dataset,
+				listName:"tag",
+				//listName:"tag[]",
+				listId:element.dataset.taxonomy_id, //element.dataset.taxonomy_id,
+				allowFreeText:true
+			});
+		});
+    });
+</script>
+
+<script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
+<!-- script type="module" src="/js/libs/tinymce-dist/jquery.tinymce.min.js"></script -->
+<script id="tinymce-js" src="../../js/libs/tinymce-dist/tinymce.min.js"></script>
+
+<!-- date time picker -->
+<script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
+<script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
+<link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+<script id="revisions-js" src="../../js/admin/revisions.js"></script>
+<script id="functions-js" src="../../js/admin/functions.js"></script>
+
+<script>
+
+jQuery(document).ready(function () { 
+	//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor
+	if (typeof tinyMceOptions  !== 'undefined') {
+		$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
+		tinymce.init(tinyMceOptions);
+	}
+
+	$('.tab-pane[data-v-language]').each(function () {
+		let titleInput = $('[data-v-product-content-name]', this);
+		let slugInput = $('[data-v-product-content-slug]', this);
+		let urlInput = $('[data-v-url]', this);
+		let orig = slugify(titleInput.val());
+		
+		//change slug only if current value is the same as the text
+		titleInput.on('keyup', function (e) {
+			let text = this.value;
+			delay(() => {
+				let slug = slugInput.val();
+				urlInput.text("/" + slug).attr("href", "/" + slug);
+				
+				if (orig == slug || !slug) {
+					orig = slugify(text);
+					slugInput.val(orig);
+				}
+			}, 500);
+		});
+		
+		slugInput.on('keyup', function (e) {
+			let slug = this.value;
+			urlInput.text("/" + slug).attr("href", "/" + slug);
+		});
+		
+	});
+});
+
+$("[data-v-images]").on("click", ".btn-outline-danger", function (e) {
+	let card = $(this).parents("[data-v-image]");
+	card.remove();
+});
+	
+$("#add-new-image").on("click", function (e) {
+	let id = "gallery-image-" + $("[data-v-images] [data-v-image]").length + "-input";
+	let newImage = $($("#add-new-image-template").html().replaceAll("gallery-image-0", "gallery-image-" + id).replace('disabled',''));
+	newImage.insertBefore(".add-new-image-card");
+	$("img", newImage).click();
+	
+	return false;
+});
+
+
+
+</script>
+
+@@include('../_includes/footer.html')

@@ -1,0 +1,309 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Digital assets","scripts":"","base_href":"../"})
+
+<body class="digital_assets">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+		
+
+            <div class="actions">
+				
+				<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-download-outline"></i>&ensp;
+						<span>Digital assets</span>
+					</h4>
+				</div>
+
+				<div class="btns">
+					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+							aria-controls="filters" title="Filter"
+							class="btn btn-outline-secondary pe-3">
+						<i class="icon-funnel-outline"></i>&nbsp;
+						<i class="icon-chevron-down-outline small"></i>
+					</button>
+				
+					 <a href data-v-url-params='{"module":"product/digital-asset"}' data-v-check-permission="product/digital-asset/save"
+							class="btn btn-primary btn-icon ms-1">
+						<i class="icon-add-circle-outline"></i> <span>Add digital asset</span>
+					</a>
+				</div>
+            </div>
+			
+			<div id="filters" class="collapse mx-3">
+				<form method="get">
+				 
+				 <input type="hidden" class="form-control" name="module" value="">
+				 <input type="hidden" class="form-control" name="action" value="">
+				 <input type="hidden" class="form-control" name="type" value="">
+				 
+                <div class="card card-block p-3">
+
+						<div class="row">
+                            <div class="col-sm-6 mb-3">
+								<div class="row">
+									<label class="col-sm-2 col-form-label" for="search">Search</label>
+									<div class="col-sm-10">
+										<input type="search" class="form-control" name="filter[search]" value="" placeholder="User name" id="search">
+									</div>
+								</div>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+								<div class="row">
+									<label class="col-sm-2 col-form-label" for="search">Email</label>
+									<div class="col-sm-10">
+										<input type="search" class="form-control" name="filter[email]" value="" placeholder="Email" id="Email">
+									</div>
+								</div>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+								<div class="row">
+									<label class="col-sm-2 col-form-label" for="search">Phone number</label>
+									<div class="col-sm-10">
+										<input type="search" class="form-control" name="filter[phone_number]" value="" placeholder="Phone number" id="phone_number">
+									</div>
+								</div>
+                            </div>
+
+
+							<div class="col-sm-6 mb-3">
+								<div class="row">
+                                <label class="col-sm-2 col-form-label" for="input-model">Status</label>
+									<div class="col-sm-10">
+									  <select name="filter[order_status_id]" id="filter-by-status" class="form-control" data-v-order-order_status_id>
+										<option value="">- All -</option>
+										<option value="active" data-v-option>Active</option>
+										<option value="inactive" data-v-option>Inactive</option>
+									  </select>
+									</div>
+								</div>
+                            </div>
+
+							<div class="col-sm-2">
+								<button type="submit" id="button-filter" class="btn btn-primary btn-icon">
+									<i class="icon-funnel-outline"></i> Filter
+								</button>
+							</div>
+                    </div>
+
+                </div>
+				</form>
+            </div>
+
+            <div id="main-content">
+                @@include('../_includes/notifications.html')
+
+                <div class="digital_assets card-block" id="main-content" data-v-digital_asset>
+          		<form action="" method="post">
+
+					<div class="bulk-actions px-2 mb-2" style="display:none">
+						<!--
+					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+								aria-controls="filters" title="Delete selected"
+								class="btn btn-primary">
+							<i class="icon-create-outline"></i> Edit selected
+						</button>
+						-->
+					   <button type="submit" name="action" value="delete" aria-expanded="false" 
+								title="Delete selected"
+								class="btn btn-outline-secondary bg-body-tertiary text-danger">
+								<i class="icon-trash-outline"></i> Delete selected
+						</button>
+					</div>
+
+                        <table class="table table-hover middle-align">
+                            <thead>
+                            <tr>
+                                <th class="col-cb">
+                                    <div class="checkbox_outer">
+
+                                        <label class="form-check">
+                                            <input type="checkbox" class="form-check-input"
+                                                   data-v-vvveb-action="table.bulkSelect">
+                                            <span class="form-check-label"></span>
+                                            <span class="custom-control-description">&nbsp;</span>
+                                        </label>
+
+                                    </div>
+                                </th>
+                                <th><i class="la la-user"></i>&ensp;<span>Name</span></th>
+                                <th style="width:150px;">
+									<i class="la la-filter"></i>&ensp;<span>Public name</span>
+								</th>
+                                <th style="width:150px;">
+									<i class="la la-filter"></i>&ensp;<span>File</span>
+								</th>
+                                <th style="width:150px;" class="date">
+									<i class="la la-calendar"></i>&ensp;<span>Date added</span>
+								</th>
+                                <th style="width:200px;" class="text-center">
+									<i class="la la-edit"></i>&ensp;<span>Actions</span>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="digital_asset" data-v-digital_asset>
+                                <td class="checkbox">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input" value="4" name="digital_asset_id[]" data-v-vvveb-action="table.selectRow" data-v-digital_asset-digital_asset_id>
+                                        <span class="form-check-label"></span>
+                                        <span class="custom-control-description">&nbsp;</span>
+                                    </label>
+                                </td>
+                                
+                                <td>
+                                    <a href="/admin?module=digital_assets&amp;action=digital_asset&amp;id=4" data-v-digital_asset-url><span data-v-digital_asset-name>01</span></a>
+                                </td>
+                                
+                                <td><span class="price" data-v-digital_asset-public>Public name</span></td>
+                                <td><span class="price" data-v-digital_asset-file>File</span></td>
+                                <td><span class="price" data-v-digital_asset-created_at data-filter-friendly_date>Created at</span></td>
+								
+								<td class="actions" style="width:150px;">
+
+									<div class="btn-group">
+										<a type="button" class="btn btn-outline-secondary" data-v-digital_asset-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+											
+											data-bs-toggle="dropdown" 
+											aria-expanded="false" 
+											data-bs-reference="parent">
+											
+										  <span class="visually-hidden">Toggle primary</span>
+										</button>
+										<ul class="dropdown-menu">
+										  
+										  <li><hr class="dropdown-divider"></li>
+										  <li><a class="dropdown-item text-danger" data-v-digital_asset-delete-url onclick="digital_asset confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+										</ul>
+									 </div>
+
+                                </td>
+                            </tr> 
+							<tr class="digital_asset" data-v-digital_asset>
+                                <td class="checkbox">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input" value="4" name="digital_asset_id[]" data-v-vvveb-action="table.selectRow" data-v-digital_asset-digital_asset_id>
+                                        <span class="form-check-label"></span>
+                                        <span class="custom-control-description">&nbsp;</span>
+                                    </label>
+                                </td>
+                                
+                                <td>
+                                    <a href="/admin?module=digital_assets&amp;action=digital_asset&amp;id=4" data-v-digital_asset-url><span data-v-digital_asset-name>01</span></a>
+                                </td>
+                                
+                                <td><span class="price" data-v-digital_asset-public>Public name</span></td>
+                                <td><span class="price" data-v-digital_asset-file>File</span></td>
+                                <td><span class="price" data-v-digital_asset-created_at data-filter-friendly_date>Created at</span></td>
+								
+								<td class="actions" style="width:150px;">
+
+									<div class="btn-group">
+										<a type="button" class="btn btn-outline-secondary" data-v-digital_asset-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+											
+											data-bs-toggle="dropdown" 
+											aria-expanded="false" 
+											data-bs-reference="parent">
+											
+										  <span class="visually-hidden">Toggle primary</span>
+										</button>
+										<ul class="dropdown-menu">
+										  
+										  <li><hr class="dropdown-divider"></li>
+										  <li><a class="dropdown-item text-danger" data-v-digital_asset-delete-url onclick="digital_asset confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+										</ul>
+									 </div>
+
+                                </td>
+                            </tr> 
+							<tr class="digital_asset" data-v-digital_asset>
+                                <td class="checkbox">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input" value="4" name="digital_asset_id[]" data-v-vvveb-action="table.selectRow" data-v-digital_asset-digital_asset_id>
+                                        <span class="form-check-label"></span>
+                                        <span class="custom-control-description">&nbsp;</span>
+                                    </label>
+                                </td>
+                                
+                                <td>
+                                    <a href="/admin?module=digital_assets&amp;action=digital_asset&amp;id=4" data-v-digital_asset-url><span data-v-digital_asset-name>01</span></a>
+                                </td>
+                                
+                                <td><span class="price" data-v-digital_asset-public>Public name</span></td>
+                                <td><span class="price" data-v-digital_asset-file>File</span></td>
+                                <td><span class="price" data-v-digital_asset-created_at data-filter-friendly_date>Created at</span></td>
+								
+								<td class="actions" style="width:150px;">
+
+									<div class="btn-group">
+										<a type="button" class="btn btn-outline-secondary" data-v-digital_asset-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+											
+											data-bs-toggle="dropdown" 
+											aria-expanded="false" 
+											data-bs-reference="parent">
+											
+										  <span class="visually-hidden">Toggle primary</span>
+										</button>
+										<ul class="dropdown-menu">
+										  
+										  <li><hr class="dropdown-divider"></li>
+										  <li><a class="dropdown-item text-danger" data-v-digital_asset-delete-url onclick="digital_asset confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+										</ul>
+									 </div>
+
+                                </td>
+                            </tr>
+
+							 <tr data-v-if-not="this.count >= 1">
+								<td colspan="100">
+
+									<div class="text-center p-4 bg-body-tertiary border">
+											<i class="icon-download-outline fs-1 mb-2"></i>
+											<div class="mt-3">No digital assets to display!</div>
+
+											 <a href data-v-url-params='{"module":"product/digital-asset"}' 
+													class="btn btn-primary btn-icon mt-3">
+												<i class="icon-add-circle-outline"></i> Add digital asset
+											</a>
+									</div>
+
+								</td>
+							</tr>
+                            </tbody>
+			
+
+                        </table>
+
+								<div class="bottom clearfix">
+                                <div class="float-start"></div>
+								<div class="float-end">
+							
+									@@include('../_includes/pagination.html')
+
+								</div>
+
+		                </div>
+
+                    </form>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+@@include('../_includes/footer.html')

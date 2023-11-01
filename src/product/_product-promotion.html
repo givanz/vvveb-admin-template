@@ -1,0 +1,93 @@
+<div class="tab-pane" id="tab-promotion">
+  <div class="table-responsive" data-v-product-promotion>
+    <table id="product-promotion" class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th class="text-start">User Group</th>
+          <th class="text-end">Priority</th>
+          <th class="text-end">Price</th>
+          <th class="text-start">Date Start</th>
+          <th class="text-start">Date End</th>
+          <th class="text-end">
+            <button type="button" id="button-subscription" class="btn btn-sm btn-primary" onclick='addTemplate("promotion-template", "product_promotion", "product-promotion")'>
+              <i class="la la-plus la-lg  text-white"></i>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-v-promotion>
+          <td class="text-start">
+			  <select name="product_promotion[0][user_group_id]" class="form-select" data-v-user_group_id>
+				<option value="1" data-v-option>Default group</option>
+			  </select>
+          </td>
+          <td class="text-end">
+            <input name="product_promotion[0][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
+          </td>
+          <td class="text-end">
+            <input name="product_promotion[0][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
+          </td>
+          <td class="text-start" style="width: 20%;">
+			<input name="product_promotion[0][date_start]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_start>
+			<!--
+            <div class="input-group date">
+              <input name="product_promotion[0][date_start]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_start>
+			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+          </td>
+          <td class="text-start" style="width: 20%;">
+            <input name="product_promotion[0][date_end]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_end>
+			<!--
+            <div class="input-group">
+              <input name="product_promotion[0][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+          </td>
+          <td class="text-end">
+            <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+				<i class="la la-minus-circle la-lg"></i>
+			</button>
+		  </td> 
+        </tr> 
+		<tr class="d-none" id="promotion-template">
+          <td class="text-start">
+			  <select name="product_promotion[#][user_group_id]" class="form-select" data-v-user_group_id>
+				<option value="1" data-v-option>Default group</option>
+			  </select>
+          </td>
+          <td class="text-end">
+            <input name="product_promotion[#][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
+          </td>
+          <td class="text-end">
+            <input name="product_promotion[#][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
+          </td>
+          <td class="text-start" style="width: 20%;">
+			<input name="product_promotion[#][date_start]" type="date" value="0000-00-00" class="form-control" data-v-promotion-date_start>	
+			<!--
+            <div class="input-group">
+              <input name="product_promotion[#][date_start]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-date_start>
+			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+          </td>
+          <td class="text-start" style="width: 20%;">
+			<input name="product_promotion[#][date_end]" type="date" value="0000-00-00"  class="form-control" data-v-promotion-date_end>
+			<!--
+            <div class="input-group">
+			   <input name="product_promotion[#][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+			   <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+          </td>
+          <td class="text-end">
+            <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+				<i class="la la-minus-circle la-lg"></i>
+			</button>
+		  </td> 
+      </tbody>
+    </table>
+  </div>
+</div>

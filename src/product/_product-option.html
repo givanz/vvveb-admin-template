@@ -1,0 +1,404 @@
+<div class="tab-pane" id="tab-option">
+  <div class="row">
+    <div class="col-sm-2 border-end">
+      <ul class="nav nav-pills flex-column" id="option"role="tablist" data-v-product-poption>
+        <li class="nav-item">
+		  <button class="btn btn-outline-secondary btn-icon mb-3 w-100" type="button" onclick="addTab(this)">
+			<i class="la la-plus"></i> 
+			<span>Add option</span> 
+		  </button>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option0" class="nav-link" data-bs-toggle="pill" aria-expanded="true" data-v-poption-product_option_id>
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Checkbox</span></a>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option1" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Select</span></a>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option2" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Textarea</span></a>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option3" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Radio</span></a>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option4" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Text</span></a>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option5" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Date</span></a>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option6" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>File</span></a>
+        </li>
+        <li class="nav-item" data-v-poption>
+          <a href="#tab-option7" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Time</span></a>
+        </li>
+        <li class="nav-item d-none tab-nav-template">
+          <a href="#tab-template" class="nav-link" data-bs-toggle="pill">
+            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span>New option</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-10">
+      <div class="tab-content"  data-v-product-poption>
+
+	    <div class="tab-pane" data-type="text" data-v-poption>
+		
+			<input name="product_option[0][product_option_id]" value="" type="hidden" data-v-poption-product_option_id>
+		
+			<div class="mb-3 row">
+				<label class="col-sm-2 form-label">Option</label>
+				<div class="col-sm-10">
+				  <select name="product_option[0][option_id]" class="form-select product_option_id" onchange="optionTypeChange(this)" data-v-product-option data-v-poption-option_id>
+					<option value="0" data-v-option>Text</option>
+					<option value="1" data-v-option>File</option>
+				  </select>
+				</div>
+			</div>
+
+			<div class="mb-3 row default">
+				<label class="col-sm-2 form-label">Default value</label>
+				<div class="col-sm-10">
+					<input class="form-control" type="text" name="product_option[0][value]" value="" data-v-poption-value>
+				</div>
+			</div>
+			
+			<div class="mb-3 row">
+				<label class="col-sm-2 form-label">Required</label>
+				<div class="col-sm-10">
+					<label class="form-check form-check-lg form-switch">
+					  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][required]" value="1" data-v-poption-required>
+					</label>				  
+				</div>
+			</div>
+		  
+			<div class="table-responsive values" data-v-option-values>
+				<table id="option-value0" class="table table-bordered table-hover">
+				  <thead>
+					<tr>
+					  <th class="text-start">Option Value</th>
+					  <th class="text-end">Quantity</th>
+					  <th class="text-start text-nowrap">Subtract Stock</th>
+					  <th class="text-end">Price</th>
+					  <th class="text-end">Points</th>
+					  <th class="text-end">Weight</th>
+					  <th>
+  						<button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-primary">
+						  <i class="la la-plus la-lg text-white"></i>
+						</button>
+					  </th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr data-v-option-value>
+					  <td class="text-start">
+						<select name="product_option[0][product_option_value][0][option_value_id]" class="form-select option_value" data-v-option-value-option_value_id>
+						  <option value="1">Value 1</option>
+						  <option value="2">Value 2</option>
+						  <option value="3">Value 3</option>
+						  <option value="4">Value 4</option>
+						</select>
+						<input name="product_option[0][product_option_value][0][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
+					  </td>
+					  <td class="text-end">
+						<input name="product_option[0][product_option_value][0][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+					  </td>
+					  <td class="text-center">
+						<label class="form-check form-check-lg form-switch">
+						  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][product_option_value][0][subtract]" value="1" data-v-option-value-subtract>
+						</label>				  
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][0][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+						</div>
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-points_operator>
+									<span  class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-points_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][0][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+						</div>
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check"autocomplete="off" value="+" data-v-option-value-weight_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check"autocomplete="off" value="-" data-v-option-value-weight_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][0][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+						</div>
+					  </td>
+					  <td class="text-start">
+						<button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-danger">
+						  <i class="la la-minus-circle la-lg"></i>
+						</button>
+					  </td>
+					</tr>
+					<tr class="template d-none" data-id="#">
+					  <td class="text-start">
+						<select name="product_option[0][product_option_value][#][option_value_id]" class="form-select option_value" data-v-option-value-option_value_id>
+						  <option value="1">Value 1</option>
+						  <option value="2">Value 2</option>
+						  <option value="3">Value 3</option>
+						  <option value="4">Value 4</option>
+						</select>
+						<input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
+					  </td>
+					  <td class="text-end">
+						<input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+					  </td>
+					  <td class="text-center">
+						<label class="form-check form-check-lg form-switch">
+						  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][product_option_value][#][subtract]" value="1" data-v-option-value-subtract>
+						</label>				  
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+						</div>
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+									<span  class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+						</div>
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check"autocomplete="off" value="+" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check"autocomplete="off" value="-" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+						</div>
+					  </td>
+					  <td class="text-start">
+						<button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-danger">
+						  <i class="la la-minus-circle la-lg"></i>
+						</button>
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			  
+		</div>
+		
+	    <div class="tab-pane tab-content-template d-none" data-type="text" data-id="#">
+		
+			<input name="product_option[0][product_option_id]" value="" type="hidden" data-v-poption-product_option_id>
+			
+			<div class="mb-3 row">
+				<label class="col-sm-2 form-label">Option</label>
+				<div class="col-sm-10">
+				  <select name="product_option[0][option_id]" class="form-select product_option_id" onchange="optionTypeChange(this)" data-v-product-option data-v-poption-option_id>
+					<option value="0" data-v-option>Text</option>
+					<option value="1" data-v-option>File</option>
+				  </select>
+				</div>
+			</div>
+
+			<div class="mb-3 row default">
+				<label class="col-sm-2 form-label">Default value</label>
+				<div class="col-sm-10">
+					<input class="form-control" type="text" name="product_option[0][value]" value="" data-v-poption-value>
+				</div>
+			</div>
+			
+			<div class="mb-3 row">
+				<label class="col-sm-2 form-label">Required</label>
+				<div class="col-sm-10">
+					<label class="form-check form-check-lg form-switch">
+					  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][required]" value="1" data-v-poption-required>
+					</label>				  
+				</div>
+			</div>
+		  
+			<div class="table-responsive values" data-v-option-values>
+				<table id="option-value0" class="table table-bordered table-hover">
+				  <thead>
+					<tr>
+					  <th class="text-start">Option Value</th>
+					  <th class="text-end">Quantity</th>
+					  <th class="text-start text-nowrap">Subtract Stock</th>
+					  <th class="text-end">Price</th>
+					  <th class="text-end">Points</th>
+					  <th class="text-end">Weight</th>
+					  <th>
+  						<button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-primary">
+						  <i class="la la-plus la-lg text-white"></i>
+						</button>
+					  </th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr class="template d-none">
+					  <td class="text-start">
+						<select name="product_option[0][product_option_value][#][option_value_id]" class="form-select option_value" data-v-option-value-option_value_id>
+						  <option value="1">Value 1</option>
+						  <option value="2">Value 2</option>
+						  <option value="3">Value 3</option>
+						  <option value="4">Value 4</option>
+						</select>
+						<input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
+					  </td>
+					  <td class="text-end">
+						<input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+					  </td>
+					  <td class="text-center">
+						<label class="form-check form-check-lg form-switch">
+						  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][product_option_value][#][subtract]" value="1" data-v-option-value-subtract>
+						</label>				  
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+						</div>
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-points_operator>
+									<span  class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-points_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+						</div>
+					  </td>
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check"autocomplete="off" value="+" data-v-option-value-weight_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check"autocomplete="off" value="-" data-v-option-value-weight_operator>
+									<span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+						</div>
+					  </td>
+					  <td class="text-start">
+						<button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-danger">
+						  <i class="la la-minus-circle la-lg"></i>
+						</button>
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+		  </div>
+	  </div>
+    </div>
+  </div>
+</div>

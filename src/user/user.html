@@ -1,0 +1,90 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - User","scripts":"","base_href":"../"})
+
+<body class="user">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="user-form" action="" method="post" class="needs-validation" data-v-user>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions clearfix">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-person-outline"></i>&ensp;
+						<span>User</span>
+					</h4>
+			</div>
+			<div>			
+				<a href="/admin/?module=user/users" title="User list"
+					class="btn btn-outline-secondary me-2">
+						<i class="la la-arrow-left"></i><span>User list</span>
+				 </a>				
+				 
+				 <button type="submit" name="action" value="loginAs" title="Login as user"
+					class="btn btn-outline-secondary">
+						<i class="la la-user"></i><span>Login as user</span>
+				 </button>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+						<i class="icon-create-outline me-2"></i>
+						<span>Save user</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content" class="px-4">
+
+				@@include('../_includes/notifications.html')
+				
+				 <div class="mb-3 row">
+					<label for="input-first_name" class="col-sm-2 col-form-label">First name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-first_name" placeholder="First name" name="user[first_name]" data-v-user-first_name>
+					</div>
+				  </div>  
+				  
+				  <div class="mb-3 row">
+					<label for="input-last_name" class="col-sm-2 col-form-label">Last name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-last_name" placeholder="Last name" name="user[last_name]" data-v-user-last_name>
+					</div>
+				  </div>  
+				  
+				  <div class="mb-3 row">
+					<label for="input-phone_number" class="col-sm-2 col-form-label">Phone number</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-phone_number" placeholder="Phone number" name="user[phone_number]" data-v-user-phone_number>
+					</div>
+				  </div>  
+				  
+				  <div class="mb-3 row">
+					<label for="input-url" class="col-sm-2 col-form-label">Website</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-url" placeholder="Website" name="user[url]" data-v-user-url>
+					</div>
+				  </div>
+
+				@@include('_user_form.html', {"prefix": "user"})
+
+	
+			</div>
+        </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+@@include('../_includes/footer-scripts.html')
+
+
+
+@@include('../_includes/footer.html')

@@ -1,0 +1,119 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Digital asset","scripts":"","base_href":"../"})
+
+<body class="digital_asset">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-digital_asset>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-people-outline" data-v-menu-item-icon=""></i>&ensp;
+						<span>Digital asset</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=product/digital-assets" title="Digital asset list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Digital asset list</span>
+				 </a>
+				  
+				  <button type="submit" href="" data-bs-toggle="tooltip" title=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="digital_asset_id" data-v-digital_asset-digital_asset_id>
+					
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="digital_asset[name]" data-v-digital_asset-name required>
+					</div>
+				 </div>		 
+
+				 <div class="mb-3 row">
+					<label for="input-public" class="col-sm-2 col-form-label">
+						<span>Public file name</span>
+						
+					</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-public" placeholder="Public file name" name="digital_asset[public]" data-v-digital_asset-public required>
+					  <span class="form-text">Public file name is used to hide the real file name and url.</span>
+					</div>
+				  </div>		 
+
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">File</label>
+					<div class="col-sm-10">
+
+						<input type="hidden" data-v-image name="digital_asset[file]" id="featured-image-input" value="">
+									
+						<img data-v-image src="img/placeholder.svg" alt="" title=""
+						 id="featured-image-thumb"
+						 data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" 
+						 data-type="single"
+						 class="img-thumbnail bg-light"
+						 style="max-width:200px;"
+						 >
+							
+
+							<div class="py-3">
+								<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+									data-media-gallery 
+									data-target-input="#featured-image-input"
+									data-target-thumb="#featured-image-thumb" 
+									data-type="single">
+									<i class="la la-image la-lg"></i> <span>Set file</span>
+								</button>
+							</div>
+							
+					  
+					</div>
+				  </div>
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+
+
+
+
+@@include('../_includes/footer.html')

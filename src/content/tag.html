@@ -1,0 +1,129 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Tag","scripts":"","base_href":"../"})
+
+<body class="tag">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" novalidate data-v-tag>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions clearfix">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-document-outline"></i>&ensp;
+						<span>Tag</span>
+					</h4>
+			</div>
+			<div>			
+				<a href="/admin/?module=content/tags&status=0" title="Tag list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Tag list</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save tag</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content" class="px-4">
+
+			@@include('../_includes/notifications.html')
+			
+			<input type="hidden" name="tag_id" data-v-tag-tag_id>
+				
+			<div class="mb-3 row">
+				<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" id="input-name" placeholder="Name" name="tag[name]" data-v-tag-name>
+				</div>
+			 </div>		 
+
+			 <div class="mb-3 row">
+				<label for="input-site-title" class="col-sm-2 col-form-label">Slug</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" id="input-slug" placeholder="Slug" name="tag[slug]" data-v-tag-slug>
+				</div>
+			  </div>		 
+			  
+			  <div class="mb-3 row">
+				<label for="input-description" class="col-sm-2 col-form-label" >Description</label>
+				<div class="col-sm-10">
+				  <textarea type="email" class="form-control" id="input-description" placeholder="Description" name="tag[content]" data-v-tag-content></textarea>
+				</div>
+			  </div>
+			  
+			  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label" >Image</label>
+					<div class="col-sm-10">
+					  
+		
+
+						<input type="hidden" data-v-image name="tag[image]" id="featured-image-input" value="">
+									
+						<img data-v-image src="img/placeholder.svg" alt=""
+						 id="featured-image-thumb"
+						 data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" data-type="single"
+						 class="img-thumbnail bg-body-tertiary"
+						 style="max-width:200px;"
+						 >
+							
+
+							<div class="py-3">
+								<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
+									data-media-gallery data-target-input="#featured-image-input"
+									data-target-thumb="#featured-image-thumb" data-type="single">
+									<i class="la la-image la-lg"></i> <span>Set image</span>
+								</button>
+							</div>
+							
+					  
+				</div>
+			</div>			  
+
+			  <div class="mb-3 row">
+				<label for="input-site-title" class="col-sm-2 col-form-label" >Status</label>
+				<div class="col-sm-10">
+					<select name="tag[status]" id="input-status" class="form-control" data-v-tag-status>
+						<option value="0">Pending</option>
+						<option value="1">Approved</option>
+						<option value="2">Spam</option>
+						<option value="3">Trash</option>
+					</select>
+				</div>
+			  </div>
+
+	
+			</div>
+        </div>
+        </form>
+    </div>
+
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js"src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+
+@@include('../_includes/footer.html')

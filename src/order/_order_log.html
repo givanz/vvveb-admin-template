@@ -1,0 +1,89 @@
+<div class="card border-0"  data-v-if="this.order.order_id">
+  
+  <div class="card-header bg-body">
+	<h4 class="card-title mt-4">
+		<i class="la la-comment-o"></i> Order Log
+	</h4>
+  </div>
+  
+  <div class="card-body">
+
+		<div class="table-responsive">
+		  <table class="table">
+			<thead>
+			  <tr>
+				<td class="text-start">Date Added</td>
+				<td class="text-start">Comment</td>
+				<td class="text-start">Status</td>
+				<td class="text-start">User Notified</td>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr data-v-order-history>
+				<td class="text-start">
+					<span data-v-order-history-created_at>23/10/2019</span>
+				</td>
+				<td class="text-start">
+					<span data-v-order-history-note>Comment</span>
+				</td>
+				<td class="text-start">
+					<span data-v-order-history-order_status_id>Pending</span>
+				</td>
+				<td class="text-start">
+					<span data-v-order-history-notify>Yes</span>
+				</td>
+			  </tr>
+			</tbody>
+		</table>
+	</div>
+
+		  <form class="p-4">
+			<div class="mb-3 row">
+			  <label class="col-sm-2 col-form-label" for="input-order-status">Order Status</label>
+			  <div class="col-sm-10">
+				<select name="order_status_id" id="input-order-status" class="form-control">
+					<option value="1" data-v-option>processing</option>
+					<option value="2" data-v-option>shipped</option>
+					<option value="3" data-v-option>canceled</option>
+					<option value="4" data-v-option>complete</option>
+					<option value="5" data-v-option>denied</option>
+					<option value="6" data-v-option>canceled_reversal</option>
+					<option value="7" data-v-option>failed</option>
+					<option value="8" data-v-option>refunded</option>
+					<option value="9" data-v-option>reversed</option>
+					<option value="10" data-v-option>chargeback</option>
+					<option value="11" data-v-option>pending</option>
+					<option value="12" data-v-option>voided</option>
+					<option value="13" data-v-option>processed</option>
+					<option value="14" data-v-option>expired</option>
+					<option value="15" data-v-option>holded</option>
+					<option value="16" data-v-option>closed</option>
+					<option value="17" data-v-option>delivered</option>
+					<option value="18" data-v-option selected>pending_payment</option>
+					<option value="19" data-v-option>payment_review</option>
+					<option value="20" data-v-option>fraud</option>    
+
+			  </select>
+			  </div>
+			</div>
+			<div class="mb-3 row">
+			  <label class="col-sm-2 col-form-label" for="input-notify">Notify User</label>
+			  <div class="col-sm-10">
+				<div class="form-check">
+				  <input type="checkbox" class="form-check-input" name="notify" value="1" id="input-notify">
+				</div>
+			  </div>
+			</div>
+			<div class="mb-3 row">
+			  <label class="col-sm-2 col-form-label" for="input-note">Note</label>
+			  <div class="col-sm-10">
+				<textarea name="note" rows="8" id="input-note" class="form-control"></textarea>
+			  </div>
+			</div>
+		  </form>
+
+		<div class="text-end">
+		  <button id="button-history" data-loading-text="Loading..." class="btn btn-primary"><i class="la la-plus-circle"></i> <span>Add message</span></button>
+		</div>
+  </div>
+</div>

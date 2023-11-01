@@ -1,21 +1,34 @@
 /* CSS Tree menu styles */
 .tree
 {
-	ol
+	width:100%;
+	padding:0;
+
+	> ol
 	{
-		padding: 0 0 0 2rem;
-		width: 300px;
-		width: $builder-right-panel-width + 15;
+		padding: 0rem 0 0 0rem;
+		margin:0;
+		//width: 300px;
+		//min-width: $builder-right-panel-width + 15;
+		//margin:0 0.5rem;
 		font-size:12px;
-		color:#555;
+		color:var(--bs-body-color);
 
 		li 
 		{ 
 			position: relative; 
-			margin-left: -15px;
+			//margin-left: -15px;
+			margin-bottom: 0.3rem;
 			list-style: none;
-			color:#555;
+			color:var(--bs-body-color);
 			overflow:hidden;
+			
+			> label {
+				html[data-bs-theme="dark"] & { 
+					//color: #333;
+					//filter: invert(100%);
+				}
+			}
 			
 			&:hover
 			{
@@ -24,37 +37,82 @@
 			
 			&.active
 			{
-				//background-color:$primary;
+				//background-color:var(--bs-link-color);
 				//color:#fff;
 				> label > span, > a > span  
 				{
-					color:#007bff;
-					font-weight:600;
+					//color:#007bff;
 				}
 			}
 		}
 		
 		li.file
 		{
-			margin-left: -1px !important;
+			border:1px solid transparent;
+			
+			&:hover, &.active {
+				background-color:rgba(var(--bs-link-color), 0.07);
+			}
+			
+			&:hover {
+				background-color:rgba(var(--bs-link-color), 0.07);
+				//border: 1px solid rgba(var(--bs-link-color), 0.05);
+				
+				.file-actions {
+					display:block;
+				}
+			}
 			
 			> label
 			{
-				background: url(../libs/builder/icons/file.svg) 0px 0px no-repeat;
-				background-size:18px 18px;
+				background-image: url(../../../js/vvvebjs/icons/file.svg);
+				background-position:8px 4px;
+				background-size:21px 21px;
+				background-repeat:no-repeat;
 				cursor: pointer;
-				
-				color: #333;
-				padding-left: 21px;
-				text-decoration: none;
 				display: block;
-				margin-bottom: 0.5rem;
+				padding-left: 35px;
+				margin:0;
+				font-size:12px;
+				line-height:28px;
+				max-height:2rem;
 
 
 				&:hover
 				{
-					color:$primary;
+					color:var(--bs-link-color);
 				}
+			}
+			
+			.file-actions {
+				display:none;
+				position:absolute;
+				top:-1px;
+				right:5px;
+				
+				.btn {
+					padding:0.25rem 0.3rem;
+					font-size:0.875rem;
+					line-height:1;
+					border-radius:4px;
+					--bs-btn-border-color: rgba(var(--bs-link-color-rgb), 0.15);
+				}
+			}
+		}
+		
+		li.folder
+		{
+			> label
+			{
+				//padding-left:38px;
+			}
+		}		
+		
+		li.page
+		{
+			> label
+			{
+				background-image: url(../../../js/vvvebjs/icons/panel.svg);
 			}
 		}
 
@@ -66,20 +124,17 @@
 			opacity: 0;
 			z-index: 2;
 			cursor: pointer;
-			height: 1em;
-			width: 1em;
+			height: 2em;
+			width: 2em;
 			top: 0;
 			
 			 + ol
 			{
-				background: url(../img/toggle-small-expand.png) 40px 0 no-repeat;
-				background: url(../libs/builder/icons/plus_round.svg) 40px 0px no-repeat;
-				background: url(../libs/builder/icons/arrow-down.svg) 42px 2px no-repeat;
-				background-size:10px 10px;
-				
-				margin: -1.18em 0 0 -44px;
-				padding:0.8rem 0rem;
-				height: 0em;
+				background: url(../../../js/vvvebjs/icons/arrow-right.svg) 5px .6rem no-repeat;
+				background-size:12px 12px;
+				margin: -1.9rem 0 0 0rem;
+				padding: 2rem 0 0 2rem;
+				height: 0;
 				
 				> li { display: none; margin-left: -14px !important; padding-left: 1px; }
 			}
@@ -87,129 +142,40 @@
 		
 		li label
 		{
-			background: url(../libs/builder/icons/folder.svg) 15px 1px no-repeat;
-			background: url(../libs/builder/icons/file.svg) 12px 0px no-repeat;
-			background-size:18px 18px;
+			background: url(../../../js/vvvebjs/icons/folder.svg) 24px 1px no-repeat;
+			background-size:22px 22px;
 			cursor: pointer;
 			display: block;
-			padding-left: 37px;
+			padding-left: 52px;
 			margin:0px;
 			font-size:12px;
+			line-height:28px;
+			/*
+			p {
+				margin: 0;
+				display:none;
+				color: #999;
+				margin-left: 1rem;
+			}
+			
+			&:hover {
+				p {
+					display: inline-block;				
+				}
+			}
+			*/
 		}
 
 		li input:checked + ol
 		{
-			background: url(../img/toggle-small.png) 40px 5px no-repeat;
-			background: url(../libs/builder/icons/minus_round.svg) 40px 5px no-repeat;
-			background: url(../libs/builder/icons/arrow-right.svg) 42px 8px no-repeat;
-			background-size:10px 10px;
-			margin: -1.65em 0 0 -44px; 
-			padding: 1.963em 0 0 80px;
+			background: url(../../../js/vvvebjs/icons/arrow-down.svg) 5px .6rem no-repeat;
+			background-size:12px 12px;
+			margin: -2.5em 0 0 0rem;
+			padding: 2rem 0 0 2rem;
 			height: auto;
 
-			> li { display: block; margin: 0 0 0.125em;  }
-			> li:last-child { margin: 0 0 0.063em; }
+			> li { display: block; margin: 0 0 0.5em;  /* 2px */}
+			> li:last-child { margin: 0 0 0.7em; /* 1px */ }
 		}
 	}
 }
-
-/*
-.tree { margin: 1em; }
-
-.tree input {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  }
-
-.tree input ~ ol { display: none; }
-
-.tree input:checked ~ ol { display: block; }
-
-.tree li {
-  line-height: 1.2;
-  position: relative;
-  padding: 0 0 1em 1em;
-  }
-
-.tree ol li { padding: 1em 0 0 1em; }
-
-.tree > li:last-child { padding-bottom: 0; }
-
-
-label { 
-	position: relative;
-	display: inline-block;
-	background: #fff;
-	cursor: pointer; 
-}
-
-label:hover { color: #666; }
-
-label:before {
-  background: #000;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  float: left;
-  margin: 0 1em 0 -2em;
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  content: '+';
-  text-align: center;
-  line-height: .9em;
-  }
-
-:checked ~ label:before { content: '–'; }
-
-.tree li:before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -.5em;
-  display: block;
-  width: 0;
-  border-left: 1px solid #777;
-  content: "";
-  }
-
-.tree_label:after {
-  position: absolute;
-  top: 0;
-  left: -1.5em;
-  display: block;
-  height: 0.5em;
-  width: 1em;
-  border-bottom: 1px solid #777;
-  border-left: 1px solid #777;
-  border-radius: 0 0 0 .3em;
-  content: '';
-  }
-
-label:after { border-bottom: 0; }
-
-:checked ~ label:after {
-  border-radius: 0 .3em 0 0;
-  border-top: 1px solid #777;
-  border-right: 1px solid #777;
-  border-bottom: 0;
-  border-left: 0;
-  bottom: 0;
-  top: 0.5em;
-  height: auto;
-  }
-
-.tree li:last-child:before {
-  height: 1em;
-  bottom: auto;
-  }
-
-.tree > li:last-child:before { display: none; }
-
-.tree_custom {
-  display: block;
-  background: #eee;
-  padding: 1em;
-  border-radius: 0.3em;
-}
-*/

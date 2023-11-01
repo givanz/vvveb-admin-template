@@ -1,0 +1,148 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Order","scripts":"","base_href":"../"})
+
+<body class="order">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+
+        <div class="actions clearfix">
+
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-cube-outline"></i>&ensp;
+					<span>Order</span>
+				</h4>
+			</div>
+
+            <div class="btns">
+
+				<a href="/admin/?module=order/orders" title="Order list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i>
+						<span>Order list</span>
+				 </a>
+
+                <a type="button" href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-url>
+                    <i class="icon-eye-outline"></i> <span>Print Preview</span>
+                </a>&nbsp;      
+         
+				<a type="button" href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-shipping-url>
+                    <i class="icon-eye-outline"></i> <span>Print shipping details</span>
+                </a>&nbsp;
+				
+                <button type="submit" href="" onclick="if(order_form.reportValidity()) order_form.submit()" class="btn btn-primary btn-icon ms-1">
+                    <i class="icon-create-outline"></i> Save order
+                </button>
+            </div>
+        </div>
+
+        <div id="content">
+
+		
+         <div class="content clearfix"  data-v-order>
+		 
+			@@include('../_includes/notifications.html')
+
+		    <form id="order-form" name="order_form" action="" method="post" >
+
+			<input type="hidden" name="action" id="action" value="save">
+			<input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>   
+
+			<div class="card border-0 mx-3 mb-5">
+              <div class="card-body p-0">
+                <div class="d-md-flex justify-content-between">
+                  <div class="d-flex align-items-center mb-2 mb-md-0">
+                    <h2 class="mb-0">Order ID: #VI<span data-v-order-order_id>001</span></h2>
+                    <span class="badge ms-2" data-v-order-order_status>Pending</span>
+                  </div>
+                  <!-- 
+                  <div class="d-md-flex">
+                    <div class="mb-2 mb-md-0">
+                      <select class="form-select">
+                        <option selected="">Status</option>
+                        <option value="Success">Success</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Cancel">Cancel</option>
+                      </select>
+                    </div>
+                    
+                    <div class="ms-md-3">
+                      <a href="#" class="btn btn-primary">Save</a>
+                      <a href="#" class="btn btn-secondary">Download Invoice</a>
+                    </div>
+					
+					 -->
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+						@@include('_order_customer.html')				
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+						@@include('_order_details.html')				
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+						@@include('_order_billing_address.html')				
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+						@@include('_order_shipping_address.html')				
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+				  
+				  @@include('_order_cart.html')				
+
+                </div>
+              </div>
+			  
+			  @@include('_order_log.html')
+			 
+
+            </div>		
+			</form>	
+		
+
+
+		</div>
+    </div>
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+$("#order-form input[type=text]").change(function () {
+	let name = this.name;
+	let textSelector = "[data-" + name + "-text]";
+	$(textSelector).html(this.value);
+	
+});
+
+$("#order-form select").change(function () {
+	let name = this.dataset.text;
+	let value = this.options[this.selectedIndex].text
+	let textSelector = "[" + name + "]";
+	$(textSelector).html(value);
+	
+});
+</script>
+
+@@include('../_includes/footer.html')

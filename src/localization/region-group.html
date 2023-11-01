@@ -1,0 +1,183 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Region Group","scripts":"","base_href":"../"})
+
+<body class="region_group">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="localization-form" action="" method="post" class="needs-validation" data-v-region_group>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-earth-outline"></i>&ensp;
+						<span>Region Group</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=localization/region-groups" title="Return to region groups"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to region groups</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="region_group_id" data-v-region_group-region_group_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="region_group[name]" data-v-region_group-name required>
+					</div>
+				 </div>		 
+
+				<div class="regions" data-v-if="this.region_group_id">
+					
+
+	 
+					<table id="region-group" class="table table-hover mt-2" data-v-regions>
+					  <thead>
+						<tr>
+						  <th class="text-start">Country</th>
+						  <th class="text-start">Region</th>
+						  <th class="text-end">
+							<button type="button" id="add-region-group-btn" class="btn btn-primary" aria-label="Add Rule">
+								<i class="la la-lg la-plus-circle text-white"></i> <span>Add region</span>
+							</button>
+						  </th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr data-v-region>
+						  <td class="text-start">
+							<select name="region[0][country_id]" class="form-select" data-v-region-country_id data-v-countries disabled>
+							  <option value="1" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 1 (-2.00)</span>
+							  </option>
+							  <option value="2" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 2 (19%)</span>
+							  </option>
+							</select>
+						  </td>
+						  <td class="text-start">
+							<select name="region[0][region_id]" class="form-select" data-v-region-region_id disabled>
+							  <option value="0">All regions</option>
+							  <option value="1" data-v-option>region 1</option>
+							  <option value="2" data-v-option>region 2</option>
+							  <option value="3" data-v-option>region 3</option>
+							</select>
+						  </td>
+						  <td class="text-end">
+							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							  <i class="la la-lg la-minus-circle"></i>
+							</button>
+						  </td>
+						</tr>
+						
+						<tr class="d-none" id="region-group-template">
+						  <td class="text-start">
+							<select name="region-group_template[0][country_id]" class="form-select" data-v-countries disabled>
+							  <option value="1" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 1 (-2.00)</span>
+							  </option>
+							  <option value="2" data-v-country data-v-country-country_id>
+								<span data-v-country-name>Tax 2 (19%)</span>
+							  </option>
+							</select>
+						  </td>
+						  <td class="text-start">
+							<select name="region-group_template[0][region_id]" class="form-select" data-v-region-region_id disabled>
+							  <option value="0">All regions</option>
+							  <option value="1" data-v-option>region 1</option>
+							  <option value="2" data-v-option>region 2</option>
+							  <option value="3" data-v-option>region 3</option>
+							</select>
+						  </td>
+						  <td class="text-end">
+							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							  <i class="la la-lg la-minus-circle"></i>
+							</button>
+						  </td>
+						</tr>
+						
+					  </tbody>
+		
+					</table>
+					
+				</div>
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let regionsUrl = '{ $this->regionsUrl }';
+let regions = [];
+
+function addRegionsToSelect(regionSelect, data, region_id = 0) {
+	regionSelect.html('<option value="0">All regions</option>');
+	for (i in data) {
+		let region = data[i];
+		regionSelect.append('<option value="' + region.region_id + '">' + region.name + '</option>');
+	}
+	regionSelect.val(region_id);
+	regionSelect.removeAttr("disabled");
+	
+}
+
+$("body").on("change", "[data-v-countries]", function () {
+	let regionGroup = $(this).parents("tr");
+	let regionSelect = $("[data-v-region-region_id]", regionGroup);
+	let country_id = this.value;
+	let region_id = this.dataset.vRegionId;
+	this.disabled = false;
+
+	if (regions[country_id]) {
+		addRegionsToSelect(regionSelect, regions[country_id], region_id);
+		$("[data-v-region] [data-v-countries]:disabled:first").change();
+	} else {
+		$.get(regionsUrl + "&country_id=" + country_id).done(function( data ) {
+			regions[country_id] = data;
+			addRegionsToSelect(regionSelect, data, region_id);
+			$("[data-v-region] [data-v-countries]:disabled:first").change();
+		});
+	}
+	
+	this.dataset.vRegionId = 0;
+});
+
+$("#add-region-group-btn").click(function () {
+	
+	let template = $("#region-group-template")[0].outerHTML;
+	let id = Math.floor(Math.random() * 10000);
+	template = template.replaceAll('region-group_template[0]', 'region[' + id + ']').replace('class="d-none"', 'data-v-region').replace('id="region-group-template"', '');
+	
+	$("#region-group tbody").append(template);
+	$("[data-v-region] [data-v-countries]:disabled:first").change();	
+});
+
+$("[data-v-region] [data-v-countries]:disabled:first").change();
+</script>
+@@include('../_includes/footer.html')

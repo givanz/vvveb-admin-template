@@ -1,0 +1,3299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <base href="../">
+
+  <title>Vvveb - Edit product</title>
+
+
+
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+
+
+<body class="product">
+
+  <div id="container">
+
+    <div class="sidebar">
+
+      <div class="logo">
+
+        <a href="/admin" class="img"></a>
+
+        <a id="color-theme-switch" title="Switch sidebar color theme">
+          <i class="la la-sun"></i>
+        </a>
+
+        <a class="menu-toggle" title="Toggle sidebar width">
+          <i class="icon-menu-outline"></i>
+        </a>
+      </div>
+
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-sm">
+
+        <div class="logo">
+          <!-- h1 class="display-5"><a href="#">M.</a></h1-->
+          <a href="/admin" class="img">
+            <!-- <img src="img/logo.png"> -->
+          </a>
+        </div>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--
+			<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav flex-column" data-v-menu>
+
+					<li class="nav-item" data-v-menu-item>
+						<a class="nav-link" href="/admin" data-bs-target="#posts"
+						   data-v-menu-item-url>
+							<i class="icon-pulse-outline" data-v-menu-item-icon></i>
+							<img src class="icon-img" data-v-menu-item-icon-img></i>
+							<span class="title" data-v-menu-item-name>Dashboard</span>
+							<span class="text-muted" data-v-menu-item-subtitle>Subtitle</span>
+							<span class="badge badge-primary" data-v-menu-item-badge></span>
+						</a>
+
+
+						<ul class="collapse sub-menu fade" aria-labelledby="Preview" id="posts" data-v-submenu>
+
+							<li class="nav-item" data-v-submenu-item>
+								<a href="/adminindex.php?module=posts" class="nav-link"
+								   data-v-submenu-item-url>
+								   
+								   <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
+								   <img src class="icon-img" data-v-submenu-item-icon-img></i>
+								   <span data-v-submenu-item-name>Submenu</span>
+								   <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
+								   <span class="badge badge-primary" data-v-submenu-item-badge></span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+			
+			-->
+
+        <div class="collapse navbar-collapse" id="sidebarNav">
+
+          <ul class="nav navbar-nav flex-column" data-v-menu>
+
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block " href="/admin" data-v-menu-item-url>
+                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
+                <img src="#" class="icon-img" data-v-menu-item-icon-img>
+                <span class="title" data-v-menu-item-name>Dashboard</span>
+                <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
+                <span class="badge badge-primary" data-v-menu-item-badge></span>
+              </a>
+
+              <a class="nav-link mobile d-block d-sm-none" href="/admin" data-v-menu-item-url>
+                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
+                <img src="#" class="icon-img" data-v-menu-item-icon-img>
+                <span class="title" data-v-menu-item-name>Dashboard</span>
+                <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
+                <span class="badge badge-primary" data-v-menu-item-badge></span>
+              </a>
+
+
+              <ul class="dropdown-menu sub-menu fade" aria-labelledby="Preview" id="posts" data-v-submenu>
+
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/adminindex.php?module=posts" class="nav-link" data-v-submenu-item-url>
+
+                    <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
+                    <img src="#" class="icon-img" data-v-submenu-item-icon-img>
+                    </i>
+                    <span data-v-submenu-item-name>Submenu</span>
+                    <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
+                    <span class="badge badge-primary" data-v-submenu-item-badge></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-target="#menu-edit">
+                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Edit website</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-target="#menu-edit">
+                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Edit website</span>
+              </a>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-target="#menu-post">
+                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Posts</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-target="#menu-post">
+                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Posts</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/posts&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Posts</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/tags&amp;type=post&amp;taxonomy_id=2" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-tags" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Tags</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/categories&amp;type=post&amp;taxonomy_id=1" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>General</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/comments&amp;status=0&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-comments" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Comments</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-target="#menu-pages">
+                <i class="icon-document-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Pages</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-target="#menu-pages">
+                <i class="icon-document-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Pages</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/posts&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Pages</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new page</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/menus&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Menus</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-target="#menu-medialibrary">
+                <i class="icon-images-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Media library</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-target="#menu-medialibrary">
+                <i class="icon-images-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Media library</span>
+              </a>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-target="#menu-users">
+                <i class="icon-people-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Users</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-target="#menu-users">
+                <i class="icon-people-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Users</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/users" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-user" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Users</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new user</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Groups</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/user-groups" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-user-friends" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>User groups</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new group</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-target="#menu-messages">
+                <i class="icon-mail-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Messages</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-target="#menu-messages">
+                <i class="icon-mail-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Messages</span>
+              </a>
+            </li>
+            <li class="nav-item  heading" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-target="#menu-ecommerce">
+                <span class="title" data-v-menu-item-name>Ecommerce</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-target="#menu-ecommerce">
+                <span class="title" data-v-menu-item-name>Ecommerce</span>
+              </a>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-target="#menu-sales">
+                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Sales</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-target="#menu-sales">
+                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Sales</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/orders" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Orders</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/subscriptions" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-retweet" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Subscriptions</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/returns" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-undo" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Returns</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Marketing</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/coupons" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-percentage" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Discount coupons</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/vouchers" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-gift" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Gift vouchers</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-middle columns-2" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-target="#menu-product">
+                <i class="icon-cube-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Products</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-target="#menu-product">
+                <i class="icon-cube-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Products</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/products&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-box" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Products</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/tags&amp;type=product&amp;taxonomy_id=5" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-tags" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Tags</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/categories&amp;type=product&amp;taxonomy_id=4" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Relations</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/manufacturers&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-industry" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Manufacturers</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/vendors&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-store" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Vendors</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Content</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/digital-assets&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-cloud-download-alt" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Digital assets</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/options&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-stream" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Options</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/attribute-groups&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-list" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Attributes</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>User feedback</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/product-reviews&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-comment" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Reviews</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/product-questions&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-question-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Questions</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item  heading" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-target="#menu-configuration">
+                <span class="title" data-v-menu-item-name>Configuration</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-target="#menu-configuration">
+                <span class="title" data-v-menu-item-name>Configuration</span>
+              </a>
+            </li>
+            <li class="nav-item align-top" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-target="#menu-plugins">
+                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Plugins</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-target="#menu-plugins">
+                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Plugins</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=plugin/plugins" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plug" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Installed Plugins</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new plugin</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=editor/code&amp;type=plugins" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-code" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Code editor</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Plugins</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=plugins/contact-form/messages" class="nav-link " data-v-submenu-item-url>
+                    <img src="/plugins/contact-form/contact-form.svg" class="icon-img" data-v-submenu-item-icon-img>
+                    <span data-v-submenu-item-name>Contact form</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=editor/editor&amp;url=/plugins/cookie-notice/notice.html&amp;template=/plugins/cookie-notice/notice.html" class="nav-link " data-v-submenu-item-url>
+                    <img src="/plugins/cookie-notice/cookie-notice.svg" class="icon-img" data-v-submenu-item-icon-img>
+                    <span data-v-submenu-item-name>Cookie notice</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-target="#menu-themes">
+                <i class="icon-copy-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Themes</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-target="#menu-themes">
+                <i class="icon-copy-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Themes</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=theme/themes" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-brush" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Installed Themes</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=editor/code&amp;type=themes" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-code" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Code editor</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-target="#menu-field">
+                <i class="icon-reader-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Fields</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-target="#menu-field">
+                <i class="icon-reader-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Fields</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=field/field-groups" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-brush" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Field groups</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-top mega-menu" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-target="#menu-settings">
+                <i class="icon-settings-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Settings</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-target="#menu-settings">
+                <i class="icon-settings-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Settings</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=settings/sites" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-stop la-90" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Sites</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/sites" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-stop" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Sites</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Add new</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=admin/users" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-user" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Admin users</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/users" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Users</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/user" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user-plus" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Add new user</span>
+                      </a>
+                    </li>
+                    <li class="nav-item  heading" data-v-submenu-item>
+                      <a href class="nav-link " data-v-submenu-item-url>
+                        <span data-v-submenu-item-name>Roles</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/roles" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user-cog" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Manage Roles</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/role" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user-tag" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Add Role</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/menus" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Content</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/taxonomies" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-boxes" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Taxonomies</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/posts" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Custom posts</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/products" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-box" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Custom products</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-stream" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Fields</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item align-top" data-v-submenu-item>
+                  <a href="/admin/?module=user/users" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-shopping-cart" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Ecommerce</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/subscription-plans" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-receipt" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Subscriptions plans</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/tax-types" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Taxes</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/tax-types" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Tax types</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/tax-rates" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Tax rates</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/order-statuses" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-tags" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Statuses</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/order-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Order</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/stock-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-box" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Stock</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/subscription-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-retweet" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Subscription</span>
+                          </a>
+                        </li>
+                        <li class="nav-item  heading" data-v-submenu-item>
+                          <a href class="nav-link " data-v-submenu-item-url>
+                            <span data-v-submenu-item-name>Returns</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-undo" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Return status</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-actions" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-exchange-alt" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Return actions</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-reasons" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-undo-alt" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Return reasons</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/discount" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-ruler" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Classes</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/length-types" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-ruler-horizontal" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Length</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/weight-types" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-box" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Weight</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=localization/languages" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-flag" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Localization</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=localization/languages" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-language" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Languages</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=localization/currencies" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-coins" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Currencies</span>
+                      </a>
+                    </li>
+                    <li class="nav-item align-top" data-v-submenu-item>
+                      <a href="/admin/?module=localization/region-groups" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-globe" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Geo location</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=localization/countries" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-flag" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Countries</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=localization/regions" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-city" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Regions</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=localization/region-groups" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-atlas" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Region Groups</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=settings/email" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-tools" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>System</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/email" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-envelope" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Email settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-top" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-target="#menu-tools">
+                <i class="icon-globe-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Tools</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-target="#menu-tools">
+                <i class="icon-globe-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Tools</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/cache" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-circle-notch" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Cache</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/backup" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-server" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Backup</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/cron" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-history la-90" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Cron job</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/import" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-upload" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Import/Export</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item  heading" data-v-submenu-item>
+                      <a href class="nav-link " data-v-submenu-item-url>
+                        <span data-v-submenu-item-name>Content</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/import" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-file-import" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Import content</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/export" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-file-export" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Export content</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/systeminfo" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-info-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>System info</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/systeminfo" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-info" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>System Info</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/errorlog" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-bug" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Error log</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/update" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-sync" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Update</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+
+      </nav> <!-- /navbar -->
+
+    </div>
+
+
+
+    <div class="main">
+
+      <div class="top-header">
+
+        <div class="btn-group" data-v-component-sites>
+          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            <i class="icon-eye-outline"></i>
+            <span>View live website</span>
+          </button>
+
+
+          <div class="dropdown-menu">
+            <div data-v-site>
+              <a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+                <!-- i class="la la-circle la-lg me-2"></i -->
+                <span data-v-site-name class="flex-grow-1">Default website</span>
+                <i class="la la-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div data-v-site>
+              <a class="dropdown-item" href="#" data-v-site target="_blank">
+                <!--- <i class="icon-eye-outline la-lg me-2"></i> -->
+                <span data-v-site-name class="flex-grow-1">Blog</span>
+                <i class="la la-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/sites"}'>
+              <span class="flex-grow-1">Manage sites</span>
+              <i class="la la-edit ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-reload-circle-outline"></i>
+            <span>Clear cache</span>
+          </button>
+
+          <div class="dropdown-menu">
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
+                <span class="flex-grow-1">Assets</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
+                <span class="flex-grow-1">Templates</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
+                <span class="flex-grow-1">Database</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
+                <span class="flex-grow-1">Page cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
+                <span class="flex-grow-1">Image cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
+                <span class="flex-grow-1">Model cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div class="dropdown-divider"></div>
+
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
+                <span class="flex-grow-1">All cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="float-end">
+
+          <div class="btn-group top-notifications" data-v-component-notifications>
+            <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="la la-bell"></i>
+              <span class="badge bg-primary-subtle text-body " data-v-if="count > 0" data-v-notification-count>5</span>
+            </button>
+
+            <div class="dropdown-menu">
+              <div data-v-if="notifications.updates.core.hasUpdate">
+                <h6 class="dropdown-header">Updates</h6>
+                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                  <i class="icon-flash-outline text-success"></i>
+                  <span>Update available</span>
+                  <strong class="badge bg-success small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
+                </a>
+                <div class="dropdown-divider"></div>
+              </div>
+              <div data-v-if-not="notifications.updates.core.hasUpdate">
+                <h6 class="dropdown-header">Updates</h6>
+                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                  <i class="icon-flash-outline"></i>
+                  <span>Up to date</span>
+                  <strong class="badge bg-primary small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
+                </a>
+                <div class="dropdown-divider"></div>
+              </div>
+
+              <div data-v-group>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                    <i class="" data-v-group-icon></i>
+                    <span data-v-group-notification-name>New orders</span>
+                    <strong class="badge bg-primary-subtle text-body mx-2 bg-primary-subtle text-body" data-v-group-notification-count>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                    <i class="la la-file-invoice" data-v-group-icon></i>
+                    <span data-v-group-notification-name>Returns</span>
+                    <strong class="badge bg-danger small" data-v-group-notification-count>2</strong>
+                  </a>
+                </div>
+                <div class="dropdown-divider"></div>
+              </div>
+
+              <div data-v-group>
+                <div class="dropdown-divider"></div>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>New comments</span>
+                    <strong class="badge bg-primary small mx-2" data-v-notification-value>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>Spam comments</span>
+                    <strong class="badge bg-danger small" data-v-notification-value>2</strong>
+                  </a>
+                </div>
+              </div>
+
+              <div data-v-group>
+                <div class="dropdown-divider"></div>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>New reviews</span>
+                    <strong class="badge bg-primary small mx-2" data-v-notification-value>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>Spam questions</span>
+                    <strong class="badge bg-danger small" data-v-notification-value>2</strong>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="btn-group" data-v-component-sites>
+            <form method="post">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <i class="la la-sitemap me-1"></i>
+                <span data-v-site-info-name>Default site</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+                <div data-v-site>
+                  <button class="dropdown-item" href="#" data-v-site-site_id name="site" value="default">
+                    <i class="la la-window-minimize la-lg me-2" data-v-if="state = 'live'" data-v-site-icon></i>
+                    <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+                    <span data-v-site-name>Default website</span>
+                  </button>
+                </div>
+
+                <div data-v-site>
+                  <a class="dropdown-item" href="#" data-v-site name="site" value="default">
+                    <i class="la la-window-minimize la-lg me-2" data-v-site-icon></i>
+                    <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+                    <span data-v-site-name>Blog</span>
+                  </a>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/site"}'>
+                  <i class="la la-plus me-2"></i>
+                  Add new
+                </a>
+              </div>
+            </form>
+          </div>
+
+          <div class="btn-group" data-v-component-states>
+            <form method="post">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <i class="la text-success me-1" data-v-state-info-active_icon></i>
+                <span data-v-state-info-active_name>Live</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
+                    <i class="la la-broadcast-tower la-lg me-2" data-v-state-icon></i>
+                    <span data-v-state-name>
+                      Live
+                    </span>
+                  </button>
+                </div>
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to maintenance?')" name="state" data-state="maintenance">
+                    <i class="la la-wrench la-lg me-2" data-v-state-icon></i>
+                    <span data-v-state-name>
+                      Maintenance
+                    </span>
+                  </button>
+                </div>
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')" name="state" data-state="coming soon">
+                    <i class="la la-clock la-lg me-2" data-v-state-icon></i>
+                    <span data-v-state-name>
+                      Coming soon
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="btn-group" data-v-component-languages>
+            <form method="post">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <i class="la la-flag me-1"></i>
+                <span data-v-language-info-name>English</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+
+                <div data-v-language>
+                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                    <i class="la la-flag la-lg me-2"></i>
+                    <span data-v-language-name>English</span>
+                  </button>
+                </div>
+
+                <div data-v-language>
+                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                    <i class="la la-flag la-lg me-2"></i>
+                    <span data-v-language-name>Romanian</span>
+                  </button>
+                </div>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-v-url-params='{"module":"localization/languages"}'>
+                  <i class="la la-plus me-2"></i>
+                  Add new
+                </a>
+              </div>
+            </form>
+          </div>
+
+          <div class="vr align-middle mx-1"></div>
+
+
+          <a target="_blank" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn text-body" aria-haspopup="true" aria-expanded="false">
+            <i class="la la-lg la-question-circle lh-1"></i>
+            <span>Docs</span>
+          </a>
+
+
+          <div class="btn-group" data-v-component-admin>
+
+            <form action="/admin?module=user/login" method="post" enctype="multipart/form-data" data-v-url-params='{"module":"user/login"}'>
+
+              <input type="hidden" name="csrf" data-v-csrf>
+
+
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="la la-user"></i>
+                <span data-v-admin-display_name>Admin</span>
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-end">
+                <a class="dropdown-item" href="#" data-v-admin-edit-url>
+                  <span>Edit Profile</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item">
+
+                  <input type="hidden" name="logout">
+
+                  <button type="submit" value="logout" class="btn btn-primary w-100">
+
+                    <span class="loading d-none">
+                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+                      </span>
+                      <span>Loading ...</span>...
+                    </span>
+
+                    <span class="button-text">
+                      Logout
+                    </span>
+
+                  </button>
+
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="actions flex-column flex-md-row">
+
+        <div class="title">
+          <h4 class="text-muted my-3">
+            <i class="icon-cube-outline"></i>&ensp;
+            <span data-v-type-name>Product</span>
+          </h4>
+        </div>
+
+        <div class="btns">
+
+          <a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary pe-3">
+            <i class="la la-arrow-left"></i>
+            <span>
+              <span data-v-type-name>Product</span>
+              <span>list</span>
+            </span>
+          </a>
+
+          <button type="submit" href="" class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('action').value ='save';document.getElementById('form').submit();">
+            <i class="icon-create-outline"></i>
+            <span>Save</span>
+            <span data-v-type-name>product</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="content">
+
+
+        <div class="content clearfix">
+
+          <div class="notifications" data-v-notifications>
+
+            <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+
+              <div class="icon">
+                <i class="la la-exclamation-triangle"></i>
+              </div>
+
+              <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                Vvveb 0.2 is now available! <a href="update">Update now</a>
+              </div>
+
+
+              <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                  <!-- <i class="la la-times"></i> -->
+                </span>
+              </button>
+            </div>
+
+            <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
+
+              <div class="icon">
+                <i class="la la-check-circle"></i>
+              </div>
+
+              <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                You successfully read this important alert message.
+              </div>
+
+              <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                  <!-- <i class="la la-times"></i> -->
+                </span>
+              </button>
+            </div>
+
+            <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+              <div class="icon">
+                <i class="la la-info-circle"></i>
+              </div>
+
+              <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                You successfully read this important alert message.
+              </div>
+
+              <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                  <!-- <i class="la la-times"></i> -->
+                </span>
+              </button>
+            </div>
+
+          </div>
+
+          <form id="form" action="" method="post" class="needs-validation" novalidate data-v-product>
+
+            <input type="hidden" name="action" id="action" value="save">
+            <input type="hidden" name="product_id" id="product_id" value="" data-v-if="this.product.product_id" data-v-product-product_id>
+
+            <div class="columns">
+              <div class="left-column">
+
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-relations" data-bs-toggle="tab">Relations</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-attribute" data-bs-toggle="tab">Attribute</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-option" data-bs-toggle="tab">Option</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-inventory" data-bs-toggle="tab">Inventory</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-shipping" data-bs-toggle="tab">Shipping</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-image" data-bs-toggle="tab">Image gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-subscription" data-bs-toggle="tab">Subscription</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-discount" data-bs-toggle="tab">Discount</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-promotion" data-bs-toggle="tab">Promotion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab-points" data-bs-toggle="tab">Points</a>
+                  </li>
+                  <!--
+								<li class="nav-item"><a class="nav-link" href="#tab-digital-assets" data-bs-toggle="tab">Digital assets</a></li>
+								-->
+                </ul>
+
+
+                <div class="tab-content">
+
+                  <div class="tab-pane active" id="tab-general">
+
+                    <ul class="nav nav-tabs" id="language-nav" data-v-languages="desc">
+                      <li class="nav-item" data-v-language>
+                        <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+                          <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
+                          <span data-v-language-name>English</span>
+                        </a>
+                      </li>
+                    </ul>
+
+
+                    <div class="tab-content" data-v-languages="desc" style="clear:both">
+                      <div class="tab-pane" id="language1" data-v-language data-v-language-id>
+                        <input name="product_content[1][language_id]" type="hidden" data-v-product-content-language_id>
+                        <div class="mb-3 required">
+                          <label class="form-label" for="input-name">Product Name</label>
+                          <div>
+                            <input name="product_content[1][name]" value="" placeholder="Product Name" id="input-name" class="form-control" type="text" data-v-product-content-name required />
+                          </div>
+                        </div>
+
+                        <div class="required float-end">
+                          <label class="form-label" for="input-name1">Product Url</label>
+                          <a href="" target="_blank" data-v-product-content-url>url</a>
+                        </div>
+
+
+                        <div class="mb-3 required">
+                          <label class="form-label" for="input-slug">Product Slug</label>
+                          <div>
+                            <input name="product_content[1][slug]" value="Slug" placeholder="Product Slug" id="input-slug" class="form-control" type="text" data-v-product-content-slug required />
+                          </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                          <label class="form-label" for="input-description1">Content</label>
+                          <div>
+                            <div class="d-flex justify-content-between py-2" data-v-if="this.product.product_id">
+                              <a data-v-design_url href="" class="btn btn-sm btn-success mb-3 ms-1 btn-icon page-editor-btn">
+                                <i class="icon-color-wand-outline"></i>
+                                <span>Open in Page Editor</span>
+                              </a>
+
+                              <div class="revisions">
+                                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="la la-lg la-history"></i>
+                                  <strong class="small align-text-top" data-v-product-content-revision_count>-</strong>
+                                  <span>Revisions</span>
+                                </button>
+
+                                <div class="dropdown-menu revisions-dropdown">
+                                  <div style="max-height:300px;overflow:auto;">
+                                    <div class="dropdown-item d-flex align-items-center" data-v-revision>
+                                      <span class="flex-grow-1 me-2">
+                                        <div class="flex-grow-1">
+                                          <span data-v-revision-created_at data-filter-friendly_date>Today</span>
+                                        </div>
+                                        <span class="small text-muted">
+                                          (<span data-v-revision-created_at>2023-06-04 10:30:31</span>)
+                                        </span>
+
+                                        <a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
+                                      </span>
+                                      <span>
+                                        <a class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
+                                          <i class="la la-arrow-up"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare">
+                                          <i class="la la-exchange-alt"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
+                                          <i class="la la-trash"></i>
+                                        </a>
+                                      </span>
+                                    </div>
+                                    <div class="dropdown-item d-flex align-items-center" data-v-revision>
+                                      <span class="flex-grow-1 me-2">
+                                        <div class="flex-grow-1">
+                                          Yesterday
+                                        </div>
+                                        <span class="small text-muted">
+                                          (2023-06-03 10:30:31)
+                                        </span>
+
+                                        <a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
+                                      </span>
+                                      <span>
+                                        <button class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
+                                          <i class="la la-arrow-up"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare">
+                                          <i class="la la-exchange-alt"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
+                                          <i class="la la-trash"></i>
+                                        </button>
+                                      </span>
+                                    </div>
+                                    <div class="dropdown-item d-flex align-items-center" data-v-revision>
+                                      <span class="flex-grow-1 me-2">
+                                        <div class="flex-grow-1">
+                                          3 Days ago
+                                        </div>
+                                        <span class="small text-muted">
+                                          (2023-06-01 10:30:31)
+                                        </span>
+
+                                        <a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
+                                      </span>
+                                      <span>
+                                        <button class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
+                                          <i class="la la-arrow-up"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare">
+                                          <i class="la la-exchange-alt"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
+                                          <i class="la la-trash"></i>
+                                        </button>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <hr class="dropdown-divider">
+                                  <div class="dropdown-item d-flex">
+                                    <span class="flex-grow-1">
+                                      <a href="">Diff Compare
+                                    </span>
+                                    <i class="la la-exchange-alt text-muted"></i>
+                                    </a>
+                                  </div>
+
+                                </div>
+                              </div>
+
+                            </div>
+
+
+                            <div class="content-editor">
+
+                              <input name="product_content[1][has_changes]" value="1" class="has_changes" data-v-product-content-has_changes type="hidden" />
+
+                              <textarea name="product_content[1][content]" placeholder="Content" class="form-control" data-v-product-content-content required></textarea>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 
+			<div class="mb-3 required">
+				<label class="form-label" for="input-name1">Product tags</label>
+				<div>
+					<input name="product_content[1][tag]" data-v-role="tagsinput"
+						   placeholder="Comma separated tags"
+						   value="" placeholder="Product tags"
+						   id="input-name1" class="form-control" type="text"
+						   data-v-product-content-tag required value=" "/>
+				</div>
+			</div>
+			-->
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="tab-pane" id="tab-relations">
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-manufacturer">
+                        <span>Manufacturer</span>
+                      </label>
+                      <div class="col-sm-10">
+
+                        <input name="manufacturer_id" value="" placeholder="Manufacturer" id="input-manufacturer" autocomplete="off" type="text" class="form-control autocomplete" data-url="/admin?module=product/product&action=manufacturersAutocomplete" data-text="Manufacturer" data-v-product-manufacturer_id />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-vendor">
+                        <span>Vendor</span>
+                      </label>
+                      <div class="col-sm-10">
+
+                        <input name="vendor_id" value="" placeholder="Vendor" id="input-vendor" autocomplete="off" type="text" class="form-control autocomplete" data-url="/admin?module=product/product&action=vendorsAutocomplete" data-text="Vendor" data-v-product-vendor_id />
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-related">
+                        <span>Taxonomy</span>
+                      </label>
+
+                      <div class="col-sm-10">
+
+
+                        <div class="taxonomies" data-v-taxonomies>
+                          <div class="taxonomy" data-v-taxonomy_item>
+
+                            <label class="header" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label>
+                              <span data-v-taxonomy_item-name>Categories</span>
+                              <div class="header-arrow"></div>
+                            </label>
+                            <input class="header_check" type="checkbox" checked="true" id="header_categories" data-v-taxonomy_item-input>
+                            <div class="" data-v-section="element_header">
+
+
+                              <div class="categories-list" data-v-categories>
+                                <div data-v-cats>
+
+                                  <ul class="dd-list" data-v-if="taxonomy_item.type = 'categories'">
+
+                                    <li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
+                                      <div class="dd3-content">
+
+                                        <label class="form-check">
+                                          <input type="checkbox" class="form-check-input" value="4" name="taxonomy_item[]" data-v-post-taxonomy_item-taxonomy_item_id>
+                                          <span class="form-check-label" data-v-taxonomy_item-name>Item 135</span>
+                                        </label>
+
+                                      </div>
+
+                                    </li>
+
+                                  </ul>
+                                </div>
+
+                                <div data-v-tags>
+
+                                  <div class="tags-input">
+
+                                    <div class="tag" data-v-tag>
+                                      <span data-v-taxonomy_item-name>Product 10</span>
+                                      <a href="#" class="btn-link remove-btn">
+                                        <i class="la la-times"></i>
+                                      </a>
+                                      <input type="hidden" value="4" name="tag[]" data-v-post-taxonomy_item-taxonomy_item_id data-v-taxonomy_item-list-name>
+                                    </div>
+
+                                    <input type="text" name="text" class="tags-input form-control" data-taxonomy_id>
+                                  </div>
+
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-related">
+                        <span>Related Products</span>
+                      </label>
+
+                      <div class="col-sm-10">
+
+                        <input name="product_related" placeholder="Related products" type="text" class="form-control autocomplete-list" data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="product_related" />
+
+                        <div class="autocomplete-list card border-top-0" data-v-product-related>
+                          <div data-v-related>
+                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
+                            <span data-v-related-name>Product 14</span>
+                            <input name="product_related[]" value="14" type="hidden" data-v-related-product_related_id>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-variant">
+                        <span>Product Variants</span>
+                      </label>
+
+                      <div class="col-sm-10">
+
+                        <input name="product_variant" placeholder="Product Variants" type="text" class="form-control autocomplete-list" data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="product_variant" />
+
+                        <div class="autocomplete-list card border-top-0" data-v-product-variant>
+                          <div data-v-variant>
+                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
+                            <span data-v-variant-name>Product 14</span>
+                            <input name="product_variant[]" value="14" type="hidden" data-v-variant-product_variant_id>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-digital-asset">
+                        <span>Digital assets</span>
+                      </label>
+
+                      <div class="col-sm-10">
+                        <input name="digital_asset" placeholder="Digital assets" type="text" class="form-control autocomplete-list" data-url="/admin?module=product/product&action=digitalAssetsAutocomplete" data-list-name="product_digital_asset" />
+
+                        <div class="autocomplete-list card border-top-0" data-v-product-digital_asset>
+                          <div data-v-digital_asset>
+                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
+                            <span data-v-digital_asset-name>Product manual pdf</span>
+                            <input name="product_digital_asset[]" value="14" type="hidden" data-v-digital_asset-digital_asset_id>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--
+	<div class="taxonomies" data-v-taxonomies>
+		<div class="taxonomy" data-v-taxonomy_item>
+			
+			<label class="header" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label><span data-v-taxonomy_item-name>Categories</span>
+				<div class="header-arrow"></div>
+			</label>
+			<input class="header_check" type="checkbox" checked="true" id="header_categories" data-v-taxonomy_item-input>
+			<div class="section" data-v-section="element_header">
+									
+									
+				<div class="categories-list" data-v-categories>
+					<div data-v-cats>
+						
+						<ul class="dd-list"  data-v-if="taxonomy_item.type = 'categories'">
+
+							<li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
+								<div class="dd3-content">
+
+									<label class="form-check">
+										<input type="checkbox" class="form-check-input" value="4" name="taxonomy_item[]" data-v-product-taxonomy_item-taxonomy_item_id>
+										<span class="form-check-label" data-v-taxonomy_item-name>Item 135</span>
+									</label>
+
+								</div>
+								
+							</li>
+						
+						</ul>
+					</div>
+					
+					<div data-v-tags>
+						
+						<div class="tags-input">
+							
+							<div class="tag" data-v-tag>
+								<span data-v-taxonomy_item-name>Product 10</span>				
+								<a href="#" class="remove-btn"><i class="la la-times"></i></a> 
+								<input type="hidden" value="4" name="tag[]" data-v-product-taxonomy_item-taxonomy_item_id>
+							</div>
+							
+							<input type="text" name="text" class="tags-input form-control" data-taxonomy_type_id>
+						</div>
+
+					</div>
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+-->
+
+
+                  </div>
+
+                  <div class="tab-pane" id="tab-attribute">
+                    <div class="table-responsive" data-v-product-attribute>
+                      <table id="attribute" class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th class="text-start">Attribute</th>
+                            <th class="text-start">Value</th>
+                            <th class="text-end">
+                              <button type="button" class="btn btn-sm btn-primary" id="add-attribute-btn" onclick='$("[autocomplete]",addTemplate("attribute-template", "product_attribute", "attribute")).autocomplete();'>
+                                <i class="la la-plus la-lg text-white"></i>
+                              </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-v-attribute>
+                            <td class="text-start" style="width: 40%;">
+                              <input name="product_attribute[0][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control autocomplete" data-url="/admin?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id>
+                            </td>
+                            <td class="text-start">
+                              <input name="product_attribute[0][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
+                              <input name="product_attribute[0][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr class="d-none" id="attribute-template">
+                            <td class="text-start" style="width: 40%;">
+                              <input name="product_attribute[#][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control" data-url="/admin?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id />
+                            </td>
+                            <td class="text-start">
+                              <div class="input-group">
+                                <input name="product_attribute[#][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
+                                <input name="product_attribute[#][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
+                              </div>
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab-option">
+                    <div class="row">
+                      <div class="col-sm-2 border-end">
+                        <ul class="nav nav-pills flex-column" id="option" role="tablist" data-v-product-poption>
+                          <li class="nav-item">
+                            <button class="btn btn-outline-secondary btn-icon mb-3 w-100" type="button" onclick="addTab(this)">
+                              <i class="la la-plus"></i>
+                              <span>Add option</span>
+                            </button>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option0" class="nav-link" data-bs-toggle="pill" aria-expanded="true" data-v-poption-product_option_id>
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>Checkbox</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option1" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>Select</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option2" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>Textarea</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option3" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>Radio</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option4" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>Text</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option5" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>Date</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option6" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>File</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-v-poption>
+                            <a href="#tab-option7" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span data-v-poption-name>Time</span>
+                            </a>
+                          </li>
+                          <li class="nav-item d-none tab-nav-template">
+                            <a href="#tab-template" class="nav-link" data-bs-toggle="pill">
+                              <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i>
+                              <span>New option</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-10">
+                        <div class="tab-content" data-v-product-poption>
+
+                          <div class="tab-pane" data-type="text" data-v-poption>
+
+                            <input name="product_option[0][product_option_id]" value="" type="hidden" data-v-poption-product_option_id>
+
+                            <div class="mb-3 row">
+                              <label class="col-sm-2 form-label">Option</label>
+                              <div class="col-sm-10">
+                                <select name="product_option[0][option_id]" class="form-select product_option_id" onchange="optionTypeChange(this)" data-v-product-option data-v-poption-option_id>
+                                  <option value="0" data-v-option>Text</option>
+                                  <option value="1" data-v-option>File</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="mb-3 row default">
+                              <label class="col-sm-2 form-label">Default value</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" type="text" name="product_option[0][value]" value="" data-v-poption-value>
+                              </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                              <label class="col-sm-2 form-label">Required</label>
+                              <div class="col-sm-10">
+                                <label class="form-check form-check-lg form-switch">
+                                  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][required]" value="1" data-v-poption-required>
+                                </label>
+                              </div>
+                            </div>
+
+                            <div class="table-responsive values" data-v-option-values>
+                              <table id="option-value0" class="table table-bordered table-hover">
+                                <thead>
+                                  <tr>
+                                    <th class="text-start">Option Value</th>
+                                    <th class="text-end">Quantity</th>
+                                    <th class="text-start text-nowrap">Subtract Stock</th>
+                                    <th class="text-end">Price</th>
+                                    <th class="text-end">Points</th>
+                                    <th class="text-end">Weight</th>
+                                    <th>
+                                      <button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-primary">
+                                        <i class="la la-plus la-lg text-white"></i>
+                                      </button>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr data-v-option-value>
+                                    <td class="text-start">
+                                      <select name="product_option[0][product_option_value][0][option_value_id]" class="form-select option_value" data-v-option-value-option_value_id>
+                                        <option value="1">Value 1</option>
+                                        <option value="2">Value 2</option>
+                                        <option value="3">Value 3</option>
+                                        <option value="4">Value 4</option>
+                                      </select>
+                                      <input name="product_option[0][product_option_value][0][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
+                                    </td>
+                                    <td class="text-end">
+                                      <input name="product_option[0][product_option_value][0][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+                                    </td>
+                                    <td class="text-center">
+                                      <label class="form-check form-check-lg form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][product_option_value][0][subtract]" value="1" data-v-option-value-subtract>
+                                      </label>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][0][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+                                      </div>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-points_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-points_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][0][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+                                      </div>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-weight_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-weight_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][0][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+                                      </div>
+                                    </td>
+                                    <td class="text-start">
+                                      <button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-danger">
+                                        <i class="la la-minus-circle la-lg"></i>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr class="template d-none" data-id="#">
+                                    <td class="text-start">
+                                      <select name="product_option[0][product_option_value][#][option_value_id]" class="form-select option_value" data-v-option-value-option_value_id>
+                                        <option value="1">Value 1</option>
+                                        <option value="2">Value 2</option>
+                                        <option value="3">Value 3</option>
+                                        <option value="4">Value 4</option>
+                                      </select>
+                                      <input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
+                                    </td>
+                                    <td class="text-end">
+                                      <input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+                                    </td>
+                                    <td class="text-center">
+                                      <label class="form-check form-check-lg form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][product_option_value][#][subtract]" value="1" data-v-option-value-subtract>
+                                      </label>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+                                      </div>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+                                      </div>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+                                      </div>
+                                    </td>
+                                    <td class="text-start">
+                                      <button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-danger">
+                                        <i class="la la-minus-circle la-lg"></i>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
+                          </div>
+
+                          <div class="tab-pane tab-content-template d-none" data-type="text" data-id="#">
+
+                            <input name="product_option[0][product_option_id]" value="" type="hidden" data-v-poption-product_option_id>
+
+                            <div class="mb-3 row">
+                              <label class="col-sm-2 form-label">Option</label>
+                              <div class="col-sm-10">
+                                <select name="product_option[0][option_id]" class="form-select product_option_id" onchange="optionTypeChange(this)" data-v-product-option data-v-poption-option_id>
+                                  <option value="0" data-v-option>Text</option>
+                                  <option value="1" data-v-option>File</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="mb-3 row default">
+                              <label class="col-sm-2 form-label">Default value</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" type="text" name="product_option[0][value]" value="" data-v-poption-value>
+                              </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                              <label class="col-sm-2 form-label">Required</label>
+                              <div class="col-sm-10">
+                                <label class="form-check form-check-lg form-switch">
+                                  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][required]" value="1" data-v-poption-required>
+                                </label>
+                              </div>
+                            </div>
+
+                            <div class="table-responsive values" data-v-option-values>
+                              <table id="option-value0" class="table table-bordered table-hover">
+                                <thead>
+                                  <tr>
+                                    <th class="text-start">Option Value</th>
+                                    <th class="text-end">Quantity</th>
+                                    <th class="text-start text-nowrap">Subtract Stock</th>
+                                    <th class="text-end">Price</th>
+                                    <th class="text-end">Points</th>
+                                    <th class="text-end">Weight</th>
+                                    <th>
+                                      <button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-primary">
+                                        <i class="la la-plus la-lg text-white"></i>
+                                      </button>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr class="template d-none">
+                                    <td class="text-start">
+                                      <select name="product_option[0][product_option_value][#][option_value_id]" class="form-select option_value" data-v-option-value-option_value_id>
+                                        <option value="1">Value 1</option>
+                                        <option value="2">Value 2</option>
+                                        <option value="3">Value 3</option>
+                                        <option value="4">Value 4</option>
+                                      </select>
+                                      <input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
+                                    </td>
+                                    <td class="text-end">
+                                      <input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+                                    </td>
+                                    <td class="text-center">
+                                      <label class="form-check form-check-lg form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][product_option_value][#][subtract]" value="1" data-v-option-value-subtract>
+                                      </label>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-price_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+                                      </div>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-points_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-points_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+                                      </div>
+                                    </td>
+                                    <td class="text-end">
+                                      <div class="input-group">
+                                        <div class="p-1 border">
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="+" data-v-option-value-weight_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">+</span>
+                                          </label>
+
+
+                                          <label>
+                                            <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="-" data-v-option-value-weight_operator>
+                                            <span class="btn btn-outline-secondary btn-sm border fs-4 lh-1">-</span>
+                                          </label>
+                                        </div>
+
+                                        <input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+                                      </div>
+                                    </td>
+                                    <td class="text-start">
+                                      <button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-danger">
+                                        <i class="la la-minus-circle la-lg"></i>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab-inventory">
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Model</label>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-model">Model</label>
+                      <div class="col-sm-4">
+                        <input name="model" value="" placeholder="Model" id="input-model" class="form-control" type="text" data-v-product-model>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-sku">
+                        <span>SKU</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="sku" value="" placeholder="SKU" id="input-sku" class="form-control" type="text" data-v-product-sku>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-upc">
+                        <span>UPC</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="upc" value="" placeholder="UPC" id="input-upc" class="form-control" type="text" data-v-product-upc>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-ean">
+                        <span>EAN</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="ean" value="" placeholder="EAN" id="input-ean" class="form-control" type="text" data-v-product-ean>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-jan">
+                        <span>JAN</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="jan" value="" placeholder="JAN" id="input-jan" class="form-control" type="text" data-v-product-jan>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-isbn">
+                        <span>ISBN</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="isbn" value="" placeholder="ISBN" id="input-isbn" class="form-control" type="text" data-v-product-isbn>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-mpn">
+                        <span>MPN</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="mpn" value="" placeholder="MPN" id="input-mpn" class="form-control" type="text" data-v-product-mpn>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-location">Storage location</label>
+                      <div class="col-sm-4">
+                        <input name="location" value="" placeholder="Storage location" id="input-location" class="form-control" type="text" data-v-product-location>
+                      </div>
+                    </div>
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Price</label>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-price">Price</label>
+                      <div class="col-sm-4">
+                        <input name="price" value="0.00" placeholder="Price" id="input-price" class="form-control" type="number" data-v-product-price>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-tax-type">Tax Class</label>
+                      <div class="col-sm-4">
+                        <select name="tax_type_id" id="input-tax-type" class="form-select" data-v-product-tax_type_id>
+                          <option value="0" data-v-option> --- None ---</option>
+                          <option value="1" data-v-option>Taxable Goods</option>
+                          <option value="2" data-v-option>Tax type</option>
+                          <option value="3" data-v-option>Digital Products</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-points">
+                        <span title="">Points</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="points" value="0" placeholder="Points" id="input-points" class="form-control" type="text" type="number" data-v-product-points>
+                      </div>
+                    </div>
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Stock</label>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-quantity">Quantity</label>
+                      <div class="col-sm-4">
+                        <input name="stock_quantity" value="1" placeholder="Quantity" id="input-quantity" class="form-control" type="text" data-v-product-stock_quantity>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-minimum">
+                        <span>Minimum order quantity</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="minimum" value="1" placeholder="Minimum Quantity" id="input-minimum" class="form-control" type="text" data-v-product-minimum>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-subtract">Subtract Stock</label>
+                      <div class="col-sm-4">
+                        <select name="subtract" id="input-subtract" class="form-select" data-v-product-subtract>
+                          <option value="1" data-v-option>Yes</option>
+                          <option value="0" data-v-option>No</option>
+                        </select>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-stock-status">
+                        <span>Out Of Stock Status</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <select name="stock_status_id" id="input-stock-status" class="form-select" data-v-product-stock_status_id>
+                          <option value="1" data-v-option>2-3 Days</option>
+                          <option value="2" data-v-option>In Stock</option>
+                          <option value="3" data-v-option>Out Of Stock</option>
+                          <option value="4" data-v-option>Pre-Order</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-date-available">Date Available</label>
+                      <div class="col-sm-4">
+                        <input name="date_available" value="1000-01-01" placeholder="Date Available" data-date-format="YYYY-MM-DD" id="input-date-available" class="form-control" type="date" data-v-product-date_available>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-status">
+                        <span>Status</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <select name="status" id="input-status" class="form-select" data-v-product-status>
+                          <option value="0" data-v-option>Disabled</option>
+                          <option value="1" data-v-option>Enabled</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab-shipping">
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Requires Shipping</label>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+
+                          <div id="input-shipping" class="form-check form-switch form-switch-lg">
+                            <input type="checkbox" name="shipping" value="1" class="form-check-input" data-v-product-shipping>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Dimensions</label>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-model">Width</label>
+                      <div class="col-sm-4">
+                        <input name="width" value="2.00000000" placeholder="Width" id="input-width" class="form-control" type="number" data-v-product-width>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-sku">
+                        <span>Height</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <input name="height" value="3.00000000" placeholder="Height" id="input-height" class="form-control" type="number" data-v-product-height>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-model">Length</label>
+                      <div class="col-sm-4">
+                        <input name="length" value="1.00000000" placeholder="Length" id="input-length" class="form-control" type="number" data-v-product-length>
+                      </div>
+                      <label class="col-sm-2 form-label" for="input-sku">
+                        <span>Length Class</span>
+                      </label>
+                      <div class="col-sm-4">
+                        <select name="length_type_id" id="input-length-type" class="form-select" data-v-product-length_type_id>
+                          <option value="1" data-v-option>Centimeter</option>
+                          <option value="2" data-v-option>Millimeter</option>
+                          <option value="3" data-v-option>Inch</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Weight</label>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 form-label" for="input-weight">Weight</label>
+                      <div class="col-sm-4">
+                        <input name="weight" value="12.50000000" placeholder="Weight" id="input-weight" class="form-control" type="text" data-v-product-weight>
+                      </div>
+
+                      <label class="col-sm-2 form-label" for="input-weight-type">Weight Class</label>
+                      <div class="col-sm-4">
+                        <select name="weight_type_id" id="input-weight-type" class="form-select" data-v-product-weight_type_id>
+                          <option value="1" data-v-option>Kilogram</option>
+                          <option value="2" data-v-option>Gram</option>
+                          <option value="3" data-v-option>Pound</option>
+                          <option value="4" data-v-option>Ounce</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab-image">
+
+                    <div class="product-images">
+                      <div class="row" data-v-images>
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/TMgQMXoglsM/500x350" alt="" id="thumb-image" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="card-img-top">
+
+                            <input type="hidden" name="product_image[]" value="/product_images/12.jpg" class="product_image_input" id="input-image">
+
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-image-btn data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="btn btn-outline-primary btn-sm">
+                                  <i class="la la-pencil"></i>
+                                  <span>Edit</span>
+                                </button>
+
+                                <button type="button" class="btn btn-outline-danger btn-sm">
+                                  <i class="la la-trash-o"></i> Delete
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/9UVmlIb0wJU/500x350" alt="" id="thumb-image0" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="card-img-top">
+                            <input type="hidden" name="product_image[0][image]" value="" id="input-image0">
+
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[0][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/sNut2MqSmds/500x350" alt="" id="thumb-image1" class="card-img-top">
+                            <input type="hidden" name="product_image[1][image]" value="/product_images2/083.jpg" id="input-image1">
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[1][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-event="image" data-bs-target="input-image" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/TMgQMXoglsM/500x350" alt="" id="thumb-image2" class="card-img-top">
+                            <input type="hidden" name="product_image[2][image]" value="/product_images2/060.jpg" id="input-image2">
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[2][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-event="image" data-bs-target="input-image" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/TMgQMXoglsM/500x350" alt="" id="thumb-image2" class="card-img-top">
+                            <input type="hidden" name="product_image[2][image]" value="/product_images2/060.jpg" id="input-image2">
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[2][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-event="image" data-bs-target="input-image" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/TMgQMXoglsM/500x350" alt="" id="thumb-image2" class="card-img-top">
+                            <input type="hidden" name="product_image[2][image]" value="/product_images2/060.jpg" id="input-image2">
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[2][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-event="image" data-bs-target="input-image" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/TMgQMXoglsM/500x350" alt="" id="thumb-image2" class="card-img-top">
+                            <input type="hidden" name="product_image[2][image]" value="/product_images2/060.jpg" id="input-image2">
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[2][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-event="image" data-bs-target="input-image" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/TMgQMXoglsM/500x350" alt="" id="thumb-image2" class="card-img-top">
+                            <input type="hidden" name="product_image[2][image]" value="/product_images2/060.jpg" id="input-image2">
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[2][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-event="image" data-bs-target="input-image" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                          <div class="card shadow">
+                            <img data-v-image-src src="https://source.unsplash.com/TMgQMXoglsM/500x350" alt="" id="thumb-image2" class="card-img-top">
+                            <input type="hidden" name="product_image[2][image]" value="/product_images2/060.jpg" id="input-image2">
+                            <div class="card-body">
+                              <div class="mb-3">
+                                <input type="text" name="product_image[2][sort_order]" value="0" placeholder="Sort Order" class="form-control form-control-sm">
+                              </div>
+                            </div>
+                            <div class="card-footer text-center">
+                              <div class="btn-group btn-group-sm">
+                                <button type="button" data-v-event="image" data-bs-target="input-image" data-v-title="Edit" data-v-thumb="thumb-image" class="btn btn-outline-primary btn-sm" "><i
+									class=" la la-pencil">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Clear" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-trash-o">
+                                  </i>
+                                </button>
+                                <button type="button" data-v-event="clear" data-bs-target="input-image" data-v-title="Remove" data-v-thumb="thumb-image" class="btn btn-outline-danger btn-sm" "><i
+									class=" la la-minus-circle la-lg">
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="col-12 col-lg-3 col-xl-2 mb-3 add-new-image-card">
+                          <div class="card shadow" style="justify-content: center;align-items: center;display:flex;height:100%;position:relative;min-height: 200px;">
+                            <img src="img/placeholder.svg" style="opacity:0.15;position:absolute;">
+                            <a href="#" class="align-middle my-auto btn btn-primary" id="add-new-image" style="z-index:1">
+                              <i class="la la-plus la-lg"></i>
+                              <span>Add new</span>
+                            </a>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+                  <div style="display:none" id="add-new-image-template">
+                    <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
+                      <div class="card shadow">
+                        <img data-v-image-src="" src="img/placeholder.svg" alt="" id="gallery-image-0" data-media-gallery="" data-target-input="#gallery-image-0-input" data-target-thumb="#gallery-image-0" data-type="single" class="card-img-top">
+
+                        <input type="hidden" name="product_image[]" value="img/placeholder.svg" id="gallery-image-0-input" data-target-input="#gallery-image-0-input" disabled>
+
+                        <div class="card-footer text-center">
+                          <div class="btn-group btn-group-sm">
+                            <button type="button" data-v-image-btn="" data-media-gallery="" data-target-input="#gallery-image-0-input" data-target-thumb="#gallery-image-0" data-type="single" class="btn btn-outline-primary btn-sm">
+                              <i class="la la-pencil"></i>
+                              <span>Edit</span>
+                            </button>
+
+                            <button type="button" class="btn btn-outline-danger btn-sm">
+                              <i class="la la-trash-o"></i> Delete
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab-subscription">
+
+                    <div class="table-responsive" data-v-product-subscription>
+                      <table id="product-subscription" class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th class="text-start">Subscription Plan</th>
+                            <th class="text-start">User Group</th>
+                            <th class="text-start">Trial Price</th>
+                            <th class="text-start">Price</th>
+                            <th class="text-end">
+                              <button type="button" id="button-subscription" class="btn btn-sm btn-primary" onclick='addTemplate("subscription-template", "product_subscription", "product-subscription")'>
+                                <i class="la la-plus la-lg  text-white"></i>
+                              </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-v-subscription>
+                            <td class="text-start">
+                              <select name="product_subscription[0][subscription_plan_id]" class="form-select" data-v-subscription_plan_id>
+                                <option value="1" data-v-option>Subscription Plan 1</option>
+                                <option value="2" data-v-option>Subscription Plan 2</option>
+                                <option value="3" data-v-option>Subscription Plan 3</option>
+                              </select>
+                            </td>
+                            <td class="text-start">
+                              <select name="product_subscription[0][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input type="number" name="product_subscription[0][trial_price]" value="0" placeholder="Trial Price" class="form-control" data-v-subscription-trial_price>
+                            </td>
+                            <td class="text-end">
+                              <input type="number" name="product_subscription[0][price]" value="0" placeholder="Price" class="form-control" data-v-subscription-price>
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr class="d-none" id="subscription-template">
+                            <td class="text-start">
+                              <select name="product_subscription[#][subscription_plan_id]" class="form-select" data-v-subscription_plan_id>
+                                <option value="1" data-v-option>Subscription Plan 1</option>
+                                <option value="2" data-v-option>Subscription Plan 2</option>
+                                <option value="3" data-v-option>Subscription Plan 3</option>
+                              </select>
+                            </td>
+                            <td class="text-start">
+                              <select name="product_subscription[#][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input type="number" name="product_subscription[#][trial_price]" value="0" placeholder="Trial Price" class="form-control" data-v-trial_price>
+                            </td>
+                            <td class="text-end">
+                              <input type="number" name="product_subscription[#][price]" value="0" placeholder="Price" class="form-control" data-v-subscription-price>
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                  <div class="tab-pane" id="tab-discount">
+                    <div class="table-responsive" data-v-product-discount>
+                      <table id="discount" class="table table-hover table-bordered">
+                        <thead>
+                          <tr>
+                            <th class="text-start">User Group</th>
+                            <th class="text-end">Quantity</th>
+                            <th class="text-end">Priority</th>
+                            <th class="text-end">Price</th>
+                            <th class="text-start">Date Start</th>
+                            <th class="text-start">Date End</th>
+                            <th class="text-end">
+                              <button type="button" class="btn btn-sm btn-primary" id="add-discount-btn" onclick='addTemplate("discount-template", "product_discount", "discount")'>
+                                <i class="la la-plus la-lg text-white"></i>
+                              </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-v-discount>
+                            <td class="text-start">
+                              <select name="product_discount[0][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_discount[0][quantity]" value="5" placeholder="Quantity" class="form-control" type="text" data-v-discount-quantity>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_discount[0][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-discount-priority>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_discount[0][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-discount-price>
+                            </td>
+                            <td class="text-end" style="width: 20%;">
+                              <input name="product_discount[0][date_start]" value="0000-00-00" placeholder="Date Start" type="date" class="form-control" data-v-discount-date_start>
+                              <!--
+					<div class="input-group">
+					  <input name="product_discount[0][date_start]" value="" placeholder="Date Start" type="text" class="form-control datetime border-end-0" data-v-discount-date_start>
+					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+					</div>
+					-->
+                            </td>
+                            <td class="text-end" style="width: 20%;">
+                              <input name="product_discount[0][date_end]" value="0000-00-00" placeholder="Date End" type="date" class="form-control" data-v-discount-date_end>
+                              <!--
+					<div class="input-group">
+					  <input name="product_discount[0][date_end]" value="" placeholder="Date End" type="text" class="form-control datetime border-end-0" data-v-discount-date_end>
+					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+					</div>
+					-->
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr class="d-none" id="discount-template">
+                            <td class="text-start">
+                              <select name="product_discount[#][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_discount[#][quantity]" value="5" placeholder="Quantity" class="form-control" type="text" data-v-discount-quantity>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_discount[#][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-discount-priority>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_discount[#][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-discount-price>
+                            </td>
+                            <td class="text-end" style="width: 20%;">
+                              <input name="product_discount[#][date_start]" value="0000-00-00" placeholder="Date Start" type="date" class="form-control" data-v-discount-date_start>
+                              <!--
+					<div class="input-group">
+					  <input name="product_discount[#][date_start]" value="" placeholder="Date Start" type="text" class="form-control datetime border-end-0" data-v-discount-date_start>
+					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+					</div>
+					-->
+                            </td>
+                            <td class="text-end" style="width: 20%;">
+                              <input name="product_discount[#][date_end]" value="0000-00-00" placeholder="Date End" type="date" class="form-control" data-v-discount-date_end>
+                              <!--
+					<div class="input-group">
+					  <input name="product_discount[#][date_end]" value="" placeholder="Date End" type="text" class="form-control datetime border-end-0" data-v-discount-date_end>
+					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+					</div>
+					-->
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+
+                  <div class="tab-pane" id="tab-promotion">
+                    <div class="table-responsive" data-v-product-promotion>
+                      <table id="product-promotion" class="table table-hover table-bordered">
+                        <thead>
+                          <tr>
+                            <th class="text-start">User Group</th>
+                            <th class="text-end">Priority</th>
+                            <th class="text-end">Price</th>
+                            <th class="text-start">Date Start</th>
+                            <th class="text-start">Date End</th>
+                            <th class="text-end">
+                              <button type="button" id="button-subscription" class="btn btn-sm btn-primary" onclick='addTemplate("promotion-template", "product_promotion", "product-promotion")'>
+                                <i class="la la-plus la-lg  text-white"></i>
+                              </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-v-promotion>
+                            <td class="text-start">
+                              <select name="product_promotion[0][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_promotion[0][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_promotion[0][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
+                            </td>
+                            <td class="text-start" style="width: 20%;">
+                              <input name="product_promotion[0][date_start]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_start>
+                              <!--
+            <div class="input-group date">
+              <input name="product_promotion[0][date_start]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_start>
+			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+                            </td>
+                            <td class="text-start" style="width: 20%;">
+                              <input name="product_promotion[0][date_end]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_end>
+                              <!--
+            <div class="input-group">
+              <input name="product_promotion[0][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr class="d-none" id="promotion-template">
+                            <td class="text-start">
+                              <select name="product_promotion[#][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_promotion[#][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_promotion[#][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
+                            </td>
+                            <td class="text-start" style="width: 20%;">
+                              <input name="product_promotion[#][date_start]" type="date" value="0000-00-00" class="form-control" data-v-promotion-date_start>
+                              <!--
+            <div class="input-group">
+              <input name="product_promotion[#][date_start]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-date_start>
+			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+                            </td>
+                            <td class="text-start" style="width: 20%;">
+                              <input name="product_promotion[#][date_end]" type="date" value="0000-00-00" class="form-control" data-v-promotion-date_end>
+                              <!--
+            <div class="input-group">
+			   <input name="product_promotion[#][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+			   <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			</div>
+			-->
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab-points">
+                    <div class="table-responsive" data-v-product-points>
+                      <table id="points" class="table table-hover table-bordered">
+                        <thead>
+                          <tr>
+                            <th class="text-start">User Group</th>
+                            <th class="text-end">Points</th>
+                            <th class="text-end">
+                              <button type="button" class="btn btn-sm btn-primary" id="add-points-btn" onclick='addTemplate("points-template", "product_points", "points")'>
+                                <i class="la la-plus la-lg text-white"></i>
+                              </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-v-points>
+                            <td class="text-start">
+                              <select name="product_points[0][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_points[0][points]" value="5" placeholder="Quantity" class="form-control" type="text" data-v-points-points>
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr class="d-none" id="points-template">
+                            <td class="text-start">
+                              <select name="product_points[#][user_group_id]" class="form-select" data-v-user_group_id>
+                                <option value="1" data-v-option>Default group</option>
+                              </select>
+                            </td>
+                            <td class="text-end">
+                              <input name="product_points[#][points]" value="5" placeholder="Quantity" class="form-control" type="text" data-v-points-points>
+                            </td>
+                            <td class="text-end">
+                              <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+                                <i class="la la-minus-circle la-lg"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+
+                  <!-- 
+								<div class="tab-pane" id="tab-digital-assets">
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-digital-asset">
+			<span>Digital assets</span>
+		</label>
+				
+			<div class="col-sm-10">
+				<input name="digital_asset" placeholder="Digital assets" type="text" class="form-control autocomplete-list"
+					data-url="/admin?module=product/product&action=digitalAssetsAutocomplete" data-list-name="product_digital_asset"/>
+
+				<div class="autocomplete-list card border-top-0" data-v-product-digital_asset>
+					<div data-v-digital_asset>				
+						<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
+						<span data-v-digital_asset-name>Product manual pdf</span>				
+						<input name="product_digital_asset[]" value="14" type="hidden" data-v-digital_asset-digital_asset_id>			 
+					</div>
+				</div>
+		</div>
+	</div>
+
+</div>
+								-->
+
+                </div>
+          </form>
+        </div>
+        <div class="right-column flat">
+
+          <label class="header" data-v-header="element_header" for="header_featured_image">
+            <span>Featured Media</span>
+            <div class="header-arrow"></div>
+          </label>
+          <input class="header_check" type="checkbox" checked="true" id="header_featured_image">
+          <div class="section" data-v-section="element_header">
+
+            <input type="hidden" data-v-image name="image" id="featured-image-input" value="">
+
+            <img data-v-image src="" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="img-thumbnail border-0 p-0 bg-light-subtle">
+
+
+            <div class="py-3 text-center">
+              <div class="btn-group w-100">
+                <button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single">
+                  <i class="la la-image la-lg"></i> Set featured media
+                </button>
+
+                <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearFeaturedMedia()">
+                  <i class="la la-times"></i>
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- @-@include('_product_taxonomies.html') -->
+
+          <label class="header mt-4" data-v-header="default" for="header_template">Template
+            <div class="header-arrow"></div>
+          </label>
+          <input class="header_check" type="checkbox" checked="true" id="header_template">
+          <div class="section" data-v-section="default">
+
+            <div class="mb-3">
+
+              <div class="input-group">
+                <!-- div class="input-group-addon"><i class="icon-eye-outline"></i></div-->
+                <select class="form-select" placeholder="Visibility" name="template" data-v-templates>
+                  <option value="" title="Default template used for this page">-- Default template --</option>
+                  <option value="published" data-v-option>Published</option>
+                  <option value="pending" data-v-option>Pending</option>
+                  <option value="draft" data-v-option>Draft</option>
+                  <option value="private" data-v-option>Private</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3" data-v-if="this.template_missing">
+              <div class="alert alert-warning" role="alert">
+                <div data-v-template_missing></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </form>
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <script id="popper-js" src="js/popper.min.js"></script>
+  <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+
+  <!--
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/popper.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+-->
+
+  <script id="admin-js" type="module" src="../../js/admin.js"></script>
+
+
+
+
+
+  <script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let productOption = { $this->option };
+</script>
+  <script src="libs/autocomplete/jquery.autocomplete.js"></script>
+  <script id="openverse-js" src="libs/media/openverse.js"></script>
+  <script id="media-js" src="libs/media/media.js"></script>
+  <script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+  <link id="media-css" href="libs/media/media.css" rel="stylesheet">
+
+  <script>
+	$(function () {
+        jQuery("input[name=custom-date]").change(function () {
+            jQuery(".publish-date").css("display", (this.value == "true") ? "block" : "none");
+        });
+
+        $('input.autocomplete').autocomplete();
+        $('input.autocomplete-list').autocompleteList();
+
+        $('.taxonomies input.tags-input').each(function (i,element) {
+			/*
+			let params = "";
+			
+			for (name in element.dataset) { 
+				if (name) {
+					params += name + "=" + element.dataset[name];
+				}
+			}*/
+			$(element).tagsInput({
+				url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags",
+				parameters:element.dataset,
+				listName:"tag",
+				//listName:"tag[]",
+				listId:element.dataset.taxonomy_id, //element.dataset.taxonomy_id,
+				allowFreeText:true
+			});
+		});
+    });
+</script>
+
+  <script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
+  <!-- script type="module" src="/js/libs/tinymce-dist/jquery.tinymce.min.js"></script -->
+  <script id="tinymce-js" src="../../js/libs/tinymce-dist/tinymce.min.js"></script>
+
+  <!-- date time picker -->
+  <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
+  <script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
+  <link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+  <script id="revisions-js" src="../../js/admin/revisions.js"></script>
+  <script id="functions-js" src="../../js/admin/functions.js"></script>
+
+  <script>
+
+jQuery(document).ready(function () { 
+	//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor
+	if (typeof tinyMceOptions  !== 'undefined') {
+		$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
+		tinymce.init(tinyMceOptions);
+	}
+
+	$('.tab-pane[data-v-language]').each(function () {
+		let titleInput = $('[data-v-product-content-name]', this);
+		let slugInput = $('[data-v-product-content-slug]', this);
+		let urlInput = $('[data-v-url]', this);
+		let orig = slugify(titleInput.val());
+		
+		//change slug only if current value is the same as the text
+		titleInput.on('keyup', function (e) {
+			let text = this.value;
+			delay(() => {
+				let slug = slugInput.val();
+				urlInput.text("/" + slug).attr("href", "/" + slug);
+				
+				if (orig == slug || !slug) {
+					orig = slugify(text);
+					slugInput.val(orig);
+				}
+			}, 500);
+		});
+		
+		slugInput.on('keyup', function (e) {
+			let slug = this.value;
+			urlInput.text("/" + slug).attr("href", "/" + slug);
+		});
+		
+	});
+});
+
+$("[data-v-images]").on("click", ".btn-outline-danger", function (e) {
+	let card = $(this).parents("[data-v-image]");
+	card.remove();
+});
+	
+$("#add-new-image").on("click", function (e) {
+	let id = "gallery-image-" + $("[data-v-images] [data-v-image]").length + "-input";
+	let newImage = $($("#add-new-image-template").html().replaceAll("gallery-image-0", "gallery-image-" + id).replace('disabled',''));
+	newImage.insertBefore(".add-new-image-card");
+	$("img", newImage).click();
+	
+	return false;
+});
+
+
+
+</script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title" id="heartBeatLogin">
+            <h5>Session has expired</h5>
+            <span>Login to resume your work</span>
+          </span>
+
+          <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- save toast -->
+  <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header text-white">
+        <strong class="me-auto">Page save</strong>
+        <!-- <small class="badge bg-success">status</small> -->
+        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body ">
+        <div class="flex-grow-1">
+          <div class="message">Elements saved!
+            <div>Template backup was saved!</div>
+            <div>Template was saved!</div>
+          </div>
+          <div>
+            <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

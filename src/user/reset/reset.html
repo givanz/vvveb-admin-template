@@ -1,0 +1,49 @@
+@@include('../../_includes/html-head.html', {"title": "Recover password","scripts":"","base_href":"../../"})
+
+<body class="login">
+
+	<div class="d-flex align-items-center justify-content-center h-100">
+			<div class="login-container">
+					
+									
+				<div class="logo-content">
+						<a href="//www.vvveb.com" target="blank"><img src="img/logom.png"/></a>
+				</div>
+
+		
+				
+				<form method="post" role="form" id="login" class="login-form fade-in-effect" enctype="multipart/form-data" action="">
+
+						<input type="hidden" name="csrf" data-v-csrf>
+		
+
+						<div class="login-form-content">
+						
+							@@include('../../_includes/notifications.html')									
+						
+							<div class="mb-4">
+								<label>New password</label>
+								<input type="password" class="form-control" name="password" id="password" autocomplete="new-password" required/>
+							</div>
+							
+							
+							<div class="mb-4 mt-4">
+
+									<button type="submit" class="btn btn-primary btn-icon w-100">
+										<span>Change password</span> <i class="icon-chevron-forward-outline float-end ms-2"></i>
+									</button>
+									
+							</div>
+
+
+						
+						</div>
+					</div>
+					</div>
+					
+				</form>
+						
+				</div>
+		</div>
+  </body>
+</html>

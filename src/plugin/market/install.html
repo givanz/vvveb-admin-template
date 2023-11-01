@@ -1,0 +1,218 @@
+@@include('../../_includes/html-head.html', {"title": "Vvveb - Plugins Marketplace","scripts":"","base_href":"../../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../../_includes/top-header.html')
+				
+		<div class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-cube-outline"></i>&ensp;
+					<span>Plugin install</span>
+				</h4>
+			</div>
+
+			<!--
+			 <a href data-v-url-params='{"module":"plugin/plugin"}'title=""
+					class="btn btn-outline-secondary btn-icon ms-1" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+					<i class="la la-cloud-upload-alt la-lg"></i> Upload plugin
+			</a>
+			-->
+		
+			<!-- 
+			 <a href data-v-url-params='{"module":"product/product"}' 
+					class="btn btn-primary btn-icon ms-1">
+				<i class="icon-add-circle-outline"></i> Install plugin
+			</a>
+			-->
+		</div>
+
+					
+<div class="plugins" id="main-content" >
+@@include('../../_includes/upload-form.html')
+
+<form action="" method="post">		
+	
+ @@include('../../_includes/notifications.html')
+
+	<div class="notifications" data-v-logs>
+
+		<div role="alert">
+
+			<div class="flex-grow-1 align-self-center text-small" >
+				<div data-v-logs-line>
+					<div data-v-log-text>
+						
+					</div>
+				</div>
+			</div>
+		
+		</div>	
+	 </div>	
+		                
+</form>
+
+</div>
+</div>
+</div>
+
+<!--
+
+<style>
+	
+.plugins {
+	background:hsl(0, 0%, 98%);
+}
+
+.plugins .list-card .img-fluid {
+	max-width:128px;
+	max-height:128px;
+	width:128px;
+	height:128px;
+	align-self: center;
+	display: flex;
+}
+
+.plugins .list-card .author, 
+.plugins .list-card .author a{
+	font-size:12px;
+	color:#333;
+}
+
+.plugins .list-card .card-footer {
+	background:#fff;
+	padding: 1rem;
+	height:100%;
+	bottom:0;
+	text-align:initial;
+}
+
+.list-card {
+}
+	
+.list-card .card{
+  padding: 0;
+  font-size: 12px;
+  border-radius: 4px;
+  box-shadow: rgba(255,255,255,0.1) 0 0 6px inset, rgba(0,0,0,0.2) 1px 1px 24px -8px;
+  box-shadow: rgba(255,255,255,0.1) 0 0 6px inset, rgba(0,0,0,0.15) 1px 1px 15px -6px;;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border:none;
+  border: 1px solid #eee;
+  
+  -ms-flex-direction: column;
+        flex-direction: column;
+}	
+
+.list-card .card .card-img-top{
+	border-bottom:1px solid rgba(0, 0, 0, 0.125);
+}
+
+
+.list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center
+  list-style:none;
+}
+
+@supports (display: grid) {
+  .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(320px, 1fr))[auto-fill];
+     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+  
+  
+	@media only screen and (min-width: 1600px) {
+	  .list {
+		-ms-grid-columns: (minmax(30%, 1fr))[auto-fill];
+		 grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	}
+	
+	@media only screen and (min-width: 2100px) {
+	  .list {
+		-ms-grid-columns: (minmax(25%, 1fr))[auto-fill];
+		 grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+	}
+  }
+}
+
+
+/* card area */
+.list-card {
+  -ms-flex: 1 0 30%;
+      flex: 1 0 30%;
+  min-width: 0;
+  margin: 16px;  
+}
+
+
+@media (min-width: 640px)
+.list-card  {
+    min-width: 320px;
+}
+
+.star-rating {
+	display: block;
+}
+
+.star {
+	width: 12px;
+	height: 21px;
+	font-size: 16px;
+	margin-right:2px;
+	color:orange;
+	display:inline-block;
+	overflow: hidden;	
+	position:relative;
+}
+
+.star::before {
+	content:"\2606";
+
+}
+
+.star-full::before {
+	content: "\2605"
+}
+
+.star-half::before {
+	content: "\2606";
+	width:8px;
+	margin-right:10px;
+}
+
+.star-half::after {
+	content: "\2605";
+	width: 7px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background: #fff;
+	overflow:hidden;
+}
+
+</style>
+
+-->
+@@include('../../_includes/footer-scripts.html')
+
+
+
+@@include('../../_includes/footer.html')

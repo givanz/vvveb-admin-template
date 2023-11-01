@@ -29,7 +29,7 @@ $color-primary:blue;
 
 @mixin menu_active_item {
   background: #ebeef5;
-  color: #333333;
+  color: var(--bs-body-color);
   position: relative;
 
   &::before {
@@ -566,7 +566,7 @@ $color-primary:blue;
     > .header {
       padding: 12px 20px;
       font-size: 14px;
-      color: #333333;
+      color: var(--bs-body-color);
       border-bottom: 1px solid $default-border-color;
       display: flex;
       align-items: center;
@@ -626,7 +626,7 @@ $color-primary:blue;
 
         > .progress {
           font-size: 10px;
-          color: #333;
+          color: var(--bs-body-color);
 
           > .progress {
             margin-bottom: 7px;

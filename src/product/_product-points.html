@@ -1,0 +1,50 @@
+<div class="tab-pane" id="tab-points">
+	<div class="table-responsive" data-v-product-points>
+		<table id="points" class="table table-hover table-bordered">
+			<thead>
+			<tr>
+				<th class="text-start">User Group</th>
+				<th class="text-end">Points</th>
+				<th class="text-end">
+					<button type="button" class="btn btn-sm btn-primary" id="add-points-btn" onclick='addTemplate("points-template", "product_points", "points")'>
+						<i class="la la-plus la-lg text-white"></i>
+					</button>
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr data-v-points>
+				  <td class="text-start">
+					  <select name="product_points[0][user_group_id]" class="form-select" data-v-user_group_id>
+						<option value="1" data-v-option>Default group</option>
+					  </select>
+				  </td>
+				  <td class="text-end">
+					<input name="product_points[0][points]" value="5" placeholder="Quantity" class="form-control" type="text" data-v-points-points>
+				  </td>
+				  <td class="text-end">
+					<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+					  <i class="la la-minus-circle la-lg"></i>
+					</button>
+				  </td>
+				</tr>	
+				<tr class="d-none" id="points-template">
+				  <td class="text-start">
+					  <select name="product_points[#][user_group_id]" class="form-select" data-v-user_group_id>
+						<option value="1" data-v-option>Default group</option>
+					  </select>
+				  </td>
+				  <td class="text-end">
+					<input name="product_points[#][points]" value="5" placeholder="Quantity" class="form-control" type="text" data-v-points-points>
+				  </td>
+				  <td class="text-end">
+					<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+					  <i class="la la-minus-circle la-lg"></i>
+					</button>
+				  </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+

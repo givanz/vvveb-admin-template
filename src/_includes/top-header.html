@@ -1,0 +1,338 @@
+<div class="top-header">
+
+	<div class="btn-group" data-v-component-sites>
+		<button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			
+			<i class="icon-eye-outline"></i> 
+			<span>View live website</span>
+		</button>
+	
+		
+		<div class="dropdown-menu">
+			<div data-v-site>
+				<a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+					<!-- i class="la la-circle la-lg me-2"></i -->
+					<span data-v-site-name class="flex-grow-1">Default website</span>
+					<i class="la la-external-link-alt"></i>
+				</a>
+			</div>
+			
+			<div data-v-site>
+				<a class="dropdown-item" href="#" data-v-site target="_blank">
+					<!--- <i class="icon-eye-outline la-lg me-2"></i> -->
+					<span data-v-site-name class="flex-grow-1">Blog</span>
+					<i class="la la-external-link-alt"></i>
+				</a>
+			</div>
+			
+			<div class="dropdown-divider"></div>
+				
+			<a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/sites"}'>
+				<span class="flex-grow-1">Manage sites</span>
+				<i class="la la-edit ms-2"></i>
+			</a>
+		</div>
+	</div>
+	
+	<div class="btn-group">
+		<button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="icon-reload-circle-outline"></i> 
+			<span>Clear cache</span>
+		</button>
+	
+		<div class="dropdown-menu">
+			<div>
+				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
+					<span class="flex-grow-1">Assets</span>
+					<i class="la la-circle-notch"></i>
+				</a>
+			</div>
+			<div>
+				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
+					<span class="flex-grow-1">Templates</span>
+					<i class="la la-circle-notch"></i>
+				</a>
+			</div>
+			<div>
+				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
+					<span class="flex-grow-1">Database</span>
+					<i class="la la-circle-notch"></i>
+				</a>
+			</div>			
+			<div>
+				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
+					<span class="flex-grow-1">Page cache</span>
+					<i class="la la-circle-notch"></i>
+				</a>
+			</div>
+			<div>
+				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
+					<span class="flex-grow-1">Image cache</span>
+					<i class="la la-circle-notch"></i>
+				</a>
+			</div>			
+			<div>
+				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
+					<span class="flex-grow-1">Model cache</span>
+					<i class="la la-circle-notch"></i>
+				</a>
+			</div>
+			<div class="dropdown-divider"></div>
+			
+			<div>
+				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
+					<span class="flex-grow-1">All cache</span>
+					<i class="la la-circle-notch"></i>
+				</a>
+			</div>
+			
+		</div>
+	</div>
+	
+
+	<div class="float-end">	
+
+		<div class="btn-group top-notifications" data-v-component-notifications>
+			<button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="la la-bell"></i> 
+				<span class="badge bg-primary-subtle text-body " data-v-if="count > 0"  data-v-notification-count>5</span>
+			</button>
+		
+			<div class="dropdown-menu">
+				<div data-v-if="notifications.updates.core.hasUpdate">
+					<h6 class="dropdown-header">Updates</h6>
+					<a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+						<i class="icon-flash-outline text-success"></i> 
+						<span>Update available</span>
+						<strong class="badge bg-success small mx-2" data-v-notification-updates-core-version>0.0.5</strong> 
+					</a>
+					<div class="dropdown-divider"></div>
+				</div>
+				<div data-v-if-not="notifications.updates.core.hasUpdate">
+					<h6 class="dropdown-header">Updates</h6>
+					<a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+						<i class="icon-flash-outline"></i>  
+						<span>Up to date</span>
+						<strong class="badge bg-primary small mx-2" data-v-notification-updates-core-version>0.0.5</strong> 
+					</a>
+					<div class="dropdown-divider"></div>
+				</div>
+
+				<div data-v-group>
+					<div><h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6></div>
+					<div class="dropdown-item" data-v-group-notification>
+						<a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+							<i class="" data-v-group-icon></i> 
+							<span data-v-group-notification-name>New orders</span> 
+							<strong class="badge bg-primary-subtle text-body mx-2 bg-primary-subtle text-body" data-v-group-notification-count>5</strong> 
+						</a>
+					</div>
+					<div class="dropdown-item" data-v-group-notification>
+						<a  href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+							<i class="la la-file-invoice" data-v-group-icon></i> 
+							<span data-v-group-notification-name>Returns</span> 
+							<strong class="badge bg-danger small" data-v-group-notification-count>2</strong> 
+						</a>
+					</div>
+					<div class="dropdown-divider"></div>
+				</div>
+				
+				<div data-v-group>
+					<div class="dropdown-divider"></div>
+					<div><h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6></div>
+					<div class="dropdown-item" data-v-group-notification>
+						<a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+							<i class="la la-comment"></i> 
+							<span data-v-group-notification-name>New comments</span> 
+							<strong class="badge bg-primary small mx-2" data-v-notification-value>5</strong> 
+						</a>
+					</div>
+					<div class="dropdown-item" data-v-group-notification>
+						<a  href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+							<i class="la la-comment"></i> 
+							<span data-v-group-notification-name>Spam comments</span> 
+							<strong class="badge bg-danger small" data-v-notification-value>2</strong> 
+						</a>
+					</div>
+				</div>				
+				
+				<div data-v-group>
+					<div class="dropdown-divider"></div>
+					<div><h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6></div>
+					<div class="dropdown-item" data-v-group-notification>
+						<a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+							<i class="la la-comment"></i> 
+							<span data-v-group-notification-name>New reviews</span> 
+							<strong class="badge bg-primary small mx-2" data-v-notification-value>5</strong> 
+						</a>
+					</div>
+					<div class="dropdown-item" data-v-group-notification>
+						<a  href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+							<i class="la la-comment"></i> 
+							<span data-v-group-notification-name>Spam questions</span> 
+							<strong class="badge bg-danger small" data-v-notification-value>2</strong> 
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="btn-group" data-v-component-sites>
+			<form method="post">
+				<button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					
+					<i class="la la-sitemap me-1"></i>
+					<span data-v-site-info-name>Default site</span>
+				</button>
+			
+				
+				<div class="dropdown-menu">
+					<div data-v-site>
+						<button class="dropdown-item" href="#" data-v-site-site_id name="site" value="default">
+							<i class="la la-window-minimize la-lg me-2" data-v-if="state = 'live'" data-v-site-icon></i>
+							<i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+							<span data-v-site-name>Default website</span>
+						</button>
+					</div>
+					
+					<div data-v-site>
+						<a class="dropdown-item" href="#" data-v-site name="site" value="default">
+							<i class="la la-window-minimize la-lg me-2" data-v-site-icon></i>
+							<i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+							<span data-v-site-name>Blog</span>
+						</a>
+					</div>
+					
+					<div class="dropdown-divider"></div>
+					
+					<a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/site"}'>
+						<i class="la la-plus me-2"></i>
+						Add new
+					</a>
+				</div>
+			</form>
+		</div>
+		
+		<div class="btn-group" data-v-component-states>
+			<form method="post">
+				<button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					
+					<i class="la text-success me-1" data-v-state-info-active_icon></i>
+					<span data-v-state-info-active_name>Live</span>
+				</button>
+			
+				
+				<div class="dropdown-menu">
+					<div data-v-state>
+						<button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
+							<i class="la la-broadcast-tower la-lg me-2" data-v-state-icon></i>
+							<span data-v-state-name>
+							Live
+							</span>
+						</button>
+					</div>
+					<div data-v-state>
+						<button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to maintenance?')"  name="state" data-state="maintenance">
+							<i class="la la-wrench la-lg me-2" data-v-state-icon></i>
+							<span data-v-state-name>
+							Maintenance
+							</span>
+						</button>
+					</div>
+					<div data-v-state>
+						<button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')"  name="state" data-state="coming soon">
+							<i class="la la-clock la-lg me-2" data-v-state-icon></i>
+							<span data-v-state-name>
+							Coming soon
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>	
+		
+		<div class="btn-group" data-v-component-languages>
+			<form method="post">
+				<button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					
+					<i class="la la-flag me-1"></i>
+					<span data-v-language-info-name>English</span>
+				</button>
+			
+				
+				<div class="dropdown-menu">
+					
+					<div data-v-language>
+						<button class="dropdown-item" href="#" name="language"  data-v-language-code>
+							<i class="la la-flag la-lg me-2"></i>
+							<span data-v-language-name>English</span>
+						</button>
+					</div>
+					
+					<div data-v-language>
+						<button class="dropdown-item" href="#" name="language" data-v-language-code>
+							<i class="la la-flag la-lg me-2"></i>
+							<span data-v-language-name>Romanian</span>
+						</button>
+					</div>
+					
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-v-url-params='{"module":"localization/languages"}'>
+						<i class="la la-plus me-2"></i>
+						Add new
+					</a>
+				</div>
+			</form>
+		</div>
+		
+		<div class="vr align-middle mx-1"></div>
+
+		
+		<a target="_blank" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn text-body" aria-haspopup="true" aria-expanded="false">
+			<i class="la la-lg la-question-circle lh-1"></i> 
+			<span>Docs</span>
+		</a>
+		
+		
+		<div class="btn-group" data-v-component-admin>
+
+			<form action="/admin?module=user/login" method="post" enctype="multipart/form-data"  data-v-url-params='{"module":"user/login"}'>
+				
+			   <input type="hidden" name="csrf" data-v-csrf>
+
+
+				<button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="la la-user"></i> 
+					<span data-v-admin-display_name>Admin</span>
+				</button>
+				
+				<div class="dropdown-menu dropdown-menu-end">
+					<a class="dropdown-item" href="#" data-v-admin-edit-url><span>Edit Profile</span></a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-item">
+					
+						<input type="hidden" name="logout">
+						
+						<button type="submit" value="logout" class="btn btn-primary w-100">
+							
+							<span class="loading d-none">
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Loading ...</span>...
+							</span>
+
+							<span class="button-text">
+								Logout
+							</span>
+						
+						</button>					
+					
+					</div>
+				</div>
+			
+			</form>
+		</div>
+	
+	</div>
+</div>

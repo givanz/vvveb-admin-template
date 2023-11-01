@@ -1,0 +1,141 @@
+<div class="tab-pane" id="tab-relations">
+
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-manufacturer">
+			<span>Manufacturer</span>
+		</label>
+		<div class="col-sm-10">
+			
+			<input name="manufacturer_id" value="" placeholder="Manufacturer" id="input-manufacturer" autocomplete="off" type="text" class="form-control autocomplete"
+				data-url="/admin?module=product/product&action=manufacturersAutocomplete" data-text="Manufacturer" data-v-product-manufacturer_id/>	
+		</div>
+	</div>	
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-vendor">
+			<span>Vendor</span>
+		</label>
+		<div class="col-sm-10">
+			
+			<input name="vendor_id" value="" placeholder="Vendor" id="input-vendor" autocomplete="off" type="text" class="form-control autocomplete"
+				data-url="/admin?module=product/product&action=vendorsAutocomplete" data-text="Vendor" data-v-product-vendor_id />			
+		</div>
+	</div>
+	
+	@@include('_product_taxonomies.html')
+	
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-related">
+			<span>Related Products</span>
+		</label>
+				
+			<div class="col-sm-10">
+
+				<input name="product_related" placeholder="Related products" type="text" class="form-control autocomplete-list"
+					data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="product_related"/>
+
+				<div class="autocomplete-list card border-top-0" data-v-product-related>
+					<div data-v-related>				
+						<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
+						<span data-v-related-name>Product 14</span>				
+						<input name="product_related[]" value="14" type="hidden" data-v-related-product_related_id>			 
+					</div>
+				</div>
+		</div>
+	</div>
+	
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-variant">
+			<span>Product Variants</span>
+		</label>
+				
+			<div class="col-sm-10">
+
+				<input name="product_variant" placeholder="Product Variants" type="text" class="form-control autocomplete-list"
+					data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="product_variant"/>
+
+				<div class="autocomplete-list card border-top-0" data-v-product-variant>
+					<div data-v-variant>				
+						<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
+						<span data-v-variant-name>Product 14</span>				
+						<input name="product_variant[]" value="14" type="hidden" data-v-variant-product_variant_id>			 
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<div class="mb-3 row">
+		<label class="col-sm-2 form-label" for="input-digital-asset">
+			<span>Digital assets</span>
+		</label>
+				
+			<div class="col-sm-10">
+				<input name="digital_asset" placeholder="Digital assets" type="text" class="form-control autocomplete-list"
+					data-url="/admin?module=product/product&action=digitalAssetsAutocomplete" data-list-name="product_digital_asset"/>
+
+				<div class="autocomplete-list card border-top-0" data-v-product-digital_asset>
+					<div data-v-digital_asset>				
+						<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
+						<span data-v-digital_asset-name>Product manual pdf</span>				
+						<input name="product_digital_asset[]" value="14" type="hidden" data-v-digital_asset-digital_asset_id>			 
+					</div>
+				</div>
+		</div>
+	</div>
+
+<!--
+	<div class="taxonomies" data-v-taxonomies>
+		<div class="taxonomy" data-v-taxonomy_item>
+			
+			<label class="header" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label><span data-v-taxonomy_item-name>Categories</span>
+				<div class="header-arrow"></div>
+			</label>
+			<input class="header_check" type="checkbox" checked="true" id="header_categories" data-v-taxonomy_item-input>
+			<div class="section" data-v-section="element_header">
+									
+									
+				<div class="categories-list" data-v-categories>
+					<div data-v-cats>
+						
+						<ul class="dd-list"  data-v-if="taxonomy_item.type = 'categories'">
+
+							<li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
+								<div class="dd3-content">
+
+									<label class="form-check">
+										<input type="checkbox" class="form-check-input" value="4" name="taxonomy_item[]" data-v-product-taxonomy_item-taxonomy_item_id>
+										<span class="form-check-label" data-v-taxonomy_item-name>Item 135</span>
+									</label>
+
+								</div>
+								
+							</li>
+						
+						</ul>
+					</div>
+					
+					<div data-v-tags>
+						
+						<div class="tags-input">
+							
+							<div class="tag" data-v-tag>
+								<span data-v-taxonomy_item-name>Product 10</span>				
+								<a href="#" class="remove-btn"><i class="la la-times"></i></a> 
+								<input type="hidden" value="4" name="tag[]" data-v-product-taxonomy_item-taxonomy_item_id>
+							</div>
+							
+							<input type="text" name="text" class="tags-input form-control" data-taxonomy_type_id>
+						</div>
+
+					</div>
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+-->
+
+
+</div>

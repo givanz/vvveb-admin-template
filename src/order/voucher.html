@@ -1,0 +1,121 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Voucher","scripts":"","base_href":"../"})
+
+<body class="voucher">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-voucher>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-gift-outline"></i>&ensp;
+						<span>Voucher</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a data-v-url-params='{"module":"order/vouchers"}' href="/admin/?module=order/vouchers" title="Return action list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to vouchers</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="voucher_id" data-v-voucher-voucher_id>
+					
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Code</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="code" name="voucher[code]" data-v-voucher-code required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-quantity" class="col-sm-2 col-form-label">Credit</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-quantity" placeholder="quantity" name="voucher[credit]" data-v-voucher-credit required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-from_name" class="col-sm-2 col-form-label">From name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-from_name" placeholder="from_name" name="voucher[from_name]" data-v-voucher-from_name required>
+					</div>
+				 </div>					
+				 
+				 <div class="mb-3 row">
+					<label for="input-from_email" class="col-sm-2 col-form-label">From email</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="input-from_email" placeholder="From email" name="voucher[from_email]" data-v-voucher-from_email required>
+					</div>
+				 </div>						
+				 
+				 <div class="mb-3 row">
+					<label for="input-to_name" class="col-sm-2 col-form-label">To name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-to_name" placeholder="from_name" name="voucher[to_name]" data-v-voucher-to_name required>
+					</div>
+				 </div>					
+				 
+				 <div class="mb-3 row">
+					<label for="input-to_email" class="col-sm-2 col-form-label">To email</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="input-to_email" placeholder="to email" name="voucher[to_email]" data-v-voucher-to_email required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-message" class="col-sm-2 col-form-label">Message</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-message" placeholder="message" name="voucher[message]" data-v-voucher-message required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-message" class="col-sm-2 col-form-label">Message</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-message" placeholder="message" name="voucher[message]" data-v-voucher-message required>
+					</div>
+				 </div>		
+ 
+			  <div class="mb-3 row">
+					<label for="input-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="voucher[status]" id="input-status" class="form-control" data-v-voucher-status required>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				  </div>
+
+		
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+@@include('../_includes/footer.html')

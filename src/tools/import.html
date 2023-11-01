@@ -1,0 +1,91 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Import","scripts":'<link href="libs/media/media.css" rel="stylesheet">',"base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+       @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+
+				
+		<div class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-cube-outline"></i>&ensp;
+					Import content
+				</h4>
+			</div>
+
+
+			<div class="btns">
+	
+				 <a href data-v-url-params='{"module":"plugin/plugin"}'title=""
+						class="btn btn-outline-secondary btn-icon ms-1" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+						<i class="la la-cloud-upload-alt la-lg"></i> <span>Upload file</span>
+				</a>
+
+			</div>
+			
+		</div>
+			
+
+		<div id="main-content" class="px-4">
+		
+				@@include('../_includes/notifications.html')
+
+	 			<div class="card my-4">
+				  <div class="card-body">
+					<h5 class="card-title">Import local Vvveb data</h5>
+					<p class="card-text">Upload a Vvveb export file to start importing</p>
+					
+					
+					
+					 <a href title="Upload xml or sql file"
+					class="btn btn-primary btn-icon ms-1 d-inline-block" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+						<i class="la la-cloud-upload-alt la-lg"></i> Upload file
+					</a>
+			
+			
+					 @@include('../_includes/upload-form.html', {"accept" : "text/xml, .xml"})
+
+							
+				  </div>
+				</div>
+	 
+				
+				<div class="card my-4 pe-none opacity-25">
+				  <div class="card-body">
+					<h5 class="card-title">Online import</h5>
+					<p class="card-text">Import content from another Vvveb website</p>
+					<label><input class="form-check-input me-1" type="checkbox" value="" aria-label="..." data-bs-toggle="collapse" data-bs-target="#export-info" aria-expanded="false" aria-controls="export-info"> Enable online import</label>
+					
+					<div class="m-4 collapse" id="export-info">
+						
+						<div><strong>Website Url:</strong> <input type="text" class="form-control" value="vvveb.com"></div>
+						<br>
+						<div><strong>Password:</strong> <input type="text" class="form-control" value="5345k3490534593k490534k0534k905"></div>
+						<br>
+						
+						<button class="btn btn-primary btn-icon d-inline-block"><i class="la la-upload"></i> <span>Start import</span></button>
+					</div>
+				  </div>
+				</div>
+				
+	 
+			</div>
+		</div>
+	</div>
+
+</div>
+    
+
+
+@@include('../_includes/footer-scripts.html')
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+
+@@include('../_includes/footer.html')

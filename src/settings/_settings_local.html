@@ -1,0 +1,179 @@
+<div class="mb-3 row">
+   <label for="input-site-title" class="col-sm-2 col-form-label">Address</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-site-title" placeholder="Address" name="settings[address]" name="settings[address]"  data-v-setting="address">
+   </div>
+</div>
+<div class="mb-3 row">
+   <label for="input-site-title" class="col-sm-2 col-form-label">Geocode</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-site-title" placeholder="Geocode" name="settings[geocode]" name="settings[geocode]"  data-v-setting="geocode">
+   </div>
+</div>
+
+
+<div class="row mb-3">
+	<label for="input-country" class="col-sm-2 col-form-label">Country</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[country_id]" data-v-setting="country_id" id="input-country" data-v-site-country_id>
+			<option value="1" data-v-option>Country 1</option>
+			<option value="2" data-v-option>Country 2</option>
+		</select>
+	</div>
+</div>
+<div class="row mb-3">
+	<label for="input-region" class="col-sm-2 col-form-label">Region / State</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[region_id]" data-v-setting="region_id" id="input-region" data-v-site-region_id>
+			<option value="0"> --- Please Select --- </option>
+			<option value="1" data-v-option>region 1</option>
+			<option value="2" data-v-option>region 2</option>
+			
+		</select>
+	</div>
+</div>
+
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Defaults</label>
+
+<div class="row mb-3">
+	<label for="input-language" class="col-sm-2 col-form-label">Default Language</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[language_id]" data-v-setting="language_id" id="input-language" data-v-site-language_id>
+			<option value="en-gb" data-v-option>English</option>
+		</select>
+	</div>
+</div>
+<div class="row mb-3">
+	<label for="input-currency" class="col-sm-2 col-form-label">Default Currency</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[currency_id]" data-v-setting="currency_id" id="input-currency" data-v-site-currency_id>
+			<option value="AUD" data-v-option>Australian Dollar</option>
+			<option value="CNY" data-v-option>Chinese Yuan Renminbi</option>
+			<option value="EUR" data-v-option>Euro</option>
+			<option value="INR" data-v-option>Indian Rupee</option>
+			<option value="GBP" data-v-option>Pound Sterling</option>
+			<option value="RUB" data-v-option>Russian Ruble</option>
+			<option value="USD" data-v-option>US Dollar</option>
+		</select>
+	</div>
+</div>
+
+<div class="row mb-3">
+	<label for="input-length-type" class="col-sm-2 col-form-label">Length Class</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[length_type_id]" data-v-setting="length_type_id" id="input-length-type" data-v-site-length_type_id>
+			<option value="1" data-v-option>Centimeter</option>
+			<option value="2" data-v-option>Millimeter</option>
+			<option value="3" data-v-option>Inch</option>
+		</select>
+	</div>
+</div>
+<div class="row mb-3">
+	<label for="input-weight-type" class="col-sm-2 col-form-label">Weight Class</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[weight_type_id]" data-v-setting="weight_type_id" id="input-weight-type" data-v-site-weight_type_id>
+			<option value="1" data-v-option>Kilogram</option>
+			<option value="2" data-v-option>Gram</option>
+			<option value="3" data-v-option>Pound </option>
+			<option value="4" data-v-option>Ounce</option>
+		</select>
+	</div>
+</div>
+
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Time</label>
+
+<div class="mb-3 row">
+	   <label for="input-site-title" class="col-sm-2 col-form-label">Timezone</label>
+	   <div class="col-sm-10">
+			<select class="form-select" id="timezone" name="settings[timezone]" data-v-setting="timezone" data-v-site-timezone>
+				<option value="0"> --- Please Select --- </option>
+				<option value="Africa/Abidjan" data-v-option>Abidjan</option>
+				<option value="Africa/Accra" data-v-option>Accra</option>
+			</select>
+	   </div>
+	</div>
+	<div class="mb-3 row">
+  <label for="input-site-title" class="col-sm-2 col-form-label">Date format
+  </label>
+  <div class="col-sm-10">
+      <label class="form-check mb-2" data-v-date_format>
+        <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="F j, Y" data-v-date_format-value>
+        <span class="form-check-label align-middle"><span data-v-date_format-text>November 12, 2023</span>
+			<code class="bg-body-tertiary px-1" data-v-date_format-value>F j, Y</code>
+        </span>
+      </label>
+      <label class="form-check mb-2" data-v-date_format>
+        <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="Y-m-d">
+        <span class="form-check-label align-middle">2023-11-12
+			<code class="bg-body-tertiary px-1">Y-m-d</code>
+        </span>
+      </label>
+      <label class="form-check mb-2" data-v-date_format>
+        <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="m/d/Y">
+        <span class="form-check-label align-middle">11/12/2023
+        <code class="bg-body-tertiary px-1">m/d/Y</code>
+        </span>
+      </label>
+      <label class="form-check mb-2" data-v-date_format>
+        <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="d/m/Y">
+        <span class="form-check-label align-middle">12/11/2023
+        <code class="bg-body-tertiary px-1">d/m/Y</code>
+        </span>
+      </label>
+      <label class="form-check mb-2">
+        <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" id="date_format_custom" value="custom"> 
+        <span class="form-check-label align-middle">Custom:
+          <span class="visually-hidden"> enter a custom date format in the following field
+          </span>
+        </span>
+      </label>
+      <label for="date_format_custom" class="visually-hidden">Custom date format:
+      </label>
+		<input type="text" name="settings[date_format]" id="custom_date_format" data-v-setting="date_format" value="" class="form-control" data-v-site-date_format>
+      <div class="mt-2">
+        <strong>Preview:</strong> 
+        <span class="date-example" data-v-date_example>November 12, 2023</span>
+	  </div>
+  </div>
+</div>						
+<div class="mb-3 row">
+  <label for="input-site-title" class="col-sm-2 col-form-label">Time format
+  </label>
+  <div class="col-sm-10">
+    <fieldset>
+      <legend class="visually-hidden">
+        <span>Time Format
+        </span>
+      </legend>
+      <label class="form-check mb-2" data-v-time_format>
+        <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" value="g:i a" data-v-time_format-value>
+        <span class="form-check-label align-middle" class="form-check-label"><span data-v-time_format-text>9:45 am</span>
+		<code class="bg-body-tertiary px-1" data-v-time_format-value>g:i a</code>
+        </span>
+      </label>
+      <label class="form-check" data-v-time_format>
+        <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" value="g:i A" data-v-site-time_format>
+        <span class="form-check-label">9:45 AM
+        <code>g:i A
+        </code>
+        </span>
+      </label>
+      <label class="form-check" data-v-time_format>
+        <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" value="H:i" data-v-site-time_format>
+        <span class="form-check-label">09:45
+        <code>H:i
+        </code>
+        </span>
+      </label>
+      <label class="form-check">
+        <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" id="time_format_custom" value="custom">
+        <span class="form-check-label">Custom:</span>
+        </span>
+      </label>
+      <input type="text" name="settings[time_format]" id="custom_time_format" data-v-setting="time_format" value="" class="form-control"  data-v-site-time_format>
+      <div class="mt-2">
+        <strong>Preview: </strong> 
+        <span class="time-example" data-v-time_example>9:45 am</span>
+	</div>
+  </div>
+</div>	

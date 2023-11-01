@@ -1,0 +1,257 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Site","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+	<div class="main">
+
+	@@include('../_includes/top-header.html')
+	
+	<form id="settings-form" action="" method="post" data-v-product>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions">
+		  <div class="title">
+			 <h4 class="text-muted my-3">
+				<i class="icon-browsers-outline"></i>
+				<span class="ms-2">Site</span>
+			 </h4>
+		  </div>
+		  
+		  
+		  <div class="btns">
+				<a href="/admin/?module=settings/sites" title="Sites list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Sites list</span>
+				 </a>
+
+			  <button type="submit" href=""
+				 class="btn btn-primary btn-icon ms-1"
+				 >
+					<i class="icon-create-outline"></i>
+					<span>Save site</span>
+			  </button>
+		   </div>
+	   </div>
+	   <div>
+
+	  <div id="main-content">
+		  
+		 <div class="content clearfix site px-2">
+
+			@@include('../_includes/notifications.html')
+
+				<div class="content clearfix settings" data-v-site>
+													 
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General</button>
+					  </li>
+
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="contact" aria-selected="false">Local</button>
+					  </li>
+						
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="contact" aria-selected="false">Media settings</button>
+					  </li>		  
+
+					  <!--
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="mail-tab" data-bs-toggle="tab" data-bs-target="#mail" type="button" role="tab" aria-controls="contact" aria-selected="false">Mail</button>
+					  </li>					 
+					  -->
+
+					   <li class="nav-item" role="presentation">
+						<button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false">Comments</button>
+					  </li>					 
+					  
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
+					  </li>					 
+
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="mail_notifications-tab" data-bs-toggle="tab" data-bs-target="#mail_notifications" type="button" role="tab" aria-controls="contact" aria-selected="false">Mail notifications</button>
+					  </li>
+					  <!--
+					   <li class="nav-item" role="presentation">
+						<button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
+					  </li> -->
+					</ul>
+					
+					<div class="tab-content">
+					
+						<div class="tab-pane show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+							@@include('_site-general.html')
+						</div>
+						
+						<div class="tab-pane" id="local" role="tabpanel" aria-labelledby="local-tab">
+							@@include('_settings_local.html')
+						</div>	
+						<div class="tab-pane" id="media" role="tabpanel" aria-labelledby="media-tab">
+							@@include('_settings_media.html')
+						</div>
+						<!--
+						<div class="tab-pane" id="mail" role="tabpanel" aria-labelledby="mail-tab">
+							@@include('_settings_mail.html')
+						</div>
+						-->
+
+						<div class="tab-pane" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+							@@include('_settings_comments.html')
+						</div>
+
+						<div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+							@@include('_settings_orders.html')
+						</div>			
+						
+						<div class="tab-pane" id="mail_notifications" role="tabpanel" aria-labelledby="orders-tab">
+							@@include('_settings_mail_notifications.html')
+						</div>
+							 <!--
+						 <div class="tab-pane" id="security" role="tabpanel" aria-labelledby="security-tab">
+						</div>
+						-->
+				 
+						</div>
+				  </div>
+			
+			 </div>
+		  </div>
+		</form>
+   </div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+<script id="functions-js" src="../../js/admin/functions.js"></script>
+
+
+
+<script>
+let Form = document.getElementById('settings-form');
+
+document.addEventListener('invalid', function(e){
+	//e.target.className += ' is-invalid';
+	focusInvalidElement(e);
+}, true);
+	
+function focusInvalidElement(e) {
+	//if (Form.checkValidity() == false) {
+		$(".is-invalid").removeClass("is-invalid");
+		//get first invalid input
+		let element = Form.querySelector(':invalid');
+		let activeTab = $(element).parents(".tab-pane");
+		
+		element.className += ' is-invalid';
+		//activate tab panel
+		$(".tab-pane").removeClass("show active");
+		activeTab.addClass("show active");
+		
+		//activate tab 
+		$(".nav-link").removeClass("active");
+		$("#" + (activeTab.attr("id") + "-tab")).addClass("active");
+		element.focus();
+		//let list = Form.querySelectorAll(':invalid');
+		/*
+		for (var item of list) {
+			item.focus();
+		}*/
+	//}
+}
+
+$("input[type=radio][name='settings[date_format]']").click(function () {
+	$("#custom_date_format").val(this.value).change().keypress();	
+});
+
+$("input[type=radio][name='settings[time_format]']").click(function () {
+	$("#custom_time_format").val(this.value).change().keypress();	
+});
+
+$("#custom_time_format").keypress(function () {
+	delay(() =>	$(".time-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
+});
+$("#custom_date_format").keypress(function () {
+	delay(() => $(".date-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
+});	
+
+
+
+
+let domain = "{ $this->domain }";
+let name = $("#input-site-name");
+//let key = $("#input-site-key");
+let host = $("#input-site-host");
+
+//let keyTextOrig = nameToKey(key.val());
+let hostTextOrig = nameToHost(host.val().replace(domain, ''));
+
+function nameToKey(name) {
+	//return (slugify(name) + " " + domain).replaceAll("."," "); 
+	return (slugify(name) + " *").replaceAll("."," "); 
+}
+
+function nameToHost(name) {
+	return (slugify(name) + "." + domain); 
+}
+
+name.on('keyup', function (e) {
+	let text = this.value;
+	delay(() => {
+		/*
+		let keyText = key.val();
+		
+		if (keyTextOrig == keyText || !keyText) {
+			keyTextOrig = nameToKey(text);
+			key.val(keyTextOrig);
+		}
+		*/
+		let hostText = host.val();
+		console.log(hostTextOrig);
+		console.log(hostText);
+		if (hostTextOrig == hostText || !hostText) {
+			hostTextOrig = nameToHost(text);
+			host.val(hostTextOrig);
+		}
+	}, 500);
+});
+
+
+let regions = [];
+
+function addRegionsToSelect(regionSelect, data) {
+	regionSelect.html('');
+	for (i in data) {
+		let region = data[i];
+		regionSelect.append('<option value="' + region.region_id + '">' + region.name + '</option>');
+	}
+}
+
+$("#input-country").change(function () {
+	$.get(window.location.href + "&action=regions&country_id=" + this.value).done(function( data ) {
+			addRegionsToSelect($("#input-region"), data);
+		});
+});
+
+
+$("#input-mail-driver").change(function (e) {
+	$(".mail-engine").hide();
+	$(".mail-engine." + this.value).show();
+}).change();
+</script>
+@@include('../_includes/footer.html')

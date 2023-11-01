@@ -1,0 +1,51 @@
+<div class="tab-pane" id="tab-attribute">
+	<div class="table-responsive" data-v-product-attribute>
+		<table id="attribute" class="table table-bordered table-hover">
+			<thead>
+				<tr>
+					<th class="text-start">Attribute</th>
+					<th class="text-start">Value</th>
+					<th class="text-end">
+						<button type="button" class="btn btn-sm btn-primary" id="add-attribute-btn" onclick='$("[autocomplete]",addTemplate("attribute-template", "product_attribute", "attribute")).autocomplete();'>
+							<i class="la la-plus la-lg text-white"></i>
+						</button>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-v-attribute>
+					<td class="text-start" style="width: 40%;">
+						<input name="product_attribute[0][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control autocomplete"
+				data-url="/admin?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id>
+					</td>
+					<td class="text-start">
+						<input name="product_attribute[0][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
+						<input name="product_attribute[0][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
+					</td>
+					<td class="text-end">
+						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+							<i class="la la-minus-circle la-lg"></i>
+						</button>
+					</td>
+				</tr>
+				<tr class="d-none" id="attribute-template">
+					<td class="text-start" style="width: 40%;">
+						<input name="product_attribute[#][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control"
+				data-url="/admin?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id/>
+					</td>
+					<td class="text-start">
+						<div class="input-group">
+							<input name="product_attribute[#][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
+							<input name="product_attribute[#][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
+						</div>
+					</td>
+					<td class="text-end">
+						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+							<i class="la la-minus-circle la-lg"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

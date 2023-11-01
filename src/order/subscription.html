@@ -1,0 +1,134 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Subscription","scripts":"","base_href":"../"})
+
+<body class="subscription">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-subscription>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-repeat-outline"></i>&ensp;
+						<span>Subscription</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a data-v-url-params='{"module":"order/subscriptions"}' href="/admin/?module=order/subscriptions" title="Return action list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to subscriptions</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="subscription_id" data-v-subscription-subscription_id>
+					
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="name" name="subscription[name]" data-v-subscription-name required>
+					</div>
+				 </div>		 
+ 
+				<div class="mb-3 row">
+					<label for="input-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="subscription[status]" id="input-status" class="form-control" data-v-subscription-status required>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				</div>
+
+				<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Recurring</label>
+
+				<div class="mb-3 row">
+					<label for="input-frequency" class="col-sm-2 col-form-label" >Frequency</label>
+					<div class="col-sm-10">
+						<select name="subscription[frequency]" id="input-frequency" class="form-control" data-v-subscription-frequency required>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				</div>
+				 
+				<div class="mb-3 row">
+					<label for="input-duration" class="col-sm-2 col-form-label">Duration</label>
+					<div class="col-sm-10">
+					  <input type="number" class="form-control" id="input-duration" placeholder="duration" name="subscription[duration]" data-v-subscription-duration required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-cycle" class="col-sm-2 col-form-label">Cycle</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-cycle" placeholder="cycle" name="subscription[cycle]" data-v-subscription-cycle required>
+					</div>
+				 </div>					
+
+				<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Trial</label>
+
+				<div class="mb-3 row">
+					<label for="input-trial_frequency" class="col-sm-2 col-form-label" >Frequency</label>
+					<div class="col-sm-10">
+						<select name="subscription[trial_frequency]" id="input-trial_frequency" class="form-control" data-v-subscription-trial_frequency required>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				</div>
+				 
+				<div class="mb-3 row">
+					<label for="input-trial_dduration" class="col-sm-2 col-form-label">Duration</label>
+					<div class="col-sm-10">
+					  <input type="number" class="form-control" id="input-trial_dduration" placeholder="trial_duration" name="subscription[trial_duration]" data-v-subscription-trial_duration required>
+					</div>
+				 </div>		 
+				 
+					<div class="mb-3 row">
+					<label for="input-trial_cycle" class="col-sm-2 col-form-label">Cycle</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-trial_cycle" placeholder="trial_dcycle" name="subscription[trial_cycle]" data-v-subscription-trial_cycle required>
+					</div>
+				 </div>					
+
+				<div class="mb-3 row">
+					<label for="input-trial_status" class="col-sm-2 col-form-label" >Trial Status</label>
+					<div class="col-sm-10">
+						<select name="subscription[trial_status]" id="input-trial_status" class="form-control" data-v-subscription-trial_status required>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				</div>
+
+		
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+@@include('../_includes/footer.html')

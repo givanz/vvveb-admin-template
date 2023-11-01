@@ -1,0 +1,86 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Tax rate","scripts":"","base_href":"../"})
+
+<body class="tax_rate">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-tax_rate>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-people-outline"></i>&ensp;
+						<span>Tax rate</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=settings/tax-rates" title="Return action list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to tax rates</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="tax_rate_id" data-v-tax_rate-tax_rate_id>
+					
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="tax_rate[name]" data-v-tax_rate-name required>
+					</div>
+				 </div>		 
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Rate</label>
+					<div class="col-sm-10">
+					  <input type="number" class="form-control" id="input-rate" placeholder="Rate" name="tax_rate[rate]" min="0" data-v-tax_rate-rate required>
+					</div>
+				 </div>		 
+				 
+				  <div class="mb-3 row">
+					<label for="input-site-status" class="col-sm-2 col-form-label">Type</label>
+					<div class="col-sm-10">
+						<select name="tax_rate[type]" id="input-status" class="form-control" data-v-tax_rate-type>
+						  <option value="f" data-v-option>Fixed</option>
+						  <option value="p" data-v-option>Percent</option>
+						</select>
+					</div>
+				  </div>
+				
+				  <div class="mb-3 row">
+					<label for="input-site-status" class="col-sm-2 col-form-label">region group</label>
+					<div class="col-sm-10">
+						<select name="tax_rate[region_group_id]" id="input-status" class="form-control" data-v-tax_rate-region_group_id>
+							<option value="1" data-v-option>region 1</option>
+							<option value="2" data-v-option>region 2</option>
+						</select>
+					</div>
+				  </div>
+		
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html')

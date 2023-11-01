@@ -1,0 +1,188 @@
+<div id="top-panel">
+	
+
+	<div class="btn-group" role="group">
+	  <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
+		  <img src="../../js/vvvebjs/icons/file-manager-layout.svg" width="20px" height="20px">
+	  </button>
+
+	  <button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
+		  <img src="../../js/vvvebjs/icons/left-column-layout.svg" width="20px" height="20px">
+	  </button>
+	  
+	  <button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
+		  <img src="../../js/vvvebjs/icons/right-column-layout.svg" width="20px" height="20px">
+	  </button>
+	</div>
+	
+	
+	<div>
+		<div class="btn-group me-3" role="group">
+		  <button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)" id="undo-btn" data-vvveb-action="undo" data-vvveb-shortcut="ctrl+z">
+			  <i class="la la-undo"></i>
+		  </button>
+
+		  <button class="btn btn-light"  title="Redo (Ctrl/Cmd + Shift + Z)" id="redo-btn" data-vvveb-action="redo" data-vvveb-shortcut="ctrl+shift+z">
+			  <i class="la la-undo la-flip-horizontal"></i>
+		  </button>
+		</div>
+							
+		
+		<div class="btn-group me-3" role="group">
+		  <button class="btn btn-light" title="Designer Mode (Free component dragging)" id="designer-mode-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="setDesignerMode">
+			  <i class="la la-hand-rock"></i>
+		  </button>
+
+		  <button class="btn btn-light" title="Preview" id="preview-btn" type="button" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="preview">
+			  <i class="icon-eye-outline"></i>
+		  </button>
+
+		  <button class="btn btn-light" title="Fullscreen (F11)" id="fullscreen-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="fullscreen">
+			  <i class="icon-expand-outline"></i>
+		  </button>
+
+		  <!-- button class="btn btn-light" title="Download" id="download-btn" data-vvveb-action="download" data-v-download="index.html">
+			  <i class="la la-download"></i>
+		  </button -->
+		</div>
+	</div>
+
+
+	<div class="btn-group">			
+		
+		<div class="me-3">
+
+			<a href="#" class="btn btn-outline-primary border-0 btn-sm btn-preview-url" target="blank">View page <i class="la la-external-link-alt la-lg"></i></a>
+
+			<div class="btn-group responsive-btns" role="group">
+			 
+			
+			 <button id="mobile-view" data-view="mobile" class="btn btn-light"  title="Mobile view" data-vvveb-action="viewport">
+				  <i class="la la-mobile"></i>
+			  </button>
+
+			  <button id="tablet-view"  data-view="tablet" class="btn btn-light"  title="Tablet view" data-vvveb-action="viewport">
+				  <i class="la la-tablet"></i>
+			  </button>
+			  
+			  <button id="desktop-view"  data-view="" class="btn btn-light"  title="Desktop view" data-vvveb-action="viewport">
+				  <i class="la la-laptop"></i>
+			  </button>
+
+			</div>					
+
+		</div>	
+
+		<div class="align-self-center">
+			<button type="button" class="btn btn-sm me-2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="la la-lg la-history"></i> 
+				<strong class="small align-text-top">0</strong> 
+				<span>Revisions</span>
+			</button>
+		
+			<div class="dropdown-menu revisions-dropdown">
+				
+				<div>
+					<div class="dropdown-item d-flex align-items-center">
+						<span class="flex-grow-1 me-2">
+							<div class="flex-grow-1">
+								Today 
+							</div>
+							<span class="small text-muted">
+								(2023-06-04 10:30:31)
+							</span>
+
+							<a href="#" target="_blank" class="small text-muted">Admin</a>
+						</span>
+						<span>
+							<button class="btn btn-sm btn-outline-primary border-0" title="Load">
+								<i class="la la-arrow-up"></i>
+							</button>
+							<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
+								<i class="la la-trash"></i>
+							</button>
+						</span>
+					</div>
+				</div>					
+				<div>
+					<div class="dropdown-item d-flex align-items-center">
+						<span class="flex-grow-1 me-2">
+							<div class="flex-grow-1">
+								Yesterday 
+							</div>
+							<span class="small text-muted">
+								(2023-06-03 10:30:31)
+							</span>
+
+							<a href="#" target="_blank" class="small text-muted">Admin</a>
+						</span>
+						<span>
+							<button class="btn btn-sm btn-outline-primary border-0" title="Load">
+								<i class="la la-arrow-up"></i>
+							</button>
+							<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
+								<i class="la la-trash"></i>
+							</button>
+						</span>
+					</div>
+				</div>					
+				<div>
+					<div class="dropdown-item d-flex align-items-center">
+						<span class="flex-grow-1 me-2">
+							<div class="flex-grow-1">
+								3 Days ago 
+							</div>
+							<span class="small text-muted">
+								(2023-06-01 10:30:31)
+							</span>
+
+							<a href="#" target="_blank" class="small text-muted">Admin</a>
+						</span>
+						<span>
+							<button class="btn btn-sm btn-outline-primary border-0" title="Load">
+								<i class="la la-arrow-up"></i>
+							</button>
+							<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
+								<i class="la la-trash"></i>
+							</button>
+						</span>
+					</div>
+				</div>				
+				
+			</div>
+		</div>
+
+		<div class="btn-group me-3" role="group">
+		  
+			<div class="btn-group" data-v-check-permission-save>
+				<button class="btn btn-primary btn-icon save-btn" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="/admin/?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
+					<span class="loading d-none">
+					<i class="la la-save"></i>
+					  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+					  </span>
+					  <span>Saving </span> ... </span>
+
+					<span class="button-text">
+					  <i class="icon-save-outline"></i> <span>Save</span>
+					</span>				
+				</button>
+				<button type="button" class="btn btn-primary btn-icon save-btn dropdown-toggle dropdown-toggle-split text-white" 
+					id="showChangesBtn" 
+					data-vvveb-action="showChanges"
+					data-bs-toggle="offcanvas" 
+					aria-expanded="false" 
+					data-bs-target="#save-offcanvas" 
+					aria-controls="save-offcanvas"
+					data-bs-reference="parent"
+					disabled>
+					
+				  <span class="visually-hidden">Toggle primary</span>
+				</button>
+			 </div>
+				  
+		  
+		</div>	
+
+	</div>					
+						
+</div>

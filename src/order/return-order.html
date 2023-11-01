@@ -1,0 +1,69 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Return","scripts":"","base_href":"../"})
+
+<body class="return">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-return>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-people-outline"></i>&ensp;
+						<span>Return</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=order/returns" title="Return action list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to returns</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="return_id" data-v-return-return_id>
+					
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Code</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="code" name="return[code]" data-v-return-code required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-message" class="col-sm-2 col-form-label">Message</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-message" placeholder="message" name="return[message]" data-v-return-message required>
+					</div>
+				 </div>		 
+
+		
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+@@include('../_includes/footer.html')

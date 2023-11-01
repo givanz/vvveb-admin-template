@@ -1,0 +1,2555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <base href="../">
+
+  <title>Vvveb - Site</title>
+
+
+
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+  <div id="container">
+
+    <div class="sidebar">
+
+      <div class="logo">
+
+        <a href="/admin" class="img"></a>
+
+        <a id="color-theme-switch" title="Switch sidebar color theme">
+          <i class="la la-sun"></i>
+        </a>
+
+        <a class="menu-toggle" title="Toggle sidebar width">
+          <i class="icon-menu-outline"></i>
+        </a>
+      </div>
+
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-sm">
+
+        <div class="logo">
+          <!-- h1 class="display-5"><a href="#">M.</a></h1-->
+          <a href="/admin" class="img">
+            <!-- <img src="img/logo.png"> -->
+          </a>
+        </div>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--
+			<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav flex-column" data-v-menu>
+
+					<li class="nav-item" data-v-menu-item>
+						<a class="nav-link" href="/admin" data-bs-target="#posts"
+						   data-v-menu-item-url>
+							<i class="icon-pulse-outline" data-v-menu-item-icon></i>
+							<img src class="icon-img" data-v-menu-item-icon-img></i>
+							<span class="title" data-v-menu-item-name>Dashboard</span>
+							<span class="text-muted" data-v-menu-item-subtitle>Subtitle</span>
+							<span class="badge badge-primary" data-v-menu-item-badge></span>
+						</a>
+
+
+						<ul class="collapse sub-menu fade" aria-labelledby="Preview" id="posts" data-v-submenu>
+
+							<li class="nav-item" data-v-submenu-item>
+								<a href="/adminindex.php?module=posts" class="nav-link"
+								   data-v-submenu-item-url>
+								   
+								   <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
+								   <img src class="icon-img" data-v-submenu-item-icon-img></i>
+								   <span data-v-submenu-item-name>Submenu</span>
+								   <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
+								   <span class="badge badge-primary" data-v-submenu-item-badge></span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+			
+			-->
+
+        <div class="collapse navbar-collapse" id="sidebarNav">
+
+          <ul class="nav navbar-nav flex-column" data-v-menu>
+
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block " href="/admin" data-v-menu-item-url>
+                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
+                <img src="#" class="icon-img" data-v-menu-item-icon-img>
+                <span class="title" data-v-menu-item-name>Dashboard</span>
+                <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
+                <span class="badge badge-primary" data-v-menu-item-badge></span>
+              </a>
+
+              <a class="nav-link mobile d-block d-sm-none" href="/admin" data-v-menu-item-url>
+                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
+                <img src="#" class="icon-img" data-v-menu-item-icon-img>
+                <span class="title" data-v-menu-item-name>Dashboard</span>
+                <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
+                <span class="badge badge-primary" data-v-menu-item-badge></span>
+              </a>
+
+
+              <ul class="dropdown-menu sub-menu fade" aria-labelledby="Preview" id="posts" data-v-submenu>
+
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/adminindex.php?module=posts" class="nav-link" data-v-submenu-item-url>
+
+                    <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
+                    <img src="#" class="icon-img" data-v-submenu-item-icon-img>
+                    </i>
+                    <span data-v-submenu-item-name>Submenu</span>
+                    <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
+                    <span class="badge badge-primary" data-v-submenu-item-badge></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-target="#menu-edit">
+                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Edit website</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-target="#menu-edit">
+                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Edit website</span>
+              </a>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-target="#menu-post">
+                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Posts</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-target="#menu-post">
+                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Posts</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/posts&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Posts</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/tags&amp;type=post&amp;taxonomy_id=2" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-tags" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Tags</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/categories&amp;type=post&amp;taxonomy_id=1" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>General</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/comments&amp;status=0&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-comments" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Comments</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-target="#menu-pages">
+                <i class="icon-document-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Pages</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-target="#menu-pages">
+                <i class="icon-document-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Pages</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/posts&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Pages</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new page</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/menus&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Menus</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-target="#menu-medialibrary">
+                <i class="icon-images-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Media library</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-target="#menu-medialibrary">
+                <i class="icon-images-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Media library</span>
+              </a>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-target="#menu-users">
+                <i class="icon-people-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Users</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-target="#menu-users">
+                <i class="icon-people-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Users</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/users" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-user" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Users</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new user</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Groups</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/user-groups" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-user-friends" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>User groups</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new group</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-target="#menu-messages">
+                <i class="icon-mail-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Messages</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-target="#menu-messages">
+                <i class="icon-mail-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Messages</span>
+              </a>
+            </li>
+            <li class="nav-item  heading" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-target="#menu-ecommerce">
+                <span class="title" data-v-menu-item-name>Ecommerce</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-target="#menu-ecommerce">
+                <span class="title" data-v-menu-item-name>Ecommerce</span>
+              </a>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-target="#menu-sales">
+                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Sales</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-target="#menu-sales">
+                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Sales</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/orders" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Orders</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/subscriptions" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-retweet" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Subscriptions</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/returns" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-undo" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Returns</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Marketing</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/coupons" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-percentage" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Discount coupons</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=order/vouchers" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-gift" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Gift vouchers</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-middle columns-2" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-target="#menu-product">
+                <i class="icon-cube-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Products</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-target="#menu-product">
+                <i class="icon-cube-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Products</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/products&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-box" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Products</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/tags&amp;type=product&amp;taxonomy_id=5" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-tags" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Tags</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/categories&amp;type=product&amp;taxonomy_id=4" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Relations</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/manufacturers&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-industry" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Manufacturers</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/vendors&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-store" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Vendors</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Content</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/digital-assets&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-cloud-download-alt" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Digital assets</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/options&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-stream" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Options</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/attribute-groups&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-list" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Attributes</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>User feedback</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/product-reviews&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-comment" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Reviews</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=product/product-questions&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-question-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Questions</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item  heading" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-target="#menu-configuration">
+                <span class="title" data-v-menu-item-name>Configuration</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-target="#menu-configuration">
+                <span class="title" data-v-menu-item-name>Configuration</span>
+              </a>
+            </li>
+            <li class="nav-item align-top" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-target="#menu-plugins">
+                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Plugins</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-target="#menu-plugins">
+                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Plugins</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=plugin/plugins" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plug" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Installed Plugins</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new plugin</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=editor/code&amp;type=plugins" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-code" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Code editor</span>
+                  </a>
+                </li>
+                <li class="nav-item  heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Plugins</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=plugins/contact-form/messages" class="nav-link " data-v-submenu-item-url>
+                    <img src="/plugins/contact-form/contact-form.svg" class="icon-img" data-v-submenu-item-icon-img>
+                    <span data-v-submenu-item-name>Contact form</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=editor/editor&amp;url=/plugins/cookie-notice/notice.html&amp;template=/plugins/cookie-notice/notice.html" class="nav-link " data-v-submenu-item-url>
+                    <img src="/plugins/cookie-notice/cookie-notice.svg" class="icon-img" data-v-submenu-item-icon-img>
+                    <span data-v-submenu-item-name>Cookie notice</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-target="#menu-themes">
+                <i class="icon-copy-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Themes</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-target="#menu-themes">
+                <i class="icon-copy-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Themes</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=theme/themes" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-brush" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Installed Themes</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=editor/code&amp;type=themes" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-code" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Code editor</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item " data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-target="#menu-field">
+                <i class="icon-reader-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Fields</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-target="#menu-field">
+                <i class="icon-reader-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Fields</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=field/field-groups" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-brush" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Field groups</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-top mega-menu" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-target="#menu-settings">
+                <i class="icon-settings-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Settings</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-target="#menu-settings">
+                <i class="icon-settings-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Settings</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=settings/sites" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-stop la-90" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Sites</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/sites" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-stop" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Sites</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Add new</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=admin/users" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-user" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Admin users</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/users" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Users</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/user" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user-plus" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Add new user</span>
+                      </a>
+                    </li>
+                    <li class="nav-item  heading" data-v-submenu-item>
+                      <a href class="nav-link " data-v-submenu-item-url>
+                        <span data-v-submenu-item-name>Roles</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/roles" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user-cog" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Manage Roles</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=admin/role" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-user-tag" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Add Role</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=content/menus" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Content</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/taxonomies" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-boxes" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Taxonomies</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/posts" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Custom posts</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/products" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-box" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Custom products</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-stream" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Fields</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item align-top" data-v-submenu-item>
+                  <a href="/admin/?module=user/users" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-shopping-cart" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Ecommerce</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/subscription-plans" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-receipt" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Subscriptions plans</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/tax-types" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Taxes</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/tax-types" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Tax types</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/tax-rates" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Tax rates</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/order-statuses" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-tags" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Statuses</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/order-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Order</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/stock-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-box" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Stock</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/subscription-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-retweet" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Subscription</span>
+                          </a>
+                        </li>
+                        <li class="nav-item  heading" data-v-submenu-item>
+                          <a href class="nav-link " data-v-submenu-item-url>
+                            <span data-v-submenu-item-name>Returns</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-statuses" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-undo" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Return status</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-actions" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-exchange-alt" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Return actions</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-reasons" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-undo-alt" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Return reasons</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/discount" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-ruler" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Classes</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/length-types" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-ruler-horizontal" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Length</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=settings/weight-types" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-box" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Weight</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=localization/languages" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-flag" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Localization</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=localization/languages" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-language" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Languages</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=localization/currencies" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-coins" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Currencies</span>
+                      </a>
+                    </li>
+                    <li class="nav-item align-top" data-v-submenu-item>
+                      <a href="/admin/?module=localization/region-groups" class="nav-link items" data-v-submenu-item-url>
+                        <i class="la la-globe" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Geo location</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=localization/countries" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-flag" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Countries</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=localization/regions" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-city" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Regions</span>
+                          </a>
+                        </li>
+                        <li class="nav-item " data-v-submenu-item>
+                          <a href="/admin/?module=localization/region-groups" class="nav-link " data-v-submenu-item-url>
+                            <i class="la la-atlas" data-v-submenu-item-icon></i>
+                            <span data-v-submenu-item-name>Region Groups</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=settings/email" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-tools" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>System</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=settings/email" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-envelope" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Email settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-top" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-target="#menu-tools">
+                <i class="icon-globe-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Tools</span>
+              </a>
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-target="#menu-tools">
+                <i class="icon-globe-outline" data-v-menu-item-icon></i>
+                <span class="title" data-v-menu-item-name>Tools</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/cache" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-circle-notch" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Cache</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/backup" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-server" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Backup</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/cron" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-history la-90" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Cron job</span>
+                  </a>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/import" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-upload" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Import/Export</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item  heading" data-v-submenu-item>
+                      <a href class="nav-link " data-v-submenu-item-url>
+                        <span data-v-submenu-item-name>Content</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/import" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-file-import" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Import content</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/export" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-file-export" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Export content</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/systeminfo" class="nav-link items" data-v-submenu-item-url>
+                    <i class="la la-info-circle" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>System info</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " aria-labelledby="Preview" id="posts" data-v-submenu>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/systeminfo" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-info" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>System Info</span>
+                      </a>
+                    </li>
+                    <li class="nav-item " data-v-submenu-item>
+                      <a href="/admin/?module=tools/errorlog" class="nav-link " data-v-submenu-item-url>
+                        <i class="la la-bug" data-v-submenu-item-icon></i>
+                        <span data-v-submenu-item-name>Error log</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item " data-v-submenu-item>
+                  <a href="/admin/?module=tools/update" class="nav-link " data-v-submenu-item-url>
+                    <i class="la la-sync" data-v-submenu-item-icon></i>
+                    <span data-v-submenu-item-name>Update</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+
+      </nav> <!-- /navbar -->
+
+    </div>
+
+
+
+    <div class="main">
+
+      <div class="top-header">
+
+        <div class="btn-group" data-v-component-sites>
+          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            <i class="icon-eye-outline"></i>
+            <span>View live website</span>
+          </button>
+
+
+          <div class="dropdown-menu">
+            <div data-v-site>
+              <a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+                <!-- i class="la la-circle la-lg me-2"></i -->
+                <span data-v-site-name class="flex-grow-1">Default website</span>
+                <i class="la la-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div data-v-site>
+              <a class="dropdown-item" href="#" data-v-site target="_blank">
+                <!--- <i class="icon-eye-outline la-lg me-2"></i> -->
+                <span data-v-site-name class="flex-grow-1">Blog</span>
+                <i class="la la-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/sites"}'>
+              <span class="flex-grow-1">Manage sites</span>
+              <i class="la la-edit ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-reload-circle-outline"></i>
+            <span>Clear cache</span>
+          </button>
+
+          <div class="dropdown-menu">
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
+                <span class="flex-grow-1">Assets</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
+                <span class="flex-grow-1">Templates</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
+                <span class="flex-grow-1">Database</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
+                <span class="flex-grow-1">Page cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
+                <span class="flex-grow-1">Image cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
+                <span class="flex-grow-1">Model cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+            <div class="dropdown-divider"></div>
+
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
+                <span class="flex-grow-1">All cache</span>
+                <i class="la la-circle-notch"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="float-end">
+
+          <div class="btn-group top-notifications" data-v-component-notifications>
+            <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="la la-bell"></i>
+              <span class="badge bg-primary-subtle text-body " data-v-if="count > 0" data-v-notification-count>5</span>
+            </button>
+
+            <div class="dropdown-menu">
+              <div data-v-if="notifications.updates.core.hasUpdate">
+                <h6 class="dropdown-header">Updates</h6>
+                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                  <i class="icon-flash-outline text-success"></i>
+                  <span>Update available</span>
+                  <strong class="badge bg-success small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
+                </a>
+                <div class="dropdown-divider"></div>
+              </div>
+              <div data-v-if-not="notifications.updates.core.hasUpdate">
+                <h6 class="dropdown-header">Updates</h6>
+                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                  <i class="icon-flash-outline"></i>
+                  <span>Up to date</span>
+                  <strong class="badge bg-primary small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
+                </a>
+                <div class="dropdown-divider"></div>
+              </div>
+
+              <div data-v-group>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                    <i class="" data-v-group-icon></i>
+                    <span data-v-group-notification-name>New orders</span>
+                    <strong class="badge bg-primary-subtle text-body mx-2 bg-primary-subtle text-body" data-v-group-notification-count>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                    <i class="la la-file-invoice" data-v-group-icon></i>
+                    <span data-v-group-notification-name>Returns</span>
+                    <strong class="badge bg-danger small" data-v-group-notification-count>2</strong>
+                  </a>
+                </div>
+                <div class="dropdown-divider"></div>
+              </div>
+
+              <div data-v-group>
+                <div class="dropdown-divider"></div>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>New comments</span>
+                    <strong class="badge bg-primary small mx-2" data-v-notification-value>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>Spam comments</span>
+                    <strong class="badge bg-danger small" data-v-notification-value>2</strong>
+                  </a>
+                </div>
+              </div>
+
+              <div data-v-group>
+                <div class="dropdown-divider"></div>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>New reviews</span>
+                    <strong class="badge bg-primary small mx-2" data-v-notification-value>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <i class="la la-comment"></i>
+                    <span data-v-group-notification-name>Spam questions</span>
+                    <strong class="badge bg-danger small" data-v-notification-value>2</strong>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="btn-group" data-v-component-sites>
+            <form method="post">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <i class="la la-sitemap me-1"></i>
+                <span data-v-site-info-name>Default site</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+                <div data-v-site>
+                  <button class="dropdown-item" href="#" data-v-site-site_id name="site" value="default">
+                    <i class="la la-window-minimize la-lg me-2" data-v-if="state = 'live'" data-v-site-icon></i>
+                    <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+                    <span data-v-site-name>Default website</span>
+                  </button>
+                </div>
+
+                <div data-v-site>
+                  <a class="dropdown-item" href="#" data-v-site name="site" value="default">
+                    <i class="la la-window-minimize la-lg me-2" data-v-site-icon></i>
+                    <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+                    <span data-v-site-name>Blog</span>
+                  </a>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/site"}'>
+                  <i class="la la-plus me-2"></i>
+                  Add new
+                </a>
+              </div>
+            </form>
+          </div>
+
+          <div class="btn-group" data-v-component-states>
+            <form method="post">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <i class="la text-success me-1" data-v-state-info-active_icon></i>
+                <span data-v-state-info-active_name>Live</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
+                    <i class="la la-broadcast-tower la-lg me-2" data-v-state-icon></i>
+                    <span data-v-state-name>
+                      Live
+                    </span>
+                  </button>
+                </div>
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to maintenance?')" name="state" data-state="maintenance">
+                    <i class="la la-wrench la-lg me-2" data-v-state-icon></i>
+                    <span data-v-state-name>
+                      Maintenance
+                    </span>
+                  </button>
+                </div>
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')" name="state" data-state="coming soon">
+                    <i class="la la-clock la-lg me-2" data-v-state-icon></i>
+                    <span data-v-state-name>
+                      Coming soon
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="btn-group" data-v-component-languages>
+            <form method="post">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <i class="la la-flag me-1"></i>
+                <span data-v-language-info-name>English</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+
+                <div data-v-language>
+                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                    <i class="la la-flag la-lg me-2"></i>
+                    <span data-v-language-name>English</span>
+                  </button>
+                </div>
+
+                <div data-v-language>
+                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                    <i class="la la-flag la-lg me-2"></i>
+                    <span data-v-language-name>Romanian</span>
+                  </button>
+                </div>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-v-url-params='{"module":"localization/languages"}'>
+                  <i class="la la-plus me-2"></i>
+                  Add new
+                </a>
+              </div>
+            </form>
+          </div>
+
+          <div class="vr align-middle mx-1"></div>
+
+
+          <a target="_blank" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn text-body" aria-haspopup="true" aria-expanded="false">
+            <i class="la la-lg la-question-circle lh-1"></i>
+            <span>Docs</span>
+          </a>
+
+
+          <div class="btn-group" data-v-component-admin>
+
+            <form action="/admin?module=user/login" method="post" enctype="multipart/form-data" data-v-url-params='{"module":"user/login"}'>
+
+              <input type="hidden" name="csrf" data-v-csrf>
+
+
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="la la-user"></i>
+                <span data-v-admin-display_name>Admin</span>
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-end">
+                <a class="dropdown-item" href="#" data-v-admin-edit-url>
+                  <span>Edit Profile</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item">
+
+                  <input type="hidden" name="logout">
+
+                  <button type="submit" value="logout" class="btn btn-primary w-100">
+
+                    <span class="loading d-none">
+                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+                      </span>
+                      <span>Loading ...</span>...
+                    </span>
+
+                    <span class="button-text">
+                      Logout
+                    </span>
+
+                  </button>
+
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <form id="settings-form" action="" method="post" data-v-product>
+        <input type="hidden" name="action" id="action" value="save">
+        <div class="actions">
+          <div class="title">
+            <h4 class="text-muted my-3">
+              <i class="icon-browsers-outline"></i>
+              <span class="ms-2">Site</span>
+            </h4>
+          </div>
+
+
+          <div class="btns">
+            <a href="/admin/?module=settings/sites" title="Sites list" class="btn btn-outline-secondary pe-3">
+              <i class="la la-arrow-left"></i>
+              <span>Sites list</span>
+            </a>
+
+            <button type="submit" href="" class="btn btn-primary btn-icon ms-1">
+              <i class="icon-create-outline"></i>
+              <span>Save site</span>
+            </button>
+          </div>
+        </div>
+        <div>
+
+          <div id="main-content">
+
+            <div class="content clearfix site px-2">
+
+              <div class="notifications" data-v-notifications>
+
+                <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+
+                  <div class="icon">
+                    <i class="la la-exclamation-triangle"></i>
+                  </div>
+
+                  <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                    Vvveb 0.2 is now available! <a href="update">Update now</a>
+                  </div>
+
+
+                  <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <!-- <i class="la la-times"></i> -->
+                    </span>
+                  </button>
+                </div>
+
+                <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
+
+                  <div class="icon">
+                    <i class="la la-check-circle"></i>
+                  </div>
+
+                  <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                    You successfully read this important alert message.
+                  </div>
+
+                  <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <!-- <i class="la la-times"></i> -->
+                    </span>
+                  </button>
+                </div>
+
+                <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+                  <div class="icon">
+                    <i class="la la-info-circle"></i>
+                  </div>
+
+                  <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                    You successfully read this important alert message.
+                  </div>
+
+                  <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <!-- <i class="la la-times"></i> -->
+                    </span>
+                  </button>
+                </div>
+
+              </div>
+
+              <div class="content clearfix settings" data-v-site>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General</button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="contact" aria-selected="false">Local</button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="contact" aria-selected="false">Media settings</button>
+                  </li>
+
+                  <!--
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="mail-tab" data-bs-toggle="tab" data-bs-target="#mail" type="button" role="tab" aria-controls="contact" aria-selected="false">Mail</button>
+					  </li>					 
+					  -->
+
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false">Comments</button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="mail_notifications-tab" data-bs-toggle="tab" data-bs-target="#mail_notifications" type="button" role="tab" aria-controls="contact" aria-selected="false">Mail notifications</button>
+                  </li>
+                  <!--
+					   <li class="nav-item" role="presentation">
+						<button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
+					  </li> -->
+                </ul>
+
+                <div class="tab-content">
+
+                  <div class="tab-pane show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                    <div class="mb-3 row">
+                      <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input-site-name" placeholder="Title" name="site[name]" data-v-site-name required>
+                      </div>
+                    </div>
+                    <!--
+<div class="mb-3 row">
+   <div class="col-sm-2">
+	   <label for="input-site-host" class="col-form-label">
+		<span>Site domain/subdomain</span>
+		<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+		<br/>
+		<span class="form-text">Used to generate links for the site</span>
+	   </label>
+		<br/>
+		<a class="" data-bs-toggle="collapse" data-bs-target="#siteKeyInput" aria-expanded="false">
+			Advanced <i class="la la-lg la-arrow-down"></i>
+		</a>
+   </div>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-site-host" placeholder="subdomain.mysite.com" name="site[host]" data-v-site-host required />
+	  
+		<span class="form-text">Use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*</span>
+   </div>
+</div>
+-->
+                    <div class="mb-3 row">
+
+                      <label for="input-site-host" class="col-sm-2 col-form-label">
+                        <span>Site domain/subdomain</span>
+                        <span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*">
+                          <i class="la la-lg la-question-circle text-primary"></i>
+                        </span>
+                        <br />
+                        <span class="form-text">Used to match site and generate links</span>
+                      </label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host required>
+
+                          <button class="input-group-text" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
+                            <i class="la la-lg la-question-circle text-primary"></i>
+                          </button>
+
+                        </div>
+
+
+                        <div class="collapse" id="siteKeyInfo">
+                          <div class="card card-body text-bg-body-tertiary">
+                            <span>
+                              <i class="la la-info-circle fs-2 px-2 float-end"></i>
+                              <span>Use * wildcard to match any subdomain or domain.</span>
+                              <br>
+                              <span>For example:</span>
+                              <span class="badge border text-body">shop.*.*</span>
+                              <span>for your shop subdomain</span>
+                              <br>
+                              <span class="badge border text-body">blog.mydomain.*</span>
+                              <span>to match blog on all tld's</span>
+                              <br>
+                              <span class="badge border text-body">*.mydomain.*</span>
+                              <span>to match all subdomains and tld.</span>
+                              <br />
+                              <span>Use</span>
+                              <span class="badge border text-body">*.*.*</span>
+                              <span>to match all other hosts.</span>
+                              <br />
+                              <span>Must be unique for each site.</span>
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                      <label for="input-site-theme" class="col-sm-2 col-form-label">Theme</label>
+                      <div class="col-sm-10">
+
+                        <select class="theme-list form-select flex-fill" name="site[theme]" id="input-site-theme" data-v-theme-list>
+                          <option value="1">
+                            <img src="">
+                            Theme 1
+                          </option>
+
+                          <option value="2">
+                            <img src="">
+                            Theme 2
+                          </option>
+                        </select>
+
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="input-site-template" class="col-sm-2 col-form-label">Home template</label>
+                      <div class="col-sm-10">
+
+                        <select class="template-list form-select flex-fill" name="site[template]" id="input-site-template" data-v-template-list>
+                          <option value="" title="Default template">-- Default template --</option>
+
+                          <option value="published" data-v-option>Published</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Description</label>
+
+                    <div class="mb-3 row">
+                      <label for="input-title" class="col-sm-2 col-form-label">Site title</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input-title" placeholder="Title" name="settings[title]" data-v-setting="title" required>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="input-description" class="col-sm-2 col-form-label">Site description</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input-description" placeholder="Description" name="settings[description]" data-v-setting="description" required>
+                      </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Meta keywords</label>
+                      <div class="col-sm-10">
+                        <input name="settings[meta-keywords]" value="" placeholder="keywords" class="form-control" type="text" data-v-setting="meta-keywords" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Meta description</label>
+                      <div class="col-sm-10">
+                        <input name="settings[meta-description]" value="" placeholder="description" class="form-control" type="text" data-v-setting="meta-description" />
+                      </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                      <label for="admin-email" class="col-sm-2 col-form-label">Administration Email Address</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="admin-email" placeholder="Administration Email Address" name="settings[admin-email]" data-v-setting="admin-email" required>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="contact-email" class="col-sm-2 col-form-label">Contact Email Address</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="contact-email" placeholder="Administration Email Address" name="settings[contact-email]" data-v-setting="contact-email">
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="phone-number" class="col-sm-2 col-form-label">Phone number</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="phone-number" placeholder="Phone number" name="settings[phone-number]" data-v-setting="phone-number">
+                      </div>
+                    </div>
+
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Logo</label>
+
+                    <div class="mb-3 row">
+                      <label for="input-title" class="col-sm-2 col-form-label">Site logo</label>
+                      <div class="col-sm-10">
+
+                        <div class="d-inline-block px-2">
+
+                          <label for="input-title" class="form-label d-block mb-3">Fav icon</label>
+
+                          <input type="hidden" data-v-image name="settings[favicon]" name="settings[favicon]" data-v-setting="favicon" id="favicon-input" value="">
+
+                          <img data-v-image src="img/placeholder.svg" alt="" id="favicon-thumb" data-v-placeholder="" data-media-gallery data-target-input="#favicon-input" data-target-thumb="#favicon-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="favicon-src">
+
+
+                          <div class="py-3">
+                            <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#favicon-input" data-target-thumb="#favicon-thumb" data-type="single">
+                              <i class="la la-image la-lg"></i>
+                              <span>Set image</span>
+                            </button>
+                          </div>
+
+                        </div>
+
+                        <div class="d-inline-block px-2">
+                          <label for="input-title" class="form-label d-block mb-3">Site logo</label>
+
+                          <input type="hidden" data-v-image name="settings[logo]" name="settings[logo]" data-v-setting="logo" id="logo-input" value="">
+
+                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-input" data-target-thumb="#logo-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="logo-src">
+
+
+                          <div class="py-3">
+                            <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#logo-input" data-target-thumb="#logo-thumb" data-type="single">
+                              <i class="la la-image la-lg"></i>
+                              <span>Set image</span>
+                            </button>
+                          </div>
+
+                        </div>
+
+                        <div class="d-inline-block px-2">
+                          <label for="input-title" class="form-label d-block mb-3">Logo sticky</label>
+
+                          <input type="hidden" data-v-image name="settings[logo-sticky]" name="settings[logo-sticky]" data-v-setting="logo-sticky" id="logo-sticky-input" value="">
+
+                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-sticky-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-sticky-input" data-target-thumb="#logo-sticky-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="logo-sticky-src">
+
+
+                          <div class="py-3">
+                            <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#logo-sticky-input" data-target-thumb="#logo-sticky-thumb" data-type="single">
+                              <i class="la la-image la-lg"></i>
+                              <span>Set image</span>
+                            </button>
+                          </div>
+
+                        </div>
+
+                        <div class="d-inline-block px-2">
+                          <label for="input-title" class="form-label d-block mb-3">Logo dark</label>
+
+                          <input type="hidden" data-v-image name="settings[logo-dark]" name="settings[logo-dark]" data-v-setting="logo-dark" id="logo-dark-input" value="">
+
+                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-dark-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-dark-input" data-target-thumb="#logo-dark-thumb" data-type="single" class="img-thumbnail bg-dark" style="max-width:200px;" data-v-setting="logo-dark-src">
+
+
+                          <div class="py-3">
+                            <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#logo-dark-input" data-target-thumb="#logo-dark-thumb" data-type="single">
+                              <i class="la la-image la-lg"></i>
+                              <span>Set image</span>
+                            </button>
+                          </div>
+
+                        </div>
+
+                        <div class="d-inline-block px-2">
+                          <label for="input-title" class="form-label d-block mb-3">Logo dark sticky</label>
+
+                          <input type="hidden" data-v-image name="settings[logo-dark-sticky]" name="settings[logo-dark-sticky]" data-v-setting="logo-dark-sticky" id="logo-dark-sticky-input" value="">
+
+                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-dark-sticky-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-dark-sticky-input" data-target-thumb="#logo-dark-sticky-thumb" data-type="single" class="img-thumbnail bg-dark" style="max-width:200px;" data-v-setting="logo-dark-sticky-src">
+
+
+                          <div class="py-3">
+                            <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#logo-dark-sticky-input" data-target-thumb="#logo-dark-sticky-thumb" data-type="single">
+                              <i class="la la-image la-lg"></i>
+                              <span>Set image</span>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane" id="local" role="tabpanel" aria-labelledby="local-tab">
+                    <div class="mb-3 row">
+                      <label for="input-site-title" class="col-sm-2 col-form-label">Address</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input-site-title" placeholder="Address" name="settings[address]" name="settings[address]" data-v-setting="address">
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="input-site-title" class="col-sm-2 col-form-label">Geocode</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input-site-title" placeholder="Geocode" name="settings[geocode]" name="settings[geocode]" data-v-setting="geocode">
+                      </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                      <label for="input-country" class="col-sm-2 col-form-label">Country</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[country_id]" data-v-setting="country_id" id="input-country" data-v-site-country_id>
+                          <option value="1" data-v-option>Country 1</option>
+                          <option value="2" data-v-option>Country 2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="input-region" class="col-sm-2 col-form-label">Region / State</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[region_id]" data-v-setting="region_id" id="input-region" data-v-site-region_id>
+                          <option value="0"> --- Please Select --- </option>
+                          <option value="1" data-v-option>region 1</option>
+                          <option value="2" data-v-option>region 2</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Defaults</label>
+
+                    <div class="row mb-3">
+                      <label for="input-language" class="col-sm-2 col-form-label">Default Language</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[language_id]" data-v-setting="language_id" id="input-language" data-v-site-language_id>
+                          <option value="en-gb" data-v-option>English</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="input-currency" class="col-sm-2 col-form-label">Default Currency</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[currency_id]" data-v-setting="currency_id" id="input-currency" data-v-site-currency_id>
+                          <option value="AUD" data-v-option>Australian Dollar</option>
+                          <option value="CNY" data-v-option>Chinese Yuan Renminbi</option>
+                          <option value="EUR" data-v-option>Euro</option>
+                          <option value="INR" data-v-option>Indian Rupee</option>
+                          <option value="GBP" data-v-option>Pound Sterling</option>
+                          <option value="RUB" data-v-option>Russian Ruble</option>
+                          <option value="USD" data-v-option>US Dollar</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="input-length-type" class="col-sm-2 col-form-label">Length Class</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[length_type_id]" data-v-setting="length_type_id" id="input-length-type" data-v-site-length_type_id>
+                          <option value="1" data-v-option>Centimeter</option>
+                          <option value="2" data-v-option>Millimeter</option>
+                          <option value="3" data-v-option>Inch</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="input-weight-type" class="col-sm-2 col-form-label">Weight Class</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[weight_type_id]" data-v-setting="weight_type_id" id="input-weight-type" data-v-site-weight_type_id>
+                          <option value="1" data-v-option>Kilogram</option>
+                          <option value="2" data-v-option>Gram</option>
+                          <option value="3" data-v-option>Pound </option>
+                          <option value="4" data-v-option>Ounce</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Time</label>
+
+                    <div class="mb-3 row">
+                      <label for="input-site-title" class="col-sm-2 col-form-label">Timezone</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" id="timezone" name="settings[timezone]" data-v-setting="timezone" data-v-site-timezone>
+                          <option value="0"> --- Please Select --- </option>
+                          <option value="Africa/Abidjan" data-v-option>Abidjan</option>
+                          <option value="Africa/Accra" data-v-option>Accra</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="input-site-title" class="col-sm-2 col-form-label">Date format
+                      </label>
+                      <div class="col-sm-10">
+                        <label class="form-check mb-2" data-v-date_format>
+                          <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="F j, Y" data-v-date_format-value>
+                          <span class="form-check-label align-middle">
+                            <span data-v-date_format-text>November 12, 2023</span>
+                            <code class="bg-body-tertiary px-1" data-v-date_format-value>F j, Y</code>
+                          </span>
+                        </label>
+                        <label class="form-check mb-2" data-v-date_format>
+                          <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="Y-m-d">
+                          <span class="form-check-label align-middle">2023-11-12
+                            <code class="bg-body-tertiary px-1">Y-m-d</code>
+                          </span>
+                        </label>
+                        <label class="form-check mb-2" data-v-date_format>
+                          <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="m/d/Y">
+                          <span class="form-check-label align-middle">11/12/2023
+                            <code class="bg-body-tertiary px-1">m/d/Y</code>
+                          </span>
+                        </label>
+                        <label class="form-check mb-2" data-v-date_format>
+                          <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" value="d/m/Y">
+                          <span class="form-check-label align-middle">12/11/2023
+                            <code class="bg-body-tertiary px-1">d/m/Y</code>
+                          </span>
+                        </label>
+                        <label class="form-check mb-2">
+                          <input class="form-check-input" type="radio" name="settings[date_format]" data-v-setting="date_format" id="date_format_custom" value="custom">
+                          <span class="form-check-label align-middle">Custom:
+                            <span class="visually-hidden"> enter a custom date format in the following field
+                            </span>
+                          </span>
+                        </label>
+                        <label for="date_format_custom" class="visually-hidden">Custom date format:
+                        </label>
+                        <input type="text" name="settings[date_format]" id="custom_date_format" data-v-setting="date_format" value="" class="form-control" data-v-site-date_format>
+                        <div class="mt-2">
+                          <strong>Preview:</strong>
+                          <span class="date-example" data-v-date_example>November 12, 2023</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="input-site-title" class="col-sm-2 col-form-label">Time format
+                      </label>
+                      <div class="col-sm-10">
+                        <fieldset>
+                          <legend class="visually-hidden">
+                            <span>Time Format
+                            </span>
+                          </legend>
+                          <label class="form-check mb-2" data-v-time_format>
+                            <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" value="g:i a" data-v-time_format-value>
+                            <span class="form-check-label align-middle" class="form-check-label">
+                              <span data-v-time_format-text>9:45 am</span>
+                              <code class="bg-body-tertiary px-1" data-v-time_format-value>g:i a</code>
+                            </span>
+                          </label>
+                          <label class="form-check" data-v-time_format>
+                            <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" value="g:i A" data-v-site-time_format>
+                            <span class="form-check-label">9:45 AM
+                              <code>g:i A
+                              </code>
+                            </span>
+                          </label>
+                          <label class="form-check" data-v-time_format>
+                            <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" value="H:i" data-v-site-time_format>
+                            <span class="form-check-label">09:45
+                              <code>H:i
+                              </code>
+                            </span>
+                          </label>
+                          <label class="form-check">
+                            <input class="form-check-input" type="radio" name="settings[time_format]" data-v-setting="time_format" id="time_format_custom" value="custom">
+                            <span class="form-check-label">Custom:</span>
+                            </span>
+                          </label>
+                          <input type="text" name="settings[time_format]" id="custom_time_format" data-v-setting="time_format" value="" class="form-control" data-v-site-time_format>
+                          <div class="mt-2">
+                            <strong>Preview: </strong>
+                            <span class="time-example" data-v-time_example>9:45 am</span>
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="tab-pane" id="media" role="tabpanel" aria-labelledby="media-tab">
+                    <div class="row mb-3 required">
+                      <label for="category-width" class="col-md-2 col-form-label mt-4">Post image size</label>
+                      <div class="col-md-10">
+
+                        <div class="row">
+
+                          <div class="col-md-4">
+                            <label for="category-width" class="form-label">Large</label>
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Width</label>&nbsp;
+                              <input type="number" name="settings[post_large_width]" data-v-setting="post_large_width" value="1024" placeholder="Width" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Height</label>
+                              <input type="number" name="settings[post_large_height]" data-v-setting="post_large_height" value="0" placeholder="Height" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Method</label>
+                              <select data-v-resize name="settings[post_large_method]" data-v-setting="post_large_method" class="form-select">
+                                <option value="s">Stretch</option>
+                                <option value="c">Crop</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <label for="category-width" class="form-label">Medium</label>
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Width</label>&nbsp;
+                              <input type="number" name="settings[post_medium_width]" data-v-setting="post_medium_width" value="400" placeholder="Width" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Height</label>
+                              <input type="number" name="settings[post_medium_height]" data-v-setting="post_medium_height" value="0" placeholder="Height" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Method</label>
+                              <select data-v-resize name="settings[post_medium_method]" data-v-setting="post_medium_method" class="form-select">
+                                <option value="s">Stretch</option>
+                                <option value="c">Crop</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <label for="category-width" class="form-label">Thumb</label>
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Width</label>&nbsp;
+                              <input type="number" name="settings[post_thumb_width]" data-v-setting="post_thumb_width" value="150" placeholder="Width" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Height</label>
+                              <input type="number" name="settings[post_thumb_height]" data-v-setting="post_thumb_height" value="0" placeholder="Height" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Method</label>
+                              <select data-v-resize name="settings[post_thumb_method]" data-v-setting="post_thumb_method" class="form-select">
+                                <option value="s">Stretch</option>
+                                <option value="c">Crop</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3 required">
+                      <label for="category-width" class="col-md-2 col-form-label mt-4">Product image size</label>
+                      <div class="col-md-10">
+
+                        <div class="row">
+
+                          <div class="col-md-4">
+                            <label for="category-width" class="form-label">Large</label>
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Width</label>&nbsp;
+                              <input type="number" name="settings[product_large_width]" data-v-setting="product_large_width" value="1024" placeholder="Width" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Height</label>
+                              <input type="number" name="settings[product_large_height]" data-v-setting="product_large_height" value="0" placeholder="Height" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Method</label>
+                              <select data-v-resize name="settings[product_large_method]" data-v-setting="product_large_method" class="form-select">
+                                <option value="s">Stretch</option>
+                                <option value="c">Crop</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <label for="category-width" class="form-label">Medium</label>
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Width</label>&nbsp;
+                              <input type="number" name="settings[product_medium_width]" data-v-setting="product_medium_width" value="400" placeholder="Width" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Height</label>
+                              <input type="number" name="settings[product_medium_height]" data-v-setting="product_medium_height" value="0" placeholder="Height" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Method</label>
+                              <select data-v-resize name="settings[product_medium_method]" data-v-setting="product_medium_method" class="form-select">
+                                <option value="s">Stretch</option>
+                                <option value="c">Crop</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <label for="category-width" class="form-label">Thumb</label>
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Width</label>&nbsp;
+                              <input type="number" name="settings[product_thumb_width]" data-v-setting="product_thumb_width" value="150" placeholder="Width" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Height</label>
+                              <input type="number" name="settings[product_thumb_height]" data-v-setting="product_thumb_height" value="0" placeholder="Height" class="form-control">
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="pe-4 pt-2">Method</label>
+                              <select data-v-resize name="settings[product_thumb_method]" data-v-setting="product_thumb_method" class="form-select">
+                                <option value="s">Stretch</option>
+                                <option value="c">Crop</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="alert alert-light d-flex align-items-center" role="alert">
+                      <i class="bi flex-shrink-0 me-2 la la-2x la-info-circle"></i>
+                      <div>
+                        To keep image proportion set either height or width to 0 (zero)
+                      </div>
+                    </div>
+                  </div>
+                  <!--
+						<div class="tab-pane" id="mail" role="tabpanel" aria-labelledby="mail-tab">
+							<div class="row mb-3">
+	<label for="input-mail-engine" class="col-sm-2 col-form-label">Mail Engine</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[driver]" data-v-setting="driver" id="input-mail-driver">
+			<option value="mail">Mail</option>
+			<option value="smtp">SMTP</option>
+		</select>
+	</div>
+</div>
+
+<div class="mail-engine mail">
+	<div class="row mb-3">
+		<label for="input-mail-parameter" class="col-sm-2 col-form-label">Mail Parameters</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[parameter]" data-v-setting="parameter" value="" placeholder="Additional Parameters" id="input-mail-parameter" class="form-control">
+			<div class="form-text">e.g. -f email@mysite.com</div>
+		</div>
+	</div>
+</div>
+
+<div class="mail-engine smtp">
+	<label class="form-label fw-bold border-bottom d-block mb-4 py-3">SMTP</label>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-host" class="col-sm-2 col-form-label">Hostname</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][host]" data-v-setting="smtp.host" value="" placeholder="Hostname" id="input-mail-smtp-host" class="form-control">
+			<div class="form-text">Use 'tls://' or 'ssl://' prefix for secure connection.</div>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-user" class="col-sm-2 col-form-label">Username</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][user]" data-v-setting="smtp.user" value="" placeholder="Username" id="input-mail-smtp-user" class="form-control">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-password" class="col-sm-2 col-form-label">Password</label>
+		<div class="col-sm-10">
+			
+			<div class="input-group">
+				  <input type="password" autocorrect="off" class="form-control" placeholder="Password"  id="input-mail-smtp-password" autocomplete="off" value="" aria-label="Password" name="settings[smtp][password]" data-v-setting="smtp.password">
+				  <div class="input-group-append">
+					<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this)"><i class="icon-eye-outline-slash"></i></button>
+				  </div>
+			  </div>
+			
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-port" class="col-sm-2 col-form-label">Port</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][port]" data-v-setting="smtp.port" value="25" placeholder="Port" id="input-mail-smtp-port" class="form-control">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-timeout" class="col-sm-2 col-form-label">Timeout</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][timeout]" data-v-setting="smtp.timeout" value="5" placeholder="Timeout" id="input-mail-smtp-timeout" class="form-control">
+		</div>
+	</div>
+</div>
+
+
+<div class="test-mail">
+	<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Send test email</label>
+	<div class="row mb-3">
+		<label for="input-mail-parameter" class="col-sm-2 col-form-label">Send to email address</label>
+		<div class="col-sm-10">
+		<div class="input-group mb-3">
+			<input type="text" name="to" data-v-setting="parameter" value="" placeholder="myemailaddress@domain.com" id="input-mail-parameter" class="form-control">
+			<button type="submit" name="action" value="test" class="btn btn-success btn-icon">
+				<span>Send email</span>
+				<i class="lab la-telegram-plane ms-2"></i>
+			  </button>
+		</div>
+	</div>
+</div>
+
+
+<script>
+function togglePasswordInput(element) {
+	var password = document.getElementById("input-mail-smtp-password");
+	if (password.type == "password") {
+		password.type = "text"; 
+		$("i", element).addClass("la-eye").removeClass("la-eye-slash");
+	} else {
+		password.type = "password";
+		$("i", element).removeClass("la-eye").addClass("la-eye-slash");
+	}
+}
+</script>
+						</div>
+						-->
+
+                  <div class="tab-pane" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+                    <div class="row mb-3">
+                      <label for="default_comment_status" class="col-sm-2 col-form-label">Default post comments</label>
+                      <div class="col-sm-10">
+
+                        <label for="default_comment_status" class="col-form-label">
+                          <input name="settings[default_comment_status]" data-v-setting="default_comment_status" class="form-check-input" type="checkbox" id="default_comment_status" value="1" class="form-check-control">
+                          <span>Allow comments</span>
+                        </label>
+
+                        <div class="form-text">Individual posts may override these settings.</div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="anonymous_comments" class="col-sm-2 col-form-label">Anonymous comments</label>
+                      <div class="col-sm-10">
+                        <label for="anonymous_comments" class="col-form-label">
+                          <input name="settings[anonymous_comments]" data-v-setting="anonymous_comments" class="form-check-input" type="checkbox" id="anonymous_comments" value="1" class="form-check-control">
+                          <span>Allow comments only from logged in users</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="close_comments_days_old" class="col-sm-2 col-form-label">Automatically close comments</label>
+                      <div class="col-sm-10">
+
+                        <div class="row g-3">
+                          <div class="col-auto">
+                            <label for="close_comments_days_old" class="col-form-label">On posts older than </label>
+                          </div>
+                          <div class="col-auto">
+                            <input name="settings[close_comments_days_old]" data-v-setting="close_comments_days_old" type="number" min="0" step="1" id="close_comments_days_old" value="14" class="form-control d-inline-block" style="width:100px">
+                          </div>
+                          <div class="col-auto">
+                            <label for="close_comments_days_old" class="col-form-label">days</label>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="input-thread_comments_depth" class="col-sm-2 col-form-label">Nested comments level</label>
+                      <div class="col-sm-10">
+                        <div class="row g-2">
+                          <div class="col-auto">
+                            <select class="form-select" name="settings[thread_comments_depth]" data-v-setting="thread_comments_depth" id="thread_comments_depth">
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5" selected="selected">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                            </select>
+                          </div>
+                          <div class="col-auto">
+                            <label for="thread_comments_depth" class="col-form-label">levels deep</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="input-page_comments" class="col-sm-2 col-form-label">Comments pagination</label>
+                      <div class="col-sm-10">
+                        <div class="row g-4">
+                          <div class="col-auto">
+                            <label class="col-form-label">
+                              <input name="settings[page_comments]" data-v-setting="page_comments" type="checkbox" id="page_comments" value="1" class="form-check-input">
+                              Break comments into pages with
+                            </label>
+
+                          </div>
+                          <div class="col-auto">
+                            <input name="settings[comments_per_page]" data-v-setting="comments_per_page" type="number" step="1" min="0" id="comments_per_page" value="50" class="form-control">
+                          </div>
+                          <div class="col-auto">
+                            <label for="comments_per_page" class="col-form-label">
+                              top level comments per page and the
+                            </label>
+
+                          </div>
+                          <div class="col-auto">
+                            <select class="form-select" name="settings[default_comments_page]" data-v-setting="default_comments_page" id="default_comments_page">
+                              <option value="newest" selected="selected">last</option>
+                              <option value="oldest">first</option>
+                            </select>
+                          </div>
+                          <div class="col-auto">
+                            <label for="default_comments_page" class="col-form-label">
+                              page displayed by default
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                      <label for="input-comment_order" class="col-sm-2 col-form-label">Comments sort order</label>
+                      <div class="col-auto">
+                        <select class="form-select" name="settings[comment_order]" data-v-setting="comment_order" id="comment_order">
+                          <option value="asc" selected="selected">older</option>
+                          <option value="desc">newer</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                    <div class="row mb-3">
+                      <label for="input-invoice-prefix" class="col-sm-2 col-form-label">Invoice Prefix</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="settings[invoice_prefix]" data-v-setting="invoice_prefix" value="" placeholder="Invoice Prefix eg: VV-2024-0" id="input-invoice-prefix" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label" for="safemode">Display Weight on Cart Page</label>
+                      <div class="col-sm-10">
+                        <div class="form-check form-switch mt-2 me-2">
+                          <input class="form-check-input" type="checkbox" id="cart_weight" name="settings[cart_weight]" data-v-setting="cart_weight" value="1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label" for="guest_checkout">Allow guest checkout</label>
+                      <div class="col-sm-10">
+                        <div class="form-check form-switch mt-2 me-2">
+                          <input class="form-check-input" type="checkbox" id="guest_checkout" name="settings[guest_checkout]" data-v-setting="guest_checkout" value="1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="input-order-status" class="col-sm-2 col-form-label" for="input-order-status">
+                        <span>New Order Status</span>
+                        <div class="form-text text-muted">Order status when order is placed.</div>
+                      </label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[order_status_id]" data-v-setting="order_status_id" id="input-order-status" data-v-site-order_status_id>
+                          <option value="1" data-v-option>processing</option>
+                          <option value="2" data-v-option>shipped</option>
+                          <option value="3" data-v-option>canceled</option>
+                          <option value="4" data-v-option>complete</option>
+                          <option value="5" data-v-option>denied</option>
+                          <option value="6" data-v-option>canceled_reversal</option>
+                          <option value="7" data-v-option>failed</option>
+                          <option value="8" data-v-option>refunded</option>
+                          <option value="9" data-v-option>reversed</option>
+                          <option value="10" data-v-option>chargeback</option>
+                          <option value="11" data-v-option>pending</option>
+                          <option value="12" data-v-option>voided</option>
+                          <option value="13" data-v-option>processed</option>
+                          <option value="14" data-v-option>expired</option>
+                          <option value="15" data-v-option>holded</option>
+                          <option value="16" data-v-option>closed</option>
+                          <option value="17" data-v-option>delivered</option>
+                          <option value="18" data-v-option selected>pending_payment</option>
+                          <option value="19" data-v-option>payment_review</option>
+                          <option value="20" data-v-option>fraud</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="input-order-processing" class="col-sm-2 col-form-label">
+                        <span>Subtract stock on order status</span>
+                        <div class="form-text text-muted">Order status for stock subtraction and coupon, voucher and rewards redemption.</div>
+                      </label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[processing_status_id]" data-v-setting="processing_status_id" id="input-processing-status" data-v-site-processing_status_id>
+                          <option value="1" data-v-option>processing</option>
+                          <option value="2" data-v-option>shipped</option>
+                          <option value="3" data-v-option>canceled</option>
+                          <option value="4" data-v-option>complete</option>
+                          <option value="5" data-v-option>denied</option>
+                          <option value="6" data-v-option>canceled_reversal</option>
+                          <option value="7" data-v-option>failed</option>
+                          <option value="8" data-v-option>refunded</option>
+                          <option value="9" data-v-option>reversed</option>
+                          <option value="10" data-v-option>chargeback</option>
+                          <option value="11" data-v-option>pending</option>
+                          <option value="12" data-v-option>voided</option>
+                          <option value="13" data-v-option>processed</option>
+                          <option value="14" data-v-option>expired</option>
+                          <option value="15" data-v-option>holded</option>
+                          <option value="16" data-v-option>closed</option>
+                          <option value="17" data-v-option>delivered</option>
+                          <option value="18" data-v-option selected>pending_payment</option>
+                          <option value="19" data-v-option>payment_review</option>
+                          <option value="20" data-v-option>fraud</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="input-order-complete" class="col-sm-2 col-form-label">
+                        <span>Enable user downloads on order status<span>
+                            <div class="form-text text-muted">Order status for user to access their downloadable products and gift vouchers.</div>
+                      </label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="settings[complete_status_id]" data-v-setting="complete_status_id" id="input-order-complete" data-v-site-complete_status_id>
+                          <option value="1" data-v-option>processing</option>
+                          <option value="2" data-v-option>shipped</option>
+                          <option value="3" data-v-option>canceled</option>
+                          <option value="4" data-v-option>complete</option>
+                          <option value="5" data-v-option>denied</option>
+                          <option value="6" data-v-option>canceled_reversal</option>
+                          <option value="7" data-v-option>failed</option>
+                          <option value="8" data-v-option>refunded</option>
+                          <option value="9" data-v-option>reversed</option>
+                          <option value="10" data-v-option>chargeback</option>
+                          <option value="11" data-v-option>pending</option>
+                          <option value="12" data-v-option>voided</option>
+                          <option value="13" data-v-option>processed</option>
+                          <option value="14" data-v-option>expired</option>
+                          <option value="15" data-v-option>holded</option>
+                          <option value="16" data-v-option>closed</option>
+                          <option value="17" data-v-option>delivered</option>
+                          <option value="18" data-v-option selected>pending_payment</option>
+                          <option value="19" data-v-option>payment_review</option>
+                          <option value="20" data-v-option>fraud</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="tab-pane" id="mail_notifications" role="tabpanel" aria-labelledby="orders-tab">
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">
+                        <span>Notify on</span>
+                        <br />
+                        <span class="form-text">Emails will be sent to site administration email address</span>
+                      </label>
+
+                      <div class="col-sm-10">
+                        <div class="form-control">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" name="settings[alert.user]" data-v-setting="alert.user" value="user" class="form-check-input">
+                              New user account
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" name="settings[alert.order]" data-v-setting="alert.order" value="order" class="form-check-input">
+                              New order
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" name="settings[alert.comment]" data-v-setting="alert.comment" value="comment" class="form-check-input">
+                              New post comment
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" name="settings[alert.question]" data-v-setting="alert.question" value="question" class="form-check-input">
+                              New product question
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" name="settings[alert.review]" data-v-setting="alert.review" value="review" class="form-check-input">
+                              New product review
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!--
+						 <div class="tab-pane" id="security" role="tabpanel" aria-labelledby="security-tab">
+						</div>
+						-->
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <script id="popper-js" src="js/popper.min.js"></script>
+  <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+
+  <!--
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/popper.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+-->
+
+  <script id="admin-js" type="module" src="../../js/admin.js"></script>
+
+
+
+  <script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+
+  <script id="openverse-js" src="libs/media/openverse.js"></script>
+  <script id="media-js" src="libs/media/media.js"></script>
+  <script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+  <link href="libs/media/media.css" rel="stylesheet">
+  <script id="functions-js" src="../../js/admin/functions.js"></script>
+
+
+
+  <script>
+let Form = document.getElementById('settings-form');
+
+document.addEventListener('invalid', function(e){
+	//e.target.className += ' is-invalid';
+	focusInvalidElement(e);
+}, true);
+	
+function focusInvalidElement(e) {
+	//if (Form.checkValidity() == false) {
+		$(".is-invalid").removeClass("is-invalid");
+		//get first invalid input
+		let element = Form.querySelector(':invalid');
+		let activeTab = $(element).parents(".tab-pane");
+		
+		element.className += ' is-invalid';
+		//activate tab panel
+		$(".tab-pane").removeClass("show active");
+		activeTab.addClass("show active");
+		
+		//activate tab 
+		$(".nav-link").removeClass("active");
+		$("#" + (activeTab.attr("id") + "-tab")).addClass("active");
+		element.focus();
+		//let list = Form.querySelectorAll(':invalid');
+		/*
+		for (var item of list) {
+			item.focus();
+		}*/
+	//}
+}
+
+$("input[type=radio][name='settings[date_format]']").click(function () {
+	$("#custom_date_format").val(this.value).change().keypress();	
+});
+
+$("input[type=radio][name='settings[time_format]']").click(function () {
+	$("#custom_time_format").val(this.value).change().keypress();	
+});
+
+$("#custom_time_format").keypress(function () {
+	delay(() =>	$(".time-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
+});
+$("#custom_date_format").keypress(function () {
+	delay(() => $(".date-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
+});	
+
+
+
+
+let domain = "{ $this->domain }";
+let name = $("#input-site-name");
+//let key = $("#input-site-key");
+let host = $("#input-site-host");
+
+//let keyTextOrig = nameToKey(key.val());
+let hostTextOrig = nameToHost(host.val().replace(domain, ''));
+
+function nameToKey(name) {
+	//return (slugify(name) + " " + domain).replaceAll("."," "); 
+	return (slugify(name) + " *").replaceAll("."," "); 
+}
+
+function nameToHost(name) {
+	return (slugify(name) + "." + domain); 
+}
+
+name.on('keyup', function (e) {
+	let text = this.value;
+	delay(() => {
+		/*
+		let keyText = key.val();
+		
+		if (keyTextOrig == keyText || !keyText) {
+			keyTextOrig = nameToKey(text);
+			key.val(keyTextOrig);
+		}
+		*/
+		let hostText = host.val();
+		console.log(hostTextOrig);
+		console.log(hostText);
+		if (hostTextOrig == hostText || !hostText) {
+			hostTextOrig = nameToHost(text);
+			host.val(hostTextOrig);
+		}
+	}, 500);
+});
+
+
+let regions = [];
+
+function addRegionsToSelect(regionSelect, data) {
+	regionSelect.html('');
+	for (i in data) {
+		let region = data[i];
+		regionSelect.append('<option value="' + region.region_id + '">' + region.name + '</option>');
+	}
+}
+
+$("#input-country").change(function () {
+	$.get(window.location.href + "&action=regions&country_id=" + this.value).done(function( data ) {
+			addRegionsToSelect($("#input-region"), data);
+		});
+});
+
+
+$("#input-mail-driver").change(function (e) {
+	$(".mail-engine").hide();
+	$(".mail-engine." + this.value).show();
+}).change();
+</script>
+  <!-- Modal -->
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title" id="heartBeatLogin">
+            <h5>Session has expired</h5>
+            <span>Login to resume your work</span>
+          </span>
+
+          <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- save toast -->
+  <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header text-white">
+        <strong class="me-auto">Page save</strong>
+        <!-- <small class="badge bg-success">status</small> -->
+        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body ">
+        <div class="flex-grow-1">
+          <div class="message">Elements saved!
+            <div>Template backup was saved!</div>
+            <div>Template was saved!</div>
+          </div>
+          <div>
+            <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

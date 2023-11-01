@@ -1,0 +1,84 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Country","scripts":"","base_href":"../"})
+
+<body class="country">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="localization-form" action="" method="post" class="needs-validation" data-v-country>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-earth-outline"></i>&ensp;
+						<span>Country</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=localization/countries" title="Return countries"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to countries</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="country_id" data-v-country-country_id>
+					
+				<div class="mb-3 row">
+					<label for="input-country-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-country-name" placeholder="Name" name="country[name]" data-v-country-name required>
+					</div>
+				 </div>					
+				 
+				 <div class="mb-3 row">
+					<label for="input-iso_code_2" class="col-sm-2 col-form-label">Iso code 2</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-iso_code_2" placeholder="iso_code_2" name="country[iso_code_2]" data-v-country-iso_code_2 maxlength="2"  required>
+					</div>
+				 </div>						 
+				 
+				 <div class="mb-3 row">
+					<label for="input-iso_code_3" class="col-sm-2 col-form-label">Iso code 3</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-iso_code_3" placeholder="iso_code_2" name="country[iso_code_3]" data-v-country-iso_code_3 maxlength="3" required>
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-country-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="country[status]" id="input-country-status" class="form-control" data-v-country-status>
+							<option value="0">Inactive</option>
+							<option value="1">Active</option>
+						</select>
+					</div>
+				 </div>
+		
+			</div>
+        </div>
+</form>
+
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html')

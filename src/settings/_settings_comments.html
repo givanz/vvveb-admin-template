@@ -1,0 +1,98 @@
+	<div class="row mb-3">
+		<label for="default_comment_status" class="col-sm-2 col-form-label">Default post comments</label>
+		<div class="col-sm-10">
+			
+			<label for="default_comment_status" class="col-form-label">
+				<input name="settings[default_comment_status]" data-v-setting="default_comment_status" class="form-check-input" type="checkbox" id="default_comment_status" value="1"  class="form-check-control"> 
+				<span>Allow comments</span>
+			</label>
+			
+			<div class="form-text">Individual posts may override these settings.</div>
+		</div>
+	</div>
+	
+	<div class="row mb-3">
+		<label for="anonymous_comments" class="col-sm-2 col-form-label">Anonymous comments</label>
+		<div class="col-sm-10">
+			<label for="anonymous_comments" class="col-form-label">
+				<input name="settings[anonymous_comments]" data-v-setting="anonymous_comments" class="form-check-input" type="checkbox" id="anonymous_comments" value="1"  class="form-check-control"> 
+				<span>Allow comments only from logged in users</span>
+			</label>
+		</div>
+	</div>
+	
+	<div class="row mb-3">
+		<label for="close_comments_days_old" class="col-sm-2 col-form-label">Automatically close comments</label>
+		<div class="col-sm-10">
+			
+			<div class="row g-3">
+				<div class="col-auto">
+					<label for="close_comments_days_old" class="col-form-label">On posts older than </label>
+				</div>
+				<div class="col-auto">
+					<input name="settings[close_comments_days_old]" data-v-setting="close_comments_days_old" type="number" min="0" step="1" id="close_comments_days_old" value="14" class="form-control d-inline-block" style="width:100px">
+				</div>
+				<div class="col-auto">
+					<label for="close_comments_days_old" class="col-form-label">days</label>
+			</div>
+			
+		</div>
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label for="input-thread_comments_depth" class="col-sm-2 col-form-label">Nested comments level</label>
+		<div class="col-sm-10">
+			<div class="row g-2">
+				<div class="col-auto">
+					<select class="form-select" name="settings[thread_comments_depth]" data-v-setting="thread_comments_depth" id="thread_comments_depth"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected="selected">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select> 
+				</div>
+				<div class="col-auto">
+					<label for="thread_comments_depth" class="col-form-label">levels deep</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row mb-3">
+		<label for="input-page_comments" class="col-sm-2 col-form-label">Comments pagination</label>
+		<div class="col-sm-10">
+			<div class="row g-4">
+				<div class="col-auto">
+					<label class="col-form-label">
+						<input name="settings[page_comments]" data-v-setting="page_comments" type="checkbox" id="page_comments" value="1"  class="form-check-input">
+						Break comments into pages with 
+					</label> 
+				
+					</div>
+					<div class="col-auto">
+						<input name="settings[comments_per_page]" data-v-setting="comments_per_page" type="number" step="1" min="0" id="comments_per_page" value="50" class="form-control"> 
+					</div>
+					<div class="col-auto">
+						<label for="comments_per_page" class="col-form-label">
+						top level comments per page and the 
+						</label> 
+
+					</div>
+					<div class="col-auto">
+						<select class="form-select" name="settings[default_comments_page]" data-v-setting="default_comments_page" id="default_comments_page"><option value="newest" selected="selected">last</option><option value="oldest">first</option></select> 
+					</div>
+					<div class="col-auto">
+						<label for="default_comments_page" class="col-form-label">
+						page displayed by default
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="row mb-3">
+		<label for="input-comment_order" class="col-sm-2 col-form-label">Comments sort order</label>
+		<div class="col-auto">
+			<select class="form-select" name="settings[comment_order]" data-v-setting="comment_order" id="comment_order">
+				<option value="asc" selected="selected">older</option>
+				<option value="desc">newer</option>
+			</select>
+		</div>
+	</div>

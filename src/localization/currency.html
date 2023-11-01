@@ -1,0 +1,105 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Currency","scripts":"","base_href":"../"})
+
+<body class="currency">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="localization-form" action="" method="post" class="needs-validation" data-v-currency>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-people-outline"></i>&ensp;
+						<span>Currency</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=localization/currencies" title="Currency list"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Currency list</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="currency_id" data-v-currency-currency_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="currency[name]" data-v-currency-name required>
+					</div>
+				 </div>		 
+				 
+				 <div class="mb-3 row">
+					<label for="input-site-code" class="col-sm-2 col-form-label">Code</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-code" placeholder="Code" name="currency[code]" maxlength="3" data-v-currency-code required>
+					</div>
+				  </div>	
+				  
+				 <div class="mb-3 row">
+					<label for="input-site-sign_start" class="col-sm-2 col-form-label">Sign start</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-sign_start" placeholder="Sign left" name="currency[sign_start]" data-v-currency-sign_start>
+					</div>
+				  </div>					 
+				  
+				 <div class="mb-3 row">
+					<label for="input-site-sign_end" class="col-sm-2 col-form-label">Sign end</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-sign_end" placeholder="Sign right" name="currency[sign_end]" data-v-currency-sign_end>
+					</div>
+				  </div>				 
+				  
+				  <div class="mb-3 row">
+					<label for="input-site-decimal_place" class="col-sm-2 col-form-label">Decimal place</label>
+					<div class="col-sm-10">
+					  <input type="number" class="form-control" id="input-site-decimal_place" placeholder="Decimal place" name="currency[decimal_place]" data-v-currency-decimal_place required>
+					</div>
+				  </div>					  
+				  
+				  <div class="mb-3 row">
+					<label for="input-site-value" class="col-sm-2 col-form-label">Value</label>
+					<div class="col-sm-10">
+					  <input type="number" class="form-control" id="input-site-value" placeholder="Value" name="currency[value]" data-v-currency-value required>
+					</div>
+				  </div>		 
+				 
+				  <div class="mb-3 row">
+					<label for="input-site-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="currency[status]" id="input-status" class="form-control" data-v-currency-status>
+							<option value="0">Inactive</option>
+							<option value="1">Active</option>
+						</select>
+					</div>
+				  </div>
+							  	
+			</div>
+        </div>
+</form>
+
+</div>
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html')
+

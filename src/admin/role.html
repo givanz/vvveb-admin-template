@@ -1,0 +1,642 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Role","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" novalidate data-v-role>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions">
+		<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-people-outline"></i>&ensp;
+					<span>Role</span>
+				</h4>
+			</div>
+		  <div class="btns">
+			<a href="/admin/?module=admin/roles" title="Roles list" class="btn btn-outline-secondary pe-3">
+				<i class="la la-arrow-left"></i><span>Role list</span>
+			</a>
+			  <button type="submit" href=""
+				 class="btn btn-primary btn-icon ms-1"
+				>
+					<i class="icon-create-outline me-2"></i>
+					<span>Save settings</span>
+			  </button>
+		   </div>
+	   </div>
+	   <div>
+		  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+				<!--	
+				<div class="list-group-container">
+				  <ul class="list-group" data-v-controllers>
+					  <li class="list-group-item" data-v-controller>
+					  
+						
+						<label class="form-check-label">
+							<input type="hidden" value="/admin/">	
+							<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+							<span></span>
+						</label>
+					  
+					  </li>
+				  </ul>
+				</div>	
+				-->
+				
+					<div class="list-group-container  d-none">
+					  <ul class="list-group" data-v-controllers>
+						  <li class="list-group-item" data-v-controller>
+						  
+							
+							<label class="form-check-label">
+								<input type="hidden" value="/admin/">	
+								<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+								<span></span>
+							</label>
+						  
+						  </li>
+					  </ul>
+					</div>	
+
+				
+				<div class="tree d-none">
+					<ol data-v-permissions>
+						<li  class="folder" data-v-permission>
+							<label for="index" title="Website homepage">
+								<span data-v-name>Home page</span>
+								<!--
+								<div class="file-actions">
+									<button href="#" class="rename btn btn-outline-primary" title="Rename">
+										<i class="la la-pen"></i>
+									</button>
+									<button href="#" class="delete btn btn-outline-danger" title="Delete">
+										<i class="la la-trash"></i>
+									</button>
+								</div>
+								-->
+							</label>
+							<input type="checkbox" id="index">
+							
+							<!-- <ol></ol> -->
+						</li>
+						<li  class="folder" data-v-permission>
+							<label for="contact" title="Contact us page">
+								<span>Contact us page</span>
+								<div class="file-actions">
+									<button href="#" class="rename btn btn-outline-primary" title="Rename">
+										<i class="la la-pen"></i>
+									</button>
+									<button href="#" class="delete btn btn-outline-danger" title="Delete">
+										<i class="la la-trash"></i>
+									</button>
+								</div>
+							</label>
+							<input type="checkbox" id="contact">
+							
+							<!-- <ol></ol> -->
+						</li>
+						
+						<li class="folder" data-v-permission>
+							<label for="supporters">
+								<span>Supporters</span>
+								<div class="file-actions">
+									<button href="#" class="rename btn btn-outline-primary" title="Rename">
+										<i class="la la-pen"></i>
+									</button>
+									<button href="#" class="delete btn btn-outline-danger" title="Delete">
+										<i class="la la-trash"></i>
+									</button>
+								</div>
+							</label>
+							<input type="checkbox" id="supporters">
+							
+							<!-- <ol></ol> -->
+						</li>
+						<li class="folder" data-v-permission>
+							<label for="checkout">
+								<span>Checkout</span>
+							</label>
+							<input type="checkbox" id="checkout">
+							<ol>
+								<li  class="file">
+									<label for="checkout-checkout">
+										<span>Checkout</span>
+										<div class="file-actions">
+											<button href="#" class="rename btn btn-outline-primary" title="Rename">
+												<i class="la la-pen"></i>
+											</button>
+											<button href="#" class="delete btn btn-outline-danger" title="Delete">
+												<i class="la la-trash"></i>
+											</button>
+										</div>
+									</label>
+									<input type="checkbox" id="checkout-checkout">
+									
+									<!-- <ol></ol> -->
+								</li>
+								<li  class="file">
+									<label for="checkout-confirm">
+										<span>Confirm</span>
+										<div class="file-actions">
+											<button href="#" class="rename btn btn-outline-primary" title="Rename">
+												<i class="la la-pen"></i>
+											</button>
+											<button href="#" class="delete btn btn-outline-danger" title="Delete">
+												<i class="la la-trash"></i>
+											</button>
+										</div>
+									</label>
+									<input type="checkbox" id="checkout-confirm">
+									
+									<!-- <ol></ol> -->
+								</li>
+								<li  class="file">
+									<label for="checkout-order">
+										<span>Order</span>
+										<div class="file-actions">
+											<button href="#" class="rename btn btn-outline-primary" title="Rename">
+												<i class="la la-pen"></i>
+											</button>
+											<button href="#" class="delete btn btn-outline-danger" title="Delete">
+												<i class="la la-trash"></i>
+											</button>
+										</div>
+									</label>
+									<input type="checkbox" id="checkout-order">
+									
+									<!-- <ol></ol> -->
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+				
+				<div class="container-fluid m-3 pe-5" data-v-role>
+					<div class="row">
+					  <div class="col-auto">
+						<label class="col-form-label">Name</label>
+					  </div>
+					  <div class="col">
+						<input type="text" class="form-control" placeholder="Name" aria-label="Name" name="role[name]" data-v-role-name>
+					  </div>
+					  <div class="col-auto">
+						<label class="col-form-label">Display name</label>
+					  </div>
+					  <div class="col">
+						<input type="text" class="form-control" placeholder="Display name" aria-label="Display name" name="role[display_name]" data-v-role-display_name>
+					  </div>
+					</div>
+				</div>
+				
+			  <div class="card mx-4">
+		
+				<div class="card-header">
+				
+					<div class="float-start mt-2">Module access control</div>
+					
+					<button class="btn btn-light btn-sm float-end py-0" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="true">
+                      <i class="la la-2x la-question-circle text-primary"></i>
+                    </button>
+
+				</div>
+				
+				
+				
+				<div class="card-body">
+				
+					<div class="collapse mb-3" id="siteKeyInfo" style="">
+						<div>
+							<div class="card-body text-bg-body-tertiary border"><i class="la la-info-circle fs-2 px-2 float-end"></i>
+							
+							<p>Click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-arrow-down"></i></button> to choose module and action or write the path directly and click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-plus"></i> Add</button></p>
+							
+							<hr>
+							<p>You can use * wildcard to allow/deny multiple modules.</<p>
+							<p>Ex: <span class="badge bg-secondary">content/*</span> will apply for all content modules like post and page add/edit, menu categories etc</p>
+							<p>To deny saving for content modules use <span class="badge bg-secondary">content/*/save</span> this rule will apply for save actions for content modules, and editing and adding posts/pages/categories etc will be denied.</p>
+							<p>To deny delete for all modules use <span class="badge bg-secondary">*/delete</span> this rule will apply for delete actions for all modules.</p>
+							
+							<hr>
+							<p>Allow list is checked first then the deny list, if a rule allows access a deny rule can limit it.</p>
+							<p>For example you can add access to products section with <span class="badge bg-secondary">products/*</span> and only restrict product categories and delete with <span class="badge bg-secondary">products/*/delete</span> and <span class="badge bg-secondary">product/categories</span> deny rules.</p>
+							<p>With <span class="badge bg-secondary">plugins/*</span> you can restrict or allow access to plugins section and all plugins settings.</p>
+							<p>With <span class="badge bg-secondary">plugins/insert-scripts</span> you can restrict or allow access only to a specific plugin.</p>
+							</div>
+						</div>
+					</div>
+				
+					<div class="rules">
+						<div class="mb-3">Allow list</div>
+						
+							<ul class="list-group allow  border-bottom-0" data-v-allow>
+								  <li class="list-group-item" data-v-rule>
+										<label class="form-check-label">
+											<input class="form-check-input me-1" type="hidden" name="allow[]" value="admin/*"><span>admin/*</span>
+										</label>
+										<div class="float-end">
+											<a class="btn btn-light text-danger btn-sm btn-delete"><i class="la la-trash"></i> Delete</a>
+										</div>
+								  </li>
+								  <li class="list-group-item" data-v-rule>
+										<label class="form-check-label">
+											<input class="form-check-input me-1" type="hidden" name="allow[]" value="content/*"><span>content/*</span>
+										</label>
+										<div class="float-end">
+											<a class="btn btn-light text-danger btn-sm btn-delete"><i class="la la-trash"></i> Delete</a>
+										</div>
+								  </li>
+							</ul>	  
+							
+						  <div>
+							<div class="input-group">
+							  <input type="text" class="form-control" placeholder="Type or choose allow rule">
+							  <button class="btn btn-outline-secondary" type="button"  type="button" data-bs-toggle="collapse" data-bs-target="#allow-add-box" aria-expanded="true"><i class="la la-arrow-down"></i></button>
+							  <button class="btn btn-primary btn-add" type="button"><i class="la la-plus"></i> Add rule</button>
+							</div>
+							
+							<div class="collapse my-3" id="allow-add-box" style="">
+							
+							
+									<div class="tree">
+										<ol data-v-permissions>
+											<li  class="folder" data-v-permission>
+												<label for="index" title="Website homepage">
+													
+													<input type="hidden" value="/admin/">	
+													<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+
+													<span data-v-name>Home page</span>
+													
+													<!--
+													<div class="file-actions">
+														<button href="#" class="rename btn btn-outline-primary" title="Rename">
+															<i class="la la-pen"></i>
+														</button>
+														<button href="#" class="delete btn btn-outline-danger" title="Delete">
+															<i class="la la-trash"></i>
+														</button>
+													</div>
+													-->
+												</label>
+												<input type="checkbox" id="index">
+												
+												<!-- <ol></ol> -->
+											</li>
+											<li class="folder" data-v-permission>
+												<label for="contact" title="Contact us page">
+													<span>Contact us page</span>
+													<div class="file-actions">
+														<button href="#" class="rename btn btn-outline-primary" title="Rename">
+															<i class="la la-pen"></i>
+														</button>
+														<button href="#" class="delete btn btn-outline-danger" title="Delete">
+															<i class="la la-trash"></i>
+														</button>
+													</div>
+												</label>
+												<input type="checkbox" id="contact">
+												
+												<!-- <ol></ol> -->
+											</li>
+											
+											<li class="folder" data-v-permission>
+												<label for="supporters">
+													<span>Supporters</span>
+													<div class="file-actions">
+														<button href="#" class="rename btn btn-outline-primary" title="Rename">
+															<i class="la la-pen"></i>
+														</button>
+														<button href="#" class="delete btn btn-outline-danger" title="Delete">
+															<i class="la la-trash"></i>
+														</button>
+													</div>
+												</label>
+												<input type="checkbox" id="supporters">
+												
+												<!-- <ol></ol> -->
+											</li>
+											<li class="folder" data-v-permission>
+												<label for="checkout">
+													<span>Checkout</span>
+												</label>
+												<input type="checkbox" id="checkout">
+												<ol>
+													<li  class="file">
+														<label for="checkout-checkout">
+															<span>Checkout</span>
+															<div class="file-actions">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																	<i class="la la-pen"></i>
+																</button>
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																	<i class="la la-trash"></i>
+																</button>
+															</div>
+														</label>
+														<input type="checkbox" id="checkout-checkout">
+														
+														<!-- <ol></ol> -->
+													</li>
+													<li  class="file">
+														<label for="checkout-confirm">
+															<span>Confirm</span>
+															<div class="file-actions">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																	<i class="la la-pen"></i>
+																</button>
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																	<i class="la la-trash"></i>
+																</button>
+															</div>
+														</label>
+														<input type="checkbox" id="checkout-confirm">
+														
+														<!-- <ol></ol> -->
+													</li>
+													<li  class="file">
+														<label for="checkout-order">
+															<span>Order</span>
+															<div class="file-actions">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																	<i class="la la-pen"></i>
+																</button>
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																	<i class="la la-trash"></i>
+																</button>
+															</div>
+														</label>
+														<input type="checkbox" id="checkout-order">
+														
+														<!-- <ol></ol> -->
+													</li>
+												</ol>
+											</li>
+										</ol>
+									</div>
+							
+																	
+							</div>
+							
+						  </div>
+					</div>
+						
+					<hr>
+					
+					<div class="rules">
+						
+						<div class="mb-3">Deny list</div>
+
+							<ul class="list-group deny border-bottom-0" data-v-deny>
+							  <li class="list-group-item" data-v-rule>
+										<label class="form-check-label">
+											<input class="form-check-input me-1" type="hidden" name="deny[]" value="admin/*"><span>admin/*</span>
+										</label>
+										<div class="float-end">
+											<a class="btn btn-light text-danger btn-sm btn-delete"><i class="la la-trash"></i> Delete</a>
+										</div>
+								  </li>
+								  <li class="list-group-item" data-v-rule>
+										<label class="form-check-label">
+											<input class="form-check-input me-1" type="hidden" name="deny[]" value="content/*"><span>content/*</span>
+										</label>
+										<div class="float-end">
+											<a class="btn btn-light text-danger btn-sm btn-delete"><i class="la la-trash"></i> Delete</a>
+										</div>
+								  </li>
+								</ul>	  
+								
+							  <div>
+								<div class="input-group">
+								  <input type="text" class="form-control" placeholder="Type or choose deny rule">
+								  <button class="btn btn-outline-secondary" type="button"  type="button" data-bs-toggle="collapse" data-bs-target="#deny-add-box" aria-expanded="true"><i class="la la-arrow-down"></i></button>
+								  <button class="btn btn-primary btn-add" type="button"><i class="la la-plus"></i> Add rule</button>
+								</div>
+								
+								
+									<div class="collapse my-3" id="deny-add-box" style="">
+									
+											<div class="tree">
+												<ol data-v-permissions>
+													<li  class="folder" data-v-permission>
+														<label for="index" title="Website homepage">
+															
+															<input type="hidden" value="/admin/">	
+															<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+
+															<span data-v-name>Home page</span>
+															
+															<!--
+															<div class="file-actions">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																	<i class="la la-pen"></i>
+																</button>
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																	<i class="la la-trash"></i>
+																</button>
+															</div>
+															-->
+														</label>
+														<input type="checkbox" id="index">
+														
+														<!-- <ol></ol> -->
+													</li>
+													<li class="folder" data-v-permission>
+														<label for="contact" title="Contact us page">
+															<span>Contact us page</span>
+															<div class="file-actions">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																	<i class="la la-pen"></i>
+																</button>
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																	<i class="la la-trash"></i>
+																</button>
+															</div>
+														</label>
+														<input type="checkbox" id="contact">
+														
+														<!-- <ol></ol> -->
+													</li>
+													
+													<li class="folder" data-v-permission>
+														<label for="supporters">
+															<span>Supporters</span>
+															<div class="file-actions">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																	<i class="la la-pen"></i>
+																</button>
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																	<i class="la la-trash"></i>
+																</button>
+															</div>
+														</label>
+														<input type="checkbox" id="supporters">
+														
+														<!-- <ol></ol> -->
+													</li>
+													<li class="folder" data-v-permission>
+														<label for="checkout">
+															<span>Checkout</span>
+														</label>
+														<input type="checkbox" id="checkout">
+														<ol>
+															<li  class="file">
+																<label for="checkout-checkout">
+																	<span>Checkout</span>
+																	<div class="file-actions">
+																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																			<i class="la la-pen"></i>
+																		</button>
+																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																			<i class="la la-trash"></i>
+																		</button>
+																	</div>
+																</label>
+																<input type="checkbox" id="checkout-checkout">
+																
+																<!-- <ol></ol> -->
+															</li>
+															<li  class="file">
+																<label for="checkout-confirm">
+																	<span>Confirm</span>
+																	<div class="file-actions">
+																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																			<i class="la la-pen"></i>
+																		</button>
+																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																			<i class="la la-trash"></i>
+																		</button>
+																	</div>
+																</label>
+																<input type="checkbox" id="checkout-confirm">
+																
+																<!-- <ol></ol> -->
+															</li>
+															<li  class="file">
+																<label for="checkout-order">
+																	<span>Order</span>
+																	<div class="file-actions">
+																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
+																			<i class="la la-pen"></i>
+																		</button>
+																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
+																			<i class="la la-trash"></i>
+																		</button>
+																	</div>
+																</label>
+																<input type="checkbox" id="checkout-order">
+																
+																<!-- <ol></ol> -->
+															</li>
+														</ol>
+													</li>
+												</ol>
+											</div>
+									
+																			
+									</div>								
+							  </div>
+
+						</div>
+					</div>
+
+				<!--
+				<h5 for="input-site-title" class="col-form-label" >Controller access</h5>
+				<div class="col-sm-6">
+				  <div class="list-group-container">
+					  <ul class="list-group" data-v-controllers>
+						  <li class="list-group-item" data-v-controller>
+						  
+							
+							<label class="form-check-label stretched-link">
+								<input class="form-check-input me-1" type="checkbox" value=""><span></span>
+							</label>
+						  
+						  </li>
+					  </ul>
+					</div>
+				</div>
+				
+				-->
+				
+				  </div>	
+		
+		
+			  <div class="card m-4">
+		
+				<div class="card-header">
+				
+					<div class="float-start mt-2">Capabilities</div>
+
+				</div>
+				
+				
+				
+				<div class="card-body">
+				</div>
+			</div>
+				
+				
+			</div>
+        </div>
+        </form>
+    </div>
+
+</div>
+
+<style>
+	.list-group-container {
+		border:1px solid #eee;
+		max-height:350px;
+		overflow-y:auto;
+	}
+</style>
+
+
+@@include('../_includes/footer-scripts.html')
+
+
+
+<script>
+let template = `<li class="list-group-item">
+	<label class="form-check-label">
+		<input class="form-check-input me-1" type="hidden" value="content/*">
+		<span>content/</span>
+	</label>
+	<div class="float-end">
+		<a class="btn btn-light text-danger btn-sm btn-delete"><i class="la la-trash"></i> Delete</a>
+	</div>
+</li>`;
+
+$(".rules").on("click", ".btn-add", function () {
+	let input = $(this).siblings("input");
+	let list = $(this).parents(".rules").find('.list-group');
+	let item = $(template);
+	
+	$('label span', item).text(input.val());
+	$('input', item).val(input.val());
+	
+	if (list.hasClass("allow")) {
+		$('input', item).attr("name", "allow[]");
+	} else {
+		$('input', item).attr("name", "deny[]");
+	}
+	
+	
+	list.append(item);
+	
+});
+$(".rules").on("click", ".btn-delete", function () {
+	$(this).parents(".list-group-item").remove();
+});
+</script>
+@@include('../_includes/footer.html')
+

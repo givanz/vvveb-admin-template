@@ -1,0 +1,156 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Plugins","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+				
+		<div class="actions mb-3">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-extension-puzzle-outline"></i>&ensp;
+					<span>Plugins</span>
+				</h4>
+			</div>
+
+
+
+			<div class="bulk-actions px-2" style="display:none">
+				<!--
+			   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+						aria-controls="filters" title="Delete selected"
+						class="btn btn-primary">
+					<i class="icon-create-outline"></i> Edit selected
+				</button>
+				-->
+			   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+						aria-controls="filters" title="Delete selected"
+						class="btn btn-outline-secondary bg-body-tertiary text-danger">
+					<i class="icon-trash-outline"></i> Delete selected
+				</button>
+			
+			</div>
+			
+			<div class="btns">
+			
+				 <a href data-v-url-params='{"module":"plugin/plugin"}'title=""
+						class="btn btn-outline-secondary btn-icon ms-1" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+						<i class="la la-cloud-upload-alt la-lg"></i> Upload plugin
+				</a>
+
+	 
+	 
+	 
+				 <a href data-v-url-params='{"module":"plugin/market"}' 
+						class="btn btn-primary btn-icon ms-1">
+					<i class="icon-add-circle-outline"></i> Install plugin
+				</a>
+			</div>
+		</div>
+
+    <div>
+
+    <div>
+	<div id="main-content" class="plugins card-block" data-v-plugins>
+		<!--
+		<ul class="nav nav-pills pills-border small mx-2">
+		  <li class="nav-item">
+			<a class="nav-link active" href="#">All</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Development</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Payment</a>
+		  </li>			  
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Shipping</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Performance</a>
+		  </li>  
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Seo</a>
+		  </li>
+		</ul>
+		-->
+
+		@@include('../_includes/notifications.html')
+		
+		<div id="safemode" class="alert alert-warning d-flex alert-dismissable">
+			<div class="icon">
+				<i class="la la-exclamation-triangle"></i>
+			</div>
+			
+
+			<div class="flex-grow-1 align-self-center"data-v-notification-text>
+				Safe mode is active and plugins are not loaded, if you have trouble with a plugin you can disable it below.
+			</div>
+
+			<button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">
+					<!-- <i class="la la-times"></i> -->
+				</span>
+			</button>			
+			
+		</div>
+		
+		<iframe border="none" width="100%" height="0" id="plugin-check" style=""  data-v-if="this.checkPluginUrl"  src="" data-v-check-plugin-url>Activating plugin</iframe>
+		
+		@@include('../_includes/upload-form.html')
+
+		<form action="" method="post">
+
+				<ul class="nav nav-pills pills-border small mx-2 mb-3" data-v-plugin-categories>
+				  <li class="nav-item">
+					<a class="nav-link" href="#"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"payment"}'>Payment</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"shipping"}'>Shipping</a>
+				  </li>			  
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"development"}'>Development</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"seo"}'>Seo</a>
+				  </li>  
+				</ul>
+
+			@@include('_plugins_list.html', {"actions":true, "thumbs":true})		
+
+		</form>
+		</div>
+	</div>
+
+      </div>
+  </div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+<script data-v-if="this.checkPluginUrl">
+function resizeIFrameToFitContent( iFrame ) {
+
+    iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+}
+
+window.addEventListener('DOMContentLoaded', function(e) {
+
+    var iFrame = document.getElementById( 'plugin-check' );
+    resizeIFrameToFitContent( iFrame );
+});
+</script>
+@@include('../_includes/footer.html')

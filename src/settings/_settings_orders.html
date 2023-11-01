@@ -1,0 +1,115 @@
+<div class="row mb-3">
+	<label for="input-invoice-prefix" class="col-sm-2 col-form-label">Invoice Prefix</label>
+	<div class="col-sm-10">
+		<input type="text" name="settings[invoice_prefix]" data-v-setting="invoice_prefix" value="" placeholder="Invoice Prefix eg: VV-2024-0" id="input-invoice-prefix" class="form-control">
+	</div>
+</div>
+
+<div class="row mb-3">
+	<label class="col-sm-2 col-form-label" for="safemode">Display Weight on Cart Page</label>
+	<div class="col-sm-10">
+		<div class="form-check form-switch mt-2 me-2">
+		<input class="form-check-input" type="checkbox" id="cart_weight" name="settings[cart_weight]" data-v-setting="cart_weight" value="1">
+		</div>
+	</div>
+</div>
+<div class="row mb-3">
+	<label class="col-sm-2 col-form-label" for="guest_checkout">Allow guest checkout</label>
+	<div class="col-sm-10">
+		<div class="form-check form-switch mt-2 me-2">
+		<input class="form-check-input" type="checkbox" id="guest_checkout" name="settings[guest_checkout]" data-v-setting="guest_checkout" value="1">
+		</div>
+	</div>
+</div>
+<div class="row mb-3">
+	<label for="input-order-status" class="col-sm-2 col-form-label" for="input-order-status">
+		<span>New Order Status</span>
+		<div class="form-text text-muted">Order status when order is placed.</div>
+	</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[order_status_id]" data-v-setting="order_status_id" id="input-order-status" data-v-site-order_status_id>
+			<option value="1" data-v-option>processing</option>
+			<option value="2" data-v-option>shipped</option>
+			<option value="3" data-v-option>canceled</option>
+			<option value="4" data-v-option>complete</option>
+			<option value="5" data-v-option>denied</option>
+			<option value="6" data-v-option>canceled_reversal</option>
+			<option value="7" data-v-option>failed</option>
+			<option value="8" data-v-option>refunded</option>
+			<option value="9" data-v-option>reversed</option>
+			<option value="10" data-v-option>chargeback</option>
+			<option value="11" data-v-option>pending</option>
+			<option value="12" data-v-option>voided</option>
+			<option value="13" data-v-option>processed</option>
+			<option value="14" data-v-option>expired</option>
+			<option value="15" data-v-option>holded</option>
+			<option value="16" data-v-option>closed</option>
+			<option value="17" data-v-option>delivered</option>
+			<option value="18" data-v-option selected>pending_payment</option>
+			<option value="19" data-v-option>payment_review</option>
+			<option value="20" data-v-option>fraud</option>    
+
+		</select>
+	</div>
+</div>
+<div class="row mb-3">
+	<label for="input-order-processing" class="col-sm-2 col-form-label">
+		 <span>Subtract stock on order status</span>
+		<div class="form-text text-muted">Order status for stock subtraction and coupon, voucher and rewards redemption.</div>
+	</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[processing_status_id]" data-v-setting="processing_status_id" id="input-processing-status" data-v-site-processing_status_id>
+			<option value="1" data-v-option>processing</option>
+			<option value="2" data-v-option>shipped</option>
+			<option value="3" data-v-option>canceled</option>
+			<option value="4" data-v-option>complete</option>
+			<option value="5" data-v-option>denied</option>
+			<option value="6" data-v-option>canceled_reversal</option>
+			<option value="7" data-v-option>failed</option>
+			<option value="8" data-v-option>refunded</option>
+			<option value="9" data-v-option>reversed</option>
+			<option value="10" data-v-option>chargeback</option>
+			<option value="11" data-v-option>pending</option>
+			<option value="12" data-v-option>voided</option>
+			<option value="13" data-v-option>processed</option>
+			<option value="14" data-v-option>expired</option>
+			<option value="15" data-v-option>holded</option>
+			<option value="16" data-v-option>closed</option>
+			<option value="17" data-v-option>delivered</option>
+			<option value="18" data-v-option selected>pending_payment</option>
+			<option value="19" data-v-option>payment_review</option>
+			<option value="20" data-v-option>fraud</option>    
+		</select>
+	</div>
+</div>
+<div class="row mb-3">
+	<label for="input-order-complete" class="col-sm-2 col-form-label">
+		<span>Enable user downloads on order status<span>
+		<div class="form-text text-muted">Order status for user to access their downloadable products and gift vouchers.</div>
+	</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[complete_status_id]" data-v-setting="complete_status_id" id="input-order-complete" data-v-site-complete_status_id>
+			<option value="1" data-v-option>processing</option>
+			<option value="2" data-v-option>shipped</option>
+			<option value="3" data-v-option>canceled</option>
+			<option value="4" data-v-option>complete</option>
+			<option value="5" data-v-option>denied</option>
+			<option value="6" data-v-option>canceled_reversal</option>
+			<option value="7" data-v-option>failed</option>
+			<option value="8" data-v-option>refunded</option>
+			<option value="9" data-v-option>reversed</option>
+			<option value="10" data-v-option>chargeback</option>
+			<option value="11" data-v-option>pending</option>
+			<option value="12" data-v-option>voided</option>
+			<option value="13" data-v-option>processed</option>
+			<option value="14" data-v-option>expired</option>
+			<option value="15" data-v-option>holded</option>
+			<option value="16" data-v-option>closed</option>
+			<option value="17" data-v-option>delivered</option>
+			<option value="18" data-v-option selected>pending_payment</option>
+			<option value="19" data-v-option>payment_review</option>
+			<option value="20" data-v-option>fraud</option>    
+
+		</select>
+	</div>
+</div>

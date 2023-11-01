@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <base href="../">
+
+  <title>Vvveb - Login</title>
+
+
+
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+
+
+<body class="login">
+  <div class="header">
+
+    <div class="d-flex align-items-end">
+
+      <a id="color-theme-switch" title="Switch sidebar color theme">
+        <i class="la la-sun"></i>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="align-items-center h-100 mx-auto d-flex">
+    <div class="login-container">
+
+      <div class="logo-content">
+        <a href="//www.vvveb.com" target="blank" title="Powered by Vvveb">
+          <img src="img/logom.png" alt="Powered by Vvveb" />
+          <span class="visually-hidden">Powered by Vvveb</span>
+        </a>
+      </div>
+
+
+      <div id="login" class="login-form fade-in-effect">
+        <form method="post" role="form" enctype="multipart/form-data" action="/admin/?module=user/login">
+
+          <input type="hidden" name="csrf" data-v-csrf>
+          <input type="hidden" name="redir" id="redir">
+
+
+          <div class="login-form-content">
+
+
+            <div class="notifications" data-v-notifications>
+
+              <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+
+                <div class="icon">
+                  <i class="la la-exclamation-triangle"></i>
+                </div>
+
+                <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                  Vvveb 0.2 is now available! <a href="update">Update now</a>
+                </div>
+
+
+                <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <!-- <i class="la la-times"></i> -->
+                  </span>
+                </button>
+              </div>
+
+              <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
+
+                <div class="icon">
+                  <i class="la la-check-circle"></i>
+                </div>
+
+                <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                  You successfully read this important alert message.
+                </div>
+
+                <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <!-- <i class="la la-times"></i> -->
+                  </span>
+                </button>
+              </div>
+
+              <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+                <div class="icon">
+                  <i class="la la-info-circle"></i>
+                </div>
+
+                <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                  You successfully read this important alert message.
+                </div>
+
+                <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <!-- <i class="la la-times"></i> -->
+                  </span>
+                </button>
+              </div>
+
+            </div>
+
+
+            <div class="mb-4">
+              <label class="form-label">Username or email</label>
+              <input type="text" class="form-control" name="user" id="username" autocomplete="off" required />
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label d-flex justify-content-between align-items-center">
+                <span>Password</span>
+              </label>
+
+              <div class="input-group">
+                <input type="password" minlength="4" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
+                <div class="input-group-append">
+                  <button class="btn px-3" type="button" onclick="togglePasswordInput(this)">
+                    <i class="icon-eye-outline-slash"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="mt-4 row">
+
+
+              <div>
+
+                <button type="submit" class="btn btn-primary btn-icon w-100 btn-login">
+                  <span class="loading d-none">
+                    <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+                    </span>
+                    <span>Authenticating</span>...
+                  </span>
+
+                  <span class="button-text">
+                    Log In <i class="icon-chevron-forward-outline float-end ms-2"></i>
+                  </span>
+                </button>
+
+              </div>
+
+
+              <div class="mt-3">
+
+                <div class="form-check float-start">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberme">
+                  <label class="form-check-label" for="rememberme">
+                    Remember me
+                  </label>
+                </div>
+
+                <a href="/admin?module=user/reset" class="text-muted float-end">Forgot your password?</a>
+              </div>
+
+            </div>
+
+            <div class="login-footer ">
+              <!-- div class="info-links">
+							<a href="#" class="text-muted"><small>ToS</small></a> -
+							<a href="#" class="text-muted"><small>Privacy Policy</small></a>
+						</div -->
+
+            </div>
+          </div>
+
+          <div class="float-end">
+            <div class="form-check form-switch mt-3 me-2">
+              <input class="form-check-input" type="checkbox" id="safemode" name="safemode" value="1">
+              <label class="form-check-label" for="safemode">
+                Safe mode
+              </label>
+              <abbr title="Use safe mode to disable plugins for this session to troubleshoot errors.">
+                <i class="la la-lg la-question-circle text-primary"></i>
+              </abbr>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- a class="d-block m-3" href="/admin?module=recover" >Forgot your password?</a -->
+    </div>
+  </div>
+
+
+  <script>
+	function togglePasswordInput(element) {
+		var password = document.getElementById("password");
+		if (password.type == "password") {
+			password.type = "text"; 
+			$("i", element).addClass("la-eye").removeClass("la-eye-slash");
+		} else {
+			password.type = "password";
+			$("i", element).removeClass("la-eye").addClass("la-eye-slash");
+		}
+	}
+	</script>
+
+  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <script id="popper-js" src="js/popper.min.js"></script>
+  <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+
+  <!--
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/popper.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+-->
+
+  <script id="admin-js" type="module" src="../../js/admin.js"></script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title" id="heartBeatLogin">
+            <h5>Session has expired</h5>
+            <span>Login to resume your work</span>
+          </span>
+
+          <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- save toast -->
+  <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header text-white">
+        <strong class="me-auto">Page save</strong>
+        <!-- <small class="badge bg-success">status</small> -->
+        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body ">
+        <div class="flex-grow-1">
+          <div class="message">Elements saved!
+            <div>Template backup was saved!</div>
+            <div>Template was saved!</div>
+          </div>
+          <div>
+            <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

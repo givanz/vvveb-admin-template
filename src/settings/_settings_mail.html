@@ -1,0 +1,91 @@
+<div class="row mb-3">
+	<label for="input-mail-engine" class="col-sm-2 col-form-label">Mail Engine</label>
+	<div class="col-sm-10">
+		<select class="form-select" name="settings[driver]" data-v-setting="driver" id="input-mail-driver">
+			<option value="mail">Mail</option>
+			<option value="smtp">SMTP</option>
+		</select>
+	</div>
+</div>
+
+<div class="mail-engine mail">
+	<div class="row mb-3">
+		<label for="input-mail-parameter" class="col-sm-2 col-form-label">Mail Parameters</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[parameter]" data-v-setting="parameter" value="" placeholder="Additional Parameters" id="input-mail-parameter" class="form-control">
+			<div class="form-text">e.g. -f email@mysite.com</div>
+		</div>
+	</div>
+</div>
+
+<div class="mail-engine smtp">
+	<label class="form-label fw-bold border-bottom d-block mb-4 py-3">SMTP</label>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-host" class="col-sm-2 col-form-label">Hostname</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][host]" data-v-setting="smtp.host" value="" placeholder="Hostname" id="input-mail-smtp-host" class="form-control">
+			<div class="form-text">Use 'tls://' or 'ssl://' prefix for secure connection.</div>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-user" class="col-sm-2 col-form-label">Username</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][user]" data-v-setting="smtp.user" value="" placeholder="Username" id="input-mail-smtp-user" class="form-control">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-password" class="col-sm-2 col-form-label">Password</label>
+		<div class="col-sm-10">
+			
+			<div class="input-group">
+				  <input type="password" autocorrect="off" class="form-control" placeholder="Password"  id="input-mail-smtp-password" autocomplete="off" value="" aria-label="Password" name="settings[smtp][password]" data-v-setting="smtp.password">
+				  <div class="input-group-append">
+					<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this)"><i class="icon-eye-outline-slash"></i></button>
+				  </div>
+			  </div>
+			
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-port" class="col-sm-2 col-form-label">Port</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][port]" data-v-setting="smtp.port" value="25" placeholder="Port" id="input-mail-smtp-port" class="form-control">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-timeout" class="col-sm-2 col-form-label">Timeout</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][timeout]" data-v-setting="smtp.timeout" value="5" placeholder="Timeout" id="input-mail-smtp-timeout" class="form-control">
+		</div>
+	</div>
+</div>
+
+
+<div class="test-mail">
+	<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Send test email</label>
+	<div class="row mb-3">
+		<label for="input-mail-parameter" class="col-sm-2 col-form-label">Send to email address</label>
+		<div class="col-sm-10">
+		<div class="input-group mb-3">
+			<input type="text" name="to" data-v-setting="parameter" value="" placeholder="myemailaddress@domain.com" id="input-mail-parameter" class="form-control">
+			<button type="submit" name="action" value="test" class="btn btn-success btn-icon">
+				<span>Send email</span>
+				<i class="lab la-telegram-plane ms-2"></i>
+			  </button>
+		</div>
+	</div>
+</div>
+
+
+<script>
+function togglePasswordInput(element) {
+	var password = document.getElementById("input-mail-smtp-password");
+	if (password.type == "password") {
+		password.type = "text"; 
+		$("i", element).addClass("la-eye").removeClass("la-eye-slash");
+	} else {
+		password.type = "password";
+		$("i", element).removeClass("la-eye").addClass("la-eye-slash");
+	}
+}
+</script>

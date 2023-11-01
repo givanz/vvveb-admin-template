@@ -1,0 +1,280 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Themes","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+				
+		<div class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-3">
+					<i class="icon-copy-outline"></i>&ensp;
+					<span>Themes</span>
+				</h4>
+			</div>
+			
+			<div class="btns">
+				 <a href data-v-url-params='{"module":"theme/market"}'  data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false"
+						class="btn btn-outline-secondary btn-icon ms-1" >
+						<i class="la la-cloud-upload-alt la-lg"></i> <span>Upload theme</span>
+				</a>
+
+				 <a href data-v-url-params='{"module":"theme/market"}' 
+						class="btn btn-primary btn-icon ms-1">
+					<i class="icon-add-circle-outline"></i> <span>Install theme</span>
+				</a>
+			</div>
+		</div>
+
+    <div>								
+                                
+                                      
+                                
+        <div class="themes" id="main-content" >
+
+            @@include('../_includes/notifications.html')  
+            
+			@@include('../_includes/upload-form.html')
+
+			<form action="" method="post">		
+
+
+						@@include('_themes_list.html', {"actions":true})
+							
+								
+					  <div class="bottom clearfix mb-3">
+												<div class="float-start"></div>
+						<div class="float-end">
+					
+							@@include('../_includes/pagination.html')
+
+						</div>
+
+		                </div>
+										
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade modal-full show" id="importModal" tabindex="-1" role="dialog" aria-labelledby="mediaModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg  modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h6 class="modal-title" id="MediaModalLabel">Install resources</h6>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body" data-v-import>
+			  
+			  <form 
+					id="import-form"
+					target="import-iframe"
+					action="" 
+					method="post"
+					data-v-url-params='{"action":"import"}' 
+					data-v-vvveb-action="themes.import" 
+					data-v-vvveb-on="submit">
+				<div id="import-options">	
+				<h6>Import Demo Content</h6>
+				  <div class="menutree">
+						<ul data-v-list="import">
+						  
+						  <li data-v-class-not-if-expand="hasChildren" data-v-list-item>
+							<input type="checkbox" id="m2"/>
+							
+								<label for="m2" data-v-class-not-if-expand-label="hasChildren">
+								   <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts" name="posts[]"value="true" checked>
+									<label class="form-check-label" for="posts" data-v-list-item-name>Posts</label>
+								  </span>
+								</label>
+							
+							<ul>
+							  <li data-v-list-item>
+								 <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts_content" name="posts[content]"value="true" checked>
+									<label class="form-check-label" for="posts_content" data-v-list-item-name>Content</label>
+								  </span>
+							  </li>
+							  <li data-v-list-item>
+								 <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts_media" name="posts[media]"value="true" checked>
+									<label class="form-check-label" for="posts_media" data-v-list-item-name>Media</label>
+								  </span>
+							  </li>
+
+							</ul>
+						  </li>
+						 
+
+						</ul>
+						
+						<h6 class="mt-3">Required Plugins</h6>
+						<ul data-v-list="required_plugins">
+						  
+						  <li data-v-class-not-if-expand="hasChildren" data-v-list-item>
+							<input type="checkbox" id="m2"/>
+							
+								<label for="m2" data-v-class-not-if-expand-label="hasChildren">
+								   <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts" name="posts[]"value="true" checked>
+									<label class="form-check-label" for="posts" data-v-list-item-name>Posts</label>
+								  </span>
+								</label>
+							
+							<ul>
+							  <li data-v-list-item>
+								 <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts_content" name="posts[content]"value="true" checked>
+									<label class="form-check-label" for="posts_content" data-v-list-item-name>Content</label>
+								  </span>
+							  </li>
+							  <li data-v-list-item>
+								 <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts_media" name="posts[media]"value="true" checked>
+									<label class="form-check-label" for="posts_media" data-v-list-item-name>Media</label>
+								  </span>
+							  </li>
+
+							</ul>
+						  </li>
+						 
+
+						</ul>
+						
+						<h6 class="mt-3">Recommended Plugins</h6>
+						<ul data-v-list="recommended_plugins">
+						  
+						  <li data-v-class-not-if-expand="hasChildren" data-v-list-item>
+							<input type="checkbox" id="m2"/>
+							
+								<label for="m2" data-v-class-not-if-expand-label="hasChildren">
+								   <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts" name="posts[]"value="true" checked>
+									<label class="form-check-label" for="posts" data-v-list-item-name>Posts</label>
+								  </span>
+								</label>
+							
+							<ul>
+							  <li data-v-list-item>
+								 <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts_content" name="posts[content]"value="true" checked>
+									<label class="form-check-label" for="posts_content" data-v-list-item-name>Content</label>
+								  </span>
+							  </li>
+							  <li data-v-list-item>
+								 <span class="form-check d-inline-block">
+									<input type="checkbox" class="form-check-input" id="posts_media" name="posts[media]"value="true" checked>
+									<label class="form-check-label" for="posts_media" data-v-list-item-name>Media</label>
+								  </span>
+							  </li>
+
+							</ul>
+						  </li>
+						 
+
+						</ul>
+					</div>	
+					</div>
+				</form>	
+				
+				
+				<iframe id="import-iframe" name="import-iframe" src=""/>
+				
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary save-btn" data-v-vvveb-action="themes.importTheme">Install theme resources</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+
+	<style>
+	.menutree > ul{
+	  padding: 0;
+	  margin: 0;
+	}
+	.menutree li {
+	  list-style: none;
+	  padding: 7px;
+	  border-bottom: 1px solid #eee;
+	}
+	.menutree li:last-child {
+	  border: 0;
+	}
+	.menutree a {
+	  display: block;
+	  width: 100%;
+	  text-decoration: none;
+	  color: #333;
+	}
+		
+	.menutree label.expand-label {
+	  position: relative;
+	  display: block;
+	  width: 100%;
+	  cursor: pointer;
+	}
+	.menutree input[type=checkbox] {
+	  display: none; /* Hide ugly checkbox */
+	}
+
+	/* Hide/expand by default */
+	li.expand > ul {
+	  visibility: hidden;
+	  opacity: 0;
+	  padding:0;
+	  max-height: 0; /* CSS bug. Cannot animate height... */
+	  transition: all 0.5s;
+	}
+	
+	.menutree li label {
+		margin:0;
+	}
+	
+	label.expand-label::after {
+	  font:normal normal normal 16px/1 "LineAwesome";
+	  content: "\f112";
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  transition: all 0.5s;
+	}
+
+	/* Show when checked */
+	li.expand input:checked ~ ul {
+	  visibility: visible;
+	  opacity: 1;
+	  max-height: 999px; /* Just give a big enough height for animation */
+	}
+	li.expand input:checked ~ label.expand-label::after {
+	  transform: rotate(90deg);
+	}	
+	</style>
+	
+@@include('../_includes/footer-scripts.html')
+
+
+
+
+<script type="module" src="libs/media/media.js"></script>
+<script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>
+<script>
+</script>
+
+@@include('../_includes/footer.html')
+

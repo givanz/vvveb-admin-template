@@ -1,0 +1,90 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Region","scripts":"","base_href":"../"})
+
+<body class="region">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="localization-form" action="" method="post" class="needs-validation" data-v-region>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-3">
+						<i class="icon-earth-outline"></i>&ensp;
+						<span>Region</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="/admin/?module=localization/regions" title="Return to Regions"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>Return to Regions</span>
+				 </a>
+				  
+				  <button type="submit" href=""
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+			
+			<div class="px-4">
+				
+				<input type="hidden" name="region_id" data-v-region-region_id>
+					
+				<div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="region[name]" data-v-region-name required>
+					</div>
+				 </div>		 
+
+				 
+				 <div class="mb-3 row">
+					<label for="input-region-code" class="col-sm-2 col-form-label">Region code</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-region-code" placeholder="code" name="region[code]" data-v-region-code required>
+					</div>
+				 </div>		 
+
+				<div class="mb-3 row">
+					<label for="input-region-country" class="col-sm-2 col-form-label" >Country</label>
+					<div class="col-sm-10">
+                      <select name="region[country_id]" class="form-select" data-v-region-country_id data-v-countries>
+                        <option value="1" data-v-country data-v-country-country_id>
+                          <span data-v-country-name>Tax 1 (-2.00)</span>
+                        </option>
+                        <option value="2" data-v-country data-v-country-country_id>
+                          <span data-v-country-name>Tax 2 (19%)</span>
+                        </option>
+                      </select>
+					</div>
+				 </div>
+				 
+				<div class="mb-3 row">
+					<label for="input-region-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="region[status]" id="input-region-status" class="form-control" data-v-region-status>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				 </div>		
+			</div>
+        </div>
+</form>
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html')

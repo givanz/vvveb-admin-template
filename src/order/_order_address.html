@@ -1,0 +1,119 @@
+<table class="table table-bordered">
+	<tr>
+	  <th style="width: 50%;" class="text-start">
+		<span>Billing Address</span>
+		<div class="btn btn-outline-success btn-sm float-end" onclick="$('.billing_address').toggleClass('edit');"><i class="la la-pen"></i> Edit</div>
+	  </th>
+	  <th style="width: 50%;" class="text-start">
+		<span>Shipping Address</span> 
+		<div class="btn btn-outline-success btn-sm float-end" onclick="$('.shipping_address').toggleClass('edit');"><i class="la la-pen"></i> Edit</div>
+	 </tr>
+	<tr>
+	  <td class="text-start billing_address">
+		<div class="display">
+			<div data-v-order-billing_first_name data-billing_first_name-text></div>
+			<div data-v-order-billing_last_name data-billing_last_name-text></div>
+			<div data-v-order-billing_company data-billing_company-text></div>
+			<div data-v-order-billing_address_1 data-billing_address_1-text></div>
+			<div data-v-order-billing_address_2 data-billing_address_2-text></div>
+			<div data-v-order-billing_city data-billing_city-text></div>
+			<div data-v-order-billing_post_code data-billing_post_code-text></div>
+			<div data-v-order-billing_country_id data-billing_country_id-text></div>
+			<div data-v-order-billing_country_id data-billing_country_id-text></div>
+			<div data-v-order-billing_region_id data-billing_region_id-text></div>
+			<div data-v-order-billing_fields data-billing_fields-text></div>
+		</div>	
+		<div class="edit">
+			<div class="mb-3 row"><label for="billing_first_name" class="col-sm-2 col-form-label">First name</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_first_name" name="billing_first_name" data-v-order-billing_first_name></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_last_name" class="col-sm-2 col-form-label">Last name</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_last_name" name="billing_last_name" data-v-order-billing_last_name></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_company" class="col-sm-2 col-form-label">Company</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_company" name="billing_company" data-v-order-billing_company></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_address_1" class="col-sm-2 col-form-label">Address 1</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_address_1" name="billing_address_1" data-v-order-billing_address_1></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_address_2" class="col-sm-2 col-form-label">Address 2</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_address_2" name="billing_address_2" data-v-order-billing_address_2></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_city" class="col-sm-2 col-form-label">City</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_city" name="billing_city" data-v-order-billing_city></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_post_code" class="col-sm-2 col-form-label">Post code</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_post_code" name="billing_post_code" data-v-order-billing_post_code></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_country_id" class="col-sm-2 col-form-label">Country id</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_country_id" name="billing_country_id" data-v-order-billing_country_id></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_region_id" class="col-sm-2 col-form-label">region id</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_region_id" name="billing_region_id" data-v-order-billing_region_id></div>
+			</div>
+			<div class="mb-3 row"><label for="billing_fields" class="col-sm-2 col-form-label">Custom field</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="billing_fields" name="billing_fields" data-v-order-billing_fields></div>
+			</div>
+			
+			<div classs="mt-3">
+				<button class="btn btn-success float-end">
+					<i class="la la-save"></i> <span>Save</span>
+				</button>
+			</div>
+		</div>
+	  </td>
+	  <td class="text-start shipping_address">
+		<div class="display">
+			<div data-v-order-shipping_first_name data-shipping_first_name-text></div>
+			<div data-v-order-shipping_last_name data-shipping_last_name-text></div>
+			<div data-v-order-shipping_company data-shipping_company-text></div>
+			<div data-v-order-shipping_address_1 data-shipping_address_1-text></div>
+			<div data-v-order-shipping_address_2 data-shipping_address_2-text></div>
+			<div data-v-order-shipping_city data-shipping_city-text></div>
+			<div data-v-order-shipping_post_code data-shipping_post_code-text></div>
+			<div data-v-order-shipping_country_id data-shipping_country_id-text></div>
+			<div data-v-order-shipping_country_id data-shipping_country_id-text></div>
+			<div data-v-order-shipping_region_id data-shipping_region_id-text></div>
+			<div data-v-order-shipping_fields data-shipping_fields-text></div>
+		</div>	
+		<div class="edit">
+			<div class="mb-3 row"><label for="shipping_first_name" class="col-sm-2 col-form-label">First name</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_first_name" name="shipping_first_name" data-v-order-shipping_first_name></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_last_name" class="col-sm-2 col-form-label">Last name</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_last_name" name="shipping_last_name" data-v-order-shipping_last_name></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_company" class="col-sm-2 col-form-label">Company</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_company" name="shipping_company" data-v-order-shipping_company></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_address_1" class="col-sm-2 col-form-label">Address 1</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_address_1" name="shipping_address_1" data-v-order-shipping_address_1></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_address_2" class="col-sm-2 col-form-label">Address 2</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_address_2" name="shipping_address_2" data-v-order-shipping_address_2></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_city" class="col-sm-2 col-form-label">City</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_city" name="shipping_city" data-v-order-shipping_city></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_post_code" class="col-sm-2 col-form-label">Post code</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_post_code" name="shipping_post_code" data-v-order-shipping_post_code></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_country_id" class="col-sm-2 col-form-label">Country id</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_country_id" name="shipping_country_id" data-v-order-shipping_country_id></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_region_id" class="col-sm-2 col-form-label">region id</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_region_id" name="shipping_region_id" data-v-order-shipping_region_id></div>
+			</div>
+			<div class="mb-3 row"><label for="shipping_fields" class="col-sm-2 col-form-label">Custom field</label>
+				<div class="col-sm-10"><input type="text" class="form-control" id="shipping_fields" name="shipping_fields" data-v-order-shipping_fields></div>
+			</div>
+			<!--		
+			<div classs="mt-3">
+				<button class="btn btn-success float-end">
+					<i class="la la-save"></i> <span>Save</span>
+				</button>
+			</div>
+			-->
+		</div>
+	  </td>
+</table>

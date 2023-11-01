@@ -1,0 +1,74 @@
+<div class="billing_address">
+	<div class="clearfix">
+		<h6 class="float-start">Billing Address</h6>
+		<div class="btn btn-outline-success btn-sm float-end" onclick="$('.billing_address').toggleClass('edit');"><i class="la la-pen"></i> Edit</div>
+	</div>		
+	<div class="display mb-1 lh-lg">
+		<div data-v-order-billing_first_name data-billing_first_name-text></div>
+		<div data-v-order-billing_last_name data-billing_last_name-text></div>
+		<div data-v-order-billing_company data-billing_company-text></div>
+		<div data-v-order-billing_address_1 data-billing_address_1-text></div>
+		<div data-v-order-billing_address_2 data-billing_address_2-text></div>
+		<div data-v-order-billing_city data-billing_city-text></div>
+		<div data-v-order-billing_post_code data-billing_post_code-text></div>
+		<div data-v-order-billing_country data-billing_country_id></div>
+		<div data-v-order-billing_region data-billing_region></div>
+		<!--
+		<div data-v-order-billing_fields data-billing_fields-text></div>
+		-->
+	</div>		
+	<div class="edit">
+		<div class="mb-3 row"><label for="billing_first_name" class="col-sm-4 col-form-label">First name</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_first_name" name="billing_first_name" data-v-order-billing_first_name></div>
+		</div>
+		<div class="mb-3 row"><label for="billing_last_name" class="col-sm-4 col-form-label">Last name</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_last_name" name="billing_last_name" data-v-order-billing_last_name></div>
+		</div>
+		<div class="mb-3 row"><label for="billing_company" class="col-sm-4 col-form-label">Company</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_company" name="billing_company" data-v-order-billing_company></div>
+		</div>
+		<div class="mb-3 row"><label for="billing_address_1" class="col-sm-4 col-form-label">Address 1</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_address_1" name="billing_address_1" data-v-order-billing_address_1></div>
+		</div>
+		<div class="mb-3 row"><label for="billing_address_2" class="col-sm-4 col-form-label">Address 2</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_address_2" name="billing_address_2" data-v-order-billing_address_2></div>
+		</div>
+		<div class="mb-3 row"><label for="billing_city" class="col-sm-4 col-form-label">City</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_city" name="billing_city" data-v-order-billing_city></div>
+		</div>
+		<div class="mb-3 row"><label for="billing_post_code" class="col-sm-4 col-form-label">Post code</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_post_code" name="billing_post_code" data-v-order-billing_post_code></div>
+		</div>
+		<div class="mb-3 row">
+			<label for="billing_country_id" class="col-sm-4 col-form-label">Country id</label>
+			<div class="col-sm-8">
+				<select class="form-control" id="billing_country_id" name="billing_country_id" data-text="data-v-order-billing_country" data-v-order-billing_country_id>
+					<option value="1" data-v-option>Country name</option>
+					<option value="2" data-v-option>Country name</option>
+					<option value="3"data-v-option>Country name</option>
+				</select>
+			</div>
+		</div>
+		<div class="mb-3 row"><label for="billing_region_id" class="col-sm-4 col-form-label">region id</label>
+			<div class="col-sm-8">
+				<select class="form-control" id="billing_region_id" name="billing_region_id" data-text="data-v-order-billing_region" data-v-order-billing_region_id>
+					<option value="1" data-v-option>Country name</option>
+					<option value="2" data-v-option>Country name</option>
+					<option value="3"data-v-option>Country name</option>
+				</select>
+			</div>
+		</div>
+		<!--
+		<div class="mb-3 row"><label for="billing_fields" class="col-sm-4 col-form-label">Custom field</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_fields" name="billing_fields" data-v-order-billing_fields></div>
+		</div>
+		-->
+		<!--		
+		<div classs="mt-3">
+			<button class="btn btn-success float-end">
+				<i class="la la-save"></i> <span>Save</span>
+			</button>
+		</div>
+		-->
+	</div>
+</div>
