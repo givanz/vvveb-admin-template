@@ -6,8 +6,8 @@
           <th class="text-start">User Group</th>
           <th class="text-end">Priority</th>
           <th class="text-end">Price</th>
-          <th class="text-start">Date Start</th>
-          <th class="text-start">Date End</th>
+          <th class="text-start">From date</th>
+          <th class="text-start">To Date</th>
           <th class="text-end">
             <button type="button" id="button-subscription" class="btn btn-sm btn-primary" onclick='addTemplate("promotion-template", "product_promotion", "product-promotion")'>
               <i class="la la-plus la-lg  text-white"></i>
@@ -29,19 +29,19 @@
             <input name="product_promotion[0][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
           </td>
           <td class="text-start" style="width: 20%;">
-			<input name="product_promotion[0][date_start]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_start>
+			<input name="product_promotion[0][from_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-from_date>
 			<!--
             <div class="input-group date">
-              <input name="product_promotion[0][date_start]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_start>
+              <input name="product_promotion[0][from_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-from_date>
 			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->
           </td>
           <td class="text-start" style="width: 20%;">
-            <input name="product_promotion[0][date_end]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_end>
+            <input name="product_promotion[0][to_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-to_date>
 			<!--
             <div class="input-group">
-              <input name="product_promotion[0][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+              <input name="product_promotion[0][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
 			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->
@@ -65,19 +65,19 @@
             <input name="product_promotion[#][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
           </td>
           <td class="text-start" style="width: 20%;">
-			<input name="product_promotion[#][date_start]" type="date" value="0000-00-00" class="form-control" data-v-promotion-date_start>	
+			<input name="product_promotion[#][from_date]" type="date" value="0000-00-00" class="form-control" data-v-promotion-from_date>	
 			<!--
             <div class="input-group">
-              <input name="product_promotion[#][date_start]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-date_start>
+              <input name="product_promotion[#][from_date]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-from_date>
 			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->
           </td>
           <td class="text-start" style="width: 20%;">
-			<input name="product_promotion[#][date_end]" type="date" value="0000-00-00"  class="form-control" data-v-promotion-date_end>
+			<input name="product_promotion[#][to_date]" type="date" value="0000-00-00"  class="form-control" data-v-promotion-to_date>
 			<!--
             <div class="input-group">
-			   <input name="product_promotion[#][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+			   <input name="product_promotion[#][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
 			   <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->

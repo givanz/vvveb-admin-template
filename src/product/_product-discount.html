@@ -7,8 +7,8 @@
 				<th class="text-end">Quantity</th>
 				<th class="text-end">Priority</th>
 				<th class="text-end">Price</th>
-				<th class="text-start">Date Start</th>
-				<th class="text-start">Date End</th>
+				<th class="text-start">From date</th>
+				<th class="text-start">To Date</th>
 				<th class="text-end">
 					<button type="button" class="btn btn-sm btn-primary" id="add-discount-btn" onclick='addTemplate("discount-template", "product_discount", "discount")'>
 						<i class="la la-plus la-lg text-white"></i>
@@ -33,19 +33,19 @@
 					<input name="product_discount[0][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-discount-price>
 				  </td>
 				  <td class="text-end" style="width: 20%;">
-					<input name="product_discount[0][date_start]" value="0000-00-00" placeholder="Date Start" type="date" class="form-control" data-v-discount-date_start>
+					<input name="product_discount[0][from_date]" value="0000-00-00" placeholder="From date" type="date" class="form-control" data-v-discount-from_date>
 					<!--
 					<div class="input-group">
-					  <input name="product_discount[0][date_start]" value="" placeholder="Date Start" type="text" class="form-control datetime border-end-0" data-v-discount-date_start>
+					  <input name="product_discount[0][from_date]" value="" placeholder="From date" type="text" class="form-control datetime border-end-0" data-v-discount-from_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->
 				  </td>
 				  <td class="text-end" style="width: 20%;">
-					<input name="product_discount[0][date_end]" value="0000-00-00" placeholder="Date End" type="date" class="form-control" data-v-discount-date_end>
+					<input name="product_discount[0][to_date]" value="0000-00-00" placeholder="To Date" type="date" class="form-control" data-v-discount-to_date>
 					<!--
 					<div class="input-group">
-					  <input name="product_discount[0][date_end]" value="" placeholder="Date End" type="text" class="form-control datetime border-end-0" data-v-discount-date_end>
+					  <input name="product_discount[0][to_date]" value="" placeholder="To Date" type="text" class="form-control datetime border-end-0" data-v-discount-to_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->
@@ -72,19 +72,19 @@
 					<input name="product_discount[#][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-discount-price>
 				  </td>
 				  <td class="text-end" style="width: 20%;">
-					<input name="product_discount[#][date_start]" value="0000-00-00" placeholder="Date Start" type="date" class="form-control" data-v-discount-date_start>
+					<input name="product_discount[#][from_date]" value="0000-00-00" placeholder="From date" type="date" class="form-control" data-v-discount-from_date>
 					<!--
 					<div class="input-group">
-					  <input name="product_discount[#][date_start]" value="" placeholder="Date Start" type="text" class="form-control datetime border-end-0" data-v-discount-date_start>
+					  <input name="product_discount[#][from_date]" value="" placeholder="From date" type="text" class="form-control datetime border-end-0" data-v-discount-from_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->
 				  </td>
 				  <td class="text-end" style="width: 20%;">
-					<input name="product_discount[#][date_end]" value="0000-00-00" placeholder="Date End" type="date" class="form-control" data-v-discount-date_end>
+					<input name="product_discount[#][to_date]" value="0000-00-00" placeholder="To Date" type="date" class="form-control" data-v-discount-to_date>
 					<!--
 					<div class="input-group">
-					  <input name="product_discount[#][date_end]" value="" placeholder="Date End" type="text" class="form-control datetime border-end-0" data-v-discount-date_end>
+					  <input name="product_discount[#][to_date]" value="" placeholder="To Date" type="text" class="form-control datetime border-end-0" data-v-discount-to_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->

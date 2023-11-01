@@ -1,6 +1,6 @@
-@@include('../_includes/html-head.html', {"title": "Vvveb - Return action","scripts":"","base_href":"../"})
+@@include('../_includes/html-head.html', {"title": "Vvveb - Return resolution","scripts":"","base_href":"../"})
 
-<body class="return_action">
+<body class="return_resolution">
 
 <div id="container">
        
@@ -16,14 +16,14 @@
 				<div class="title">
 					<h4 class="text-muted my-3">
 						<i class="icon-document-text-outline"></i>&ensp;
-						<span>Return action</span>
+						<span>Return resolution</span>
 					</h4>
 				</div>
 				
 				<div class="btns">
-					 <a href data-v-url-params='{"module":"settings/return-action"}' 
+					 <a href data-v-url-params='{"module":"settings/return-resolution"}' 
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-circle-outline"></i> <span>Add return action</span>
+						<i class="icon-add-circle-outline"></i> <span>Add return resolution</span>
 					</a>
 				</div>
             </div>
@@ -31,7 +31,7 @@
             <div id="main-content">
                 @@include('../_includes/notifications.html')
 
-                <div class="return_action card-block">
+                <div class="return_resolution card-block">
                     <form action="" method="post">
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
@@ -44,7 +44,7 @@
 						
                         <div class="table-responsive">
                         <table class="table table-hover middle-align"
-                               data-v-return_action>
+                               data-v-return_resolution>
 
 
                             <thead>
@@ -54,7 +54,7 @@
 
                                         <label class="form-check">
                                             <input type="checkbox" class="form-check-input" value="4"
-                                                   name="return_action[]"
+                                                   name="return_resolution[]"
                                                    data-v-vvveb-action="table.bulkSelect">
                                             <span class="form-check-label"></span>
                                             <span class="custom-control-description">&nbsp;</span>
@@ -63,7 +63,7 @@
 
                                     </div>
                                 </th>
-                                <th class="return_action">
+                                <th class="return_resolution">
 									<i class="icon-cube-outline"></i>&ensp;<span>Name</span>
 								</th>
 
@@ -73,18 +73,18 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="return_action" data-v-return_action>
+                            <tr class="return_resolution" data-v-return_resolution>
                                 <td class="checkbox">
                                     <label class="form-check">
-                                        <input type="checkbox" class="form-check-input" value="4" name="return_action_id[]" data-v-vvveb-action="table.selectRow" data-v-return_action-return_action_id>
+                                        <input type="checkbox" class="form-check-input" value="4" name="return_resolution_id[]" data-v-vvveb-action="table.selectRow" data-v-return_resolution-return_resolution_id>
                                         <span class="form-check-label"></span>
                                         <span class="custom-control-description">&nbsp;</span>
                                     </label>
 
                                 </td>
 							
-                                <td class="return_action position-relative">
-                                    <a href="/admin?module=return_action&amp;action=return_action&amp;id=4" data-v-return_action-url><span data-v-return_action-name>Article title</span></a>
+                                <td class="return_resolution position-relative">
+                                    <a href="/admin?module=return_resolution&amp;action=return_resolution&amp;id=4" data-v-return_resolution-url><span data-v-return_resolution-name>Article title</span></a>
                                 </td>
 
                                 <td class="actions" style="width:200px;">
@@ -101,7 +101,7 @@
 										</button>
 										<ul class="dropdown-menu">
 
-										  <li><a class="dropdown-item text-danger" data-v-return_action-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+										  <li><a class="dropdown-item text-danger" data-v-return_resolution-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
 										</ul>
 									 </div>
 
@@ -112,10 +112,10 @@
 									<div class="text-center p-4 bg-body-tertiary border">
 										<div>
 											<i class="la la-file-alt fs-1 mb-2"></i>
-											<div class="mt-3">No return_action to display!</div>
+											<div class="mt-3">No return_resolution to display!</div>
 										</div>
 
-										<a href data-v-url-params='{"module":"settings/return-action"}' 
+										<a href data-v-url-params='{"module":"settings/return-resolution"}' 
 												class="btn btn-primary btn-icon mt-3">
 											<i class="icon-add-circle-outline"></i> <span>Add return action</span>
 										</a>

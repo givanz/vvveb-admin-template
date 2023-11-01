@@ -717,9 +717,9 @@
                           </a>
                         </li>
                         <li class="nav-item " data-v-submenu-item>
-                          <a href="/admin/?module=settings/return-actions" class="nav-link " data-v-submenu-item-url>
+                          <a href="/admin/?module=settings/return-resolutions" class="nav-link " data-v-submenu-item-url>
                             <i class="la la-exchange-alt" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Return actions</span>
+                            <span data-v-submenu-item-name>Return resolutions</span>
                           </a>
                         </li>
                         <li class="nav-item " data-v-submenu-item>
@@ -1429,10 +1429,10 @@
                     <i class="la la-user"></i>&ensp;<span>Name</span>
                   </th>
                   <th class="text-center" style="width:150px;">
-                    <i class="la la-filter"></i>&ensp;<span>Frequency</span>
+                    <i class="la la-filter"></i>&ensp;<span>Period</span>
                   </th>
                   <th class="text-center" style="width:150px;">
-                    <i class="la la-filter"></i>&ensp;<span>Duration</span>
+                    <i class="la la-filter"></i>&ensp;<span>Length</span>
                   </th>
                   <th class="text-center" style="width:150px;">
                     <i class="la la-filter"></i>&ensp;<span>Cycle</span>
@@ -1463,72 +1463,10 @@
                   </td>
 
                   <td class="text-center">
-                    <span data-v-subscription_plan-frequency>Frequency</span>
+                    <span data-v-subscription_plan-period>Period</span>
                   </td>
                   <td class="text-center">
-                    <span data-v-subscription_plan-duration>Duration</span>
-                  </td>
-                  <td class="text-center">
-                    <span data-v-subscription_plan-cycle>Cycle</span>
-                  </td>
-
-                  <td style="width:200px;text-align:center;">
-                    <span class="price badge small bg-success" data-v-if="subscription_plan.status = 1">
-                      <span>Active</span>
-                    </span>
-                    <span class="price badge small bg-body-tertiary text-muted" data-v-if="subscription_plan.status = 0">
-                      <span>Disabled</span>
-                    </span>
-                  </td>
-
-                  <td class="actions" style="width:150px;">
-
-                    <div class="btn-group">
-                      <a type="button" class="btn btn-outline-secondary" data-v-subscription_plan-edit-url>
-                        <i class="la la-pencil-alt text-primary"></i>
-                        <span>Edit</span>
-                      </a>
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
-
-                        <span class="visually-hidden">Toggle primary</span>
-                      </button>
-                      <ul class="dropdown-menu">
-
-                        <li>
-                          <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                          <a class="dropdown-item text-danger" data-v-subscription_plan-delete-url onclick="subscription_plan confirm('Are you sure?')">
-                            <i class="icon-trash-outline">&ensp;</i>
-                            <span>Delete</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-
-                  </td>
-                </tr>
-                <tr class="subscription_plan" data-v-subscription_plan>
-                  <td class="checkbox">
-                    <label class="form-check">
-                      <input type="checkbox" class="form-check-input" value="4" name="subscription_plan_id[]" data-v-vvveb-action="table.selectRow" data-v-subscription_plan-subscription_plan_id>
-                      <span class="form-check-label"></span>
-                      <span class="custom-control-description">&nbsp;</span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <span class="name">
-                      <a href="#" data-v-subscription_plan-url>
-                        <span data-v-subscription_plan-name>Doe</span>
-                      </a>
-                  </td>
-
-                  <td class="text-center">
-                    <span data-v-subscription_plan-frequency>Frequency</span>
-                  </td>
-                  <td class="text-center">
-                    <span data-v-subscription_plan-duration>Duration</span>
+                    <span data-v-subscription_plan-length>Length</span>
                   </td>
                   <td class="text-center">
                     <span data-v-subscription_plan-cycle>Cycle</span>
@@ -1587,10 +1525,72 @@
                   </td>
 
                   <td class="text-center">
-                    <span data-v-subscription_plan-frequency>Frequency</span>
+                    <span data-v-subscription_plan-period>Period</span>
                   </td>
                   <td class="text-center">
-                    <span data-v-subscription_plan-duration>Duration</span>
+                    <span data-v-subscription_plan-length>Length</span>
+                  </td>
+                  <td class="text-center">
+                    <span data-v-subscription_plan-cycle>Cycle</span>
+                  </td>
+
+                  <td style="width:200px;text-align:center;">
+                    <span class="price badge small bg-success" data-v-if="subscription_plan.status = 1">
+                      <span>Active</span>
+                    </span>
+                    <span class="price badge small bg-body-tertiary text-muted" data-v-if="subscription_plan.status = 0">
+                      <span>Disabled</span>
+                    </span>
+                  </td>
+
+                  <td class="actions" style="width:150px;">
+
+                    <div class="btn-group">
+                      <a type="button" class="btn btn-outline-secondary" data-v-subscription_plan-edit-url>
+                        <i class="la la-pencil-alt text-primary"></i>
+                        <span>Edit</span>
+                      </a>
+                      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+
+                        <span class="visually-hidden">Toggle primary</span>
+                      </button>
+                      <ul class="dropdown-menu">
+
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                          <a class="dropdown-item text-danger" data-v-subscription_plan-delete-url onclick="subscription_plan confirm('Are you sure?')">
+                            <i class="icon-trash-outline">&ensp;</i>
+                            <span>Delete</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr class="subscription_plan" data-v-subscription_plan>
+                  <td class="checkbox">
+                    <label class="form-check">
+                      <input type="checkbox" class="form-check-input" value="4" name="subscription_plan_id[]" data-v-vvveb-action="table.selectRow" data-v-subscription_plan-subscription_plan_id>
+                      <span class="form-check-label"></span>
+                      <span class="custom-control-description">&nbsp;</span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <span class="name">
+                      <a href="#" data-v-subscription_plan-url>
+                        <span data-v-subscription_plan-name>Doe</span>
+                      </a>
+                  </td>
+
+                  <td class="text-center">
+                    <span data-v-subscription_plan-period>Period</span>
+                  </td>
+                  <td class="text-center">
+                    <span data-v-subscription_plan-length>Length</span>
                   </td>
                   <td class="text-center">
                     <span data-v-subscription_plan-cycle>Cycle</span>

@@ -20,12 +20,13 @@ Default admin theme used in **[Vvveb CMS](https://www.vvveb.com)**
 
 **[👉 Live Demo](https://demo.vvveb.com/admin)**
 
-
+| [![](https://www.vvveb.com/vvveb-admin/dashboard-light.png)](https://www.vvveb.com/vvveb-admin/dashboard-light.png) |
+|:---:|
 
 | [![](https://www.vvveb.com/vvveb-admin/dashboard-light.png)](https://www.vvveb.com/vvveb-admin/dashboard-light.png) | [![](https://www.vvveb.com/vvveb-admin/dashboard-dark.png)](https://www.vvveb.com/vvveb-admin/dashboard-dark.png) | [![](https://www.vvveb.com/vvveb-admin/login-light.png)](https://www.vvveb.com/vvveb-admin/login-light.png) | [![](https://www.vvveb.com/vvveb-admin/login-dark.png)](https://www.vvveb.com/vvveb-admin/login-dark.png) |
 |:---:|:---:|:---:|:---:|
 | **Dashboard** | **Dashboard dark** | **Login** | **Login dark** |
-| [![](https://www.vvveb.com/vvveb-admin/post-light.png)](https://www.vvveb.com/vvveb-admin/post-light.png) | [![](https://www.vvveb.com/vvveb-admin/post-dark.png)](https://www.vvveb.com/vvveb-admin/post-dark.png) | [![](https://www.vvveb.com/vvveb-admin/product-light.png)](https://www.vvveb.com/vvveb-admin/product.png) | [![](https://www.vvveb.com/vvveb-admin/product-dark.png)](https://www.vvveb.com/vvveb-admin/product-dark.png) |
+| [![](https://www.vvveb.com/vvveb-admin/post-light.png)](https://www.vvveb.com/vvveb-admin/post-light.png) | [![](https://www.vvveb.com/vvveb-admin/post-dark.png)](https://www.vvveb.com/vvveb-admin/post-dark.png) | [![](https://www.vvveb.com/vvveb-admin/product-light.png)](https://www.vvveb.com/vvveb-admin/product-light.png) | [![](https://www.vvveb.com/vvveb-admin/product-dark.png)](https://www.vvveb.com/vvveb-admin/product-dark.png) |
 | **Post**  | **Post dark** | **Product**  | **Product dark** |
 | [![](https://www.vvveb.com/vvveb-admin/products-light.png)](https://www.vvveb.com/vvveb-admin/products-light.png) | [![](https://www.vvveb.com/vvveb-admin/products-dark.png)](https://www.vvveb.com/vvveb-admin/products-dark.png) | [![](https://www.vvveb.com/vvveb-admin/posts-light.png)](https://www.vvveb.com/vvveb-admin/posts-light.png) | [![](https://www.vvveb.com/vvveb-admin/posts-dark.png)](https://www.vvveb.com/vvveb-admin/posts-dark.png) |
 | **Products** | **Products dark** | **Posts** | **Posts dark** |
@@ -39,6 +40,16 @@ Default admin theme used in **[Vvveb CMS](https://www.vvveb.com)**
 | **Email** | **Categories dark** | **Coupons light** | **Language light** |
 
 
+## Quick start
+
+- Clone the repo and run it.
+```bash
+git clone https://github.com/givanz/vvveb-admin-template/
+cd vvveb-admin-template
+npm i
+npm run gulp
+```
+
 ## Build
 
 ### Generate html files
@@ -51,16 +62,6 @@ npm run gulp
 
 ```bash
 npm run gulp watch
-```
-
-## Quick start
-
-- Clone the repo and run it.
-```bash
-git clone https://github.com/givanz/vvveb-admin-template/
-cd vvveb-admin-template
-npm i
-npm run gulp
 ```
 
 ## Documentation

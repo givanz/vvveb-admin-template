@@ -717,9 +717,9 @@
                           </a>
                         </li>
                         <li class="nav-item " data-v-submenu-item>
-                          <a href="/admin/?module=settings/return-actions" class="nav-link " data-v-submenu-item-url>
+                          <a href="/admin/?module=settings/return-resolutions" class="nav-link " data-v-submenu-item-url>
                             <i class="la la-exchange-alt" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Return actions</span>
+                            <span data-v-submenu-item-name>Return resolutions</span>
                           </a>
                         </li>
                         <li class="nav-item " data-v-submenu-item>
@@ -2313,17 +2313,17 @@
                       <div class="col-sm-4">
                         <input name="stock_quantity" value="1" placeholder="Quantity" id="input-quantity" class="form-control" type="text" data-v-product-stock_quantity>
                       </div>
-                      <label class="col-sm-2 form-label" for="input-minimum">
+                      <label class="col-sm-2 form-label" for="input-minimum_quantity">
                         <span>Minimum order quantity</span>
                       </label>
                       <div class="col-sm-4">
-                        <input name="minimum" value="1" placeholder="Minimum Quantity" id="input-minimum" class="form-control" type="text" data-v-product-minimum>
+                        <input name="minimum_quantity" value="1" placeholder="Minimum Quantity" id="input-minimum_quantity" class="form-control" type="text" data-v-product-minimum_quantity>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label class="col-sm-2 form-label" for="input-subtract">Subtract Stock</label>
+                      <label class="col-sm-2 form-label" for="input-subtract_stock">Subtract Stock</label>
                       <div class="col-sm-4">
-                        <select name="subtract" id="input-subtract" class="form-select" data-v-product-subtract>
+                        <select name="subtract_stock" id="input-subtract_stock" class="form-select" data-v-product-subtract_stock>
                           <option value="1" data-v-option>Yes</option>
                           <option value="0" data-v-option>No</option>
                         </select>
@@ -2362,8 +2362,8 @@
                       <div class="col-sm-10">
                         <div class="input-group">
 
-                          <div id="input-shipping" class="form-check form-switch form-switch-lg">
-                            <input type="checkbox" name="shipping" value="1" class="form-check-input" data-v-product-shipping>
+                          <div id="input-requires_shipping" class="form-check form-switch form-switch-lg">
+                            <input type="checkbox" name="requires_shipping" value="1" class="form-check-input" data-v-product-requires_shipping>
                           </div>
 
                         </div>
@@ -2794,8 +2794,8 @@
                             <th class="text-end">Quantity</th>
                             <th class="text-end">Priority</th>
                             <th class="text-end">Price</th>
-                            <th class="text-start">Date Start</th>
-                            <th class="text-start">Date End</th>
+                            <th class="text-start">From date</th>
+                            <th class="text-start">To Date</th>
                             <th class="text-end">
                               <button type="button" class="btn btn-sm btn-primary" id="add-discount-btn" onclick='addTemplate("discount-template", "product_discount", "discount")'>
                                 <i class="la la-plus la-lg text-white"></i>
@@ -2820,19 +2820,19 @@
                               <input name="product_discount[0][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-discount-price>
                             </td>
                             <td class="text-end" style="width: 20%;">
-                              <input name="product_discount[0][date_start]" value="0000-00-00" placeholder="Date Start" type="date" class="form-control" data-v-discount-date_start>
+                              <input name="product_discount[0][from_date]" value="0000-00-00" placeholder="From date" type="date" class="form-control" data-v-discount-from_date>
                               <!--
 					<div class="input-group">
-					  <input name="product_discount[0][date_start]" value="" placeholder="Date Start" type="text" class="form-control datetime border-end-0" data-v-discount-date_start>
+					  <input name="product_discount[0][from_date]" value="" placeholder="From date" type="text" class="form-control datetime border-end-0" data-v-discount-from_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->
                             </td>
                             <td class="text-end" style="width: 20%;">
-                              <input name="product_discount[0][date_end]" value="0000-00-00" placeholder="Date End" type="date" class="form-control" data-v-discount-date_end>
+                              <input name="product_discount[0][to_date]" value="0000-00-00" placeholder="To Date" type="date" class="form-control" data-v-discount-to_date>
                               <!--
 					<div class="input-group">
-					  <input name="product_discount[0][date_end]" value="" placeholder="Date End" type="text" class="form-control datetime border-end-0" data-v-discount-date_end>
+					  <input name="product_discount[0][to_date]" value="" placeholder="To Date" type="text" class="form-control datetime border-end-0" data-v-discount-to_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->
@@ -2859,19 +2859,19 @@
                               <input name="product_discount[#][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-discount-price>
                             </td>
                             <td class="text-end" style="width: 20%;">
-                              <input name="product_discount[#][date_start]" value="0000-00-00" placeholder="Date Start" type="date" class="form-control" data-v-discount-date_start>
+                              <input name="product_discount[#][from_date]" value="0000-00-00" placeholder="From date" type="date" class="form-control" data-v-discount-from_date>
                               <!--
 					<div class="input-group">
-					  <input name="product_discount[#][date_start]" value="" placeholder="Date Start" type="text" class="form-control datetime border-end-0" data-v-discount-date_start>
+					  <input name="product_discount[#][from_date]" value="" placeholder="From date" type="text" class="form-control datetime border-end-0" data-v-discount-from_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->
                             </td>
                             <td class="text-end" style="width: 20%;">
-                              <input name="product_discount[#][date_end]" value="0000-00-00" placeholder="Date End" type="date" class="form-control" data-v-discount-date_end>
+                              <input name="product_discount[#][to_date]" value="0000-00-00" placeholder="To Date" type="date" class="form-control" data-v-discount-to_date>
                               <!--
 					<div class="input-group">
-					  <input name="product_discount[#][date_end]" value="" placeholder="Date End" type="text" class="form-control datetime border-end-0" data-v-discount-date_end>
+					  <input name="product_discount[#][to_date]" value="" placeholder="To Date" type="text" class="form-control datetime border-end-0" data-v-discount-to_date>
 					  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 					</div>
 					-->
@@ -2896,8 +2896,8 @@
                             <th class="text-start">User Group</th>
                             <th class="text-end">Priority</th>
                             <th class="text-end">Price</th>
-                            <th class="text-start">Date Start</th>
-                            <th class="text-start">Date End</th>
+                            <th class="text-start">From date</th>
+                            <th class="text-start">To Date</th>
                             <th class="text-end">
                               <button type="button" id="button-subscription" class="btn btn-sm btn-primary" onclick='addTemplate("promotion-template", "product_promotion", "product-promotion")'>
                                 <i class="la la-plus la-lg  text-white"></i>
@@ -2919,19 +2919,19 @@
                               <input name="product_promotion[0][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
                             </td>
                             <td class="text-start" style="width: 20%;">
-                              <input name="product_promotion[0][date_start]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_start>
+                              <input name="product_promotion[0][from_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-from_date>
                               <!--
             <div class="input-group date">
-              <input name="product_promotion[0][date_start]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_start>
+              <input name="product_promotion[0][from_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-from_date>
 			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->
                             </td>
                             <td class="text-start" style="width: 20%;">
-                              <input name="product_promotion[0][date_end]" type="date" class="form-control" value="0000-00-00" data-v-promotion-date_end>
+                              <input name="product_promotion[0][to_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-to_date>
                               <!--
             <div class="input-group">
-              <input name="product_promotion[0][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+              <input name="product_promotion[0][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
 			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->
@@ -2955,19 +2955,19 @@
                               <input name="product_promotion[#][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
                             </td>
                             <td class="text-start" style="width: 20%;">
-                              <input name="product_promotion[#][date_start]" type="date" value="0000-00-00" class="form-control" data-v-promotion-date_start>
+                              <input name="product_promotion[#][from_date]" type="date" value="0000-00-00" class="form-control" data-v-promotion-from_date>
                               <!--
             <div class="input-group">
-              <input name="product_promotion[#][date_start]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-date_start>
+              <input name="product_promotion[#][from_date]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-from_date>
 			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->
                             </td>
                             <td class="text-start" style="width: 20%;">
-                              <input name="product_promotion[#][date_end]" type="date" value="0000-00-00" class="form-control" data-v-promotion-date_end>
+                              <input name="product_promotion[#][to_date]" type="date" value="0000-00-00" class="form-control" data-v-promotion-to_date>
                               <!--
             <div class="input-group">
-			   <input name="product_promotion[#][date_end]" type="text" class="form-control datetime border-end-0" data-v-promotion-date_end>
+			   <input name="product_promotion[#][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
 			   <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 			</div>
 			-->
