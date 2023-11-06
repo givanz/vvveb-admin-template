@@ -144,7 +144,7 @@
                                 <h5 class="card-title">Reviews</h5>
 
                                 <i class="la la-sms icon bg-warning text-white d-inline-block"></i>
-                                <h3 class="number d-inline-block" data-v-reviews-pending-count>8</h3>
+                                <h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
 
 								<div class="card-text float-end">
 									<ul class="list-unstyled">
@@ -190,7 +190,7 @@
                                     chartjs['orders_users'] = {
                                         type: 'line',
                                         data: {
-                                            labels: {$stats.labels},
+                                            labels: {$stats.labels},//labels: ["2022-05-01", "2022-05-02", "2022-05-03", "2022-05-04", "2022-05-05", "2022-05-06"],
                                             datasets: [
                                                 {
                                                     label: 'Orders',
@@ -265,7 +265,7 @@
                                     chartjs['sales'] = {
                                         type: 'line',
 										data: {
-                                            labels: {$stats.labels},
+                                            labels: {$stats.labels},//labels: ["2022-05-01", "2022-05-02", "2022-05-03", "2022-05-04", "2022-05-05", "2022-05-06"],
                                             datasets: [
                                                 {
                                                     label: 'Orders',
@@ -402,68 +402,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
-                <div class="grid-stack-item"
-                     data-gs-x="6" data-gs-y="12"
-                     data-gs-width="3" data-gs-height="4"
-                     data-v-component-products>
-                     
-                    <div class="grid-stack-item-content">
 
-                        <div class="card">
-                            <div class="card-header">
-                                Top products sales
-
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
-                                </button>
-                            </div>
-                            <div class="card-block">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>Thumb</th>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr data-v-product>
-                                        <td class="img"  width="70">
-											<img class="rounded" data-v-product-image src="#">
-										</td>
-                                        <td width="100" data-v-product-name>Product name</td>
-                                        <td data-v-product-price  width="70">5</td>
-                                        <td class="text-center" width="70">
-											
-											
-											<a href="#"
-											   class="btn btn-primary btn-sm"
-                                               
-                                               data-v-producta-url>
-													<i class="la la-hand-pointer"></i>
-											</a>
-                                                
-                                        </td>
-                                    </tr>
-                                    </tbody>
-									
-									<tr data-v-if-not="count > 0">
-										<td colspan="100">
-											<div class="text-center">
-												<small class="text-muted">No prodcuts to display!</small>
-											</div>
-										</td>
-									</tr>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-               
+      
                 <div class="grid-stack-item"
                      data-gs-x="9" data-gs-y="12"
                      data-gs-width="3" data-gs-height="4" 
@@ -541,8 +481,64 @@
                             </div>
                         </div>
                    </div>
-                   </div>
-                        
+				</div>                
+                
+                <div class="grid-stack-item"
+                     data-gs-x="6" data-gs-y="12"
+                     data-gs-width="3" data-gs-height="4"
+                     data-v-component-products>
+                     
+                    <div class="grid-stack-item-content">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <span>Latest products</span>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div>
+                            <div class="card-block">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Thumb</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-v-product>
+                                        <td class="img"  width="70">
+											<img class="rounded" data-v-product-image src="#">
+										</td>
+                                        <td width="100" data-v-product-name>Product name</td>
+                                        <td data-v-product-price  width="70">5</td>
+                                        <td class="text-center" width="70">
+											
+											
+											<a href="#" class="btn btn-primary btn-sm" data-v-product-url>
+													<i class="la la-hand-pointer"></i>
+											</a>
+                                                
+                                        </td>
+                                    </tr>
+                                    </tbody>
+									
+									<tr data-v-if-not="count > 0">
+										<td colspan="100">
+											<div class="text-center">
+												<small class="text-muted">No prodcuts to display!</small>
+											</div>
+										</td>
+									</tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
                         
                 <div class="grid-stack-item"
 					 data-gs-x="0" 

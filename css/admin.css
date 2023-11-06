@@ -21376,9 +21376,18 @@ table a {
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
+.dropdown-toggle::after {
+  border: none;
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  font-size: 80%;
+  content: "\f107";
+  vertical-align: text-bottom; }
+
 .dropdown-toggle.chevron-big::after {
   width: 12px !important;
-  height: 12px !important; }
+  height: 12px !important;
+  font-size: 100%; }
 
 .invalid-feedback {
   font-size: 1rem; }
