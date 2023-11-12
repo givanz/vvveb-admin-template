@@ -43,19 +43,98 @@
 				<input type="hidden" name="return_id" data-v-return-return_id>
 					
 				<div class="mb-3 row">
-					<label for="input-name" class="col-sm-2 col-form-label">Code</label>
+					<label for="input-order_id" class="col-sm-2 col-form-label">Order id</label>
 					<div class="col-sm-10">
-					  <input type="text" class="form-control" id="input-name" placeholder="code" name="return[code]" data-v-return-code required>
+					  <a href="#" data-v-return-order_url>Order <span data-v-return-order_id>1</span></a>
 					</div>
-				 </div>		 
+				 </div>					
 				 
-				<div class="mb-3 row">
-					<label for="input-message" class="col-sm-2 col-form-label">Message</label>
+				 <div class="mb-3 row">
+					<label for="input-first_name" class="col-sm-2 col-form-label">First name</label>
 					<div class="col-sm-10">
-					  <input type="text" class="form-control" id="input-message" placeholder="message" name="return[message]" data-v-return-message required>
+					  <input type="text" class="form-control" id="input-first_name" placeholder="First name" name="return[first_name]" data-v-return-first_name required>
 					</div>
 				 </div>		 
-
+				 					
+				<div class="mb-3 row">
+					<label for="input-last_name" class="col-sm-2 col-form-label">Last name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-last_name" placeholder="Last name" name="return[last_name]" data-v-return-last_name required>
+					</div>
+				 </div>		 
+				 					
+				<div class="mb-3 row">
+					<label for="input-email" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-email" placeholder="Email" name="return[email]" data-v-return-email required>
+					</div>
+				 </div>		 
+				 					
+				<div class="mb-3 row">
+					<label for="input-phone_number" class="col-sm-2 col-form-label">Phone number</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-phone_number" placeholder="Phone number" name="return[phone_number]" data-v-return-phone_number required>
+					</div>
+				 </div>		 
+				 					
+				<div class="mb-3 row">
+					<label for="input-product" class="col-sm-2 col-form-label">Product</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-product" placeholder="code" name="return[code]" data-v-return-product required>
+					</div>
+				 </div>		 
+							
+				<div class="mb-3 row">
+					<label for="input-model" class="col-sm-2 col-form-label">Model</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-model" placeholder="code" name="return[model]" data-v-return-model required>
+					</div>
+				 </div>		 
+				 				
+				<div class="mb-3 row">
+					<label for="input-quantity" class="col-sm-2 col-form-label">Quantity</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-quantity" placeholder="code" name="return[quantity]" data-v-return-quantity required>
+					</div>
+				 </div>		 
+				 				
+								
+				<div class="mb-3 row">
+					<label for="input-opened" class="col-sm-2 col-form-label form-check-label">Opened</label>
+					<div class="col-sm-10">
+					  <input type="checkbox" class="form-check-input" id="input-opened" placeholder="code" name="return[opened]" data-v-return-opened required>
+					</div>
+				 </div>		 
+				 								
+				<div class="mb-3 row">
+					<label for="input-return_reason_id" class="col-sm-2 col-form-label">Return reason</label>
+					<div class="col-sm-10">
+						<select name="return[return_reason_id]" id="input-return_reason_id" class="form-control" data-v-return-return_reason_id="">
+						  <option value="0" data-v-option>Inactive</option>
+						  <option value="1" data-v-option>Active</option>
+						</select>					  
+					</div>
+				 </div>			
+	 								
+				<div class="mb-3 row">
+					<label for="input-return_resolution_id" class="col-sm-2 col-form-label">Return resolution</label>
+					<div class="col-sm-10">
+						<select name="return[return_resolution_id]" id="input-return_resolution_id" class="form-control" data-v-return-return_resolution_id="">
+						  <option value="0" data-v-option>Inactive</option>
+						  <option value="1" data-v-option>Active</option>
+						</select>					  
+					</div>
+				 </div>			
+	 								
+				<div class="mb-3 row">
+					<label for="input-return_status_id" class="col-sm-2 col-form-label">Return status</label>
+					<div class="col-sm-10">
+						<select name="return[return_status_id]" id="input-return_status_id" class="form-control" data-v-return-return_status_id="">
+						  <option value="0" data-v-option>Inactive</option>
+						  <option value="1" data-v-option>Active</option>
+						</select>					  
+					</div>
+				 </div>		 
 		
 			</div>
         </div>

@@ -21,11 +21,6 @@ if (smallNav) {
 	$("#container").addClass(smallNav);
 }
 
-//$.ajax(window.location.pathname + '?action=heartbeat');
-
-function toggleClass(container, className) {
-}
-
 function setCookie(name, value) {
 	//try to set cookie to all subdomains
 	document.cookie = name + "=" + value + ";path=/;domain=." + window.location.host.replace(/^.*?\./, '') + ";";
@@ -67,52 +62,3 @@ jQuery(document).ready(function() {
 		//serverStorage.setItem();
 	});
 });
-
-class AjaxStack {
-    constructor() {
-        this.start = 0;
-        this.stack = [];
-    }
-
-    add(call) {
-        this.stack.push(call);
-
-        if (!this.start) {
-            this.execute();
-        }
-    }
-
-    execute() {
-        if (this.start = this.stack.length) {
-			let self = this;
-            let call = this.stack.shift();
-            let ajax = call();
-
-            ajax.done(function() {
-                self.execute();
-            });
-        }
-    }
-}
-
-window.ajaxStack = new AjaxStack();
-
-function ucFirst(str) {
-  if (!str) return str;
-
-  return str[0].toUpperCase() + str.slice(1);
-}
-
-function displayToast(bg, title, message, id = "bottom-toast") {
-	$("#" + id + " .toast-body").html(message);
-	$("#" + id + " .toast-header").removeClass(["bg-danger", "bg-success"]).addClass(bg).
-	find("strong").text(title);
-	/*
-	$("#" + id + " .toast").addClass("showing");
-	delay(() => $("#" + id + " .toast").addClass("show").removeClass("showing"), 500);
-	delay(() => $("#" + id + " .toast").removeClass("show"), 5000);*/
-	let toast = new bootstrap.Toast(document.getElementById(id));
-    toast.show()
-}
-
-window.displayToast = displayToast;
