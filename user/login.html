@@ -124,7 +124,7 @@
                 <input type="password" minlength="4" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
                 <div class="input-group-append">
                   <button class="btn px-3" type="button" onclick="togglePasswordInput(this)">
-                    <i class="icon-eye-outline-slash"></i>
+                    <i class="icon-eye-off-outline"></i>
                   </button>
                 </div>
               </div>
@@ -202,10 +202,10 @@
 		var password = document.getElementById("password");
 		if (password.type == "password") {
 			password.type = "text"; 
-			$("i", element).addClass("la-eye").removeClass("la-eye-slash");
+			$("i", element).addClass("icon-eye-outline").removeClass("icon-eye-off-outline");
 		} else {
 			password.type = "password";
-			$("i", element).removeClass("la-eye").addClass("la-eye-slash");
+			$("i", element).removeClass("icon-eye-outline").addClass("icon-eye-off-outline");
 		}
 	}
 	</script>
