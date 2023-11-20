@@ -1272,12 +1272,12 @@
             <span>Order list</span>
           </a>
 
-          <a type="button" href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-url>
+          <a href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-url>
             <i class="icon-eye-outline"></i>
             <span>Print Preview</span>
           </a>&nbsp;
 
-          <a type="button" href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-shipping-url>
+          <a href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-shipping-url>
             <i class="icon-eye-outline"></i>
             <span>Print shipping details</span>
           </a>&nbsp;
@@ -1398,7 +1398,9 @@
                           <div data-v-order-email data-email-text>mail@mail.com</div>
                           <div data-v-order-phone_number data-phone_number-text>12345678</div>
 
-                          <a href="#">View Profile</a>
+                          <a href="#" data-v-order-user_url data-v-if="this.order.user_id">
+                            <span>View Profile</span>
+                          </a>
 
                           <div data-v-if="this.order.comment">
                             <h6 class="mt-2">Order note</h6>
@@ -1772,7 +1774,7 @@
                             </div>
                           </div>
                           <div class="mb-3 row">
-                            <label for="billing_country_id" class="col-sm-4 col-form-label">Country id</label>
+                            <label for="billing_country_id" class="col-sm-4 col-form-label">Country</label>
                             <div class="col-sm-8">
                               <select class="form-control" id="billing_country_id" name="billing_country_id" data-text="data-v-order-billing_country" data-v-order-billing_country_id>
                                 <option value="1" data-v-option>Country name</option>
@@ -1782,7 +1784,7 @@
                             </div>
                           </div>
                           <div class="mb-3 row">
-                            <label for="billing_region_id" class="col-sm-4 col-form-label">region id</label>
+                            <label for="billing_region_id" class="col-sm-4 col-form-label">Region</label>
                             <div class="col-sm-8">
                               <select class="form-control" id="billing_region_id" name="billing_region_id" data-text="data-v-order-billing_region" data-v-order-billing_region_id>
                                 <option value="1" data-v-option>Country name</option>
@@ -1874,7 +1876,7 @@
                             </div>
                           </div>
                           <div class="mb-3 row">
-                            <label for="shipping_country_id" class="col-sm-4 col-form-label">Country id</label>
+                            <label for="shipping_country_id" class="col-sm-4 col-form-label">Country</label>
                             <div class="col-sm-8">
                               <select class="form-control" id="shipping_country_id" name="shipping_country_id" data-text="data-v-order-shipping_country" data-v-order-shipping_country_id>
                                 <option value="1" data-v-option>Country name</option>
@@ -1884,7 +1886,7 @@
                             </div>
                           </div>
                           <div class="mb-3 row">
-                            <label for="shipping_region_id" class="col-sm-4 col-form-label">region id</label>
+                            <label for="shipping_region_id" class="col-sm-4 col-form-label">Region</label>
                             <div class="col-sm-8">
                               <select class="form-control" id="shipping_region_id" name="shipping_region_id" data-text="data-v-order-shipping_region" data-v-order-shipping_region_id>
                                 <option value="1" data-v-option>Country name</option>
@@ -1915,7 +1917,23 @@
             <div class="row">
               <div class="col-12">
 
-                <div class="table-responsive order-table p-0">
+                <div class="container-fluid py-4 border border-bottom-0 bg-body-tertiary" data-v-if="this.order.order_id">
+                  <div class="row g-0">
+                    <div class="input-group">
+
+                      <div class="flex-grow-1">
+                        <input name="new_product" value="" placeholder="New cart product" id="input-new_product" autocomplete="off" type="text" class="form-control autocomplete" data-url="/admin?module=product/product&action=productsAutocomplete" data-text="" />
+                      </div>
+
+                      <button class="btn btn-primary">
+                        <i class="la la-plus"></i>
+                        <span>Add product</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-responsive order-table table-bordered p-0" data-v-if="this.order.order_id">
                   <table class="table mb-0 text-nowrap align-middle" data-v-cart>
                     <thead>
                       <tr>
@@ -2036,7 +2054,7 @@
                   <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label" for="input-order-status">Order Status</label>
                     <div class="col-sm-10">
-                      <select name="order_status_id" id="input-order-status" class="form-control">
+                      <select name="order_status_id" id="input-order-status" class="form-control" data-v-order-order_status_id>
                         <option value="1" data-v-option>processing</option>
                         <option value="2" data-v-option>shipped</option>
                         <option value="3" data-v-option>canceled</option>
@@ -2054,7 +2072,7 @@
                         <option value="15" data-v-option>holded</option>
                         <option value="16" data-v-option>closed</option>
                         <option value="17" data-v-option>delivered</option>
-                        <option value="18" data-v-option selected>pending_payment</option>
+                        <option value="18" data-v-option>pending_payment</option>
                         <option value="19" data-v-option>payment_review</option>
                         <option value="20" data-v-option>fraud</option>
 
@@ -2078,7 +2096,7 @@
                 </form>
 
                 <div class="text-end">
-                  <button id="button-history" data-loading-text="Loading..." class="btn btn-primary">
+                  <button class="btn btn-primary">
                     <i class="la la-plus-circle"></i>
                     <span>Add message</span>
                   </button>
@@ -2105,6 +2123,7 @@
   <!-- vvveb modules code -->
   <script id="admin-js" type="module" src="../../js/admin.js"></script>
 
+  <script src="libs/autocomplete/jquery.autocomplete.js"></script>
 
   <script>
 $("#order-form input[type=text]").change(function () {
@@ -2121,8 +2140,22 @@ $("#order-form select").change(function () {
 	$(textSelector).html(value);
 	
 });
-</script>
 
+//if new order toggle forms visibility
+let order_id = $("[name=order_id]");
+if (!order_id.val()) {
+	$('.customer_details').toggleClass('edit');
+	$('.order_details').toggleClass('edit');
+	$('.shipping_address').toggleClass('edit');
+	$('.billing_address').toggleClass('edit');
+}
+
+function onSelect(value, text, name, listName) {
+	console.log(value, text, name, listName);
+}
+
+$('input.autocomplete').autocomplete({onSelect});
+</script>
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

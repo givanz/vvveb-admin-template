@@ -1412,7 +1412,7 @@
 
             <form action="" method="post">
 
-              <ul class="nav nav-pills pills-border small mx-2 mb-3" data-v-plugin-categories>
+              <ul class="nav nav-pills pills-border small mx-2 mb-3 float-start" data-v-plugin-categories>
                 <li class="nav-item">
                   <a class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins"}'>All</a>
                 </li>
@@ -1433,7 +1433,27 @@
                 </li>
               </ul>
 
-              <table class="table table-hover middle-align">
+
+              <div class="float-end">
+
+                <input type="radio" name="status" value="" id="all" class="form-check-input btn-check">
+                <label class="form-check-label btn btn-outline-secondary btn-sm border-secondary-subtle" for="all">
+                  <span>All</span>
+                </label>
+
+
+                <input type="radio" name="status" value="active" id="active" class="form-check-input btn-check">
+                <label class="form-check-label btn btn-outline-secondary btn-sm border-secondary-subtle" for="active">
+                  <span>Active</span>
+                </label>
+
+                <input type="radio" name="status" value="inactive" id="inactive" class="form-check-input btn-check">
+                <label class="form-check-label btn btn-outline-secondary btn-sm border-secondary-subtle" for="inactive">
+                  <span>Inactive</span>
+                </label>
+              </div>
+
+              <table class="table table-hover middle-align plugins-table">
                 <thead>
                   <tr>
                     <th class="col-cb">
@@ -1637,6 +1657,11 @@ window.addEventListener('DOMContentLoaded', function(e) {
 
     var iFrame = document.getElementById( 'plugin-check' );
     resizeIFrameToFitContent( iFrame );
+});
+</script>
+  <script>
+$('input[name="status"]').click(function (e) {
+	$(".plugins-table").removeClass("active inactive").addClass(this.value);
 });
 </script>
   <!-- Modal -->

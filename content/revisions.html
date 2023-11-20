@@ -1261,6 +1261,7 @@
           <h4 class="text-muted my-3">
             <i class="icon-document-text-outline"></i>&ensp;
             <span data-v-type-name>Post</span>
+            <span>revisions</span>
           </h4>
         </div>
 
@@ -1276,75 +1277,183 @@
           </a>
 
 
-          <button type="submit" href="" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('action').value ='save';document.getElementById('form').submit();">
+          <button type="submit" href="" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="save()">
             <i class="icon-create-outline"></i>
             <span>Save</span>
             <span data-v-type-name>post</span>
           </button>
         </div>
+
+
+      </div>
+
+      <div class="notifications  px-3 pt-3 border-bottom" data-v-notifications>
+
+        <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+
+          <div class="icon">
+            <i class="la la-exclamation-triangle"></i>
+          </div>
+
+          <div class="flex-grow-1 align-self-center" data-v-notification-text>
+            Vvveb 0.2 is now available! <a href="update">Update now</a>
+          </div>
+
+
+          <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">
+              <!-- <i class="la la-times"></i> -->
+            </span>
+          </button>
+        </div>
+
+        <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
+
+          <div class="icon">
+            <i class="la la-check-circle"></i>
+          </div>
+
+          <div class="flex-grow-1 align-self-center" data-v-notification-text>
+            You successfully read this important alert message.
+          </div>
+
+          <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">
+              <!-- <i class="la la-times"></i> -->
+            </span>
+          </button>
+        </div>
+
+        <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+          <div class="icon">
+            <i class="la la-info-circle"></i>
+          </div>
+
+          <div class="flex-grow-1 align-self-center" data-v-notification-text>
+            You successfully read this important alert message.
+          </div>
+
+          <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">
+              <!-- <i class="la la-times"></i> -->
+            </span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="row g-0 border-bottom">
+        <div class="col border-end">
+          <div class="d-flex align-items-center">
+            <img src="" class="" style="max-height:75px" data-v-post-image>
+            <h6 class="px-3" data-v-post-name>Post name</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3 input-group">
+
+            <button class="btn btn-light border" onclick="restore()">
+              <i class="la la-lg la-arrow-left"></i>
+              <span>Apply</span>
+            </button>
+
+            <select class="form-select" id="revisions-select" onChange="loadRevision(this)" data-v-revisions-list>
+              <option value="" data-v-option>2022-05-01 00:00:00 (Admin)</option>
+              <option value="" data-v-option>2022-05-01 00:00:00 (Admin)</option>
+            </select>
+
+            <!-- <label for="revisions-select"></label> -->
+            <input type="checkbox" class="btn-check" id="line-wrapping" autocomplete="off" checked>
+            <label class="btn border" for="line-wrapping" onclick="toggleOption('lineWrapping')" title="Line wrapping">
+              <i class="la la-lg la-align-left"></i>
+            </label>
+
+            <input type="checkbox" class="btn-check" id="line-numbers" autocomplete="off" checked>
+            <label class="btn border" for="line-numbers" onclick="toggleOption('lineNumbers')" title="Line numbers">
+              <i class="la la-lg la-sort-numeric-down"></i>
+            </label>
+          </div>
+        </div>
       </div>
 
       <div id="content">
 
-        <div id=view></div>
+        <div class="content h-100">
 
+          <form id="form" action="" method="post" class="h-100" novalidate data-v-post>
 
+            <input type="hidden" name="action" id="action" value="save">
+            <input type="hidden" name="post_id" id="post_id" value="" data-v-if="this.post.post_id" data-v-post-post_id>
 
+            <textarea id="post-content" name="content" class="d-none" data-v-post-content></textarea>
+            <textarea id="revision-content" name="revision" class="d-none" data-v-revision-content></textarea>
+
+            <div id="view" class="h-100">
+
+            </div>
+
+          </form>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <script id="jquery-js" src="js/jquery.min.js"></script>
-      <script id="popper-js" src="js/popper.min.js"></script>
-      <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
-      <script id="theme-js" src="js/theme.js"></script>
+  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <script id="popper-js" src="js/popper.min.js"></script>
+  <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+  <script id="theme-js" src="js/theme.js"></script>
 
-      <!-- vvveb modules code -->
-      <script id="admin-js" type="module" src="../../js/admin.js"></script>
+  <!-- vvveb modules code -->
+  <script id="admin-js" type="module" src="../../js/admin.js"></script>
 
 
-      <link href="libs/codemirror/lib/codemirror.css" rel="stylesheet" />
-      <link href="libs/codemirror/lib/merge.css" rel="stylesheet" />
+  <link href="libs/codemirror/lib/codemirror.css" rel="stylesheet" />
+  <link href="libs/codemirror/lib/merge.css" rel="stylesheet" />
 
-      <script id="index-js" src="libs/vvveb/index.js"></script>
-      <script src="libs/codemirror/lib/codemirror.js"></script>
-      <script src="libs/codemirror/lib/xml.js"></script>
-      <script src="libs/codemirror/lib/formatting.js"></script>
-      <script src="libs/codemirror/lib/diff_match_patch.js"></script>
-      <script src="libs/codemirror/lib/merge.js"></script>
-      <style>
-        .CodeMirror {
-          line-height: 1.2;
-        }
+  <script id="index-js" src="libs/vvveb/index.js"></script>
+  <script src="libs/codemirror/lib/codemirror.js"></script>
+  <script src="libs/codemirror/lib/xml.js"></script>
+  <script src="libs/codemirror/lib/formatting.js"></script>
+  <script src="libs/codemirror/lib/diff_match_patch.js"></script>
+  <script src="libs/codemirror/lib/merge.js"></script>
+  <style>
+    .CodeMirror {
+      line-height: 1.2;
+    }
 
-        @media screen and (min-width: 1300px) {
-          article {
-            max-width: 1000px;
-          }
+    @media screen and (min-width: 1300px) {
+      article {
+        max-width: 1000px;
+      }
 
-          #nav {
-            border-right: 499px solid transparent;
-          }
-        }
+      #nav {
+        border-right: 499px solid transparent;
+      }
+    }
 
-        span.clicky {
-          cursor: pointer;
-          background: #d70;
-          color: white;
-          padding: 0 3px;
-          border-radius: 3px;
-        }
-      </style>
+    span.clicky {
+      cursor: pointer;
+      background: #d70;
+      color: white;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+  </style>
 
-      <script>
-var value, orig1, orig2, dv, panes = 2, highlight = true, connect = "align", collapse = false;
+  <script>
+var value, orig1, orig2, dv, panes = 2, highlight = true, connect = "align", collapse = false, revisionUrl = '{ $this->revisionUrl}';
+
 function initUI() {
   if (value == null) return;
   var target = document.getElementById("view");
   target.innerHTML = "";
   dv = CodeMirror.MergeView(target, {
     value: value,
-    origLeft: panes == 3 ? orig1 : null,
+    //origLeft: panes == 3 ? orig1 : null,
     orig: orig2,
     lineNumbers: true,
+	lineWrapping: true,
     mode: "text/html",
     highlightDifferences: highlight,
     connect: connect,
@@ -1357,10 +1466,12 @@ function toggleDifferences() {
 }
 
 window.onload = function() {
-  value = document.documentElement.innerHTML;
-  orig1 = "<!doctype html>\n\n" + value.replace(/\.\.\//g, "codemirror/").replace("yellow", "orange");
-  orig2 = value.replace(/\u003cscript/g, "\u003cscript type=text/javascript ")
-    .replace("white", "purple;\n      font: comic sans;\n      text-decoration: underline;\n      height: 15em");
+  let postContent = document.getElementById("post-content");
+  let revisionContent = document.getElementById("revision-content");
+  
+  orig1 = value = postContent.value;	
+  orig2 = revisionContent.value;	
+
   initUI();
   let d = document.createElement("div"); d.style.cssText = "width: 50px; margin: 7px; height: 14px"; dv.editor().addLineWidget(57, d)
 };
@@ -1390,47 +1501,74 @@ function resize(mergeView) {
   }
   mergeView.wrap.style.height = height + "px";
 }
+
+let options = {lineWrapping:true,lineNumbers:true};
+function toggleOption(option) {
+	//$(".CodeMirror").toggleClass("CodeMirror-wrap");
+	//dv.edit.setOption("lineWrapping", lineWrapping);
+	options[option] = !options[option];
+	let editors = document.getElementsByClassName("CodeMirror");
+	for (var i = 0; i < editors.length; i++) {
+		editors.item(i).CodeMirror.setOption(option, options[option]);
+	}
+}
+
+function save() {
+	document.getElementById('post-content').value = dv.edit.getValue();
+	document.getElementById('action').value ='save';
+	document.getElementById('form').submit();
+}
+
+function restore(select) {
+	dv.edit.setValue(document.getElementsByClassName("CodeMirror")[1].CodeMirror.getDoc().getValue());
+}
+
+function loadRevision(select) {
+	$.get(revisionUrl + "&created_at=" + select.value,  function( content ) {
+		document.getElementsByClassName("CodeMirror")[1].CodeMirror.getDoc().setValue(content);
+	});
+}
 </script>
 
-      <!-- Modal -->
-      <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="modal-title" id="heartBeatLogin">
-                <h5>Session has expired</h5>
-                <span>Login to resume your work</span>
-              </span>
+  <!-- Modal -->
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title" id="heartBeatLogin">
+            <h5>Session has expired</h5>
+            <span>Login to resume your work</span>
+          </span>
 
-              <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-5">
-            </div>
+          <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- save toast -->
+  <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header text-white">
+        <strong class="me-auto">Page save</strong>
+        <!-- <small class="badge bg-success">status</small> -->
+        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body ">
+        <div class="flex-grow-1">
+          <div class="message">Elements saved!
+            <div>Template backup was saved!</div>
+            <div>Template was saved!</div>
+          </div>
+          <div>
+            <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
           </div>
         </div>
       </div>
-
-      <!-- save toast -->
-      <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-          <div class="toast-header text-white">
-            <strong class="me-auto">Page save</strong>
-            <!-- <small class="badge bg-success">status</small> -->
-            <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body ">
-            <div class="flex-grow-1">
-              <div class="message">Elements saved!
-                <div>Template backup was saved!</div>
-                <div>Template was saved!</div>
-              </div>
-              <div>
-                <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
 
 </body>
 

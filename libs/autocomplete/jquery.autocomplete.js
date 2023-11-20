@@ -74,6 +74,7 @@ $.fn.autocomplete = function(options) {
 			timeout: 1000,
 			after : null,
 			before : null,
+			onSelect : null,
 			validSelection : true,
 			allowFreeText:false,
 			url : this.dataset.url,
@@ -85,7 +86,10 @@ $.fn.autocomplete = function(options) {
 		function selectOption(value, text) {
 			valueInput.val( value ); 
 			textInput.val( text ); 
-			textInput.trigger("autocomplete.change", [ value, text ]);
+			textInput.trigger("autocomplete.change", [ value, text, name, settings.listName ]);
+			if (typeof settings.onSelect == "function")  {
+					settings.onSelect(value, text, name, settings.listName);
+			}			
 			clear(); 
 		}
 
@@ -95,7 +99,7 @@ $.fn.autocomplete = function(options) {
 			window.clearInterval(typingTimeout);
 			if (text != oldText && (settings.minChars != null && text.length >= settings.minChars)) {
 				clear();
-				if (settings.before == "function")  {
+				if (typeof settings.before == "function")  {
 					settings.before(textInput,text);
 				}
 				textInput.addClass('autocomplete-loading');
@@ -127,7 +131,7 @@ $.fn.autocomplete = function(options) {
 								selectOption(value, text);
 							});
 
-						if (settings.after == "function")  {
+						if (typeof settings.after == "function")  {
 							settings.after(textInput,text);
 						}
 						textInput.addClass('autocomplete-open');

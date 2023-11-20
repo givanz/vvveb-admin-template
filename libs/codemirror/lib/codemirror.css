@@ -4,7 +4,8 @@
   /* Set height, width, borders, and global font properties here */
   font-family: monospace;
   height: 100%;
-  color: black;
+  /*color: black;*/
+  color: var(--bs-body-color);
   direction: ltr;
 }
 
@@ -25,8 +26,8 @@
 /* GUTTER */
 
 .CodeMirror-gutters {
-  border-right: 1px solid #ddd;
-  background-color: #f7f7f7;
+  border-right: 1px solid var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
   white-space: nowrap;
 }
 .CodeMirror-linenumbers {}
@@ -34,17 +35,17 @@
   padding: 0 3px 0 5px;
   min-width: 20px;
   text-align: right;
-  color: #999;
+  color: var(--bs-tertiary-color);
   white-space: nowrap;
 }
 
-.CodeMirror-guttermarker { color: black; }
-.CodeMirror-guttermarker-subtle { color: #999; }
+.CodeMirror-guttermarker { color: var(--bs-body-color); }
+.CodeMirror-guttermarker-subtle { color: var(--bs-tertiary-color); }
 
 /* CURSOR */
 
 .CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: 1px solid var(--bs-body-color);
   border-right: none;
   width: 0;
 }
@@ -129,7 +130,7 @@
 .cm-s-default .cm-bracket {color: #997;}
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #00c;}
-.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-hr {color: var(--bs-tertiary-color);}
 .cm-s-default .cm-link {color: #00c;}
 
 .cm-s-default .cm-error {color: #f00;}
@@ -152,7 +153,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}
 .CodeMirror {
   position: relative;
   overflow: hidden;
-  background: white;
+  /*background: white;*/
+  background: color: var(--bs-body-bg);
 }
 
 .CodeMirror-scroll {

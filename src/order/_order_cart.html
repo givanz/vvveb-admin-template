@@ -1,4 +1,21 @@
-<div class="table-responsive order-table p-0">
+<div class="container-fluid py-4 border border-bottom-0 bg-body-tertiary" data-v-if="this.order.order_id">
+	<div class="row g-0">
+		<div class="input-group">
+
+			<div class="flex-grow-1">
+				<input name="new_product" value="" placeholder="New cart product" id="input-new_product" autocomplete="off" type="text" class="form-control autocomplete"
+				data-url="/admin?module=product/product&action=productsAutocomplete" data-text=""/>	
+			</div>	
+
+			<button class="btn btn-primary">
+				<i class="la la-plus"></i>
+				<span>Add product</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div class="table-responsive order-table table-bordered p-0" data-v-if="this.order.order_id">
 	<table class="table mb-0 text-nowrap align-middle" data-v-cart>
 		<thead>
 			<tr>

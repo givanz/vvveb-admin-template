@@ -127,6 +127,7 @@
 
 
 @@include('../_includes/footer-scripts.html')
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
 
 <script>
 $("#order-form input[type=text]").change(function () {
@@ -143,6 +144,19 @@ $("#order-form select").change(function () {
 	$(textSelector).html(value);
 	
 });
-</script>
 
+//if new order toggle forms visibility
+let order_id = $("[name=order_id]");
+if (!order_id.val()) {
+	$('.customer_details').toggleClass('edit');
+	$('.order_details').toggleClass('edit');
+	$('.shipping_address').toggleClass('edit');
+	$('.billing_address').toggleClass('edit');
+}
+
+function onSelect(value, text, name, listName) {
+}
+
+$('input.autocomplete').autocomplete({onSelect});
+</script>
 @@include('../_includes/footer.html')
