@@ -1,17 +1,41 @@
+<form class="mt-4" method="post">
+<input type="hidden" name="action" id="action" value="cart">
+<input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>   
+
 <div class="container-fluid py-4 border border-bottom-0 bg-body-tertiary" data-v-if="this.order.order_id">
 	<div class="row g-0">
 		<div class="input-group">
 
 			<div class="flex-grow-1">
-				<input name="new_product" value="" placeholder="New cart product" id="input-new_product" autocomplete="off" type="text" class="form-control autocomplete"
+				<input name="product_id" value="" placeholder="New cart product" id="input-new_product" autocomplete="off" type="text" class="form-control autocomplete"
 				data-url="/admin?module=product/product&action=productsAutocomplete" data-text=""/>	
 			</div>	
-
-			<button class="btn btn-primary">
-				<i class="la la-plus"></i>
-				<span>Add product</span>
-			</button>
 		</div>
+
+		<div class="product-details p-4">
+			
+			<div class="mb-3 row">
+				<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-language-name maxlength="64" required>
+				</div>
+			 </div>		 
+
+			 <div class="mb-3 row">
+				<label for="input-code" class="col-sm-2 col-form-label">Price</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" id="input-code" placeholder="Code" name="language[code]" data-v-language-code maxlength="12" required>
+				</div>
+			  </div>
+			
+			<div class="mb-3 text-end">
+				<button class="btn btn-primary">
+					<i class="la la-plus"></i>
+					<span>Add product</span>
+				</button>
+			</div>
+		</div>
+		
 	</div>
 </div>
 
@@ -23,7 +47,7 @@
 				<th class="text-start">Product Name</th>
 				<!-- <th class="text-start">Model</th> -->
 				<th class="text-start quantity">Quantity</th>
-				<!-- <th class="text-end">Unit Price</th> -->
+				<th class="text-end">Unit Price</th>
 				<th class="text-end">Total</th>
 			</tr>
 		</thead>
@@ -80,3 +104,4 @@
 	</table>
 	
 </div>
+</form>

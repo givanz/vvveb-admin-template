@@ -1,9 +1,9 @@
-<div class="card border-0"  data-v-if="this.order.order_id">
+<div class="card my-5"  data-v-if="this.order.order_id">
   
-  <div class="card-header bg-body">
-	<h4 class="card-title mt-4">
-		<i class="la la-comment-o"></i> Order Log
-	</h4>
+  <div class="card-header bg-body border-bottom">
+	<strong class="card-title mt-1">
+		<i class="icon-time-outline me-1"></i> Order Log
+	</strong>
   </div>
   
   <div class="card-body">
@@ -12,36 +12,46 @@
 		  <table class="table">
 			<thead>
 			  <tr>
-				<td class="text-start">Date Added</td>
-				<td class="text-start">Comment</td>
-				<td class="text-start">Status</td>
-				<td class="text-start">User Notified</td>
+				<th class="text-start">Time Added</td>
+				<th class="text-start">Comment</td>
+				<th class="text-start">Status</td>
+				<th class="text-start">User Notified</td>
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr data-v-order-history>
+			  <tr data-v-order-log>
 				<td class="text-start">
-					<span data-v-order-history-created_at>23/10/2019</span>
+				
+					<details>
+					  <summary><span><span data-v-order-log-created_at data-filter-friendly_date>23/10/2019</span></summary>
+					  <p><span class="badge bg-light text-muted" data-v-order-log-created_at>23/10/2019</span></span></p>
+					</details>	
+				
 				</td>
 				<td class="text-start">
-					<span data-v-order-history-note>Comment</span>
+					<span data-v-order-log-note>Comment</span>
 				</td>
 				<td class="text-start">
-					<span data-v-order-history-order_status_id>Pending</span>
+					<span class="badge" data-v-order-log-order_status>Pending</span>
 				</td>
 				<td class="text-start">
-					<span data-v-order-history-notify>Yes</span>
+					<span class="badge border bg-success-subtle text-body" data-v-if="log.notify">Yes</span>
+					<span class="badge border text-body bg-body-tertiary" data-v-if-not="log.notify">No</span>
 				</td>
 			  </tr>
 			</tbody>
 		</table>
 	</div>
 
-		  <form class="p-4">
+		  <form class="p-4" method="post">
+			<input type="hidden" name="action" id="action" value="saveLog">
+			<input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>   
+		  
+		  
 			<div class="mb-3 row">
 			  <label class="col-sm-2 col-form-label" for="input-order-status">Order Status</label>
 			  <div class="col-sm-10">
-				<select name="order_status_id" id="input-order-status" class="form-control" data-v-order-order_status_id>
+				<select name="log[order_status_id]" id="input-order-status" class="form-control" data-v-order-order_status_id>
 					<option value="1" data-v-option>processing</option>
 					<option value="2" data-v-option>shipped</option>
 					<option value="3" data-v-option>canceled</option>
@@ -64,26 +74,33 @@
 					<option value="20" data-v-option>fraud</option>    
 
 			  </select>
-			  </div>
 			</div>
-			<div class="mb-3 row">
-			  <label class="col-sm-2 col-form-label" for="input-notify">Notify User</label>
-			  <div class="col-sm-10">
-				<div class="form-check">
-				  <input type="checkbox" class="form-check-input" name="notify" value="1" id="input-notify">
-				</div>
-			  </div>
 			</div>
 			<div class="mb-3 row">
 			  <label class="col-sm-2 col-form-label" for="input-note">Note</label>
 			  <div class="col-sm-10">
-				<textarea name="note" rows="8" id="input-note" class="form-control"></textarea>
+				<textarea name="log[note]" rows="8" id="input-note" class="form-control"></textarea>
 			  </div>
 			</div>
+			<div class="mb-3 mb-3 d-flex float-end align-items-center">
+			  <label class="col-form-label mx-2" for="input-notify">Send user notification</label>
+			  <div class="">
+				<div class="form-check">
+				  <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify">
+				</div>
+			  </div>			  
+			  <label class="col-form-label mx-2" for="input-notify-note">Include note in notification</label>
+			  <div class="">
+				<div class="form-check">
+				  <input type="checkbox" class="form-check-input" name="log[notify-note]" value="1" id="input-notify-note">
+				</div>
+			  </div>
+			<div class="ms-4">
+			  <button class="btn btn-primary btn-icon"><i class="la la-plus"></i> <span>Add status</span></button>
+			</div>
+			</div>
+
 		  </form>
 
-		<div class="text-end">
-		  <button class="btn btn-primary"><i class="la la-plus-circle"></i> <span>Add message</span></button>
-		</div>
   </div>
 </div>

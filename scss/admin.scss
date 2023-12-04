@@ -2360,14 +2360,23 @@ tr {
 		}
 		
 		.card-img-top {
+			display: flex;
 			flex: 1 1 auto;
 			object-fit: cover;
+			vertical-align: middle;
+			align-items: center;
+			background: rgba(var(--bs-body-color-rgb), 0.02);
+			
+			img {
+				margin:auto;
+			}
 		}
 		
 		.card-body {
-			position: absolute;
+			//position: absolute;
 			bottom: 3rem;
-			background-color:rgba(var(--bs-body-bg-rgb), 0.9);
+			//background-color:rgba(var(--bs-body-bg-rgb), 0.9);
+			border-top: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
 			width: 100%;
 			flex:none;
 		}
@@ -2635,7 +2644,7 @@ strong {
 }
 
 
-#language-nav {
+.language-nav {
 	position:absolute;
 	right:0;
 	margin-top:-4.6rem;
@@ -2644,12 +2653,11 @@ strong {
 }
 
 .pills-border {
-	margin-bottom:2rem;
 
 	.nav-item {
 		margin-right: 0.3rem;
 		background: rgba(var(--bs-body-color-rgb), 0.02);
-		border: 1px solid rgba(var(--bs-body-color-rgb), 0.07);
+		border: 1px solid rgba(var(--bs-body-color-rgb), 0.07) !important;
 		border-radius: 5px;			
 			
 		a {
@@ -2661,6 +2669,13 @@ strong {
 				color:$white;
 			}
 		}
+	}
+	
+	label.btn {
+		background: rgba(var(--bs-body-color-rgb), 0.02);
+		border: 1px solid rgba(var(--bs-body-color-rgb), 0.07);
+		border-radius: 5px;			
+		padding:0.15rem 1em;
 	}
 	
 	&.small {

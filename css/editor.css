@@ -13932,8 +13932,11 @@ div.autocomplete-list {
   resize: vertical; }
 
 .autocomplete-list > div {
-  padding: 0.5rem;
-  border-bottom: 1px dashed var(--bs-border-color); }
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  border-bottom: 1px dashed var(--bs-border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
   .autocomplete-list > div .btn-close {
     vertical-align: middle;
     margin: 0.5rem; }

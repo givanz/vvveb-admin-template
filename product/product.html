@@ -1032,7 +1032,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="" data-v-group-icon></i>
                     <span data-v-group-notification-name>New orders</span>
                     <strong class="badge bg-primary-subtle text-body mx-2 bg-primary-subtle text-body" data-v-group-notification-count>5</strong>
@@ -1054,14 +1054,14 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New comments</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>Spam comments</span>
                     <strong class="badge bg-danger-subtle text-body small" data-v-notification-value>2</strong>
@@ -1075,7 +1075,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New reviews</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
@@ -1266,7 +1266,7 @@
 
         <div class="btns">
 
-          <a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary pe-3">
+          <a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary pe-3" data-v-products-list-url>
             <i class="la la-arrow-left"></i>
             <span>
               <span data-v-type-name>Product</span>
@@ -1351,7 +1351,7 @@
             <div class="columns">
               <div class="left-column">
 
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" id="product-tabs">
                   <li class="nav-item">
                     <a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a>
                   </li>
@@ -1391,11 +1391,11 @@
                 </ul>
 
 
-                <div class="tab-content">
+                <div class="tab-content" id="product-tab-content">
 
                   <div class="tab-pane active" id="tab-general">
 
-                    <ul class="nav nav-tabs" id="language-nav" data-v-languages="desc">
+                    <ul class="nav nav-tabs language-nav" id="language-nav" data-v-languages="desc">
                       <li class="nav-item" data-v-language>
                         <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
                           <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
@@ -1409,20 +1409,26 @@
                       <div class="tab-pane" id="language1" data-v-language data-v-language-id>
                         <input name="product_content[1][language_id]" type="hidden" data-v-product-content-language_id>
                         <div class="mb-3 required">
-                          <label class="form-label" for="input-name">Product Name</label>
+                          <label class="form-label" for="input-name">
+                            <span data-v-type-name>Product</span> Name
+                          </label>
                           <div>
                             <input name="product_content[1][name]" value="" placeholder="Product Name" id="input-name" class="form-control" type="text" data-v-product-content-name required />
                           </div>
                         </div>
 
                         <div class="required float-end">
-                          <label class="form-label" for="input-name1">Product Url</label>
+                          <label class="form-label" for="input-name1">
+                            <span data-v-type-name>Product</span> Url
+                          </label>
                           <a href="" target="_blank" data-v-product-content-url>url</a>
                         </div>
 
 
                         <div class="mb-3 required">
-                          <label class="form-label" for="input-slug">Product Slug</label>
+                          <label class="form-label" for="input-slug">
+                            <span data-v-type-name>Product</span> Slug
+                          </label>
                           <div>
                             <input name="product_content[1][slug]" value="Slug" placeholder="Product Slug" id="input-slug" class="form-control" type="text" data-v-product-content-slug required />
                           </div>
@@ -1537,14 +1543,14 @@
 
                               <input name="product_content[1][has_changes]" value="1" class="has_changes" data-v-product-content-has_changes type="hidden" />
 
-                              <textarea name="product_content[1][content]" placeholder="Content" class="form-control" data-v-product-content-content required></textarea>
+                              <textarea name="product_content[1][content]" placeholder="Content" class="form-control html" data-v-product-content-content required></textarea>
                             </div>
                           </div>
                         </div>
 
                         <!-- 
 			<div class="mb-3 required">
-				<label class="form-label" for="input-name1">Product tags</label>
+				<label class="form-label" for="input-name1"><span data-v-type-name>Product</span> tags</label>
 				<div>
 					<input name="product_content[1][tag]" data-v-role="tagsinput"
 						   placeholder="Comma separated tags"
@@ -1648,7 +1654,7 @@
 
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-related">
-                        <span>Related Products</span>
+                        <span>Related <span data-v-type-name>Product</span>s</span>
                       </label>
 
                       <div class="col-sm-10">
@@ -1657,8 +1663,8 @@
 
                         <div class="autocomplete-list card border-top-0" data-v-product-related>
                           <div data-v-related>
-                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
                             <span data-v-related-name>Product 14</span>
+                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
                             <input name="product_related[]" value="14" type="hidden" data-v-related-product_related_id>
                           </div>
                         </div>
@@ -1667,7 +1673,9 @@
 
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-variant">
-                        <span>Product Variants</span>
+                        <span>
+                          <span data-v-type-name>Product</span> Variants
+                        </span>
                       </label>
 
                       <div class="col-sm-10">
@@ -1676,8 +1684,8 @@
 
                         <div class="autocomplete-list card border-top-0" data-v-product-variant>
                           <div data-v-variant>
-                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
                             <span data-v-variant-name>Product 14</span>
+                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
                             <input name="product_variant[]" value="14" type="hidden" data-v-variant-product_variant_id>
                           </div>
                         </div>
@@ -1694,8 +1702,8 @@
 
                         <div class="autocomplete-list card border-top-0" data-v-product-digital_asset>
                           <div data-v-digital_asset>
-                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
                             <span data-v-digital_asset-name>Product manual pdf</span>
+                            <button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
                             <input name="product_digital_asset[]" value="14" type="hidden" data-v-digital_asset-digital_asset_id>
                           </div>
                         </div>
@@ -3047,8 +3055,8 @@
 
 				<div class="autocomplete-list card border-top-0" data-v-product-digital_asset>
 					<div data-v-digital_asset>				
-						<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
 						<span data-v-digital_asset-name>Product manual pdf</span>				
+						<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>				
 						<input name="product_digital_asset[]" value="14" type="hidden" data-v-digital_asset-digital_asset_id>			 
 					</div>
 				</div>
@@ -3091,6 +3099,27 @@
           </div>
 
           <!-- @-@include('_product_taxonomies.html') -->
+
+          <label class="header" data-v-header="default" for="header_product_options">
+            <span data-v-type-name>Product</span> options
+            <div class="header-arrow"></div>
+          </label>
+          <input class="header_check" type="checkbox" checked="true" id="header_product_options">
+          <div class="section" data-v-section="default">
+
+            <div class="mb-3">
+              <label class="form-label" for="input-status">
+                <span>Status</span>
+              </label>
+
+              <div class="input-group">
+                <select name="status" id="input-status" placeholder="Visibility" class="form-select" data-v-product-status>
+                  <option value="0" data-v-option>Disabled</option>
+                  <option value="1" data-v-option>Enabled</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
           <label class="header mt-4" data-v-header="default" for="header_template">Template
             <div class="header-arrow"></div>

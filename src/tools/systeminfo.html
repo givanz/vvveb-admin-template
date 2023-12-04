@@ -13,7 +13,7 @@
 			
 
 		<div id="content" class="container mt-4">
-				<button class="btn btn-light border align-self-end" onclick="copyToClipboard(document.getElementById('info').innerText)">
+				<button class="btn btn-light border align-self-end" onclick="copyTableToClipboard()">
 					<i class="la la-lg la-clipboard"></i> <span>Copy to clipboard</span>
 				</button>
 					
@@ -103,6 +103,11 @@ function copyToClipboard(textToCopy) {
             textArea.remove();
         }
     };
+}
+
+
+function copyTableToClipboard() {
+	copyToClipboard(document.getElementById('info').textContent.replaceAll(/$\s{3,}^/mg,"\n\n").replaceAll("              ","").trim());
 }
 </script>
   

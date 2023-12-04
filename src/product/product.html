@@ -21,7 +21,7 @@
 
             <div class="btns">
 		
-				<a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary pe-3">
+				<a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary pe-3" data-v-products-list-url>
 						<i class="la la-arrow-left"></i>
 						<span>
 							<span data-v-type-name>Product</span> 
@@ -52,7 +52,7 @@
                     <div class="columns">
                         <div class="left-column">
 
-    						<ul class="nav nav-tabs">
+    						<ul class="nav nav-tabs" id="product-tabs">
 								<li class="nav-item"><a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a></li>
 								<li class="nav-item"><a class="nav-link" href="#tab-relations" data-bs-toggle="tab">Relations</a></li>
 								<li class="nav-item"><a class="nav-link" href="#tab-attribute" data-bs-toggle="tab">Attribute</a></li>
@@ -70,7 +70,7 @@
 							</ul>
 
 
-                            <div class="tab-content">
+                            <div class="tab-content" id="product-tab-content">
 								
 								@@include('_product-general.html')
 								@@include('_product-relations.html')
@@ -128,6 +128,24 @@
                 </div>
 
                  <!-- @-@include('_product_taxonomies.html') -->
+
+				<label class="header" data-v-header="default" for="header_product_options"><span data-v-type-name>Product</span> options
+					<div class="header-arrow"></div>
+				</label>
+				<input class="header_check" type="checkbox" checked="true" id="header_product_options">
+				<div class="section" data-v-section="default">
+
+					<div class="mb-3">
+						<label class="form-label" for="input-status"><span>Status</span></label>
+
+						<div class="input-group">
+							<select name="status" id="input-status" placeholder="Visibility" class="form-select" data-v-product-status>
+								<option value="0" data-v-option>Disabled</option>
+								<option value="1" data-v-option>Enabled</option>
+							</select>
+						</div>
+					</div>
+				</div>
                  
 				<label class="header mt-4" data-v-header="default" for="header_template">Template
 					<div class="header-arrow"></div>

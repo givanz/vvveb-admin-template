@@ -1032,7 +1032,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="" data-v-group-icon></i>
                     <span data-v-group-notification-name>New orders</span>
                     <strong class="badge bg-primary-subtle text-body mx-2 bg-primary-subtle text-body" data-v-group-notification-count>5</strong>
@@ -1054,14 +1054,14 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New comments</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>Spam comments</span>
                     <strong class="badge bg-danger-subtle text-body small" data-v-notification-value>2</strong>
@@ -1075,7 +1075,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New reviews</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
@@ -1434,21 +1434,21 @@
               </ul>
 
 
-              <div class="float-end">
+              <div class="float-end pills-border">
 
                 <input type="radio" name="status" value="" id="all" class="form-check-input btn-check">
-                <label class="form-check-label btn btn-outline-secondary btn-sm border-secondary-subtle" for="all">
+                <label class="form-check-label btn btn-outline-secondary btn-sm" for="all">
                   <span>All</span>
                 </label>
 
 
                 <input type="radio" name="status" value="active" id="active" class="form-check-input btn-check">
-                <label class="form-check-label btn btn-outline-secondary btn-sm border-secondary-subtle" for="active">
+                <label class="form-check-label btn btn-outline-secondary btn-sm" for="active">
                   <span>Active</span>
                 </label>
 
                 <input type="radio" name="status" value="inactive" id="inactive" class="form-check-input btn-check">
-                <label class="form-check-label btn btn-outline-secondary btn-sm border-secondary-subtle" for="inactive">
+                <label class="form-check-label btn btn-outline-secondary btn-sm" for="inactive">
                   <span>Inactive</span>
                 </label>
               </div>

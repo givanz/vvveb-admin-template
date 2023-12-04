@@ -1033,7 +1033,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="" data-v-group-icon></i>
                     <span data-v-group-notification-name>New orders</span>
                     <strong class="badge bg-primary-subtle text-body mx-2 bg-primary-subtle text-body" data-v-group-notification-count>5</strong>
@@ -1055,14 +1055,14 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New comments</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>Spam comments</span>
                     <strong class="badge bg-danger-subtle text-body small" data-v-notification-value>2</strong>
@@ -1076,7 +1076,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New reviews</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
@@ -1349,13 +1349,15 @@
 
           </div>
 
-          <form id="order-form" name="order_form" action="" method="post">
+          <div class="card border-0 mx-3 mb-5">
 
-            <input type="hidden" name="action" id="action" value="save">
-            <input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>
+            <div class="card-body p-0">
 
-            <div class="card border-0 mx-3 mb-5">
-              <div class="card-body p-0">
+              <form id="order-form" name="order_form" action="" method="post">
+
+                <input type="hidden" name="action" id="action" value="save">
+                <input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>
+
                 <div class="d-md-flex justify-content-between">
                   <div class="d-flex align-items-center mb-2 mb-md-0">
                     <h2 class="mb-0">Order ID: #VI<span data-v-order-order_id>001</span>
@@ -1380,169 +1382,168 @@
 					
 					 -->
                 </div>
-              </div>
-              <div class="mt-4">
-                <div class="row">
-                  <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                    <div class="mb-6">
-                      <div class="customer_details">
-                        <div class="clearfix">
-                          <h6 class="float-start">Customer Details</h6>
-                          <div class="btn btn-outline-success btn-sm float-end" onclick="$('.customer_details').toggleClass('edit');">
-                            <i class="la la-pen"></i> Edit
+                <div class="mt-4">
+                  <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+                        <div class="customer_details">
+                          <div class="clearfix">
+                            <h6 class="float-start">Customer Details</h6>
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.customer_details').toggleClass('edit');">
+                              <i class="la la-pen"></i> Edit
+                            </div>
                           </div>
-                        </div>
-                        <div class="display mb-1 lh-lg">
-                          <div data-v-order-first_name data-first_name-text>First Name</div>
-                          <div data-v-order-last_name data-last_name-text>Last Name</div>
-                          <div data-v-order-email data-email-text>mail@mail.com</div>
-                          <div data-v-order-phone_number data-phone_number-text>12345678</div>
+                          <div class="display mb-1 lh-lg">
+                            <div data-v-order-first_name data-first_name-text>First Name</div>
+                            <div data-v-order-last_name data-last_name-text>Last Name</div>
+                            <div data-v-order-email data-email-text>mail@mail.com</div>
+                            <div data-v-order-phone_number data-phone_number-text>12345678</div>
 
-                          <a href="#" data-v-order-user_url data-v-if="this.order.user_id">
-                            <span>View Profile</span>
-                          </a>
+                            <a href="#" data-v-order-user_url data-v-if="this.order.user_id">
+                              <span>View Profile</span>
+                            </a>
 
-                          <div data-v-if="this.order.comment">
-                            <h6 class="mt-2">Order note</h6>
-                            <div data-v-order-comment>12345678</div>
-                          </div>
-                        </div>
-                        <div class="edit">
-                          <div class="mb-3 row">
-                            <label for="first_name" class="col-sm-4 col-form-label">First name</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="first_name" name="first_name" data-v-order-first_name>
+                            <div data-v-if="this.order.comment">
+                              <h6 class="mt-2">Order note</h6>
+                              <div data-v-order-comment>12345678</div>
                             </div>
                           </div>
-                          <div class="mb-3 row">
-                            <label for="last_name" class="col-sm-4 col-form-label">Last name</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="last_name" name="last_name" data-v-order-last_name>
+                          <div class="edit">
+                            <div class="mb-3 row">
+                              <label for="first_name" class="col-sm-4 col-form-label">First name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="first_name" name="first_name" data-v-order-first_name>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="email" class="col-sm-4 col-form-label">Email</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="email" name="email" data-v-order-email>
+                            <div class="mb-3 row">
+                              <label for="last_name" class="col-sm-4 col-form-label">Last name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="last_name" name="last_name" data-v-order-last_name>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="phone_number" class="col-sm-4 col-form-label">Phone number</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="phone_number" name="phone_number" data-v-order-phone_number>
+                            <div class="mb-3 row">
+                              <label for="email" class="col-sm-4 col-form-label">Email</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="email" name="email" data-v-order-email>
+                              </div>
                             </div>
-                          </div>
-                          <!--		
+                            <div class="mb-3 row">
+                              <label for="phone_number" class="col-sm-4 col-form-label">Phone number</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="phone_number" name="phone_number" data-v-order-phone_number>
+                              </div>
+                            </div>
+                            <!--		
 		<div classs="mt-3">
 			<button class="btn btn-success float-end">
 				<i class="la la-save"></i> <span>Save</span>
 			</button>
 		</div>
 		-->
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                    <div class="mb-6">
-                      <div class="order_details">
-                        <div class="clearfix">
-                          <h6 class="float-start">Order Details</h6>
-                          <div class="btn btn-outline-success btn-sm float-end" onclick="$('.order_details').toggleClass('edit');">
-                            <i class="la la-pen"></i> Edit
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+                        <div class="order_details">
+                          <div class="clearfix">
+                            <h6 class="float-start">Order Details</h6>
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.order_details').toggleClass('edit');">
+                              <i class="la la-pen"></i> Edit
+                            </div>
                           </div>
-                        </div>
 
-                        <div class="display">
-                          <p class="mb-1 lh-lg">
-                          <table class="table table-borderless table-sm">
-                            <tr>
+                          <div class="display">
+                            <p class="mb-1 lh-lg">
+                            <table class="table table-borderless table-sm">
+                              <tr>
+                                <td>
+                                  <span class="text-muted">Order ID:</span>
+                                </td>
+                                <td>
+                                  <span data-v-order-order_id>V001</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="text-muted">Order Date:</span>
+                                </td>
+                                <td>
+                                  <details>
+                                    <summary>
+                                      <span>
+                                        <span data-v-order-created_at data-filter-friendly_date>23/10/2019</span>
+                                    </summary>
+                                    <p>
+                                      <span class="badge bg-light text-muted" data-v-order-created_at>23/10/2019</span>
+                                      </span>
+                                    </p>
+                                  </details>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="text-muted">Payment method:</span>
+                                </td>
+                                <td>
+                                  <details>
+                                    <summary>
+                                      <span>
+                                        <span data-v-order-payment_title>Cash data-payment_title>Cash-text On Delivery</span>
+                                    </summary>
+                                    <p>
+                                      <span class="badge bg-light text-muted" data-v-order-payment_method>Cash data-payment_method>Cash-text On Delivery</span>
+                                      </span>
+                                      <br />
+                                      <span data-v-order-payment_description>Flat data-payment_description>Flat-text Shipping Rate</span>
+                                      <br />
+                                    </p>
+                                  </details>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="text-muted">Shipping method:</span>
+                                </td>
+                                <td>
+                                  <details>
+                                    <summary>
+                                      <span>
+                                        <span data-v-order-shipping_title>>Flat data-shipping_title>>Flat-text Shipping Rate</span>
+                                    </summary>
+                                    <p>
+                                      <span class="badge bg-light text-muted" data-v-order-shipping_method>Flat data-shipping_method>Flat-text Shipping Rate</span>
+                                      </span>
+                                      <br />
+                                      <span data-v-order-shipping_description>Flat data-shipping_description>Flat-text Shipping Rate</span>
+                                      <br />
+                                    </p>
+                                  </details>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="text-muted">Order Total:</span>
+                                </td>
+                                <td>
+                                  <span data-v-order-total_formatted>$734.28</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="text-muted">Reward points:</span>
+                                </td>
+                                <td>
+                                  <span data-v-order-points>$734.28</span>
+                                </td>
+                              </tr>
                               <td>
-                                <span class="text-muted">Order ID:</span>
+                                <span class="text-muted">Status</span>
                               </td>
                               <td>
-                                <span data-v-order-order_id>V001</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <span class="text-muted">Order Date:</span>
-                              </td>
-                              <td>
-                                <details>
-                                  <summary>
-                                    <span>
-                                      <span data-v-order-created_at data-created_at-text data-filter-friendly_date>23/10/2019</span>
-                                  </summary>
-                                  <p>
-                                    <span class="badge bg-light text-muted" data-v-order-created_at>23/10/2019</span>
-                                    </span>
-                                  </p>
-                                </details>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <span class="text-muted">Payment method:</span>
-                              </td>
-                              <td>
-                                <details>
-                                  <summary>
-                                    <span>
-                                      <span data-v-order-payment_title>Cash data-payment_title>Cash-text On Delivery</span>
-                                  </summary>
-                                  <p>
-                                    <span class="badge bg-light text-muted" data-v-order-payment_method>Cash data-payment_method>Cash-text On Delivery</span>
-                                    </span>
-                                    <br />
-                                    <span data-v-order-payment_description>Flat data-payment_description>Flat-text Shipping Rate</span>
-                                    <br />
-                                  </p>
-                                </details>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <span class="text-muted">Shipping method:</span>
-                              </td>
-                              <td>
-                                <details>
-                                  <summary>
-                                    <span>
-                                      <span data-v-order-shipping_title>>Flat data-shipping_title>>Flat-text Shipping Rate</span>
-                                  </summary>
-                                  <p>
-                                    <span class="badge bg-light text-muted" data-v-order-shipping_method>Flat data-shipping_method>Flat-text Shipping Rate</span>
-                                    </span>
-                                    <br />
-                                    <span data-v-order-shipping_description>Flat data-shipping_description>Flat-text Shipping Rate</span>
-                                    <br />
-                                  </p>
-                                </details>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <span class="text-muted">Order Total:</span>
-                              </td>
-                              <td>
-                                <span data-v-order-total_formatted>$734.28</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <span class="text-muted">Reward points:</span>
-                              </td>
-                              <td>
-                                <span data-v-order-points>$734.28</span>
-                              </td>
-                            </tr>
-                            <td>
-                              <span class="text-muted">Status</span>
-                            </td>
-                            <td>
-                              <span data-v-order-order_status>Pending</span>
-                              <!--
+                                <span data-v-order-order_status>Pending</span>
+                                <!--
 				  <select class="form-select">
 					<option selected="">Status</option>
 					<option value="Success">Success</option>
@@ -1550,386 +1551,412 @@
 					<option value="Cancel">Cancel</option>
 				  </select>
 				-->
-                            </td>
-                            </tr>
-                          </table>
-                          </p>
-                        </div>
+                              </td>
+                              </tr>
+                            </table>
+                            </p>
+                          </div>
 
-                        <div class="edit">
-                          <!--
+                          <div class="edit">
+                            <!--
 		<div class="mb-3 row"><label for="order_id" class="col-sm-4 col-form-label">Order id</label>
 			<div class="col-sm-8"><input type="text" class="form-control" id="order_id" name="order_id" data-v-order-order_id></div>
 		</div>
 		-->
-                          <div class="mb-3 row">
-                            <label for="status" class="col-sm-4 col-form-label">Status</label>
-                            <div class="col-sm-8">
+                            <div class="mb-3 row">
+                              <label for="status" class="col-sm-4 col-form-label">Status</label>
+                              <div class="col-sm-8">
 
-                              <select class="form-control" id="status" name="order_status_id" data-text="data-v-order-order_status" data-v-order-order_status_id>
-                                <option value="pending" data-v-option>Pending</option>
-                                <option value="completed" data-v-option>Completed</option>
-                                <option value="cancel" data-v-option>Cancel</option>
-                              </select>
+                                <select class="form-control" id="status" name="order_status_id" data-text="data-v-order-order_status" data-v-order-order_status_id>
+                                  <option value="pending" data-v-option>Pending</option>
+                                  <option value="completed" data-v-option>Completed</option>
+                                  <option value="cancel" data-v-option>Cancel</option>
+                                </select>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="status" class="col-sm-4 col-form-label">Payment</label>
-                            <div class="col-sm-8">
+                            <div class="mb-3 row">
+                              <label for="status" class="col-sm-4 col-form-label">Payment</label>
+                              <div class="col-sm-8">
 
-                              <div id="accordion" name="accordion" role="tablist" class="accordion accordion-flush mb-3" data-v-payments>
+                                <div id="accordion" name="accordion" role="tablist" class="accordion accordion-flush mb-3" data-v-payments>
 
-                                <div class="accordion-item" data-v-payment>
-                                  <div class="accordion-header" role="tab">
-                                    <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
-                                      <input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
-                                      <span data-v-payment-title>Default payment</span>
-                                    </label>
-                                  </div>
+                                  <div class="accordion-item" data-v-payment>
+                                    <div class="accordion-header" role="tab">
+                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                        <input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
+                                        <span data-v-payment-title>Default payment</span>
+                                      </label>
+                                    </div>
 
-                                  <div class="collapse" role="tabpanel">
-                                    <div class="accordion-body">
-                                      <p>
-                                        <span data-v-payment-description>Payment description</span>
-                                      </p>
+                                    <div class="collapse" role="tabpanel">
+                                      <div class="accordion-body">
+                                        <p>
+                                          <span data-v-payment-description>Payment description</span>
+                                        </p>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div class="accordion-item" data-v-payment>
-                                  <div class="accordion-header" role="tab">
-                                    <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
-                                      <input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
-                                      <span data-v-payment-title>Credit card payment</span>
-                                    </label>
-                                  </div>
+                                  <div class="accordion-item" data-v-payment>
+                                    <div class="accordion-header" role="tab">
+                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                        <input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
+                                        <span data-v-payment-title>Credit card payment</span>
+                                      </label>
+                                    </div>
 
-                                  <div class="collapse" role="tabpanel">
-                                    <div class="accordion-body">
-                                      <p>
-                                        <span data-v-payment-description>Credit cart description</span>
-                                      </p>
+                                    <div class="collapse" role="tabpanel">
+                                      <div class="accordion-body">
+                                        <p>
+                                          <span data-v-payment-description>Credit cart description</span>
+                                        </p>
+                                      </div>
                                     </div>
                                   </div>
+
+
+                                  <div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
+                                    <div class="icon align-middle me-2">
+                                      <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="flex-grow-1 align-self-center text-small">
+                                      No payment methods enabled!
+                                    </div>
+
+                                    <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">
+                                        <!-- <i class="la la-times"></i> -->
+                                      </span>
+                                    </button>
+
+                                  </div>
                                 </div>
 
 
-                                <div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
-                                  <div class="icon align-middle me-2">
-                                    <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
-                                  </div>
-                                  <div class="flex-grow-1 align-self-center text-small">
-                                    No payment methods enabled!
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="status" class="col-sm-4 col-form-label">Shipping</label>
+                              <div class="col-sm-8">
+
+                                <div id="accordion" name="accordion" role="tablist" class="accordion accordion-flush mb-3" data-v-shippings>
+
+                                  <div class="accordion-item" data-v-shipping>
+                                    <div class="accordion-header" role="tab">
+                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                        <input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
+                                        <span data-v-shipping-title>Default shipping</span>
+                                      </label>
+                                    </div>
+
+                                    <div class="collapse" role="tabpanel">
+                                      <div class="accordion-body">
+                                        <p>
+                                          <span data-v-shipping-description>Shipping description</span>
+                                        </p>
+                                      </div>
+                                    </div>
                                   </div>
 
-                                  <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">
-                                      <!-- <i class="la la-times"></i> -->
-                                    </span>
-                                  </button>
+                                  <div class="accordion-item" data-v-shipping>
+                                    <div class="accordion-header" role="tab">
+                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                        <input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
+                                        <span data-v-shipping-title>Fast shipping</span>
+                                      </label>
+                                    </div>
 
+                                    <div class="collapse" role="tabpanel">
+                                      <div class="accordion-body">
+                                        <p>
+                                          <span data-v-shipping-description>Lorem ipsum</span>
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
+                                    <div class="icon align-middle me-2">
+                                      <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="flex-grow-1 align-self-center text-small">
+                                      No shipping methods enabled!
+                                    </div>
+
+                                    <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">
+                                        <!-- <i class="la la-times"></i> -->
+                                      </span>
+                                    </button>
+
+                                  </div>
                                 </div>
+
                               </div>
 
 
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="status" class="col-sm-4 col-form-label">Shipping</label>
-                            <div class="col-sm-8">
-
-                              <div id="accordion" name="accordion" role="tablist" class="accordion accordion-flush mb-3" data-v-shippings>
-
-                                <div class="accordion-item" data-v-shipping>
-                                  <div class="accordion-header" role="tab">
-                                    <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
-                                      <input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
-                                      <span data-v-shipping-title>Default shipping</span>
-                                    </label>
-                                  </div>
-
-                                  <div class="collapse" role="tabpanel">
-                                    <div class="accordion-body">
-                                      <p>
-                                        <span data-v-shipping-description>Shipping description</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="accordion-item" data-v-shipping>
-                                  <div class="accordion-header" role="tab">
-                                    <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
-                                      <input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
-                                      <span data-v-shipping-title>Fast shipping</span>
-                                    </label>
-                                  </div>
-
-                                  <div class="collapse" role="tabpanel">
-                                    <div class="accordion-body">
-                                      <p>
-                                        <span data-v-shipping-description>Lorem ipsum</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
-                                  <div class="icon align-middle me-2">
-                                    <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
-                                  </div>
-                                  <div class="flex-grow-1 align-self-center text-small">
-                                    No shipping methods enabled!
-                                  </div>
-
-                                  <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">
-                                      <!-- <i class="la la-times"></i> -->
-                                    </span>
-                                  </button>
-
-                                </div>
-                              </div>
-
-                            </div>
-
-
-                          </div>
-                          <!--		
+                            <!--		
 		<div classs="mt-3">
 			<button class="btn btn-success float-end">
 				<i class="la la-save"></i> <span>Save</span>
 			</button>
 		</div>
 		-->
-                        </div>
-                      </div>
-
-
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                    <div class="mb-6">
-                      <div class="billing_address">
-                        <div class="clearfix">
-                          <h6 class="float-start">Billing Address</h6>
-                          <div class="btn btn-outline-success btn-sm float-end" onclick="$('.billing_address').toggleClass('edit');">
-                            <i class="la la-pen"></i> Edit
                           </div>
                         </div>
-                        <div class="display mb-1 lh-lg">
-                          <div data-v-order-billing_first_name data-billing_first_name-text></div>
-                          <div data-v-order-billing_last_name data-billing_last_name-text></div>
-                          <div data-v-order-billing_company data-billing_company-text></div>
-                          <div data-v-order-billing_address_1 data-billing_address_1-text></div>
-                          <div data-v-order-billing_address_2 data-billing_address_2-text></div>
-                          <div data-v-order-billing_city data-billing_city-text></div>
-                          <div data-v-order-billing_post_code data-billing_post_code-text></div>
-                          <div data-v-order-billing_country data-billing_country_id></div>
-                          <div data-v-order-billing_region data-billing_region></div>
-                          <!--
+
+
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+                        <div class="billing_address">
+                          <div class="clearfix">
+                            <h6 class="float-start">Billing Address</h6>
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.billing_address').toggleClass('edit');">
+                              <i class="la la-pen"></i> Edit
+                            </div>
+                          </div>
+                          <div class="display mb-1 lh-lg">
+                            <div data-v-order-billing_first_name data-billing_first_name-text></div>
+                            <div data-v-order-billing_last_name data-billing_last_name-text></div>
+                            <div data-v-order-billing_company data-billing_company-text></div>
+                            <div data-v-order-billing_address_1 data-billing_address_1-text></div>
+                            <div data-v-order-billing_address_2 data-billing_address_2-text></div>
+                            <div data-v-order-billing_city data-billing_city-text></div>
+                            <div data-v-order-billing_post_code data-billing_post_code-text></div>
+                            <div data-v-order-billing_country data-billing_country_id></div>
+                            <div data-v-order-billing_region data-billing_region></div>
+                            <!--
 		<div data-v-order-billing_fields data-billing_fields-text></div>
 		-->
-                        </div>
-                        <div class="edit">
-                          <div class="mb-3 row">
-                            <label for="billing_first_name" class="col-sm-4 col-form-label">First name</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="billing_first_name" name="billing_first_name" data-v-order-billing_first_name>
-                            </div>
                           </div>
-                          <div class="mb-3 row">
-                            <label for="billing_last_name" class="col-sm-4 col-form-label">Last name</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="billing_last_name" name="billing_last_name" data-v-order-billing_last_name>
+                          <div class="edit">
+                            <div class="mb-3 row">
+                              <label for="billing_first_name" class="col-sm-4 col-form-label">First name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_first_name" name="billing_first_name" data-v-order-billing_first_name>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="billing_company" class="col-sm-4 col-form-label">Company</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="billing_company" name="billing_company" data-v-order-billing_company>
+                            <div class="mb-3 row">
+                              <label for="billing_last_name" class="col-sm-4 col-form-label">Last name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_last_name" name="billing_last_name" data-v-order-billing_last_name>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="billing_address_1" class="col-sm-4 col-form-label">Address 1</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="billing_address_1" name="billing_address_1" data-v-order-billing_address_1>
+                            <div class="mb-3 row">
+                              <label for="billing_company" class="col-sm-4 col-form-label">Company</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_company" name="billing_company" data-v-order-billing_company>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="billing_address_2" class="col-sm-4 col-form-label">Address 2</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="billing_address_2" name="billing_address_2" data-v-order-billing_address_2>
+                            <div class="mb-3 row">
+                              <label for="billing_address_1" class="col-sm-4 col-form-label">Address 1</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_address_1" name="billing_address_1" data-v-order-billing_address_1>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="billing_city" class="col-sm-4 col-form-label">City</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="billing_city" name="billing_city" data-v-order-billing_city>
+                            <div class="mb-3 row">
+                              <label for="billing_address_2" class="col-sm-4 col-form-label">Address 2</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_address_2" name="billing_address_2" data-v-order-billing_address_2>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="billing_post_code" class="col-sm-4 col-form-label">Post code</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="billing_post_code" name="billing_post_code" data-v-order-billing_post_code>
+                            <div class="mb-3 row">
+                              <label for="billing_city" class="col-sm-4 col-form-label">City</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_city" name="billing_city" data-v-order-billing_city>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="billing_country_id" class="col-sm-4 col-form-label">Country</label>
-                            <div class="col-sm-8">
-                              <select class="form-control" id="billing_country_id" name="billing_country_id" data-text="data-v-order-billing_country" data-v-order-billing_country_id>
-                                <option value="1" data-v-option>Country name</option>
-                                <option value="2" data-v-option>Country name</option>
-                                <option value="3" data-v-option>Country name</option>
-                              </select>
+                            <div class="mb-3 row">
+                              <label for="billing_post_code" class="col-sm-4 col-form-label">Post code</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_post_code" name="billing_post_code" data-v-order-billing_post_code>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="billing_region_id" class="col-sm-4 col-form-label">Region</label>
-                            <div class="col-sm-8">
-                              <select class="form-control" id="billing_region_id" name="billing_region_id" data-text="data-v-order-billing_region" data-v-order-billing_region_id>
-                                <option value="1" data-v-option>Country name</option>
-                                <option value="2" data-v-option>Country name</option>
-                                <option value="3" data-v-option>Country name</option>
-                              </select>
+                            <div class="mb-3 row">
+                              <label for="billing_country_id" class="col-sm-4 col-form-label">Country</label>
+                              <div class="col-sm-8">
+                                <select class="form-control" id="billing_country_id" name="billing_country_id" data-text="data-v-order-billing_country" data-v-order-billing_country_id>
+                                  <option value="1" data-v-option>Country name</option>
+                                  <option value="2" data-v-option>Country name</option>
+                                  <option value="3" data-v-option>Country name</option>
+                                </select>
+                              </div>
                             </div>
-                          </div>
-                          <!--
+                            <div class="mb-3 row">
+                              <label for="billing_region_id" class="col-sm-4 col-form-label">Region</label>
+                              <div class="col-sm-8">
+                                <select class="form-control" id="billing_region_id" name="billing_region_id" data-text="data-v-order-billing_region" data-v-order-billing_region_id>
+                                  <option value="1" data-v-option>Country name</option>
+                                  <option value="2" data-v-option>Country name</option>
+                                  <option value="3" data-v-option>Country name</option>
+                                </select>
+                              </div>
+                            </div>
+                            <!--
 		<div class="mb-3 row"><label for="billing_fields" class="col-sm-4 col-form-label">Custom field</label>
 			<div class="col-sm-8"><input type="text" class="form-control" id="billing_fields" name="billing_fields" data-v-order-billing_fields></div>
 		</div>
 		-->
-                          <!--		
+                            <!--		
 		<div classs="mt-3">
 			<button class="btn btn-success float-end">
 				<i class="la la-save"></i> <span>Save</span>
 			</button>
 		</div>
 		-->
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                    <div class="mb-6">
-                      <div class="shipping_address">
-                        <div class="clearfix">
-                          <h6 class="float-start">Shipping Address</h6>
-                          <div class="btn btn-outline-success btn-sm float-end" onclick="$('.shipping_address').toggleClass('edit');">
-                            <i class="la la-pen"></i> Edit
+                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+                        <div class="shipping_address">
+                          <div class="clearfix">
+                            <h6 class="float-start">Shipping Address</h6>
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.shipping_address').toggleClass('edit');">
+                              <i class="la la-pen"></i> Edit
+                            </div>
                           </div>
-                        </div>
-                        <div class="display mb-1 lh-lg">
-                          <div data-v-order-shipping_first_name data-shipping_first_name-text></div>
-                          <div data-v-order-shipping_last_name data-shipping_last_name-text></div>
-                          <div data-v-order-shipping_company data-shipping_company-text></div>
-                          <div data-v-order-shipping_address_1 data-shipping_address_1-text></div>
-                          <div data-v-order-shipping_address_2 data-shipping_address_2-text></div>
-                          <div data-v-order-shipping_city data-shipping_city-text></div>
-                          <div data-v-order-shipping_post_code data-shipping_post_code-text></div>
-                          <div data-v-order-shipping_country data-shipping_country_id-text></div>
-                          <div data-v-order-shipping_region data-shipping_region_id-text></div>
-                          <!--
+                          <div class="display mb-1 lh-lg">
+                            <div data-v-order-shipping_first_name data-shipping_first_name-text></div>
+                            <div data-v-order-shipping_last_name data-shipping_last_name-text></div>
+                            <div data-v-order-shipping_company data-shipping_company-text></div>
+                            <div data-v-order-shipping_address_1 data-shipping_address_1-text></div>
+                            <div data-v-order-shipping_address_2 data-shipping_address_2-text></div>
+                            <div data-v-order-shipping_city data-shipping_city-text></div>
+                            <div data-v-order-shipping_post_code data-shipping_post_code-text></div>
+                            <div data-v-order-shipping_country data-shipping_country_id-text></div>
+                            <div data-v-order-shipping_region data-shipping_region_id-text></div>
+                            <!--
 		<div data-v-order-shipping_fields data-shipping_fields-text></div>
 		-->
-                        </div>
-                        <div class="edit">
-                          <div class="mb-3 row">
-                            <label for="shipping_first_name" class="col-sm-4 col-form-label">First name</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="shipping_first_name" name="shipping_first_name" data-v-order-shipping_first_name>
-                            </div>
                           </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_last_name" class="col-sm-4 col-form-label">Last name</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="shipping_last_name" name="shipping_last_name" data-v-order-shipping_last_name>
+                          <div class="edit">
+                            <div class="mb-3 row">
+                              <label for="shipping_first_name" class="col-sm-4 col-form-label">First name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shipping_first_name" name="shipping_first_name" data-v-order-shipping_first_name>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_company" class="col-sm-4 col-form-label">Company</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="shipping_company" name="shipping_company" data-v-order-shipping_company>
+                            <div class="mb-3 row">
+                              <label for="shipping_last_name" class="col-sm-4 col-form-label">Last name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shipping_last_name" name="shipping_last_name" data-v-order-shipping_last_name>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_address_1" class="col-sm-4 col-form-label">Address 1</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="shipping_address_1" name="shipping_address_1" data-v-order-shipping_address_1>
+                            <div class="mb-3 row">
+                              <label for="shipping_company" class="col-sm-4 col-form-label">Company</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shipping_company" name="shipping_company" data-v-order-shipping_company>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_address_2" class="col-sm-4 col-form-label">Address 2</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="shipping_address_2" name="shipping_address_2" data-v-order-shipping_address_2>
+                            <div class="mb-3 row">
+                              <label for="shipping_address_1" class="col-sm-4 col-form-label">Address 1</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shipping_address_1" name="shipping_address_1" data-v-order-shipping_address_1>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_city" class="col-sm-4 col-form-label">City</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="shipping_city" name="shipping_city" data-v-order-shipping_city>
+                            <div class="mb-3 row">
+                              <label for="shipping_address_2" class="col-sm-4 col-form-label">Address 2</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shipping_address_2" name="shipping_address_2" data-v-order-shipping_address_2>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_post_code" class="col-sm-4 col-form-label">Post code</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" id="shipping_post_code" name="shipping_post_code" data-v-order-shipping_post_code>
+                            <div class="mb-3 row">
+                              <label for="shipping_city" class="col-sm-4 col-form-label">City</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shipping_city" name="shipping_city" data-v-order-shipping_city>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_country_id" class="col-sm-4 col-form-label">Country</label>
-                            <div class="col-sm-8">
-                              <select class="form-control" id="shipping_country_id" name="shipping_country_id" data-text="data-v-order-shipping_country" data-v-order-shipping_country_id>
-                                <option value="1" data-v-option>Country name</option>
-                                <option value="2" data-v-option>Country name</option>
-                                <option value="3" data-v-option>Country name</option>
-                              </select>
+                            <div class="mb-3 row">
+                              <label for="shipping_post_code" class="col-sm-4 col-form-label">Post code</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shipping_post_code" name="shipping_post_code" data-v-order-shipping_post_code>
+                              </div>
                             </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="shipping_region_id" class="col-sm-4 col-form-label">Region</label>
-                            <div class="col-sm-8">
-                              <select class="form-control" id="shipping_region_id" name="shipping_region_id" data-text="data-v-order-shipping_region" data-v-order-shipping_region_id>
-                                <option value="1" data-v-option>Country name</option>
-                                <option value="2" data-v-option>Country name</option>
-                                <option value="3" data-v-option>Country name</option>
-                              </select>
+                            <div class="mb-3 row">
+                              <label for="shipping_country_id" class="col-sm-4 col-form-label">Country</label>
+                              <div class="col-sm-8">
+                                <select class="form-control" id="shipping_country_id" name="shipping_country_id" data-text="data-v-order-shipping_country" data-v-order-shipping_country_id>
+                                  <option value="1" data-v-option>Country name</option>
+                                  <option value="2" data-v-option>Country name</option>
+                                  <option value="3" data-v-option>Country name</option>
+                                </select>
+                              </div>
                             </div>
-                          </div>
-                          <!--
+                            <div class="mb-3 row">
+                              <label for="shipping_region_id" class="col-sm-4 col-form-label">Region</label>
+                              <div class="col-sm-8">
+                                <select class="form-control" id="shipping_region_id" name="shipping_region_id" data-text="data-v-order-shipping_region" data-v-order-shipping_region_id>
+                                  <option value="1" data-v-option>Country name</option>
+                                  <option value="2" data-v-option>Country name</option>
+                                  <option value="3" data-v-option>Country name</option>
+                                </select>
+                              </div>
+                            </div>
+                            <!--
 		<div class="mb-3 row"><label for="shipping_fields" class="col-sm-4 col-form-label">Custom field</label>
 			<div class="col-sm-8"><input type="text" class="form-control" id="shipping_fields" name="shipping_fields" data-v-order-shipping_fields></div>
 		</div>
 		-->
-                          <!--		
+                            <!--		
 		<div classs="mt-3">
 			<button class="btn btn-success float-end">
 				<i class="la la-save"></i> <span>Save</span>
 			</button>
 		</div>
 		-->
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+
+              </form>
+
             </div>
-            <div class="row">
-              <div class="col-12">
+            <div class="card-body p-0">
+
+              <form class="mt-4" method="post">
+                <input type="hidden" name="action" id="action" value="cart">
+                <input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>
 
                 <div class="container-fluid py-4 border border-bottom-0 bg-body-tertiary" data-v-if="this.order.order_id">
                   <div class="row g-0">
                     <div class="input-group">
 
                       <div class="flex-grow-1">
-                        <input name="new_product" value="" placeholder="New cart product" id="input-new_product" autocomplete="off" type="text" class="form-control autocomplete" data-url="/admin?module=product/product&action=productsAutocomplete" data-text="" />
+                        <input name="product_id" value="" placeholder="New cart product" id="input-new_product" autocomplete="off" type="text" class="form-control autocomplete" data-url="/admin?module=product/product&action=productsAutocomplete" data-text="" />
+                      </div>
+                    </div>
+
+                    <div class="product-details p-4">
+
+                      <div class="mb-3 row">
+                        <label for="input-name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-language-name maxlength="64" required>
+                        </div>
                       </div>
 
-                      <button class="btn btn-primary">
-                        <i class="la la-plus"></i>
-                        <span>Add product</span>
-                      </button>
+                      <div class="mb-3 row">
+                        <label for="input-code" class="col-sm-2 col-form-label">Price</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="input-code" placeholder="Code" name="language[code]" data-v-language-code maxlength="12" required>
+                        </div>
+                      </div>
+
+                      <div class="mb-3 text-end">
+                        <button class="btn btn-primary">
+                          <i class="la la-plus"></i>
+                          <span>Add product</span>
+                        </button>
+                      </div>
                     </div>
+
                   </div>
                 </div>
 
@@ -1941,7 +1968,7 @@
                         <th class="text-start">Product Name</th>
                         <!-- <th class="text-start">Model</th> -->
                         <th class="text-start quantity">Quantity</th>
-                        <!-- <th class="text-end">Unit Price</th> -->
+                        <th class="text-end">Unit Price</th>
                         <th class="text-end">Total</th>
                       </tr>
                     </thead>
@@ -2006,108 +2033,130 @@
                   </table>
 
                 </div>
-
-
-              </div>
+              </form>
             </div>
 
-            <div class="card border-0" data-v-if="this.order.order_id">
 
-              <div class="card-header bg-body">
-                <h4 class="card-title mt-4">
-                  <i class="la la-comment-o"></i> Order Log
-                </h4>
-              </div>
+            <div class="card-body p-0">
+              <div class="card my-5" data-v-if="this.order.order_id">
 
-              <div class="card-body">
-
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <td class="text-start">Date Added</td>
-                        <td class="text-start">Comment</td>
-                        <td class="text-start">Status</td>
-                        <td class="text-start">User Notified</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr data-v-order-history>
-                        <td class="text-start">
-                          <span data-v-order-history-created_at>23/10/2019</span>
-                        </td>
-                        <td class="text-start">
-                          <span data-v-order-history-note>Comment</span>
-                        </td>
-                        <td class="text-start">
-                          <span data-v-order-history-order_status_id>Pending</span>
-                        </td>
-                        <td class="text-start">
-                          <span data-v-order-history-notify>Yes</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="card-header bg-body border-bottom">
+                  <strong class="card-title mt-1">
+                    <i class="icon-time-outline me-1"></i> Order Log
+                  </strong>
                 </div>
 
-                <form class="p-4">
-                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label" for="input-order-status">Order Status</label>
-                    <div class="col-sm-10">
-                      <select name="order_status_id" id="input-order-status" class="form-control" data-v-order-order_status_id>
-                        <option value="1" data-v-option>processing</option>
-                        <option value="2" data-v-option>shipped</option>
-                        <option value="3" data-v-option>canceled</option>
-                        <option value="4" data-v-option>complete</option>
-                        <option value="5" data-v-option>denied</option>
-                        <option value="6" data-v-option>canceled_reversal</option>
-                        <option value="7" data-v-option>failed</option>
-                        <option value="8" data-v-option>refunded</option>
-                        <option value="9" data-v-option>reversed</option>
-                        <option value="10" data-v-option>chargeback</option>
-                        <option value="11" data-v-option>pending</option>
-                        <option value="12" data-v-option>voided</option>
-                        <option value="13" data-v-option>processed</option>
-                        <option value="14" data-v-option>expired</option>
-                        <option value="15" data-v-option>holded</option>
-                        <option value="16" data-v-option>closed</option>
-                        <option value="17" data-v-option>delivered</option>
-                        <option value="18" data-v-option>pending_payment</option>
-                        <option value="19" data-v-option>payment_review</option>
-                        <option value="20" data-v-option>fraud</option>
+                <div class="card-body">
 
-                      </select>
-                    </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th class="text-start">Time Added</td>
+                          <th class="text-start">Comment</td>
+                          <th class="text-start">Status</td>
+                          <th class="text-start">User Notified</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-v-order-log>
+                          <td class="text-start">
+
+                            <details>
+                              <summary>
+                                <span>
+                                  <span data-v-order-log-created_at data-filter-friendly_date>23/10/2019</span>
+                              </summary>
+                              <p>
+                                <span class="badge bg-light text-muted" data-v-order-log-created_at>23/10/2019</span>
+                                </span>
+                              </p>
+                            </details>
+
+                          </td>
+                          <td class="text-start">
+                            <span data-v-order-log-note>Comment</span>
+                          </td>
+                          <td class="text-start">
+                            <span class="badge" data-v-order-log-order_status>Pending</span>
+                          </td>
+                          <td class="text-start">
+                            <span class="badge border bg-success-subtle text-body" data-v-if="log.notify">Yes</span>
+                            <span class="badge border text-body bg-body-tertiary" data-v-if-not="log.notify">No</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label" for="input-notify">Notify User</label>
-                    <div class="col-sm-10">
-                      <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="notify" value="1" id="input-notify">
+
+                  <form class="p-4" method="post">
+                    <input type="hidden" name="action" id="action" value="saveLog">
+                    <input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>
+
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label" for="input-order-status">Order Status</label>
+                      <div class="col-sm-10">
+                        <select name="log[order_status_id]" id="input-order-status" class="form-control" data-v-order-order_status_id>
+                          <option value="1" data-v-option>processing</option>
+                          <option value="2" data-v-option>shipped</option>
+                          <option value="3" data-v-option>canceled</option>
+                          <option value="4" data-v-option>complete</option>
+                          <option value="5" data-v-option>denied</option>
+                          <option value="6" data-v-option>canceled_reversal</option>
+                          <option value="7" data-v-option>failed</option>
+                          <option value="8" data-v-option>refunded</option>
+                          <option value="9" data-v-option>reversed</option>
+                          <option value="10" data-v-option>chargeback</option>
+                          <option value="11" data-v-option>pending</option>
+                          <option value="12" data-v-option>voided</option>
+                          <option value="13" data-v-option>processed</option>
+                          <option value="14" data-v-option>expired</option>
+                          <option value="15" data-v-option>holded</option>
+                          <option value="16" data-v-option>closed</option>
+                          <option value="17" data-v-option>delivered</option>
+                          <option value="18" data-v-option>pending_payment</option>
+                          <option value="19" data-v-option>payment_review</option>
+                          <option value="20" data-v-option>fraud</option>
+
+                        </select>
                       </div>
                     </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label" for="input-note">Note</label>
-                    <div class="col-sm-10">
-                      <textarea name="note" rows="8" id="input-note" class="form-control"></textarea>
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label" for="input-note">Note</label>
+                      <div class="col-sm-10">
+                        <textarea name="log[note]" rows="8" id="input-note" class="form-control"></textarea>
+                      </div>
                     </div>
-                  </div>
-                </form>
+                    <div class="mb-3 mb-3 d-flex float-end align-items-center">
+                      <label class="col-form-label mx-2" for="input-notify">Send user notification</label>
+                      <div class="">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify">
+                        </div>
+                      </div>
+                      <label class="col-form-label mx-2" for="input-notify-note">Include note in notification</label>
+                      <div class="">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" name="log[notify-note]" value="1" id="input-notify-note">
+                        </div>
+                      </div>
+                      <div class="ms-4">
+                        <button class="btn btn-primary btn-icon">
+                          <i class="la la-plus"></i>
+                          <span>Add status</span>
+                        </button>
+                      </div>
+                    </div>
 
-                <div class="text-end">
-                  <button class="btn btn-primary">
-                    <i class="la la-plus-circle"></i>
-                    <span>Add message</span>
-                  </button>
+                  </form>
+
                 </div>
               </div>
             </div>
 
-
+          </div>
         </div>
-        </form>
-
 
 
       </div>
@@ -2152,6 +2201,7 @@ if (!order_id.val()) {
 
 function onSelect(value, text, name, listName) {
 	console.log(value, text, name, listName);
+	
 }
 
 $('input.autocomplete').autocomplete({onSelect});

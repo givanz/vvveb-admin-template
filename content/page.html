@@ -1032,7 +1032,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="" data-v-group-icon></i>
                     <span data-v-group-notification-name>New orders</span>
                     <strong class="badge bg-primary-subtle text-body mx-2 bg-primary-subtle text-body" data-v-group-notification-count>5</strong>
@@ -1054,14 +1054,14 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New comments</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>Spam comments</span>
                     <strong class="badge bg-danger-subtle text-body small" data-v-notification-value>2</strong>
@@ -1075,7 +1075,7 @@
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="#" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New reviews</span>
                     <strong class="badge bg-primary-subtle text-body small mx-2" data-v-notification-value>5</strong>
@@ -1351,18 +1351,18 @@
             <div class="columns">
               <div class="left-column">
 
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" id="post-tabs">
                   <li class="nav-item">
                     <a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a>
                   </li>
                 </ul>
 
 
-                <div class="tab-content">
+                <div class="tab-content" id="post-tab-content">
 
                   <div class="tab-pane active" id="tab-general">
 
-                    <ul class="nav nav-tabs" id="language-nav" data-v-languages="desc">
+                    <ul class="nav nav-tabs language-nav" id="language-nav" data-v-languages="desc">
                       <li class="nav-item" data-v-language>
                         <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
                           <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
@@ -1375,7 +1375,6 @@
 
                     <div class="tab-content" data-v-languages="desc" style="clear:both">
                       <div class="tab-pane" id="language1" data-v-language data-v-language-id>
-
 
 
                         <input name="post_content[1][language_id]" type="hidden" data-v-post-content-language_id>
@@ -1502,7 +1501,7 @@
 
 
                             <div class="content-editor">
-                              <textarea name="post_content[1][content]" placeholder="Content" class="form-control" data-v-post-content-content required></textarea>
+                              <textarea name="post_content[1][content]" placeholder="Content" class="form-control html" data-v-post-content-content required></textarea>
                               <input name="post_content[1][has_changes]" value="1" class="has_changes" data-v-post-content-has_changes type="hidden" />
                             </div>
 

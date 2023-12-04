@@ -70,8 +70,11 @@ div.autocomplete-list {
     //background: var(--bs-border-color);
 }
 .autocomplete-list > div {
-    padding: 0.5rem;
+        padding: 0.3rem 0.3rem 0.3rem 1rem;
 	border-bottom:1px dashed var(--bs-border-color);
+	display:flex;
+        justify-content: space-between;	
+	align-items: center;
 	
 	.btn-close {
 		vertical-align:middle;
