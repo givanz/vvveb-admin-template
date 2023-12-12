@@ -77,7 +77,7 @@
 
 						<div>
 							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
-							<a href="#" class="btn btn-outline-danger btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
+							<a href="#" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure?')" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
 						</div>
 			
 				  </div>                

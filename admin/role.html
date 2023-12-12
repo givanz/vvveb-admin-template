@@ -1220,9 +1220,19 @@
               <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="la la-user"></i>
                 <span data-v-admin-display_name>Admin</span>
+                <img class="ms-2 rounded-circle" src="" height="24" data-v-admin-avatar>
               </button>
 
               <div class="dropdown-menu dropdown-menu-end">
+                <!--
+					<img class="d-block mx-auto rounded-circle" src="" height="64" data-v-admin-avatar>
+					<div class="dropdown-item">
+						<span data-v-admin-first_name>John</span>	
+						<span data-v-admin-last_name>Doe</span>	
+					</div>
+					
+					<div class="dropdown-divider"></div>
+					-->
                 <a class="dropdown-item" href="#" data-v-admin-edit-url>
                   <span>Edit Profile</span>
                 </a>
@@ -1909,8 +1919,33 @@
               </div>
 
 
+              <div class="card-body" data-v-capabilities>
 
-              <div class="card-body">
+                <div class="form-check form-check-inline" data-v-capability>
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="capability1" data-v-capability-value>
+                    <span data-v-capability-name>View other user posts</span>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline" data-v-capability>
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="capability1" data-v-capability-value>
+                    <span data-v-capability-name>Edit other user posts</span>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline" data-v-capability>
+                  <label class="form-check-label>
+						<input class=" form-check-input" type="checkbox" value="capability1" data-v-capability-value>
+                    <span data-v-capability-name>View other users products</span>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline" data-v-capability>
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="capability1" data-v-capability-value>
+                    <span data-v-capability-name>Edit other users products</span>
+                  </label>
+                </div>
+
               </div>
             </div>
 

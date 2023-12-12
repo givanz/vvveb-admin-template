@@ -1220,9 +1220,19 @@
               <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="la la-user"></i>
                 <span data-v-admin-display_name>Admin</span>
+                <img class="ms-2 rounded-circle" src="" height="24" data-v-admin-avatar>
               </button>
 
               <div class="dropdown-menu dropdown-menu-end">
+                <!--
+					<img class="d-block mx-auto rounded-circle" src="" height="64" data-v-admin-avatar>
+					<div class="dropdown-item">
+						<span data-v-admin-first_name>John</span>	
+						<span data-v-admin-last_name>Doe</span>	
+					</div>
+					
+					<div class="dropdown-divider"></div>
+					-->
                 <a class="dropdown-item" href="#" data-v-admin-edit-url>
                   <span>Edit Profile</span>
                 </a>
@@ -1336,6 +1346,35 @@
             </div>
 
             <div class="mb-3 row">
+              <label for="input-first_name" class="col-sm-2 col-form-label">First name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="input-first_name" placeholder="First name" name="admin[first_name]" data-v-user-first_name>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="input-last_name" class="col-sm-2 col-form-label">Last name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="input-last_name" placeholder="Last name" name="admin[last_name]" data-v-user-last_name>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="input-phone_number" class="col-sm-2 col-form-label">Phone number</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="input-phone_number" placeholder="Phone number" name="admin[phone_number]" data-v-user-phone_number>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="input-url" class="col-sm-2 col-form-label">Website</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="input-url" placeholder="Website" name="admin[url]" data-v-user-url>
+              </div>
+            </div>
+
+
+            <div class="mb-3 row">
               <label for="input-username" class="col-sm-2 col-form-label">User name</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="input-username" placeholder="User name" name="admin[username]" data-v-user-username required>
@@ -1353,6 +1392,33 @@
               <label for="input-display_name" class="col-sm-2 col-form-label">Display name</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="input-display_name" placeholder="Display name" name="admin[display_name]" data-v-user-display_name required>
+              </div>
+            </div>
+
+
+            <div class="mb-3 row">
+              <label for="input-site-title" class="col-sm-2 col-form-label">Avatar</label>
+              <div class="col-sm-10">
+
+                <input type="hidden" data-v-avatar name="admin[avatar]" id="avatar-input" value="">
+
+                <img data-v-avatar src="img/placeholder.svg" alt="" title="" id="avatar-thumb" data-v-placeholder="" data-media-gallery data-target-input="#avatar-input" data-target-thumb="#avatar-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;">
+
+                <div class="py-3">
+                  <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#avatar-input" data-target-thumb="#avatar-thumb" data-type="single">
+                    <i class="la la-image la-lg"></i>
+                    <span>Set image</span>
+                  </button>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="input-bio" class="col-sm-2 col-form-label">Bio</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="input-bio" placeholder="Biography" name="admin[bio]" data-v-user-bio></textarea>
               </div>
             </div>
 
@@ -1408,6 +1474,16 @@
 
 
 
+  <script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+  <script id="openverse-js" src="libs/media/openverse.js"></script>
+  <script id="media-js" src="libs/media/media.js"></script>
+  <script id="index-js" type="module" src="libs/vvveb/index.js"></script>
+  <link href="libs/media/media.css" rel="stylesheet">
 
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">

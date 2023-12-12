@@ -1220,9 +1220,19 @@
               <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="la la-user"></i>
                 <span data-v-admin-display_name>Admin</span>
+                <img class="ms-2 rounded-circle" src="" height="24" data-v-admin-avatar>
               </button>
 
               <div class="dropdown-menu dropdown-menu-end">
+                <!--
+					<img class="d-block mx-auto rounded-circle" src="" height="64" data-v-admin-avatar>
+					<div class="dropdown-item">
+						<span data-v-admin-first_name>John</span>	
+						<span data-v-admin-last_name>Doe</span>	
+					</div>
+					
+					<div class="dropdown-divider"></div>
+					-->
                 <a class="dropdown-item" href="#" data-v-admin-edit-url>
                   <span>Edit Profile</span>
                 </a>
@@ -1433,6 +1443,7 @@
                       </div>
                     </th>
                     <!-- <th style="max-width:200px;text-align:center;">Avatar</th> -->
+                    <th style="max-width:200px;text-align:center;">Avatar</th>
                     <th style="max-width:200px;">User</th>
                     <th style="max-width:200px;">Display name</th>
                     <th style="max-width:200px;">First name</th>
@@ -1451,14 +1462,13 @@
                         <span class="custom-control-description">&nbsp;</span>
                       </label>
                     </td>
-                    <!--
-                                <td class="img" style="width:300px;text-align:center;">
-									<a
-                                        href="/admin?module=users&action=user&id=4">
-                                        <img data-v-image src="">
-									</a>
-                                </td>
-								-->
+
+                    <td class="img">
+                      <a href="/admin?module=users&action=user&id=4" data-v-edit-url>
+                        <img data-v-avatar src="" width="32">
+                      </a>
+                    </td>
+
                     <td class="user">
                       <a href="/admin?module=users&action=user&id=4" data-v-edit-url>
                         <span data-v-username>joe</span>
