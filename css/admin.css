@@ -10315,7 +10315,7 @@ body {
         padding: 0.1rem 0.2rem;
         text-align: center;
         line-height: 12px; }
-    #vvveb-builder .component-properties .mb-3 .input [type="color"] {
+    #vvveb-builder .component-properties .mb-3 .input [type="color"], #vvveb-builder .component-properties .mb-3 .input .form-check-input {
       float: right; }
     #vvveb-builder .component-properties .mb-3 .custom-control {
       min-height: 1.1rem; }
@@ -15806,41 +15806,44 @@ i[class^='icon-'] {
   font-family: Line Awesome Brands;
   font-style: normal;
   font-weight: normal;
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/line-awesome/la-brands-400.eot");
   src: url("../fonts/line-awesome/la-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-brands-400.woff2") format("woff2"), url("../fonts/line-awesome/la-brands-400.woff") format("woff"), url("../fonts/line-awesome/la-brands-400.ttf") format("truetype"), url("../fonts/line-awesome/la-brands-400.svg#lineawesome") format("svg"); }
 
 .lab {
-  font-family: Line Awesome Brands;
-  font-weight: 400; }
+  font-family: Line Awesome Brands, monospace;
+  font-weight: 400;
+  line-height: 1.7; }
 
 @font-face {
   font-family: Line Awesome Free;
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/line-awesome/la-regular-400.eot");
   src: url("../fonts/line-awesome/la-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-regular-400.woff2") format("woff2"), url("../fonts/line-awesome/la-regular-400.woff") format("woff"), url("../fonts/line-awesome/la-regular-400.ttf") format("truetype"), url("../fonts/line-awesome/la-regular-400.svg#lineawesome") format("svg"); }
 
 .la, .header-arrow {
-  font-family: Line Awesome Free;
-  font-weight: 400; }
+  font-family: Line Awesome Free, monospace;
+  font-weight: 400;
+  line-height: 1.7; }
 
 @font-face {
   font-family: Line Awesome Free;
   font-style: normal;
-  font-weight: 900;
-  font-display: auto;
+  font-weight: 410;
+  font-display: swap;
   src: url("../fonts/line-awesome/la-solid-900.eot");
   src: url("../fonts/line-awesome/la-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-solid-900.woff2") format("woff2"), url("../fonts/line-awesome/la-solid-900.woff") format("woff"), url("../fonts/line-awesome/la-solid-900.ttf") format("truetype"), url("../fonts/line-awesome/la-solid-900.svg#lineawesome") format("svg"); }
 
 .la, .header-arrow {
-  font-family: Line Awesome Free;
-  font-weight: 900; }
+  font-family: Line Awesome Free, monospace;
+  font-weight: 410;
+  line-height: 1.7; }
 
 .la.la-lg, .la-lg.header-arrow {
   font-size: 1.33333em;
-  line-height: 0.75em;
+  line-height: 1.2em;
   vertical-align: -.0667em; }
 
 .la-xs {
@@ -15901,7 +15904,7 @@ i[class^='icon-'] {
     left: -calc(20em / 14)calc(4em / 14); }
 
 .la-border {
-  border: solid 0.08em #eee;
+  border: solid 0.08em var(--bs-border-color);
   border-radius: .1em;
   padding: .2em .25em .15em; }
 
@@ -21477,12 +21480,6 @@ tr.active .form-check-input::before {
 	opacity:1;
 }
 */
-.modal {
-  z-index: 2060; }
-
-.toast-container, .toast {
-  z-index: 2080; }
-
 .modal .modal-content {
   height: 100%; }
 

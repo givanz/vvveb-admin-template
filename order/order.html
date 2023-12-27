@@ -911,7 +911,7 @@
       <div class="top-header">
 
         <div class="btn-group" data-v-component-sites>
-          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
 
             <i class="icon-eye-outline"></i>
             <span>View live website</span>
@@ -945,7 +945,7 @@
         </div>
 
         <div class="btn-group">
-          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="icon-reload-circle-outline"></i>
             <span>Clear cache</span>
           </button>
@@ -1003,7 +1003,7 @@
         <div class="float-end">
 
           <div class="btn-group top-notifications" data-v-component-notifications>
-            <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="la la-bell"></i>
               <span class="badge bg-primary-subtle text-body " data-v-if="count > 0" data-v-notification-count>5</span>
             </button>
@@ -1096,7 +1096,7 @@
 
           <div class="btn-group" data-v-component-sites>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-sitemap me-1"></i>
                 <span data-v-site-info-name>Default site</span>
@@ -1132,7 +1132,7 @@
 
           <div class="btn-group" data-v-component-states>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la text-success me-1" data-v-state-info-active_icon></i>
                 <span data-v-state-info-active_name>Live</span>
@@ -1170,7 +1170,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1205,7 +1205,7 @@
           <div class="vr align-middle mx-1"></div>
 
 
-          <a target="_blank" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn text-body" aria-haspopup="true" aria-expanded="false">
+          <a target="_blank" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn text-body" aria-expanded="false">
             <i class="la la-lg la-question-circle lh-1"></i>
             <span>Docs</span>
           </a>
@@ -1218,7 +1218,7 @@
               <input type="hidden" name="csrf" data-v-csrf>
 
 
-              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="la la-user"></i>
                 <span data-v-admin-display_name>Admin</span>
                 <img class="ms-2 rounded-circle" src="" height="24" data-v-admin-avatar>
@@ -1472,7 +1472,8 @@
                                   <span class="text-muted">Order ID:</span>
                                 </td>
                                 <td>
-                                  <span data-v-order-order_id>V001</span>
+                                  <span data-v-order-invoice_prefix>V1-</span>
+                                  <span data-v-order-order_id>001</span>
                                 </td>
                               </tr>
                               <tr>
@@ -2002,6 +2003,9 @@
                         <td class="text-start quantity">
                           <span data-v-order-product-quantity>1</span>
                         </td>
+                        <td class="text-end unit-price">
+                          <span data-v-order-product-price>1</span>
+                        </td>
                         <!-- <td class="text-end price" data-v-order-product-price>$123.20</td> -->
                         <td class="text-end total px-4">
                           <span data-v-order-product-tax_formatted>$146.40</span>
@@ -2011,31 +2015,31 @@
 
                     <tfoot data-v-order-totals>
                       <tr data-v-order-totals-total>
-                        <td colspan="3" class="text-end">
+                        <td colspan="4" class="text-end">
                           <small data-v-order-total-title>Sub-Total</small>:
                         </td>
                         <td class="text-end" data-v-order-total-value_formatted>$101.00</td>
                       </tr>
                       <tr data-v-order-totals-total>
-                        <td colspan="3" class="text-end">
+                        <td colspan="4" class="text-end">
                           <small>Eco Tax (2.00):</small>
                         </td>
                         <td class="text-end">$2.00</td>
                       </tr>
                       <tr data-v-order-totals-total>
-                        <td colspan="3" class="text-end">
+                        <td colspan="4" class="text-end">
                           <small>VAT (19%):</small>
                         </td>
                         <td class="text-end">$20.20</td>
                       </tr>
                       <tr data-v-order-totals-total>
-                        <td colspan="3" class="text-end">
+                        <td colspan="4" class="text-end">
                           <small>Total:</small>
                         </td>
                         <td class="text-end">$123.20</td>
                       </tr>
                       <tr>
-                        <td colspan="3" class="text-end">Total:</td>
+                        <td colspan="4" class="text-end">Total:</td>
                         <td class="text-end" data-v-order-total_formatted>$0</td>
                       </tr>
                     </tfoot>
@@ -2249,12 +2253,11 @@ $('input.autocomplete').autocomplete({onSelect});
             <div>Template was saved!</div>
           </div>
           <div>
-            <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
+            <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 </body>
 

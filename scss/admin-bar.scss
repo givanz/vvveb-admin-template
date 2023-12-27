@@ -1,4 +1,4 @@
-$admin-bar-height: 32px !default;
+$admin-bar-height: 35px !default;
 $admin-bar-background: rgba(var(--bs-body-bg-rgb, 255,255,255),0.9) !default;
 $admin-bar-color: var(--bs-body-color, #000) !default;
 $admin-bar-border-color: var(--bs-border-color, #ddd) !default;
@@ -23,7 +23,7 @@ html {
 	position: fixed;
 	top: 0px;
 	width: 100%;
-	min-height: 32px;
+	min-height: $admin-bar-height;
 	color:$admin-bar-color;
 	z-index:10000;
 	font-family:$admin-bar-font-family;
@@ -50,7 +50,7 @@ html {
 	
 	.vvveb-logo {
 		width:100px;
-		height:32px;
+		height:$admin-bar-height;
 		background-image:url('../img/logo-small.png');
 		background-repeat: no-repeat;
 		background-position: center;
@@ -85,10 +85,10 @@ html {
 			a {
 				display:block;
 				padding:0.1rem 0.7rem 0.1rem 0.7rem;
-				min-height:32px;
+				min-height:$admin-bar-height;
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
-				line-height:32px;
+				line-height:$admin-bar-height;
 				
 				> i, > img {
 					font-size: 1.4rem;
@@ -112,6 +112,7 @@ html {
 			i.la {
 				font-style:normal;
 				vertical-align:middle;
+				line-height:1;
 			}
 			
 			&:hover {

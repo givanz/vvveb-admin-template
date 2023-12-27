@@ -4029,41 +4029,44 @@ i[class^='icon-'] {
   font-family: Line Awesome Brands;
   font-style: normal;
   font-weight: normal;
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/line-awesome/la-brands-400.eot");
   src: url("../fonts/line-awesome/la-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-brands-400.woff2") format("woff2"), url("../fonts/line-awesome/la-brands-400.woff") format("woff"), url("../fonts/line-awesome/la-brands-400.ttf") format("truetype"), url("../fonts/line-awesome/la-brands-400.svg#lineawesome") format("svg"); }
 
 .lab {
-  font-family: Line Awesome Brands;
-  font-weight: 400; }
+  font-family: Line Awesome Brands, monospace;
+  font-weight: 400;
+  line-height: 1.7; }
 
 @font-face {
   font-family: Line Awesome Free;
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/line-awesome/la-regular-400.eot");
   src: url("../fonts/line-awesome/la-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-regular-400.woff2") format("woff2"), url("../fonts/line-awesome/la-regular-400.woff") format("woff"), url("../fonts/line-awesome/la-regular-400.ttf") format("truetype"), url("../fonts/line-awesome/la-regular-400.svg#lineawesome") format("svg"); }
 
 .la {
-  font-family: Line Awesome Free;
-  font-weight: 400; }
+  font-family: Line Awesome Free, monospace;
+  font-weight: 400;
+  line-height: 1.7; }
 
 @font-face {
   font-family: Line Awesome Free;
   font-style: normal;
-  font-weight: 900;
-  font-display: auto;
+  font-weight: 410;
+  font-display: swap;
   src: url("../fonts/line-awesome/la-solid-900.eot");
   src: url("../fonts/line-awesome/la-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-solid-900.woff2") format("woff2"), url("../fonts/line-awesome/la-solid-900.woff") format("woff"), url("../fonts/line-awesome/la-solid-900.ttf") format("truetype"), url("../fonts/line-awesome/la-solid-900.svg#lineawesome") format("svg"); }
 
 .la {
-  font-family: Line Awesome Free;
-  font-weight: 900; }
+  font-family: Line Awesome Free, monospace;
+  font-weight: 410;
+  line-height: 1.7; }
 
 .la.la-lg {
   font-size: 1.33333em;
-  line-height: 0.75em;
+  line-height: 1.2em;
   vertical-align: -.0667em; }
 
 .la-xs {
@@ -4124,7 +4127,7 @@ i[class^='icon-'] {
     left: -calc(20em / 14)calc(4em / 14); }
 
 .la-border {
-  border: solid 0.08em #eee;
+  border: solid 0.08em var(--bs-border-color);
   border-radius: .1em;
   padding: .2em .25em .15em; }
 
@@ -8456,7 +8459,7 @@ i[class^='icon-'] {
   position: fixed;
   top: 0px;
   width: 100%;
-  min-height: 32px;
+  min-height: 35px;
   color: var(--bs-body-color, #000);
   z-index: 10000;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -8476,7 +8479,7 @@ i[class^='icon-'] {
     font-size: 13px; }
   #vvveb-admin .vvveb-logo {
     width: 100px;
-    height: 32px;
+    height: 35px;
     background-image: url("../img/logo-small.png");
     background-repeat: no-repeat;
     background-position: center; }
@@ -8500,10 +8503,10 @@ i[class^='icon-'] {
       #vvveb-admin ul li a {
         display: block;
         padding: 0.1rem 0.7rem 0.1rem 0.7rem;
-        min-height: 32px;
+        min-height: 35px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        line-height: 32px; }
+        line-height: 35px; }
         #vvveb-admin ul li a > i, #vvveb-admin ul li a > img {
           font-size: 1.4rem;
           color: #777;
@@ -8518,7 +8521,8 @@ i[class^='icon-'] {
           background-color: var(--bs-body-color, #000); }
       #vvveb-admin ul li i.la {
         font-style: normal;
-        vertical-align: middle; }
+        vertical-align: middle;
+        line-height: 1; }
       #vvveb-admin ul li.v-logo a {
         padding: 0; }
   #vvveb-admin > ul {
@@ -8571,4 +8575,4 @@ i[class^='icon-'] {
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto; }
   #vvveb-admin + header, #vvveb-admin + section, #vvveb-admin + nav {
-    margin-top: 32px; }
+    margin-top: 35px; }

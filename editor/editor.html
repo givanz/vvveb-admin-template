@@ -985,7 +985,7 @@
             </div>
 
             <div class="align-self-center">
-              <button type="button" class="btn btn-sm me-2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn btn-sm me-2" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="la la-lg la-history"></i>
                 <strong class="small align-text-top">0</strong>
                 <span>Revisions</span>
@@ -1572,7 +1572,7 @@
                   </a>
 
                   <div class="dropdown">
-                    <a class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                       <span class="hint" aria-label="Text align">
                         <i class="la la-align-left"></i>
                       </span>
@@ -2222,7 +2222,7 @@
 		{% if (typeof hide_remove === 'undefined') { %}
 		<div class="mt-3">
 		
-			<button class="btn btn-sm btn-outline-primary">
+			<button class="btn btn-sm btn-outline-primary btn-new">
 				<i class="la la-plus la-lg"></i> Add new
 			</button>
 			
@@ -2818,26 +2818,26 @@
         </div>
 
         <!-- save toast -->
-        <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3" id="top-toast">
-          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header text-white">
-              <strong class="me-auto">Page save</strong>
-              <!-- <small class="badge bg-success">status</small> -->
-              <button type="button" class="btn-close text-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body ">
-              <div class="flex-grow-1">
-                <div class="message">Elements saved!
-                  <div>Template backup was saved!</div>
-                  <div>Template was saved!</div>
-                </div>
-                <div>
-                  <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!--
+<div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3" id="top-toast">
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	    <div class="toast-header text-white">
+			<strong class="me-auto">Page save</strong>
+			<small class="badge bg-success">status</small>
+			<button type="button" class="btn-close text-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+		</div>
+		<div class="toast-body ">
+			<div class="flex-grow-1">
+			  <div class="message">Elements saved!
+				  <div>Template backup was saved!</div>
+				  <div>Template was saved!</div>
+			  </div>
+			  <div><a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+-->
         <!--
 <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3" id="top-toast">
   <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
@@ -2917,149 +2917,150 @@
                   </select>
 
                   <input type="text" class="form-control  mt-2" name="file" value="product/product-one.html" data-v-basename>
-
-                  <div class="form-check mt-3">
-                    <input class="form-check-input" id="setTemplate" name="setTemplate" type="checkbox" value="true" checked>
-                    <label class="form-check-label" for="setTemplate">Set as template for this page</label>
+                  <!--	
+			  <div class="form-check mt-3">
+				<input class="form-check-input" id="setTemplate" name="setTemplate" type="checkbox" value="true" checked>
+				<label class="form-check-label" for="setTemplate">Set as template for this page</label>
+			  </div>
+			  -->
                 </label>
               </div>
-            </div>
-            <div class="accordion accordion-flush components">
-              <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <div>
-                    <h6>
-                      <input class="form-check-input me-1" type="checkbox" value="" checked>
-                      Product lorem ipsum
-                    </h6>
-                    <small class="p-1 bg-body-tertiary">Product</small>
+              <div class="accordion accordion-flush components">
+                <div class="accordion-item">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div>
+                      <h6>
+                        <input class="form-check-input me-1" type="checkbox" value="" checked>
+                        Product lorem ipsum
+                      </h6>
+                      <small class="p-1 bg-body-tertiary">Product</small>
+                    </div>
+                  </button>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+
+                      <ul class="list-unstyled">
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Title</span>
+                          </h6>
+                          <span>Lorem ipsum</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Url</span>
+                          </h6>
+                          <span>/product6/</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Price</span>
+                          </h6>
+                          <span>500</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Image</span>
+                          </h6>
+                          <span>/media/image.jpg</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Title</span>
+                          </h6>
+                          <span>Lorem ipsum</span>
+                        </li>
+                      </ul>
+
+                    </div>
                   </div>
-                </button>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                  <div class="accordion-body">
+                </div>
+                <div class="accordion-item">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div>
+                      <h6>
+                        <input class="form-check-input me-1" type="checkbox" value="" checked>
+                        Product lorem ipsum
+                      </h6>
+                      <small class="p-1 bg-body-tertiary">Product</small>
+                    </div>
+                  </button>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                    <div class="accordion-body">
 
-                    <ul class="list-unstyled">
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Title</span>
-                        </h6>
-                        <span>Lorem ipsum</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Url</span>
-                        </h6>
-                        <span>/product6/</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Price</span>
-                        </h6>
-                        <span>500</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Image</span>
-                        </h6>
-                        <span>/media/image.jpg</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Title</span>
-                        </h6>
-                        <span>Lorem ipsum</span>
-                      </li>
-                    </ul>
-
+                      <ul class="list-unstyled">
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Title</span>
+                          </h6>
+                          <span>Perfume test 1</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Url</span>
+                          </h6>
+                          <span>/product6/</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Price</span>
+                          </h6>
+                          <span>500</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Image</span>
+                          </h6>
+                          <span>/media/image.jpg</span>
+                        </li>
+                        <li class="p-2">
+                          <h6 class="d-inline">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
+                            <span>Title</span>
+                          </h6>
+                          <span>Perfume test 1</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <div>
-                    <h6>
-                      <input class="form-check-input me-1" type="checkbox" value="" checked>
-                      Product lorem ipsum
-                    </h6>
-                    <small class="p-1 bg-body-tertiary">Product</small>
-                  </div>
-                </button>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                  <div class="accordion-body">
-
-                    <ul class="list-unstyled">
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Title</span>
-                        </h6>
-                        <span>Perfume test 1</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Url</span>
-                        </h6>
-                        <span>/product6/</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Price</span>
-                        </h6>
-                        <span>500</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Image</span>
-                        </h6>
-                        <span>/media/image.jpg</span>
-                      </li>
-                      <li class="p-2">
-                        <h6 class="d-inline">
-                          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-                          <span>Title</span>
-                        </h6>
-                        <span>Perfume test 1</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
+            <hr>
+
           </div>
-          <hr>
-
         </div>
-      </div>
 
 
-      <script id="jquery-js" src="js/jquery.min.js"></script>
-      <script id="popper-js" src="js/popper.min.js"></script>
-      <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
-      <script id="theme-js" src="js/theme.js"></script>
+        <script id="jquery-js" src="js/jquery.min.js"></script>
+        <script id="popper-js" src="js/popper.min.js"></script>
+        <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+        <script id="theme-js" src="js/theme.js"></script>
 
-      <!-- vvveb modules code -->
-      <script id="admin-js" type="module" src="../../js/admin.js"></script>
+        <!-- vvveb modules code -->
+        <script id="admin-js" type="module" src="../../js/admin.js"></script>
 
 
-      <!-- builder code-->
-      <script src="../../js/vvvebjs/builder.js"></script>
-      <script>
+        <!-- builder code-->
+        <script src="../../js/vvvebjs/builder.js"></script>
+        <script>
 Vvveb.themeBaseUrl = '{ $this->themeBaseUrl }';
 </script>
-      <!-- undo manager-->
-      <script src="../../js/vvvebjs/undo.js"></script>
+        <!-- undo manager-->
+        <script src="../../js/vvvebjs/undo.js"></script>
 
-      <!-- media gallery -->
-      <link href="libs/media/media.css" rel="stylesheet">
-      <script>
+        <!-- media gallery -->
+        <link href="libs/media/media.css" rel="stylesheet">
+        <script>
 let mediaPath = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
 let uploadUrl = '{ $this->uploadUrl }';
@@ -3068,61 +3069,61 @@ let renameUrl = '{ $this->renameUrl }';
 let saveReusableUrl = '{ $this->saveReusableUrl }';
 let deleteUrl = '{ $this->deleteUrl }';
 </script>
-      <script id="openverse-js" src="libs/media/openverse.js"></script>
-      <script id="media-js" src="libs/media/media.js"></script>
-      <script id="index-js" type="module" src="libs/vvveb/index.js"></script>
-      <script src="../../js/vvvebjs/resources.js"></script>
+        <script id="openverse-js" src="libs/media/openverse.js"></script>
+        <script id="media-js" src="libs/media/media.js"></script>
+        <script id="index-js" src="libs/vvveb/index.js"></script>
+        <script src="../../js/vvvebjs/resources.js"></script>
 
 
-      <!-- inputs-->
-      <script src="../../js/vvvebjs/inputs.js"></script>
-      <script data-v-theme-inputs src="../../js/vvvebjs/inputs.js"></script>
-      <script src="../../js/vvvebjs/plugin-media.js"></script>
+        <!-- inputs-->
+        <script src="../../js/vvvebjs/inputs.js"></script>
+        <script data-v-theme-inputs src="../../js/vvvebjs/inputs.js"></script>
+        <script src="../../js/vvvebjs/plugin-media.js"></script>
 
-      <!-- components-->
-      <script src="../../js/vvvebjs/plugin-google-fonts.js"></script>
-      <script src="../../js/vvvebjs/components-common.js"></script>
-      <script src="../../js/vvvebjs/plugin-aos.js"></script>
-      <script src="../../js/vvvebjs/components-html.js"></script>
-      <script src="../../js/vvvebjs/components-elements.js"></script>
-      <script src="../../js/vvvebjs/section.js"></script>
-      <script type="module" src="../../js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
-      <script type="module" src="../../js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
-      <script src="../../js/vvvebjs/components-widgets.js"></script>
-      <script src="../../js/vvvebjs/components-bootstrap5.js"></script>
-      <script data-v-theme-components src="../../js/vvvebjs/components.js"></script>
+        <!-- components-->
+        <script src="../../js/vvvebjs/plugin-google-fonts.js"></script>
+        <script src="../../js/vvvebjs/components-common.js"></script>
+        <script src="../../js/vvvebjs/plugin-aos.js"></script>
+        <script src="../../js/vvvebjs/components-html.js"></script>
+        <script src="../../js/vvvebjs/components-elements.js"></script>
+        <script src="../../js/vvvebjs/section.js"></script>
+        <script type="module" src="../../js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
+        <script type="module" src="../../js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
+        <script src="../../js/vvvebjs/components-widgets.js"></script>
+        <script src="../../js/vvvebjs/components-bootstrap5.js"></script>
+        <script data-v-theme-components src="../../js/vvvebjs/components.js"></script>
 
-      <!-- sections-->
-      <script data-v-theme-sections src="../../js/vvvebjs/sections.js"></script>
-      <script src="../../js/vvvebjs/sections-bootstrap4.js"></script>
+        <!-- sections-->
+        <script data-v-theme-sections src="../../js/vvvebjs/sections.js"></script>
+        <script src="../../js/vvvebjs/sections-bootstrap4.js"></script>
 
-      <!-- blocks-->
-      <script data-v-theme-blocks src="../../js/vvvebjs/blocks.js"></script>
-      <script src="../../js/vvvebjs/blocks-bootstrap4.js"></script>
-
-
-      <!-- plugins -->
-
-      <!-- code mirror - code editor syntax highlight -->
-      <link href="libs/codemirror/lib/codemirror.css" rel="stylesheet" />
-      <link href="libs/codemirror/theme/material.css" rel="stylesheet" />
-      <script src="libs/codemirror/lib/codemirror.js"></script>
-      <script src="libs/codemirror/lib/xml.js"></script>
-      <script src="libs/codemirror/lib/formatting.js"></script>
-      <script src="../../js/vvvebjs/plugin-codemirror.js"></script>
-      <!-- jszip - download page as zip -->
-      <!-- script src="libs/jszip/jszip.min.js"></script -->
-      <!-- script src="../../js/vvvebjs/plugin-jszip.js"></script -->
+        <!-- blocks-->
+        <script data-v-theme-blocks src="../../js/vvvebjs/blocks.js"></script>
+        <script src="../../js/vvvebjs/blocks-bootstrap4.js"></script>
 
 
-      <!-- autocomplete plugin used by autocomplete input-->
-      <script src="libs/autocomplete/jquery.autocomplete.js"></script>
-      <script type="module" src="../../js/admin.js"></script>
-      <script src="../../js/vvvebjs/elements-changes.js"></script>
+        <!-- plugins -->
 
-      <script data-v-theme-js src="editor.js"></script>
+        <!-- code mirror - code editor syntax highlight -->
+        <link href="libs/codemirror/lib/codemirror.css" rel="stylesheet" />
+        <link href="libs/codemirror/theme/material.css" rel="stylesheet" />
+        <script src="libs/codemirror/lib/codemirror.js"></script>
+        <script src="libs/codemirror/lib/xml.js"></script>
+        <script src="libs/codemirror/lib/formatting.js"></script>
+        <script src="../../js/vvvebjs/plugin-codemirror.js"></script>
+        <!-- jszip - download page as zip -->
+        <!-- script src="libs/jszip/jszip.min.js"></script -->
+        <!-- script src="../../js/vvvebjs/plugin-jszip.js"></script -->
 
-      <script>
+
+        <!-- autocomplete plugin used by autocomplete input-->
+        <script src="libs/autocomplete/jquery.autocomplete.js"></script>
+        <script type="module" src="../../js/admin.js"></script>
+        <script src="../../js/vvvebjs/elements-changes.js"></script>
+
+        <script data-v-theme-js src="editor.js"></script>
+
+        <script>
 
 let pages =  { $this->pages };
 Vvveb.data =  { $this->data };
@@ -3151,45 +3152,44 @@ $(function() {
 });
 </script>
 
-      <!-- Modal -->
-      <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="modal-title" id="heartBeatLogin">
-                <h5>Session has expired</h5>
-                <span>Login to resume your work</span>
-              </span>
+        <!-- Modal -->
+        <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="modal-title" id="heartBeatLogin">
+                  <h5>Session has expired</h5>
+                  <span>Login to resume your work</span>
+                </span>
 
-              <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-5">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- save toast -->
-      <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-          <div class="toast-header text-white">
-            <strong class="me-auto">Page save</strong>
-            <!-- <small class="badge bg-success">status</small> -->
-            <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body ">
-            <div class="flex-grow-1">
-              <div class="message">Elements saved!
-                <div>Template backup was saved!</div>
-                <div>Template was saved!</div>
+                <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div>
-                <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a>
+              <div class="modal-body p-5">
               </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- save toast -->
+        <div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3">
+          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+            <div class="toast-header text-white">
+              <strong class="me-auto">Page save</strong>
+              <!-- <small class="badge bg-success">status</small> -->
+              <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body ">
+              <div class="flex-grow-1">
+                <div class="message">Elements saved!
+                  <div>Template backup was saved!</div>
+                  <div>Template was saved!</div>
+                </div>
+                <div>
+                  <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
 
 </body>
 
