@@ -19,10 +19,13 @@
 				<a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
 			</span>
 			<span>
+				<a class="btn btn-sm btn-outline-primary border-0 btn-preview" title="Preview" target="_blank" data-v-revision-preview-url>
+					<i class="la la-eye"></i>
+				</a>
 				<a class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
 					<i class="la la-arrow-up"></i>
 				</a>
-				 <a class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare" data-v-revision-compare-url>
+				 <a class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare" target="_blank" data-v-revision-compare-url>
 					<i class="la la-exchange-alt"></i>
 				</a>
 				<a class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
@@ -79,12 +82,12 @@
 		</div>
 		<hr class="dropdown-divider">
 		<div class="dropdown-item d-flex">
-				<a href="admin/?module=content/revisions" data-v-revisions_url>
+			<a href="admin/?module=content/revisions" target="_blank" data-v-revisions_url>
 				<span>Diff Compare</span>
 				<span class="flex-grow-1">
 					<i class="la la-exchange-alt text-muted"></i>
 				</span> 
-				</a>
+			</a>
 		</div>
 		
 	</div>

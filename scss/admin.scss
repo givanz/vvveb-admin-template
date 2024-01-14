@@ -22,6 +22,20 @@ $input-btn-padding-y:         0.5rem !default;
 $input-btn-padding-x:         1.1rem !default;
 
 
+//set higher z-index to avoid tinymce dialog overlap
+$zindex-dropdown:                   1400;
+$zindex-sticky:                     1420;
+$zindex-fixed:                      1430;
+$zindex-offcanvas-backdrop:         1440;
+$zindex-offcanvas:                  1445;
+$zindex-modal-backdrop:             1450;
+$zindex-modal:                      1455;
+$zindex-popover:                    1470;
+$zindex-tooltip:                    1480;
+$zindex-toast:                      1490;
+
+
+
 @import "bootstrap/bootstrap";
 //@import "bootstrap-css-vars";
 @import "medialibrary";
@@ -849,6 +863,7 @@ td:hover .secondary-actions {
 		  color: rgba(var(--bs-secondary-rgb), 0.8);
 		  vertical-align: middle;
 		  font-size: 1.4rem;
+		  line-height:1;
 		  width:24px;
 			
 		  

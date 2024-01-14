@@ -416,7 +416,7 @@
 	<div>
 		<img id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225">
 		<input name="{%=key%}" type="text" class="form-control mt-1" id="input-{%=key%}"/>
-		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i>&ensp;<span>Set image</span></button>
+		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i><span>Set image</span></button>
 	</div>
 	
 </script>
@@ -426,7 +426,7 @@
 	<div>
 		<video id="thumb-v{%=key%}" class="img-thumbnail p-0" data-target-input="#input-v{%=key%}" data-target-thumb="#thumb-v{%=key%}" style="cursor:pointer" src="" width="225" height="225" playsinline loop muted controls></video>
 		<input name="v{%=key%}" type="text" class="form-control mt-1" id="input-v{%=key%}"/>
-		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#vinput-v{%=key%}" data-target-thumb="#thumb-v{%=key%}"><i class="la la-video la-lg"></i>&ensp;<span>Set video</span></button>
+		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#vinput-v{%=key%}" data-target-thumb="#thumb-v{%=key%}"><i class="la la-video la-lg"></i><span>Set video</span></button>
 	</div>
 	
 </script>
@@ -483,7 +483,6 @@
 			  {% if (typeof max !== 'undefined' && max != false) { %}max="{%=max%}"{% } %} 
 			  {% if (typeof step !== 'undefined' && step != false) { %}step="{%=step%}"{% } %} 
 		class="form-control"/>
-		 <div class="input-group-append">
 		<select class="form-select small-arrow" name="unit">
 			<option value="em">em</option>
 			<option value="rem">rem</option>
@@ -498,8 +497,8 @@
 			<option value="in">in</option>
 			<option value="pt">pt</option>
 			<option value="auto">auto</option>
+			<option value="">-</option>
 		</select>
-		</div>
 	</div>
 	
 </script>
@@ -670,6 +669,34 @@
 		</h6>
 		<span>{%=preview%}</span>
 	  </li>
+	  
+</script>
+
+<script id="vvveb-revision-item" type="text/html">
+
+	<div class="dropdown-item d-flex align-items-center">
+		<span class="flex-grow-1 me-2">
+			<div class="flex-grow-1">
+				{%=date_friendly%} 
+			</div>
+			<span class="small text-muted">
+				{%=date%}
+			</span>
+
+			<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+		</span>
+		<span>
+			<button class="btn btn-sm btn-outline-primary border-0 btn-revision-preview" data-date="{%=date%}" data-file="{%=file%}" title="Preview">
+				<i class="la la-eye"></i>
+			</button>
+			<button class="btn btn-sm btn-outline-primary border-0 btn-revision-load" data-date="{%=date%}" data-file="{%=file%}" title="Load">
+				<i class="la la-arrow-up"></i>
+			</button>
+			<button class="btn btn-sm btn-outline-danger border-0 btn-revision-delete" data-date="{%=date%}" data-file="{%=file%}" onclick='return confirm("{%="Are you sure?"%}")' title="Delete">
+				<i class="la la-trash"></i>
+			</button>
+		</span>
+	</div>
 	  
 </script>
 <!--// end templates -->

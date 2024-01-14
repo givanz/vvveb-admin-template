@@ -1,4 +1,4 @@
-$line-height-base: 1.7;
+$line-height: var(--bs-body-line-height);
 
 @font-face {
   font-family: $la-font-name-lab;
@@ -16,7 +16,7 @@ $line-height-base: 1.7;
 .#{$la-css-prefix-lab} {
   font-family: $la-font-name-lab, monospace;
   font-weight: 400;
-  line-height:$line-height-base;
+  line-height:$line-height;
 }
 
 @font-face {
@@ -35,7 +35,7 @@ $line-height-base: 1.7;
 .#{$la-css-prefix-lar} {
   font-family: $la-font-name-lar, monospace;
   font-weight: 400;
-  line-height:$line-height-base;
+  line-height:$line-height;
 }
 
 @font-face {
@@ -51,8 +51,8 @@ $line-height-base: 1.7;
   url("#{$la-font-path}/la-solid-900.svg#lineawesome") format("svg");
 }
 
-.#{$la-css-prefix-las} {
+.#{$la-css-prefix-las}, .la {
   font-family: $la-font-name-las, monospace;
   font-weight: 410;
-  line-height:$line-height-base;
+  line-height:$line-height;
 }

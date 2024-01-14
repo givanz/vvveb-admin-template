@@ -48,6 +48,10 @@ let saveUrl = '{ $this->saveUrl }';
 let renameUrl = '{ $this->renameUrl }';
 let saveReusableUrl = '{ $this->saveReusableUrl }';
 let deleteUrl = '{ $this->deleteUrl }';
+let revisionsUrl = '{ $this->revisionsUrl }';
+let revisionLoadUrl = '{ $this->revisionLoadUrl }';
+let revisionDeleteUrl = '{ $this->revisionDeleteUrl }';
+let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 </script>
 <script id="openverse-js" src="libs/media/openverse.js"></script>
 <script id="media-js" src="libs/media/media.js"></script>
@@ -67,6 +71,8 @@ let deleteUrl = '{ $this->deleteUrl }';
 <script src="../../js/vvvebjs/components-html.js"></script>	
 <script src="../../js/vvvebjs/components-elements.js"></script>		
 <script src="../../js/vvvebjs/section.js"></script>		
+<script src="../../js/libs/oembed.js"></script>		
+<script src="../../js/vvvebjs/components-embeds.js"></script>		
 <script type="module" src="../../js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
 <script type="module" src="../../js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
 <script src="../../js/vvvebjs/components-widgets.js"></script>	
@@ -94,6 +100,7 @@ let deleteUrl = '{ $this->deleteUrl }';
 <!-- jszip - download page as zip -->
 <!-- script src="libs/jszip/jszip.min.js"></script -->
 <!-- script src="../../js/vvvebjs/plugin-jszip.js"></script -->
+<!-- script src="../../js/vvvebjs/plugin-ai-assistant.js"></script -->
 
 
 <!-- autocomplete plugin used by autocomplete input-->
@@ -117,6 +124,7 @@ $(function() {
 
 	Vvveb.Gui.init();
 	Vvveb.Breadcrumb.init();
+	Vvveb.Revisions.init();
 
 	var fileManagerComponents = [];
 	fileManagerComponents = fileManagerComponents.concat(Vvveb.ComponentsGroup['Ecommerce'], Vvveb.ComponentsGroup['Content']);
@@ -129,6 +137,14 @@ $(function() {
 	Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
 	Vvveb.Gui.toggleRightColumn(false);
 	Vvveb.Breadcrumb.init();
+});
+
+$("#new-page-modal input[name=type]").click(function () {
+	let sections = $("#new-page-modal .form > div");
+	
+	$("input,select", sections.hide()).attr("disabled", true);
+	$("input,select", sections.filter("." + this.value).show()).removeAttr("disabled");
+	;
 });
 </script>
 

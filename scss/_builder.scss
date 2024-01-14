@@ -93,6 +93,7 @@ $font-size-base: 16px;
 		background-repeat: no-repeat;
 		padding-top: 60px;
 		padding-bottom: 7px;
+		padding: 60px 5px 7px 5px;
 
 		//border-color:var(--bs-border-color-rgb);
 		border-style:solid;
@@ -115,7 +116,7 @@ $font-size-base: 16px;
 		box-shadow:0px 1px 4px 0px rgba(var(--bs-body-color-rgb), 0.05);
 		-webkit-box-shadow:0px 1px 4px 0px rgba(var(--bs-body-color-rgb), 0.05);
 		
-		a {
+		a, span {
 			min-height: 20px;
 			white-space: break-spaces;
 			//line-height: 12px;
@@ -464,10 +465,18 @@ body
 			.btn {
 				
 				&.btn-light {
-					font-size: 1.25rem;
 					padding: 0.25rem 0.5rem;
 					--bs-btn-active-bg: var(--bs-primary-bg-subtle);
+					--bs-btn-hover-bg: var(--bs-primary-bg-subtle);
 					--bs-btn-active-border-color: transparent;
+					--bs-btn-hover-color: var(--bs-body-bg); 
+					--bs-btn-bg:transparent;
+					border-color:transparent;
+					color: var(--bs-body-color);
+					
+					i {
+						font-size: 1.25rem;
+					}
 				}
 				
 				&.btn-primary {
@@ -686,7 +695,7 @@ body
 	.components-list, .blocks-list, .component-properties, .sections-list
 	{
 		list-style:none;
-		background: rgba(var(--bs-secondary-color-rgb), 0.03);
+		background: rgba(var(--bs-secondary-color-rgb), 0.025);
 		//scrollbar on hover
 	}
 
@@ -2400,16 +2409,16 @@ img.preview {
 		}
     }
 }	
-
+/*
 .btn-light {
 	--bs-btn-bg:transparent;
 	border-color:transparent;
-	color:var(--bs-body-text);
+	color:var(--bs-body-bg);
 	&:hover {
 		//background-color:var(--bs-border-color);
 	}
 }
-
+*/
 .btn-outline-primary {
     --bs-btn-color: var(--bs-link-color);
 }	

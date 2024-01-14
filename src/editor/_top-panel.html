@@ -76,78 +76,72 @@
 		<div class="align-self-center">
 			<button type="button" class="btn btn-sm me-2" data-bs-toggle="dropdown" aria-expanded="false">
 				<i class="la la-lg la-history"></i> 
-				<strong class="small align-text-top">0</strong> 
+				<strong class="small align-text-top revisions-count">0</strong> 
 				<span>Revisions</span>
 			</button>
 		
 			<div class="dropdown-menu revisions-dropdown">
 				
-				<div>
-					<div class="dropdown-item d-flex align-items-center">
-						<span class="flex-grow-1 me-2">
-							<div class="flex-grow-1">
-								Today 
-							</div>
-							<span class="small text-muted">
-								(2023-06-04 10:30:31)
-							</span>
+				<div class="dropdown-item d-flex align-items-center">
+					<span class="flex-grow-1 me-2">
+						<div class="flex-grow-1">
+							Today 
+						</div>
+						<span class="small text-muted">
+							(2023-06-04 10:30:31)
+						</span>
 
-							<a href="#" target="_blank" class="small text-muted">Admin</a>
+						<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+					</span>
+					<span>
+						<button class="btn btn-sm btn-outline-primary border-0" title="Load">
+							<i class="la la-arrow-up"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
+							<i class="la la-trash"></i>
+						</button>
+					</span>
+				</div>
+				<div class="dropdown-item d-flex align-items-center">
+					<span class="flex-grow-1 me-2">
+						<div class="flex-grow-1">
+							Yesterday 
+						</div>
+						<span class="small text-muted">
+							(2023-06-03 10:30:31)
 						</span>
-						<span>
-							<button class="btn btn-sm btn-outline-primary border-0" title="Load">
-								<i class="la la-arrow-up"></i>
-							</button>
-							<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
-								<i class="la la-trash"></i>
-							</button>
-						</span>
-					</div>
-				</div>					
-				<div>
-					<div class="dropdown-item d-flex align-items-center">
-						<span class="flex-grow-1 me-2">
-							<div class="flex-grow-1">
-								Yesterday 
-							</div>
-							<span class="small text-muted">
-								(2023-06-03 10:30:31)
-							</span>
 
-							<a href="#" target="_blank" class="small text-muted">Admin</a>
+						<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+					</span>
+					<span>
+						<button class="btn btn-sm btn-outline-primary border-0" title="Load">
+							<i class="la la-arrow-up"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
+							<i class="la la-trash"></i>
+						</button>
+					</span>
+				</div>
+				<div class="dropdown-item d-flex align-items-center">
+					<span class="flex-grow-1 me-2">
+						<div class="flex-grow-1">
+							3 Days ago 
+						</div>
+						<span class="small text-muted">
+							(2023-06-01 10:30:31)
 						</span>
-						<span>
-							<button class="btn btn-sm btn-outline-primary border-0" title="Load">
-								<i class="la la-arrow-up"></i>
-							</button>
-							<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
-								<i class="la la-trash"></i>
-							</button>
-						</span>
-					</div>
-				</div>					
-				<div>
-					<div class="dropdown-item d-flex align-items-center">
-						<span class="flex-grow-1 me-2">
-							<div class="flex-grow-1">
-								3 Days ago 
-							</div>
-							<span class="small text-muted">
-								(2023-06-01 10:30:31)
-							</span>
 
-							<a href="#" target="_blank" class="small text-muted">Admin</a>
-						</span>
-						<span>
-							<button class="btn btn-sm btn-outline-primary border-0" title="Load">
-								<i class="la la-arrow-up"></i>
-							</button>
-							<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
-								<i class="la la-trash"></i>
-							</button>
-						</span>
-					</div>
-				</div>				
+						<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+					</span>
+					<span>
+						<button class="btn btn-sm btn-outline-primary border-0" title="Load">
+							<i class="la la-arrow-up"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-danger border-0" title="Delete">
+							<i class="la la-trash"></i>
+						</button>
+					</span>
+				</div>
 				
 			</div>
 		</div>
@@ -158,9 +152,9 @@
 				<button class="btn btn-primary btn-icon save-btn" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="/admin/?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
 					<span class="loading d-none">
 					<i class="la la-save"></i>
-					  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+					  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+						<span>Saving </span> ... 
 					  </span>
-					  <span>Saving </span> ... </span>
 
 					<span class="button-text">
 					  <i class="icon-save-outline"></i> <span>Save</span>

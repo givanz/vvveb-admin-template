@@ -1269,7 +1269,7 @@
 
         <div class="title">
           <h4 class="text-muted my-3">
-            <i class="icon-document-text-outline"></i>&ensp;
+            <i class="icon-document-text-outline"></i>
             <span data-v-type-name>Post</span>
           </h4>
         </div>
@@ -1436,10 +1436,13 @@
                                         <a href="#" target="_blank" class="small text-muted" data-v-revision-display_name>Admin</a>
                                       </span>
                                       <span>
+                                        <a class="btn btn-sm btn-outline-primary border-0 btn-preview" title="Preview" target="_blank" data-v-revision-preview-url>
+                                          <i class="la la-eye"></i>
+                                        </a>
                                         <a class="btn btn-sm btn-outline-primary border-0 btn-load" title="Load">
                                           <i class="la la-arrow-up"></i>
                                         </a>
-                                        <a class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare" data-v-revision-compare-url>
+                                        <a class="btn btn-sm btn-outline-primary border-0 btn-compare" title="Compare" target="_blank" data-v-revision-compare-url>
                                           <i class="la la-exchange-alt"></i>
                                         </a>
                                         <a class="btn btn-sm btn-outline-danger border-0 btn-delete" title="Delete">
@@ -1496,7 +1499,7 @@
                                   </div>
                                   <hr class="dropdown-divider">
                                   <div class="dropdown-item d-flex">
-                                    <a href="admin/?module=content/revisions" data-v-revisions_url>
+                                    <a href="admin/?module=content/revisions" target="_blank" data-v-revisions_url>
                                       <span>Diff Compare</span>
                                       <span class="flex-grow-1">
                                         <i class="la la-exchange-alt text-muted"></i>
@@ -1672,6 +1675,25 @@
 
 
 
+                  <label class="header mt-4" data-v-header="default" for="header_sites">Sites
+                    <div class="header-arrow"></div>
+                  </label>
+                  <input class="header_check" type="checkbox" checked="true" id="header_sites">
+                  <div class="section" data-v-section="default">
+
+                    <div class="mb-3">
+
+                      <div class="categories-list px-2" data-v-sites>
+                        <label class="form-check" data-v-site>
+                          <input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site_id>
+                          <span class="form-check-label" data-v-name title="Default">Default</span>
+                        </label>
+                      </div>
+
+                    </div>
+                  </div>
+
+
                   <label class="header mt-4" data-v-header="default" for="header_template">Template
                     <div class="header-arrow"></div>
                   </label>
@@ -1769,6 +1791,9 @@
   <script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
   <!-- script type="module" src="/js/libs/tinymce-dist/jquery.tinymce.min.js"></script -->
   <script id="tinymce-js" src="../../js/libs/tinymce-dist/tinymce.min.js"></script>
+  <script id="oembed-js" src="../../js/libs/oembed.js"></script>
+  <script id="tinymce-embed-js" src="../../js/libs/tinymce-embed.js"></script>
+
   <!-- date time picker -->
   <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
   <script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
@@ -1777,6 +1802,7 @@
   <script id="functions-js" src="../../js/admin/functions.js"></script>
 
   <script>
+let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 
 jQuery(document).ready(function () { 
 	//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor

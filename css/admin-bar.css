@@ -13,7 +13,7 @@ i[class^='icon-'] {
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  line-height: 1.5;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -4036,7 +4036,7 @@ i[class^='icon-'] {
 .lab {
   font-family: Line Awesome Brands, monospace;
   font-weight: 400;
-  line-height: 1.7; }
+  line-height: var(--bs-body-line-height); }
 
 @font-face {
   font-family: Line Awesome Free;
@@ -4049,7 +4049,7 @@ i[class^='icon-'] {
 .la {
   font-family: Line Awesome Free, monospace;
   font-weight: 400;
-  line-height: 1.7; }
+  line-height: var(--bs-body-line-height); }
 
 @font-face {
   font-family: Line Awesome Free;
@@ -4059,10 +4059,10 @@ i[class^='icon-'] {
   src: url("../fonts/line-awesome/la-solid-900.eot");
   src: url("../fonts/line-awesome/la-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-solid-900.woff2") format("woff2"), url("../fonts/line-awesome/la-solid-900.woff") format("woff"), url("../fonts/line-awesome/la-solid-900.ttf") format("truetype"), url("../fonts/line-awesome/la-solid-900.svg#lineawesome") format("svg"); }
 
-.la {
+.la, .la {
   font-family: Line Awesome Free, monospace;
   font-weight: 410;
-  line-height: 1.7; }
+  line-height: var(--bs-body-line-height); }
 
 .la.la-lg {
   font-size: 1.33333em;

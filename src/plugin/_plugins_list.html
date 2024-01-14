@@ -15,15 +15,15 @@
 			</div>
 		</th>
         @@if (thumbs) {
-		<th style="text-align:center;"><i class="la la-image"></i>&ensp;<span>Thumb</span></th>
+		<th style="text-align:center;"><i class="la la-image"></i><span>Thumb</span></th>
         }
-		<th><i class="icon-cube-outline"></i>&ensp;<span>Extension</span></th>
-		<th style="width:100px;"><i class="icon-cube-outline"></i>&ensp;<span>Status</span></th>
-		<th><i class="la la-comment"></i>&ensp;<span>Description</span></th>
+		<th><i class="icon-cube-outline"></i><span>Extension</span></th>
+		<th style="width:100px;"><i class="icon-cube-outline"></i><span>Status</span></th>
+		<th><i class="la la-comment"></i><span>Description</span></th>
 		
 		@@if (actions) {
 		<th style="width:220px;text-align:center;">
-		<i class="la la-edit"></i>&ensp;<span>Actions</span>
+		<i class="la la-edit"></i><span>Actions</span>
 		</th>
 		}
 </tr>
@@ -116,8 +116,8 @@
 				
 		<div class="btn-group">
 			
-			<a href="#" class="btn btn-outline-secondary" data-v-plugin-deactivate-url data-v-if="plugin.status='active'"><i class="la la-power-off text-danger me-1"></i> &ensp; <span>Deactivate</span></a>
-			<a href="#" class="btn btn-outline-secondary" data-v-plugin-activate-url data-v-if="plugin.status!='active'"><i class="la la-play-circle text-primary me-1"></i> &ensp; <span>Activate</span></a>
+			<a href="#" class="btn btn-outline-secondary" data-v-plugin-deactivate-url data-v-if="plugin.status='active'"><i class="la la-power-off text-danger me-1"></i>  <span>Deactivate</span></a>
+			<a href="#" class="btn btn-outline-secondary" data-v-plugin-activate-url data-v-if="plugin.status!='active'"><i class="la la-play-circle text-primary me-1"></i>  <span>Activate</span></a>
 			
 			<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
 				
@@ -129,10 +129,10 @@
 			</button>
 			<ul class="dropdown-menu">
 			  <li class="dropdown-header">Global</li>
-			  <li><a class="dropdown-item" data-v-plugin-global-activate-url><i class="la la-play-circle"></i> &ensp;<span>Activate on all sites</span></a></li>
-			  <li><a class="dropdown-item" data-v-plugin-global-deactivate-url><i class="la la-power-off"></i> &ensp;<span>Deactivate on all sites</span></a></li>
+			  <li><a class="dropdown-item" data-v-plugin-global-activate-url><i class="la la-play-circle"></i> <span>Activate on all sites</span></a></li>
+			  <li><a class="dropdown-item" data-v-plugin-global-deactivate-url><i class="la la-power-off"></i> <span>Deactivate on all sites</span></a></li>
 			  <li><hr class="dropdown-divider"></li>
-			  <li><a class="dropdown-item text-danger" data-v-plugin-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline">&ensp;</i><span>Delete</span></a></li>
+			  <li><a class="dropdown-item text-danger" data-v-plugin-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
 			</ul>
 		 </div>
 		 

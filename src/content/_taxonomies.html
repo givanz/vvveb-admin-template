@@ -16,7 +16,7 @@
 			
 			<div class="title">
 				<h4 class="text-muted my-3">
-					<i class="icon-cube-outline"></i>&ensp;
+					<i class="icon-cube-outline"></i>
 					<span>@@title</span>
 				</h4>
 			</div>
@@ -169,7 +169,7 @@ function saveOrder(item) {
 			data: {@@prefix_items:data},
 			//dataType: 'json',
 			complete: function(data) {
-				$("#liveToast .message").html('<i class="la la-info-circle fs-2"></i>&ensp;<span class="fs-6">' + data.responseText + '</span>');
+				$("#liveToast .message").html('<i class="la la-info-circle fs-2"></i><span class="fs-6">' + data.responseText + '</span>');
 				toast.show();
 				//$('#cart > button').button('reset');
 			},
