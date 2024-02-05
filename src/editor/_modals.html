@@ -79,7 +79,7 @@
 <div class="modal fade" id="new-page-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     
-    <form action="" method="POST" data-vvveb-url="/admin/?module=editor/editor&action=save" >
+    <form action="" method="POST" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" >
 		
     <div class="modal-content">
       <div class="modal-header">
@@ -122,7 +122,7 @@
 					<div class="col-sm-9 input">
 						<div>   
 							<input name="name" type="text" class="form-control" placeholder="Name" required>  
-							<a href="javascript:void();" class="float-end p-2" onclick="$('[data-key=content]').toggle()"><span>More</span> +</a>
+							<a href="#" class="float-end p-2" onclick="$('[data-key=content]').toggle();return false;"><span>More</span> +</a>
 						</div>
 					</div>     
 				</div>		
@@ -133,10 +133,10 @@
 						 <label class="col-sm-3 col-form-label">Content</label>      
 						<div class="col-sm-9 input">
 							<div>   
-								<textarea name="content" type="text" class="form-control" placeholder="Lorem ipsum" rows="5">Lorem ipsum</textarea>  
+								<textarea name="content" class="form-control" placeholder="Lorem ipsum" rows="5">Lorem ipsum</textarea>  
 							</div>
 							<div class="form-check mt-2">
-							  <input class="form-check-input" type="checkbox" name="add-menu" id="add-menu" value="" onchange="$('[data-key=menu]').toggle()">
+							  <input class="form-check-input" type="checkbox" name="add-menu" id="add-menu" value="true" onchange="$('[data-key=menu]').toggle()">
 							  <label class="form-check-label" for="add-menu">Add to menu</label>
 							</div>
 						</div>     
@@ -146,7 +146,7 @@
 					<div class="mb-3 row" data-key="menu" style="display:none">     
 						 <label class="col-sm-3 col-form-label">Menu</label>      
 							<div class="col-sm-9 input">
-								<select class="form-select" placeholder="Menu" name="menu">
+								<select class="form-select" name="menu_id">
 									<option value="main-menu">Main menu</option>        
 									<option value="main-footer" data-v-option>Footer</option>       
 								</select> 
@@ -166,7 +166,7 @@
 						
 					</label>      
 					<div class="col-sm-9 input">
-						<select class="form-select" placeholder="Visibility" name="startTemplateUrl" disabled data-v-theme-templates>
+						<select class="form-select" name="startTemplateUrl" disabled data-v-theme-templates>
 							<option value="new-page-blank-template.html" data-v-option>Blank Template</option>        
 							<option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>       
 							<option value="demo/album/index.html" data-v-option>Album</option>       
@@ -198,7 +198,7 @@
 						Save to folder
 					 </label>      
 					<div class="col-sm-9 input">
-						<select class="form-select" placeholder="Visibility" name="folder" disabled  data-v-theme-folders>
+						<select class="form-select" name="folder" disabled data-v-theme-folders>
 							<option value="/" data-v-option>/</option>        
 							<option value="content" data-v-option>Content</option>       
 							<option value="product" data-v-option>Product</option>       

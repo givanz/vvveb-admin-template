@@ -8511,7 +8511,8 @@ i[class^='icon-'] {
           font-size: 1.4rem;
           color: #777;
           margin-right: 0.5rem;
-          vertical-align: sub; }
+          vertical-align: sub;
+          line-height: 1.5; }
         #vvveb-admin ul li a > img {
           max-width: 24px;
           width: 24px;

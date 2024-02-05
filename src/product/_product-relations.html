@@ -6,8 +6,8 @@
 		</label>
 		<div class="col-sm-10">
 			
-			<input name="manufacturer_id" value="" placeholder="Manufacturer" id="input-manufacturer" autocomplete="off" type="text" class="form-control autocomplete"
-				data-url="/admin?module=product/product&action=manufacturersAutocomplete" data-text="Manufacturer" data-v-product-manufacturer_id/>	
+			<input name="manufacturer_id" value="" placeholder="Type for autocomplete" id="input-manufacturer" autocomplete="off" type="text" class="form-control autocomplete"
+				data-url="{$this.adminPath}index.php?module=product/product&action=manufacturersAutocomplete" data-text="Manufacturer" data-v-product-manufacturer_id/>	
 		</div>
 	</div>	
 	<div class="mb-3 row">
@@ -16,8 +16,8 @@
 		</label>
 		<div class="col-sm-10">
 			
-			<input name="vendor_id" value="" placeholder="Vendor" id="input-vendor" autocomplete="off" type="text" class="form-control autocomplete"
-				data-url="/admin?module=product/product&action=vendorsAutocomplete" data-text="Vendor" data-v-product-vendor_id />			
+			<input name="vendor_id" value="" placeholder="Type for autocomplete" id="input-vendor" autocomplete="off" type="text" class="form-control autocomplete"
+				data-url="{$this.adminPath}index.php?module=product/product&action=vendorsAutocomplete" data-text="Vendor" data-v-product-vendor_id />			
 		</div>
 	</div>
 	
@@ -30,8 +30,8 @@
 				
 			<div class="col-sm-10">
 
-				<input name="product_related" placeholder="Related products" type="text" class="form-control autocomplete-list"
-					data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="product_related"/>
+				<input name="product_related" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list"
+					data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-list-name="product_related"/>
 
 				<div class="autocomplete-list card border-top-0" data-v-product-related>
 					<div data-v-related>				
@@ -50,8 +50,8 @@
 				
 			<div class="col-sm-10">
 
-				<input name="product_variant" placeholder="Product Variants" type="text" class="form-control autocomplete-list"
-					data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="product_variant"/>
+				<input name="product_variant" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list"
+					data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-list-name="product_variant"/>
 
 				<div class="autocomplete-list card border-top-0" data-v-product-variant>
 					<div data-v-variant>				
@@ -69,8 +69,8 @@
 		</label>
 				
 			<div class="col-sm-10">
-				<input name="digital_asset" placeholder="Digital assets" type="text" class="form-control autocomplete-list"
-					data-url="/admin?module=product/product&action=digitalAssetsAutocomplete" data-list-name="product_digital_asset"/>
+				<input name="digital_asset" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list"
+					data-url="{$this.adminPath}index.php?module=product/product&action=digitalAssetsAutocomplete" data-list-name="product_digital_asset"/>
 
 				<div class="autocomplete-list card border-top-0" data-v-product-digital_asset>
 					<div data-v-digital_asset>				

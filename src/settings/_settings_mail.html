@@ -40,7 +40,7 @@
 			<div class="input-group">
 				  <input type="password" autocorrect="off" class="form-control" placeholder="Password"  id="input-mail-smtp-password" autocomplete="off" value="" aria-label="Password" name="settings[smtp][password]" data-v-setting="smtp.password">
 				  <div class="input-group-append">
-					<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this)"><i class="icon-eye-outline-slash"></i></button>
+					<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this, 'input-mail-smtp-password')"><i class="icon-eye-off-outline"></i></button>
 				  </div>
 			  </div>
 			
@@ -78,14 +78,14 @@
 
 
 <script>
-function togglePasswordInput(element) {
-	var password = document.getElementById("input-mail-smtp-password");
+function togglePasswordInput(element, id) {
+	let password = document.getElementById(id);
 	if (password.type == "password") {
 		password.type = "text"; 
-		$("i", element).addClass("la-eye").removeClass("la-eye-slash");
+		$("i", element).addClass("icon-eye-outline").removeClass("icon-eye-off-outline");
 	} else {
 		password.type = "password";
-		$("i", element).removeClass("la-eye").addClass("la-eye-slash");
+		$("i", element).removeClass("icon-eye-outline").addClass("icon-eye-off-outline");
 	}
 }
 </script>

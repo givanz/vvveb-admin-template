@@ -14,7 +14,7 @@
         <div class="actions clearfix">
 
 			<div class="title">
-				<h4 class="text-muted my-3">
+				<h4 class="text-muted my-2">
 					<i class="icon-cube-outline"></i>
 					<span>Order</span>
 				</h4>
@@ -22,18 +22,22 @@
 
             <div class="btns">
 
-				<a href="/admin/?module=order/orders" title="Order list"
+				<a href="{$this.adminPath}index.php?module=order/orders" title="Order list"
 					class="btn btn-outline-secondary pe-3">
 						<i class="la la-arrow-left"></i>
 						<span>Order list</span>
 				 </a>
 
+                <a  href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-invoice-url>
+                    <i class="icon-receipt-outline"></i> <span>Print Invoice</span>
+                </a>&nbsp;      
+
                 <a  href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-url>
-                    <i class="icon-eye-outline"></i> <span>Print Preview</span>
+                    <i class="icon-print-outline"></i> <span>Print Order</span>
                 </a>&nbsp;      
          
 				<a  href="" class="btn btn-outline-secondary btn-icon" target="_blank" data-v-if="this.order.order_id" data-v-order-print-shipping-url>
-                    <i class="icon-eye-outline"></i> <span>Print shipping details</span>
+                    <i class="icon-boat-outline"></i> <span>Print Shipping</span>
                 </a>&nbsp;
 				
                 <button type="submit" href="" onclick="if(order_form.reportValidity()) order_form.submit()" class="btn btn-primary btn-icon ms-1">
@@ -156,10 +160,18 @@ if (!order_id.val()) {
 	$('.billing_address').toggleClass('edit');
 }
 
+$(".product-details").hide();
 function onSelect(value, text, name, listName) {
-	console.log(value, text, name, listName);
+	$(".product-details").html("").show();
+	$(".product-details").load(window.location.href + " .product-details > div", {product_id:value});
 	
 }
+
+$(".product-details").on("click", ".btn-add-product", function (e) {
+	$(".product-details").hide();
+	e.preventDefault();
+	return false;
+});
 
 $('input.autocomplete').autocomplete({onSelect});
 </script>

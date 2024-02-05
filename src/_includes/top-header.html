@@ -289,15 +289,15 @@
 		<div class="vr align-middle mx-1"></div>
 
 		
-		<a target="_blank" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn text-body" aria-expanded="false">
-			<i class="la la-lg la-question-circle lh-1"></i> 
+		<a target="_blank" id="top-docs-btn" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn text-body" aria-expanded="false">
+			<i class="la la-lg la-question-circle"></i> 
 			<span>Docs</span>
 		</a>
 		
 		
 		<div class="btn-group" data-v-component-admin>
 
-			<form action="/admin?module=user/login" method="post" enctype="multipart/form-data"  data-v-url-params='{"module":"user/login"}'>
+			<form action="{$this.adminPath}index.php?module=user/login" method="post" enctype="multipart/form-data"  data-v-url-params='{"module":"user/login"}'>
 				
 			   <input type="hidden" name="csrf" data-v-csrf>
 

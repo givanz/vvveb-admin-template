@@ -1,7 +1,36 @@
 <div class="row mb-3">
-	<label for="input-invoice-prefix" class="col-sm-2 col-form-label">Invoice Prefix</label>
+	<label for="input-invoice-format" class="col-sm-2 col-form-label">
+		<span>Invoice Format</span>
+	</label>
 	<div class="col-sm-10">
-		<input type="text" name="settings[invoice_prefix]" data-v-setting="invoice_prefix" value="" placeholder="Invoice Prefix eg: VV-2024-0" id="input-invoice-prefix" class="form-control">
+		<div class="input-group">
+		<input type="text" name="settings[invoice_format]" data-v-setting="invoice_format" value="" placeholder="Invoice Format eg: VV-2024-0" id="input-invoice-format" class="form-control">
+		<button class="input-group-text collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceVariables" aria-expanded="false">
+			<i class="la la-lg la-question-circle text-primary"></i>
+		</button>		
+		</div>
+		<div class="collapse mt-1" id="invoiceVariables">
+		  <div class="card card-body text-bg-body-tertiary">
+			<span>
+			<i class="la la-info-circle fs-2 px-2 float-end"></i>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{year}')">year</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{month}')">month</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{day}')">day</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{date_added}')">date_added</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{user_id}')">user_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{order_id}')">order_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{site_id}')">site_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{random-5}')">{random-#}</button> 
+				<br/>
+				<div>for random # is the length.</div>
+			</span>
+			
+		  </div>
+		</div>
+		<div class="mt-1">
+			<strong class="text-muted small mt-2">Preview</strong>
+			<span id="invoice-format-preview" data-v-site-invoice_format_preview>VV-2024</span>
+		</div>
 	</div>
 </div>
 

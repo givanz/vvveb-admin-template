@@ -14,7 +14,7 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions">
 		  <div class="title">
-			 <h4 class="text-muted my-3">
+			 <h4 class="text-muted my-2">
 				<i class="icon-browsers-outline"></i>
 				<span class="ms-2">Site</span>
 			 </h4>
@@ -22,7 +22,7 @@
 		  
 		  
 		  <div class="btns">
-				<a href="/admin/?module=settings/sites" title="Sites list"
+				<a href="{$this.adminPath}index.php?module=settings/sites" title="Sites list"
 					class="btn btn-outline-secondary pe-3">
 						<i class="la la-arrow-left"></i><span>Sites list</span>
 				 </a>
@@ -132,6 +132,8 @@
 let mediaPath = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
 let uploadUrl = '{ $this->uploadUrl }';
+let renameUrl = '{ $this->renameUrl }';
+let deleteUrl = '{ $this->deleteUrl }';
 </script>
 
 
@@ -186,10 +188,20 @@ $("input[type=radio][name='settings[time_format]']").click(function () {
 $("#custom_time_format").keypress(function () {
 	delay(() =>	$(".time-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
 });
+
 $("#custom_date_format").keypress(function () {
 	delay(() => $(".date-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
 });	
 
+$("#input-invoice-format").keypress(function () {
+	delay(() => $("#invoice-format-preview").load(window.location.href + "&action=invoiceFormat&format=" + encodeURI(this.value)), 500);	
+});	
+
+
+function insertInvoiceFormat(variable) {
+	$("#input-invoice-format").val((index, value) => value + '-' + variable).trigger("keypress");
+	return false;
+}
 
 
 

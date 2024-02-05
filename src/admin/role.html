@@ -14,13 +14,13 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions">
 		<div class="title">
-				<h4 class="text-muted my-3">
+				<h4 class="text-muted my-2">
 					<i class="icon-people-outline"></i>
 					<span>Role</span>
 				</h4>
 			</div>
 		  <div class="btns">
-			<a href="/admin/?module=admin/roles" title="Roles list" class="btn btn-outline-secondary pe-3">
+			<a href="{$this.adminPath}index.php?module=admin/roles" title="Roles list" class="btn btn-outline-secondary pe-3">
 				<i class="la la-arrow-left"></i><span>Role list</span>
 			</a>
 			  <button type="submit" href=""
@@ -58,7 +58,7 @@
 						  
 							
 							<label class="form-check-label">
-								<input type="hidden" value="/admin/">	
+								<input type="hidden" value="{$this.adminPath}">	
 								<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
 								<span></span>
 							</label>
@@ -271,7 +271,7 @@
 											<li  class="folder" data-v-permission>
 												<label for="index" title="Website homepage">
 													
-													<input type="hidden" value="/admin/">	
+													<input type="hidden" value="{$this.adminPath}">	
 													<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
 
 													<span data-v-name>Home page</span>
@@ -429,7 +429,7 @@
 													<li  class="folder" data-v-permission>
 														<label for="index" title="Website homepage">
 															
-															<input type="hidden" value="/admin/">	
+															<input type="hidden" value="{$this.adminPath}">	
 															<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
 
 															<span data-v-name>Home page</span>

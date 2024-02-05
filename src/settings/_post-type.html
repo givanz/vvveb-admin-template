@@ -1,0 +1,126 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Post type","scripts":"","base_href":"../"})
+
+<body class="post_type">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="needs-validation" data-v-post_type>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-2">
+						<i class="icon-people-outline"></i>
+						<span>@@name type</span>
+					</h4>
+			</div>
+			
+			<div class="btns">
+				<a href="{$this.adminPath}index.php?module=settings/@@type-types" title="Taxonomies"
+					class="btn btn-outline-secondary pe-3">
+						<i class="la la-arrow-left"></i><span>@@name types</span>
+				 </a>
+				  
+				  <button type="submit" href="" class="btn btn-primary btn-icon ms-1">
+					<i class="icon-create-outline"></i> <span>Save</span>
+				  </button>
+		   </div>
+	 </div>
+
+	  <div id="main-content">
+
+			@@include('../_includes/notifications.html')
+				
+			 <!--			
+			 <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="input-name" placeholder="Name" name="post_type[name]" data-v-post_type-name>
+					</div>
+			  </div>
+			  -->
+
+			  <div class="mb-3 row">
+				<label for="input-type" class="col-sm-2 col-form-label">Type</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="input-type" placeholder="Name" name="post_type[type]" data-v-post_type-type>
+				</div>
+			 </div>		 
+			 
+			  <div class="mb-3 row">
+				<label for="input-plural" class="col-sm-2 col-form-label">Plural</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="input-plural" placeholder="Name" name="post_type[plural]" data-v-post_type-plural>
+				</div>
+			 </div>		 
+
+			  <div class="mb-3 row">
+				<label for="input-icon" class="col-sm-2 col-form-label">Icon</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="input-icon" placeholder="icon-document-text-outline" name="post_type[icon]" data-v-post_type-icon>
+				</div>
+			 </div>		 
+
+			  <div class="mb-3 row">
+				<label for="input-image" class="col-sm-2 col-form-label">Image</label>
+				<div class="col-sm-10">
+					
+					<input type="hidden" data-v-image name="post_type[icon-img]" id="featured-image-input" value="">
+									
+						<img data-v-image src="img/placeholder.svg" alt="" title=""
+						 id="featured-image-thumb"
+						 data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" 
+						 data-type="single"
+						 class="img-thumbnail bg-light"
+						 style="max-width:200px;"
+						 >
+							
+
+						<div class="py-3">
+							<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+								data-media-gallery 
+								data-target-input="#featured-image-input"
+								data-target-thumb="#featured-image-thumb" 
+								data-type="single">
+								<i class="la la-image la-lg"></i> <span>Set image</span>
+							</button>
+						</div>
+					
+					
+				</div>
+			 </div>		 
+			 
+			</div>
+</form>
+
+</div>
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+</script>
+
+
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+
+
+
+
+@@include('../_includes/footer.html')

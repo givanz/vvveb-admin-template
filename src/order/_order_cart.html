@@ -8,28 +8,28 @@
 
 			<div class="flex-grow-1">
 				<input name="product_id" value="" placeholder="New cart product" id="input-new_product" autocomplete="off" type="text" class="form-control autocomplete"
-				data-url="/admin?module=product/product&action=productsAutocomplete" data-text=""/>	
+				data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-text=""/>	
 			</div>	
 		</div>
 
-		<div class="product-details p-4">
+		<div class="product-details p-4" data-v-component-product>
 			
 			<div class="mb-3 row">
 				<label for="input-name" class="col-sm-2 col-form-label">Name</label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-language-name maxlength="64" required>
+				  <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-product-name maxlength="64" required>
 				</div>
 			 </div>		 
 
 			 <div class="mb-3 row">
 				<label for="input-code" class="col-sm-2 col-form-label">Price</label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="input-code" placeholder="Code" name="language[code]" data-v-language-code maxlength="12" required>
+				  <input type="text" class="form-control" id="input-code" placeholder="Code" name="language[code]" data-v-product-price maxlength="12" required>
 				</div>
 			  </div>
 			
 			<div class="mb-3 text-end">
-				<button class="btn btn-primary">
+				<button class="btn btn-primary btn-add-product">
 					<i class="la la-plus"></i>
 					<span>Add product</span>
 				</button>

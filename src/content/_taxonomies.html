@@ -15,14 +15,14 @@
 		<div class="actions clearfix">
 			
 			<div class="title">
-				<h4 class="text-muted my-3">
+				<h4 class="text-muted my-2">
 					<i class="icon-cube-outline"></i>
 					<span>@@title</span>
 				</h4>
 			</div>
 			
 			<div>
-				<a href="/admin/?module=content/menus" title="Comment list"
+				<a href="{$this.adminPath}index.php?module=content/menus" title="Comment list"
 					class="btn btn-outline-secondary pe-3">
 						<i class="la la-arrow-left"></i><span>Menu list</span>
 				 </a>
@@ -111,8 +111,8 @@
 @@include('../_includes/footer-scripts.html')
 
 
-<div class="toast-container position-fixed top-0 end-0 p-3">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast-container">
+  <div id="liveToast" class="toast position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
       <span class="message">Hello, world! This is a toast message.</span>
 	  <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -122,6 +122,29 @@
 
 
 <script id="nestable-js" src="libs/nestable/jquery.nestable.js"></script>
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+
+
+<script>
+	let mediaPath = '{ $this->mediaPath }';
+	let mediaScanUrl =  '{ $this->scanUrl }';
+	let uploadUrl = '{ $this->uploadUrl }';
+	let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+</script>
+<script id="autocomplete-js" src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script id="media-js"src="libs/media/media.js"></script>
+<script id="index-js" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+<script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
+<!-- 
+<script type="module" src="/js/libs/tinymce-dist/jquery.tinymce.min.js"></script>
+ -->
+<script id="tinymce-js" src="../../js/libs/tinymce-dist/tinymce.min.js"></script>
+<script id="oembed-js" src="../../js/libs/oembed.js"></script>
+<script id="tinymce-embed-js" src="../../js/libs/tinymce-embed.js"></script>
+
 <script>
 var nestable = $('#taxonomies').nestable({
 	 callback: function(l,e){
@@ -129,9 +152,47 @@ var nestable = $('#taxonomies').nestable({
 	}
 });
 
+let editorInstances = [];
+if (typeof tinyMceOptions  !== 'undefined') {
+	delete tinyMceOptions["selector"];
+}
 //nestable.nestable('collapseAll');
 $("#taxonomies").on("click", ".expand-btn",function () {
-	$("> .expand", $(this).closest(".dd3-item")).toggle();
+	let item = $(this).closest(".dd3-item");
+	let id = item[0].dataset.vId;
+	$("[name='type']", item).trigger("change");
+	
+	//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor
+	if (typeof tinyMceOptions  !== 'undefined') {
+		
+		let instances = editorInstances[id];
+		
+		if (instances) {
+			for (instance of instances) {
+				//tinymce.activeEditor.destroy();
+				//instance.destroy();
+				instance.remove();
+			}
+			
+			delete editorInstances[id];
+		} else {
+			$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
+			editorInstances[id] = [];
+			let textareas = $("> .expand textarea.html", item);
+
+			for (instance of textareas) {
+				tinyMceOptions["target"] = instance;
+				tinymce.init(tinyMceOptions).then(function(editors) {
+				   //what to do after editors init
+					if (editors[0]) {
+						editorInstances[id].push(editors[0]);
+					}
+				});
+			}
+		}
+	}	
+
+	$("> .expand", item).toggle();
 });
 
 //change menu item text when the text is edited
@@ -228,12 +289,24 @@ function save() {
 	let parent = $(item).parents(".dd3-item:first");
 	let parent_id = parent.data("vId");
 	let @@prefix_id = $("input[name='@@prefix_id']").val();
-	let data = $("> .expand input, > .expand select, > .expand textarea", item).serializeArray();
+
+	let instances = editorInstances[item.data("vId")];
+	
+	if (instances) {
+		for (instance of instances) {
+			instance.save();
+		}
+	}	
+	/*
+	if (tinymce.activeEditor) {
+		tinymce.activeEditor.save();
+	}*/
+	
+	let data = $("> .expand input:not([name=item_id]):not([name=item_id_text]),> .expand .field:visible input[name=item_id],> .expand .field:visible input[name=item_id_text],> .expand select, > .expand textarea", item).serializeArray();
 
 	if (@@prefix_item_id) data.push({"name":"@@prefix_item_id", "value": @@prefix_item_id});
 	data.push({"name":"@@prefix_id", "value": @@prefix_id});
 	data.push({"name":"parent_id", "value": parent_id ?? 0});
-	console.log(data);
 
 	$.ajax({
 			url: location.href + "&action=add",
@@ -269,7 +342,8 @@ function save() {
 		.always(function(data) {
 		})
 		.done(function(data) {
-			$("> .expand", item).toggle();
+			//$("> .expand", item).toggle();
+			$("> .dd3-buttons .expand-btn", item).click();
 		})
 		.fail(function(xhr, ajaxOptions, thrownError) {
 				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
@@ -320,6 +394,35 @@ function removeTaxonomy(btnDelete) {
 		deleteItem($(btnDelete).parents(".dd3-item:first"));
 	}
 }
+
+
+let typeFields = {
+	'product':['product'],
+	'post':['post'],
+	'page':['page'],
+	'link':['name','url'],
+	'text':['name', 'content', 'image', 'url', 'lang'],
+	'taxonomy':['taxonomy'],
+};
+
+function changeMenuType(e) {
+	let menuItem = $(this).parents(".dd-item:first");
+	let type = this.value;
+	let fieldClasses = '';
+	if (typeFields[type]) {
+		fieldClasses = ".field-" + typeFields[type].join(",.field-");
+	}
+	
+	$(".field",menuItem).hide();
+	$(fieldClasses,menuItem).show();
+}
+
+
+$("#taxonomies").on("change", "[name='type']", changeMenuType);
+
+$('input.autocomplete').autocomplete();
+$('input.autocomplete-list').autocompleteList();
+
 </script>
 
 @@include('../_includes/footer.html')

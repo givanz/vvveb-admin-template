@@ -14,14 +14,14 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-people-outline"></i>
 						<span>Taxonomy</span>
 					</h4>
 			</div>
 			
 			<div class="btns">
-				<a href="/admin/?module=settings/taxonomies" title="Taxonomies"
+				<a href="{$this.adminPath}index.php?module=settings/taxonomies" title="Taxonomies"
 					class="btn btn-outline-secondary pe-3">
 						<i class="la la-arrow-left"></i><span>Taxonomies</span>
 				 </a>
@@ -43,54 +43,55 @@
 				<input type="hidden" name="taxonomy_id" data-v-taxonomy-taxonomy_id>
 					
 				<div class="mb-3 row">
-					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+						<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
 					<div class="col-sm-10">
-					<input type="text" class="form-control" id="input-name" placeholder="Name" name="taxonomy[name]" data-v-taxonomy-name>
+						<input type="text" class="form-control" id="input-name" placeholder="Name" name="taxonomy[name]" data-v-taxonomy-name>
+					</div>
+			  </div>
+
+			  <div class="mb-3 row">
+				<label for="input-type" class="col-sm-2 col-form-label">Type</label>
+				<div class="col-sm-10">
+				  <select name="taxonomy[type]" id="input-type" class="form-control" data-v-taxonomy-type>
+					<option value="0" data-v-option>Pending</option>
+					<option value="1" data-v-option>Approved</option>
+					<option value="2" data-v-option>Spam</option>
+					<option value="3" data-v-option>Trash</option>
+				  </select>
 				</div>
-          </div>
+			 </div>		 
 
-          <div class="mb-3 row">
-            <label for="input-type" class="col-sm-2 col-form-label">Type</label>
-            <div class="col-sm-10">
-              <select name="taxonomy[type]" id="input-type" class="form-control" data-v-taxonomy-type>
-                <option value="0" data-v-option>Pending</option>
-                <option value="1" data-v-option>Approved</option>
-                <option value="2" data-v-option>Spam</option>
-                <option value="3" data-v-option>Trash</option>
-              </select>
-			</div>
-		 </div>		 
+			  <div class="mb-3 row">
+				<label for="input-post_type" class="col-sm-2 col-form-label">Post Type</label>
+				<div class="col-sm-10">
+				  <select name="taxonomy[post_type]" id="input-post_type" class="form-control" data-v-taxonomy-post_type>
+					<option value="0" data-v-option>Pending</option>
+					<option value="1" data-v-option>Approved</option>
+					<option value="2" data-v-option>Spam</option>
+					<option value="3" data-v-option>Trash</option>
+				  </select>
+				</div>
+			 </div>		 
 
-          <div class="mb-3 row">
-            <label for="input-post_type" class="col-sm-2 col-form-label">Post Type</label>
-            <div class="col-sm-10">
-              <select name="taxonomy[post_type]" id="input-post_type" class="form-control" data-v-taxonomy-post_type>
-                <option value="0" data-v-option>Pending</option>
-                <option value="1" data-v-option>Approved</option>
-                <option value="2" data-v-option>Spam</option>
-                <option value="3" data-v-option>Trash</option>
-              </select>
-			</div>
-		 </div>		 
-
-          <div class="mb-3 row">
-            <label for="input-site_id" class="col-sm-2 col-form-label">Site</label>
-            <div class="col-sm-10">
-              <select name="taxonomy[site_id]" id="input-site_id" class="form-control" data-v-taxonomy-site_id>
-                <option value="0">Global (all sites)</option>
-                <option value="0" data-v-option>Pending</option>
-                <option value="1" data-v-option>Approved</option>
-                <option value="2" data-v-option>Spam</option>
-                <option value="3" data-v-option>Trash</option>
-              </select>
-			</div>
-		 </div>		 
+			  <div class="mb-3 row">
+				<label for="input-site_id" class="col-sm-2 col-form-label">Site</label>
+				<div class="col-sm-10">
+				  <select name="taxonomy[site_id]" id="input-site_id" class="form-control" data-v-taxonomy-site_id>
+					<option value="0">Global (all sites)</option>
+					<option value="0" data-v-option>Pending</option>
+					<option value="1" data-v-option>Approved</option>
+					<option value="2" data-v-option>Spam</option>
+					<option value="3" data-v-option>Trash</option>
+				  </select>
+				</div>
+			 </div>		 
 
 		
 			</div>
-        </div>
+			</div>
 </form>
 
+</div>
 </div>
 
 

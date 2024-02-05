@@ -14,14 +14,14 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-pricetag-outline"></i>
 						<span>Coupon</span>
 					</h4>
 			</div>
 			
 			<div class="btns">
-				<a href="/admin/?module=order/coupons" title="Return coupons"
+				<a href="{$this.adminPath}index.php?module=order/coupons" title="Return coupons"
 					class="btn btn-outline-secondary pe-3">
 						<i class="la la-arrow-left"></i><span>Return to coupons</span>
 				 </a>
@@ -126,7 +126,7 @@
 					<div class="col-sm-10">
 
 						<input name="coupon_product" placeholder="Coupon product" type="text" class="form-control autocomplete-list"
-							data-url="/admin?module=product/product&action=productsAutocomplete" data-list-name="coupon_product"/>
+							data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-list-name="coupon_product"/>
 
 						<div class="autocomplete-list card border-top-0" data-v-coupon-product>
 							<div data-v-product>				
@@ -145,7 +145,7 @@
 					<div class="col-sm-10">
 
 						<input name="coupon_taxonomy" placeholder="Coupon taxonomy" type="text" class="form-control autocomplete-list"
-							data-url="/admin?module=product/product&action=categoriesAutocomplete" data-list-name="coupon_taxonomy"/>
+							data-url="{$this.adminPath}index.php?module=product/product&action=categoriesAutocomplete" data-list-name="coupon_taxonomy"/>
 
 						<div class="autocomplete-list card border-top-0" data-v-coupon-taxonomy>
 							<div data-v-taxonomy>				

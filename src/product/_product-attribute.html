@@ -16,7 +16,7 @@
 				<tr data-v-attribute>
 					<td class="text-start" style="width: 40%;">
 						<input name="product_attribute[0][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control autocomplete"
-				data-url="/admin?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id>
+				data-url="{$this.adminPath}index.php?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id>
 					</td>
 					<td class="text-start">
 						<input name="product_attribute[0][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
@@ -31,7 +31,7 @@
 				<tr class="d-none" id="attribute-template">
 					<td class="text-start" style="width: 40%;">
 						<input name="product_attribute[#][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control"
-				data-url="/admin?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id/>
+				data-url="{$this.adminPath}index.php?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id/>
 					</td>
 					<td class="text-start">
 						<div class="input-group">

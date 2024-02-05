@@ -9767,7 +9767,7 @@ textarea.form-control-lg {
         top: -1px;
         right: 5px; }
         .tree > ol li.file .file-actions .btn {
-          padding: 0.25rem 0.3rem;
+          padding: 0.1rem 0.3rem;
           font-size: 0.875rem;
           line-height: 1;
           border-radius: 4px;
@@ -20260,6 +20260,9 @@ html {
   --bs-btn-active-bg:var(--bs-tertiary-bg); }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  -moz-osx-font-smoothing: grayscale;
   background: var(--bs-body-bg);
   width: 100%;
   flex-direction: column; }
@@ -20531,8 +20534,9 @@ div.actions {
     font-weight: normal;
     margin-bottom: 0; }
     div.actions h4 i, div.actions .h4 i {
-      font-size: 1.4rem;
-      vertical-align: middle; }
+      font-size: 1.5rem;
+      vertical-align: text-bottom;
+      line-height: 1; }
   div.actions > .nav-tabs {
     bottom: -1px;
     position: absolute; }
@@ -21319,7 +21323,8 @@ button.btn-close {
       padding: 0.7rem 0.7rem 0.7rem;
       border-top: none; }
       .table.middle-align thead th i {
-        color: var(--bs-secondary-color); }
+        color: var(--bs-secondary-color);
+        margin-right: 0.3rem; }
       .table.middle-align thead th.col-cb {
         width: 50px; }
   .table.middle-align tbody::before {
@@ -21695,6 +21700,9 @@ label.form-check .form-check-input {
   margin-top: -4.6rem;
   margin-right: 0; }
 
+.dd-list .language-nav {
+  margin-top: -0.65rem; }
+
 .pills-border .nav-item {
   margin-right: 0.3rem;
   background: rgba(var(--bs-body-color-rgb), 0.02);
@@ -21722,7 +21730,7 @@ label.form-check .form-check-input {
 .bg-purple {
   background: #9623f1; }
 
-.bg-info-semi i {
+.alert .bg-info-semi i {
   background: rgba(13, 202, 240, 0.1); }
 
 .categories-list {

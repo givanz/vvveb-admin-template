@@ -16,7 +16,7 @@
             <div class="actions">
 				
 				<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-document-text-outline"></i>
 						<span data-v-type_name_plural>Posts</span>
 					</h4>
@@ -114,7 +114,7 @@
 									<label class="col-sm-2 col-form-label" for="input-model">Author</label>
 										<div class="col-sm-10">
 										 <input name="filter[admin_id]" value="" placeholder="Author" id="input-author" autocomplete="off" type="text" class="form-control autocomplete"
-					data-url="/admin?module=content/post&action=adminsAutocomplete" data-text=""/>	
+					data-url="{$this.adminPath}index.php?module=content/post&action=adminsAutocomplete" data-text=""/>	
 										</div>
 								</div>
                             </div>
@@ -191,7 +191,7 @@
                                 <th class="date">
 									<i class="la la-calendar"></i><span>Date</span>
 								</th>
-                                <th class="actions text-center" style="width:200px">
+                                <th class="actions text-center" style="width:250px">
 									<i class="la la-edit"></i><span>Actions</span>
 								</th>
                             </tr>
@@ -253,7 +253,7 @@
 									<div class="badge bg-success" data-v-if="post.comment_count > 0" data-v-post-comment_count></div>
                                 </td>
                                 <td class="date">
-                                    <span data-v-post-updated_at data-filter-friendly_date title="$post.created_at">Date</span>
+                                    <span data-v-post-updated_at data-filter-friendly_date title="{$post.created_at}">Date</span>
                                 </td>
 
                                 <td class="actions">

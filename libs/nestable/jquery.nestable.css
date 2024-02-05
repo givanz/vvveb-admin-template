@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 30px;
   padding:0 2rem;
 }
@@ -26,7 +26,7 @@
   margin: 0;
   padding: 0;
   min-height: 30px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 30px;
 }
 .dd-handle {
@@ -158,7 +158,6 @@
     -moz-box-sizing: border-box;
 }
 
-
 .dd-item .expand {
 	margin-top:-10px;
 }
@@ -169,12 +168,16 @@
 
 .dd3-content  label.form-check .form-check-input {
     vertical-align: text-bottom;
-    margin-right:0.5rem;
+    margin-right:0.2rem;
 }
 
 .dd3-content:hover {
     color: #2ea8e5;
     background: var(--bs-body-bg);
+}
+
+.dd3-content .type-icon {
+	margin-right:0.5rem;
 }
 
 .dd-dragel > .dd3-item > .dd3-content {
@@ -195,11 +198,11 @@
 
 
 .dd3-item > .dd3-buttons .btn-outline-danger {
-    display:none;
+    visibility:hidden;
 }
 
 .dd3-item > .dd3-buttons:hover .btn-outline-danger{
-    display:inline-block;
+    visibility:visible;
 }
 
 .dd3-handle {

@@ -23,8 +23,7 @@
 
 		<div class="grid-stack">
                 
-                <div class="grid-stack-item"
-                     data-gs-x="0" data-gs-y="0"
+                <div class="grid-stack-item stack-orders"
                      data-gs-width="3" data-gs-height="2"
                      data-v-component-notifications>
 					<!-- set count to 0 to not fetch orders, we only need the number of orders -->
@@ -60,8 +59,7 @@
                     </div>
                 </div>
                 
-                <div class="grid-stack-item"
-                     data-gs-x="3" data-gs-y="0"
+                <div class="grid-stack-item stack-users"
                      data-gs-width="3" data-gs-height="2"
                      data-v-component-notifications>
                      
@@ -93,8 +91,7 @@
                     </div>
                 </div>
 
-                <div class="grid-stack-item"
-                     data-gs-x="6" data-gs-y="0"
+                <div class="grid-stack-item stack-comments"
                      data-gs-width="3" data-gs-height="2"
                      data-v-component-notifications>
                     
@@ -113,13 +110,13 @@
 								<div class="card-text float-end">
 									<ul class="list-unstyled">
 										<li>
-											<a href="/admin/?module=content/comments&status=0&type=post" class="text-body"><strong data-v-notification-comments-pending-count>0</strong> pending</a>
+											<a href="{$this.adminPath}index.php?module=content/comments&status=0&type=post" class="text-body"><strong data-v-notification-comments-pending-count>0</strong> pending</a>
 										</li>
 										<li>
-											<a href="/admin/?module=content/comments&status=2&type=post" class="text-body"><strong data-v-notification-comments-approved-count>0</strong> approved</a>
+											<a href="{$this.adminPath}index.php?module=content/comments&status=2&type=post" class="text-body"><strong data-v-notification-comments-approved-count>0</strong> approved</a>
 										</li>
 										<li>
-											<a href="/admin/?module=content/comments&status=2&type=post" class="text-body"><strong data-v-notification-comments-spam-count>0</strong> spam</a>
+											<a href="{$this.adminPath}index.php?module=content/comments&status=2&type=post" class="text-body"><strong data-v-notification-comments-spam-count>0</strong> spam</a>
 										</li>
 									</ul>
                                 </div>                                
@@ -128,8 +125,7 @@
                     </div>
                 </div>
                 
-                <div class="grid-stack-item"
-                     data-gs-x="9" data-gs-y="0"
+                <div class="grid-stack-item stack-reviews"
                      data-gs-width="3" data-gs-height="2"
                      data-v-count=0
                      data-v-component-notifications>
@@ -149,13 +145,13 @@
 								<div class="card-text float-end">
 									<ul class="list-unstyled">
 										<li>
-											<a href="/admin/?module=product/product-reviews&status=0" class="text-body"><strong data-v-notification-reviews-pending-count>0</strong> pending</a>
+											<a href="{$this.adminPath}index.php?module=product/product-reviews&status=0" class="text-body"><strong data-v-notification-reviews-pending-count>0</strong> pending</a>
 										</li>
 										<li>
-											<a href="/admin/?module=product/product-reviews&status=1" class="text-body"><strong data-v-notification-reviews-approved-count>0</strong> approved</a>
+											<a href="{$this.adminPath}index.php?module=product/product-reviews&status=1" class="text-body"><strong data-v-notification-reviews-approved-count>0</strong> approved</a>
 										</li>
 										<li>
-											<a href="/admin/?module=product/product-reviews&status=2" class="text-body"><strong data-v-notification-reviews-spam-count>0</strong> spam</a>
+											<a href="{$this.adminPath}index.php?module=product/product-reviews&status=2" class="text-body"><strong data-v-notification-reviews-spam-count>0</strong> spam</a>
 										</li>
 									</ul>
                                 </div>   
@@ -164,9 +160,8 @@
                     </div>
                 </div>
                 
-                <div class="grid-stack-item"
-                     data-gs-x="0" data-gs-y="2"
-                     data-gs-width="6" data-gs-height="4"
+                <div class="grid-stack-item stack-sales"
+                     data-gs-width="12" data-gs-height="4"
                      data-v-component-stats>
                      
                     <div class="grid-stack-item-content">
@@ -243,8 +238,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-stack-item"
-                     data-gs-x="6" data-gs-y="2"
+<!--				
+                <div class="grid-stack-item stack-orders"
                      data-gs-width="6" data-gs-height="4">
                      
                     <div class="grid-stack-item-content">
@@ -318,10 +313,9 @@
                         </div>
                     </div>
                 </div>
+-->
 
-
-                <div class="grid-stack-item"
-                     data-gs-x="0" data-gs-y="6"
+                <div class="grid-stack-item stack-latest-orders"
                      data-gs-width="6" data-gs-height="4"
                      data-v-component-orders>
                      
@@ -404,8 +398,7 @@
                 </div>
 
       
-                <div class="grid-stack-item"
-                     data-gs-x="9" data-gs-y="12"
+                <div class="grid-stack-item stack-new-users"
                      data-gs-width="3" data-gs-height="4" 
 					 data-v-component-users>
 					
@@ -466,9 +459,6 @@
 										</td>
                                     </tr>
 
-
-
-
                                     </tbody>
 									<tr data-v-if-not="count > 0">
 										<td colspan="100">
@@ -483,8 +473,7 @@
                    </div>
 				</div>                
                 
-                <div class="grid-stack-item"
-                     data-gs-x="6" data-gs-y="12"
+                <div class="grid-stack-item stack-latests-products"
                      data-gs-width="3" data-gs-height="4"
                      data-v-component-products>
                      
@@ -540,9 +529,7 @@
                     </div>
                 </div>
                         
-                <div class="grid-stack-item"
-					 data-gs-x="0" 
-					 data-gs-y="10" 
+                <div class="grid-stack-item stack-new-comments"
 					 data-gs-width="6" 
 					 data-gs-height="4"
                      >
@@ -625,9 +612,7 @@
                         
                         
                         
-                <div class="grid-stack-item"
-					 data-gs-x="7" 
-					 data-gs-y="12" 
+                <div class="grid-stack-item stack-news"
 					 data-gs-width="6" 
 					 data-gs-height="4"
                      data-v-component-news>
@@ -687,18 +672,12 @@
                         </div>
                         </div>
                         </div>
-                        
-                        
 
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-
-
 </div>
 </div>
 

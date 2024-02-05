@@ -98,10 +98,11 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 <script src="libs/codemirror/lib/formatting.js"></script>
 <script src="../../js/vvvebjs/plugin-codemirror.js"></script>	
 <!-- jszip - download page as zip -->
-<!-- script src="libs/jszip/jszip.min.js"></script -->
-<!-- script src="../../js/vvvebjs/plugin-jszip.js"></script -->
-<!-- script src="../../js/vvvebjs/plugin-ai-assistant.js"></script -->
-
+<!--
+<script src="libs/jszip/jszip.min.js"></script>
+<script src="../../js/vvvebjs/plugin-jszip.js"></script>
+<script src="../../js/vvvebjs/plugin-ai-assistant.js"></script>
+-->
 
 <!-- autocomplete plugin used by autocomplete input-->
 <script src="libs/autocomplete/jquery.autocomplete.js"></script>	
@@ -137,6 +138,15 @@ $(function() {
 	Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
 	Vvveb.Gui.toggleRightColumn(false);
 	Vvveb.Breadcrumb.init();
+	
+	let options = [];
+	for (let i in Vvveb.data.menu) { 
+		let menu = Vvveb.data.menu[i];
+		options.push({value:menu.menu_id, text:menu.name});
+	}	
+
+	let menuSelect = tmpl('vvveb-input-select', {key:"menu_id", options});
+	$("#new-page-modal [name=menu_id]").html(menuSelect);
 });
 
 $("#new-page-modal input[name=type]").click(function () {

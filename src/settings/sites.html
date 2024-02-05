@@ -1,4 +1,4 @@
-@@include('../_includes/html-head.html', {"title": "Vvveb - Edit site","scripts":"","base_href":"../"})
+@@include('../_includes/html-head.html', {"title": "Vvveb - Sites","scripts":"","base_href":"../"})
 
 <body class="sites">
 
@@ -14,14 +14,14 @@
             <div class="actions">
 				
 				<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-browsers-outline"></i>
 						<span>Sites</span>
 					</h4>
 				</div>
 
 				<div class="btns">
-					 <a href data-v-url-params='{"module":"settings/site"}' 
+					 <a href data-v-url-params='{"module":"settings/site"}' data-v-check-action-permission="settings/site/add"
 							class="btn btn-primary btn-icon ms-1">
 						<i class="icon-add-circle-outline"></i> <span>Add site</span>
 					</a>
@@ -34,6 +34,23 @@
                 
                 <div class="sites card-block"  data-v-sites>
                     <form action="" method="post">
+
+						<div class="bulk-actions px-2 mb-2" style="display:none">
+							<!--
+						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+									aria-controls="filters" title="Edit selected"
+									class="btn btn-primary btn-sm">
+								<i class="icon-create-outline"></i> Edit selected
+							</button>
+							-->
+						   <button type="submit" name="action" value="delete" aria-expanded="false" data-v-check-permission-delete
+									title="Delete selected"
+									class="btn btn-outline-secondary bg-body-tertiary text-danger">
+									<i class="icon-trash-outline"></i> Delete selected
+							</button>
+						
+						</div>	
+
                         <table class="table table-hover middle-align">
                             <thead>
                             <tr>
@@ -41,9 +58,8 @@
                                     <div class="checkbox_outer">
 
                                         <label class="form-check">
-                                            <input type="checkbox" class="form-check-input" value="4"
-                                                   name="site[]"
-                                                   onclick="$('.checkbox input[type=\'checkbox\']').prop('checked', this.checked);">
+                                            <input type="checkbox" class="form-check-input"
+                                                   data-v-vvveb-action="table.bulkSelect">
                                             <span class="form-check-label"></span>
                                             <span class="custom-control-description">&nbsp;</span>
                                         </label>
@@ -66,7 +82,7 @@
                             <tr data-v-site>
                                 <td class="checkbox">
                                     <label class="form-check">
-                                        <input type="checkbox" class="form-check-input" value="4" name="site[]">
+                                        <input type="checkbox" class="form-check-input" value="4" name="site_id[]" data-v-vvveb-action="table.selectRow" data-v-site_id>
                                         <span class="form-check-label"></span>
                                         <span class="custom-control-description">&nbsp;</span>
                                     </label>
@@ -142,7 +158,7 @@
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
 										<ul class="dropdown-menu">
-										  <li><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
+										  <li data-v-check-permission-delete><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
 										</ul>
 									 </div>
 								  
@@ -151,8 +167,16 @@
                             </tbody>
 							<tr data-v-if-not="this.count > 0">
 								<td colspan="100">
-									<div class="text-center">
-										<div class="mt-3">No sites to display!</div>
+									<div class="text-center p-4 bg-body-tertiary border">
+										<div>
+											<i class="icon-browsers-outline fs-1 mb-2"></i>
+											<div class="mb-3">No sites to display!</div>
+										</div>
+
+										<a href data-v-url-params='{"module":"settings/site"}' data-v-check-action-permission="settings/site/add"
+												class="btn btn-primary btn-icon ms-1">
+											<i class="icon-add-circle-outline"></i> <span>Add site</span>
+										</a>										
 									</div>
 								</td>
 							</tr>

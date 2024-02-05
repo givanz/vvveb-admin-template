@@ -24,7 +24,7 @@
 									
 		
 				<div id="login" class="login-form fade-in-effect">
-				<form method="post" role="form" enctype="multipart/form-data" action="/admin/?module=user/login">
+				<form method="post" role="form" enctype="multipart/form-data" action="{$this.adminPath}/index.php?module=user/login">
 
 					<input type="hidden" name="csrf" data-v-csrf>
 					<input type="hidden" name="redir" id="redir">
@@ -46,9 +46,9 @@
 								<span>Password</span></label>
 							
 							<div class="input-group">
-							  <input type="password" minlength="4" autocorrect="off" class="form-control"  id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
+							  <input type="password" minlength="4" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
 							  <div class="input-group-append">
-								<button class="btn px-3" type="button" onclick="togglePasswordInput(this)"><i class="icon-eye-off-outline"></i></button>
+								<button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'password')"><i class="icon-eye-off-outline"></i></button>
 							  </div>
 							</div>
 							
@@ -85,7 +85,7 @@
 							  </label>
 							</div>
 							
-							 <a href="/admin?module=user/reset" class="text-muted float-end">Forgot your password?</a>
+							 <a href="{$this.adminPath}index.php?module=user/reset" class="text-muted float-end">Forgot your password?</a>
 						</div>
 
 					</div>
@@ -121,8 +121,8 @@
 
 
 	<script>
-	function togglePasswordInput(element) {
-		var password = document.getElementById("password");
+	function togglePasswordInput(element, id) {
+		let password = document.getElementById(id);
 		if (password.type == "password") {
 			password.type = "text"; 
 			$("i", element).addClass("icon-eye-outline").removeClass("icon-eye-off-outline");

@@ -22,7 +22,7 @@
 		<th><i class="la la-comment"></i><span>Description</span></th>
 		
 		@@if (actions) {
-		<th style="width:220px;text-align:center;">
+		<th style="width:250px;text-align:center;">
 		<i class="la la-edit"></i><span>Actions</span>
 		</th>
 		}
@@ -128,6 +128,7 @@
 			  <span class="visually-hidden">Toggle primary</span>
 			</button>
 			<ul class="dropdown-menu">
+			  <li  data-v-if="plugin.settings"><a class="dropdown-item" data-v-plugin-settings><i class="la la-cog"></i><span>Settings</span></a></li>
 			  <li class="dropdown-header">Global</li>
 			  <li><a class="dropdown-item" data-v-plugin-global-activate-url><i class="la la-play-circle"></i> <span>Activate on all sites</span></a></li>
 			  <li><a class="dropdown-item" data-v-plugin-global-deactivate-url><i class="la la-power-off"></i> <span>Deactivate on all sites</span></a></li>

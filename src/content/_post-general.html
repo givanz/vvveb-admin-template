@@ -38,12 +38,19 @@
 		<label class="form-label" for="input-content">Content</label>
 		<div>
 			<div class="d-flex justify-content-between py-2" data-v-if="this.post.post_id">
-				 <a data-v-design_url href="" class="btn btn-sm btn-success mb-3 ms-1 btn-icon page-editor-btn">
-					<i class="icon-color-wand-outline"></i> <span>Open in Page Editor</span>
-				 </a>
+				<div>
+					 <a data-v-design_url href="" class="btn btn-sm btn-success mb-3 ms-1 btn-icon page-editor-btn">
+						<i class="icon-color-wand-outline"></i> <span>Open in Page Editor</span>
+					 </a>
+				 </div>
 
-				@@include('../_includes/revisions_dropdown.html', {"type":"post"})
-			
+				<div>
+					 <a data-v-design_url href="" class="btn btn-outline-secondary btn-sm ms-1 copy-btn" title="Copy from default language" data-v-if-not="language.default">
+						<i class="icon-copy-outline"></i> <span>Copy from default language</span>
+					 </a>
+
+					@@include('../_includes/revisions_dropdown.html', {"type":"post"})
+				</div>
 			</div>
 			
 			

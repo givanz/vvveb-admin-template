@@ -16,7 +16,7 @@
             <div class="actions">
 				
 				<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-chatbox-outline"></i>
 						<span>@@title</span>
 					</h4>
@@ -168,13 +168,13 @@
 
                                 <td style="width:200px;text-align:center;" class="author">
                                         <img class="rounded" data-v-if="@@name.avatar" data-v-@@name-avatar src="#">
-		                                <a href="/admin?module=@@list&amp;action=@@name&amp;id=4" data-v-@@name-author>Admin</a>
+		                                <a href="{$this.adminPath}index.php?module=@@list&amp;action=@@name&amp;id=4" data-v-@@name-author>Admin</a>
                                 </td>
                                 <td class="@@list">
 									<div class="badge bg-secondary" data-v-@@list>0</div>
                                 </td>
                                 <td class="date">
-                                    <span data-v-@@name-created_at data-filter-friendly_date title="$@@name.created_at" href="">Date</span>
+                                    <span data-v-@@name-created_at data-filter-friendly_date title="{$@@name.created_at}" href="">Date</span>
                                 </td>
 
                                 <td class="actions">

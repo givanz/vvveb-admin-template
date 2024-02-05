@@ -1,8 +1,8 @@
-<input name="sort_order" type="hidden" value="0" data-v-sort_order>
+<input name="sort_order" type="hidden" value="0" data-v-menu-sort_order>
 
 <!-- languages -->  
 
-<ul class="nav nav-tabs language-nav" data-v-languages="taxonomy">
+<ul class="nav nav-tabs language-nav field-lang" data-v-languages="taxonomy">
   <li class="nav-item" data-v-language>
     <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
       <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
@@ -12,48 +12,103 @@
 </ul>		
 
 <div class="tab-content" data-v-languages="taxonomy" style="clear:both">
+
+
+	<div class="my-3 required">
+	  <label class="form-label">Type</label>
+	  <select class="form-control" name="type" data-v-menu-type>
+		<option value="link">Link</option>
+		<option value="text">Text</option>
+		<option value="post">Post</option>
+		<option value="page">Page</option>
+		<option value="product">Product</option>
+		<!--
+		<option value="taxonomy">Post Taxonomy (Category, Tag)</option>
+		<option value="taxonomy">Product Taxonomy (Category, Tag)</option>
+		-->
+	  </select>
+	</div>
+
+	<div class="mb-3 required field field-product">
+	  <label class="form-label">Product</label>
+	  <div>
+		<input name="item_id" value="" placeholder="Type for autocomplete" autocomplete="off" type="search" data-type="product" class="form-control autocomplete"
+			data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-text="" data-v-menu-item_id/>	
+	  </div>
+	</div>
+	
+	<div class="mb-3 required field field-post">
+	  <label class="form-label">Post</label>
+	  <div>
+		<input name="item_id" value="" placeholder="Type for autocomplete" autocomplete="off" type="search" data-type="post" class="form-control autocomplete"
+			data-url="{$this.adminPath}index.php?module=editor/autocomplete&action=posts" data-text="" data-v-menu-item_id/>
+	  </div>
+	</div>	
+	
+	<div class="mb-3 required field field-page">
+	  <label class="form-label">Page</label>
+	  <div>
+		<input name="item_id" value="" placeholder="Type for autocomplete" autocomplete="off" type="search" data-type="page" class="form-control autocomplete"
+			data-url="{$this.adminPath}index.php?module=editor/autocomplete&action=posts&type=page" data-text="" data-v-menu-item_id/>
+	  </div>
+	</div>
+
   <div class="tab-pane" id="language1" data-v-language data-v-language-id>
 
     <!-- input name="taxonomy_content[1][language_id]" type="hidden" data-v-taxonomy-content-language_id -->
     
-	<div class="mb-3 required">
-      <label class="form-label">Type</label>
-      <select class="form-control" name="type">
-		<option value="post">Post</option>
-		<option value="product">Product</option>
-		<option value="taxonomy">Taxonomy</option>
-		<option value="link">Link</option>
-		<option value="text">Text</option>
-	  </select>
-    </div>
-
     <input name="menu_item_content[1][language_id]" type="hidden" data-v-language_id>
 
-    <div class="mb-3 required">
+    <div class="mb-3 required field field-name">
       <label class="form-label">Name</label>
       <input name="menu_item_content[1][name]" value="Name" placeholder="Name" class="form-control dd-title" type="text" data-v-language-name required />
     </div>
 	
-    <div class="mb-3 required">
+    <div class="mb-3 required field field-content">
       <label class="form-label">Content</label>
-      <textarea name="taxonomy_content[1][content]" value="Title" placeholder="Content" class="form-control" type="text" data-v-language-content required></textarea>
+      <textarea name="taxonomy_content[1][content]" value="Title" placeholder="Content" class="form-control html" type="text" data-v-language-content required></textarea>
     </div>
 
-
-    <div class="mb-3 required">
-      <label class="form-label">Slug</label>
-      <div>
-        <input name="taxonomy_content[1][slug]" value="slug" placeholder="Name" class="form-control" type="text" data-v-language-slug required />
-      </div>
-    </div>
 	
   </div>
-</div>
-<!-- languages end -->
+  <!-- languages end -->
+	<!--
+	<div class="mb-3 required field field-image">
+	  <label class="form-label">Image</label>
+	  <div>
+			<input type="hidden" data-v-image name="image" id="featured-image-input" value="">
 
-<div class="mb-3 required">
-  <label class="form-label">Url</label>
-  <div>
-	<input name="url" value="url" placeholder="Name" class="form-control" type="text" data-v-url required />
-  </div>
+			<img data-v-image src="" alt=""
+				 id="featured-image-thumb"
+				 data-v-placeholder=""
+				 data-media-gallery 
+				 data-target-input="#featured-image-input"
+				 data-target-thumb="#featured-image-thumb" data-type="single"                         
+				 class="img-thumbnail border-0 p-0 bg-light-subtle">
+
+
+			<div class="py-3 text-center">
+					<div class="btn-group w-100">
+						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100"
+								data-media-gallery data-target-input="#featured-image-input"
+								data-target-thumb="#featured-image-thumb" data-type="single">
+								<i class="la la-image la-lg"></i> Set media
+						</button>
+
+						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearFeaturedMedia()">
+							<i class="la la-times"></i>
+						</button>
+					</div>
+			</div>
+	  </div>
+	</div>
+	-->
+	<div class="mb-3 required field field-url">
+	  <label class="form-label">Url</label>
+	  <div>
+		<input name="url" value="url" placeholder="Name" class="form-control" type="text" data-v-menu-url required />
+	  </div>
+	</div>
 </div>
+
+

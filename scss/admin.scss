@@ -66,6 +66,9 @@ html {
 }
 
 body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	-moz-osx-font-smoothing: grayscale;
 	background:var(--bs-body-bg);
 	width:100%;
 	flex-direction: column;
@@ -514,8 +517,9 @@ div.actions
 		margin-bottom:0;
 		
 		i {
-			font-size: 1.4rem;
-			vertical-align: middle;
+			font-size: 1.5rem;
+			vertical-align: text-bottom;
+			line-height:1;
 		}
 	}
 	
@@ -2002,6 +2006,7 @@ button.btn-close {
 				i {
 					//vertical-align:top;
 					color:var(--bs-secondary-color);
+					margin-right:0.3rem;
 				}
 
 				&.col-cb
@@ -2667,6 +2672,10 @@ strong {
 	//background:var(--bs-gray-100);
 }
 
+.dd-list .language-nav {
+	margin-top:-0.65rem;	
+}
+
 .pills-border {
 
 	.nav-item {
@@ -2711,7 +2720,7 @@ strong {
 	background:#9623f1;
 }
 
-.bg-info-semi i {
+.alert .bg-info-semi i {
 	background:rgba(13, 202, 240, 0.1);
 }
 

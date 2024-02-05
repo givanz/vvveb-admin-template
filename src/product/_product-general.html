@@ -51,8 +51,13 @@
 							<i class="icon-color-wand-outline"></i> <span>Open in Page Editor</span>
 						 </a>
 
-						@@include('../_includes/revisions_dropdown.html', {"type":"product"})
-					
+						<div>
+							 <a data-v-design_url href="" class="btn btn-outline-secondary btn-sm ms-1 copy-btn" title="Copy from default language" data-v-if-not="language.default">
+								<i class="icon-copy-outline"></i> <span>Copy from default language</span>
+							 </a>
+
+							@@include('../_includes/revisions_dropdown.html', {"type":"product"})
+						</div>						
 					</div>						
 					
 

@@ -16,7 +16,7 @@
             <div class="actions">
 				
 				<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-document-text-outline"></i>
 						<span>Menus</span>
 					</h4>
@@ -36,19 +36,13 @@
                 @@include('../_includes/notifications.html')
                 
                 <div class="menus card-block">
-                    <form action="" method="menu">
+                    <form action="" method="post">
 						
 						<div class="bulk-actions px-2 pb-4" style="display:none">
-						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
-									aria-controls="filters" title="Delete selected"
-									class="btn btn-primary btn-sm">
-								<i class="icon-create-outline"></i> Edit selected
-							</button>
-
-						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
-									aria-controls="filters" title="Delete selected"
-									class="btn btn-outline-secondary btn-sm bg-body-tertiary text-danger">
-								<i class="icon-trash-outline"></i> Delete selected
+						   <button type="submit" name="action" value="deleteMenu" aria-expanded="false" data-v-check-permission-delete
+									title="Delete selected"
+									class="btn btn-outline-secondary bg-body-tertiary text-danger">
+									<i class="icon-trash-outline"></i> Delete selected
 							</button>
 						
 						</div>
@@ -77,7 +71,7 @@
                                 <th class="menu">
 									<i class="icon-cube-outline"></i><span>Name</span>
 								</th>
-                                <th class="actions text-center" style="width:200px">
+                                <th class="actions text-center" style="width:300px">
 									<i class="la la-edit"></i><span>Actions</span>
 								</th>
                             </tr>
@@ -86,7 +80,7 @@
                             <tr class="menu" data-v-menu>
                                 <td class="checkbox">
                                     <label class="form-check">
-                                        <input type="checkbox" class="form-check-input" value="4" name="menu[]" data-v-vvveb-action="table.selectRow">
+                                        <input type="checkbox" class="form-check-input" value="4" name="menu_id[]" data-v-vvveb-action="table.selectRow" data-v-menu_id>
                                         <span class="form-check-label"></span>
                                         <span class="custom-control-description">&nbsp;</span>
                                     </label>
