@@ -686,13 +686,13 @@
 			<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
 		</span>
 		<span>
-			<button class="btn btn-sm btn-outline-primary border-0 btn-revision-preview" data-date="{%=date%}" data-file="{%=file%}" title="Preview">
+			<a class="btn btn-sm btn-outline-primary border-0 btn-revision-preview" data-date="{%=date%}" href="{%=url%}" target="_blank" title="Preview">
 				<i class="la la-eye"></i>
-			</button>
+			</a>
 			<button class="btn btn-sm btn-outline-primary border-0 btn-revision-load" data-date="{%=date%}" data-file="{%=file%}" title="Load">
 				<i class="la la-arrow-up"></i>
 			</button>
-			<button class="btn btn-sm btn-outline-danger border-0 btn-revision-delete" data-date="{%=date%}" data-file="{%=file%}" onclick='return confirm("{%="Are you sure?"%}")' title="Delete">
+			<button class="btn btn-sm btn-outline-danger border-0 btn-revision-delete" data-date="{%=date%}" data-file="{%=file%}" title="Delete">
 				<i class="la la-trash"></i>
 			</button>
 		</span>

@@ -123,7 +123,7 @@
   </style>
 
 <script>
-var value, orig1, orig2, dv, panes = 2, highlight = true, connect = "align", collapse = false, revisionUrl = '{ $this->revisionUrl}';
+var value, orig1, orig2, dv, panes = 2, highlight = true, connect = "align", collapse = false, revisionUrl = '{ $this->revisionUrl }';
 
 function initUI() {
   if (value == null) return;
@@ -205,8 +205,10 @@ function restore(select) {
 }
 
 function loadRevision(select) {
-	$.get(revisionUrl + "&created_at=" + select.value,  function( content ) {
-		document.getElementsByClassName("CodeMirror")[1].CodeMirror.getDoc().setValue(content);
+	$.get(revisionUrl + "&created_at=" + escape(select.value),  function( content ) {
+		if (content && content.content) {
+			document.getElementsByClassName("CodeMirror")[1].CodeMirror.getDoc().setValue(content.content);
+		}
 	});
 }
 </script>
