@@ -23,7 +23,7 @@
 		  
 		  <div class="btns">
 				<a href="{$this.adminPath}index.php?module=settings/sites" title="Sites list"
-					class="btn btn-outline-secondary pe-3">
+					class="btn btn-outline-secondary me-2">
 						<i class="la la-arrow-left"></i><span>Sites list</span>
 				 </a>
 
@@ -45,12 +45,16 @@
 
 				<div class="content clearfix settings" data-v-site>
 													 
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<ul class="nav nav-tabs" id="site-tabs" role="tablist">
 					
 					  <li class="nav-item" role="presentation">
 						<button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General</button>
 					  </li>
 
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="contact" aria-selected="false">Description</button>
+					  </li>
+					  
 					  <li class="nav-item" role="presentation">
 						<button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="contact" aria-selected="false">Local</button>
 					  </li>
@@ -82,10 +86,14 @@
 					  </li> -->
 					</ul>
 					
-					<div class="tab-content">
+					<div class="tab-content" id="site-tab-content">
 					
 						<div class="tab-pane show active" id="general" role="tabpanel" aria-labelledby="general-tab">
 							@@include('_site-general.html')
+						</div>
+
+						<div class="tab-pane show" id="description" role="tabpanel" aria-labelledby="description-tab">
+							@@include('_site-description.html')
 						</div>
 						
 						<div class="tab-pane" id="local" role="tabpanel" aria-labelledby="local-tab">

@@ -16,7 +16,7 @@
             <div class="actions">
 				
 				<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-reader-outline"></i>
 						<span>Field groups</span>
 					</h4>
@@ -77,17 +77,18 @@
                                 <th class="field_group">
 									<i class="icon-cube-outline"></i><span>Name</span>
 								</th>
-								<!--
-                                <th style="width:200px;text-align:center;" class="author">
-									<i class="la la-user"></i><span>Slug</span>
+                                <th style="width:200px;text-align:center;" class="type">
+									<i class="la la-cog"></i><span>Type</span>
 								</th>
-                                <th class="description"  style="width:200px;text-align:center;" >
-									<i class="la la-comments"></i><span>Description</span>
+                                <th class="subtype"  style="width:200px;text-align:center;" >
+									<i class="la la-boxes"></i><span>Subtype</span>
 								</th>	
+								<!--
                                 <th class="meta_title"  style="width:200px;text-align:center;" >
 									<i class="la la-calendar"></i><span>Date</span>
 								</th>
 								-->
+
                                 <th class="actions text-center" style="width:200px">
 									<i class="la la-edit"></i><span>Actions</span>
 								</th>
@@ -112,6 +113,17 @@
 									</a>
                                 </td>
 
+								<td class="field_group position-relative">
+                                    <a href="/admin?module=field_groups&amp;action=field_group&amp;id=4" data-v-field_group-url>
+                                        <span data-v-field_group-type>Type</span>
+									</a>
+                                </td>
+								
+                                <td class="field_group position-relative">
+                                    <a href="/admin?module=field_groups&amp;action=field_group&amp;id=4" data-v-field_group-url>
+                                        <span data-v-field_group-subtype>Subtype</span>
+									</a>
+                                </td>
 <!--
                                 <td style="width:200px;text-align:center;" class="slug">
                                     <a href="/admin?module=field_groups&amp;action=field_group&amp;id=4" data-v-author-url

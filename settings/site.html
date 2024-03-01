@@ -158,7 +158,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -210,7 +210,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new page</span>
                   </a>
                 </li>
@@ -255,7 +255,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new user</span>
                   </a>
                 </li>
@@ -272,7 +272,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new group</span>
                   </a>
                 </li>
@@ -361,7 +361,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -467,7 +467,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new plugin</span>
                   </a>
                 </li>
@@ -514,7 +514,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -544,7 +544,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -574,7 +574,7 @@
                     </li>
                     <li class="nav-item " data-v-submenu-item>
                       <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                        <i class="la la-plus" data-v-submenu-item-icon></i>
                         <span data-v-submenu-item-name>Add new</span>
                       </a>
                     </li>
@@ -1275,7 +1275,7 @@
 
 
           <div class="btns">
-            <a href="{$this.adminPath}index.php?module=settings/sites" title="Sites list" class="btn btn-outline-secondary pe-3">
+            <a href="{$this.adminPath}index.php?module=settings/sites" title="Sites list" class="btn btn-outline-secondary me-2">
               <i class="la la-arrow-left"></i>
               <span>Sites list</span>
             </a>
@@ -1350,10 +1350,14 @@
 
               <div class="content clearfix settings" data-v-site>
 
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="site-tabs" role="tablist">
 
                   <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General</button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="contact" aria-selected="false">Description</button>
                   </li>
 
                   <li class="nav-item" role="presentation">
@@ -1387,13 +1391,13 @@
 					  </li> -->
                 </ul>
 
-                <div class="tab-content">
+                <div class="tab-content" id="site-tab-content">
 
                   <div class="tab-pane show active" id="general" role="tabpanel" aria-labelledby="general-tab">
                     <div class="mb-3 row">
                       <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="input-site-name" placeholder="Title" name="site[name]" data-v-site-name required>
+                        <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name required>
                       </div>
                     </div>
                     <!--
@@ -1505,38 +1509,7 @@
                       </div>
                     </div>
 
-
-                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Description</label>
-
-                    <div class="mb-3 row">
-                      <label for="input-title" class="col-sm-2 col-form-label">Site title</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="input-title" placeholder="Title" name="settings[title]" data-v-setting="title" required>
-                      </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                      <label for="input-description" class="col-sm-2 col-form-label">Site description</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="input-description" placeholder="Description" name="settings[description]" data-v-setting="description" required>
-                      </div>
-                    </div>
-
-
-                    <div class="mb-3 row">
-                      <label class="col-sm-2 col-form-label">Meta keywords</label>
-                      <div class="col-sm-10">
-                        <input name="settings[meta-keywords]" value="" placeholder="keywords" class="form-control" type="text" data-v-setting="meta-keywords" />
-                      </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                      <label class="col-sm-2 col-form-label">Meta description</label>
-                      <div class="col-sm-10">
-                        <input name="settings[meta-description]" value="" placeholder="description" class="form-control" type="text" data-v-setting="meta-description" />
-                      </div>
-                    </div>
-
+                    <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Email</label>
 
                     <div class="mb-3 row">
                       <label for="admin-email" class="col-sm-2 col-form-label">Administration Email Address</label>
@@ -1552,14 +1525,8 @@
                       </div>
                     </div>
 
-                    <div class="mb-3 row">
-                      <label for="phone-number" class="col-sm-2 col-form-label">Phone number</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="phone-number" placeholder="Phone number" name="settings[phone-number]" data-v-setting="phone-number">
-                      </div>
-                    </div>
-
                     <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Logo</label>
+
 
                     <div class="mb-3 row">
                       <label for="input-title" class="col-sm-2 col-form-label">Site logo</label>
@@ -1652,6 +1619,60 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  <div class="tab-pane show" id="description" role="tabpanel" aria-labelledby="description-tab">
+                    <ul class="nav nav-tabs language-nav" id="description-language-nav" data-v-languages="description">
+                      <li class="nav-item" data-v-language>
+                        <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+                          <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
+                          <span data-v-language-name>English</span>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content" data-v-languages="description" style="clear:both">
+                      <div class="tab-pane" id="language1" data-v-language data-v-language-id>
+
+                        <div class="mb-3 row">
+                          <label for="input-title" class="col-sm-2 col-form-label">Site title</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-title" placeholder="Title" name="settings[description][1][title]" data-v-site-description-title required>
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                          <label for="input-description" class="col-sm-2 col-form-label">Site description</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-description" placeholder="Description" name="settings[description][1][description]" data-v-site-description-description required>
+                          </div>
+                        </div>
+
+
+                        <div class="mb-3 row">
+                          <label class="col-sm-2 col-form-label">Meta keywords</label>
+                          <div class="col-sm-10">
+                            <input name="settings[description][1][meta-keywords]" value="" placeholder="keywords" class="form-control" type="text" data-v-site-description-meta-keywords />
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                          <label class="col-sm-2 col-form-label">Meta description</label>
+                          <div class="col-sm-10">
+                            <input name="settings[description][1][meta-description]" value="" placeholder="description" class="form-control" type="text" data-v-site-description-meta-description />
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                          <label for="phone-number" class="col-sm-2 col-form-label">Phone number</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="phone-number" placeholder="Phone number" name="settings[description][1][phone-number]" data-v-site-description-phone-number>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
                   </div>
 
                   <div class="tab-pane" id="local" role="tabpanel" aria-labelledby="local-tab">

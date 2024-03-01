@@ -21,7 +21,7 @@
 			</div>
 			<div>			
 				<a href="{$this.adminPath}index.php?module=content/tags&status=0" title="Tag list"
-					class="btn btn-outline-secondary pe-3">
+					class="btn btn-outline-secondary me-2">
 						<i class="la la-arrow-left"></i><span>Tag list</span>
 				 </a>
 				  
@@ -95,10 +95,8 @@
 				<label for="input-site-title" class="col-sm-2 col-form-label" >Status</label>
 				<div class="col-sm-10">
 					<select name="tag[status]" id="input-status" class="form-control" data-v-tag-status>
-						<option value="0">Pending</option>
-						<option value="1">Approved</option>
-						<option value="2">Spam</option>
-						<option value="3">Trash</option>
+						<option value="0" data-v-option>Inactive</option>
+						<option value="1" data-v-option>Active</option>
 					</select>
 				</div>
 			  </div>

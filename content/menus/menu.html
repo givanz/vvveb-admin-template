@@ -158,7 +158,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -210,7 +210,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new page</span>
                   </a>
                 </li>
@@ -255,7 +255,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new user</span>
                   </a>
                 </li>
@@ -272,7 +272,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new group</span>
                   </a>
                 </li>
@@ -361,7 +361,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -467,7 +467,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new plugin</span>
                   </a>
                 </li>
@@ -514,7 +514,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -544,7 +544,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -574,7 +574,7 @@
                     </li>
                     <li class="nav-item " data-v-submenu-item>
                       <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                        <i class="la la-plus" data-v-submenu-item-icon></i>
                         <span data-v-submenu-item-name>Add new</span>
                       </a>
                     </li>
@@ -1275,7 +1275,7 @@
         </div>
 
         <div>
-          <a href="{$this.adminPath}index.php?module=content/menus" title="Comment list" class="btn btn-outline-secondary pe-3">
+          <a href="{$this.adminPath}index.php?module=content/menus" title="Comment list" class="btn btn-outline-secondary me-2">
             <i class="la la-arrow-left"></i>
             <span>Menu list</span>
           </a>
@@ -1283,7 +1283,7 @@
 
         <div data-v-if="this.menu_data.menu_id">
           <button type="submit" href="" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
-            <i class="la la-pen"></i>
+            <i class="la la-plus"></i>
             <span>Add item</span>
           </button>
         </div>
@@ -1354,32 +1354,34 @@
             </div>
 
 
-            <form method="post">
+            <div class="card m-4">
+              <form method="post">
 
-              <input type="hidden" name="menu_id" value="" data-v-taxonomy_id>
+                <input type="hidden" name="menu_id" value="" data-v-taxonomy_id>
 
-              <div class="container-fluid m-3 pe-5">
-                <div class="row">
-                  <div class="col-auto">
-                    <label class="col-form-label">Name</label>
-                  </div>
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="menu_data[name]" data-v-name>
-                  </div>
-                  <div class="col-auto">
-                    <label class="col-form-label">Slug</label>
-                  </div>
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Slug" aria-label="Slug" name="menu_data[slug]" data-v-slug>
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary w-100">
-                      <i class="la la-save"></i> Save
-                    </button>
+                <div class="container-fluid m-3 pe-5" id="edit-form">
+                  <div class="row">
+                    <div class="col-auto">
+                      <label class="col-form-label">Name</label>
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="menu_data[name]" data-v-name>
+                    </div>
+                    <div class="col-auto">
+                      <label class="col-form-label">Slug</label>
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Slug" aria-label="Slug" name="menu_data[slug]" data-v-slug>
+                    </div>
+                    <div class="col-auto">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="la la-save"></i> Save
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
 
 
             <div class="dd" id="taxonomies" data-v-categories>
@@ -1882,14 +1884,13 @@
 
 
   <div class="toast-container">
-    <div id="liveToast" class="toast position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
+    <div id="taxonomyToast" class="toast position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-body">
         <span class="message">Hello, world! This is a toast message.</span>
         <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
     </div>
   </div>
-
 
   <script id="nestable-js" src="libs/nestable/jquery.nestable.js"></script>
   <script src="libs/autocomplete/jquery.autocomplete.js"></script>
@@ -1972,8 +1973,8 @@ $("#taxonomies").on("keyup", ".dd3-item .dd-title",function (e) {
 });
 
 
-const toastLiveExample = document.getElementById('liveToast');
-const toast = new bootstrap.Toast(toastLiveExample);
+const toastLiveExample = document.getElementById('taxonomyToast');
+const toast = new bootstrap.Toast(toastLiveExample, {animation:false});
 
 function getOrder(item) {
 	let parent = $(item).parents(".dd3-item:first");
@@ -2000,7 +2001,7 @@ function saveOrder(item) {
 			data: {menu_items:data},
 			//dataType: 'json',
 			complete: function(data) {
-				$("#liveToast .message").html('<i class="la la-info-circle fs-2"></i><span class="fs-6">' + data.responseText + '</span>');
+				$("#taxonomyToast .message").html('<i class="la la-info-circle fs-2"></i><span class="fs-6">' + data.responseText + '</span>');
 				toast.show();
 				//$('#cart > button').button('reset');
 			},
@@ -2029,7 +2030,7 @@ function deleteItem(item) {
 			data: {menu_item_id:item.data("vId")},
 			//dataType: 'json',
 			complete: function(data) {
-				$("#liveToast .message").html(data.responseText);
+				$("#taxonomyToast .message").html(data.responseText);
 				toast.show();
 				item.remove();
 				//$('#cart > button').button('reset');
@@ -2097,7 +2098,7 @@ function save() {
 					$(element).removeAttr("disabled");
 				}
 
-				$("#liveToast .message").html(data.responseText);
+				$("#taxonomyToast .message").html(data.responseText);
 				toast.show();
 				//$('#cart > button').button('reset');
 			},

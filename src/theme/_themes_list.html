@@ -76,8 +76,18 @@
 						</div>
 
 						<div>
-							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
-							<a href="#" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure?')" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
+							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-duplicate-url>
+								<i class="icon-copy"></i>
+								<span>Duplicate</span>
+							</a>
+							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url>
+								<i class="icon-code"></i>
+								<span>Code</span>
+							</a>
+							<a href="#" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure?')" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url>
+								<i class="icon-close"></i>
+								<span>Delete</span>
+							</a>
 						</div>
 			
 				  </div>                

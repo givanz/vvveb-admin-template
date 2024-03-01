@@ -1,0 +1,50 @@
+<ul class="nav nav-tabs language-nav" id="description-language-nav" data-v-languages="description">
+	<li class="nav-item" data-v-language>
+		<a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+			<!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img --> 
+			<span data-v-language-name>English</span>
+		</a>
+	</li>
+</ul>
+ 
+<div class="tab-content" data-v-languages="description" style="clear:both">
+   <div class="tab-pane" id="language1" data-v-language data-v-language-id>
+		 
+		<div class="mb-3 row">
+		   <label for="input-title" class="col-sm-2 col-form-label">Site title</label>
+		   <div class="col-sm-10">
+			  <input type="text" class="form-control" id="input-title" placeholder="Title" name="settings[description][1][title]" data-v-site-description-title required>
+		   </div>
+		</div>
+
+		<div class="mb-3 row">
+		   <label for="input-description" class="col-sm-2 col-form-label">Site description</label>
+		   <div class="col-sm-10">
+			  <input type="text" class="form-control" id="input-description" placeholder="Description" name="settings[description][1][description]" data-v-site-description-description required>
+		   </div>
+		</div>
+			
+
+		<div class="mb-3 row">
+			<label class="col-sm-2 col-form-label">Meta keywords</label>
+			<div class="col-sm-10">
+			  <input name="settings[description][1][meta-keywords]" value="" placeholder="keywords" class="form-control" type="text" data-v-site-description-meta-keywords/>
+			</div>
+		  </div>	  
+		  
+		<div class="mb-3 row">
+			<label class="col-sm-2 col-form-label">Meta description</label>
+			<div class="col-sm-10">
+			  <input name="settings[description][1][meta-description]" value="" placeholder="description" class="form-control" type="text" data-v-site-description-meta-description/>
+			</div>
+		</div>
+		  
+		<div class="mb-3 row">
+		   <label for="phone-number" class="col-sm-2 col-form-label">Phone number</label>
+		   <div class="col-sm-10">
+			  <input type="text" class="form-control" id="phone-number" placeholder="Phone number" name="settings[description][1][phone-number]" data-v-site-description-phone-number>
+		   </div>
+		</div>
+
+	</div>
+</div>

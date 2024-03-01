@@ -14,7 +14,7 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
-					<h4 class="text-muted my-3">
+					<h4 class="text-muted my-2">
 						<i class="icon-reader-outline"></i>
 						<span>Field Group</span>
 					</h4>
@@ -22,9 +22,14 @@
 			
 			<div class="btns">
 				<a href="/admin/?module=field/field-groups" title="Return to field groups"
-					class="btn btn-outline-secondary pe-3">
+					class="btn btn-outline-secondary me-2">
 						<i class="la la-arrow-left"></i><span>Return to field groups</span>
 				 </a>
+				 
+				<button type="button" id="add-field-group-btn" class="btn btn-outline-primary" aria-label="Add Rule" data-v-if="this.field_group.field_group_id">
+					<i class="la la-plus"></i> Add field
+				</button>
+				 
 				  
 				  <button type="submit" href=""
 					 class="btn btn-primary btn-icon ms-1"
@@ -40,86 +45,195 @@
 			<div class="px-4">
 				
 				<input type="hidden" name="field_group_id" data-v-field_group-field_group_id>
-					
-				<div class="mb-3 row">
-					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
-					<div class="col-sm-10">
-					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field_group[name]" data-v-field_group-name required>
-					</div>
-				 </div>		 
+
+				<div class="card p-3 mb-3">
+					<div class="row">
+						<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field_group[name]" data-v-field_group-name required>
+						</div>
+					 </div>	
+				 </div>					
+	 
 
 				<div class="fields" data-v-if="this.field_group_id">
-					<button type="button" id="add-field-group-btn" class="btn btn-primary" aria-label="Add Rule">
-						<i class="la la-lg la-plus-circle"></i> Add field
-					</button>
-
 	 
-					<table id="field-group" class="table table-hover mt-2" data-v-fields>
-					  <thead>
-						<tr>
-						  <th class="text-start">Country</th>
-						  <th class="text-start">Field</th>
-						  <th></th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr data-v-field>
-						  <td class="text-start">
-							<select name="field[0][country_id]" class="form-select" data-v-field-country_id data-v-countries disabled>
-							  <option value="1" data-v-country data-v-country-country_id>
-								<span data-v-country-name>Tax 1 (-2.00)</span>
-							  </option>
-							  <option value="2" data-v-country data-v-country-country_id>
-								<span data-v-country-name>Tax 2 (19%)</span>
-							  </option>
-							</select>
-						  </td>
-						  <td class="text-start">
-							<select name="field[0][field_id]" class="form-select" data-v-field-field_id disabled>
-							  <option value="0">All Fields</option>
-							  <option value="1" data-v-option>Field 1</option>
-							  <option value="2" data-v-option>Field 2</option>
-							  <option value="3" data-v-option>Field 3</option>
-							</select>
-						  </td>
-						  <td class="text-end">
-							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
-							  <i class="la la-lg la-minus-circle"></i>
-							</button>
-						  </td>
-						</tr>
+					<div class="accordion" style="--bs-accordion-body-padding-x:0;--bs-accordion-body-padding-y:0;--bs-accordion-active-bg:rgba(var(--bs-primary-rgb), 0.05);" data-v-fields>
+					  
+					  <div class="accordion-item" data-v-field>
+							<div class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#field-id-1" aria-controls="field-id-1">
+								<div class="flex-grow-1">Label 1</div>
+								<div class="pe-5 buttons">
+									<a type="button" onclick="$(this).parents('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
+										  <i class="la la-lg la-copy"></i>
+									</a>
+									<a type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
+										  <i class="la la-lg la-minus-circle"></i>
+									</a>
+								</div>
+								</button>
+							</div>
+
+						<div id="field-id-1" class="accordion-collapse collapse">
+						  <div class="accordion-body">
+
+
+					<ul class="nav nav-tabs px-3 pt-2" id="myTab" role="tablist">
+					
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General</button>
+					  </li>
+
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Validation</button>
+					  </li>
 						
-						<tr class="d-none" id="field-group-template">
-						  <td class="text-start">
-							<select name="field-group_template[0][country_id]" class="form-select" data-v-countries disabled>
-							  <option value="1" data-v-country data-v-country-country_id>
-								<span data-v-country-name>Tax 1 (-2.00)</span>
-							  </option>
-							  <option value="2" data-v-country data-v-country-country_id>
-								<span data-v-country-name>Tax 2 (19%)</span>
-							  </option>
-							</select>
-						  </td>
-						  <td class="text-start">
-							<select name="field-group_template[0][field_id]" class="form-select" data-v-field-field_id disabled>
-							  <option value="0">All Fields</option>
-							  <option value="1" data-v-option>Field 1</option>
-							  <option value="2" data-v-option>Field 2</option>
-							  <option value="3" data-v-option>Field 3</option>
-							</select>
-						  </td>
-						  <td class="text-end">
-							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
-							  <i class="la la-lg la-minus-circle"></i>
-							</button>
-						  </td>
-						</tr>
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Presentation</button>
+					  </li>		  
+
+					  
+
+					   <li class="nav-item" role="presentation">
+						<button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false" tabindex="-1">Conditionals</button>
+					  </li>					 
+					  
+					</ul>
+					
+					<div class="tab-content p-4">
+					
+						<div class="tab-pane active show" id="general" role="tabpanel" aria-labelledby="general-tab">
+
+							<div class="row mb-3">
+							  <label for="input-language" class="col-sm-2 col-form-label">Type</label>
+							  <div class="col-sm-10">
+									<select name="type" class="form-select" data-v-field-type>
+										<option value="text" selected="selected" data-v-option>Text</option>
+										<option value="textarea" data-v-option>Text Area</option>
+										<option value="number" data-v-option>Number</option>
+										<option value="range" data-v-option>Range</option>
+										<option value="email" data-v-option>Email</option>
+										<option value="url" data-v-option>Url</option>
+										<option value="password" data-v-option>Password</option>
+									</select>
+							  </div>
+							</div>
+							<div class="row mb-3">
+							  <label for="input-label" class="col-sm-2 col-form-label">Label</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="" name="settings[label]" value="">
+							  </div>
+							</div>
+
+							<div class="row mb-3">
+							  <label for="input-name" class="col-sm-2 col-form-label">Name</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="" name="settings[name]" value="">
+							  </div>
+							</div>
+							
+							<div class="row mb-3">
+							  <label for="input-default" class="col-sm-2 col-form-label">Default</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="" name="settings[default]" value="">
+							  </div>
+							</div>
+
+
+						</div>
 						
-					  </tbody>
+								<div class="tab-pane" id="local" role="tabpanel" aria-labelledby="local-tab">
+								
+								
+									<div class="row mb-3">
+									  <label for="input-default" class="col-sm-2 col-form-label">Requiered</label>
+									  <div class="col-sm-10">
+										
+										<div class="form-check form-switch">
+										  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+										  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+										</div>
+										
+									  </div>
+									</div>
+									
+									
+									<div class="row mb-3">
+									  <label for="input-max_length" class="col-sm-2 col-form-label">Max Length</label>
+									  <div class="col-sm-10">
+										<input type="number" class="form-control" placeholder="" name="settings[max_length]" value="">
+									  </div>
+									</div>									
+									
+								</div>	
+								
+								<div class="tab-pane" id="media" role="tabpanel" aria-labelledby="media-tab">
+									media
+								</div>
+								
+
+								<div class="tab-pane" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+									comments
+								</div>
+
+								<div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+									orders
+								</div>			
+													
+								
+						 
+								</div>
+
+							
+							
+						  </div>
+						</div>
+						  
+						</div>
+						
+					  <div class="d-none" id="field-group-template">
+							
+							<div class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#field-id" aria-expanded="true" aria-controls="field-id">									<div class="flex-grow-1">(no label)</div>
+									<div class="pe-5 buttons">
+										<a type="button" onclick="$(this).parents('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
+											  <i class="la la-lg la-copy"></i>
+										</a>
+										<a type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
+											  <i class="la la-lg la-minus-circle"></i>
+										</a>
+									</div>
+								</button>
+							 </div>
+
+						<div id="field-id" class="accordion-collapse collapse show">
+						  <div class="accordion-body">
+							
+							 
+							
+						  </div>
+						  
+						</div>
+						
+					  </div>
 		
-					</table>
 					
 				</div>
+				
+				
+				<div class="card mt-4">
+					<div class="card-header bg-body border-bottom">Settings</div>	
+					<div class="m-3">
+						<div class="mb-3 row">
+							<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field_group[name]" data-v-field_group-name required>
+							</div>
+						 </div>	
+					</div>	
+				 </div>	
+				 
 			</div>
         </div>
 </form>
@@ -128,6 +242,15 @@
 
 
 @@include('../_includes/footer-scripts.html')
+<style>
+.accordion-header .buttons {
+	visibility:hidden;
+}
+
+.accordion-header:hover .buttons {
+	visibility:visible;
+}
+</style>
 
 <script>
 let mediaPath = '{ $this->mediaPath }';
@@ -143,10 +266,10 @@ function addFieldsToSelect(fieldSelect, data, field_id = 0) {
 		fieldSelect.append('<option value="' + field.field_id + '">' + field.name + '</option>');
 	}
 	fieldSelect.val(field_id);
-	fieldSelect.removeAttr("disabled");
+	//fieldSelect.removeAttr("disabled");
 	
 }
-
+/*
 $("body").on("change", "[data-v-countries]", function () {
 	let fieldGroup = $(this).parents("tr");
 	let fieldSelect = $("[data-v-field-field_id]", fieldGroup);
@@ -167,14 +290,17 @@ $("body").on("change", "[data-v-countries]", function () {
 	
 	this.dataset.vFieldId = 0;
 });
-
+*/
 $("#add-field-group-btn").click(function () {
 	
 	let template = $("#field-group-template")[0].outerHTML;
 	let id = Math.floor(Math.random() * 10000);
-	template = template.replaceAll('field-group_template[0]', 'field[' + id + ']').replace('class="d-none"', 'data-v-field').replace('id="field-group-template"', '');
-	
-	$("#field-group tbody").append(template);
+	template = template.replaceAll('field-group_template[0]', 'field[' + id + ']')
+				.replace('class="d-none"', 'class="accordion-item" data-v-field')
+				.replace('id="field-group-template"', '')
+				.replaceAll('field-id',"field-" + id);
+				
+	$("[data-v-fields]").append(template);
 	$("[data-v-field] [data-v-countries]:disabled:first").change();	
 });
 

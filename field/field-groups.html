@@ -158,7 +158,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -210,7 +210,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new page</span>
                   </a>
                 </li>
@@ -255,7 +255,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new user</span>
                   </a>
                 </li>
@@ -272,7 +272,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new group</span>
                   </a>
                 </li>
@@ -361,7 +361,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -467,7 +467,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new plugin</span>
                   </a>
                 </li>
@@ -514,7 +514,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -544,7 +544,7 @@
                 </li>
                 <li class="nav-item " data-v-submenu-item>
                   <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                    <i class="la la-plus" data-v-submenu-item-icon></i>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -574,7 +574,7 @@
                     </li>
                     <li class="nav-item " data-v-submenu-item>
                       <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-plus-circle" data-v-submenu-item-icon></i>
+                        <i class="la la-plus" data-v-submenu-item-icon></i>
                         <span data-v-submenu-item-name>Add new</span>
                       </a>
                     </li>
@@ -1378,17 +1378,20 @@
                         <i class="icon-cube-outline"></i>
                         <span>Name</span>
                       </th>
+                      <th style="width:200px;text-align:center;" class="type">
+                        <i class="la la-cog"></i>
+                        <span>Type</span>
+                      </th>
+                      <th class="subtype" style="width:200px;text-align:center;">
+                        <i class="la la-boxes"></i>
+                        <span>Subtype</span>
+                      </th>
                       <!--
-                                <th style="width:200px;text-align:center;" class="author">
-									<i class="la la-user"></i><span>Slug</span>
-								</th>
-                                <th class="description"  style="width:200px;text-align:center;" >
-									<i class="la la-comments"></i><span>Description</span>
-								</th>	
                                 <th class="meta_title"  style="width:200px;text-align:center;" >
 									<i class="la la-calendar"></i><span>Date</span>
 								</th>
 								-->
+
                       <th class="actions text-center" style="width:200px">
                         <i class="la la-edit"></i>
                         <span>Actions</span>
@@ -1414,6 +1417,17 @@
                         </a>
                       </td>
 
+                      <td class="field_group position-relative">
+                        <a href="/admin?module=field_groups&amp;action=field_group&amp;id=4" data-v-field_group-url>
+                          <span data-v-field_group-type>Type</span>
+                        </a>
+                      </td>
+
+                      <td class="field_group position-relative">
+                        <a href="/admin?module=field_groups&amp;action=field_group&amp;id=4" data-v-field_group-url>
+                          <span data-v-field_group-subtype>Subtype</span>
+                        </a>
+                      </td>
                       <!--
                                 <td style="width:200px;text-align:center;" class="slug">
                                     <a href="/admin?module=field_groups&amp;action=field_group&amp;id=4" data-v-author-url

@@ -319,7 +319,7 @@ class MediaModal {
 			
 			var index = _this.breadcrumbs.find('a').index($(this)),
 				nextDir = _this.breadcrumbsUrls[index];
-			var	nextDir = this.attributes.href.value;
+				nextDir = this.attributes.href.value;
 
 			_this.breadcrumbsUrls.length = Number(index);
 			window.location.hash = encodeURIComponent(nextDir);

@@ -591,16 +591,15 @@ body
 					margin-top:.2rem;
 				}
 				
-				i.la-lg
-				{
-					font-size:1.4rem;
-					margin:0.2rem 0;
+				i {
+					font-size:21px;
+					vertical-align:bottom;
 				}
 				
 				small
 				{
 					font-size:0.8rem;
-					display:none;
+					//display:none;
 				}
 				
 				&.active, &:hover
@@ -702,14 +701,14 @@ body
 	& #add-section-box 
 	{
     
-       		animation: popup-animation  .1s cubic-bezier(0,0,.2,1) 0s;
-       		animation-fill-mode: forwards;
+  		animation: popup-animation  .1s cubic-bezier(0,0,.2,1) 0s;
+   		animation-fill-mode: forwards;
     
 		.header > div.section-box-actions 
 		{
 			position:absolute;
 			top:0.5rem;
-			right:1rem;
+			right:0.5rem;
 		}
 	
 		.components-list, .blocks-list, .component-properties, .sections-list {
@@ -1321,8 +1320,9 @@ body
 		background: var(--bs-body-bg);
 		top: 100px;
 		left: 100px;
-		box-shadow: 0 8px 24px rgba(var(--bs-body-color-rgb),0.07);
+		box-shadow: 0px 5px 50px 15px rgba(var(--bs-body-color-rgb),0.08);
 		border: 1px solid var(--bs-border-color);
+		border-radius:4px;
 		min-width: 500px;
 		max-width: 700px;
 		pointer-events:auto;

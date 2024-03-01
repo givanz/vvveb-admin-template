@@ -2405,6 +2405,21 @@ tr {
 			font-weight:normal;
 		}
 		
+		.card-footer {
+			visibility:hidden;
+			position:absolute;
+			top:0;
+			width:100%;
+			background-color:var(--bs-body-bg);
+			border: 1px solid var(--bs-border-color);
+			padding-right:3rem;
+			
+		}
+
+		&:hover .card-footer {
+			visibility:visible;
+		}
+
 		&.active {
 			 .card-footer {
 				 background-color:rgba(var(--bs-primary-rgb), 0.05);
@@ -2667,9 +2682,9 @@ strong {
 .language-nav {
 	position:absolute;
 	right:0;
-	margin-top:-4.6rem;
+	margin-top:-74px;
 	margin-right:0;
-	//background:var(--bs-gray-100);
+	background: var(--bs-body-bg);
 }
 
 .dd-list .language-nav {
@@ -2759,6 +2774,7 @@ strong {
 	button#upload-close {
 		position: absolute;
 		right: 1rem;
+		top: 1rem;
 		z-index: 1000;
 	}
 	input[type=file] {
