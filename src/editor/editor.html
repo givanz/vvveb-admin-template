@@ -105,7 +105,7 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 -->
 
 <!-- autocomplete plugin used by autocomplete input-->
-<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script src="libs/autocomplete/autocomplete.js"></script>	
 <script type="module"  src="../../js/admin.js"></script>
 <script src="../../js/vvvebjs/elements-changes.js"></script>	
 
@@ -116,8 +116,7 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 let pages =  { $this->pages };
 Vvveb.data =  { $this->data };
 
-$(function() {
-
+let ready = function() {
 	let firstPage = Object.keys(pages)[0];
 	Vvveb.Builder.init(pages[firstPage]["url"], function() {
 		//load code after page is loaded here
@@ -132,6 +131,7 @@ $(function() {
 
 	Vvveb.FileManager.init(fileManagerComponents);
 	Vvveb.SectionList.init(fileManagerComponents);
+	Vvveb.TreeList.init();
 
 	Vvveb.FileManager.addPages(pages);
 
@@ -146,16 +146,44 @@ $(function() {
 	}	
 
 	let menuSelect = tmpl('vvveb-input-select', {key:"menu_id", options});
-	$("#new-page-modal [name=menu_id]").html(menuSelect);
-});
+	document.querySelector("#new-page-modal [name=menu_id]").innerHTML = menuSelect;
+}
 
-$("#new-page-modal input[name=type]").click(function () {
-	let sections = $("#new-page-modal .form > div");
+
+if (document.readyState !== "loading") {
+	ready();
+} else {
+	document.addEventListener('DOMContentLoaded', ready);
+}
+
+
+let newPageTab = function (event) {
+	let active = this.value;
+	let sections = document.querySelectorAll("#new-page-modal .form > div");
 	
-	$("input,select", sections.hide()).attr("disabled", true);
-	$("input,select", sections.filter("." + this.value).show()).removeAttr("disabled");
+	sections.forEach((section, i) => {
+		let selected = section.classList.contains(active);
+		
+		if (selected) {
+			section.style.display = "";
+		} else {
+			section.style.display = "none";
+		}
+		
+		section.querySelectorAll("input,select").forEach((el, i) => {
+			if (selected) {
+				el.removeAttribute("disabled");
+			} else {
+				el.setAttribute("disabled", true);
+			}
+		});
+	});
+	//$("input,select", sections.hide()).setAttribute("disabled", true);
+	//document.querySelectorAll("input,select", sections.filter("." + this.value).show()).removeAttribute("disabled");
 	;
-});
+};
+
+document.querySelectorAll("#new-page-modal input[name=type]").forEach(e => e.addEventListener("click", newPageTab));
 </script>
 
 @@include('../_includes/footer.html')

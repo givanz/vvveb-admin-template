@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="settings-form" action="" method="post" class="needs-validation" novalidate data-v-role>
+	<form id="settings-form" action="" method="post" class="settings" data-v-role>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions">
 		<div class="title">
@@ -52,7 +52,7 @@
 				</div>	
 				-->
 				
-					<div class="list-group-container  d-none">
+					<div class="list-group-container d-none">
 					  <ul class="list-group" data-v-controllers>
 						  <li class="list-group-item" data-v-controller>
 						  
@@ -641,26 +641,31 @@ let template = `<li class="list-group-item">
 	</div>
 </li>`;
 
-$(".rules").on("click", ".btn-add", function () {
-	let input = $(this).siblings("input");
-	let list = $(this).parents(".rules").find('.list-group');
-	let item = $(template);
-	
-	$('label span', item).text(input.val());
-	$('input', item).val(input.val());
-	
-	if (list.hasClass("allow")) {
-		$('input', item).attr("name", "allow[]");
-	} else {
-		$('input', item).attr("name", "deny[]");
+document.querySelector(".card-body").addEventListener("click", function (e) {
+	let element = e.target.closest(".btn-add");
+	if (element) {	
+		let input = element.parentNode.querySelector("input");
+		let list = element.closest(".rules").querySelector('.list-group');
+		let item = generateElements(template)[0];
+		
+		item.querySelector('label span').textContent = input.value;
+		item.querySelector('input').value = input.value;
+		
+		if (list.classList.contains("allow")) {
+			item.querySelector('input').setAttribute("name", "allow[]");
+		} else {
+			item.querySelector('input').setAttribute("name", "deny[]");
+		}
+		
+		
+		list.appendChild(item);
 	}
-	
-	
-	list.append(item);
-	
 });
-$(".rules").on("click", ".btn-delete", function () {
-	$(this).parents(".list-group-item").remove();
+document.querySelector(".card-body").addEventListener("click", function (e) {
+	let element = e.target.closest(".btn-delete");
+	if (element) {	
+		element.closest(".list-group-item").remove();
+	}
 });
 </script>
 @@include('../_includes/footer.html')

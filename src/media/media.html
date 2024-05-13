@@ -40,7 +40,7 @@
 									-->
 								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 											aria-controls="filters" title="Delete selected"
-											class="btn btn-outline-secondary bg-body-tertiary text-danger">
+											class="btn btn-outline-secondary btn-sm bg-body-tertiary text-danger">
 										<i class="icon-trash-outline"></i> Delete selected
 									</button>
 								
@@ -50,7 +50,7 @@
 									<input type="search" id="media-search-input" placeholder="Find a file.." />
 								</div>
 								
-								<button class="btn btn-outline-secondary btn-icon me-5 float-end" 
+								<button class="btn btn-outline-secondary btn-sm btn-icon me-5 float-end" 
 								   data-bs-toggle="collapse" 
 								   data-bs-target=".upload-collapse" 
 								   aria-expanded="false" 
@@ -87,15 +87,13 @@
 					</div>
 
 	 
-				   <div class="gallery-footer">
+				   <div class="modal-footer justify-content-between">
 				   
 						<div class="align-left">
-			
 						</div>
 					  
 						<div class="align-right">
 						</div>				   
-				   
 				   
 				   </div>
 	 
@@ -124,28 +122,19 @@ let mediaScanUrl =  '{ $this->scanUrl }';
 let uploadUrl = '{ $this->uploadUrl }';
 let deleteUrl = '{ $this->deleteUrl }';
 let renameUrl = '{ $this->renameUrl }';
-/*
-$(document).ready(function () {
-	if ($("#MediaModal").length) {
+	
 
-		if (!Vvveb.MediaModal) {
-			Vvveb.MediaModal = new MediaModal(false);
+document.addEventListener('click', function (e) {
+	let element = e.target.closest('input[type="checkbox"][name="file[]"]');
+	if (element) {
+		let selectedCount = document.querySelectorAll('input[type="checkbox"][name="file[]"]:checked')?.length;
+
+		if (selectedCount > 0) {
+			document.querySelector('.bulk-actions').style.display = "";
+		} else {
+			document.querySelector('.bulk-actions').style.display = "none";
 		}
-		Vvveb.MediaModal.mediaPath = mediaPath;
-		Vvveb.MediaModal.type = "multiple";
-		Vvveb.MediaModal.open($("#MediaModal")[0]);
 	}
-});
-*/	
-
-$(document).on('click', 'input[type="checkbox"][name="file[]"]', function (e) {
-let selectedCount = $('input[type="checkbox"][name="file[]"]:checked').length;
-
-if (selectedCount > 0) {
-	$('.bulk-actions').fadeIn();
-} else {
-	$('.bulk-actions').fadeOut();
-}
 });
 </script>
 

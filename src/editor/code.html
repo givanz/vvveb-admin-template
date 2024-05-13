@@ -111,9 +111,9 @@
     <div class="modal-content">
 	  <input type="hidden" name="file" value="">  	
 	
-      <div class="modal-header">
+      <div class="modal-header justify-content-between">
         <span class="modal-title"><div class="fs-6 mb-1">Editing:</div> <span class="name fw-bold">file.php</span> (<span class="file text-muted text-small">file.php</span>)</span>
-		<div class="float-end">
+		<div class="">
 			<button type="button" class="btn btn-light border btn-icon" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
 			
 			<button class="btn btn-primary btn-icon save-btn" title="Save changes" 
@@ -177,70 +177,77 @@ let saveUrl = '{ $this->saveUrl }';
 let type = '{ $this->type }';
 let codemirror = false;
 
-$(document).on('click', 'input[type="checkbox"][name="file[]"]', function (e) {
-let selectedCount = $('input[type="checkbox"][name="file[]"]:checked').length;
+document.addEventListener('click', function (e) {
+	let element = e.target.closest('input[type="checkbox"][name="file[]"]');
+	let selectedCount;
+	if (element) {
+		selectedCount = document.querySelectorAll('input[type="checkbox"][name="file[]"]:checked').length;
 
-if (selectedCount > 0) {
-	$('.bulk-actions').fadeIn();
-} else {
-	$('.bulk-actions').fadeOut();
-}
+		if (selectedCount > 0) {
+			document.querySelector('.bulk-actions').style.display = "";
+		} else {
+			document.querySelector('.bulk-actions').style.display = "none";
+		}
+	}
 });
 
 function saveCodeEditor() {
-	let codeModal = $('#codeEditorModal');
-	let file = $("input[name=file]", codeModal).val();;
-	let btn = $("btn-save", codeModal).val();;
+	let codeModal = document.getElementById('codeEditorModal');
+	let file = codeModal.querySelector("input[name=file]").value;;
+	let btn = codeModal.querySelector(".save-btn");
 	let content = "";
 	let url = `${saveUrl}&file=${file}`;
 	
 	if (codemirror) {
 		content = codemirror.getValue();
 	} else {
-		content = $("textarea", codeModal).val();
+		content = codeModal.querySelector("textarea").value;
 	}
 	
-	$(".loading", btn).toggleClass("d-none");
-	$(".button-text", btn).toggleClass("d-none");
+	btn.querySelector(".loading").classList.toggle("d-none");
+	btn.querySelector(".button-text").classList.toggle("d-none");
 	
-	$.ajax({
-	  url,
-	  method:"POST",
-	  data:{content}
-	}).done(function(data) {
-		$(".loading", btn).toggleClass("d-none");
-		$(".button-text", btn).toggleClass("d-none");
-
+	let formData = new FormData();
+	formData.append("content", content);
+					
+	fetch(url, {method:"POST", body:formData}).
+	then((response) => {
+		if (!response.ok) { throw new Error(response) }
+		return response.json()
+	}).then(function (data) {
 		let bg = "bg-success";
 		if (data.success) {		
 		} else {
 			bg = "bg-danger";
 		}
 		
-		$("#top-toast .toast-body").html(data.message)
-		$("#top-toast .toast").removeClass(["bg-danger", "bg-success"]).addClass(bg).addClass("show");
-		delay(() => $("#top-toast .toast").removeClass("show"), 5000)
+		displayToast(bg, "Save", data.message);
 		
 		if (data.success) {		
 			codeModal.modal('hide');
 		}
-	}).fail(function (data) {
-			alert(data.responseText);
-	}).always(function (data) {
-		$(".loading", btn).toggleClass("d-none");
-		$(".button-text", btn).toggleClass("d-none");
+
+		btn.querySelector(".loading").classList.toggle("d-none");
+		btn.querySelector(".button-text", btn).classList.toggle("d-none");
+	}).catch(error => {
+		console.log(error.statusText);
+		btn.querySelector(".loading").classList.toggle("d-none");
+		btn.querySelector(".button-text").classList.toggle("d-none");
 	});
 }
 
 function openCodeEditorModal(file = '', name = null, fileType = 'html') {
 	let url = `${loadFileUrl}&file=${file}`;
-	$.ajax({
-	  url
-	}).done(function(data) {
-		let codeModal = $('#codeEditorModal');
-		$(".modal-title .name", codeModal).html(name ?? file);
-		$(".modal-title .file", codeModal).html(file);
-		$("input[name=file]", codeModal).val(file);
+
+	fetch(url).
+	then((response) => {
+		if (!response.ok) { throw new Error(response) }
+		return response.text()
+	}).then(function (data) {
+		let codeModal = document.getElementById('codeEditorModal');
+		codeModal.querySelector(".modal-title .name").innerHTML = name ?? file;
+		codeModal.querySelector(".modal-title .file").innerHTML = file;
+		codeModal.querySelector("input[name=file]").value = file;
 		
 		if (fileType == 'js') {
 			fileType = 'javascript';
@@ -264,19 +271,20 @@ function openCodeEditorModal(file = '', name = null, fileType = 'html') {
 			},300);
 
 		} else {
-			$("textarea", codeModal).val(data);
+			codeModal.querySelector("textarea").value = data;
 		}
 		
-		codeModal.modal('show');
+		bootstrap.Modal.getOrCreateInstance(codeModal)?.show();
+	}).catch(error => {
+		console.log(error.statusText);
 	});
 }
 
 
-$(window).on( "mediaModal:fileActions", function( event, data ) { 
+window.addEventListener("mediaModal:fileActions", function(e) { 
+	let data = e.detail;
 	if (!data.isImage) {
-		return '<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm border-0" onclick="openCodeEditorModal(\'' + data.file + '\', \'' + data.name + '\', \'' + data.fileType + '\')"><i class="la la-edit"> Edit</i></a>';
-	} else {
-		return '';
+		e.detail.actions = '<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm border-0" onclick="openCodeEditorModal(\'' + data.file + '\', \'' + data.name + '\', \'' + data.fileType + '\')"><i class="la la-edit"> Edit</i></a>';
 	}
 });
 
@@ -296,7 +304,7 @@ if (codemirror == false) {
 	
 	this.isActive = true;
 	codemirror.getDoc().on("change", function (e, v) { 
-		//delay(Vvveb.Builder.setHtml(e.getValue()), 1000);
+		//delay(Vvveb.Builder.setinnerHTML = e.getValue()), 1000);
 	});
 }
 </script>

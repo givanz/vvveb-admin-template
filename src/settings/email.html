@@ -61,19 +61,19 @@ document.addEventListener('invalid', function(e){
 	
 function focusInvalidElement(e) {
 	//if (Form.checkValidity() == false) {
-		$(".is-invalid").removeClass("is-invalid");
+		document.querySelectorAll(".is-invalid").forEach(e => e.classList.remove("is-invalid"));
 		//get first invalid input
 		let element = Form.querySelector(':invalid');
-		let activeTab = $(element).parents(".tab-pane");
+		let activeTab = element.closest(".tab-pane");
 		
 		element.className += ' is-invalid';
 		//activate tab panel
-		$(".tab-pane").removeClass("show active");
-		activeTab.addClass("show active");
+		document.querySelectorAll(".tab-pane").forEach(e => e.classList.remove("show active"));
+		activeTab.classList.add("show active");
 		
 		//activate tab 
-		$(".nav-link").removeClass("active");
-		$("#" + (activeTab.attr("id") + "-tab")).addClass("active");
+		document.querySelectorAll(".nav-link").forEach(e => e.classList.remove("active"));
+		document.querySelector("#" + (activeTab.setAttribute("id") + "-tab"))?.classList.add("active");
 		element.focus();
 		//let list = Form.querySelectorAll(':invalid');
 		/*
@@ -83,10 +83,12 @@ function focusInvalidElement(e) {
 	//}
 }
 
-$("#input-mail-driver").change(function (e) {
-	$(".mail-engine").hide();
-	$(".mail-engine." + this.value).show();
-}).change();
+document.getElementById("input-mail-driver").addEventListener("change",function (e) {
+	document.querySelectorAll(".mail-engine").forEach(e => e.style.display = "none");
+	document.querySelector(".mail-engine." + this.value).style.display = "";
+});
+
+document.getElementById("input-mail-driver")?.dispatchEvent(new Event('change', {bubbles:true}));
 
 </script>
 

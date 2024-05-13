@@ -921,6 +921,7 @@
             <button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
               <img src="../../js/vvvebjs/icons/right-column-layout.svg" width="20" height="20">
             </button>
+
           </div>
 
 
@@ -937,7 +938,7 @@
 
 
             <div class="btn-group me-3" role="group">
-              <button class="btn btn-light" title="Designer Mode (Free component dragging)" id="designer-mode-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="setDesignerMode">
+              <button class="btn btn-light" title="Designer Mode (Free dragging)" id="designer-mode-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="setDesignerMode">
                 <i class="la la-hand-rock"></i>
               </button>
 
@@ -947,6 +948,10 @@
 
               <button class="btn btn-light" title="Fullscreen (F11)" id="fullscreen-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="fullscreen">
                 <i class="icon-expand-outline"></i>
+              </button>
+
+              <button class="btn btn-light active" title="Toggle navigator" id="toggle-tree-list" data-bs-toggle="button" data-vvveb-action="toggleTreeList" aria-pressed="true">
+                <i class="icon-layers-outline"></i>
               </button>
 
               <!-- button class="btn btn-light" title="Download" id="download-btn" data-vvveb-action="download" data-v-download="index.html">
@@ -964,7 +969,6 @@
               </a>
 
               <div class="btn-group responsive-btns" role="group">
-
 
                 <button id="mobile-view" data-view="mobile" class="btn btn-light" title="Mobile view" data-vvveb-action="viewport">
                   <i class="la la-mobile"></i>
@@ -1084,25 +1088,26 @@
 
         </div>
 
+
         <div id="left-panel">
 
           <div id="filemanager">
             <div class="header">
               <span class="text-secondary">
-                <i class="la la-file la-lg"></i> Templates
-              </span>
+                <i class="la la-file la-lg"></i>
+                <span>Templates<span></span>
 
-              <div class="btn-group responsive-btns me-1 float-end" role="group">
-                <button class="btn btn-outline-primary btn-sm btn-add" title="New file" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
-                  <span>Add new</span>
-                  <i class="icon-duplicate-outline"></i>
-                </button>
+                  <div class="btn-group responsive-btns me-1 float-end" role="group">
+                    <button class="btn btn-outline-primary btn-sm btn-add" title="New file" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
+                      <span>Add new</span>
+                      <i class="icon-duplicate-outline"></i>
+                    </button>
 
-                <!--  
+                    <!--  
 				  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
 					  <i class="la la-trash"></i> <small>Delete</small>
 				  </button> -->
-              </div>
+                  </div>
 
             </div>
 
@@ -1134,7 +1139,7 @@
                 <!-- li class="nav-item sections-tab">
 			<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections"><img src="../../js/vvvebjs/icons/list_group.svg" width="24" height="23"> <div><small>Sections</small></div></a>
 		  </li -->
-                <li class="nav-item component-properties-tab" style="display:none">
+                <li class="nav-item component-properties-tab d-none">
                   <a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab" aria-controls="properties" aria-selected="false" title="Properties">
                     <i class="icon-settings-outline"></i>
                     <!-- img src="../../js/vvvebjs/icons/filters.svg" height="23"-->
@@ -1156,7 +1161,7 @@
                 <div class="tab-pane show active sections" id="sections" role="tabpanel" aria-labelledby="sections-tab">
 
 
-                  <ul class="nav nav-tabs nav-fill sections-tabs" id="properties-tabs" role="tablist">
+                  <ul class="nav nav-tabs nav-fill sections-tabs" id="sections-tabs" role="tablist">
                     <li class="nav-item content-tab">
                       <a class="nav-link active" data-bs-toggle="tab" href="#sections-new-tab" role="tab" aria-controls="components" aria-selected="false">
                         <i class="icon-albums-outline"></i>
@@ -1396,7 +1401,7 @@
                           </li>
                         </ul>
 
-                        <div class="tab-content">
+                        <div class="tab-content" data-offset="35">
                           <div class="tab-pane show active" id="content-left-panel-tab" data-section="content" role="tabpanel" aria-labelledby="content-tab">
                             <div class="alert alert-dismissible fade show alert-light m-3" role="alert" style="">
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -1419,7 +1424,7 @@
                 <div class="tab-pane" id="configuration" role="tabpanel" aria-labelledby="configuration-tab">
 
                   <div class="drag-elements-sidepane sidepane">
-                    <div>
+                    <div data-offset="80">
                       <div class="component-properties">
                         <!-- color palette -->
                         <!--
@@ -1734,7 +1739,7 @@
                       <i class="la la-times la-lg"></i>
                     </div>
 
-                    <div class="mt-1 me-4 float-end">
+                    <div class="me-4 float-end">
 
                       <div class="form-check d-inline-block small me-1">
                         <input type="radio" id="add-section-insert-mode-after" value="after" checked="checked" name="add-section-insert-mode" class="form-check-input">
@@ -2087,7 +2092,6 @@
 	<div class="input-html-list-select">
 		
 		<div class="current-element">
-		
 		</div>
 		
 		<div class="popup">
@@ -2103,7 +2107,7 @@
 				{% } } %}
 			</select>
 			
-		      <div class="search">
+			<div class="search">
 				  <input class="form-control search" placeholder="Search elements" type="text">
 				  <button class="clear-backspace">
 					  <i class="la la-times"></i>
@@ -2111,8 +2115,7 @@
 			</div>
 			
 			<div class="elements">
-					{%=elements%}
-				</div>
+				{%=elements%}
 			</div>
 		</div>
 	</div>
@@ -2149,7 +2152,6 @@
 			
 			<div class="elements">
 					{%=elements%}
-				</div>
 			</div>
 		</div>
 	</div>
@@ -2281,7 +2283,7 @@
 				
 				<option value="">None</option>
 				{% for ( var i = 1; i <= 12; i++ ) { %}
-				<option value="{%=i%}" {% if ((typeof col_xl !== 'undefined') && col_lg == i) { %} selected {% } %}>{%=i%}</option>
+				<option value="{%=i%}" {% if ((typeof col_xl !== 'undefined') && col_xl == i) { %} selected {% } %}>{%=i%}</option>
 				{% } %}
 				
 			</select>
@@ -2293,7 +2295,7 @@
 				
 				<option value="">None</option>
 				{% for ( var i = 1; i <= 12; i++ ) { %}
-				<option value="{%=i%}" {% if ((typeof col_xxl !== 'undefined') && col_lg == i) { %} selected {% } %}>{%=i%}</option>
+				<option value="{%=i%}" {% if ((typeof col_xxl !== 'undefined') && col_xxl == i) { %} selected {% } %}>{%=i%}</option>
 				{% } %}
 				
 			</select>
@@ -2382,11 +2384,11 @@
         <script id="vvveb-input-colorinput" type="text/html">
 
 	<div>
-		<input name="{%=key%}" {%  if (typeof palette !== 'undefined' && value != false) { %} list="color-palette" {% } %} type="color" {% if (typeof value !== 'undefined' && value != false) { %} value="{%=value%}" {% } %}  pattern="#[a-f0-9]{6}" class="form-control form-control-color"/>
-		{%  if (typeof palette !== 'undefined' && value != false) { %}
-		<datalist id="color-palette">
-			{% for ( var i = 0; i < palette.length; i++ ) { %}
-				<option value="{%=palette[i].value%}"></option>
+		<input name="{%=key%}" {%  if (typeof palette !== 'undefined') { %} list="{%=key%}-color-palette" {% } %} type="color" {% if (typeof value !== 'undefined' && value != false) { %} value="{%=value%}" {% } %}  pattern="#[a-f0-9]{6}" class="form-control form-control-color" placeholder="#000000"/>
+		{%  if (typeof palette !== 'undefined') { %}
+		<datalist id="{%=key%}-color-palette">
+			{% for (const color in palette) { %}
+				<option>{%=palette[color]%}</option>
 			{% } %}		
 		{% } %}
 	</div>
@@ -2465,6 +2467,7 @@
 			<span>{%=title%}</span>
 			<div class="file-actions">
 				<button href="#" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
+				<a href="{%=url%}" target="_blank" class="view btn btn-outline-primary" title="View page"><i class="la la la-external-link-alt"></i></a>
 				<button href="#" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
 				<button href="#" class="duplicate btn btn-outline-primary" title="Clone"><i class="icon-copy-outline"></i></button>
 			</div>
@@ -2484,11 +2487,12 @@
 </script>
 
         <script id="vvveb-input-sectioninput" type="text/html">
-
-		<label class="header" data-header="{%=key%}" for="header_{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}><span>{%=header%}</span> <div class="header-arrow"></div></label> 
-		<input class="header_check" type="checkbox" {% if (typeof expanded !== 'undefined' && expanded == false) { %} {% } else { %}checked="true"{% } %} id="header_{%=key%}"> 
+	<div>
+		{% var namespace = '-' + Math.floor(Math.random() * 1000); %}
+		<label class="header" data-header="{%=key%}" for="header_{%=key%}{%=namespace%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}><span>{%=header%}</span> <div class="header-arrow"></div></label> 
+		<input class="header_check" type="checkbox" {% if (typeof expanded !== 'undefined' && expanded == false) { %} {% } else { %}checked="true"{% } %} id="header_{%=key%}{%=namespace%}"> 
 		<div class="section row" data-section="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}></div>		
-
+	</div>
 </script>
 
 
@@ -2567,7 +2571,8 @@
 		</label>
 		
 		<div class="tree">
-			<ol >
+			<ol>
+				<!--
 				<li data-component="Products" class="file">							
 					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
 					<input type="checkbox" id="idNaN">
@@ -2576,6 +2581,7 @@
 					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
 					<input type="checkbox" id="idNaN">
 				</li>
+				-->
 			</ol>
 		</div>
 	</div>
@@ -2650,15 +2656,38 @@
         <!--// end templates -->
 
 
+        <div id="tree-list">
+          <div class="header">
+            <div>Navigator</div>
+            <button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
+              <i class="icon-close"></i>
+            </button>
+          </div>
+          <div class="tree">
+            <ol>
+              <!--
+			<li data-component="Products" class="file">							
+				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+				<input type="checkbox" id="idNaN">
+			</li>
+			<li data-component="Posts" class="file">							
+				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+				<input type="checkbox" id="idNaN">
+			</li>
+			-->
+            </ol>
+          </div>
+        </div>
+
         <!-- code editor modal -->
         <div class="modal modal-full fade" id="codeEditorModal" tabindex="-1" aria-labelledby="codeEditorModal" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
             <div class="modal-content">
               <input type="hidden" name="file" value="">
 
-              <div class="modal-header">
+              <div class="modal-header justify-content-end">
                 <span class="modal-title"></span>
-                <div class="float-end">
+                <div class="">
                   <button type="button" class="btn btn-outline-secondary btn-icon" data-bs-dismiss="modal">
                     <i class="la la-times"></i>Close
                   </button>
@@ -2801,7 +2830,7 @@
                         <div class="col-sm-9 input">
                           <div>
                             <input name="name" type="text" class="form-control" placeholder="Name" required>
-                            <a href="#" class="float-end p-2" onclick="$('[data-key=content]').toggle();return false;">
+                            <a href="#" class="float-end p-2" onclick="document.querySelectorAll('[data-key=content]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none');return false;">
                               <span>More</span> +
                             </a>
                           </div>
@@ -2817,7 +2846,7 @@
                               <textarea name="content" class="form-control" placeholder="Lorem ipsum" rows="5">Lorem ipsum</textarea>
                             </div>
                             <div class="form-check mt-2">
-                              <input class="form-check-input" type="checkbox" name="add-menu" id="add-menu" value="true" onchange="$('[data-key=menu]').toggle()">
+                              <input class="form-check-input" type="checkbox" name="add-menu" id="add-menu" value="true" onchange="document.querySelectorAll('[data-key=menu]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none')">
                               <label class="form-check-label" for="add-menu">Add to menu</label>
                             </div>
                           </div>
@@ -3131,7 +3160,9 @@
         </div>
 
 
-        <script id="jquery-js" src="js/jquery.min.js"></script>
+        <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
         <script id="popper-js" src="js/popper.min.js"></script>
         <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
         <script id="theme-js" src="js/theme.js"></script>
@@ -3215,7 +3246,7 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 -->
 
         <!-- autocomplete plugin used by autocomplete input-->
-        <script src="libs/autocomplete/jquery.autocomplete.js"></script>
+        <script src="libs/autocomplete/autocomplete.js"></script>
         <script type="module" src="../../js/admin.js"></script>
         <script src="../../js/vvvebjs/elements-changes.js"></script>
 
@@ -3226,8 +3257,7 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 let pages =  { $this->pages };
 Vvveb.data =  { $this->data };
 
-$(function() {
-
+let ready = function() {
 	let firstPage = Object.keys(pages)[0];
 	Vvveb.Builder.init(pages[firstPage]["url"], function() {
 		//load code after page is loaded here
@@ -3242,6 +3272,7 @@ $(function() {
 
 	Vvveb.FileManager.init(fileManagerComponents);
 	Vvveb.SectionList.init(fileManagerComponents);
+	Vvveb.TreeList.init();
 
 	Vvveb.FileManager.addPages(pages);
 
@@ -3256,16 +3287,44 @@ $(function() {
 	}	
 
 	let menuSelect = tmpl('vvveb-input-select', {key:"menu_id", options});
-	$("#new-page-modal [name=menu_id]").html(menuSelect);
-});
+	document.querySelector("#new-page-modal [name=menu_id]").innerHTML = menuSelect;
+}
 
-$("#new-page-modal input[name=type]").click(function () {
-	let sections = $("#new-page-modal .form > div");
+
+if (document.readyState !== "loading") {
+	ready();
+} else {
+	document.addEventListener('DOMContentLoaded', ready);
+}
+
+
+let newPageTab = function (event) {
+	let active = this.value;
+	let sections = document.querySelectorAll("#new-page-modal .form > div");
 	
-	$("input,select", sections.hide()).attr("disabled", true);
-	$("input,select", sections.filter("." + this.value).show()).removeAttr("disabled");
+	sections.forEach((section, i) => {
+		let selected = section.classList.contains(active);
+		
+		if (selected) {
+			section.style.display = "";
+		} else {
+			section.style.display = "none";
+		}
+		
+		section.querySelectorAll("input,select").forEach((el, i) => {
+			if (selected) {
+				el.removeAttribute("disabled");
+			} else {
+				el.setAttribute("disabled", true);
+			}
+		});
+	});
+	//$("input,select", sections.hide()).setAttribute("disabled", true);
+	//document.querySelectorAll("input,select", sections.filter("." + this.value).show()).removeAttribute("disabled");
 	;
-});
+};
+
+document.querySelectorAll("#new-page-modal input[name=type]").forEach(e => e.addEventListener("click", newPageTab));
 </script>
 
         <!-- Modal -->
@@ -3288,15 +3347,16 @@ $("#new-page-modal input[name=type]").click(function () {
 
         <!-- save toast -->
         <div class="toast-container">
-          <div class="toast position-fixed end-0 bottom-0 me-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-            <div class="toast-header text-white">
+          <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+            <div class="toast-header bg-success bg-opacity-25 border-0">
               <strong class="me-auto">Page save</strong>
               <!-- <small class="badge bg-success">status</small> -->
-              <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+              <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body ">
               <div class="flex-grow-1">
-                <div class="message">Elements saved!
+                <div class="message">
+                  <div>Elements saved!</div>
                   <div>Template backup was saved!</div>
                   <div>Template was saved!</div>
                 </div>

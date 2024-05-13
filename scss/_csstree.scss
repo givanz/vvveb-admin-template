@@ -51,12 +51,13 @@
 			border:1px solid transparent;
 			
 			&:hover, &.active {
-				background-color:rgba(var(--bs-link-color), 0.07);
+				//background-color:rgba(var(--bs-link-color-rgb), 0.05);
+				color:var(--bs-link-color);
 			}
 			
 			&:hover {
-				background-color:rgba(var(--bs-link-color), 0.07);
-				//border: 1px solid rgba(var(--bs-link-color), 0.05);
+				background-color:rgba(var(--bs-link-color-rgb), 0.05);
+				//border: 1px solid rgba(var(--bs-link-color), 0.1);
 				
 				.file-actions {
 					display:block;
@@ -87,8 +88,8 @@
 			.file-actions {
 				display:none;
 				position:absolute;
-				top:-1px;
-				right:5px;
+				top:0px;
+				right:0px;
 				
 				.btn {
 					padding:0.1rem 0.3rem;
@@ -150,6 +151,7 @@
 			margin:0px;
 			font-size:12px;
 			line-height:28px;
+
 			/*
 			p {
 				margin: 0;
@@ -177,5 +179,17 @@
 			> li { display: block; margin: 0 0 0.2em;  /* 2px */}
 			> li:last-child { margin: 0 0 0.3em; /* 1px */ }
 		}
+	}
+}
+
+//dark mode support for svg images 
+[data-bs-theme="dark"] {
+	.tree > ol li.active label {
+		color: var(--bs-primary);
+	}
+	
+	.tree > ol li label {
+		filter:invert(93%) hue-rotate(180deg);
+		color: var(--bs-dark);
 	}
 }

@@ -329,11 +329,11 @@
 
 @@include('../_includes/footer-scripts.html')
 
-<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script src="libs/autocomplete/autocomplete.js"></script>	
 
 <script> 
-	$('input.autocomplete').autocomplete();
-	$('input.autocomplete-list').autocompleteList();
+document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
+document.querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
 </script>
 
 @@include('../_includes/footer.html')

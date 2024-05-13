@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="user-form" action="" method="post" class="needs-validation" data-v-user>
+	<form id="user-form" action="" method="post" class="settings" data-v-user>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions clearfix">
 			<div class="title">
@@ -44,8 +44,129 @@
 				@@include('../_includes/notifications.html')
 				
 				@@include('_user_form.html', {"prefix": "user"})
+			
+				<hr class="border opacity-50 mb-5">
 
-	
+				<div class="row">
+					<div class="col-md-6">
+						<h6>Orders</h6>
+						<div data-v-component-orders data-v-user_id="url">
+				 
+						<table class="table table-hover border-top">
+							<thead  data-v-if="count > 0">
+							<tr>
+								<th width="1">#</th>
+								<!-- <th>User</th> -->
+								<th>Status</th>
+								<th>Date added</th>
+								<th>Total</th>
+								<th>Action</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr data-v-order>
+								<td scope="row" class="text-center">1</td>
+								<!-- <td><span data-v-order-first_name>John</span> <span data-v-order-last_name>Doe</span></td> -->
+								<td width="100" data-v-order-order_status>Pending</td>
+								<td width="150" data-v-order-created_at data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
+								<td width="150"><span class="price" data-v-order-total_formatted>100%</span></td>
+								<td class="text-center" width="70">
+									
+									
+									<a href="#"
+									   class="btn btn-primary btn-sm"
+									   
+									   data-v-order-url>
+											<i class="la la-hand-pointer"></i>
+									</a>
+										
+								</td>
+							</tr>
+							<tr data-v-order>
+								<td scope="row" class="text-center">1</td>
+								<td width="100">John Doe</td>
+								<td>Pending</td>
+								<td>31/05/2018</td>
+								<td class="text-center">$1,005.00</td>
+								<td class="text-center">
+									<a href="#" class="btn btn-primary btn-sm" >
+										<i class="la la-hand-pointer"></i>
+									</a>
+								</td>
+							</tr>
+							<tr data-v-order>
+								<td scope="row" class="text-center">1</td>
+								<td width="100">John Doe</td>
+								<td>Pending</td>
+								<td>31/05/2018</td>
+								<td class="text-center">$1,005.00</td>
+								<td class="text-center">
+									<a href="#" class="btn btn-primary btn-sm">
+										<i class="la la-hand-pointer"></i>
+									</a>
+								</td>
+							</tr>
+							<tr data-v-if-not="count >= 1">
+							  <td colspan="100">
+								<div class="text-center">
+								  <div>
+									<i class="la la-shopping-cart "></i>
+									<span>No orders to display!</span>
+								  </div>
+								</div>
+							  </td>
+							</tr>
+							</tbody>
+						</table>
+						</div>	
+					</div>
+					
+					<div class="col-md-6">
+						<h6>Addresses</h6>
+						<div class="table-responsive"  data-v-component-user-address data-v-user_id="url">
+						<table class="table table-hover border-top">
+							 <tbody>
+							 <tr data-v-user_address>
+								  <td class="text-start">
+								  
+									<span data-v-user_address-first_name></span>
+									<span data-v-user_address-last_name></span>
+									<br>
+									<span data-v-user_address-company></span>
+									<br>
+									<span data-v-user_address-address_1></span>
+									<span data-v-user_address-address_2></span>
+									<span data-v-user_address-city></span>
+									<span data-v-user_address-post_code></span>
+
+								  </td>
+								  <td class="text-end align-middle">
+									  <a href="" title="Edit" class="btn btn-outline-primary btn-sm border-0" data-v-user_address-url>
+										<i class="la la-pen"></i>
+									  </a> 
+									  <a href="" title="Delete" class="btn btn-outline-danger btn-sm border-0" data-v-user_address-delete-url>
+										<i class="la la-trash"></i>
+									  </a>
+								 </td>
+							</tr>
+							<tr data-v-if-not="count >= 1">
+							  <td colspan="100">
+								<div class="text-center">
+								  <div>
+									<i class="la la-map-pin"></i>
+									<span>No addresses to display!</span>
+								  </div>
+								</div>
+							  </td>
+							</tr>
+							</tbody>
+						</table>
+					  </div>	
+				
+					</div>
+					
+				</div>
+			
 			</div>
         </div>
         </form>

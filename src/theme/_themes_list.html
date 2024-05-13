@@ -14,7 +14,7 @@
 				<div class="card-body">
 					<div class="info">
 						<h6 class="card-title text-primary" data-v-theme-name>Theme name</h6>
-						<div class="text-muted"><span>by</span><span data-v-theme-author>Author</span></div>					
+						<div class="text-muted" data-v-if="theme.author"><span>by</span><span data-v-theme-author>Author</span></div>					
 					</div>
 
 					@@if (actions) {
@@ -76,7 +76,7 @@
 						</div>
 
 						<div>
-							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-theme-duplicate-url>
+							<a href="#" class="btn btn-outline-secondary btn-sm" onclick="duplicateTheme(this)" data-v-theme-duplicate-url>
 								<i class="icon-copy"></i>
 								<span>Duplicate</span>
 							</a>
@@ -109,7 +109,7 @@
 				<div class="card-body">
 					<div class="info">
 						<h6 class="card-title text-primary" data-v-theme-name>Theme name</h6>
-						<div class="text-muted"><span>by</span><span data-v-theme-author>Author</span></div>					
+						<div class="text-muted" data-v-if="theme.author"><span>by</span><span data-v-theme-author>Author</span></div>					
 					</div>
 
 					@@if (actions) {
@@ -194,7 +194,7 @@
 				<div class="card-body">
 					<div class="info">
 						<h6 class="card-title text-primary" data-v-theme-name>Theme name</h6>
-						<div class="text-muted"><span>by</span><span data-v-theme-author>Author</span></div>					
+						<div class="text-muted" data-v-if="theme.author"><span>by</span><span data-v-theme-author>Author</span></div>					
 					</div>
 
 					@@if (actions) {

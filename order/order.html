@@ -918,7 +918,7 @@
 
           <div class="dropdown-menu">
             <div data-v-site>
-              <a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+              <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
                 <!-- i class="la la-circle la-lg me-2"></i -->
                 <span data-v-site-name class="flex-grow-1">Default website</span>
                 <i class="la la-external-link-alt"></i>
@@ -950,47 +950,68 @@
 
           <div class="dropdown-menu">
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
-                <span class="flex-grow-1">Assets</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
+                  <span>Assets</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
-                <span class="flex-grow-1">Templates</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
+                  <span>Templates</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
-                <span class="flex-grow-1">Database</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-server-outline me-2 text-body-tertiary"></i>
+                  <span>Database</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
-                <span class="flex-grow-1">Page cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-outline me-2 text-body-tertiary"></i>
+                  <span>Page cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
-                <span class="flex-grow-1">Image cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-image-outline me-2 text-body-tertiary"></i>
+                  <span>Image cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
-                <span class="flex-grow-1">Model cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
+                  <span>Model cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
 
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
-                <span class="flex-grow-1">All cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-sync-outline me-2 text-body-tertiary"></i>
+                  <span>All cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1397,12 +1418,12 @@
                 </div>
                 <div class="mt-4">
                   <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
                         <div class="customer_details">
                           <div class="clearfix">
                             <h6 class="float-start">Customer Details</h6>
-                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.customer_details').toggleClass('edit');">
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="document.querySelector('.customer_details').classList.toggle('edit');">
                               <i class="la la-pen"></i> Edit
                             </div>
                           </div>
@@ -1457,12 +1478,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
                         <div class="order_details">
                           <div class="clearfix">
                             <h6 class="float-start">Order Details</h6>
-                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.order_details').toggleClass('edit');">
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="document.querySelector('.order_details').classList.toggle('edit');">
                               <i class="la la-pen"></i> Edit
                             </div>
                           </div>
@@ -1603,7 +1624,7 @@
 
                                   <div class="accordion-item" data-v-payment>
                                     <div class="accordion-header" role="tab">
-                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                      <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
                                         <input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
                                         <span data-v-payment-title>Default payment</span>
                                       </label>
@@ -1619,7 +1640,7 @@
                                   </div>
                                   <div class="accordion-item" data-v-payment>
                                     <div class="accordion-header" role="tab">
-                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                      <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
                                         <input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
                                         <span data-v-payment-title>Credit card payment</span>
                                       </label>
@@ -1663,7 +1684,7 @@
 
                                   <div class="accordion-item" data-v-shipping>
                                     <div class="accordion-header" role="tab">
-                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                      <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
                                         <input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
                                         <span data-v-shipping-title>Default shipping</span>
                                       </label>
@@ -1680,7 +1701,7 @@
 
                                   <div class="accordion-item" data-v-shipping>
                                     <div class="accordion-header" role="tab">
-                                      <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+                                      <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
                                         <input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
                                         <span data-v-shipping-title>Fast shipping</span>
                                       </label>
@@ -1729,12 +1750,12 @@
 
                       </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
                         <div class="billing_address">
                           <div class="clearfix">
                             <h6 class="float-start">Billing Address</h6>
-                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.billing_address').toggleClass('edit');">
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="document.querySelector('.billing_address').classList.toggle('edit');">
                               <i class="la la-pen"></i> Edit
                             </div>
                           </div>
@@ -1831,12 +1852,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
                         <div class="shipping_address">
                           <div class="clearfix">
                             <h6 class="float-start">Shipping Address</h6>
-                            <div class="btn btn-outline-success btn-sm float-end" onclick="$('.shipping_address').toggleClass('edit');">
+                            <div class="btn btn-outline-success btn-sm float-end" onclick="document.querySelector('.shipping_address').classList.toggle('edit');">
                               <i class="la la-pen"></i> Edit
                             </div>
                           </div>
@@ -1956,22 +1977,24 @@
 
                     <div class="product-details p-4" data-v-component-product>
 
-                      <div class="mb-3 row">
-                        <label for="input-name" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-product-name maxlength="64" required>
+                      <div>
+                        <div class="mb-3 row">
+                          <label for="input-name" class="col-sm-2 col-form-label">Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-name" placeholder="Name" name="name" data-v-product-name maxlength="64" required>
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="mb-3 row">
-                        <label for="input-code" class="col-sm-2 col-form-label">Price</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-code" placeholder="Code" name="language[code]" data-v-product-price maxlength="12" required>
+                        <div class="mb-3 row">
+                          <label for="input-code" class="col-sm-2 col-form-label">Price</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-price" placeholder="Code" name="price" data-v-product-price maxlength="12" required>
+                          </div>
                         </div>
                       </div>
 
                       <div class="mb-3 text-end">
-                        <button class="btn btn-primary btn-add-product">
+                        <button class="btn btn-primary btn-add-product" type="submit">
                           <i class="la la-plus"></i>
                           <span>Add product</span>
                         </button>
@@ -2004,6 +2027,22 @@
                           <a href="#40" target="_blank" data-v-order-product-url>
                             <span data-v-order-product-name>Product name</span>
                           </a>
+
+                          <div class="option" data-v-if="product.option_value">
+                            <div class="" data-v-product-option>
+                              <span data-v-product-option-option>Color</span>: <span data-v-product-option-name>Red</span>
+                              <span data-v-if="value.price">(<span data-v-product-option-price_formatted></span>)</span>
+                            </div>
+                            <div class="" data-v-product-option>
+                              <span data-v-product-option-option>Size</span>: <span data-v-product-option-name>XL</span>
+                              <span data-v-if="value.price">(<span data-v-product-option-price_formatted></span>)</span>
+                            </div>
+                            <div class="" data-v-product-option>
+                              <span data-v-product-option-option>Material</span>: <span data-v-product-option-name>Wool</span>
+                              <span data-v-if="value.price">(<span data-v-product-option-price_formatted></span>)</span>
+                            </div>
+                          </div>
+
                           <div class="price">
                             <span data-v-order-product-price_tax_formatted>$160.40</span>
                           </div>
@@ -2014,7 +2053,7 @@
                           <span data-v-order-product-quantity>1</span>
                         </td>
                         <td class="text-end unit-price">
-                          <span data-v-order-product-price>1</span>
+                          <span data-v-order-product-price_formatted>1</span>
                         </td>
                         <!-- <td class="text-end price" data-v-order-product-price>$123.20</td> -->
                         <td class="text-end total px-4">
@@ -2058,6 +2097,7 @@
 
                 </div>
               </form>
+
             </div>
 
 
@@ -2072,7 +2112,7 @@
 
                 <div class="card-body">
 
-                  <div class="table-responsive">
+                  <div class="table-responsive" data-v-if="this.log">
                     <table class="table">
                       <thead>
                         <tr>
@@ -2080,6 +2120,12 @@
                           <th class="text-start">Comment</td>
                           <th class="text-start">Status</td>
                           <th class="text-start">User Notified</td>
+                          <th class="text-start">
+                            <span>Public note</span>
+                            <span title="Customer can see this note">
+                              <i class="la la-lg la-question-circle text-primary"></i>
+                            </span>
+                            </td>
                         </tr>
                       </thead>
                       <tbody>
@@ -2107,6 +2153,10 @@
                           <td class="text-start">
                             <span class="badge border bg-success-subtle text-body" data-v-if="log.notify">Yes</span>
                             <span class="badge border text-body bg-body-tertiary" data-v-if-not="log.notify">No</span>
+                          </td>
+                          <td class="text-start">
+                            <span class="badge border bg-success-subtle text-body" data-v-if="log.public">Yes</span>
+                            <span class="badge border text-body bg-body-tertiary" data-v-if-not="log.public">No</span>
                           </td>
                         </tr>
                       </tbody>
@@ -2159,10 +2209,10 @@
                           <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify">
                         </div>
                       </div>
-                      <label class="col-form-label mx-2" for="input-notify-note">Include note in notification</label>
+                      <label class="col-form-label mx-2" for="input-notify-note">Include note in notification, public note</label>
                       <div class="">
                         <div class="form-check">
-                          <input type="checkbox" class="form-check-input" name="log[notify-note]" value="1" id="input-notify-note">
+                          <input type="checkbox" class="form-check-input" name="log[public]" value="1" id="input-public">
                         </div>
                       </div>
                       <div class="ms-4">
@@ -2188,7 +2238,9 @@
   </div>
 
 
-  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
   <script id="popper-js" src="js/popper.min.js"></script>
   <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
   <script id="theme-js" src="js/theme.js"></script>
@@ -2196,47 +2248,60 @@
   <!-- vvveb modules code -->
   <script id="admin-js" type="module" src="../../js/admin.js"></script>
 
-  <script src="libs/autocomplete/jquery.autocomplete.js"></script>
+  <script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>
 
   <script>
-$("#order-form input[type=text]").change(function () {
-	let name = this.name;
-	let textSelector = "[data-" + name + "-text]";
-	$(textSelector).html(this.value);
+document.querySelector("#order-form").addEventListener("change", function (e) {
+	let element = e.target.closest("input[type=text]");
+	if (element) {
+		let name = element.name;
+		let textSelector = "[data-" + name + "-text]";
+		console.log(textSelector);
+		console.log(document.querySelector(textSelector));
+		document.querySelector(textSelector).innerHTML = element.value;
+	}
 	
 });
 
-$("#order-form select").change(function () {
-	let name = this.dataset.text;
-	let value = this.options[this.selectedIndex].text
-	let textSelector = "[" + name + "]";
-	$(textSelector).html(value);
-	
+document.querySelector("#order-form").addEventListener("change", function (e) {
+	let element = e.target.closest("select");
+	if (element) {
+		let name = element.dataset.text;
+		let value = element.options[element.selectedIndex].text
+		let textSelector = "[" + name + "]";
+		document.querySelector(textSelector).innerHTML = element.value;
+	}	
 });
 
 //if new order toggle forms visibility
-let order_id = $("[name=order_id]");
-if (!order_id.val()) {
-	$('.customer_details').toggleClass('edit');
-	$('.order_details').toggleClass('edit');
-	$('.shipping_address').toggleClass('edit');
-	$('.billing_address').toggleClass('edit');
+let order_id = document.querySelector("[name=order_id]");
+if (!order_id || !order_id.value) {
+	document.querySelector('.customer_details').classList.toggle('edit');
+	document.querySelector('.order_details').classList.toggle('edit');
+	document.querySelector('.shipping_address').classList.toggle('edit');
+	document.querySelector('.billing_address').classList.toggle('edit');
 }
 
-$(".product-details").hide();
-function onSelect(value, text, name, listName) {
-	$(".product-details").html("").show();
-	$(".product-details").load(window.location.href + " .product-details > div", {product_id:value});
-	
+let productDetails = document.querySelector(".product-details > div");
+if (productDetails) {
+	productDetails.style.display = "none";
+
+	function onSelect(value, text, name, listName) {
+		productDetails.innerHTML = "";
+		productDetails.style.display = "";
+		loadAjax(window.location.href, ".product-details > div", null, {product_id:value},  "post");
+		//document.querySelector(".product-details").load(window.location.href + " .product-details > div", {product_id:value});
+		
+	}
+	/*
+	document.querySelectorAll(".product-details").on("click", ".btn-add-product", function (e) {
+		document.querySelectorAll(".product-details").hide();
+		e.preventDefault();
+		return false;
+	});
+	*/
+	let autocomplete = new _AutocompleteInput(document.querySelector('input.autocomplete'), {onSelect});
 }
-
-$(".product-details").on("click", ".btn-add-product", function (e) {
-	$(".product-details").hide();
-	e.preventDefault();
-	return false;
-});
-
-$('input.autocomplete').autocomplete({onSelect});
 </script>
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
@@ -2258,15 +2323,16 @@ $('input.autocomplete').autocomplete({onSelect});
 
   <!-- save toast -->
   <div class="toast-container">
-    <div class="toast position-fixed end-0 bottom-0 me-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-      <div class="toast-header text-white">
+    <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header bg-success bg-opacity-25 border-0">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->
-        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body ">
         <div class="flex-grow-1">
-          <div class="message">Elements saved!
+          <div class="message">
+            <div>Elements saved!</div>
             <div>Template backup was saved!</div>
             <div>Template was saved!</div>
           </div>

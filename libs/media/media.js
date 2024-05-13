@@ -44,7 +44,7 @@ class MediaModal {
 									<input type="search" id="media-search-input" placeholder="Find a file.." />
 								</div>
 								
-								<button class="btn btn-outline-secondary btn-icon me-5 float-end" 
+								<button class="btn btn-outline-secondary btn-sm btn-icon me-5 float-end border-secondary-subtle" 
 								   data-bs-toggle="collapse" 
 								   data-bs-target=".upload-collapse" 
 								   aria-expanded="false" 
@@ -60,13 +60,13 @@ class MediaModal {
 
 							<div class="upload-collapse collapse">
 
-								<button id="upload-close" type="button" class="btn btn-light" aria-label="Close" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="true">
+								<button id="upload-close" type="button" class="btn btn-sm btn-light" aria-label="Close" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="true">
 								   <span aria-hidden="true"><i class="la la-times la-lg"></i></span>
 								</button>
 								
 							   <h3>Drop or choose files to upload</h3>
 							   
-							   <input type="file" multiple> 
+							   <input type="file" multiple class=""> 
 								
 								<div class="status"></div>
 							</div>
@@ -100,6 +100,7 @@ class MediaModal {
 			</div>
 		  </div>
 		</div>`;
+		
 		this.response = [],
 		this.currentPath = '';
 		this.breadcrumbsUrls = [];
@@ -111,41 +112,49 @@ class MediaModal {
 	}
 	
 	addModalHtml() {
-		if (this.isModal) $("body").append(this.modalHtml);
-		$("#MediaModal .save-btn").on("click", () => this.save());
+		if (this.isModal) document.body.append(generateElements(this.modalHtml)[0]);
+		document.querySelector("#MediaModal .save-btn").addEventListener("click", () => this.save());
 	}
 	
 	showUploadLoading() {
-		$("#MediaModal .upload-collapse .status").html(`
+		document.querySelector("#MediaModal .upload-collapse .status").innerHTML = `
 		<div class="spinner-border" style="width: 5rem; height: 5rem;margin: 5rem auto; display:block" role="status">
 		  <span class="visually-hidden">Loading...</span>
-		</div>`);
+		</div>`;
 	}
 
 	hideUploadLoading() {
-		$("#MediaModal .upload-collapse .status").html('');
+		document.querySelector("#MediaModal .upload-collapse .status").innerHTML = '';
 	}
 	
 	save() {
 		
-		let file = $("#MediaModal .files input:checked").eq(0).val();
-		if (this.targetInput) {
-			$(this.targetInput).val(file).trigger("change");
-		}
+		let file = document.querySelector("#MediaModal .files input:checked").value ?? false;
+		let src = file;
+		
+		if (!file) return;
 
 		if (file.indexOf("//") == -1) {
-			file = this.mediaPath + file;
+			src = this.mediaPath + file;
 		}
 
 		if (this.targetThumb) {
-			$(this.targetThumb).attr("src", file);
+			document.querySelector(this.targetThumb).setAttribute("src", src);
 		}
 		
 		if (this.callback) {
-			this.callback(file);
+			this.callback(src);
 		}
-		
-		if (this.isModal) $("#MediaModal").modal('hide');
+
+		if (this.targetInput) {
+			let input = document.querySelector(this.targetInput);
+			input.value = file;
+			const e = new Event("change",{bubbles: true});
+			input.dispatchEvent(e);
+		}
+
+		let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('MediaModal'));
+		if (this.isModal) modal.hide();
 	}
 	
 	init() {
@@ -156,11 +165,21 @@ class MediaModal {
 			this.initGallery();
 			this.isInit = true;
 
-			$(".filemanager input[type=file]").on("change", this.onUpload);
-			$(".filemanager").on("click", ".btn-delete", this.deleteFile);
-			$(".filemanager").on("click", ".btn-rename", this.renameFile);
-			
-			$(window).trigger( "mediaModal:init", { type:this.type, targetInput:this.targetInput, targetThumb:this.targetThumb, callback:this.callback} );
+			document.querySelector(".filemanager input[type=file]").addEventListener("change", this.onUpload);
+			document.querySelector(".filemanager").addEventListener("click", function (e) {
+				let element = e.target.closest(".btn-delete");
+				if (element) {
+					 self.deleteFile(element);
+				} else {
+					element = e.target.closest(".btn-rename");
+					if (element) {
+						 self.renameFile(element);
+					}
+				}
+			});
+
+			const event = new CustomEvent( "mediaModal:init", {detail: { type:this.type, targetInput:this.targetInput, targetThumb:this.targetThumb, callback:this.callback} });
+			window.dispatchEvent(event);			
 		}
 	}
 	
@@ -182,35 +201,42 @@ class MediaModal {
 		this.callback = callback;
 		this.init();
 
-		if (this.isModal) $('#MediaModal').modal('show');
+		let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('MediaModal'));
+		if (this.isModal) modal.show();
 	}
 
 
 	initGallery() {
-		this.filemanager = $('.filemanager'),
-		this.breadcrumbs = $('.breadcrumbs'),
-		this.fileList = this.filemanager.find('.data');
+		this.filemanager = document.querySelector('.filemanager'),
+		this.breadcrumbs = document.querySelector('.breadcrumbs'),
+		this.fileList = this.filemanager.querySelector('.data');
 		let _this = this;
 
 		// Start by fetching the file data from scan.php with an AJAX request
-		$.get(mediaScanUrl, function(data) {
-		//$.get('/this.filemanager/scan.php', function(data) {
-			
-
+		fetch(mediaScanUrl)
+		.then((response) => {
+			if (!response.ok) { throw new Error(response) }
+			return response.json();
+		})
+		.then((data) => {
 			 _this.response = [data],
 			 _this.currentPath = '',
 			 _this.breadcrumbsUrls = [];
 
-			var folders = [],
+			let folders = [],
 				files = [];
 				
-			$(window).trigger('hashchange');	
+			window.dispatchEvent(new HashChangeEvent("hashchange"));
+		})
+		.catch(error => {
+			console.log(error.statusText);
+			displayToast("bg-danger", "Error", "Error loading media!");
 		});
 
 		// This event listener monitors changes on the URL. We use it to
 		// capture back/forward navigation in the browser.
 
-		$(window).on('hashchange', function(){
+		window.addEventListener('hashchange', function(){
 
 			_this.goto(window.location.hash);
 
@@ -221,13 +247,14 @@ class MediaModal {
 
 
 		// Hiding and showing the search box
+		let search = this.filemanager.querySelector('input[type=search]');
 
-		this.filemanager.find('.search').click(function(){
+		this.filemanager.querySelector('.search').addEventListener("click", function(e) {
+			let _search = this;
 
-			var search = $(this);
-
-			search.find('span').hide();
-			search.find('input[type=search]').show().focus();
+			_search.querySelectorAll('span').forEach(function (el,i) { el.style.display = "none";});
+			search.style.display = "block";
+			search.focus();
 
 		});
 
@@ -235,16 +262,17 @@ class MediaModal {
 		// Listening for keyboard input on the search field.
 		// We are using the "input" event which detects cut and paste
 		// in addition to keyboard input.
-		this.filemanager.find('input[type=search]').on('input', function(e){
 
-			var folders = [];
-			var files = [];
+		search.addEventListener('input', function(e) {
 
-			var value = this.value.trim();
+			let folders = [];
+			let files = [];
+
+			let value = this.value.trim();
 
 			if(value.length) {
 
-				_this.filemanager.addClass('searching');
+				_this.filemanager.classList.add('searching');
 
 				// Update the hash on every key stroke
 				window.location.hash = 'search=' + value.trim();
@@ -253,16 +281,18 @@ class MediaModal {
 
 			else {
 
-				_this.filemanager.removeClass('searching');
+				_this.filemanager.classList.remove('searching');
 				window.location.hash = encodeURIComponent(_this.currentPath);
 
 			}
 
-		}).on('keyup', function(e){
+		});
+		
+		search.addEventListener('keyup', function(e) {
 
 			// Clicking 'ESC' button triggers focusout and cancels the search
 
-			var search = $(this);
+			let search = this;
 
 			if(e.keyCode == 27) {
 
@@ -270,17 +300,19 @@ class MediaModal {
 
 			}
 
-		}).focusout(function(e){
+		});
+		
+		search.addEventListener("focusout", function(e) {
 
 			// Cancel the search
 
-			var search = $(this);
+			let search = this;
 
-			if(!search.val().trim().length) {
+			if(!search.value.trim().length) {
 
 				window.location.hash = encodeURIComponent(_this.currentPath);
-				search.hide();
-				search.parent().find('span').show();
+				search.style.display = 'none';
+				search.parentNode.querySelectorAll('span').style.display = '';
 
 			}
 
@@ -288,42 +320,50 @@ class MediaModal {
 
 		// Clicking on folders
 
-		this.fileList.on('click', 'li.folders', function(e){
-			e.preventDefault();
+		this.fileList.addEventListener('click', function(e) {
+			let el = event.target.closest('li.folders');
+			if (el) {
+				e.preventDefault();
 
-			var nextDir = $(this).find('a.folders').attr('href');
+				let nextDir = el.querySelector('a').getAttribute('href');
 
-			if(_this.filemanager.hasClass('searching')) {
+				if(_this.filemanager.classList.contains('searching')) {
 
-				// Building the this.breadcrumbs
+					// Building the this.breadcrumbs
 
-				_this.breadcrumbsUrls = _this.generateBreadcrumbs(nextDir);
+					_this.breadcrumbsUrls = _this.generateBreadcrumbs(nextDir);
 
-				_this.filemanager.removeClass('searching');
-				_this.filemanager.find('input[type=search]').val('').hide();
-				_this.filemanager.find('span').show();
+					_this.filemanager.classList.remove('searching');
+					let search = _this.filemanager.querySelector('input[type=search]');
+					search.val('')
+					search.style.display = 'none';
+					_this.filemanager.querySelectorAll('span').forEach(e => e.style.display = '');
+				}
+				else {
+					_this.breadcrumbsUrls.push(nextDir);
+				}
+
+				window.location.hash = encodeURIComponent(nextDir);
+				_this.currentPath = nextDir;
 			}
-			else {
-				_this.breadcrumbsUrls.push(nextDir);
-			}
-
-			window.location.hash = encodeURIComponent(nextDir);
-			_this.currentPath = nextDir;
 		});
 
 
 		// Clicking on this.breadcrumbs
 
-		this.breadcrumbs.on('click', 'a', function(e){
-			e.preventDefault();
-			
-			var index = _this.breadcrumbs.find('a').index($(this)),
-				nextDir = _this.breadcrumbsUrls[index];
-				nextDir = this.attributes.href.value;
+		this.breadcrumbs.addEventListener('click', function(e){
+			let el = event.target.closest('a');
+			if (el) {
+				e.preventDefault();
 
-			_this.breadcrumbsUrls.length = Number(index);
-			window.location.hash = encodeURIComponent(nextDir);
+				let index = [...el.parentNode.children].indexOf(el),
+					nextDir = _this.breadcrumbsUrls[index];
+					nextDir = el.getAttribute("href");
 
+				_this.breadcrumbsUrls.length = Number(index);
+
+				window.location.hash = encodeURIComponent(nextDir);
+			}
 		});
 	}
 
@@ -336,13 +376,13 @@ class MediaModal {
 			let _this = this;
 
 			if (hash.length) {
-				var rendered = '';
+				let rendered = '';
 
 				// if hash has search in it
 
 				if (hash[0] === 'search') {
 
-					this.filemanager.addClass('searching');
+					this.filemanager.classList.add('searching');
 					rendered = _this.searchData(_this.response, hash[1].toLowerCase());
 
 					if (rendered.length) {
@@ -389,8 +429,8 @@ class MediaModal {
 		// Splits a file path and turns it into clickable breadcrumbs
 _
 		generateBreadcrumbs(nextDir){
-			var path = nextDir.split('/').slice(0);
-			for(var i=1;i<path.length;i++){
+			let path = nextDir.split('/').slice(0);
+			for(let i=1;i<path.length;i++){
 				path[i] = path[i-1]+ '/' +path[i];
 			}
 			return path;
@@ -400,12 +440,12 @@ _
 		// Locates a file by path
 
 		searchByPath(dir) {
-			var path = dir.split('/'),
+			let path = dir.split('/'),
 				demo = this.response,
 				flag = 0;
 
-			for(var i=0;i<path.length;i++){
-				for(var j=0;j<demo.length;j++){
+			for(let i=0;i<path.length;i++){
+				for(let j=0;j<demo.length;j++){
 					if(demo[j].name === path[i]){
 						flag = 1;
 						demo = demo[j].items;
@@ -452,115 +492,103 @@ _
 
 
 		onUpload(event) {
+			let file;
 			if (this.files && this.files[0]) {
 				Vvveb.MediaModal.showUploadLoading();
-				let reader = [];
-				let i = 0;
-				for (const file of this.files) {
-					//console.log(this.files[i]);
-					reader[++i] = new FileReader();
-					reader[i].onload = (e) => imageIsLoaded(e, file);
-					reader[i].readAsDataURL(file);
-					//reader.readAsBinaryString(this.files[0]);
-				}
+				let reader = new FileReader();
+				reader.onload = imageIsLoaded;
+				reader.readAsDataURL(this.files[0]);
+				//reader.readAsBinaryString(this.files[0]);
+				file = this.files[0];
 			}
-		
-			function imageIsLoaded(e,x) {
+
+			function imageIsLoaded(e) {
+					
 					let image = e.target.result;
 					
-					var formData = new FormData();
-					formData.append("file", x);
-					//formData.append("mediaPath", Vvveb.MediaModal.mediaPath + Vvveb.MediaModal.currentPath);
-					formData.append("mediaPath", Vvveb.MediaModal.currentPath);
+					let formData = new FormData();
+					formData.append("file", file);
+					formData.append("mediaPath", Vvveb.MediaModal.mediaPath + Vvveb.MediaModal.currentPath);
 					formData.append("onlyFilename", true);
-		
-					$.ajax({
-						type: "POST",
-						url: uploadUrl,//set your server side upload script url
-						data: formData,
-						processData: false,
-						contentType: false,
-						success: function (data) {
-							
-							let fileElement = Vvveb.MediaModal.addFile({
-								name:data,
-								type:"file",
-								path: Vvveb.MediaModal.currentPath + "/" + data,
-								size:1
-							},true);
-							
-							 $([document.documentElement, document.body]).animate({
-								scrollTop:fileElement.offset().top
-							}, 1000, function () {
-								fileElement.fadeOut().fadeIn('slow');
-							});
-							
-							Vvveb.MediaModal.hideUploadLoading();
-							
-						},
-						error: function (data) {
-							alert(data.responseText);
-							Vvveb.MediaModal.hideUploadLoading();
-						}
+
+					fetch(uploadUrl, {method: "POST",  body: formData})
+					.then((response) => {
+						console.log(response);
+						if (!response.ok) { throw new Error(response) }
+						return response.text()
+					})
+					.then((data) => {
+						let fileElement = Vvveb.MediaModal.addFile({
+							name:data,
+							type:"file",
+							path: Vvveb.MediaModal.currentPath + "/" + data,
+							size:1
+						},true);
+						
+						fileElement.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+						
+						Vvveb.MediaModal.hideUploadLoading();				
+					})
+					.catch(error => {
+						console.log(error);
+						Vvveb.MediaModal.hideUploadLoading();						
+						displayToast("bg-danger", "Error", "Error uploading!");
 					});		
 			}
 		}	
-
-		deleteFile(e) {
-			let parent = $(this).parents("li");
-			let file = $('input', parent).val();
+	
+		deleteFile(el) {
+			let parent = el.closest("li");
+			let file = parent.querySelector('input[type="hidden"]').value;
 			if (confirm(`Are you sure you want to delete "${file}"template?`)) {
-				$.ajax({
-					method:"POST",
-					url: deleteUrl,//set your server side save script url
-					data: {file},
-				}).done(function(data) {
-
+				
+			fetch(deleteUrl, {method: "POST",  body: new URLSearchParams({file})})
+				.then((response) => {
+					if (!response.ok) { throw new Error(response) }
+					return response.json()
+				})
+				.then((data) => {
 					let bg = "bg-success";
 					if (data.success) {		
 					} else {
-						bg = "bg-danger";
+						//bg = "bg-danger";
 					}
 					
-					$("#top-toast .toast-body").html(data.message)
-					$("#top-toast .toast").removeClass(["bg-danger", "bg-success"]).addClass(bg).addClass("show");
-					delay(() => $("#top-toast .toast").removeClass("show"), 5000)
-				}).fail(function (data) {
-					alert(data.responseText);
-					displayToast("bg-danger", data.responseText);						
-				}).always(function (data) {
-				});					
-
-				parent.remove();
+					displayToast(bg, "Delete", data.message);
+					
+					parent.remove();	
+				})
+				.catch(error => {
+					console.log(error);
+					displayToast("bg-danger", "Error", "Error deleting file!");
+				});	
 			}
 		}
 
-		renameFile(e) {
-			let parent = $(this).parents("li");
-			let file = $('input', parent).val();
+		renameFile(el) {
+			let parent = el.closest("li");
+			let file = parent.querySelector('input[type="hidden"]').value;
 			let newfile = prompt(`Enter new file name for "${file}"`, file);
 
 			if (newfile) {
-				$.ajax({
-					method:"POST",
-					url: renameUrl,//set your server side save script url
-					data: {file, newfile},
-				}).done(function(data) {
-
+				fetch(renameUrl, {method: "POST",  body: new URLSearchParams({file, newfile})})
+				.then((response) => {
+					if (!response.ok) { throw new Error(response) }
+					return response.json()
+				})
+				.then((data) => {
 					let bg = "bg-success";
 					if (data.success) {		
 					} else {
 						bg = "bg-danger";
 					}
 					
-					$("#top-toast .toast-body").html(data.message)
-					$("#top-toast .toast").removeClass(["bg-danger", "bg-success"]).addClass(bg).addClass("show");
-					delay(() => $("#top-toast .toast").removeClass("show"), 5000)
-				}).fail(function (data) {
-					alert(data.responseText);
-					displayToast("bg-danger", data.responseText);						
-				}).always(function (data) {
-				});		
+					parent.querySelector('input[type="hidden"]') = newFile
+					displayToast(bg, "Rename", data.message);
+				})
+				.catch(error => {
+					displayToast("bg-danger", "Error", "Error renaming file!");
+				});	
 			}
 		}
 		
@@ -569,7 +597,7 @@ _
 				let isImage = false;
 				let actions = '';
 				
-				var fileSize = _this.bytesToSize(f.size),
+				let fileSize = _this.bytesToSize(f.size),
 						name = _this.escapeHTML(f.name),
 						fileType = name.split('.'),
 						icon = '<span class="icon file"></span>';
@@ -588,19 +616,20 @@ _
 
 				
 				
-				actions += '<a href="javascript:void(0);" title="Rename" class="btn btn-outline-primary btn-sm border-0 btn-rename"><i class="la la-edit"></i></a> <a href="javascript:void(0);" title="Delete" class="btn btn-outline-danger btn-sm border-0 btn-delete"><i class="la la-trash"></i></a>';
+				actions = '<a href="javascript:void(0);" title="Rename" class="btn btn-outline-primary btn-sm border-0 btn-rename"><i class="la la-edit"></i></a> <a href="javascript:void(0);" title="Delete" class="btn btn-outline-danger btn-sm border-0 btn-delete"><i class="la la-trash"></i></a>';
 
-				let userActions = $(window).triggerHandler( "mediaModal:fileActions", { mediaPath: _this.mediaPath, file: f.path, name, fileType, fileSize, isImage, fileType, actions} );
+				let detail = { file: _this.mediaPath + f.path, name, fileType, fileSize, isImage, fileType, actions };
+				const event = new CustomEvent("mediaModal:fileActions", {detail});
+				window.dispatchEvent(event);			
 
-				if (userActions) actions = userActions;
-				if (isImage) actions += '<a href="javascript:void(0);" class="preview-link p-2"><i class="la la-search-plus"></i></a>';
-
+				if (isImage) detail.actions += '<a href="javascript:void(0);" class="preview-link p-2"><i class="la la-search-plus"></i></a>';
 				
-				var file = $('<li class="files">\
+				let file = generateElements('<li class="files">\
 						<label class="form-check">\
+						<input type="hidden" value="' + f.path + '" name="filename[]">\
 						  <input type="' + ((_this.type == "single") ? "radio" : "checkbox") + '" class="form-check-input" value="' + f.path + '" name="file[]" ' + ((selected == "single") ? "checked" : "") + '><span class="form-check-label"></span>\
 						  <div href="#\" class="files">'+icon+'<div class="info"><div class="name">'+ name +'</div><span class="details">'+fileSize+'</span>\
-							' + actions + '\
+							' + detail.actions + '\
 							 <div class="preview">\
 								<img src="' + _this.mediaPath + f.path + '">\
 								<div>\
@@ -609,11 +638,12 @@ _
 							</div>\
 						  </div>\
 						</label>\
-					</li>');
+					</li>')[0];
 				
-				let fileelement = file.appendTo(_this.fileList);
+				_this.fileList.append(file);
+
 				if (selected) {
-					$("input[type='radio'], input[type='checkbox']", fileelement).prop("checked", true);
+					file.querySelector("input[type='radio'], input[type='checkbox']").checked = true;
 				}
 				
 				return file;
@@ -622,7 +652,7 @@ _
 		
 		render(data) {
 
-			var scannedFolders = [],
+			let scannedFolders = [],
 				scannedFiles = [];
 
 			if(Array.isArray(data)) {
@@ -649,12 +679,12 @@ _
 
 			// Empty the old result and make the new one
 
-			this.fileList.empty();//.hide();
+			this.fileList.replaceChildren();//.style.display = 'none';
 			if(!scannedFolders.length && !scannedFiles.length) {
-				this.filemanager.find('.nothingfound').show();
+				this.filemanager.querySelector('.nothingfound').style.display = '';
 			}
 			else {
-				this.filemanager.find('.nothingfound').hide();
+				this.filemanager.querySelector('.nothingfound').style.display = 'none';
 			}
 
 			let _this = this;
@@ -663,7 +693,7 @@ _
 
 				scannedFolders.forEach(function(f) {
 
-					var itemsLength = f.items.length,
+					let itemsLength = f.items.length,
 						name = _this.escapeHTML(f.name),
 						icon = '<span class="icon folder"></span>';
 
@@ -681,8 +711,8 @@ _
 						itemsLength = 'Empty';
 					}
 
-					var folder = $('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<div class="info"><span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></div></a></li>');
-					folder.appendTo(_this.fileList);
+					let folder = generateElements('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<div class="info"><span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></div></a></li>')[0];
+					_this.fileList.append(folder);
 				});
 
 			}
@@ -692,7 +722,7 @@ _
 				scannedFiles.forEach(function(f) {
 
 					_this.addFile(f);
-
+					
 				});
 
 			}
@@ -700,21 +730,21 @@ _
 
 			// Generate the breadcrumbs
 
-			var url = '';
+			let url = '';
 
-			if(this.filemanager.hasClass('searching')){
+			if(this.filemanager.classList.contains('searching')){
 
 				url = '<span>Search results: </span>';
-				this.fileList.removeClass('animated');
+				this.fileList.classList.remove('animated');
 
 			}
 			else {
 
-				this.fileList.addClass('animated');
+				this.fileList.classList.add('animated');
 
 				this.breadcrumbsUrls.forEach(function (u, i) {
 
-					var name = u.split('/');
+					let name = u.split('/');
 
 					if (i !== _this.breadcrumbsUrls.length - 1) {
 						url += '<a href="'+u+'"><span class="folderName">' + name[name.length-1] + '</span></a> <span class="arrow">→</span> ';
@@ -726,10 +756,11 @@ _
 				});
 
 			}
-			this.breadcrumbs.html('<a href="/"><i class="la la-home"></i><span class="folderName">&ensp;home</span></a>').append(url);
 
-
-
+			this.breadcrumbs.replaceChildren();
+			this.breadcrumbs.appendChild(generateElements('<a href="/"><i class="la la-home"></i><span class="folderName">&ensp;home</span></a>')[0]);
+			this.breadcrumbs.appendChild(generateElements('<span>' + url + '</span>')[0]);
+			
 			// Show the generated elements
 
 			this.fileList.animate({'display':'inline-block'});
@@ -747,9 +778,9 @@ _
 		// Convert file sizes from bytes to human readable units
 
 		bytesToSize(bytes) {
-			var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+			let sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
 			if (bytes == 0) return '0 Bytes';
-			var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+			let i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
 			return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
 		}	
 }

@@ -17,9 +17,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
-html {
-  font-size: 14px; }
-
 body {
   font-family: "Helvetica Neue", Helvetica, -apple-system, Arial, "Lucida Grande", system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
 
@@ -27,7 +24,7 @@ body {
   margin-left: 0.5rem;
   margin-top: 0.15rem; }
   html[data-bs-theme="dark"] #logo {
-    filter: brightness(3); }
+    filter: invert(93%) hue-rotate(180deg); }
 
 i.la, i.header-arrow {
   font-style: normal; }
@@ -13780,9 +13777,9 @@ textarea.form-control-lg {
     .tree > ol li.file {
       border: 1px solid transparent; }
       .tree > ol li.file:hover, .tree > ol li.file.active {
-        background-color: rgba(var(--bs-link-color), 0.07); }
+        color: var(--bs-link-color); }
       .tree > ol li.file:hover {
-        background-color: rgba(var(--bs-link-color), 0.07); }
+        background-color: rgba(var(--bs-link-color-rgb), 0.05); }
         .tree > ol li.file:hover .file-actions {
           display: block; }
       .tree > ol li.file > label {
@@ -13802,8 +13799,8 @@ textarea.form-control-lg {
       .tree > ol li.file .file-actions {
         display: none;
         position: absolute;
-        top: -1px;
-        right: 5px; }
+        top: 0px;
+        right: 0px; }
         .tree > ol li.file .file-actions .btn {
           padding: 0.1rem 0.3rem;
           font-size: 0.875rem;
@@ -13869,6 +13866,13 @@ textarea.form-control-lg {
         margin: 0 0 0.3em;
         /* 1px */ }
 
+[data-bs-theme="dark"] .tree > ol li.active label {
+  color: var(--bs-primary); }
+
+[data-bs-theme="dark"] .tree > ol li label {
+  filter: invert(93%) hue-rotate(180deg);
+  color: var(--bs-dark); }
+
 /* autocomplete */
 input.autocomplete-loading {
   background-image: url(../libs/autocomplete/autocomplete.gif);
@@ -13904,6 +13908,9 @@ ul.autocomplete li {
   overflow: hidden;
   width: 100%;
   cursor: pointer; }
+  ul.autocomplete li:hover {
+    background-color: var(--bs-primary);
+    color: var(--bs-body-bg); }
 
 ul.autocomplete li.selected {
   background-color: Highlight;
@@ -14114,6 +14121,8 @@ body {
     #vvveb-builder #top-panel .btn-group.responsive-btns .btn.btn-light {
       font-size: 1.6rem;
       padding: 0rem 0.5rem; }
+    html[data-bs-theme="dark"] #vvveb-builder #top-panel img {
+      filter: invert(93%) hue-rotate(180deg); }
   #vvveb-builder #bottom-panel {
     width: auto;
     height: 35px;
@@ -14158,7 +14167,7 @@ body {
       border-radius: 0px;
       min-width: 4.5rem;
       color: var(--bs-body-color);
-      line-height: 1.2rem; }
+      line-height: 1.4; }
       #vvveb-builder .drag-elements .nav-item .nav-link div {
         margin-top: .2rem; }
       #vvveb-builder .drag-elements .nav-item .nav-link i {
@@ -14357,7 +14366,8 @@ body {
         width: 5em;
         padding: 0.1rem 0.2rem;
         text-align: center;
-        line-height: 12px; }
+        line-height: 12px;
+        font-size: 12px; }
     #vvveb-builder .component-properties .mb-3 .input [type="color"], #vvveb-builder .component-properties .mb-3 .input .form-check-input {
       float: right; }
     #vvveb-builder .component-properties .mb-3 .custom-control {
@@ -14449,7 +14459,7 @@ body {
     border-style: dashed;
     /*border-width:1px;*/
     border: 1px solid rgba(var(--bs-body-color-rgb), 0.2);
-    box-shadow: 1px 1px 3px 0px rgba(var(--bs-body-color-rgb), 0.1) inset;
+    box-shadow: 1px 1px 3px 0px rgba(var(--bs-body-color-rgb), 0.1) inset, 0px 0px 2px 1px rgba(var(--bs-body-bg-rgb), 0.8) inset;
     background: transparent;
     border-radius: 0 0 3px 3px; }
   #vvveb-builder #select-box {
@@ -14559,6 +14569,8 @@ body {
         border-right: none; }
       #vvveb-builder #wysiwyg-editor.default-editor a:hover {
         background: var(--bs-border-color); }
+      #vvveb-builder #wysiwyg-editor.default-editor a i {
+        font-size: 16px; }
     #vvveb-builder #wysiwyg-editor.default-editor div.separator {
       display: inline-block;
       background: var(--bs-border-color);
@@ -14576,29 +14588,40 @@ body {
       pointer-events: all;
       line-height: 2.2rem;
       height: 34px;
+      font-size: 14px;
       padding: 0;
       box-shadow: none; }
-      #vvveb-builder #wysiwyg-editor.default-editor > div.dropdown[type="color"], #vvveb-builder #wysiwyg-editor.default-editor > select[type="color"], #vvveb-builder #wysiwyg-editor.default-editor > input[type="color"] {
-        padding: 4px;
-        height: 30px;
-        width: 32px;
-        box-shadow: none;
-        border: 1px dashed var(--bs-border-color);
-        margin: 0;
-        margin: 3px;
-        border-radius: 3px; }
-        #vvveb-builder #wysiwyg-editor.default-editor > div.dropdown[type="color"].form-control-color::-moz-color-swatch, #vvveb-builder #wysiwyg-editor.default-editor > select[type="color"].form-control-color::-moz-color-swatch, #vvveb-builder #wysiwyg-editor.default-editor > input[type="color"].form-control-color::-moz-color-swatch {
-          border-radius: 3px;
-          box-shadow: 1px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.25);
-          border: none; }
-        #vvveb-builder #wysiwyg-editor.default-editor > div.dropdown[type="color"].form-control-color::-webkit-color-swatch, #vvveb-builder #wysiwyg-editor.default-editor > select[type="color"].form-control-color::-webkit-color-swatch, #vvveb-builder #wysiwyg-editor.default-editor > input[type="color"].form-control-color::-webkit-color-swatch {
-          padding: 0;
-          border-radius: 3px;
-          box-shadow: 1px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.25);
-          border: none; }
-    #vvveb-builder #wysiwyg-editor.default-editor select {
-      padding: 0rem 1.8rem 0 1rem;
-      margin-top: 2px; }
+    #vvveb-builder #wysiwyg-editor.default-editor > input[type="color"] {
+      padding: 4px;
+      height: 30px;
+      width: 32px;
+      box-shadow: none;
+      border: 1px dashed var(--bs-border-color);
+      margin: 0;
+      margin: 3px;
+      border-radius: 3px; }
+      #vvveb-builder #wysiwyg-editor.default-editor > input[type="color"].form-control-color::-moz-color-swatch {
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.25);
+        border: none; }
+      #vvveb-builder #wysiwyg-editor.default-editor > input[type="color"].form-control-color::-webkit-color-swatch {
+        padding: 0;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.25);
+        border: none; }
+    #vvveb-builder #wysiwyg-editor.default-editor > div.dropdown button {
+      padding: 5px 8px;
+      margin: 0;
+      font-size: 18px;
+      vertical-align: middle;
+      color: var(--bs-body-color); }
+    #vvveb-builder #wysiwyg-editor.default-editor > div.dropdown .dropdown-toggle::after {
+      font-size: 50%;
+      vertical-align: unset; }
+    #vvveb-builder #wysiwyg-editor.default-editor > select {
+      padding: 0rem 2.5rem 0 1rem;
+      margin-top: 2px;
+      background-size: 12px 10px; }
     #vvveb-builder #wysiwyg-editor.default-editor div.dropdown a:after {
       vertical-align: middle !important;
       font-size: 14px;
@@ -14677,8 +14700,8 @@ body {
       border: none;
       padding: 0.3rem 0.2rem 0.4rem; }
       #vvveb-builder #elements-tabs a i {
-        padding: 0.4rem 0rem;
-        font-size: 1.3rem;
+        padding: 0.3rem 0rem;
+        font-size: 1.2rem;
         border-radius: 3px;
         display: block;
         border: 1px solid transparent; }
@@ -14699,11 +14722,11 @@ body {
     border-left: none; }
   #vvveb-builder .nav-tabs .nav-link {
     padding: 0.8rem 0 0.5rem;
-    padding: 0.8rem 0 0.8rem;
+    padding: 0.5rem 0 0.5rem;
     text-align: center; }
     #vvveb-builder .nav-tabs .nav-link i {
       font-size: 1.4rem;
-      line-height: 1.2rem; }
+      line-height: 1; }
   #vvveb-builder .nav-tabs .nav-link.active,
   #vvveb-builder .nav-tabs .nav-item.show .nav-link {
     background-color: var(--bs-body-bg);
@@ -14757,8 +14780,8 @@ li[data-type] {
     white-space: break-spaces;
     padding: 0 3px; }
   html[data-bs-theme="dark"] li[data-type][data-drag-type="component"] {
-    filter: invert(100%);
     border-color: var(--bs-gray-500);
+    filter: invert(93%) hue-rotate(180deg);
     background-color: transparent; }
     html[data-bs-theme="dark"] li[data-type][data-drag-type="component"] a {
       color: var(--bs-gray-900); }
@@ -15036,8 +15059,8 @@ li[data-type] {
     padding: 0 3px; }
   html[data-bs-theme="dark"] .components .drag-elements-sidepane li[data-type][data-drag-type="component"], html[data-bs-theme="dark"]
   #add-section-box li[data-type][data-drag-type="component"] {
-    filter: invert(100%);
     border-color: var(--bs-gray-500);
+    filter: invert(93%) hue-rotate(180deg);
     background-color: transparent; }
     html[data-bs-theme="dark"] .components .drag-elements-sidepane li[data-type][data-drag-type="component"] a, html[data-bs-theme="dark"]
     #add-section-box li[data-type][data-drag-type="component"] a {
@@ -15496,7 +15519,7 @@ img.preview {
     left: calc(50% - 6px);
     content: '';
     z-index: 1000001;
-    transform: translateY(-8px);
+    transform: translateY(-18px);
     visibility: hidden;
     opacity: 0;
     z-index: 1000000;
@@ -15550,6 +15573,60 @@ img.preview {
 .form-switch-lg {
   font-size: 1rem;
   min-height: 1rem; }
+
+#tree-list {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  left: calc(100% - 300px);
+  border-radius: 2px;
+  z-index: 100;
+  width: 250px;
+  min-width: 250px;
+  min-height: 250px;
+  height: 500px;
+  resize: both;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.15);
+  background: var(--bs-body-bg); }
+  #tree-list .header {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    font-size: 12px;
+    color: rgba(var(--bs-body-color-rgb), 0.7);
+    background: rgba(var(--bs-primary-rgb), 0.15);
+    cursor: grabbing; }
+    #tree-list .header > div {
+      padding: 0.4rem 1rem; }
+      #tree-list .header > div:before {
+        content: "....";
+        opacity: 0.5;
+        width: 15px;
+        top: 0;
+        font-size: 28px;
+        word-wrap: break-word;
+        line-height: 7px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: -1rem; }
+  #tree-list .tree {
+    padding: 1rem;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    height: calc(100% - 30px); }
+    #tree-list .tree label.active {
+      border: 1px solid rgba(var(--bs-primary-rgb), 0.15);
+      background-color: rgba(var(--bs-primary-rgb), 0.05); }
+    #tree-list .tree > ol li input {
+      height: 2.4em;
+      width: 4em; }
+    #tree-list .tree > ol li input:checked + ol {
+      padding: 2rem 0 0 1.5rem; }
+    #tree-list .tree > ol li.file > label {
+      margin-left: 18px; }
 
 .btn-icon {
   font-weight: 500;

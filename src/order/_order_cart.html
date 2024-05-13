@@ -14,22 +14,24 @@
 
 		<div class="product-details p-4" data-v-component-product>
 			
-			<div class="mb-3 row">
-				<label for="input-name" class="col-sm-2 col-form-label">Name</label>
-				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-product-name maxlength="64" required>
-				</div>
-			 </div>		 
+			<div>
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="name" data-v-product-name maxlength="64" required>
+					</div>
+				 </div>		 
 
-			 <div class="mb-3 row">
-				<label for="input-code" class="col-sm-2 col-form-label">Price</label>
-				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="input-code" placeholder="Code" name="language[code]" data-v-product-price maxlength="12" required>
-				</div>
+				 <div class="mb-3 row">
+					<label for="input-code" class="col-sm-2 col-form-label">Price</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-price" placeholder="Code" name="price" data-v-product-price maxlength="12" required>
+					</div>
+				  </div>
 			  </div>
 			
 			<div class="mb-3 text-end">
-				<button class="btn btn-primary btn-add-product">
+				<button class="btn btn-primary btn-add-product" type="submit">
 					<i class="la la-plus"></i>
 					<span>Add product</span>
 				</button>
@@ -62,6 +64,19 @@
 					<a href="#40" target="_blank" data-v-order-product-url>
 						<span data-v-order-product-name>Product name</span>
 					</a>
+
+					<div class="option" data-v-if="product.option_value">
+						<div class="" data-v-product-option>
+							<span data-v-product-option-option>Color</span>: <span data-v-product-option-name>Red</span> <span data-v-if="value.price">(<span data-v-product-option-price_formatted></span>)</span>
+						</div>
+						<div class="" data-v-product-option>
+							<span data-v-product-option-option>Size</span>: <span data-v-product-option-name>XL</span> <span data-v-if="value.price">(<span data-v-product-option-price_formatted></span>)</span>
+						</div>
+						<div class="" data-v-product-option>
+							<span data-v-product-option-option>Material</span>: <span data-v-product-option-name>Wool</span> <span data-v-if="value.price">(<span data-v-product-option-price_formatted></span>)</span>
+						</div>
+					</div>
+								
 					<div class="price">
 						<span data-v-order-product-price_tax_formatted>$160.40</span>
 					</div>
@@ -72,7 +87,7 @@
 					<span data-v-order-product-quantity>1</span>
 				</td>
 				<td class="text-end unit-price">
-					<span data-v-order-product-price>1</span>
+					<span data-v-order-product-price_formatted>1</span>
 				</td>
 				<!-- <td class="text-end price" data-v-order-product-price>$123.20</td> -->
 				<td class="text-end total px-4">

@@ -1,3 +1,14 @@
+/**
+* @author: Alumuko https://github.com/alumuko/alumuko
+* @copyright: Copyright (c) 2021 Alumuko. All rights reserved.
+* @license: Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
+* @website: https://github.com/alumuko/vanilla-datetimerange-picker
+*
+* Special thanks to Dan Grossman.
+* This program is base on Dan Grossman's bootstrap-daterangepicker (version 3.1)
+* I just changed the code a bit to not need jquery.
+*/
+
 .daterangepicker {
   position: absolute;
   color: inherit;

@@ -63,7 +63,7 @@
 			  		<div class="accordion accordion-flush" id="accordionExport" data-v-namespaces  style="max-height:500px;overflow-x:auto;border:2px solid #eee; display:block">
 				  
 						  <div class="accordion-item" data-v-namespace>
-							<h2 class="accordion-header" id="headingOne">
+							<h2 class="accordion-header">
 							  <button class="accordion-button collapsed" type="button"aria-expanded="false" aria-controls="collapseOne">
 								<input class="form-check-input me-2" type="checkbox" value="" checked>
 
@@ -74,7 +74,7 @@
 								</div>
 							  </button>
 							</h2>
-							<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExport">
+							<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExport">
 							  <div class="accordion-body">
 								
 											
@@ -281,16 +281,15 @@
 @@include('../_includes/footer-scripts.html')
 
 <script>
-$(".accordion-button input[type=checkbox]").on("click", function (e) {
-	let parent = $(this).parents(".accordion-item");
-	$("input[type=checkbox]", parent).prop("checked", this.checked);
+document.querySelectorAll(".accordion-button input[type=checkbox]").on("click", function (e) {
+	let parent = this.closest(".accordion-item");
+	parent.querySelectorAll("input[type=checkbox]").forEach(e => e.checked = this.checked);
 	
 });
 
-$("input[type=checkbox].toggle-all").on("click", function (e) {
-	let parent = $(this).parents(".tab-pane");
-	$("input[type=checkbox]", parent).prop("checked", this.checked);
-	
+document.querySelectorAll("input[type=checkbox].toggle-all").on("click", function (e) {
+	let parent = this.closest(".tab-pane");
+	parent.querySelectorAll("input[type=checkbox]").forEach(e => e.checked = this.checked);
 });
 </script>
 

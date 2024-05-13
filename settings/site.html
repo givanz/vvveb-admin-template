@@ -917,7 +917,7 @@
 
           <div class="dropdown-menu">
             <div data-v-site>
-              <a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+              <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
                 <!-- i class="la la-circle la-lg me-2"></i -->
                 <span data-v-site-name class="flex-grow-1">Default website</span>
                 <i class="la la-external-link-alt"></i>
@@ -949,47 +949,68 @@
 
           <div class="dropdown-menu">
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
-                <span class="flex-grow-1">Assets</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
+                  <span>Assets</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
-                <span class="flex-grow-1">Templates</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
+                  <span>Templates</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
-                <span class="flex-grow-1">Database</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-server-outline me-2 text-body-tertiary"></i>
+                  <span>Database</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
-                <span class="flex-grow-1">Page cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-outline me-2 text-body-tertiary"></i>
+                  <span>Page cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
-                <span class="flex-grow-1">Image cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-image-outline me-2 text-body-tertiary"></i>
+                  <span>Image cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
-                <span class="flex-grow-1">Model cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
+                  <span>Model cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
 
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
-                <span class="flex-grow-1">All cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-sync-outline me-2 text-body-tertiary"></i>
+                  <span>All cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1648,7 +1669,6 @@
                           </div>
                         </div>
 
-
                         <div class="mb-3 row">
                           <label class="col-sm-2 col-form-label">Meta keywords</label>
                           <div class="col-sm-10">
@@ -1689,7 +1709,6 @@
                       </div>
                     </div>
 
-
                     <div class="row mb-3">
                       <label for="input-country" class="col-sm-2 col-form-label">Country</label>
                       <div class="col-sm-10">
@@ -1708,6 +1727,19 @@
                           <option value="2" data-v-option>region 2</option>
 
                         </select>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="input-site-company" class="col-sm-2 col-form-label">Company</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input-site-title" placeholder="Company" name="settings[company]" name="settings[company]" data-v-setting="company">
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="input-site-vat-id" class="col-sm-2 col-form-label">VAT Id</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input-site-vat-id" placeholder="VAT Id" name="settings[vat-id]" name="settings[vat-id]" data-v-setting="vat-id">
                       </div>
                     </div>
 
@@ -1808,7 +1840,7 @@
                         </label>
                         <label for="date_format_custom" class="visually-hidden">Custom date format:
                         </label>
-                        <input type="text" name="settings[date_format]" id="custom_date_format" data-v-setting="date_format" value="" class="form-control" data-v-site-date_format>
+                        <input type="text" name="settings[date_format]" id="custom_date_format" data-v-seatting="date_format" value="F j, Y" class="form-control" data-v-site-date_format>
                         <div class="mt-2">
                           <strong>Preview:</strong>
                           <span class="date-example" data-v-date_example>November 12, 2023</span>
@@ -1850,7 +1882,7 @@
                             <span class="form-check-label">Custom:</span>
                             </span>
                           </label>
-                          <input type="text" name="settings[time_format]" id="custom_time_format" data-v-setting="time_format" value="" class="form-control" data-v-site-time_format>
+                          <input type="text" name="settings[time_format]" id="custom_time_format" data-v-seatting="time_format" value="H:i" class="form-control" data-v-site-time_format>
                           <div class="mt-2">
                             <strong>Preview: </strong>
                             <span class="time-example" data-v-time_example>9:45 am</span>
@@ -2095,20 +2127,6 @@
 		</div>
 	</div>
 </div>
-
-
-<script>
-function togglePasswordInput(element, id) {
-	let password = document.getElementById(id);
-	if (password.type == "password") {
-		password.type = "text"; 
-		$("i", element).addClass("icon-eye-outline").removeClass("icon-eye-off-outline");
-	} else {
-		password.type = "password";
-		$("i", element).removeClass("icon-eye-outline").addClass("icon-eye-off-outline");
-	}
-}
-</script>
 						</div>
 						-->
 
@@ -2238,23 +2256,27 @@ function togglePasswordInput(element, id) {
                         <div class="input-group">
                           <input type="text" name="settings[invoice_format]" data-v-setting="invoice_format" value="" placeholder="Invoice Format eg: VV-2024-0" id="input-invoice-format" class="form-control">
                           <button class="input-group-text collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceVariables" aria-expanded="false">
-                            <i class="la la-lg la-question-circle text-primary"></i>
+                            <i class="la la-lg la-plus-circle text-primary"></i>
                           </button>
                         </div>
                         <div class="collapse mt-1" id="invoiceVariables">
                           <div class="card card-body text-bg-body-tertiary">
                             <span>
                               <i class="la la-info-circle fs-2 px-2 float-end"></i>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{year}')">year</button>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{month}')">month</button>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{day}')">day</button>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{date_added}')">date_added</button>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{user_id}')">user_id</button>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{order_id}')">order_id</button>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{site_id}')">site_id</button>
-                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{random-5}')">{random-#}</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{year}')">year</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{year2}')">year 2 digits</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{month}')">month</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{month_name}')">month name</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{day}')">day</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{date_added}')">date_added</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{user_id}')">user_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{order_id}')">order_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{customer_order_id}')">customer_order_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{site_id}')">site_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{rand-no-5}')">{rand-no-#}</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{rand-str-5}')">{rand-str-#}</button>
                               <br />
-                              <div>for random # is the length.</div>
+                              <div># is the length.</div>
                             </span>
 
                           </div>
@@ -2262,6 +2284,47 @@ function togglePasswordInput(element, id) {
                         <div class="mt-1">
                           <strong class="text-muted small mt-2">Preview</strong>
                           <span id="invoice-format-preview" data-v-site-invoice_format_preview>VV-2024</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="input-invoice-format" class="col-sm-2 col-form-label">
+                        <span>Customer Order Id</span>
+                        <div class="form-text text-muted">Generate unique random order id for customers.</div>
+                      </label>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" name="settings[order_id_format]" data-v-setting="order_id_format" value="" placeholder="Format eg: VV2024" id="input-order-id-format" class="form-control">
+                          <button class="input-group-text collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orderIdVariables" aria-expanded="false">
+                            <i class="la la-lg la-plus-circle text-primary"></i>
+                          </button>
+                        </div>
+                        <div class="collapse mt-1" id="orderIdVariables">
+                          <div class="card card-body text-bg-body-tertiary">
+                            <span>
+                              <i class="la la-info-circle fs-2 px-2 float-end"></i>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{year}')">year</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{year2}')">year 2 digits</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{month}')">month</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{month_name}')">month name</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{day}')">day</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{date_added}')">date_added</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{user_id}')">user_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{order_id}')">order_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{customer_order_id}')">customer_order_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{site_id}')">site_id</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{rand-no-5}')">{rand-no-#}</button>
+                              <button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{rand-str-5}')">{rand-str-#}</button>
+                              <br />
+                              <div># is the length.</div>
+                            </span>
+
+                          </div>
+                        </div>
+                        <div class="mt-1">
+                          <strong class="text-muted small mt-2">Preview</strong>
+                          <span id="order-id-format-preview" data-v-site-order_id_format_preview>VV-2024</span>
                         </div>
                       </div>
                     </div>
@@ -2435,7 +2498,9 @@ function togglePasswordInput(element, id) {
     </div>
   </div>
 
-  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
   <script id="popper-js" src="js/popper.min.js"></script>
   <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
   <script id="theme-js" src="js/theme.js"></script>
@@ -2446,11 +2511,11 @@ function togglePasswordInput(element, id) {
 
 
   <script>
-let mediaPath = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let renameUrl = '{ $this->renameUrl }';
-let deleteUrl = '{ $this->deleteUrl }';
+let mediaPath    = '{ $this->mediaPath }';
+let mediaScanUrl = '{ $this->scanUrl }';
+let uploadUrl    = '{ $this->uploadUrl }';
+let renameUrl    = '{ $this->renameUrl }';
+let deleteUrl    = '{ $this->deleteUrl }';
 </script>
 
 
@@ -2459,129 +2524,12 @@ let deleteUrl = '{ $this->deleteUrl }';
   <script id="index-js" src="libs/vvveb/index.js"></script>
   <link href="libs/media/media.css" rel="stylesheet">
   <script id="functions-js" src="../../js/admin/functions.js"></script>
+  <script id="functions-js" src="js/site.js"></script>
 
 
 
   <script>
-let Form = document.getElementById('settings-form');
 
-document.addEventListener('invalid', function(e){
-	//e.target.className += ' is-invalid';
-	focusInvalidElement(e);
-}, true);
-	
-function focusInvalidElement(e) {
-	//if (Form.checkValidity() == false) {
-		$(".is-invalid").removeClass("is-invalid");
-		//get first invalid input
-		let element = Form.querySelector(':invalid');
-		let activeTab = $(element).parents(".tab-pane");
-		
-		element.className += ' is-invalid';
-		//activate tab panel
-		$(".tab-pane").removeClass("show active");
-		activeTab.addClass("show active");
-		
-		//activate tab 
-		$(".nav-link").removeClass("active");
-		$("#" + (activeTab.attr("id") + "-tab")).addClass("active");
-		element.focus();
-		//let list = Form.querySelectorAll(':invalid');
-		/*
-		for (var item of list) {
-			item.focus();
-		}*/
-	//}
-}
-
-$("input[type=radio][name='settings[date_format]']").click(function () {
-	$("#custom_date_format").val(this.value).change().keypress();	
-});
-
-$("input[type=radio][name='settings[time_format]']").click(function () {
-	$("#custom_time_format").val(this.value).change().keypress();	
-});
-
-$("#custom_time_format").keypress(function () {
-	delay(() =>	$(".time-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
-});
-
-$("#custom_date_format").keypress(function () {
-	delay(() => $(".date-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
-});	
-
-$("#input-invoice-format").keypress(function () {
-	delay(() => $("#invoice-format-preview").load(window.location.href + "&action=invoiceFormat&format=" + encodeURI(this.value)), 500);	
-});	
-
-
-function insertInvoiceFormat(variable) {
-	$("#input-invoice-format").val((index, value) => value + '-' + variable).trigger("keypress");
-	return false;
-}
-
-
-
-let domain = "{ $this->domain }";
-let name = $("#input-site-name");
-//let key = $("#input-site-key");
-let host = $("#input-site-host");
-
-//let keyTextOrig = nameToKey(key.val());
-let hostTextOrig = nameToHost(host.val().replace(domain, ''));
-
-function nameToKey(name) {
-	//return (slugify(name) + " " + domain).replaceAll("."," "); 
-	return (slugify(name) + " *").replaceAll("."," "); 
-}
-
-function nameToHost(name) {
-	return (slugify(name) + "." + domain); 
-}
-
-name.on('keyup', function (e) {
-	let text = this.value;
-	delay(() => {
-		/*
-		let keyText = key.val();
-		
-		if (keyTextOrig == keyText || !keyText) {
-			keyTextOrig = nameToKey(text);
-			key.val(keyTextOrig);
-		}
-		*/
-		let hostText = host.val();
-		console.log(hostTextOrig);
-		console.log(hostText);
-		if (hostTextOrig == hostText || !hostText) {
-			hostTextOrig = nameToHost(text);
-			host.val(hostTextOrig);
-		}
-	}, 500);
-});
-
-
-let regions = [];
-
-function addRegionsToSelect(regionSelect, data) {
-	regionSelect.html('');
-	for (i in data) {
-		let region = data[i];
-		regionSelect.append('<option value="' + region.region_id + '">' + region.name + '</option>');
-	}
-}
-
-$("#input-country").change(function () {
-	$.get(window.location.href + "&action=regions&country_id=" + this.value).done(function( data ) {
-			addRegionsToSelect($("#input-region"), data);
-		});
-});
-
-
-$("#input-mail-driver").change(function (e) {
-	$(".mail-engine").hide();
-	$(".mail-engine." + this.value).show();
-}).change();
 </script>
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
@@ -2603,15 +2551,16 @@ $("#input-mail-driver").change(function (e) {
 
   <!-- save toast -->
   <div class="toast-container">
-    <div class="toast position-fixed end-0 bottom-0 me-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-      <div class="toast-header text-white">
+    <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header bg-success bg-opacity-25 border-0">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->
-        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body ">
         <div class="flex-grow-1">
-          <div class="message">Elements saved!
+          <div class="message">
+            <div>Elements saved!</div>
             <div>Template backup was saved!</div>
             <div>Template was saved!</div>
           </div>

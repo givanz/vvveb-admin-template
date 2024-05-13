@@ -8,7 +8,7 @@
   
   <div class="card-body">
 
-		<div class="table-responsive">
+		<div class="table-responsive" data-v-if="this.log">
 		  <table class="table">
 			<thead>
 			  <tr>
@@ -16,6 +16,11 @@
 				<th class="text-start">Comment</td>
 				<th class="text-start">Status</td>
 				<th class="text-start">User Notified</td>
+				<th class="text-start"><span>Public note</span>
+					<span title="Customer can also see the message, otherwise will see only status change and order details">
+						<i class="la la-lg la-question-circle text-primary"></i>
+					</span>
+				</td>
 			  </tr>
 			</thead>
 			<tbody>
@@ -37,6 +42,10 @@
 				<td class="text-start">
 					<span class="badge border bg-success-subtle text-body" data-v-if="log.notify">Yes</span>
 					<span class="badge border text-body bg-body-tertiary" data-v-if-not="log.notify">No</span>
+				</td>
+				<td class="text-start">
+					<span class="badge border bg-success-subtle text-body" data-v-if="log.public">Yes</span>
+					<span class="badge border text-body bg-body-tertiary" data-v-if-not="log.public">No</span>
 				</td>
 			  </tr>
 			</tbody>
@@ -89,10 +98,10 @@
 				  <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify">
 				</div>
 			  </div>			  
-			  <label class="col-form-label mx-2" for="input-notify-note">Include note in notification</label>
+			  <label class="col-form-label mx-2" for="input-notify-note">Include note in notification, public note</label>
 			  <div class="">
 				<div class="form-check">
-				  <input type="checkbox" class="form-check-input" name="log[notify-note]" value="1" id="input-notify-note">
+				  <input type="checkbox" class="form-check-input" name="log[public]" value="1" id="input-public">
 				</div>
 			  </div>
 			<div class="ms-4">

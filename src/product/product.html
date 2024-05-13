@@ -44,7 +44,7 @@
 
 			@@include('../_includes/notifications.html')
 
-                <form id="form" action="" method="post" class="needs-validation" novalidate data-v-product>
+                <form id="form" action="" method="post" class="settings" data-v-product>
 
                     <input type="hidden" name="action" id="action" value="save">
 					<input type="hidden" name="product_id" id="product_id" value="" data-v-if="this.product.product_id" data-v-product-product_id>   
@@ -205,51 +205,21 @@
 
 @@include('../_includes/footer-scripts.html')
 
-
-
-
 <script>
 let mediaPath = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
 let uploadUrl = '{ $this->uploadUrl }';
+let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 let productOption = { $this->option };
+let contentType = 'product';
 </script>
-<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+
+<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
 <script id="openverse-js" src="libs/media/openverse.js"></script>
 <script id="media-js" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link id="media-css" href="libs/media/media.css" rel="stylesheet">
-
-<script> 
-	$(function () {
-        jQuery("input[name=custom-date]").change(function () {
-            jQuery(".publish-date").css("display", (this.value == "true") ? "block" : "none");
-        });
-
-        $('input.autocomplete').autocomplete();
-        $('input.autocomplete-list').autocompleteList();
-
-        $('.taxonomies input.tags-input').each(function (i,element) {
-			/*
-			let params = "";
-			
-			for (name in element.dataset) { 
-				if (name) {
-					params += name + "=" + element.dataset[name];
-				}
-			}*/
-			$(element).tagsInput({
-				url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags",
-				parameters:element.dataset,
-				listName:"tag",
-				//listName:"tag[]",
-				listId:element.dataset.taxonomy_id, //element.dataset.taxonomy_id,
-				allowFreeText:true
-			});
-		});
-    });
-</script>
 
 <script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
 <!-- 
@@ -266,61 +236,60 @@ let productOption = { $this->option };
 
 <script id="revisions-js" src="../../js/admin/revisions.js"></script>
 <script id="functions-js" src="../../js/admin/functions.js"></script>
+<script id="content-js"src="js/content.js"></script>
+
 
 <script>
-let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
+/*
+document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
+document.querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
 
-jQuery(document).ready(function () { 
-	//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor
-	if (typeof tinyMceOptions  !== 'undefined') {
-		$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
-		tinymce.init(tinyMceOptions);
-	}
-
-	$('.tab-pane[data-v-language]').each(function () {
-		let titleInput = $('[data-v-product-content-name]', this);
-		let slugInput = $('[data-v-product-content-slug]', this);
-		let urlInput = $('[data-v-url]', this);
-		let orig = slugify(titleInput.val());
-		
-		//change slug only if current value is the same as the text
-		titleInput.on('keyup', function (e) {
-			let text = this.value;
-			delay(() => {
-				let slug = slugInput.val();
-				urlInput.text("/" + slug).attr("href", "/" + slug);
-				
-				if (orig == slug || !slug) {
-					orig = slugify(text);
-					slugInput.val(orig);
-				}
-			}, 500);
-		});
-		
-		slugInput.on('keyup', function (e) {
-			let slug = this.value;
-			urlInput.text("/" + slug).attr("href", "/" + slug);
-		});
-		
+document.querySelectorAll('.taxonomies input.tags-input').forEach(el => {
+	new _TagsInput(el,{
+		url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags",
+		parameters:el.dataset,
+		listName:"tag",
+		//listName:"tag[]",
+		listId:el.dataset.taxonomy_id, //element.dataset.taxonomy_id,
+		allowFreeText:true
 	});
 });
 
-$("[data-v-images]").on("click", ".btn-outline-danger", function (e) {
-	let card = $(this).parents("[data-v-image]");
-	card.remove();
-});
+//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor
+if (typeof tinyMceOptions  !== 'undefined') {
+	window.dispatchEvent(new CustomEvent("tinymce.options", {detail: tinyMceOptions}));
+	tinymce.init(tinyMceOptions);
+}
+
+document.querySelectorAll('#tab-general .tab-pane[data-v-language]').forEach(el => {
+	let titleInput = el.querySelector('[data-v-product-content-name]');
+	let slugInput = el.querySelector('[data-v-product-content-slug]');
+	let urlInput = el.querySelector('[data-v-url]');
+	let orig = slugify(titleInput.value);
 	
-$("#add-new-image").on("click", function (e) {
-	let id = "gallery-image-" + $("[data-v-images] [data-v-image]").length + "-input";
-	let newImage = $($("#add-new-image-template").html().replaceAll("gallery-image-0", "gallery-image-" + id).replace('disabled',''));
-	newImage.insertBefore(".add-new-image-card");
-	$("img", newImage).click();
+	//change slug only if current value is the same as the text
+	titleInput.addEventListener('keyup', function (e) {
+		let text = this.value;
+		delay(() => {
+			let slug = slugInput.value;
+			urlInput.textContent = "/" + slug;
+			urlInput.setAttribute("href", "/" + slug);
+			
+			if (orig == slug || !slug) {
+				orig = slugify(text);
+				slugInput.value = orig;
+			}
+		}, 500);
+	});
 	
-	return false;
+	slugInput.addEventListener('keyup', function (e) {
+		let slug = this.value;
+		urlInput.textContent = "/" + slug;
+		urlInput.setAttribute("href", "/" + slug);
+	});
+	
 });
-
-
-
+*/
 </script>
 
 @@include('../_includes/footer.html')

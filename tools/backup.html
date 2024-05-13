@@ -918,7 +918,7 @@
 
           <div class="dropdown-menu">
             <div data-v-site>
-              <a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+              <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
                 <!-- i class="la la-circle la-lg me-2"></i -->
                 <span data-v-site-name class="flex-grow-1">Default website</span>
                 <i class="la la-external-link-alt"></i>
@@ -950,47 +950,68 @@
 
           <div class="dropdown-menu">
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
-                <span class="flex-grow-1">Assets</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
+                  <span>Assets</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
-                <span class="flex-grow-1">Templates</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
+                  <span>Templates</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
-                <span class="flex-grow-1">Database</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-server-outline me-2 text-body-tertiary"></i>
+                  <span>Database</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
-                <span class="flex-grow-1">Page cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-outline me-2 text-body-tertiary"></i>
+                  <span>Page cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
-                <span class="flex-grow-1">Image cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-image-outline me-2 text-body-tertiary"></i>
+                  <span>Image cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
-                <span class="flex-grow-1">Model cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
+                  <span>Model cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
 
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
-                <span class="flex-grow-1">All cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-sync-outline me-2 text-body-tertiary"></i>
+                  <span>All cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1493,7 +1514,9 @@
 
 
 
-  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
   <script id="popper-js" src="js/popper.min.js"></script>
   <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
   <script id="theme-js" src="js/theme.js"></script>
@@ -1503,15 +1526,15 @@
 
   <script type="module" src="../../js/admin/controller/backup.js"></script>
   <script>
-$(function() { 
-	$(".backup-btn").click( function(e) {
+document.addEventListener('DOMContentLoaded', () => { 
+	document.querySelectorAll(".backup-btn").addEventListener("click",  function(e) {
 		if (Backup.make) {
 			e.preventDefault();
 			return Backup.make(this.attributes.href.value ?? false, this);
 		}
 	});
 
-	$(".restore-btn").click( function(e) {
+	document.querySelectorAll(".restore-btn").addEventListener("click",  function(e) {
 		if (Backup.restore) {
 			e.preventDefault();
 			return Backup.restore(this.attributes.href.value ?? false, this);
@@ -1540,15 +1563,16 @@ $(function() {
 
   <!-- save toast -->
   <div class="toast-container">
-    <div class="toast position-fixed end-0 bottom-0 me-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-      <div class="toast-header text-white">
+    <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header bg-success bg-opacity-25 border-0">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->
-        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body ">
         <div class="flex-grow-1">
-          <div class="message">Elements saved!
+          <div class="message">
+            <div>Elements saved!</div>
             <div>Template backup was saved!</div>
             <div>Template was saved!</div>
           </div>

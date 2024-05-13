@@ -179,15 +179,15 @@
 @@include('../_includes/footer-scripts.html')
 <script type="module" src="../../js/admin/controller/backup.js"></script>
 <script>
-$(function() { 
-	$(".backup-btn").click( function(e) {
+document.addEventListener('DOMContentLoaded', () => { 
+	document.querySelectorAll(".backup-btn").addEventListener("click",  function(e) {
 		if (Backup.make) {
 			e.preventDefault();
 			return Backup.make(this.attributes.href.value ?? false, this);
 		}
 	});
 
-	$(".restore-btn").click( function(e) {
+	document.querySelectorAll(".restore-btn").addEventListener("click",  function(e) {
 		if (Backup.restore) {
 			e.preventDefault();
 			return Backup.restore(this.attributes.href.value ?? false, this);

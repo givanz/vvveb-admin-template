@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="user-form" action="" method="post" class="needs-validation" data-v-user_group>
+	<form id="user-form" action="" method="post" class="settings" data-v-user_group>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
@@ -80,51 +80,6 @@ let mediaPath = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
 let uploadUrl = '{ $this->uploadUrl }';
 let usersUrl = '{ $this->usersUrl }';
-let users = [];
-
-function addUsersToSelect(userSelect, data, user_id = 0) {
-	userSelect.html('<option value="0">All users</option>');
-	for (i in data) {
-		let user = data[i];
-		userSelect.append('<option value="' + user.user_id + '">' + user.name + '</option>');
-	}
-	userSelect.val(user_id);
-	userSelect.removeAttr("disabled");
-	
-}
-
-$("body").on("change", "[data-v-countries]", function () {
-	let userGroup = $(this).parents("tr");
-	let userSelect = $("[data-v-user-user_id]", userGroup);
-	let country_id = this.value;
-	let user_id = this.dataset.vUserId;
-	this.disabled = false;
-
-	if (users[country_id]) {
-		addUsersToSelect(userSelect, users[country_id], user_id);
-		$("[data-v-user] [data-v-countries]:disabled:first").change();
-	} else {
-		$.get(usersUrl + "&country_id=" + country_id).done(function( data ) {
-			users[country_id] = data;
-			addUsersToSelect(userSelect, data, user_id);
-			$("[data-v-user] [data-v-countries]:disabled:first").change();
-		});
-	}
-	
-	this.dataset.vUserId = 0;
-});
-
-$("#add-user-group-btn").click(function () {
-	
-	let template = $("#user-group-template")[0].outerHTML;
-	let id = Math.floor(Math.random() * 10000);
-	template = template.replaceAll('user-group_template[0]', 'user[' + id + ']').replace('class="d-none"', 'data-v-user').replace('id="user-group-template"', '');
-	
-	$("#user-group tbody").append(template);
-	$("[data-v-user] [data-v-countries]:disabled:first").change();	
-});
-
-$("[data-v-user] [data-v-countries]:disabled:first").change();
 </script>
 
 
@@ -132,9 +87,6 @@ $("[data-v-user] [data-v-countries]:disabled:first").change();
 <script id="media-js" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
-
-
-
 
 
 @@include('../_includes/footer.html')

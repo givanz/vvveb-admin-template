@@ -11,7 +11,6 @@
    </div>
 </div>
 
-
 <div class="row mb-3">
 	<label for="input-country" class="col-sm-2 col-form-label">Country</label>
 	<div class="col-sm-10">
@@ -31,6 +30,19 @@
 			
 		</select>
 	</div>
+</div>
+
+<div class="mb-3 row">
+   <label for="input-site-company" class="col-sm-2 col-form-label">Company</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-site-title" placeholder="Company" name="settings[company]" name="settings[company]"  data-v-setting="company">
+   </div>
+</div>
+<div class="mb-3 row">
+   <label for="input-site-vat-id" class="col-sm-2 col-form-label">VAT Id</label>
+   <div class="col-sm-10">
+	  <input type="text" class="form-control" id="input-site-vat-id" placeholder="VAT Id" name="settings[vat-id]" name="settings[vat-id]"  data-v-setting="vat-id">
+   </div>
 </div>
 
 <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Defaults</label>
@@ -129,7 +141,7 @@
       </label>
       <label for="date_format_custom" class="visually-hidden">Custom date format:
       </label>
-		<input type="text" name="settings[date_format]" id="custom_date_format" data-v-setting="date_format" value="" class="form-control" data-v-site-date_format>
+		<input type="text" name="settings[date_format]" id="custom_date_format" data-v-seatting="date_format" value="F j, Y" class="form-control" data-v-site-date_format>
       <div class="mt-2">
         <strong>Preview:</strong> 
         <span class="date-example" data-v-date_example>November 12, 2023</span>
@@ -170,7 +182,7 @@
         <span class="form-check-label">Custom:</span>
         </span>
       </label>
-      <input type="text" name="settings[time_format]" id="custom_time_format" data-v-setting="time_format" value="" class="form-control"  data-v-site-time_format>
+      <input type="text" name="settings[time_format]" id="custom_time_format" data-v-seatting="time_format" value="H:i" class="form-control"  data-v-site-time_format>
       <div class="mt-2">
         <strong>Preview: </strong> 
         <span class="time-example" data-v-time_example>9:45 am</span>

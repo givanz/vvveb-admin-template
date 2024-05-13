@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="localization-form" action="" method="post" class="needs-validation" data-v-region_group>
+	<form id="localization-form" action="" method="post" class="settings" data-v-region_group>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
@@ -86,7 +86,7 @@
 							</select>
 						  </td>
 						  <td class="text-end">
-							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							<button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
 							  <i class="la la-lg la-minus-circle"></i>
 							</button>
 						  </td>
@@ -112,7 +112,7 @@
 							</select>
 						  </td>
 						  <td class="text-end">
-							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							<button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
 							  <i class="la la-lg la-minus-circle"></i>
 							</button>
 						  </td>
@@ -134,50 +134,71 @@
 
 <script>
 let regionsUrl = '{ $this->regionsUrl }';
+//load regions for region select when country changes
 let regions = [];
 
-function addRegionsToSelect(regionSelect, data, region_id = 0) {
-	regionSelect.html('<option value="0">All regions</option>');
-	for (i in data) {
-		let region = data[i];
-		regionSelect.append('<option value="' + region.region_id + '">' + region.name + '</option>');
+function addRegionsToSelect(regionSelect, data, region_id = 0, countrySelect) {
+	regionSelect.innerHTML = '<option value="0">-- All regions --</option>';
+	for (const region of data) {
+		regionSelect.append(new Option(region.name, region.region_id));
 	}
-	regionSelect.val(region_id);
-	regionSelect.removeAttr("disabled");
-	
+	regionSelect.value = region_id;
+	regionSelect.removeAttribute("disabled");
+	countrySelect.removeAttribute("disabled");
 }
 
-$("body").on("change", "[data-v-countries]", function () {
-	let regionGroup = $(this).parents("tr");
-	let regionSelect = $("[data-v-region-region_id]", regionGroup);
-	let country_id = this.value;
-	let region_id = this.dataset.vRegionId;
-	this.disabled = false;
-
-	if (regions[country_id]) {
-		addRegionsToSelect(regionSelect, regions[country_id], region_id);
-		$("[data-v-region] [data-v-countries]:disabled:first").change();
-	} else {
-		$.get(regionsUrl + "&country_id=" + country_id).done(function( data ) {
-			regions[country_id] = data;
-			addRegionsToSelect(regionSelect, data, region_id);
-			$("[data-v-region] [data-v-countries]:disabled:first").change();
-		});
+function countriesChange(element) {
+	let regionGroup = element.closest("tr");
+	let regionSelect = regionGroup.querySelector("[data-v-region-region_id]");
+	let country_id = element.value;
+	let region_id = element.dataset.vRegionId;
+	let self = element;
+	element.disabled = false;
+	
+	if (country_id) {
+		if (regions[country_id]) {
+			addRegionsToSelect(regionSelect, regions[country_id], region_id, self);
+			let next = document.querySelector("[data-v-countries][disabled]");
+			if (next) countriesChange(next);
+		} else {
+			fetch(regionsUrl + "&country_id=" + country_id)
+			 .then(response => {
+				if (!response.ok) { throw new Error(response) }
+				return response.json()
+			 })
+			.then(data => {
+				regions[country_id] = data;
+				addRegionsToSelect(regionSelect, data, region_id, self);
+				let next = document.querySelector("[data-v-countries][disabled]");
+				if (next) countriesChange(next);
+			})
+			.catch(error => {
+				console.log(error.statusText);
+				//displayToast("bg-danger", "Revision", "Error!");
+			});				
+		}
 	}
 	
-	this.dataset.vRegionId = 0;
+	element.dataset.vRegionId = 0;
+}
+
+document.addEventListener("change", (e) => {
+	let element = e.target.closest("[data-v-countries]");
+	if (element) {
+		countriesChange(element);
+	}
 });
 
-$("#add-region-group-btn").click(function () {
+document.getElementById("add-region-group-btn").addEventListener("click", function () {
 	
-	let template = $("#region-group-template")[0].outerHTML;
+	let template = document.getElementById("region-group-template").outerHTML;
 	let id = Math.floor(Math.random() * 10000);
 	template = template.replaceAll('region-group_template[0]', 'region[' + id + ']').replace('class="d-none"', 'data-v-region').replace('id="region-group-template"', '');
 	
-	$("#region-group tbody").append(template);
-	$("[data-v-region] [data-v-countries]:disabled:first").change();	
+	document.querySelector("#region-group tbody").appendChild(generateElements(template)[0]);
+	document.querySelector("[data-v-countries][disabled]")?.dispatchEvent(new Event('change', {bubbles:true}));
 });
 
-$("[data-v-region] [data-v-countries]:disabled:first").change();
+document.querySelector("[data-v-countries][disabled]")?.dispatchEvent(new Event('change', {bubbles:true}));
 </script>
 @@include('../_includes/footer.html')

@@ -20,24 +20,26 @@ https://github.com/givanz/VvvebJs
 
 if (Vvveb === undefined) var Vvveb = {};
 
-$(document).ready(function () {
 
-	if ($("#MediaModal").length) {
+let mediaModal = document.getElementById("MediaModal");
+if (mediaModal) {
 
-		if (!Vvveb.MediaModal) {
-			Vvveb.MediaModal = new MediaModal(false);
-		}
-		Vvveb.MediaModal.mediaPath = mediaPath;
-		Vvveb.MediaModal.type = "multiple";
-		Vvveb.MediaModal.open($("#MediaModal")[0]);
+	if (!Vvveb.MediaModal) {
+		Vvveb.MediaModal = new MediaModal(false);
 	}
-	
-	$(document).on("click", "[data-media-gallery]", function () {
-		
-		if (!Vvveb.MediaModal) {
-			Vvveb.MediaModal = new MediaModal(true);
-		}
-		Vvveb.MediaModal.mediaPath = mediaPath;
-		Vvveb.MediaModal.open(this);
-	});
-});
+	Vvveb.MediaModal.mediaPath = mediaPath;
+	Vvveb.MediaModal.type = "multiple";
+	Vvveb.MediaModal.open(mediaModal);
+}
+
+document.addEventListener("click", (event) => {
+  let target = event.target.closest("[data-media-gallery]"); 	
+  if (target) {
+	if (!Vvveb.MediaModal) {
+		Vvveb.MediaModal = new MediaModal(true);
+	}
+	Vvveb.MediaModal.mediaPath = mediaPath;
+	Vvveb.MediaModal.open(target);
+  }
+});		
+

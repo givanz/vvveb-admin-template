@@ -78,7 +78,7 @@
 		
 			<div class="content h-100">
 		   
-			   <form id="form" action="" method="post" class="h-100" novalidate  data-v-post>
+			   <form id="form" action="" method="post" class="h-100"  data-v-post>
 			   
 			   <input type="hidden" name="action" id="action" value="save">   
 			   <input type="hidden" name="post_id" id="post_id" value="" data-v-if="this.post.post_id" data-v-post-post_id>   
@@ -185,7 +185,7 @@ function resize(mergeView) {
 
 let options = {lineWrapping:true,lineNumbers:true};
 function toggleOption(option) {
-	//$(".CodeMirror").toggleClass("CodeMirror-wrap");
+	//document.querySelectorAll(".CodeMirror").classList.toggle("CodeMirror-wrap");
 	//dv.edit.setOption("lineWrapping", lineWrapping);
 	options[option] = !options[option];
 	let editors = document.getElementsByClassName("CodeMirror");
@@ -205,11 +205,20 @@ function restore(select) {
 }
 
 function loadRevision(select) {
-	$.get(revisionUrl + "&created_at=" + escape(select.value),  function( content ) {
+	fetch(revisionUrl + "&created_at=" + escape(select.value))
+	.then((response) => {
+		if (!response.ok) { throw new Error(response) }
+		return response.json();
+	})
+	.then((content) => {
 		if (content && content.content) {
 			document.getElementsByClassName("CodeMirror")[1].CodeMirror.getDoc().setValue(content.content);
 		}
-	});
+	})
+	.catch(error => {
+		console.log(error.statusText);
+		displayToast("bg-danger", "Error", "Error loading revision!");
+	});	
 }
 </script>
 

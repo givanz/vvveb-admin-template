@@ -30,7 +30,7 @@
 				
 				 <a href data-v-url-params='{"module":"tools/cache", "action":"delete"}' 
 						class="btn btn-primary btn-icon ms-1">
-						<i class="la la-broom la-lg"></i><span>Clear all cache</span>
+						<i class="icon-sync-outline"></i></i><span>Clear all cache</span>
 				</a>
 			</div>			
 		</div>			
@@ -159,10 +159,6 @@
 									
                                 </div>
 								-->
-								<div class="alert alert-warning d-inline-block" data-v-if-not="this.isPageCacheDirWritable">
-									<div>Page cache folder is not writable, clear cache might not work</div>
-									<div>Make sure that /public/page-cache is writable by php</div>
-								</div>
 
 								<a href data-v-url-params='{"module":"tools/cache", "action":"page"}'  class="btn btn-outline-secondary btn-icon float-end"><i class="la la-broom"></i> Clear cache</a>
                             </div>

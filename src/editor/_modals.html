@@ -1,12 +1,35 @@
+<div id="tree-list">
+	<div class="header">
+		<div>Navigator</div>
+			<button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
+				<i class="icon-close"></i>
+			</button>
+		</div>
+	<div class="tree">
+		<ol>
+			<!--
+			<li data-component="Products" class="file">							
+				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+				<input type="checkbox" id="idNaN">
+			</li>
+			<li data-component="Posts" class="file">							
+				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+				<input type="checkbox" id="idNaN">
+			</li>
+			-->
+		</ol>
+	</div>
+</div>
+
 <!-- code editor modal -->
 <div class="modal modal-full fade" id="codeEditorModal" tabindex="-1" aria-labelledby="codeEditorModal" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
     <div class="modal-content">
 	  <input type="hidden" name="file" value="">  	
 	
-      <div class="modal-header">
+      <div class="modal-header justify-content-end">
         <span class="modal-title"></span>
-		<div class="float-end">
+		<div class="">
 			<button type="button" class="btn btn-outline-secondary btn-icon" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
 			
 			<button class="btn btn-primary btn-icon save-btn" title="Save changes">
@@ -122,7 +145,7 @@
 					<div class="col-sm-9 input">
 						<div>   
 							<input name="name" type="text" class="form-control" placeholder="Name" required>  
-							<a href="#" class="float-end p-2" onclick="$('[data-key=content]').toggle();return false;"><span>More</span> +</a>
+							<a href="#" class="float-end p-2" onclick="document.querySelectorAll('[data-key=content]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none');return false;"><span>More</span> +</a>
 						</div>
 					</div>     
 				</div>		
@@ -136,7 +159,7 @@
 								<textarea name="content" class="form-control" placeholder="Lorem ipsum" rows="5">Lorem ipsum</textarea>  
 							</div>
 							<div class="form-check mt-2">
-							  <input class="form-check-input" type="checkbox" name="add-menu" id="add-menu" value="true" onchange="$('[data-key=menu]').toggle()">
+							  <input class="form-check-input" type="checkbox" name="add-menu" id="add-menu" value="true" onchange="document.querySelectorAll('[data-key=menu]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none')">
 							  <label class="form-check-label" for="add-menu">Add to menu</label>
 							</div>
 						</div>     

@@ -47,7 +47,7 @@
             </tr>
             <tr data-v-if="this.order.shipping_address_1">
               <td>
-                <span class="text-muted">Shipping address 1</span>
+                <span class="text-muted">Address 1</span>
               </td>
               <td>
                 <span data-v-order-shipping_address_1>shipping_address_1</span>
@@ -55,7 +55,7 @@
             </tr>
             <tr data-v-if="this.order.shipping_address_2">
               <td>
-                <span class="text-muted">Shipping address 2</span>
+                <span class="text-muted">Address 2</span>
               </td>
               <td>
                 <span data-v-order-shipping_address_2>shipping_address_2</span>
@@ -100,7 +100,9 @@
 
     <script>print();</script>
 
-    <script id="jquery-js" src="js/jquery.min.js"></script>
+    <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
     <script id="popper-js" src="js/popper.min.js"></script>
     <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
     <script id="theme-js" src="js/theme.js"></script>
@@ -128,15 +130,16 @@
 
     <!-- save toast -->
     <div class="toast-container">
-      <div class="toast position-fixed end-0 bottom-0 me-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-        <div class="toast-header text-white">
+      <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+        <div class="toast-header bg-success bg-opacity-25 border-0">
           <strong class="me-auto">Page save</strong>
           <!-- <small class="badge bg-success">status</small> -->
-          <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+          <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body ">
           <div class="flex-grow-1">
-            <div class="message">Elements saved!
+            <div class="message">
+              <div>Elements saved!</div>
               <div>Template backup was saved!</div>
               <div>Template was saved!</div>
             </div>

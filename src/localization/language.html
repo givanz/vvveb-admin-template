@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="localization-form" action="" method="post" class="needs-validation" data-v-language>
+	<form id="localization-form" action="" method="post" class="settings" data-v-language>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
@@ -112,11 +112,9 @@
 				 <div class="mb-3 row">
 					<label for="input-sort_order" class="col-sm-2 col-form-label">Sort Order</label>
 					<div class="col-sm-10">
-					  <input type="number" class="form-control" id="input-sort_order" placeholder="Sort order" value="" name="language[sort_order]" data-v-language-sort_order maxlength="3" required>
+					  <input type="number" class="form-control" id="input-sort_order" placeholder="Sort order" value="0" name="language[sort_order]" data-v-language-sort_order maxlength="3" required>
 					</div>
 				  </div>		 
-
-			
 			
 			</div>
         </div>
@@ -128,7 +126,7 @@
 
 <script>
 let language_list = { $this->language_list };
-let languageSelect = $("#input-language");
+let languageSelect = document.getElementById("input-language");
 
 for (let code in language_list) {
 	let language = language_list[code];
@@ -137,37 +135,37 @@ for (let code in language_list) {
 	));
 }
 
-let currentCode = $("#input-code").val();
+let currentCode = document.getElementById("input-code").value;
 
 if (currentCode) {
 	let language = language_list[currentCode];
 
-	languageSelect.val(currentCode);
+	languageSelect.value = currentCode;
 
 	if (language.installed) {
-		$("#installed").removeClass("d-none");
-		$("#not-installed").addClass("d-none");
+		document.getElementById("installed").classList.remove("d-none");
+		document.getElementById("not-installed").classList.add("d-none");
 	} else {
-		$("#installed").addClass("d-none");
-		$("#not-installed").removeClass("d-none");
+		document.getElementById("installed").classList.add("d-none");
+		document.getElementById("not-installed").classList.remove("d-none");
 	}
 }
 
-languageSelect.change(function (e) {
-	let code = this.value;
+languageSelect.addEventListener("change", (e) => {
+	let code = languageSelect.value;
 	let language = language_list[code];
 
-	$("#input-code").val(code);
-	$("#input-name").val(language.name);
-	$("#input-locale").val(language.code);
+	document.getElementById("input-code").value = code;
+	document.getElementById("input-name").value = language.name;
+	document.getElementById("input-locale").value = language.code;
 	
 	if (currentCode) {
 		if (language.installed) {
-			$("#installed").removeClass("d-none");
-			$("#not-installed").addClass("d-none");
+			document.getElementById("installed").classList.remove("d-none");
+			document.getElementById("not-installed").classList.add("d-none");
 		} else {
-			$("#installed").addClass("d-none");
-			$("#not-installed").removeClass("d-none");
+			document.getElementById("installed").classList.add("d-none");
+			document.getElementById("not-installed").classList.remove("d-none");
 		}
 	}
 })

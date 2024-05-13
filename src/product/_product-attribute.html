@@ -6,7 +6,7 @@
 					<th class="text-start">Attribute</th>
 					<th class="text-start">Value</th>
 					<th class="text-end">
-						<button type="button" class="btn btn-sm btn-primary" id="add-attribute-btn" onclick='$("[autocomplete]",addTemplate("attribute-template", "product_attribute", "attribute")).autocomplete();'>
+						<button type="button" class="btn btn-sm btn-primary" id="add-attribute-btn" onclick='addTemplate("attribute-template", "product_attribute", "attribute").querySelectorAll("[autocomplete]").forEach(el => new _AutocompleteInput(el, el.dataset));'>
 							<i class="la la-plus la-lg text-white"></i>
 						</button>
 					</th>

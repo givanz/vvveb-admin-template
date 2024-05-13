@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="settings-form" action="" method="post" class="needs-validation" data-v-tax_type>
+	<form id="settings-form" action="" method="post" class="settings" data-v-tax_type>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
@@ -93,7 +93,7 @@
 							<input type="number" name="tax_rule[0][priority]" value="0"  size="8" min="0" placeholder="Priority" class="form-control" data-v-tax-rule-priority>
 						  </td>
 						  <td class="text-end">
-							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							<button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
 							  <i class="la la-lg la-minus-circle"></i>
 							</button>
 						  </td>
@@ -121,7 +121,7 @@
 							<input type="number" name="tax_rule_template[0][priority]" value="0" size="8" min="0" placeholder="Priority" class="form-control" data-v-tax-rule-priority>
 						  </td>
 						  <td class="text-end">
-							<button type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+							<button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
 							  <i class="la la-lg la-minus-circle"></i>
 							</button>
 						  </td>
@@ -142,13 +142,13 @@
 @@include('../_includes/footer-scripts.html')
 
 <script>
-$("#add-tax-rule-btn").click(function () {
+document.getElementById("add-tax-rule-btn").addEventListener("click", function () {
 	
-	let template = $("#tax-type-template")[0].outerHTML;
+	let template = document.getElementById("tax-type-template").outerHTML;
 	let id = Math.floor(Math.random() * 10000);
 	template = template.replaceAll('tax_rule_template[0]', 'tax_rule[' + id + ']').replace('d-none', '').replace('id="tax-type-template"', '');
 	
-	$("#tax-rule tbody").append(template);
+	document.querySelector("#tax-rule tbody").appendChild(generateElements(template)[0]);
 	
 });
 </script>

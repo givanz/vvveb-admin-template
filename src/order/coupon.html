@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="settings-form" action="" method="post" class="needs-validation" data-v-coupon>
+	<form id="settings-form" action="" method="post" class="settings" data-v-coupon>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
@@ -203,13 +203,11 @@
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 
-<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script src="libs/autocomplete/autocomplete.js"></script>	
 
 <script> 
-$(function () {
-	$('input.autocomplete').autocomplete();
-	$('input.autocomplete-list').autocompleteList();
-});
+document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
+document.querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
 </script>
 <!-- date time picker -->
 <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>

@@ -6,23 +6,27 @@
 		<div class="input-group">
 		<input type="text" name="settings[invoice_format]" data-v-setting="invoice_format" value="" placeholder="Invoice Format eg: VV-2024-0" id="input-invoice-format" class="form-control">
 		<button class="input-group-text collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceVariables" aria-expanded="false">
-			<i class="la la-lg la-question-circle text-primary"></i>
+			<i class="la la-lg la-plus-circle text-primary"></i>
 		</button>		
 		</div>
 		<div class="collapse mt-1" id="invoiceVariables">
 		  <div class="card card-body text-bg-body-tertiary">
 			<span>
 			<i class="la la-info-circle fs-2 px-2 float-end"></i>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{year}')">year</button>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{month}')">month</button>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{day}')">day</button>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{date_added}')">date_added</button>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{user_id}')">user_id</button>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{order_id}')">order_id</button>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{site_id}')">site_id</button>
-				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('{random-5}')">{random-#}</button> 
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{year}')">year</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{year2}')">year 2 digits</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{month}')">month</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{month_name}')">month name</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{day}')">day</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{date_added}')">date_added</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{user_id}')">user_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{order_id}')">order_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{customer_order_id}')">customer_order_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{site_id}')">site_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{rand-no-5}')">{rand-no-#}</button> 
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{rand-str-5}')">{rand-str-#}</button> 
 				<br/>
-				<div>for random # is the length.</div>
+				<div># is the length.</div>
 			</span>
 			
 		  </div>
@@ -30,6 +34,47 @@
 		<div class="mt-1">
 			<strong class="text-muted small mt-2">Preview</strong>
 			<span id="invoice-format-preview" data-v-site-invoice_format_preview>VV-2024</span>
+		</div>
+	</div>
+</div>
+
+<div class="row mb-3">
+	<label for="input-invoice-format" class="col-sm-2 col-form-label">
+		<span>Customer Order Id</span>
+		<div class="form-text text-muted">Generate unique random order id for customers.</div>
+	</label>
+	<div class="col-sm-10">
+		<div class="input-group">
+		<input type="text" name="settings[order_id_format]" data-v-setting="order_id_format" value="" placeholder="Format eg: VV2024" id="input-order-id-format" class="form-control">
+		<button class="input-group-text collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orderIdVariables" aria-expanded="false">
+			<i class="la la-lg la-plus-circle text-primary"></i>
+		</button>		
+		</div>
+		<div class="collapse mt-1" id="orderIdVariables">
+		  <div class="card card-body text-bg-body-tertiary">
+			<span>
+			<i class="la la-info-circle fs-2 px-2 float-end"></i>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{year}')">year</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{year2}')">year 2 digits</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{month}')">month</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{month_name}')">month name</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{day}')">day</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{date_added}')">date_added</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{user_id}')">user_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{order_id}')">order_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{customer_order_id}')">customer_order_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{site_id}')">site_id</button>
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{rand-no-5}')">{rand-no-#}</button> 
+				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{rand-str-5}')">{rand-str-#}</button> 
+				<br/>
+				<div># is the length.</div>
+			</span>
+			
+		  </div>
+		</div>
+		<div class="mt-1">
+			<strong class="text-muted small mt-2">Preview</strong>
+			<span id="order-id-format-preview" data-v-site-order_id_format_preview>VV-2024</span>
 		</div>
 	</div>
 </div>

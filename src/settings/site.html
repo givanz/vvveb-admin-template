@@ -137,11 +137,11 @@
 
 
 <script>
-let mediaPath = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let renameUrl = '{ $this->renameUrl }';
-let deleteUrl = '{ $this->deleteUrl }';
+let mediaPath    = '{ $this->mediaPath }';
+let mediaScanUrl = '{ $this->scanUrl }';
+let uploadUrl    = '{ $this->uploadUrl }';
+let renameUrl    = '{ $this->renameUrl }';
+let deleteUrl    = '{ $this->deleteUrl }';
 </script>
 
 
@@ -150,128 +150,11 @@ let deleteUrl = '{ $this->deleteUrl }';
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 <script id="functions-js" src="../../js/admin/functions.js"></script>
+<script id="functions-js" src="js/site.js"></script>
 
 
 
 <script>
-let Form = document.getElementById('settings-form');
 
-document.addEventListener('invalid', function(e){
-	//e.target.className += ' is-invalid';
-	focusInvalidElement(e);
-}, true);
-	
-function focusInvalidElement(e) {
-	//if (Form.checkValidity() == false) {
-		$(".is-invalid").removeClass("is-invalid");
-		//get first invalid input
-		let element = Form.querySelector(':invalid');
-		let activeTab = $(element).parents(".tab-pane");
-		
-		element.className += ' is-invalid';
-		//activate tab panel
-		$(".tab-pane").removeClass("show active");
-		activeTab.addClass("show active");
-		
-		//activate tab 
-		$(".nav-link").removeClass("active");
-		$("#" + (activeTab.attr("id") + "-tab")).addClass("active");
-		element.focus();
-		//let list = Form.querySelectorAll(':invalid');
-		/*
-		for (var item of list) {
-			item.focus();
-		}*/
-	//}
-}
-
-$("input[type=radio][name='settings[date_format]']").click(function () {
-	$("#custom_date_format").val(this.value).change().keypress();	
-});
-
-$("input[type=radio][name='settings[time_format]']").click(function () {
-	$("#custom_time_format").val(this.value).change().keypress();	
-});
-
-$("#custom_time_format").keypress(function () {
-	delay(() =>	$(".time-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
-});
-
-$("#custom_date_format").keypress(function () {
-	delay(() => $(".date-example").load(window.location.href + "&action=dateFormat&format=" + encodeURI(this.value)), 500);	
-});	
-
-$("#input-invoice-format").keypress(function () {
-	delay(() => $("#invoice-format-preview").load(window.location.href + "&action=invoiceFormat&format=" + encodeURI(this.value)), 500);	
-});	
-
-
-function insertInvoiceFormat(variable) {
-	$("#input-invoice-format").val((index, value) => value + '-' + variable).trigger("keypress");
-	return false;
-}
-
-
-
-let domain = "{ $this->domain }";
-let name = $("#input-site-name");
-//let key = $("#input-site-key");
-let host = $("#input-site-host");
-
-//let keyTextOrig = nameToKey(key.val());
-let hostTextOrig = nameToHost(host.val().replace(domain, ''));
-
-function nameToKey(name) {
-	//return (slugify(name) + " " + domain).replaceAll("."," "); 
-	return (slugify(name) + " *").replaceAll("."," "); 
-}
-
-function nameToHost(name) {
-	return (slugify(name) + "." + domain); 
-}
-
-name.on('keyup', function (e) {
-	let text = this.value;
-	delay(() => {
-		/*
-		let keyText = key.val();
-		
-		if (keyTextOrig == keyText || !keyText) {
-			keyTextOrig = nameToKey(text);
-			key.val(keyTextOrig);
-		}
-		*/
-		let hostText = host.val();
-		console.log(hostTextOrig);
-		console.log(hostText);
-		if (hostTextOrig == hostText || !hostText) {
-			hostTextOrig = nameToHost(text);
-			host.val(hostTextOrig);
-		}
-	}, 500);
-});
-
-
-let regions = [];
-
-function addRegionsToSelect(regionSelect, data) {
-	regionSelect.html('');
-	for (i in data) {
-		let region = data[i];
-		regionSelect.append('<option value="' + region.region_id + '">' + region.name + '</option>');
-	}
-}
-
-$("#input-country").change(function () {
-	$.get(window.location.href + "&action=regions&country_id=" + this.value).done(function( data ) {
-			addRegionsToSelect($("#input-region"), data);
-		});
-});
-
-
-$("#input-mail-driver").change(function (e) {
-	$(".mail-engine").hide();
-	$(".mail-engine." + this.value).show();
-}).change();
 </script>
 @@include('../_includes/footer.html')

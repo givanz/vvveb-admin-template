@@ -44,8 +44,8 @@
     }
 					
 	<td class="plugin">
-			<a href="#" data-v-plugin-settings data-v-if="plugin.settings"><span data-v-plugin-name>Plugin name</span></a>
-			<span data-v-if-not="plugin.settings" data-v-plugin-name>Plugin name</span>
+			<a href="#" data-v-plugin-settings data-v-if="plugin.settings && plugin.status == 'active'"><span data-v-plugin-name>Plugin name</span></a>
+			<span data-v-if-not="plugin.settings && plugin.status=='active'" data-v-plugin-name>Plugin name</span>
 			 <!--div class="secondary-actions">
 					 
 				 

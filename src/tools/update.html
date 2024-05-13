@@ -227,8 +227,8 @@
 @@include('../_includes/footer-scripts.html')
 <script type="module" src="../../js/admin/controller/update.js"></script>
 <script>
-$(function() { 
-	$(".update-core-btn").click( function(e) {
+document.addEventListener('DOMContentLoaded', () => { 
+	document.querySelector(".update-core-btn").addEventListener("click",  function(e) {
 		if (Update.core) {
 			e.preventDefault();
 			return Update.core(this.attributes.href.value ?? false, this);

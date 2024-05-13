@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="settings-form" action="" method="post" class="needs-validation" data-v-option>
+	<form id="settings-form" action="" method="post" class="settings" data-v-option>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
@@ -49,12 +49,16 @@
 					</div>
 				 </div>		 
 
-				 <div class="mb-3 row">
+				 <div class="mb-3 row justify-content-between">
 					<label for="input-type" class="col-sm-2 col-form-label">Type</label>
-					<div class="col-sm-10">
+					<div class="col">
 					  <select class="form-control" id="input-type" placeholder="Slug" name="option[type]" data-v-option-type required>
 						<option value="text" data-v-option>Text</option>
 					  </select>
+					</div>
+					<label for="input-site-title" class="col-sm-2 col-form-label">Sort order</label>
+					<div class="col">
+					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="option[sort_order]" value="0" data-v-option-sort_order required>
 					</div>
 				  </div>		 
 

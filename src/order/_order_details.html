@@ -1,7 +1,7 @@
 <div class="order_details">
 	<div class="clearfix">
 		<h6 class="float-start">Order Details</h6>
-		<div class="btn btn-outline-success btn-sm float-end" onclick="$('.order_details').toggleClass('edit');"><i class="la la-pen"></i> Edit</div>
+		<div class="btn btn-outline-success btn-sm float-end" onclick="document.querySelector('.order_details').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
 	</div>		
 
 	<div class="display">
@@ -96,7 +96,7 @@
 					
 					<div class="accordion-item" data-v-payment>
 						<div class="accordion-header" role="tab">
-							  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+							  <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
 								<input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
 								<span data-v-payment-title>Default payment</span>
 							  </label>                                        
@@ -110,7 +110,7 @@
 					</div>
 					<div class="accordion-item" data-v-payment>
 						<div class="accordion-header" role="tab">
-							  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+							  <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
 								<input class="form-check-input me-2" type="radio" name="payment_method" value="default" data-v-payment-name required>
 								<span data-v-payment-title>Credit card payment</span>
 							  </label>                                        
@@ -151,7 +151,7 @@
 				
 				<div class="accordion-item" data-v-shipping>
 					<div class="accordion-header" role="tab">
-						  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+						  <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
 							<input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
 							<span data-v-shipping-title>Default shipping</span>
 						  </label>                                        
@@ -166,7 +166,7 @@
 				
 				<div class="accordion-item" data-v-shipping>
 					<div class="accordion-header" role="tab">
-						  <label class="form-check-label accordion-button collapsed" aria-expanded="false" role="button">
+						  <label class="form-check-label accordion-button2 p-3 collapsed" aria-expanded="false" role="button">
 							<input class="form-check-input me-2" type="radio" name="shipping_method" value="default" data-v-shipping-name required>
 							<span data-v-shipping-title>Fast shipping</span>
 						  </label>                                        

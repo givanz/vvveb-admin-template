@@ -265,15 +265,18 @@
 	
 @@include('../_includes/footer-scripts.html')
 
-
-
-
-<script type="module" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
-<link href="libs/media/media.css" rel="stylesheet">
 
-<script src="libs/autocomplete/jquery.autocomplete.js"></script>
 <script>
+function duplicateTheme(e) {
+	let dest = prompt("New theme name", e.closest('.card').querySelector(".card-title").textContent);
+	
+	if (dest) {
+		e.href += "&dest=" + dest;
+	}
+	
+	return false;
+}
 </script>
 
 @@include('../_includes/footer.html')

@@ -116,23 +116,23 @@
 <div class="toast-container">
   <div id="taxonomyToast" class="toast position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
-      <span class="message">Hello, world! This is a toast message.</span>
 	  <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button>
+      <span class="message d-flex align-items-center">Hello, world! This is a toast message.</span>
     </div>
   </div>
 </div>
 
+<script id="jquery-js" src="js/jquery.min.js"></script>
 <script id="nestable-js" src="libs/nestable/jquery.nestable.js"></script>
-<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
-
+<script src="libs/autocomplete/autocomplete.js"></script>	
 
 <script>
-	let mediaPath = '{ $this->mediaPath }';
-	let mediaScanUrl =  '{ $this->scanUrl }';
-	let uploadUrl = '{ $this->uploadUrl }';
-	let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 </script>
-<script id="autocomplete-js" src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
 <script id="openverse-js" src="libs/media/openverse.js"></script>
 <script id="media-js"src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
@@ -177,7 +177,8 @@ $("#taxonomies").on("click", ".expand-btn",function () {
 			
 			delete editorInstances[id];
 		} else {
-			$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
+			//$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
+			window.dispatchEvent(new CustomEvent("tinymce.options", {detail: tinyMceOptions}));
 			editorInstances[id] = [];
 			let textareas = $("> .expand textarea.html", item);
 
@@ -231,7 +232,7 @@ function saveOrder(item) {
 			data: {@@prefix_items:data},
 			//dataType: 'json',
 			complete: function(data) {
-				$("#taxonomyToast .message").html('<i class="la la-info-circle fs-2"></i><span class="fs-6">' + data.responseText + '</span>');
+				$("#taxonomyToast .message").html('<i class="la la-info-circle fs-2 me-2"></i><span class="fs-6">' + data.responseText + '</span>');
 				toast.show();
 				//$('#cart > button').button('reset');
 			},
@@ -421,8 +422,8 @@ function changeMenuType(e) {
 
 $("#taxonomies").on("change", "[name='type']", changeMenuType);
 
-$('input.autocomplete').autocomplete();
-$('input.autocomplete-list').autocompleteList();
+document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
+document.querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
 
 </script>
 

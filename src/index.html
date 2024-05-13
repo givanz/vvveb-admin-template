@@ -1,21 +1,16 @@
-@@include('./_includes/html-head.html', {"title": "Vvveb - Dasboard","scripts":'<link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack-extra.min.css"><link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">'})
+@@include('./_includes/html-head.html', {"title": "Vvveb - Dasboard","scripts":'<link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">'})
 
 <body class="home">
-
 <script>
-    var chartjs = {};
+let chartjs = {};
 </script>
-
-
 <div id="container">
        
-       @@include('./_includes/sidebar.html')
-        
+    @@include('./_includes/sidebar.html')
 
     <div class="main">
 
 		@@include('./_includes/top-header.html')
-
 
         <div class="p-4">
 
@@ -24,7 +19,7 @@
 		<div class="grid-stack">
                 
                 <div class="grid-stack-item stack-orders"
-                     data-gs-width="3" data-gs-height="2"
+                     gs-w="3" gs-h="2"
                      data-v-component-notifications>
 					<!-- set count to 0 to not fetch orders, we only need the number of orders -->
 				
@@ -60,7 +55,7 @@
                 </div>
                 
                 <div class="grid-stack-item stack-users"
-                     data-gs-width="3" data-gs-height="2"
+                     gs-w="3" gs-h="2"
                      data-v-component-notifications>
                      
                     <div class="grid-stack-item-content">
@@ -92,7 +87,7 @@
                 </div>
 
                 <div class="grid-stack-item stack-comments"
-                     data-gs-width="3" data-gs-height="2"
+                     gs-w="3" gs-h="2"
                      data-v-component-notifications>
                     
                     <div class="grid-stack-item-content">
@@ -126,7 +121,7 @@
                 </div>
                 
                 <div class="grid-stack-item stack-reviews"
-                     data-gs-width="3" data-gs-height="2"
+                     gs-w="3" gs-h="2"
                      data-v-count=0
                      data-v-component-notifications>
                      
@@ -161,7 +156,7 @@
                 </div>
                 
                 <div class="grid-stack-item stack-sales"
-                     data-gs-width="12" data-gs-height="4"
+                     gs-w="12" gs-h="4"
                      data-v-component-stats>
                      
                     <div class="grid-stack-item-content">
@@ -240,7 +235,7 @@
                 </div>
 <!--				
                 <div class="grid-stack-item stack-orders"
-                     data-gs-width="6" data-gs-height="4">
+                     gs-w="6" gs-h="4">
                      
                     <div class="grid-stack-item-content">
                         <div class="card">
@@ -316,7 +311,7 @@
 -->
 
                 <div class="grid-stack-item stack-latest-orders"
-                     data-gs-width="6" data-gs-height="4"
+                     gs-w="6" gs-h="4"
                      data-v-component-orders>
                      
                     <div class="grid-stack-item-content">
@@ -346,7 +341,7 @@
                                         <td><span data-v-order-first_name>John</span> <span data-v-order-last_name>Doe</span></td>
                                         <td width="100" data-v-order-order_status>Pending</td>
                                         <td width="150" data-v-order-created_at data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
-                                        <td width="150"><span data-v-currency_code></span> <span class="price" data-v-order-total>100%</span></td>
+                                        <td width="150"><span class="price" data-v-order-total_formatted>100%</span></td>
                                         <td class="text-center" width="70">
 											
 											
@@ -365,10 +360,11 @@
                                         <td>Pending</td>
                                         <td>31/05/2018</td>
                                         <td class="text-center">$1,005.00</td>
-                                        <td class="text-center"><a href="#"
-                                                                  class="btn btn-primary btn-sm"
-                                                                 ><i
-                                                class="la la-hand-pointer"></i></a></td>
+                                        <td class="text-center">
+											<a href="#" class="btn btn-primary btn-sm" >
+												<i class="la la-hand-pointer"></i>
+											</a>
+										</td>
                                     </tr>
                                     <tr data-v-order>
                                         <td scope="row" class="text-center">1</td>
@@ -399,7 +395,7 @@
 
       
                 <div class="grid-stack-item stack-new-users"
-                     data-gs-width="3" data-gs-height="4" 
+                     gs-w="3" gs-h="4" 
 					 data-v-component-users>
 					
                     <div class="grid-stack-item-content">
@@ -474,7 +470,7 @@
 				</div>                
                 
                 <div class="grid-stack-item stack-latests-products"
-                     data-gs-width="3" data-gs-height="4"
+                     gs-w="3" gs-h="4"
                      data-v-component-products>
                      
                     <div class="grid-stack-item-content">
@@ -503,7 +499,7 @@
 											<img class="rounded" data-v-product-image src="#">
 										</td>
                                         <td width="100" data-v-product-name>Product name</td>
-                                        <td data-v-product-price  width="70">5</td>
+                                        <td data-v-product-price_tax_formatted width="70">5</td>
                                         <td class="text-center" width="70">
 											
 											
@@ -530,8 +526,8 @@
                 </div>
                         
                 <div class="grid-stack-item stack-new-comments"
-					 data-gs-width="6" 
-					 data-gs-height="4"
+					 gs-w="6" 
+					 gs-h="4"
                      >
                      
                     <div class="grid-stack-item-content" data-v-component-comments data-v-status="0">
@@ -613,8 +609,8 @@
                         
                         
                 <div class="grid-stack-item stack-news"
-					 data-gs-width="6" 
-					 data-gs-height="4"
+					 gs-w="6" 
+					 gs-h="4"
                      data-v-component-news>
                      
                     <div class="grid-stack-item-content">
@@ -713,36 +709,25 @@
 </div>
 
 
-<script src="libs/jquery-ui/jquery-ui.min.js"></script>
-<script src="libs/gridstack/gridstack.min.js"></script>
-<script src="libs/gridstack/gridstack.jQueryUI.min.js"></script>
+<script src="libs/gridstack/gridstack-all.js"></script>
 <script id="chartjs-script"  src="libs/chart-js/chart.bundle.min.js"></script>
 
-
 <script type="text/javascript">
-    $(function () {
-        var options = {
-            cellHeight: 80,
-            verticalMargin: 10,
-			cellHeightThrottle: 100,
-			minWidth: 1200,
-        };
-        $('.grid-stack').gridstack(options);
+let options = {
+	cellHeight: 90,
+	margin: 10,
+	cellHeightThrottle: 100,
+	//breakpointForWindow: "grid",
+	columnOpts: { breakpoints: [{w:768, c:1}] },
+	minWidth: 1200
+};
 
-        $('.grid-stack').on('change', function (event, items) {
-            console.log(items);
-        });
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        chartjs_instance = {};
-        $(".chartjs").each(function () {
+let grid = GridStack.init(options);
 
-            ctx = $("canvas", this).get(0).getContext("2d");
-            chartjs_instance[this.dataset.chartjs] = new Chart(ctx, chartjs[this.dataset.chartjs]);
-        });
-    });
+document.querySelectorAll(".chartjs").forEach(el => {
+	ctx = el.querySelector("canvas").getContext("2d");
+	el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
+});
 </script>
 
 @@include('./_includes/footer.html')

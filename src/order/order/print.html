@@ -8,17 +8,17 @@
    <strong>Order details</strong>
    <table class="table table-borderless table-sm">
 	<tr>
-	<td><span class="text-muted">Order ID:</span> </td>
+	<td><span class="text-muted">Order ID</span> </td>
 	<td><span data-v-order-order_id>V001</span></td>
 	</tr>
 	<tr>
-	<td><span class="text-muted">Order Date:</span> </td>
+	<td><span class="text-muted">Order Date</span> </td>
 	<td>
 	  <span data-v-order-created_at>23/10/2019</span>
 	</td>
 	</tr>
 	<tr>
-	<td><span class="text-muted">Payment method:</span> </td>
+	<td><span class="text-muted">Payment method</span> </td>
 	<td>
 	<details>
 	  <summary><span><span data-v-order-payment_title>Cash On Delivery</span></summary>
@@ -30,7 +30,7 @@
 	 </td>
 	</tr>
 	<tr>
-	<td><span class="text-muted">Shipping:</span></td>
+	<td><span class="text-muted">Shipping</span></td>
 	<td>
 	<details>
 	  <summary><span><span data-v-order-shipping_title>>Flat Shipping Rate</span></summary>
@@ -42,11 +42,11 @@
 	</td>
 	</tr>
 	<tr>
-	<td><span class="text-muted">Total:</span></td>
-	<td><spandata-v-order-total_formatted>$734.28</span></td>
+	<td><span class="text-muted">Total</span></td>
+	<td><span data-v-order-total_formatted>$734.28</span></td>
 	</tr>
 	<tr>
-	<td><span class="text-muted">Reward points:</span></td>
+	<td><span class="text-muted">Reward points</span></td>
 	<td><span data-v-order-points>$734.28</span></td>
 	</tr>
   </table>
@@ -84,7 +84,7 @@
 </div>
 </div>
 
-<div class="table-responsiveorder-table p-0">
+<div class="table-responsive order-table">
 	<table class="table table-sm mb-0 text-nowrap align-middle" data-v-cart>
 		<thead>
 			<tr>
@@ -107,6 +107,19 @@
 					<a href="#40" data-v-order-product-url>
 						<span data-v-order-product-name>Product name</span>
 					</a>
+					
+					<div class="option" data-v-if="product.option_value">
+						<div class="" data-v-product-option>
+							<span data-v-product-option-option>Color</span>: <span data-v-product-option-name>Red</span> <span data-v-if="value.price > 0">(<span data-v-product-option-price_formatted></span>)</span>
+						</div>
+						<div class="" data-v-product-option>
+							<span data-v-product-option-option>Size</span>: <span data-v-product-option-name>XL</span> <span data-v-if="value.price > 0">(<span data-v-product-option-price_formatted></span>)</span>
+						</div>
+						<div class="" data-v-product-option>
+							<span data-v-product-option-option>Material</span>: <span data-v-product-option-name>Wool</span> <span data-v-if="value.price > 0">(<span data-v-product-option-price_formatted></span>)</span>
+						</div>
+					</div>
+					
 					<div class="price">
 						<span data-v-order-product-price_tax_formatted>$246.40</span>
 					</div>
@@ -117,7 +130,7 @@
 					<span data-v-order-product-quantity>1</span>
 				</td>
 				<!-- <td class="text-end price" data-v-order-product-price>$123.20</td> -->
-				<td class="text-end total px-4">
+				<td class="text-end total">
 					<span data-v-order-product-tax_formatted>$246.40</span>
 				</td>
 			</tr>
@@ -125,23 +138,23 @@
 
 	  <tfoot data-v-order-totals>
 		  <tr data-v-order-totals-total>
-			 <td colspan="3" class="text-end"><small data-v-order-total-title>Sub-Total</small>:</td>
+			 <td colspan="3" class="text-end"><small data-v-order-total-title>Sub-Total</small></td>
 			 <td class="text-end" data-v-order-total-value_formatted>$101.00</td>
 		  </tr>
 		  <tr data-v-order-totals-total>
-			 <td colspan="3" class="text-end"><small>Eco Tax (2.00):</small></td>
+			 <td colspan="3" class="text-end"><small>Eco Tax (2.00)</small></td>
 			 <td class="text-end">$2.00</td>
 		  </tr>
 		  <tr data-v-order-totals-total>
-			 <td colspan="3" class="text-end"><small>VAT (19%):</small></td>
+			 <td colspan="3" class="text-end"><small>VAT (19%)</small></td>
 			 <td class="text-end">$20.20</td>
 		  </tr>
 		  <tr data-v-order-totals-total>
-			 <td colspan="3" class="text-end"><small>Total:</small></td>
+			 <td colspan="3" class="text-end"><small>Total</small></td>
 			 <td class="text-end">$123.20</td>
 		  </tr> 
 		  <tr>
-			 <td colspan="3" class="text-end">Total:</td>
+			 <td colspan="3" class="text-end">Total</td>
 			 <td class="text-end" data-v-order-total_formatted>$0</td>
 		  </tr>
 	   </tfoot>

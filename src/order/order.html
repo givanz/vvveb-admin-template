@@ -87,22 +87,22 @@
                 </div>
                 <div class="mt-4">
                   <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
 						@@include('_order_customer.html')				
                       </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
 						@@include('_order_details.html')				
                       </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
 						@@include('_order_billing_address.html')				
                       </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
 						@@include('_order_shipping_address.html')				
                       </div>
@@ -133,46 +133,59 @@
 
 
 @@include('../_includes/footer-scripts.html')
-<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
 
 <script>
-$("#order-form input[type=text]").change(function () {
-	let name = this.name;
-	let textSelector = "[data-" + name + "-text]";
-	$(textSelector).html(this.value);
+document.querySelector("#order-form").addEventListener("change", function (e) {
+	let element = e.target.closest("input[type=text]");
+	if (element) {
+		let name = element.name;
+		let textSelector = "[data-" + name + "-text]";
+		console.log(textSelector);
+		console.log(document.querySelector(textSelector));
+		document.querySelector(textSelector).innerHTML = element.value;
+	}
 	
 });
 
-$("#order-form select").change(function () {
-	let name = this.dataset.text;
-	let value = this.options[this.selectedIndex].text
-	let textSelector = "[" + name + "]";
-	$(textSelector).html(value);
-	
+document.querySelector("#order-form").addEventListener("change", function (e) {
+	let element = e.target.closest("select");
+	if (element) {
+		let name = element.dataset.text;
+		let value = element.options[element.selectedIndex].text
+		let textSelector = "[" + name + "]";
+		document.querySelector(textSelector).innerHTML = element.value;
+	}	
 });
 
 //if new order toggle forms visibility
-let order_id = $("[name=order_id]");
-if (!order_id.val()) {
-	$('.customer_details').toggleClass('edit');
-	$('.order_details').toggleClass('edit');
-	$('.shipping_address').toggleClass('edit');
-	$('.billing_address').toggleClass('edit');
+let order_id = document.querySelector("[name=order_id]");
+if (!order_id || !order_id.value) {
+	document.querySelector('.customer_details').classList.toggle('edit');
+	document.querySelector('.order_details').classList.toggle('edit');
+	document.querySelector('.shipping_address').classList.toggle('edit');
+	document.querySelector('.billing_address').classList.toggle('edit');
 }
 
-$(".product-details").hide();
-function onSelect(value, text, name, listName) {
-	$(".product-details").html("").show();
-	$(".product-details").load(window.location.href + " .product-details > div", {product_id:value});
-	
+let productDetails = document.querySelector(".product-details > div");
+if (productDetails) {
+	productDetails.style.display = "none";
+
+	function onSelect(value, text, name, listName) {
+		productDetails.innerHTML = "";
+		productDetails.style.display = "";
+		loadAjax(window.location.href, ".product-details > div", null, {product_id:value},  "post");
+		//document.querySelector(".product-details").load(window.location.href + " .product-details > div", {product_id:value});
+		
+	}
+	/*
+	document.querySelectorAll(".product-details").on("click", ".btn-add-product", function (e) {
+		document.querySelectorAll(".product-details").hide();
+		e.preventDefault();
+		return false;
+	});
+	*/
+	let autocomplete = new _AutocompleteInput(document.querySelector('input.autocomplete'), {onSelect});
 }
-
-$(".product-details").on("click", ".btn-add-product", function (e) {
-	$(".product-details").hide();
-	e.preventDefault();
-	return false;
-});
-
-$('input.autocomplete').autocomplete({onSelect});
 </script>
 @@include('../_includes/footer.html')

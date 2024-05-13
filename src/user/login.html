@@ -120,18 +120,5 @@
 		</div>
 
 
-	<script>
-	function togglePasswordInput(element, id) {
-		let password = document.getElementById(id);
-		if (password.type == "password") {
-			password.type = "text"; 
-			$("i", element).addClass("icon-eye-outline").removeClass("icon-eye-off-outline");
-		} else {
-			password.type = "password";
-			$("i", element).removeClass("icon-eye-outline").addClass("icon-eye-off-outline");
-		}
-	}
-	</script>
-
 @@include('../_includes/footer-scripts.html')
 @@include('../_includes/footer.html')

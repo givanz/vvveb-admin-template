@@ -40,6 +40,11 @@ ul.autocomplete li
   overflow: hidden;
   width: 100%;
   cursor:pointer;
+  
+  &:hover {
+	  background-color: var(--bs-primary);
+	  color: var(--bs-body-bg);
+  }
 }
 
 ul.autocomplete li.selected 

@@ -41,7 +41,7 @@
 
 	@@include('../_includes/notifications.html')
    
-   <form id="form" action="" method="post" class="needs-validation" novalidate  data-v-post>
+   <form id="form" action="" method="post" class="settings"  data-v-post>
    
    <input type="hidden" name="action" id="action" value="save">   
    <input type="hidden" name="post_id" id="post_id" value="" data-v-if="this.post.post_id" data-v-post-post_id>   
@@ -110,7 +110,7 @@
 								<input name="updated_at" value="" type="date" data-date-format="YYYY-MM-DD" class="form-control" data-v-post-updated_at>
 								-->
 								<div class="input-group">
-								  <input name="updated_at" value="" type="text" class="form-control datetime border-end-0"  data-v-post-updated_at>
+								  <input name="updated_at" value="" type="text" class="form-control datetime border-end-0" autocomplete="off" data-v-post-updated_at>
 								  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
 								</div>
                             </div>
@@ -193,57 +193,21 @@
 
 
 <script>
-	let mediaPath = '{ $this->mediaPath }';
-	let mediaScanUrl =  '{ $this->scanUrl }';
-	let uploadUrl = '{ $this->uploadUrl }';
-	let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
+let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let contentType = 'post';
 </script>
-<script id="autocomplete-js" src="libs/autocomplete/jquery.autocomplete.js"></script>	
+<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
 <script id="openverse-js" src="libs/media/openverse.js"></script>
 <script id="media-js"src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 <script id="revisions-js" src="../../js/admin/revisions.js"></script>
 
-<script> 
-	$(function () {
-        jQuery("input[name=custom-date]").change(function () {
-            jQuery(".publish-date").css("display", (this.value == "true") ? "block" : "none");
-        });
-
-        $('input.autocomplete').autocomplete({
-            url: "/admin/?module=editor/autocomplete&action=products",
-        });
-        $('input.autocomplete-list').autocompleteList({
-            url: "/admin/?module=editor/autocomplete&action=products",
-        });
-        
-        $('input.tags-input').each(function (i,element) {
-			/*
-			let params = "";
-			
-			for (name in element.dataset) { 
-				if (name) {
-					params += name + "=" + element.dataset[name];
-				}
-			}*/
-			
-			$(element).tagsInput({
-				url: "/admin/?module=content/post&action=categoriesAutocomplete&type=tags",
-				parameters:element.dataset,
-				listName:"tag",
-				//listName:"tag[]",
-				listId:element.dataset.taxonomy_id, //element.dataset.taxonomy_id,
-				allowFreeText:true
-			});
-		});
-    });
-</script>
-
 <script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
-<!-- 
-<script type="module" src="/js/libs/tinymce-dist/jquery.tinymce.min.js"></script>
- -->
 <script id="tinymce-js" src="../../js/libs/tinymce-dist/tinymce.min.js"></script>
 <script id="oembed-js" src="../../js/libs/oembed.js"></script>
 <script id="tinymce-embed-js" src="../../js/libs/tinymce-embed.js"></script>
@@ -254,54 +218,6 @@
 <link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
 
 <script id="functions-js" src="../../js/admin/functions.js"></script>
+<script id="content-js"src="js/content.js"></script>
 
-<script>
-let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
-
-jQuery(document).ready(function () { 
-	//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor
-	if (typeof tinyMceOptions  !== 'undefined') {
-		$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
-		tinymce.init(tinyMceOptions);
-	}
-
-	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-	  return new bootstrap.Popover(popoverTriggerEl)
-	});	
-	
-
-	$('.tab-pane[data-v-language]').each(function () {
-		let titleInput = $('[data-v-post-content-name]', this);
-		let slugInput = $('[data-v-post-content-slug]', this);
-		let urlInput = $('[data-v-url]', this);
-		let orig = slugify(titleInput.val());
-		
-		//change slug only if current value is the same as the text
-		titleInput.on('keyup', function (e) {
-			let text = this.value;
-			delay(() => {
-				let slug = slugInput.val();
-				urlInput.text("/" + slug).attr("href", "/" + slug);
-				
-				if (orig == slug || !slug) {
-					orig = slugify(text);
-					slugInput.val(orig);
-				}
-			}, 500);
-		});
-		
-		slugInput.on('keyup', function (e) {
-			let slug = this.value;
-			urlInput.text("/" + slug).attr("href", "/" + slug);
-		});
-		
-	});
-});
-
-$(".copy-btn").click(function (e) {
-	
-});
-
-</script>
 @@include('../_includes/footer.html')

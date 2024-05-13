@@ -14,7 +14,6 @@
 
   <title>Vvveb - Dasboard</title>
 
-  <link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack-extra.min.css">
   <link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">
 
   <link href="css/admin.css" rel="stylesheet">
@@ -22,12 +21,9 @@
 
 
 <body class="home">
-
   <script>
-    var chartjs = {};
+let chartjs = {};
 </script>
-
-
   <div id="container">
 
     <div class="sidebar">
@@ -909,7 +905,6 @@
 
     </div>
 
-
     <div class="main">
 
       <div class="top-header">
@@ -924,7 +919,7 @@
 
           <div class="dropdown-menu">
             <div data-v-site>
-              <a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+              <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
                 <!-- i class="la la-circle la-lg me-2"></i -->
                 <span data-v-site-name class="flex-grow-1">Default website</span>
                 <i class="la la-external-link-alt"></i>
@@ -956,47 +951,68 @@
 
           <div class="dropdown-menu">
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
-                <span class="flex-grow-1">Assets</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
+                  <span>Assets</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
-                <span class="flex-grow-1">Templates</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
+                  <span>Templates</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
-                <span class="flex-grow-1">Database</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-server-outline me-2 text-body-tertiary"></i>
+                  <span>Database</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
-                <span class="flex-grow-1">Page cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-outline me-2 text-body-tertiary"></i>
+                  <span>Page cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
-                <span class="flex-grow-1">Image cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-image-outline me-2 text-body-tertiary"></i>
+                  <span>Image cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
-                <span class="flex-grow-1">Model cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
+                  <span>Model cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
 
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
-                <span class="flex-grow-1">All cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-sync-outline me-2 text-body-tertiary"></i>
+                  <span>All cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1270,7 +1286,6 @@
       </div>
 
 
-
       <div class="p-4">
 
         <div class="notifications" data-v-notifications>
@@ -1331,7 +1346,7 @@
 
         <div class="grid-stack">
 
-          <div class="grid-stack-item stack-orders" data-gs-width="3" data-gs-height="2" data-v-component-notifications>
+          <div class="grid-stack-item stack-orders" gs-w="3" gs-h="2" data-v-component-notifications>
             <!-- set count to 0 to not fetch orders, we only need the number of orders -->
 
             <div class="grid-stack-item-content">
@@ -1374,7 +1389,7 @@
             </div>
           </div>
 
-          <div class="grid-stack-item stack-users" data-gs-width="3" data-gs-height="2" data-v-component-notifications>
+          <div class="grid-stack-item stack-users" gs-w="3" gs-h="2" data-v-component-notifications>
 
             <div class="grid-stack-item-content">
               <div class="card">
@@ -1410,7 +1425,7 @@
             </div>
           </div>
 
-          <div class="grid-stack-item stack-comments" data-gs-width="3" data-gs-height="2" data-v-component-notifications>
+          <div class="grid-stack-item stack-comments" gs-w="3" gs-h="2" data-v-component-notifications>
 
             <div class="grid-stack-item-content">
               <div class="card bg-info-semi">
@@ -1450,7 +1465,7 @@
             </div>
           </div>
 
-          <div class="grid-stack-item stack-reviews" data-gs-width="3" data-gs-height="2" data-v-count=0 data-v-component-notifications>
+          <div class="grid-stack-item stack-reviews" gs-w="3" gs-h="2" data-v-count=0 data-v-component-notifications>
 
             <div class="grid-stack-item-content">
               <div class="card">
@@ -1490,7 +1505,7 @@
             </div>
           </div>
 
-          <div class="grid-stack-item stack-sales" data-gs-width="12" data-gs-height="4" data-v-component-stats>
+          <div class="grid-stack-item stack-sales" gs-w="12" gs-h="4" data-v-component-stats>
 
             <div class="grid-stack-item-content">
               <div class="card">
@@ -1570,7 +1585,7 @@
           </div>
           <!--				
                 <div class="grid-stack-item stack-orders"
-                     data-gs-width="6" data-gs-height="4">
+                     gs-w="6" gs-h="4">
                      
                     <div class="grid-stack-item-content">
                         <div class="card">
@@ -1645,7 +1660,7 @@
                 </div>
 -->
 
-          <div class="grid-stack-item stack-latest-orders" data-gs-width="6" data-gs-height="4" data-v-component-orders>
+          <div class="grid-stack-item stack-latest-orders" gs-w="6" gs-h="4" data-v-component-orders>
 
             <div class="grid-stack-item-content">
               <div class="card">
@@ -1680,8 +1695,7 @@
                         <td width="100" data-v-order-order_status>Pending</td>
                         <td width="150" data-v-order-created_at data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                         <td width="150">
-                          <span data-v-currency_code></span>
-                          <span class="price" data-v-order-total>100%</span>
+                          <span class="price" data-v-order-total_formatted>100%</span>
                         </td>
                         <td class="text-center" width="70">
 
@@ -1732,7 +1746,7 @@
           </div>
 
 
-          <div class="grid-stack-item stack-new-users" data-gs-width="3" data-gs-height="4" data-v-component-users>
+          <div class="grid-stack-item stack-new-users" gs-w="3" gs-h="4" data-v-component-users>
 
             <div class="grid-stack-item-content">
 
@@ -1819,7 +1833,7 @@
             </div>
           </div>
 
-          <div class="grid-stack-item stack-latests-products" data-gs-width="3" data-gs-height="4" data-v-component-products>
+          <div class="grid-stack-item stack-latests-products" gs-w="3" gs-h="4" data-v-component-products>
 
             <div class="grid-stack-item-content">
 
@@ -1849,7 +1863,7 @@
                           <img class="rounded" data-v-product-image src="#">
                         </td>
                         <td width="100" data-v-product-name>Product name</td>
-                        <td data-v-product-price width="70">5</td>
+                        <td data-v-product-price_tax_formatted width="70">5</td>
                         <td class="text-center" width="70">
 
 
@@ -1875,7 +1889,7 @@
             </div>
           </div>
 
-          <div class="grid-stack-item stack-new-comments" data-gs-width="6" data-gs-height="4">
+          <div class="grid-stack-item stack-new-comments" gs-w="6" gs-h="4">
 
             <div class="grid-stack-item-content" data-v-component-comments data-v-status="0">
 
@@ -1965,7 +1979,7 @@
 
 
 
-          <div class="grid-stack-item stack-news" data-gs-width="6" data-gs-height="4" data-v-component-news>
+          <div class="grid-stack-item stack-news" gs-w="6" gs-h="4" data-v-component-news>
 
             <div class="grid-stack-item-content">
 
@@ -2050,7 +2064,9 @@
   </div>
 
 
-  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
   <script id="popper-js" src="js/popper.min.js"></script>
   <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
   <script id="theme-js" src="js/theme.js"></script>
@@ -2089,36 +2105,25 @@
   </div>
 
 
-  <script src="libs/jquery-ui/jquery-ui.min.js"></script>
-  <script src="libs/gridstack/gridstack.min.js"></script>
-  <script src="libs/gridstack/gridstack.jQueryUI.min.js"></script>
+  <script src="libs/gridstack/gridstack-all.js"></script>
   <script id="chartjs-script" src="libs/chart-js/chart.bundle.min.js"></script>
 
-
   <script type="text/javascript">
-    $(function () {
-        var options = {
-            cellHeight: 80,
-            verticalMargin: 10,
-			cellHeightThrottle: 100,
-			minWidth: 1200,
-        };
-        $('.grid-stack').gridstack(options);
+let options = {
+	cellHeight: 90,
+	margin: 10,
+	cellHeightThrottle: 100,
+	//breakpointForWindow: "grid",
+	columnOpts: { breakpoints: [{w:768, c:1}] },
+	minWidth: 1200
+};
 
-        $('.grid-stack').on('change', function (event, items) {
-            console.log(items);
-        });
-    });
-</script>
-  <script>
-    $(document).ready(function () {
-        chartjs_instance = {};
-        $(".chartjs").each(function () {
+let grid = GridStack.init(options);
 
-            ctx = $("canvas", this).get(0).getContext("2d");
-            chartjs_instance[this.dataset.chartjs] = new Chart(ctx, chartjs[this.dataset.chartjs]);
-        });
-    });
+document.querySelectorAll(".chartjs").forEach(el => {
+	ctx = el.querySelector("canvas").getContext("2d");
+	el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
+});
 </script>
 
   <!-- Modal -->
@@ -2141,15 +2146,16 @@
 
   <!-- save toast -->
   <div class="toast-container">
-    <div class="toast position-fixed end-0 bottom-0 me-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-      <div class="toast-header text-white">
+    <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header bg-success bg-opacity-25 border-0">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->
-        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body ">
         <div class="flex-grow-1">
-          <div class="message">Elements saved!
+          <div class="message">
+            <div>Elements saved!</div>
             <div>Template backup was saved!</div>
             <div>Template was saved!</div>
           </div>

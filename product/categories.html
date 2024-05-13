@@ -918,7 +918,7 @@
 
           <div class="dropdown-menu">
             <div data-v-site>
-              <a class="dropdown-item d-flex" href="#" data-v-site-href target="_blank">
+              <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
                 <!-- i class="la la-circle la-lg me-2"></i -->
                 <span data-v-site-name class="flex-grow-1">Default website</span>
                 <i class="la la-external-link-alt"></i>
@@ -950,47 +950,68 @@
 
           <div class="dropdown-menu">
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}'>
-                <span class="flex-grow-1">Assets</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
+                  <span>Assets</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}'>
-                <span class="flex-grow-1">Templates</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
+                  <span>Templates</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}'>
-                <span class="flex-grow-1">Database</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-server-outline me-2 text-body-tertiary"></i>
+                  <span>Database</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}'>
-                <span class="flex-grow-1">Page cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-document-outline me-2 text-body-tertiary"></i>
+                  <span>Page cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}'>
-                <span class="flex-grow-1">Image cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-image-outline me-2 text-body-tertiary"></i>
+                  <span>Image cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}'>
-                <span class="flex-grow-1">Model cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
+                  <span>Model cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
 
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}'>
-                <span class="flex-grow-1">All cache</span>
-                <i class="la la-circle-notch"></i>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <i class="icon-sync-outline me-2 text-body-tertiary"></i>
+                  <span>All cache</span>
+                </div>
+                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1712,7 +1733,9 @@
     </div>
   </div>
 
-  <script id="jquery-js" src="js/jquery.min.js"></script>
+  <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
   <script id="popper-js" src="js/popper.min.js"></script>
   <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
   <script id="theme-js" src="js/theme.js"></script>
@@ -1725,23 +1748,23 @@
   <div class="toast-container">
     <div id="taxonomyToast" class="toast position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-body">
-        <span class="message">Hello, world! This is a toast message.</span>
         <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button>
+        <span class="message d-flex align-items-center">Hello, world! This is a toast message.</span>
       </div>
     </div>
   </div>
 
+  <script id="jquery-js" src="js/jquery.min.js"></script>
   <script id="nestable-js" src="libs/nestable/jquery.nestable.js"></script>
-  <script src="libs/autocomplete/jquery.autocomplete.js"></script>
-
+  <script src="libs/autocomplete/autocomplete.js"></script>
 
   <script>
-	let mediaPath = '{ $this->mediaPath }';
-	let mediaScanUrl =  '{ $this->scanUrl }';
-	let uploadUrl = '{ $this->uploadUrl }';
-	let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let mediaPath = '{ $this->mediaPath }';
+let mediaScanUrl =  '{ $this->scanUrl }';
+let uploadUrl = '{ $this->uploadUrl }';
+let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 </script>
-  <script id="autocomplete-js" src="libs/autocomplete/jquery.autocomplete.js"></script>
+  <script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>
   <script id="openverse-js" src="libs/media/openverse.js"></script>
   <script id="media-js" src="libs/media/media.js"></script>
   <script id="index-js" src="libs/vvveb/index.js"></script>
@@ -1786,7 +1809,8 @@ $("#taxonomies").on("click", ".expand-btn",function () {
 			
 			delete editorInstances[id];
 		} else {
-			$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
+			//$(window).trigger("vvveb.tinymce.options", tinyMceOptions);
+			window.dispatchEvent(new CustomEvent("tinymce.options", {detail: tinyMceOptions}));
 			editorInstances[id] = [];
 			let textareas = $("> .expand textarea.html", item);
 
@@ -1840,7 +1864,7 @@ function saveOrder(item) {
 			data: {taxonomy_items:data},
 			//dataType: 'json',
 			complete: function(data) {
-				$("#taxonomyToast .message").html('<i class="la la-info-circle fs-2"></i><span class="fs-6">' + data.responseText + '</span>');
+				$("#taxonomyToast .message").html('<i class="la la-info-circle fs-2 me-2"></i><span class="fs-6">' + data.responseText + '</span>');
 				toast.show();
 				//$('#cart > button').button('reset');
 			},
@@ -2030,8 +2054,8 @@ function changeMenuType(e) {
 
 $("#taxonomies").on("change", "[name='type']", changeMenuType);
 
-$('input.autocomplete').autocomplete();
-$('input.autocomplete-list').autocompleteList();
+document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
+document.querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
 
 </script>
 
@@ -2055,15 +2079,16 @@ $('input.autocomplete-list').autocompleteList();
 
   <!-- save toast -->
   <div class="toast-container">
-    <div class="toast position-fixed end-0 bottom-0 me-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-      <div class="toast-header text-white">
+    <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header bg-success bg-opacity-25 border-0">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->
-        <button type="button" class="btn-close btn-close-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body ">
         <div class="flex-grow-1">
-          <div class="message">Elements saved!
+          <div class="message">
+            <div>Elements saved!</div>
             <div>Template backup was saved!</div>
             <div>Template was saved!</div>
           </div>

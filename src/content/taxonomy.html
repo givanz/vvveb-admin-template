@@ -43,7 +43,7 @@
                                         <label class="form-check">
                                             <input type="checkbox" class="form-check-input" value="4"
                                                    name="taxonomy[]"
-                                                   onclick="$('.checkbox input[type=\'checkbox\']').prop('checked', this.checked);">
+                                                   onclick="document.querySelectorAll('.checkbox input[type=\'checkbox\']').forEach(e => e.checked = this.checked);">
                                             <span class="form-check-label"></span>
                                             <span class="custom-control-description">&nbsp;</span>
                                         </label>

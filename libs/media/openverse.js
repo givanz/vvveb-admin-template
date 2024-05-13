@@ -37,16 +37,33 @@ class OpenVerse {
 	authenticate() {
 		let url = "https://api.openverse.engineering/v1/auth_tokens/token/";
 		let self = this;
-		
-			$.ajax({
-				url: url,
-				type: 'POST',
-				dataType: "json",
-				data:this.key
-			}).done(function(data) {
-				this.accessToken = data;
-				console.log('OpenVerse Authentication:' , data);
-			});		
+
+
+	  const formData = new FormData();
+	  for (const key in this.key) {
+		formData.append(key, this.key[key]);
+	  }
+	  
+		fetch(url, {
+			method: "POST",  
+			headers: {
+			  //"Content-Type": "application/json",
+			  'Content-Type': 'application/x-www-form-urlencoded',
+			},
+   			body: new URLSearchParams(this.key), 
+		})
+		.then((response) => {
+			if (!response.ok) { throw new Error(response) }
+			return response.text()
+		})
+		.then((data) => {
+			this.accessToken = data;
+			console.log('OpenVerse Authentication:' , data);				
+		})
+		.catch(error => {
+			console.log(error.statusText);
+			displayToast("bg-danger", "Error", "Openverse authentication failed!");
+		});	
 	}
 	
 	
@@ -56,23 +73,25 @@ class OpenVerse {
 	
 	getResults(callback) {
 		this.currentUrl = this.baseUrl + this.filtersParameters;
-		
-		$.ajax({
-				url: this.currentUrl,
-				type: 'GET',
-				dataType: "json",
-				headers: {
-					'Authorization': 'Bearer ' + this.accessToken.access_token,
-				}
-			}).done(function(data) {
-					callback(data);
-			});		
 
-			/*
-			jQuery.getJSON(this.currentUrl, function( data ) {
-				callback(data);
-			});		
-			*/
+		fetch(this.currentUrl, {
+			method: "GET",  
+			headers: {
+			  "Content-Type": "application/json",
+			  'Authorization': 'Bearer ' + this.accessToken.access_token,
+			},
+		})
+		.then((response) => {
+			if (!response.ok) { throw new Error(response) }
+			return response.json()
+		})
+		.then((data) => {
+			callback(data);
+		})
+		.catch(error => {
+			console.log(error.statusText);
+			displayToast("bg-danger", "Error", "Openverse error!");
+		});
 	}
 }
 
@@ -99,26 +118,28 @@ class OpenVerseDisplay extends OpenVerse {
 			html += "</div>";
 			
 		}
-		return html;
+		return generateElements(html)[0];
 	}
 	
 	showLoading() {
-		$("#openverse-results").html(`
+		document.getElementById("openverse-results").innerHTML = `
 		<div class="spinner-border" style="width: 5rem; height: 5rem;margin: 5rem auto; display:block" role="status">
 		  <span class="visually-hidden">Loading...</span>
-		</div>`);
+		</div>`;
 	}
 	
 	setFilters() {
-		this.filtersParameters = $("#openverse-form").serialize();
+		this.filtersParameters = new URLSearchParams(new FormData(document.getElementById("openverse-form"))).toString();
 		//this.setFiltersParams(filters);
 	}
 
 	displayResults(data) {
 		  var items = [];
+		  console.log(data['results']);
 		  
-		  $.each( data['results'], function( key, val ) {
-
+		  data['results'].forEach( val =>{
+		  //let value = data['results'][key];
+		  console.log(val);
 		  let item = 
 			`<li class="files">									
 			  <label class="form-check">									 
@@ -153,7 +174,7 @@ class OpenVerseDisplay extends OpenVerse {
 			items.push( item );
 		  });
 		 
-		$("#openverse-results").html(items.join( "" ));
+		document.getElementById("openverse-results").innerHTML = items.join("");
 		 //pagination
 		const maxpages = 15;		  
 		let pages =  data['page_count'];
@@ -200,13 +221,14 @@ class OpenVerseDisplay extends OpenVerse {
 		  pagination += `<li class="page-item"><button type="button" name="page" value="${next}" class="ms-1 page-link" onclick="openverse.page(${next});return false;">Next</button></li>`;
 		  
 		  pagination += `<div class="p-2"> total pages ${data['page_count']}</div>`;
-		
-		  $("#openverse-pagination").html(pagination);
+		console.log(items.join(""));
+		console.log(pagination);
+		  document.getElementById("openverse-pagination").innerHTML = pagination;
 	}
 	
 	page(pageNo) {
 		this.pageNo = pageNo;
-		this.filtersParameters = $("#openverse-form").serialize() + "&page=" + pageNo;
+		this.filtersParameters = (new URLSearchParams(new FormData(document.getElementById("openverse-form"))).toString()) + "&page=" + pageNo;
 		this.showLoading();
 		this.getResults(this.displayResults);
 	}
@@ -219,8 +241,8 @@ class OpenVerseDisplay extends OpenVerse {
 	}
 	
 	toggleBtn() {
-		return `                       
-			<button class="btn btn-outline-secondary btn-icon me-3 float-end" id="openverse-toggle"
+		return generateElements(`                       
+			<button class="btn btn-outline-secondary btn-sm btn-icon me-3 float-end border-secondary-subtle" id="openverse-toggle"
 			   data-bs-toggle="collapse" 
 			   data-bs-target="#openverse-form" 
 			   aria-expanded="false" 
@@ -228,20 +250,20 @@ class OpenVerseDisplay extends OpenVerse {
 			   <i class="la la-search-plus la-lg"></i>
 				OpenVerse Search
 			</button>
-           `;
+           `)[0];
 	}
 	
 	displayPanel() {
-		return `<ul class="data" id="openverse-results"></ul>`;
+		return generateElements(`<ul class="data" id="openverse-results"></ul>`)[0];
 	}
 	
 	paginationContainer() {
-		return `<div class="pagination" id="openverse-pagination">
-		</div>`;
+		return generateElements(`<div class="pagination" id="openverse-pagination">
+		</div>`)[0];
 	}
 		
 	topPanel() {
-		return `
+		return generateElements(`
 			<form id="openverse-form" class="collapse p-4">
 				<div class="input-group">
 					<input id="openverse" name="q" class="form-control w-50">
@@ -281,39 +303,38 @@ class OpenVerseDisplay extends OpenVerse {
 					<button type="button" name="page" value="1" class="btn btn-primary me-1">1</button>
 					<button type="button" name="page" value="2" class="btn btn-secondary me-1">2</button>
 				</div -->
-			</form>`;
+			</form>`)[0];
 	}
 	
 	init() {
 		let self = this ;
 		this.authenticate();
 		
-		$("#MediaModal .top-panel").append(self.topPanel());
-		$("#MediaModal .display-panel").append(self.displayPanel());
-		$("#MediaModal .top-right .align-right").append(self.toggleBtn());
-		$("#MediaModal .modal-footer .align-left").append(self.paginationContainer());
-		$("#openverse-filters").prepend(self.getFiltersHtml());
-		$("#openverse-search-btn").click(function (e) { self.search();e.preventDefault(); } );
+		document.querySelector("#MediaModal .top-panel").append(self.topPanel());
+		document.querySelector("#MediaModal .display-panel").append(self.displayPanel());
+		document.querySelector("#MediaModal .top-right .align-right").append(self.toggleBtn());
+		document.querySelector("#MediaModal .modal-footer .align-left").append(self.paginationContainer());
+		document.querySelector("#openverse-filters").prepend(self.getFiltersHtml());
+		document.querySelector("#openverse-search-btn").addEventListener("click", function (e) { self.search();e.preventDefault(); } );
 		
 		//if openverse enabled hide media images
-		$("#openverse-form").on("show.bs.collapse", function (e){ 
+		document.querySelector("#openverse-form").addEventListener("show.bs.collapse", function (e){ 
 			if (e.target.id == "openverse-form") { 
-				$("#MediaModal #openverse-results").show(); 
-				$("#MediaModal #openverse-pagination").show(); 
-				$("#MediaModal #media-files").hide();
+				document.querySelector("#MediaModal #openverse-results").style.display = ''; 
+				document.querySelector("#MediaModal #openverse-pagination").style.display = ''; 
+				document.querySelector("#MediaModal #media-files").style.display = 'none';
 			} 
 		});
-		$("#openverse-form").on("hide.bs.collapse", function (e){
+		document.querySelector("#openverse-form").addEventListener("hide.bs.collapse", function (e){
 			if (e.target.id == "openverse-form") { 
-				$("#MediaModal #openverse-results").hide(); 
-				$("#MediaModal #openverse-pagination").hide(); 
-				$("#MediaModal #media-files").show(); 
+				document.querySelector("#MediaModal #openverse-results").style.display = 'none'; 
+				document.querySelector("#MediaModal #openverse-pagination").style.display = 'none'; 
+				document.querySelector("#MediaModal #media-files").style.display = ''; 
 			}
 		});
 	}
 }
 
 let openverse = new OpenVerseDisplay();
-$(window).on( "mediaModal:init", function( event, myName ) { 
-	openverse.init();
-});
+
+window.addEventListener("mediaModal:init", () => openverse.init());
