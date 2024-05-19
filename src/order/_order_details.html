@@ -10,6 +10,10 @@
 			<tr>
 				<td><span class="text-muted">Order ID:</span> </td>
 				<td><span data-v-order-order_id>001</span></td>
+			</tr>			
+			<tr>
+				<td><span class="text-muted">Customer Order ID:</span> </td>
+				<td><span data-v-order-customer_order_id>001</span></td>
 			</tr>
 			<tr>
 				<td><span class="text-muted">Order Invoice:</span> </td>
@@ -28,10 +32,10 @@
 				<td><span class="text-muted">Payment method:</span> </td>
 				<td>
 				<details>
-				  <summary><span><span data-v-order-payment_title>Cash data-payment_title>Cash-text On Delivery</span></summary>
+				  <summary><span><span data-v-order-payment_title>Cash On Delivery</span></summary>
 				  <p>
-					<span class="badge bg-light text-muted" data-v-order-payment_method>Cash data-payment_method>Cash-text On Delivery</span></span><br/>
-					<span data-v-order-payment_description>Flat data-payment_description>Flat-text Shipping Rate</span><br/>
+					<span class="badge bg-light text-muted" data-v-order-payment_method>Cash On Delivery</span>
+					<div data-v-order-payment_description>Cash On Delivery</div>
 				  </p>
 				</details>	
 				 </td>
@@ -40,10 +44,10 @@
 				<td><span class="text-muted">Shipping method:</span></td>
 				<td>
 				<details>
-				  <summary><span><span data-v-order-shipping_title>>Flat data-shipping_title>>Flat-text Shipping Rate</span></summary>
+				  <summary><span data-v-order-shipping_title>Flat rate</span></summary>
 				  <p>
-					<span class="badge bg-light text-muted" data-v-order-shipping_method>Flat data-shipping_method>Flat-text Shipping Rate</span></span><br/>
-					<span data-v-order-shipping_description>Flat data-shipping_description>Flat-text Shipping Rate</span><br/>
+					<span class="badge bg-light text-muted" data-v-order-shipping_method>Flat rate</span>
+					<div data-v-order-shipping_description>Flat data-shipping_description>Flat-text Shipping Rate</div>
 				  </p>
 				</details>	
 				</td>
@@ -56,17 +60,22 @@
 				<td><span class="text-muted">Reward points:</span></td>
 				<td><span data-v-order-points>$734.28</span></td>
 			</tr>
+			<tr>
 				<td><span class="text-muted">Status</span></td>
 				<td>
-				<span data-v-order-order_status>Pending</span> 
-				<!--
-				  <select class="form-select">
-					<option selected="">Status</option>
-					<option value="Success">Success</option>
-					<option value="Pending">Pending</option>
-					<option value="Cancel">Cancel</option>
-				  </select>
-				-->
+					<span data-v-order-order_status>Pending</span> 
+				</td>
+			</tr>
+			</tr>
+				<td><span class="text-muted">Payment status</span></td>
+				<td>
+					<span data-v-order-payment_status>Pending</span> 
+				</td>
+			</tr>
+			<tr>
+				<td><span class="text-muted">Shipping status</span></td>
+				<td>
+					<span data-v-order-shipping_status>Pending</span> 
 				</td>
 			</tr>
 		  </table>
@@ -83,6 +92,26 @@
 			<div class="col-sm-8">
 			
 			<select class="form-control" id="status" name="order_status_id" data-text="data-v-order-order_status" data-v-order-order_status_id>
+				<option value="pending" data-v-option>Pending</option>
+				<option value="completed" data-v-option>Completed</option>
+				<option value="cancel"data-v-option>Cancel</option>
+			</select>
+			</div>
+		</div>			
+		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Payment status</label>
+			<div class="col-sm-8">
+			
+			<select class="form-control" id="status" name="payment_status_id" data-text="data-v-order-payment_status" data-v-order-payment_status_id>
+				<option value="pending" data-v-option>Pending</option>
+				<option value="completed" data-v-option>Completed</option>
+				<option value="cancel"data-v-option>Cancel</option>
+			</select>
+			</div>
+		</div>			
+		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Shipping status</label>
+			<div class="col-sm-8">
+			
+			<select class="form-control" id="status" name="shipping_status_id" data-text="data-v-order-shipping_status" data-v-order-shipping_status_id>
 				<option value="pending" data-v-option>Pending</option>
 				<option value="completed" data-v-option>Completed</option>
 				<option value="cancel"data-v-option>Cancel</option>

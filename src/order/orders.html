@@ -74,9 +74,35 @@
 
 							<div class="col-sm-6 mb-3">
 								<div class="row">
-                                <label class="col-sm-2 col-form-label" for="input-model">Status</label>
+                                <label class="col-sm-2 col-form-label" for="input-model">Order Status</label>
 									<div class="col-sm-10">
 									  <select name="filter[order_status_id]" id="filter-by-status" class="form-control" data-v-order-order_status_id>
+										<option value="">- All -</option>
+										<option value="active" data-v-option>Active</option>
+										<option value="inactive" data-v-option>Inactive</option>
+									  </select>
+									</div>
+								</div>
+                            </div>						
+							
+							<div class="col-sm-6 mb-3">
+								<div class="row">
+                                <label class="col-sm-2 col-form-label" for="input-model">Payment status</label>
+									<div class="col-sm-10">
+									  <select name="filter[payment_status_id]" id="filter-by-payment" class="form-control" data-v-order-payment_status_id>
+										<option value="">- All -</option>
+										<option value="active" data-v-option>Active</option>
+										<option value="inactive" data-v-option>Inactive</option>
+									  </select>
+									</div>
+								</div>
+                            </div>		
+					
+							<div class="col-sm-6 mb-3">
+								<div class="row">
+                                <label class="col-sm-2 col-form-label" for="input-model">Shipping status</label>
+									<div class="col-sm-10">
+									  <select name="filter[shipping_status_id]" id="filter-by-shipping" class="form-control" data-v-order-shipping_status_id>
 										<option value="">- All -</option>
 										<option value="active" data-v-option>Active</option>
 										<option value="inactive" data-v-option>Inactive</option>

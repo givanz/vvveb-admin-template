@@ -1370,10 +1370,17 @@
             <input type="hidden" name="return_id" data-v-return-return_id>
 
             <div class="mb-3 row">
+              <label for="input-order_id" class="col-sm-2 col-form-label">Customer order id</label>
+              <div class="col-sm-10">
+                <a href="#" data-v-return-order_url>Order</a>
+                <input type="text" class="form-control" id="input-first_name" placeholder="First name" name="return[first_name]" data-v-return-customer_order_id required>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
               <label for="input-order_id" class="col-sm-2 col-form-label">Order id</label>
               <div class="col-sm-10">
-                <a href="#" data-v-return-order_url>Order <span data-v-return-order_id>1</span>
-                </a>
+                <input type="text" class="form-control" id="input-first_name" placeholder="First name" name="return[first_name]" data-v-return-order_id required>
               </div>
             </div>
 
@@ -1430,7 +1437,7 @@
             <div class="mb-3 row">
               <label for="input-opened" class="col-sm-2 col-form-label form-check-label">Opened</label>
               <div class="col-sm-10">
-                <input type="checkbox" class="form-check-input" id="input-opened" placeholder="code" name="return[opened]" data-v-return-opened required>
+                <input type="checkbox" class="form-check-input" id="input-opened" placeholder="code" name="return[opened]" data-v-return-opened>
               </div>
             </div>
 
