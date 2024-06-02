@@ -9720,7 +9720,7 @@ textarea.form-control-lg {
     color: var(--bs-body-color); }
     .tree > ol li {
       position: relative;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.1rem;
       list-style: none;
       color: var(--bs-body-color);
       overflow: hidden; }
@@ -9729,7 +9729,7 @@ textarea.form-control-lg {
     .tree > ol li.file {
       border: 1px solid transparent; }
       .tree > ol li.file:hover, .tree > ol li.file.active {
-        color: var(--bs-link-color); }
+        color: var(--bs-link-hover-color); }
       .tree > ol li.file:hover {
         background-color: rgba(var(--bs-link-color-rgb), 0.05); }
         .tree > ol li.file:hover .file-actions {
@@ -9737,11 +9737,11 @@ textarea.form-control-lg {
       .tree > ol li.file > label {
         background-image: url(../../../js/vvvebjs/icons/file.svg);
         background-position: 8px 4px;
-        background-size: 21px 21px;
+        background-size: 19px 19px;
         background-repeat: no-repeat;
         cursor: pointer;
         display: block;
-        padding-left: 35px;
+        padding-left: 33px;
         margin: 0;
         font-size: 12px;
         line-height: 28px;
@@ -9754,7 +9754,7 @@ textarea.form-control-lg {
         top: 0px;
         right: 0px; }
         .tree > ol li.file .file-actions .btn {
-          padding: 0.1rem 0.3rem;
+          padding: 0rem 0.2rem;
           font-size: 0.875rem;
           line-height: 1;
           border-radius: 4px;
@@ -9783,13 +9783,13 @@ textarea.form-control-lg {
           padding-left: 1px; }
     .tree > ol li label {
       background: url(../../../js/vvvebjs/icons/folder.svg) 24px 1px no-repeat;
-      background-size: 22px 22px;
+      background-size: 20px 20px;
       cursor: pointer;
       display: block;
-      padding-left: 52px;
+      padding-left: 50px;
       margin: 0px;
       font-size: 12px;
-      line-height: 28px;
+      line-height: 24px;
       /*
 			p {
 				margin: 0;
@@ -9812,7 +9812,7 @@ textarea.form-control-lg {
       height: auto; }
       .tree > ol li input:checked + ol > li {
         display: block;
-        margin: 0 0 0.2em;
+        margin: 0 0 0.1em;
         /* 2px */ }
       .tree > ol li input:checked + ol > li:last-child {
         margin: 0 0 0.3em;
@@ -9904,8 +9904,8 @@ div.autocomplete-list {
 
 body {
   --builder-filemanager-height: 250px;
-  --builder-canvas-margin: 50px;
-  --builder-header-top-height:50px;
+  --builder-canvas-margin: 35px;
+  --builder-header-top-height:35px;
   --builder-bottom-panel-height:35px;
   --drag-items-tabs-height:40px;
   scrollbar-color: rgba(var(--bs-body-color-rgb), 0.1) var(--bs-body-bg);
@@ -9967,7 +9967,7 @@ body {
     background-color: var(--bs-body-bg);
     height: 100%;
     position: fixed;
-    top: 50px;
+    top: 35px;
     z-index: 10; }
   #vvveb-builder #left-panel {
     float: left;
@@ -10011,9 +10011,9 @@ body {
         line-height: 1.6;
         --bs-btn-border-color:transparent; }
       #vvveb-builder #left-panel #filemanager .tree {
-        height: 200px;
-        height: calc( var(--builder-filemanager-height) - 50px);
-        padding: 0.5rem;
+        height: 215px;
+        height: calc( var(--builder-filemanager-height) - 35px);
+        padding: 0.3rem 0.5rem;
         overflow: hidden;
         resize: vertical; }
         #vvveb-builder #left-panel #filemanager .tree:hover {
@@ -10044,8 +10044,8 @@ body {
     #vvveb-builder #right-panel .nav-link.active {
       border-top: 1px solid rgba(var(--bs-link-color-rgb), 0.7); }
   #vvveb-builder #top-panel {
-    height: 50px;
-    padding: 0.2rem 0;
+    height: 35px;
+    padding: 0;
     border-bottom: 1px solid var(--bs-border-color);
     text-align: center;
     background-color: rgba(var(--bs-secondary-color-rgb), 0.03);
@@ -10053,25 +10053,27 @@ body {
     justify-content: space-between;
     width: 100%; }
     #vvveb-builder #top-panel .btn-group .btn.btn-light {
-      padding: 0.25rem 0.5rem;
-      --bs-btn-active-bg: var(--bs-primary-bg-subtle);
+      padding: 0.1rem 0.5rem;
+      --bs-btn-active-bg: rgba(var(--bs-primary-rgb), 0.1);
       --bs-btn-hover-bg: var(--bs-primary-bg-subtle);
       --bs-btn-active-border-color: transparent;
       --bs-btn-hover-color: var(--bs-body-bg);
       --bs-btn-bg:transparent;
       border-color: transparent;
-      color: var(--bs-body-color); }
+      color: var(--bs-secondary-color); }
       #vvveb-builder #top-panel .btn-group .btn.btn-light i {
-        font-size: 1.25rem; }
+        font-size: 1.2rem; }
     #vvveb-builder #top-panel .btn-group .btn.btn-primary {
-      margin-top: 0.2rem; }
+      margin-top: 0.1rem;
+      margin-bottom: 0.1rem; }
       #vvveb-builder #top-panel .btn-group .btn.btn-primary i {
-        font-size: 18px;
+        font-size: 1rem;
         line-height: 21px; }
     #vvveb-builder #top-panel .btn-group .btn span {
       font-size: 14px; }
     #vvveb-builder #top-panel .btn-group.responsive-btns .btn.btn-light {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
+      line-height: 1.3;
       padding: 0rem 0.5rem; }
     html[data-bs-theme="dark"] #vvveb-builder #top-panel img {
       filter: invert(93%) hue-rotate(180deg); }
@@ -10118,17 +10120,13 @@ body {
       border-top-color: var(--bs-body-bg);
       border-radius: 0px;
       min-width: 4.5rem;
-      color: var(--bs-body-color);
+      --bs-nav-link-color:var(--bs-secondary-color);
       line-height: 1.4; }
-      #vvveb-builder .drag-elements .nav-item .nav-link div {
-        margin-top: .2rem; }
       #vvveb-builder .drag-elements .nav-item .nav-link i {
-        font-size: 21px;
+        font-size: 1.1rem;
         vertical-align: bottom; }
       #vvveb-builder .drag-elements .nav-item .nav-link small, #vvveb-builder .drag-elements .nav-item .nav-link .small {
         font-size: 0.8rem; }
-      #vvveb-builder .drag-elements .nav-item .nav-link.active, #vvveb-builder .drag-elements .nav-item .nav-link:hover {
-        color: var(--bs-link-color); }
     #vvveb-builder .drag-elements#add-section-box .nav-item:first-child .nav-link {
       border-left: none; }
   #vvveb-builder .search {
@@ -10174,7 +10172,7 @@ body {
       right: 56px; }
   #vvveb-builder .components-list, #vvveb-builder .blocks-list, #vvveb-builder .component-properties, #vvveb-builder .sections-list {
     list-style: none;
-    background: rgba(var(--bs-secondary-color-rgb), 0.025); }
+    background: rgba(var(--bs-secondary-color-rgb), 0.015); }
   #vvveb-builder #add-section-box {
     animation: popup-animation 0.1s cubic-bezier(0, 0, 0.2, 1) 0s;
     animation-fill-mode: forwards; }
@@ -10205,7 +10203,7 @@ body {
     #vvveb-builder #add-section-box .blocks-list ol, #vvveb-builder #add-section-box .sections-list ol {
       list-style: none; }
       #vvveb-builder #add-section-box .blocks-list ol li, #vvveb-builder #add-section-box .sections-list ol li {
-        width: 92%;
+        width: 95%;
         height: auto;
         min-height: 100px;
         position: relative;
@@ -10278,7 +10276,7 @@ body {
   #vvveb-builder .component-properties {
     background: var(--bs-body-bg);
     height: 95%;
-    height: calc(100% - 50px);
+    height: calc(100% - 35px);
     /*
 		.form-control, .form-select
 		{
@@ -10338,9 +10336,9 @@ body {
     margin-left: var(--builder-left-panel-width);
     width: 100%;
     height: 100%;
-    width: calc( 100vw - 650px);
-    height: calc( 100vh - 85px);
-    top: 50px;
+    width: calc( 100vw - 635px);
+    height: calc( 100vh - 70px);
+    top: 35px;
     width: calc( 100vw - (var(--builder-left-panel-width) + var(--builder-right-panel-width) + var(--builder-canvas-margin)));
     height: calc( 100vh - (var(--builder-header-top-height) + var(--builder-bottom-panel-height)));
     top: var(--builder-header-top-height);
@@ -10667,17 +10665,18 @@ body {
         color: var(--bs-link-color);
         box-shadow: none; }
         #vvveb-builder #elements-tabs a.active i {
-          background: rgba(var(--bs-link-color-rgb), 0.05);
+          background: rgba(var(--bs-link-color-rgb), 0.03);
           border: 1px solid rgba(var(--bs-link-color-rgb), 0.2);
-          color: var(--bs-link-color); }
+          color: var(--bs-link-hover-color); }
   #vvveb-builder .nav-tabs .nav-item:first-child .nav-link {
     border-left: none; }
   #vvveb-builder .nav-tabs .nav-link {
     padding: 0.8rem 0 0.5rem;
     padding: 0.5rem 0 0.5rem;
-    text-align: center; }
+    text-align: center;
+    --bs-nav-link-color:var(--bs-secondary-color); }
     #vvveb-builder .nav-tabs .nav-link i {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       line-height: 1; }
   #vvveb-builder .nav-tabs .nav-link.active,
   #vvveb-builder .nav-tabs .nav-item.show .nav-link {
@@ -10904,7 +10903,7 @@ li[data-type] {
   box-shadow: 0px 0px 1px 2px rgba(18, 83, 205, 0.05); }
 
 .blocks .drag-elements-sidepane li[data-type], .sections .drag-elements-sidepane li[data-type] {
-  width: 92%;
+  width: 95%;
   height: auto;
   min-height: 100px;
   position: relative;
@@ -10932,7 +10931,7 @@ li[data-type] {
   background-color: var(--bs-body-bg);
   cursor: grab;
   opacity: 1;
-  margin: 1rem; }
+  margin: 0.5rem; }
   .blocks .drag-elements-sidepane li[data-type] .name, .sections .drag-elements-sidepane li[data-type] .name {
     background: rgba(var(--bs-body-bg-rgb), 0.9);
     background: rgba(var(--bs-body-color-rgb), 0.7);
@@ -11035,7 +11034,7 @@ li[data-type] {
   cursor: pointer;
   position: absolute;
   right: 15px;
-  top: 0; }
+  top: 0.5rem; }
 
 label.header {
   font-size: 11px;
@@ -11048,7 +11047,7 @@ label.header {
   text-align: left;
   padding: 0.3rem 0.8rem;
   border-top: 1px solid var(--bs-border-color);
-  color: var(--bs-link-color);
+  color: var(--bs-link-hover-color);
   cursor: pointer;
   position: relative; }
   label.header:first-child {
@@ -20457,12 +20456,13 @@ body > div#container, .small-nav, .main {
 
 .btn-group > .save-btn {
   border-right: 2px solid rgba(var(--bs-body-color-rgb), 0.2);
-  padding: 0.4rem 1rem 0.4rem 1.4rem; }
+  padding: 0.1rem 0.5rem 0.1rem 1rem; }
   .btn-group > .save-btn i {
-    font-size: 21px; }
+    font-size: 1rem;
+    line-height: 21px; }
 
 .save-btn.dropdown-toggle-split {
-  padding: 0 0.8rem;
+  padding: 0 0.5rem;
   box-shadow: none;
   border-left: 1px solid rgba(var(--bs-body-bg-rgb), 0.2); }
 
@@ -20978,7 +20978,7 @@ td:hover .secondary-actions {
   transition: all 1s; }
   .small-nav .sidebar {
     padding: 0rem;
-    min-width: 50px;
+    min-width: 40px;
     overflow-x: inherit;
     overflow-y: inherit; }
     .small-nav .sidebar .navbar, .small-nav .sidebar .logo {
@@ -20986,28 +20986,33 @@ td:hover .secondary-actions {
       padding: 0rem; }
     .small-nav .sidebar .logo .img {
       background-image: url("../img/logo-small.png") !important;
-      margin-left: 0.5rem;
+      margin-left: 0.1rem;
       width: 30px; }
     .small-nav .sidebar .logo a {
-      margin-left: 0.9rem;
+      margin-left: 0.5rem;
       margin-right: 0rem;
       margin-top: 2rem;
       float: none;
       display: block; }
       .small-nav .sidebar .logo a#color-theme-switch {
-        right: 10px; }
+        left: 0;
+        margin-left: 0.3rem; }
       .small-nav .sidebar .logo a i {
         font-size: 22px; }
     .small-nav .sidebar .navbar .nav-link i, .small-nav .sidebar .navbar a i {
       margin-right: 0; }
     .small-nav .sidebar .navbar .nav-link.items::after {
       right: 0;
-      margin-right: 0.3rem; }
+      margin-top: 2px;
+      margin-right: 0; }
     .small-nav .sidebar .navbar .nav-item {
       padding-left: 0; }
       .small-nav .sidebar .navbar .nav-item .badge {
         position: absolute;
-        right: 0; }
+        left: 0;
+        margin: 0;
+        padding: 0.2rem;
+        top: 0; }
       .small-nav .sidebar .navbar .nav-item .dropdown .dropdown-menu {
         position: absolute;
         /*border: 1px solid #eee;*/
@@ -21017,7 +21022,7 @@ td:hover .secondary-actions {
       .small-nav .sidebar .navbar .nav-item .nav-item.dropdown:hover .dropdown-menu {
         display: block; }
       .small-nav .sidebar .navbar .nav-item > ul {
-        left: 46px !important; }
+        left: 38px !important; }
         .small-nav .sidebar .navbar .nav-item > ul .sub-menu {
           left: 200px !important; }
     .small-nav .sidebar .navbar .dropdown-toggle::after {

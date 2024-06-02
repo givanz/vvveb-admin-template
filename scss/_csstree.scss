@@ -18,7 +18,7 @@
 		{ 
 			position: relative; 
 			//margin-left: -15px;
-			margin-bottom: 0.3rem;
+			margin-bottom: 0.1rem;
 			list-style: none;
 			color:var(--bs-body-color);
 			overflow:hidden;
@@ -52,7 +52,8 @@
 			
 			&:hover, &.active {
 				//background-color:rgba(var(--bs-link-color-rgb), 0.05);
-				color:var(--bs-link-color);
+				//color:var(--bs-link-color);
+				color:var(--bs-link-hover-color);
 			}
 			
 			&:hover {
@@ -68,11 +69,11 @@
 			{
 				background-image: url(../../../js/vvvebjs/icons/file.svg);
 				background-position:8px 4px;
-				background-size:21px 21px;
+				background-size:19px 19px;
 				background-repeat:no-repeat;
 				cursor: pointer;
 				display: block;
-				padding-left: 35px;
+				padding-left: 33px;
 				margin:0;
 				font-size:12px;
 				line-height:28px;
@@ -92,7 +93,7 @@
 				right:0px;
 				
 				.btn {
-					padding:0.1rem 0.3rem;
+					padding:0rem 0.2rem;
 					font-size:0.875rem;
 					line-height:1;
 					border-radius:4px;
@@ -144,13 +145,13 @@
 		li label
 		{
 			background: url(../../../js/vvvebjs/icons/folder.svg) 24px 1px no-repeat;
-			background-size:22px 22px;
+			background-size:20px 20px;
 			cursor: pointer;
 			display: block;
-			padding-left: 52px;
+			padding-left: 50px;
 			margin:0px;
 			font-size:12px;
-			line-height:28px;
+			line-height:24px;
 
 			/*
 			p {
@@ -176,7 +177,7 @@
 			padding: 2rem 0 0 2.5rem;
 			height: auto;
 
-			> li { display: block; margin: 0 0 0.2em;  /* 2px */}
+			> li { display: block; margin: 0 0 0.1em;  /* 2px */}
 			> li:last-child { margin: 0 0 0.3em; /* 1px */ }
 		}
 	}

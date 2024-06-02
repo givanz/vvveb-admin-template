@@ -7,6 +7,7 @@
   /*color: black;*/
   color: var(--bs-body-color);
   direction: ltr;
+  font-size:14px;
 }
 
 /* PADDING */

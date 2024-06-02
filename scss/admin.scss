@@ -6,7 +6,7 @@ $custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='htt
 //$custom-control-indicator-checked-bg: $secondary;
 
 $font-size-base: 1rem;
-$builder-canvas-margin:	50px;
+$builder-canvas-margin:	35px;
 $headings-font-weight: 600;
 $form-check-input-width: 1.2em;
 $font-family-sans-serif: Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -308,16 +308,17 @@ body > div#container, .small-nav, .main
 .save-btn {
 	.btn-group > & {
 		border-right:2px solid rgba(var(--bs-body-color-rgb), 0.2);
-		padding:0.4rem 1rem 0.4rem 1.4rem;
+		padding:0.1rem 0.5rem 0.1rem 1rem;
 
 		i {
 			//margin-right: 0.5rem;
-			font-size:21px;
+			font-size:1rem;
+			line-height:21px;
 		}
 	}
 
 	&.dropdown-toggle-split {
-		padding:0 0.8rem;
+		padding:0 0.5rem;
 		box-shadow:none;
 		border-left:1px solid rgba(var(--bs-body-bg-rgb), 0.2);
 	}
@@ -1243,7 +1244,7 @@ td:hover .secondary-actions {
 	.sidebar
 	{
 		padding:0rem;
-		min-width:50px;
+		min-width:40px;
 		overflow-x:inherit;
 		overflow-y:inherit;
 		//background:#f5f5f5;
@@ -1259,19 +1260,20 @@ td:hover .secondary-actions {
 			.img
 			{
 				background-image:url('../img/logo-small.png') !important;
-				margin-left:0.5rem;
+				margin-left:0.1rem;
 				width:30px;
 			}
 			
 			a {
-				margin-left:0.9rem;
+				margin-left:0.5rem;
 				margin-right:0rem;
 				margin-top:2rem;
 				float:none;
 				display:block;
 				
 				&#color-theme-switch {
-					right:10px;
+					left: 0;
+					margin-left: 0.3rem;
 				}
 				
 				i {
@@ -1295,7 +1297,8 @@ td:hover .secondary-actions {
 				//background:none;
 				//content:"";
 				right:0;
-				margin-right:0.3rem;
+				margin-top:2px;
+				margin-right:0;
 			}
 		
 		
@@ -1305,7 +1308,10 @@ td:hover .secondary-actions {
 				
 				.badge {
 					position: absolute;
-					right: 0;
+					left: 0;
+					margin: 0;
+					padding: 0.2rem;
+					top: 0;
 				}
 				
 				.dropdown .dropdown-menu 
@@ -1325,7 +1331,7 @@ td:hover .secondary-actions {
 				
 				> ul
 				{
-					left:46px !important;	
+					left:38px !important;	
 					
 					.sub-menu {
 						left:200px !important;

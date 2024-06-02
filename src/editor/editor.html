@@ -95,6 +95,7 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 <link href="libs/codemirror/theme/material.css" rel="stylesheet"/>
 <script src="libs/codemirror/lib/codemirror.js"></script>
 <script src="libs/codemirror/lib/xml.js"></script>
+<script src="libs/codemirror/lib/css.js"></script>
 <script src="libs/codemirror/lib/formatting.js"></script>
 <script src="../../js/vvvebjs/plugin-codemirror.js"></script>	
 <!-- jszip - download page as zip -->
@@ -132,6 +133,7 @@ let ready = function() {
 	Vvveb.FileManager.init(fileManagerComponents);
 	Vvveb.SectionList.init(fileManagerComponents);
 	Vvveb.TreeList.init();
+	Vvveb.CssEditor.init();
 
 	Vvveb.FileManager.addPages(pages);
 

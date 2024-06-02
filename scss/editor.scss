@@ -36,9 +36,6 @@ $custom-select-padding-y: .4rem;
 //$blue:#495ffb;
 
 #logo {
-	margin-left: 0.5rem;
-	margin-top: 0.15rem;
-	
 	html[data-bs-theme="dark"] & {
 	    //filter: brightness(3);
 	    filter: invert(93%) hue-rotate(180deg);

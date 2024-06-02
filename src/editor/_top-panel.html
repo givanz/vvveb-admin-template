@@ -3,15 +3,15 @@
 
 	<div class="btn-group" role="group">
 	  <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
-		  <img src="../../js/vvvebjs/icons/file-manager-layout.svg" width="20" height="20">
+		  <img src="../../js/vvvebjs/icons/file-manager-layout.svg" width="18" height="18">
 	  </button>
 
 	  <button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
-		  <img src="../../js/vvvebjs/icons/left-column-layout.svg" width="20" height="20">
+		  <img src="../../js/vvvebjs/icons/left-column-layout.svg" width="18" height="18">
 	  </button>
 	  
 	  <button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
-		  <img src="../../js/vvvebjs/icons/right-column-layout.svg" width="20" height="20">
+		  <img src="../../js/vvvebjs/icons/right-column-layout.svg" width="18" height="18">
 	  </button>
 
 	</div>
@@ -55,21 +55,21 @@
 
 	<div class="btn-group">			
 		
-		<div class="me-3">
+		<div class="me-2">
 
-			<a href="#" class="btn btn-outline-primary border-0 btn-sm btn-preview-url" target="blank">View page <i class="la la-external-link-alt la-lg"></i></a>
+			<a href="#" class="btn btn-light btn-preview-url" target="blank" title="View page"><i class="la la-external-link-alt la-lg"></i></a>
 
 			<div class="btn-group responsive-btns" role="group">
 			 
-			 <button id="mobile-view" data-view="mobile" class="btn btn-light"  title="Mobile view" data-vvveb-action="viewport">
+			 <button id="mobile-view" data-view="mobile" class="btn btn-light" title="Mobile view" data-vvveb-action="viewport">
 				  <i class="la la-mobile"></i>
 			  </button>
 
-			  <button id="tablet-view"  data-view="tablet" class="btn btn-light"  title="Tablet view" data-vvveb-action="viewport">
+			  <button id="tablet-view"  data-view="tablet" class="btn btn-light" title="Tablet view" data-vvveb-action="viewport">
 				  <i class="la la-tablet"></i>
 			  </button>
 			  
-			  <button id="desktop-view"  data-view="" class="btn btn-light"  title="Desktop view" data-vvveb-action="viewport">
+			  <button id="desktop-view"  data-view="" class="btn btn-light" title="Desktop view" data-vvveb-action="viewport">
 				  <i class="la la-laptop"></i>
 			  </button>
 
@@ -78,10 +78,10 @@
 		</div>	
 
 		<div class="align-self-center">
-			<button type="button" class="btn btn-sm me-2" data-bs-toggle="dropdown" aria-expanded="false">
+			<button type="button" class="btn btn-light btn-sm me-2" data-bs-toggle="dropdown" aria-expanded="false" title="Revisions">
+				<strong class="small revisions-count">0</strong> 
 				<i class="la la-lg la-history"></i> 
-				<strong class="small align-text-top revisions-count">0</strong> 
-				<span>Revisions</span>
+				<!-- <span>revisions</span> -->
 			</button>
 		
 			<div class="dropdown-menu">
@@ -151,10 +151,10 @@
 			</div>
 		</div>
 
-		<div class="btn-group me-3" role="group">
+		<div class="btn-group me-2" role="group">
 		  
 			<div class="btn-group" data-v-check-permission-save>
-				<button class="btn btn-primary btn-icon save-btn" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
+				<button class="btn btn-primary btn-sm btn-icon save-btn" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
 					<span class="loading d-none">
 					<i class="la la-save"></i>
 					  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
@@ -165,7 +165,7 @@
 					  <i class="icon-save-outline"></i> <span>Save</span>
 					</span>				
 				</button>
-				<button type="button" class="btn btn-primary btn-icon save-btn dropdown-toggle dropdown-toggle-split text-white" 
+				<button type="button" class="btn btn-primary btn-sm btn-icon save-btn dropdown-toggle dropdown-toggle-split text-white" 
 					id="showChangesBtn" 
 					data-vvveb-action="showChanges"
 					data-bs-toggle="offcanvas" 
