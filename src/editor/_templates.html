@@ -509,14 +509,14 @@
 </script>
 
 <script id="vvveb-filemanager-page" type="text/html">
-	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}">
+	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %}>
 		<label for="{%=name%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
 			<span>{%=title%}</span>
 			<div class="file-actions">
 				<button href="#" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
 				<a href="{%=url%}" target="_blank" class="view btn btn-outline-primary" title="View page"><i class="la la la-external-link-alt"></i></a>
 				<button href="#" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
-				<button href="#" class="duplicate btn btn-outline-primary" title="Clone"><i class="icon-copy-outline"></i></button>
+				<button href="#" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
 			</div>
 		</label> <input type="checkbox" id="{%=name%}" />
 		<!-- <ol></ol> -->

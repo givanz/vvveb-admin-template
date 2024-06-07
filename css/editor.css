@@ -13804,6 +13804,8 @@ textarea.form-control-lg {
           line-height: 1;
           border-radius: 4px;
           --bs-btn-border-color: rgba(var(--bs-link-color-rgb), 0.15); }
+      .tree > ol li.file.page .duplicate {
+        display: none; }
     .tree > ol li.page > label {
       background-image: url(../../../js/vvvebjs/icons/panel.svg); }
     .tree > ol li input {

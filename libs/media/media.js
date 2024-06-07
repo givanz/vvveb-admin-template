@@ -24,8 +24,8 @@ class MediaModal {
 			  <div class="modal-header">
 				<h5 class="modal-title" id="MediaModalLabel">Media</h5>
                 
-				<button type="button" class="btn btn-sm" data-bs-dismiss="modal" aria-label="Close">
-				  <span aria-hidden="true"><i class="la la-times la-lg"></i></span>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				  <!-- <span aria-hidden="true"><i class="la la-times la-lg"></i></span> -->
 				</button>
 			  </div>
 			  <div class="modal-body">

@@ -100,6 +100,10 @@
 					--bs-btn-border-color: rgba(var(--bs-link-color-rgb), 0.15);
 				}
 			}
+			
+			&.page .duplicate {
+					display:none;
+			}
 		}
 		
 		li.folder

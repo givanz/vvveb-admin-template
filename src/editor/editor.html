@@ -41,19 +41,25 @@ Vvveb.themeBaseUrl = '{ $this->themeBaseUrl }';
 <!-- media gallery -->
 <link href="libs/media/media.css" rel="stylesheet">
 <script>
-let mediaPath = '{ $this->mediaPath }';
+//media
+let mediaPath    = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let saveUrl = '{ $this->saveUrl }';
-let renameUrl = '{ $this->renameUrl }';
-let saveReusableUrl = '{ $this->saveReusableUrl }';
-let deleteUrl = '{ $this->deleteUrl }';
-let revisionsUrl = '{ $this->revisionsUrl }';
-let revisionLoadUrl = '{ $this->revisionLoadUrl }';
+let uploadUrl    = '{ $this->uploadUrl }';
+let renameUrl    = '{ $this->renameUrl }';
+let deleteUrl    = '{ $this->deleteUrl }';
+//editor
+let saveUrl           = '{ $this->saveUrl }';
+let saveReusableUrl   = '{ $this->saveReusableUrl }';
+let renameFileUrl     = '{ $this->renameFileUrl }';
+let deleteFileUrl     = '{ $this->deleteFileUrl }';
+let revisionsUrl      = '{ $this->revisionsUrl }';
+let revisionLoadUrl   = '{ $this->revisionLoadUrl }';
 let revisionDeleteUrl = '{ $this->revisionDeleteUrl }';
-let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
+let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 </script>
+<!--
 <script id="openverse-js" src="libs/media/openverse.js"></script>
+-->
 <script id="media-js" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <script src="../../js/vvvebjs/resources.js"></script>		

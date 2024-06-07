@@ -4,7 +4,7 @@ class OpenVerse {
 	
 	constructor ()
 	{
-		//register your key at https://api.openverse.engineering/v1/ and replace client_id, client_secret and name bellow
+		//register your key at https://api.openverse.org/v1/ and replace client_id, client_secret and name bellow
 		this.key = {
 			"client_id":"qAhddE2SZtqHsDpKiOXet0BtRnAdUjxGqPg9OyN3",
 			"client_secret":"IhEO5FIClqRHTEA3rWWAJsb7sjuZfqUUPd1ij2AZvyB4ACcoIoV9ROySCxGwBXO3T6gxWjTtEtuVEwEmusXHeQD4MD1vFhz6Kb1g7eI6FUI4YUoMr2xZBq3oqUxM0Z8e",
@@ -29,13 +29,13 @@ class OpenVerse {
 			"source" :["woc_tech", "wikimedia", "wellcome_collection", "thorvaldsensmuseum", "thingiverse", "svgsilh", "statensmuseum", "spacex", "smithsonian_zoo_and_conservation", "smithsonian_postal_museum", "smithsonian_portrait_gallery", "smithsonian_national_museum_of_natural_history", "smithsonian_libraries", "smithsonian_institution_archives", "smithsonian_hirshhorn_museum", "smithsonian_gardens", "smithsonian_freer_gallery_of_art", "smithsonian_cooper_hewitt_museum", "smithsonian_anacostia_museum", "smithsonian_american_indian_museum", "smithsonian_american_history_museum", "smithsonian_american_art_museum", "smithsonian_air_and_space_museum", "smithsonian_african_art_museum", "smithsonian_african_american_history_museum", "sketchfab", "sciencemuseum", "rijksmuseum", "rawpixel", "phylopic", "nypl", "nasa", "museumsvictoria", "met", "mccordmuseum", "iha", "geographorguk", "floraon", "flickr", "europeana", "eol", "digitaltmuseum", "deviantart", "clevelandmuseum", "brooklynmuseum", "bio_diversity", "behance", "animaldiversity", "WoRMS", "CAPL", "500px"]			
 		},
 		
-		this.baseUrl = 'https://api.openverse.engineering/v1/images?format=json&filter_dead=true&';
+		this.baseUrl = 'https://api.openverse.org/v1/images?format=json&filter_dead=true&';
 		this.currentUrl = this.baseUrl;
 		this.filtersParameters = "";
 	}
 	
 	authenticate() {
-		let url = "https://api.openverse.engineering/v1/auth_tokens/token/";
+		let url = "https://api.openverse.org/v1/auth_tokens/token/";
 		let self = this;
 
 
@@ -46,9 +46,17 @@ class OpenVerse {
 	  
 		fetch(url, {
 			method: "POST",  
+			//credentials: 'include',
 			headers: {
+			  //'Access-Control-Allow-Origin': '*',
+			  "Access-Control-Allow-Origin": location.origin,
+			  "Access-Control-Allow-Credentials" : "true",
+			  "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, PUT, OPTIONS",
+			  "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Origin, X-Api-Key",
+			  "Access-Control-Request-Headers": "Content-Type, Authorization",
+			  "Authorization": "Bearer " + this.accessToken.access_token,
 			  //"Content-Type": "application/json",
-			  'Content-Type': 'application/x-www-form-urlencoded',
+			  "Content-Type": "application/x-www-form-urlencoded"
 			},
    			body: new URLSearchParams(this.key), 
 		})
@@ -76,9 +84,16 @@ class OpenVerse {
 
 		fetch(this.currentUrl, {
 			method: "GET",  
+			//credentials: 'include',
 			headers: {
 			  "Content-Type": "application/json",
-			  'Authorization': 'Bearer ' + this.accessToken.access_token,
+			  //'Access-Control-Allow-Origin': '*',
+			  "Access-Control-Allow-Origin": location.origin,
+			  "Access-Control-Allow-Credentials" : "true",
+			  "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, PUT, OPTIONS",
+			  "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Origin, X-Api-Key",
+			  "Access-Control-Request-Headers": "Content-Type, Authorization",
+			  "Authorization": "Bearer " + this.accessToken.access_token,
 			},
 		})
 		.then((response) => {
