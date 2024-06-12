@@ -40,7 +40,7 @@
                     <i class="icon-boat-outline"></i> <span>Print Shipping</span>
                 </a>&nbsp;
 				
-                <button type="submit" href="" onclick="if(order_form.reportValidity()) order_form.submit()" class="btn btn-primary btn-icon ms-1">
+                <button type="submit" href="" onclick="orderFormSubmit()" class="btn btn-primary btn-icon ms-1">
                     <i class="icon-create-outline"></i> Save order
                 </button>
             </div>
@@ -136,13 +136,45 @@
 <script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
 
 <script>
+function orderFormSubmit() {
+	let form = document.getElementById("order-form");
+	toggleAll(true);
+	if (form.reportValidity()) {
+		order_form.submit();
+	}
+}
+
+function toggleForm(formName, show = null) {
+	let element = document.querySelector(formName);
+	
+	if (show === null) {
+		show = !element.classList.contains('edit');
+	}
+	
+	if (show) {
+		element.classList.add('edit');
+		element.querySelectorAll("input,select,textarea").forEach(e => e.removeAttribute("disabled"));	
+	} else {
+		element.classList.remove('edit');
+		element.querySelectorAll("input,select,textarea").forEach(e => e.setAttribute("disabled", "true"));	
+	}
+	
+}
+
+function toggleAll(show = null) {
+	toggleForm('.customer_details', show);
+	toggleForm('.order_details', show);
+	toggleForm('.shipping_address', show);
+	toggleForm('.billing_address', show);
+}
+
+
 document.querySelector("#order-form").addEventListener("change", function (e) {
 	let element = e.target.closest("input[type=text]");
 	if (element) {
 		let name = element.name;
 		let textSelector = "[data-" + name + "-text]";
-		console.log(textSelector);
-		console.log(document.querySelector(textSelector));
+
 		document.querySelector(textSelector).innerHTML = element.value;
 	}
 	
@@ -161,10 +193,7 @@ document.querySelector("#order-form").addEventListener("change", function (e) {
 //if new order toggle forms visibility
 let order_id = document.querySelector("[name=order_id]");
 if (!order_id || !order_id.value) {
-	document.querySelector('.customer_details').classList.toggle('edit');
-	document.querySelector('.order_details').classList.toggle('edit');
-	document.querySelector('.shipping_address').classList.toggle('edit');
-	document.querySelector('.billing_address').classList.toggle('edit');
+	toggleAll();
 }
 
 let productDetails = document.querySelector(".product-details > div");
