@@ -1294,7 +1294,7 @@
             </h4>
           </div>
           <div>
-            <a href="{$this.adminPath}index.php?module=content/tags&status=0" title="Tag list" class="btn btn-outline-secondary me-2">
+            <a href="{$this.adminPath}index.php?module=content/tags&taxonomy_id={$this.taxonomy_id}&type={$this.type}" title="Tag list" class="btn btn-outline-secondary me-2">
               <i class="la la-arrow-left"></i>
               <span>Tag list</span>
             </a>
@@ -1448,8 +1448,24 @@ let uploadUrl = '{ $this->uploadUrl }';
   <script id="openverse-js" src="libs/media/openverse.js"></script>
   <script id="media-js" src="libs/media/media.js"></script>
   <script id="index-js" src="libs/vvveb/index.js"></script>
+  <script id="functions-js" src="../../js/admin/functions.js"></script>
   <link href="libs/media/media.css" rel="stylesheet">
+  <script>
+let titleInput = document.getElementById('input-name');
+let slugInput  = document.getElementById('input-slug');
+let orig = slugify(titleInput.value);
 
+titleInput.addEventListener('keyup', function (e) {
+	let text = this.value;
+	delay(() => {
+		let slug = slugInput.value;
+		if (orig == slug || !slug) {
+			orig = slugify(text);
+			slugInput.value = slug = orig;
+		}			
+	}, 500);
+});
+</script>
 
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">

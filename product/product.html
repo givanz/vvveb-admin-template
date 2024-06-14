@@ -1612,7 +1612,7 @@
                       </label>
                       <div class="col-sm-10">
 
-                        <input name="manufacturer_id" value="" placeholder="Type for autocomplete" id="input-manufacturer" autocomplete="off" type="text" class="form-control autocomplete" data-url="{$this.adminPath}index.php?module=product/product&action=manufacturersAutocomplete" data-text="Manufacturer" data-v-product-manufacturer_id />
+                        <input name="manufacturer_id" value="" placeholder="Type for autocomplete" id="input-manufacturer" autocomplete="off" type="text" class="form-control autocomplete" data-url="{$this.adminPath}index.php?module=product/product&action=manufacturersAutocomplete&type={$this.type}" data-text="Manufacturer" data-v-product-manufacturer_id />
                       </div>
                     </div>
                     <div class="mb-3 row">
@@ -1621,7 +1621,7 @@
                       </label>
                       <div class="col-sm-10">
 
-                        <input name="vendor_id" value="" placeholder="Type for autocomplete" id="input-vendor" autocomplete="off" type="text" class="form-control autocomplete" data-url="{$this.adminPath}index.php?module=product/product&action=vendorsAutocomplete" data-text="Vendor" data-v-product-vendor_id />
+                        <input name="vendor_id" value="" placeholder="Type for autocomplete" id="input-vendor" autocomplete="off" type="text" class="form-control autocomplete" data-url="{$this.adminPath}index.php?module=product/product&action=vendorsAutocomplete&type={$this.type}" data-text="Vendor" data-v-product-vendor_id />
                       </div>
                     </div>
 
@@ -1697,7 +1697,7 @@
 
                       <div class="col-sm-10">
 
-                        <input name="product_related" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list" data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-list-name="product_related" />
+                        <input name="product_related" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list" data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete&type={$this.type}" data-list-name="product_related" />
 
                         <div class="autocomplete-list card border-top-0" data-v-product-related>
                           <div data-v-related>
@@ -1718,7 +1718,7 @@
 
                       <div class="col-sm-10">
 
-                        <input name="product_variant" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list" data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-list-name="product_variant" />
+                        <input name="product_variant" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list" data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete&type={$this.type}" data-list-name="product_variant" />
 
                         <div class="autocomplete-list card border-top-0" data-v-product-variant>
                           <div data-v-variant>
@@ -1736,7 +1736,7 @@
                       </label>
 
                       <div class="col-sm-10">
-                        <input name="digital_asset" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list" data-url="{$this.adminPath}index.php?module=product/product&action=digitalAssetsAutocomplete" data-list-name="product_digital_asset" />
+                        <input name="digital_asset" placeholder="Type for autocomplete" type="text" class="form-control autocomplete-list" data-url="{$this.adminPath}index.php?module=product/product&action=digitalAssetsAutocomplete&type={$this.type}" data-list-name="product_digital_asset" />
 
                         <div class="autocomplete-list card border-top-0" data-v-product-digital_asset>
                           <div data-v-digital_asset>
@@ -2424,20 +2424,20 @@
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-model">Width</label>
                       <div class="col-sm-4">
-                        <input name="width" value="2.00000000" placeholder="Width" id="input-width" class="form-control" type="number" data-v-product-width>
+                        <input name="width" value="0.00" placeholder="Width" id="input-width" class="form-control" type="number" data-v-product-width>
                       </div>
                       <label class="col-sm-2 form-label" for="input-sku">
                         <span>Height</span>
                       </label>
                       <div class="col-sm-4">
-                        <input name="height" value="3.00000000" placeholder="Height" id="input-height" class="form-control" type="number" data-v-product-height>
+                        <input name="height" value="0.00" placeholder="Height" id="input-height" class="form-control" type="number" data-v-product-height>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-model">Length</label>
                       <div class="col-sm-4">
-                        <input name="length" value="1.00000000" placeholder="Length" id="input-length" class="form-control" type="number" data-v-product-length>
+                        <input name="length" value="0.00" placeholder="Length" id="input-length" class="form-control" type="number" data-v-product-length>
                       </div>
                       <label class="col-sm-2 form-label" for="input-sku">
                         <span>Length Class</span>
@@ -2456,7 +2456,7 @@
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-weight">Weight</label>
                       <div class="col-sm-4">
-                        <input name="weight" value="12.50000000" placeholder="Weight" id="input-weight" class="form-control" type="text" data-v-product-weight>
+                        <input name="weight" value="0.00" placeholder="Weight" id="input-weight" class="form-control" type="text" data-v-product-weight>
                       </div>
 
                       <label class="col-sm-2 form-label" for="input-weight-type">Weight Class</label>
@@ -3237,6 +3237,7 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 let productOption = { $this->option };
 let contentType = 'product';
+let postType = '{ $this->type }';
 </script>
 
   <script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>

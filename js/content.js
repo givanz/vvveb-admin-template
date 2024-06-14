@@ -11,7 +11,7 @@ document.querySelectorAll('.taxonomies input.tags-input').forEach(el => {
 		}
 	}*/
 	new _TagsInput(el,{
-		url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags",
+		url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags&post_type=" + postType,
 		parameters:el.dataset,
 		listName:"tag",
 		//listName:"tag[]",
