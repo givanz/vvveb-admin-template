@@ -2108,7 +2108,7 @@ function save() {
 			url: location.href + "&action=add",
 			type: 'post',
 			data: data,
-			//dataType: 'json',
+			dataType: 'json',
 			beforeSend: function() {
 				$('.loading', element).removeClass('d-none');
 				$('.button-text', element).addClass('d-none');
@@ -2116,26 +2116,23 @@ function save() {
 					$(element).attr("disabled", "true");
 				}
 			},
-			complete: function(data) {
-				$('.loading', element).addClass('d-none');
-				$('.button-text', element).removeClass('d-none');
-				if ($(element).is('button'))  {
-					$(element).removeAttr("disabled");
-				}
-
-				$("#taxonomyToast .message").html(data.responseText);
-				toast.show();
-				//$('#cart > button').button('reset');
-			},
-			success: function(data) {
-				//$("header [data-v-component-cart]")[0].outerHTML = data;
-				//if (callback) callback(data);
-			},
 			error: function(xhr, ajaxOptions, thrownError) {
 				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 			}
 		})
 		.always(function(data) {
+			let message = data.message ?? data.responseText;
+			
+			$('.loading', element).addClass('d-none');
+			$('.button-text', element).removeClass('d-none');
+			if ($(element).is('button'))  {
+				$(element).removeAttr("disabled");
+			}
+
+			item[0].dataset.vId = data.menu_item_id ?? 0;
+			item.data("vId", data.menu_item_id ?? 0);
+			$("#taxonomyToast .message").html(message);
+			toast.show();
 		})
 		.done(function(data) {
 			//$("> .expand", item).toggle();
