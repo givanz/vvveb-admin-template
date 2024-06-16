@@ -1576,13 +1576,11 @@
 
   <script type="module" src="../../js/admin/controller/update.js"></script>
   <script>
-document.addEventListener('DOMContentLoaded', () => { 
-	document.querySelector(".update-core-btn").addEventListener("click",  function(e) {
-		if (Update.core) {
-			e.preventDefault();
-			return Update.core(this.attributes.href.value ?? false, this);
-		}
-	});
+document.querySelector(".update-core-btn")?.addEventListener("click",  function(e) {
+	if (Update.core) {
+		e.preventDefault();
+		return Update.core(this.attributes.href.value ?? false, this);
+	}
 });
 </script>
 
