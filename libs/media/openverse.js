@@ -37,7 +37,7 @@ class OpenVerse {
 	authenticate() {
 		let url = "https://api.openverse.org/v1/auth_tokens/token/";
 		let self = this;
-
+		return;
 
 	  const formData = new FormData();
 	  for (const key in this.key) {

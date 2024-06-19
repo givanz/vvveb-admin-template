@@ -1,0 +1,306 @@
+@@include('../../_includes/html-head.html', {"title": "Vvveb - Translations","scripts":"","base_href":"../"})
+
+<body class="languages">
+
+<div id="container">
+       
+    @@include('../../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../../_includes/top-header.html')
+	
+        <div id="content">
+            <div class="actions">
+				
+				<div class="title">
+					<h4 class="text-muted my-2">
+						<i class="icon-language-outline"></i>
+						<span>Translations</span>
+					</h4>
+				</div>
+				
+				<div class="btns">
+				  <a class="btn btn-outline-secondary me-2" data-v-domains-url>
+						<i class="la la-arrow-left"></i><span>Return to domains</span>
+				 </a>
+				 
+					 <a href="?module=localization/translations&action=domain&lang=en_US&domain=user" data-v-save-url id="save-btn"
+							class="btn btn-primary btn-icon ms-1">
+						<span class="loading d-none">
+						   <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+							 <span>Saving </span> ... 
+							</span>
+						</span>
+						<span class="button-text">
+							<i class="icon-create-outline"></i> <span>Save</span>
+						</span>
+					</a>
+				</div>
+            </div>
+
+            <div id="main-content">
+                @@include('../../_includes/notifications.html')
+
+
+				<div class="container-fluid py-4 border border-bottom-0 bg-body-tertiary sticky-top">
+					<div class="row g-0">
+						<div class="input-group">
+
+							<input name="filter" value="" placeholder="Filter" id="filter" type="search" class="form-control"/>	
+							 <button class="btn btn-outline-secondary me-2" id="add-text">
+								<i class="icon-add-circle-outline"></i> <span>Add text</span>
+							</button>			 
+						</div>
+
+					</div>
+				</div>
+				
+				<div class="table-responsive" style="margin-bottom:400px;">
+					<table class="table table-hover table-bordered table-striped table-sm" data-v-translations>
+						 <thead>
+							<tr>
+								<th>Text</th>
+								<th>Translation</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td>Text</td>
+								<td>Translation</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</div>
+				
+				<div class="container-fluid pb-4 border-top bg-body-tertiary" style="position:fixed;bottom:0;width:-webkit-fill-available;">
+					<div class="">
+						<div class="">
+							<label for="text-textarea" class="small py-1">Text</label>
+							<textarea id="text-textarea" class="form-control" rows="4" disabled></text>
+						</div>
+						<div class="">
+							<label for="translation-textarea" class="small py-1">Translation</label>
+							<textarea id="translation-textarea" class="form-control" rows="4"></text>
+						</div>
+
+					</div>
+				</div>
+				
+			</div>
+        </div>
+    </div>
+</div>
+
+<style>
+table[data-v-translations] thead th {
+	resize:horizontal;
+	overflow:auto
+}
+
+table[data-v-translations] tbody {
+	cursor:pointer;	
+}
+
+table[data-v-translations] tbody tr.active td {
+    background-color: var(--bs-primary) !important;
+    color: var(--bs-light);
+}
+
+table[data-v-translations] tbody tr.changed td {
+    background-color: var(--bs-success-bg-subtle);
+}
+
+table[data-v-translations] tbody tr td:empty {
+    background-color: rgba(var(--bs-warning-rgb), 0.1);
+}
+
+</style>
+
+@@include('../../_includes/footer-scripts.html')
+
+<script>
+
+var rbracket = /\[\]$/;
+	
+function buildParams( prefix, obj,  add ) {
+	var name;
+
+	if ( Array.isArray( obj ) ) {
+
+		// Serialize array item.
+		for(var key in obj) {
+			let v = obj[key];
+			if ( rbracket.test( prefix ) ) {
+
+				// Treat each array item as a scalar.
+				add( prefix, v );
+
+			} else {
+
+				// Item is non-scalar (array or object), encode its numeric index.
+				buildParams(
+					prefix + "[" + ( typeof v === "object" && v != null ? i : "" ) + "]",
+					v,
+					add
+				);
+			}
+		}
+
+	} else if ( typeof obj === "object" ) {
+
+		// Serialize object item.
+		for ( name in obj ) {
+			buildParams( prefix + "[" + name + "]", obj[ name ],  add );
+		}
+
+	} else {
+
+		// Serialize scalar item.
+		add( prefix, obj );
+	}
+}
+
+// Serialize an array of form elements or a set of
+// key/values into a query string
+function nestedFormData( a ) {
+	var prefix,
+		s = [],
+		add = function( key, valueOrFunction ) {
+
+			// If value is a function, invoke it and use its return value
+			var value = typeof valueOrFunction === "function" ?
+				valueOrFunction() :
+				valueOrFunction;
+
+			s[ s.length ] = encodeURIComponent( key ) + "=" +
+				encodeURIComponent( value == null ? "" : value );
+		};
+
+	if ( a == null ) {
+		return "";
+	}
+
+	// If an array was passed in, assume that it is an array of form elements.
+	if ( Array.isArray( a ) || ( Object.is( a ) ) ) {
+
+		// Serialize the form elements
+		for(var key in object) {
+			let v = object[key];
+		//jQuery.each( a, function() {
+			add( key, v );
+		};
+
+	} else {
+
+		// If traditional, encode the "old" way (the way 1.3.2 or older
+		// did it), otherwise encode params recursively.
+		for ( prefix in a ) {
+			buildParams( prefix, a[ prefix ], add );
+		}
+	}
+
+	// Return the resulting serialization
+	return s.join( "&" );
+};
+
+let selectedTranslation;
+let selectedRow;
+
+document.querySelector("table[data-v-translations] tbody").addEventListener("click", function (e) {
+	let element = e.target.closest("tr");
+	let columns;
+	if (element) {
+		columns = element.querySelectorAll("td");
+		document.getElementById("text-textarea").value = columns[0].innerHTML;
+		document.getElementById("translation-textarea").value = columns[1].innerHTML;
+		
+		selectedTranslation = columns[1];
+		selectedRow = element;
+		
+		document.querySelectorAll("table[data-v-translations] tbody tr").forEach(e => e.classList.remove("active"));	
+		this.classList.add("active");	
+	}
+});
+
+let search = function (e) {
+	let searchText = this.value;
+
+	delay(() => {
+		if (searchText.length) {
+			document.querySelectorAll("table[data-v-translations] tbody tr").forEach(e => {
+				e.style.display = "none";
+				if (e.innerHTML.indexOf(searchText) > -1) e.style.display = "";
+			});
+		} else {
+			document.querySelectorAll("table[data-v-translations] tbody tr").forEach(e => e.style.display = "");
+		}
+	}, 300);
+};
+
+let filter = document.getElementById("filter");
+filter.addEventListener("keyup", search);
+filter.addEventListener("search", search);
+
+let save = function (e) {
+	let btn = this;
+	let translations = {};
+	let saveUrl = this.href;
+	let changedRows = document.querySelectorAll("table[data-v-translations] tbody tr.changed");
+	
+	changedRows.forEach(function (e) {
+		let columns = e.querySelectorAll("td");
+		translations[columns[0].innerHTML] = columns[1].innerHTML;
+	});
+
+	btn.querySelector(".loading")?.classList.toggle("d-none");
+	btn.querySelector(".button-text")?.classList.toggle("d-none");
+
+	fetch(saveUrl, {method:"POST", 
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded",
+		},
+		body: nestedFormData({translations})})
+	 .then(response => {
+		if (!response.ok) { return Promise.reject(response); }
+		return response.json()
+	 })
+	.then(data => {
+		btn.querySelector(".loading")?.classList.toggle("d-none");
+		btn.querySelector(".button-text")?.classList.toggle("d-none");
+		displayToast("bg-success", "Save", data.message ?? data);			
+		changedRows.forEach(e => e.classList.remove("changed"));
+	})
+	.catch(error => {
+		console.log(error.statusText);
+		displayToast("bg-danger", "Error", "Error saving!\n" + error.responseText);
+		//displayToast("bg-danger", "Revision", "Error!");
+	});	
+
+	e.preventDefault();
+	return false;
+};
+
+document.getElementById("save-btn").addEventListener("click", save);
+
+document.getElementById("add-text").addEventListener("click", function () {
+	let text = prompt("Enter new text");
+	if (text) {
+		document.querySelector("[data-v-translations] tbody").append(generateElements(`<tr class="changed"><td>${text}</td><td></td></tr>`)[0]);
+		window.scrollTo(0, document.body.scrollHeight);
+	}
+});
+
+document.getElementById("translation-textarea").addEventListener("keyup", function (e) {
+	if (selectedTranslation) {
+		delay(() => {
+			selectedTranslation.innerHTML = this.value;	
+			selectedRow.classList.add("changed");
+		}, 200);
+	}
+});
+</script>
+
+@@include('../../_includes/footer.html')

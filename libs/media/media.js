@@ -513,26 +513,31 @@ _
 
 					fetch(uploadUrl, {method: "POST",  body: formData})
 					.then((response) => {
-						console.log(response);
-						if (!response.ok) { throw new Error(response) }
-						return response.text()
+						if (!response.ok) { return Promise.reject(response); }
+						return response.json()
 					})
 					.then((data) => {
 						let fileElement = Vvveb.MediaModal.addFile({
-							name:data,
+							name:data.file,
 							type:"file",
-							path: Vvveb.MediaModal.currentPath + "/" + data,
+							path: Vvveb.MediaModal.currentPath + "/" + data.file,
 							size:1
 						},true);
 						
 						fileElement.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 						
-						Vvveb.MediaModal.hideUploadLoading();				
+						Vvveb.MediaModal.hideUploadLoading();
+	
+						if (data.success) {
+							displayToast("bg-success", "Success", data.message);			
+						} else {
+							displayToast("bg-danger", "Error", data.message);
+						}
 					})
 					.catch(error => {
-						console.log(error);
+						let message = error.statusText ?? "Error uploading!";
 						Vvveb.MediaModal.hideUploadLoading();						
-						displayToast("bg-danger", "Error", "Error uploading!");
+						displayToast("bg-danger", "Error", message);
 					});		
 			}
 		}	
