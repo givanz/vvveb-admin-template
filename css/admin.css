@@ -21299,8 +21299,7 @@ select[name=visibility] option[value="public"]   {  }
     .grid-stack-item-content .card .card-body.info {
       padding: 1rem 2rem; }
     .grid-stack-item-content .card .card-header {
-      cursor: grabbing;
-      margin-bottom: 1rem; }
+      cursor: grabbing; }
     .grid-stack-item-content .card .separator {
       border-left: 1px dashed var(--bs-border-color);
       padding: 0 1rem;

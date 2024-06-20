@@ -1355,6 +1355,23 @@
                 </button>
               </div>
 
+              <div class="alert alert-warning d-flex alert-dismissable d-flex" role="alert" data-v-notification-warning>
+
+                <div class="icon">
+                  <i class="la la-exclamation-triangle"></i>
+                </div>
+
+                <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                  You successfully read this important warning message.
+                </div>
+
+                <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <!-- <i class="la la-times"></i> -->
+                  </span>
+                </button>
+              </div>
+
               <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
 
                 <div class="icon">
@@ -1942,7 +1959,57 @@ function save() {
 	if (taxonomy_item_id) data.push({"name":"taxonomy_item_id", "value": taxonomy_item_id});
 	data.push({"name":"taxonomy_id", "value": taxonomy_id});
 	data.push({"name":"parent_id", "value": parent_id ?? 0});
+/*
+	item.querySelectorAll(":scope > .expand input:not([name=item_id]):not([name=item_id_text]),> .expand .field:visible input[name=item_id],:scope >  .expand .field:visible input[name=item_id_text],:scope > .expand select, :scope > .expand textarea").forEach( (el, i) => {
+		if (el.offsetParent) data[el.name] = el.value;
+	});	
 
+	fetch(location.href + "&action=add", {
+			method: "POST",   
+			body: new URLSearchParams(data),
+			headers: {
+			"X-Requested-With": "XMLHttpRequest",
+		  }})
+		.then((response) => {
+			next = false;
+			if (!response.ok) {
+				return Promise.reject(response);
+			}				
+			if (!response.ok) { 
+				let message = response.statusText + " " + response.body();
+				throw new Error(message); 
+			}
+			return response.json()
+		})
+		.then((json) => {
+				let message = json.message ?? json.responseText;
+				
+				$('.loading', element).addClass('d-none');
+				$('.button-text', element).removeClass('d-none');
+				if ($(element).is('button'))  {
+					$(element).removeAttr("disabled");
+				}
+
+				$("#taxonomyToast .message").html(message);
+				toast.show();
+				
+				$("> .dd3-buttons .expand-btn", item).click();
+		})
+		.catch(error => {
+				let message = error.statusText ?? error;
+
+				if (typeof error.json === "function") {
+					error.json().then(jsonError => {
+						message = jsonError;
+					}).catch(genericError => {
+						message = error.statusText + " " + message;
+					});
+				}				
+				
+				$("#taxonomyToast .message").html(message);
+				toast.show();
+		});
+*/		
 	$.ajax({
 			url: location.href + "&action=add",
 			type: 'post',
@@ -1980,7 +2047,7 @@ function save() {
 		.fail(function(xhr, ajaxOptions, thrownError) {
 				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 		});
-	
+
 	//$("> .expand", item).toggle();
 }
 
