@@ -117,7 +117,6 @@ function insertInvoiceFormat(inputName, variable) {
 
 
 
-let domain = "{ $this->domain }";
 let name = document.getElementById("input-site-name");
 //let key = document.getElementById("input-site-key");
 let host = document.getElementById("input-site-host");
