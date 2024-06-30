@@ -92,16 +92,22 @@
 								 class="img-thumbnail bg-body-tertiary"
 								 style="width:150px;"
 								 >
-							
-								<button type="button" 
-									class="btn btn-outline-secondary btn-icon btn-sm mx-2"
-									data-media-gallery 
-									data-target-input="#option_value0-input"
-									data-target-thumb="#option_value0-thumb" 
-									data-type="single">
-									<i class="la la-image la-lg"></i> <span>Set image</span>
-								</button>
-								
+
+								<div class="py-3">
+									<div class="btn-group mx-2">
+										<button type="button" 
+											class="btn btn-outline-secondary btn-icon btn-sm"
+											data-media-gallery 
+											data-target-input="#option_value0-input"
+											data-target-thumb="#option_value0-thumb" 
+											data-type="single">
+											<i class="la la-image la-lg"></i> <span>Set image</span>
+										</button>
+										<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('option_value0')">
+											<i class="la la-times"></i>
+										</button>
+									</div>
+								</div>								
 
 
 						  </td>

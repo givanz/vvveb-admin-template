@@ -24,11 +24,14 @@
 
   <div id="container">
 
-    <div class="sidebar">
+    <div class="sidebar" data-v-component-site>
 
       <div class="logo">
 
-        <a href="/admin" class="img"></a>
+        <a href="/admin" class="img" title="{$site.description.title}">
+          <img src="" data-v-site-logo>
+          <img src="" data-v-site-logo-dark>
+        </a>
 
         <a id="color-theme-switch" title="Switch sidebar color theme">
           <i class="la la-sun"></i>
@@ -1223,7 +1226,7 @@
           <div class="vr align-middle mx-1"></div>
 
 
-          <a target="_blank" id="top-docs-btn" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn" aria-expanded="false">
+          <a target="_blank" id="top-docs-btn" href="{$this.adminPath}index.php?action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn" aria-expanded="false">
             <i class="la la-lg la-question-circle"></i>
             <span>Docs</span>
           </a>
@@ -1452,10 +1455,15 @@
                   <img data-v-avatar src="img/placeholder.svg" alt="" title="" id="avatar-thumb" data-v-placeholder="" data-media-gallery data-target-input="#avatar-input" data-target-thumb="#avatar-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;">
 
                   <div class="py-3">
-                    <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#avatar-input" data-target-thumb="#avatar-thumb" data-type="single">
-                      <i class="la la-image la-lg"></i>
-                      <span>Set image</span>
-                    </button>
+                    <div class="btn-group">
+                      <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#avatar-input" data-target-thumb="#avatar-thumb" data-type="single">
+                        <i class="la la-image la-lg"></i>
+                        <span>Set image</span>
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('avatar')">
+                        <i class="la la-times"></i>
+                      </button>
+                    </div>
                   </div>
 
 

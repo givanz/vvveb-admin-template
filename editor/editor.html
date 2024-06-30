@@ -24,11 +24,14 @@
 
   <div id="container" class="small-nav">
 
-    <div class="sidebar">
+    <div class="sidebar" data-v-component-site>
 
       <div class="logo">
 
-        <a href="/admin" class="img"></a>
+        <a href="/admin" class="img" title="{$site.description.title}">
+          <img src="" data-v-site-logo>
+          <img src="" data-v-site-logo-dark>
+        </a>
 
         <a id="color-theme-switch" title="Switch sidebar color theme">
           <i class="la la-sun"></i>
@@ -1708,9 +1711,9 @@
                   <a id="edit-code-btn" href="" title="Edit html code">
                     <i class="icon-code-outline"></i>
                   </a>
-                  <!--
-					<a id="translate-code-btn" href="" title="Translate text"><i class="icon-language-outline"></i></a>
-					-->
+                  <a id="translate-code-btn" href="" title="Translate text">
+                    <i class="icon-language-outline"></i>
+                  </a>
 
                   <a id="save-reusable-btn" href="" title="Save as reusable" class="mx-2">
                     <i class="icon-save-outline"></i>

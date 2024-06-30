@@ -20725,11 +20725,11 @@ td:hover .secondary-actions {
     float: none;
     margin-bottom: 0rem;
     margin: 4rem 0rem 0 2rem;
-    margin: 2.5rem 0rem 0rem 2.1rem;
+    margin: 3rem 0rem 0rem 2.1rem;
     position: relative; }
     .sidebar .logo #color-theme-switch {
       position: absolute;
-      top: 0.8rem;
+      top: 0.3rem;
       color: var(--bs-gray-500);
       font-size: 1.2rem;
       /*
@@ -20756,17 +20756,23 @@ td:hover .secondary-actions {
 				border-bottom-left-radius: 50px;
 			}*/ }
     .sidebar .logo .img {
-      background-image: url("../img/logo.png");
       background-repeat: no-repeat;
       width: 130px;
       height: 50px;
       display: inline-block;
       background-position-y: 11px; }
+      .sidebar .logo .img [data-v-site-logo] {
+        display: block; }
+      .sidebar .logo .img [data-v-site-logo-dark] {
+        display: none; }
+      .sidebar .logo .img img {
+        max-width: 130px;
+        max-height: 50px; }
     .sidebar .logo a.menu-toggle {
       font-size: 1.3rem;
       margin-right: 1.8rem;
       margin-left: 0.5rem;
-      margin-top: 0.8rem;
+      margin-top: 0.3rem;
       outline: none;
       display: inline-block;
       vertical-align: top;
@@ -20778,7 +20784,7 @@ td:hover .secondary-actions {
         vertical-align: middle; }
   .sidebar .navbar {
     text-align: left;
-    margin: 2rem auto 0;
+    margin: 1.5rem auto 0;
     position: static;
     padding: 0px;
     width: 99%; }
@@ -20950,8 +20956,10 @@ td:hover .secondary-actions {
       border-top-color: #aaa; }
   html[data-bs-theme="dark"] .sidebar {
     background: #272a2f; }
-    html[data-bs-theme="dark"] .sidebar .logo .img {
-      background-image: url("../img/logo-white.png"); }
+    html[data-bs-theme="dark"] .sidebar .logo .img [data-v-site-logo] {
+      display: none; }
+    html[data-bs-theme="dark"] .sidebar .logo .img [data-v-site-logo-dark] {
+      display: block; }
     html[data-bs-theme="dark"] .sidebar .navbar .nav-item:hover {
       background: var(--bs-gray-700);
       color: var(--bs-white); }
@@ -20990,6 +20998,8 @@ td:hover .secondary-actions {
       background-image: url("../img/logo-small.png") !important;
       margin-left: 0.1rem;
       width: 30px; }
+      .small-nav .sidebar .logo .img img {
+        display: none !important; }
     .small-nav .sidebar .logo a {
       margin-left: 0.5rem;
       margin-right: 0rem;

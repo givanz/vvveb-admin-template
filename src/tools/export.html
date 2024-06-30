@@ -281,16 +281,16 @@
 @@include('../_includes/footer-scripts.html')
 
 <script>
-document.querySelectorAll(".accordion-button input[type=checkbox]").on("click", function (e) {
+document.querySelectorAll(".accordion-button input[type=checkbox]").forEach(e => e.addEventListener("click", function (e) {
 	let parent = this.closest(".accordion-item");
 	parent.querySelectorAll("input[type=checkbox]").forEach(e => e.checked = this.checked);
 	
-});
+}));
 
-document.querySelectorAll("input[type=checkbox].toggle-all").on("click", function (e) {
+document.querySelectorAll("input[type=checkbox].toggle-all").forEach(e => e.addEventListener("click", function (e) {
 	let parent = this.closest(".tab-pane");
 	parent.querySelectorAll("input[type=checkbox]").forEach(e => e.checked = this.checked);
-});
+}));
 </script>
 
 @@include('../_includes/footer.html') 

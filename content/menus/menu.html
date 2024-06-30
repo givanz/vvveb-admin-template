@@ -24,11 +24,14 @@
 
   <div id="container">
 
-    <div class="sidebar">
+    <div class="sidebar" data-v-component-site>
 
       <div class="logo">
 
-        <a href="/admin" class="img"></a>
+        <a href="/admin" class="img" title="{$site.description.title}">
+          <img src="" data-v-site-logo>
+          <img src="" data-v-site-logo-dark>
+        </a>
 
         <a id="color-theme-switch" title="Switch sidebar color theme">
           <i class="la la-sun"></i>
@@ -1224,7 +1227,7 @@
           <div class="vr align-middle mx-1"></div>
 
 
-          <a target="_blank" id="top-docs-btn" href="&action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn" aria-expanded="false">
+          <a target="_blank" id="top-docs-btn" href="{$this.adminPath}index.php?action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn" aria-expanded="false">
             <i class="la la-lg la-question-circle"></i>
             <span>Docs</span>
           </a>
@@ -1557,7 +1560,7 @@
 								<i class="la la-image la-lg"></i> Set media
 						</button>
 
-						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearFeaturedMedia()">
+						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
 							<i class="la la-times"></i>
 						</button>
 					</div>
@@ -1747,7 +1750,7 @@
 								<i class="la la-image la-lg"></i> Set media
 						</button>
 
-						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearFeaturedMedia()">
+						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
 							<i class="la la-times"></i>
 						</button>
 					</div>
@@ -1886,7 +1889,7 @@
 								<i class="la la-image la-lg"></i> Set media
 						</button>
 
-						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearFeaturedMedia()">
+						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
 							<i class="la la-times"></i>
 						</button>
 					</div>
