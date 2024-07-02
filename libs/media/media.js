@@ -588,7 +588,7 @@ _
 						bg = "bg-danger";
 					}
 					
-					parent.querySelector('input[type="hidden"]') = newFile
+					parent.querySelector('input[type="hidden"]').value = newFile
 					displayToast(bg, "Rename", data.message);
 				})
 				.catch(error => {
