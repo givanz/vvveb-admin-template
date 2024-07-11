@@ -317,8 +317,6 @@ body
 	
 	#left-panel
 	{
-		float:left;
-	
 		border-right-width: 1px;	
 		//overflow:hidden;
 		//border-top-width: 1px;	
@@ -338,9 +336,17 @@ body
 		height:100%;
 		max-height:100%;
 		
+		> div {
+			height:100%;
+			display:flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+		}
 
 		#filemanager
 		{
+			display: flex;
+			flex-direction: column;
 			//height:$builder-filemanager-height;
 			width:$builder-right-panel-width + 15;
 			//height: var(--builder-filemanager-height);
@@ -398,6 +404,7 @@ body
 		
 		.component-properties {
 			width:auto;
+			height:calc(100% - 85px);
 		}
 	}
 	
@@ -571,10 +578,16 @@ body
 
 	.drag-elements
 	{
+		flex: 1 1;
+		overflow: hidden;
 		padding-top: 0rem;
+		height:100%;
 
-		> .header
-		{
+		> .header {
+			height:100%;
+			display:flex;
+			flex-direction:column;
+			
             .nav {
                 background:rgba(var(--bs-secondary-color-rgb), 0.03);
             }
@@ -653,7 +666,7 @@ body
 			background:none;
 
 			position: absolute;
-			top: 0.5rem;
+			top: 0.3rem;
 			right: 12px;
 			
 	
@@ -680,10 +693,10 @@ body
 		.expand {
 			position: absolute;
 			top: 4px;
-			right: 3px; 
+			right: 5px; 
 			
 			button {
-				padding:0.25rem;
+				padding:0.1rem 0.25rem;
 				background:transparent;
 				border:none;
 				color: var(--bs-body-color);
@@ -723,7 +736,7 @@ body
 			width:auto;
 			height:auto;
 			padding: 0px;
-			height: 300px;
+			//height: 300px;
 			margin:0;
 			
 			ol 
@@ -779,17 +792,22 @@ body
 	  -moz-user-select: none;
 	  -ms-user-select: none;
 	  user-select: none;
+	  /*
 	  height: auto;
 	  width: 100%;
 	  overflow-y: auto;
-	 
+	  */
+		display:flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		height: 100%;	 
+
 		> div
 		   {
-			position:absolute;
-			min-height:950px;
-			height:200%;
-			width:100%;
-		   }	
+				//overflow-y: auto;
+				flex: 1 1;
+				height:100%;
+			}	
 		
 		//@include webkit-scrollbar();		   
 	}
@@ -798,13 +816,25 @@ body
 	{
 		background:var(--bs-body-bg);
 
-		height:95%;
-		height:calc(100% - #{$builder-header-top-height});
+		//height:95%;
+		//height:calc(100% - #{$builder-header-top-height});
+		display:flex;
+		flex-direction:column;
+		height:100%;
+		height:calc(100% - 45px);
 		
 		.tab-content {
 			padding: 0.5rem 0;
 			overflow-x: hidden;
 			overflow-y: auto;
+			flex: 1 1;			
+			
+			> .active {
+				display:flex;
+				flex-direction:column;
+				height:100%;
+				margin-bottom: 2rem;
+			}
 		}
 		
 		.nav-tabs {
@@ -927,8 +957,14 @@ body
 		height: calc( 100vh - (var(--builder-header-top-height) + var(--builder-bottom-panel-height)));
 		top:var(--builder-header-top-height);
 		position:fixed;
-		transition:width 0.35s, left 0.35s;
+		background-color:var(--bs-secondary-bg);
+		//transition:width 1s ease 0s, left 1s ease 0s;
 		//border-top: 1px solid $builder-border-color;	
+	
+		#iframe-wrapper {
+			transition:transform 1s ease 0s,  width 1s ease 0s, width 1s ease 0s, left 1s ease 0s, height 1s ease 0s;
+			transform-origin: top center;			
+		}
 	
 		#iframe-wrapper, iframe, iframe  body
 		{
@@ -1385,10 +1421,10 @@ body
 	//@include webkit-scrollbar();
 
 	#elements-tabs {
-			overflow:hidden;
 			
 			.nav-item {
 				background:var(--bs-body-bg);
+				overflow:hidden;
 			}
 	
 			a {
@@ -1461,7 +1497,7 @@ body
 		//border-top-width:2px;
 		border-radius: 0px;
 		background: linear-gradient( 0deg, var(--bs-body-bg) 70%, rgba(var(--bs-link-color-rgb), 0.03) 100%);
-		box-shadow: 0px -5px 5px 5px rgba(var(--bs-link-color-rgb), 0.05);
+		//box-shadow: 0px -5px 5px 5px rgba(var(--bs-link-color-rgb), 0.05);
 		border-top:1px solid rgba(var(--bs-link-color-rgb), 0.7);
 
 	}
@@ -1514,6 +1550,9 @@ li[data-type]
   -ms-user-select: none;
   user-select: none;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
   overflow:hidden;
  
   //@include webkit-scrollbar();
@@ -1522,13 +1561,17 @@ li[data-type]
    {
 	  //height:850px;
 	  overflow:hidden;
+	  margin-bottom:5rem;
 	  //@include webkit-scrollbar();
  	  
 	  &:hover {
 		overflow-y: auto;
 	  }
    }	
-	width:100%;
+	
+	.block-preview, .style-preview {
+		margin:0;
+	}
 
 	ul {
 	  z-index: 1;
@@ -2014,8 +2057,10 @@ input[type="number"]:focus {
 }
 
 .input-group.css-unit  {
+	input[type="number"] {
+		flex-grow:5;
+	}
 	.form-select.small-arrow {
-	    max-width: 100px;
 		padding-left: 0.5rem;
 		padding-right: 1.2em;
 	}
@@ -2369,9 +2414,18 @@ input[type="color"] {
 	}
 }
 
-.tab-content > .active{
-	overflow-y: auto;
-	overflow-x: hidden;
+.tab-content {
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	
+	> .active { 
+		//overflow-y: auto;
+		//overflow-x: hidden;
+		display:flex;
+		flex-direction:column;
+		height:100%;
+	}
 }
 
 img.preview {
@@ -2537,4 +2591,32 @@ img.preview {
 		}
 		 
 	}
+}
+
+.percent {
+  display: inline-block;
+  position: relative;
+}
+
+.percent input {
+  width:50px;
+  height:29px;
+  width: 60px;
+  margin-top: 2px;
+  font-size: 14px;
+  text-align:right;
+}
+
+.percent:hover::after,
+.percent:focus-within::after {
+  display:none;
+}
+
+.percent::after {
+  font-size:12px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.9em;
+  transition: all .05s ease-in-out;
+  content: '%';
 }

@@ -18,9 +18,8 @@ $table-cell-padding-y: 1rem;
 $table-cell-padding-x: 0.7rem;
 // Buttons
 
-$input-btn-padding-y:         0.5rem !default;
-$input-btn-padding-x:         1.1rem !default;
-
+//$input-btn-padding-y:         0.5rem !default;
+//$input-btn-padding-x:         1.1rem !default;
 
 //set higher z-index to avoid tinymce dialog overlap
 $zindex-dropdown:                   1400;
@@ -1064,6 +1063,13 @@ td:hover .secondary-actions {
 			background:#f8f9fb;
 			color:var(--bs-link-color);
 		  }
+		}
+		
+		&.heading {
+			&:hover,a:hover {
+				background:transparent;
+				color:var(--bs-body-color);
+			}
 		}
 	  }
 	}	
@@ -2794,6 +2800,7 @@ strong {
 	//background:#fafafa;
 	box-shadow:1px 1px 3px 0px rgba(var(--bs-body-color-rgb), 0.05) inset;
 	padding:0.2rem;
+	white-space: nowrap;
 
 	ul {
 		list-style:none;
