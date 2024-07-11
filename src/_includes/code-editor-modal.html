@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal modal-full fade" id="codeEditorModal" tabindex="-1" aria-labelledby="codeEditorModal" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+	  <input type="hidden" name="file" value="">  	
+	  <input type="hidden" name="type" value="">  	
+	
+      <div class="modal-header justify-content-between">
+        <span class="modal-title"><div class="fs-6 mb-1">Editing:</div> <span class="name fw-bold">file.php</span> (<span class="file text-muted text-small">file.php</span>)</span>
+		<div class="">
+			<button type="button" class="btn btn-light border btn-icon" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
+			
+			<button class="btn btn-primary btn-icon save-btn" title="Save changes" 
+				onclick="saveCodeEditor()"
+			>
+				<span class="loading d-none">
+				<i class="la la-save"></i>
+				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+				  </span>
+				  <span>Saving </span> ... </span>
+
+				<span class="button-text">
+				  <i class="la la-save"></i> <span>Save changes</span>
+				</span>				
+			</button>
+		</div>
+      </div>
+	  
+      <div class="modal-body p-0">
+        <textarea class="form-control h-100"></textarea>
+      </div>
+	  
+
+    </div>
+  </div>
+</div>
