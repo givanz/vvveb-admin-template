@@ -75,6 +75,7 @@ function _AutocompleteInput(el, params) {
 		onSelect : null,
 		validSelection : true,
 		allowFreeText:false,
+		searchOnFocus:true,
 		url : el.dataset.url,
 		listName : el.dataset.listName ?? "list",
 		parameters : {'inputName' : valueInput.getAttribute('name'), 'inputId' : textInput.getAttribute('id')}
@@ -111,9 +112,9 @@ function _AutocompleteInput(el, params) {
 			if (typeof settings.before == "function")  {
 				settings.before(textInput,text);
 			}
-			textInput.classList.add('autocomplete-loading');
-			settings.parameters.text = text;
 
+			textInput.classList.add('autocomplete-loading');
+			settings.parameters.text = text.trim();
 
 			fetch(settings.url + "&"+ new URLSearchParams(settings.parameters))
 			.then((response) => {
@@ -168,8 +169,25 @@ function _AutocompleteInput(el, params) {
 		return false;
 	});
 
+	if (settings.searchOnFocus) {
+		textInput.addEventListener("focusin", function(e) {
+			getData(textInput.value);
+		});	
+	}
+	
+	textInput.addEventListener("focusout", function(e) {
+		//if no valid selection empty input
+		setTimeout(() => {
+			if (!hiddenInput.value) {
+				textInput.value = "";
+				clear();
+			}
+		}, 500);
+	});	
+	
 	textInput.addEventListener("keydown", function(e) {
 		window.clearInterval(typingTimeout);
+
 		if(e.which == 27) {//escape
 			clear();
 		} else if (e.which == 46 || e.which == 8) {//delete and backspace
@@ -187,6 +205,12 @@ function _AutocompleteInput(el, params) {
 			if (settings.allowFreeText) {
 				selectOption(textInput.value, textInput.value);
 				clear();
+			} else {
+				let selected = list.querySelector("li.selected");
+				if (selected) {
+					selectOption(selected.getAttribute('value'), selected.textContent);
+					clear();
+				}
 			}
 			e.preventDefault();
 			return false;
@@ -203,8 +227,15 @@ function _AutocompleteInput(el, params) {
 			default: break;
 		  }
 		  //set selected item and input values
-		  textInput.value = list.children.classList.remove('selected').eq(selected).classList.add('selected').textContent();	        
-		  valueInput.value = list.children.eq(selected).getAttribute('value');
+		  list.querySelectorAll("li").forEach((e, i) => {
+			  if (i == selected) {
+				  //textInput.value = e.textContent;	        
+				  //valueInput.value = e.getAttribute('value');
+				  e.classList.add("selected");
+			  } else {
+				  e.classList.remove("selected");
+			  }
+		  });
 		} else  { 
 			//invalidate previous selection
 			if (settings.validSelection) valueInput.value = '';
