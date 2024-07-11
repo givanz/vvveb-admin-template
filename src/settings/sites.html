@@ -32,7 +32,7 @@
 				
 				@@include('../_includes/notifications.html')
                 
-                <div class="sites card-block"  data-v-sites>
+                <div class="sites card-block" data-v-sites>
                     <form action="" method="post">
 
 						<div class="bulk-actions px-2 mb-2" style="display:none">
@@ -55,7 +55,7 @@
                             <thead>
                             <tr>
                                 <th class="col-cb">
-                                    <div class="checkbox_outer">
+                                    <div class="checkbox_outer" data-v-if="count > 1">
 
                                         <label class="form-check">
                                             <input type="checkbox" class="form-check-input"
@@ -81,7 +81,7 @@
                             <tbody>
                             <tr data-v-site>
                                 <td class="checkbox">
-                                    <label class="form-check">
+                                    <label class="form-check" data-v-if="count > 1">
                                         <input type="checkbox" class="form-check-input" value="4" name="site_id[]" data-v-vvveb-action="table.selectRow" data-v-site_id>
                                         <span class="form-check-label"></span>
                                         <span class="custom-control-description">&nbsp;</span>
@@ -157,7 +157,7 @@
 											
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
-										<ul class="dropdown-menu">
+										<ul class="dropdown-menu" data-v-if="count > 1">
 										  <li data-v-check-permission-delete><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
 										</ul>
 									 </div>
