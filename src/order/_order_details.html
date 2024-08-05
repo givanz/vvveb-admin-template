@@ -1,7 +1,7 @@
 <div class="order_details">
 	<div class="clearfix">
 		<h6 class="float-start">Order Details</h6>
-		<div class="btn btn-outline-success btn-sm float-end" onclick="document.querySelector('.order_details').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
+		<div class="btn btn-outline-secondary btn-sm float-end" onclick="document.querySelector('.order_details').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
 	</div>		
 
 	<div class="display">
@@ -63,19 +63,19 @@
 			<tr>
 				<td><span class="text-muted">Status</span></td>
 				<td>
-					<span data-v-order-order_status>Pending</span> 
+					<span class="badge" data-v-order-order_status data-filter-human_readable>Pending</span> 
 				</td>
 			</tr>
 			</tr>
 				<td><span class="text-muted">Payment status</span></td>
 				<td>
-					<span data-v-order-payment_status>Pending</span> 
+					<span class="badge" data-v-order-payment_status data-filter-human_readable>Pending</span> 
 				</td>
 			</tr>
 			<tr>
 				<td><span class="text-muted">Shipping status</span></td>
 				<td>
-					<span data-v-order-shipping_status>Pending</span> 
+					<span class="badge" data-v-order-shipping_status data-filter-human_readable>Pending</span> 
 				</td>
 			</tr>
 		  </table>

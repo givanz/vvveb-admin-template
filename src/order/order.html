@@ -65,7 +65,7 @@
                 <div class="d-md-flex justify-content-between">
                   <div class="d-flex align-items-center mb-2 mb-md-0">
                     <h2 class="mb-0">Order ID: #VI<span data-v-order-order_id>001</span></h2>
-                    <span class="badge ms-2" data-v-order-order_status>Pending</span>
+                    <span class="badge ms-2" data-v-order-order_status data-filter-human_readable>Pending</span>
                   </div>
                   <!-- 
                   <div class="d-md-flex">
@@ -186,7 +186,7 @@ document.querySelector("#order-form").addEventListener("change", function (e) {
 		let name = element.dataset.text;
 		let value = element.options[element.selectedIndex].text
 		let textSelector = "[" + name + "]";
-		document.querySelector(textSelector).innerHTML = element.value;
+		document.querySelector(textSelector).innerHTML = value;
 	}	
 });
 
