@@ -13,9 +13,20 @@
 			
 
 		<div id="content" class="container mt-4">
-				<button class="btn btn-light border align-self-end" onclick="copyTableToClipboard()">
-					<i class="la la-lg la-clipboard"></i> <span>Copy to clipboard</span>
-				</button>
+				<div class="align-self-end mb-3">
+					
+					<label class="btn btn-outline-secondary form-check" for="btn-phpinfo">
+						<input type="checkbox" class="form-check-input m-0" id="btn-phpinfo" autocomplete="off" onchange="togglePHP()">
+						<span>PHP Info</span>
+					</label>					
+					
+					<button class="btn btn-light border" onclick="copyTableToClipboard()">
+						<i class="la la-lg la-clipboard"></i> <span>Copy to clipboard</span>
+					</button>
+				</div>
+
+
+				<div class="php" data-v-phpinfo></div>
 					
 				<div id="info">
 					<div class="info" data-v-info>
@@ -50,7 +61,6 @@
 					</div>			
 				</div>
 				
-				<div class="php" data-v-phpinfo></div>
 			</div>
 		</div>
 	</div>
@@ -64,17 +74,10 @@ label.header {
 }
 .table tbody td {
     font-weight: normal;
-    border-right: none;
-    border-top: none;
 }
 .table th {
-    border-left: none;
-    border-top: none;
-	font-size:13px;
+    font-size:13px;
     white-space: nowrap;
-}
-table tr:first-child, table tr:last-child {
-	border-width:0 !important;
 }
 </style>
 
@@ -105,9 +108,24 @@ function copyToClipboard(textToCopy) {
     };
 }
 
-
 function copyTableToClipboard() {
 	copyToClipboard(document.getElementById('info').textContent.replaceAll(/$\s{3,}^/mg,"\n\n").replaceAll("              ","").trim());
+}
+
+const queryString = window.location.search;
+const urlParams   = new URLSearchParams(queryString);
+const phpCheckbox = document.getElementById("btn-phpinfo");
+
+phpCheckbox.checked = urlParams.has("phpinfo");
+
+function togglePHP() {
+	if (phpCheckbox.checked) {
+		urlParams.append("phpinfo", "true");
+	} else {
+		urlParams.delete("phpinfo");
+	}
+	
+	window.location.search = urlParams.toString();
 }
 </script>
   
