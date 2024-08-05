@@ -55,6 +55,55 @@
   </div>
 </div>
 
+<!-- translate editor modal -->
+<div class="modal modal-full fade" id="translateEditorModal" tabindex="-1" aria-labelledby="translateEditorModal" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+	  <input type="hidden" name="file" value="">  	
+
+      <div class="modal-body p-0">
+
+		  <ul class="nav nav-tabs" id="language-nav" data-v-languages="seo">
+			<li class="nav-item" data-v-language>
+				<a href="#language1" class="nav-link active" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+					<!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img --> 
+					<span data-v-language-name>English</span>
+				</a>
+			</li>
+		 </ul>
+				 
+		   <div class="tab-content" data-v-languages="content" style="clear:both">
+			<div class="tab-pane show active" id="language1" data-v-language data-v-language-id>
+				<textarea class="form-control" rows="10"></textarea>
+			</div>
+		</div>
+	  
+      </div>
+
+	
+      <div class="modal-header justify-content-between">
+        <span class="modal-title"></span>
+		<div class="">
+			<button type="button" class="btn btn-light border btn-icon" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
+			
+			<button class="btn btn-primary btn-icon save-btn" title="Save changes">
+				<span class="loading d-none">
+				<i class="la la-save"></i>
+				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+				  </span>
+				  <span>Saving </span> ... </span>
+
+				<span class="button-text">
+				  <i class="la la-save"></i> <span>Save changes</span>
+				</span>				
+			</button>
+		</div>
+      </div>
+	  
+    </div>
+  </div>
+</div>
+
 <!-- export html modal-->
 <div class="modal fade" id="textarea-modal" tabindex="-1" role="dialog" aria-labelledby="textarea-modal" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">

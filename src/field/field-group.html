@@ -10,7 +10,7 @@
 
 	@@include('../_includes/top-header.html')
 
-	<form id="field-form" action="" method="post" class="needs-validation" data-v-field_group>
+	<form id="field-form" action="" method="post" class="settings" data-v-field_group>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
@@ -65,10 +65,10 @@
 								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#field-id-1" aria-controls="field-id-1">
 								<div class="flex-grow-1">Label 1</div>
 								<div class="pe-5 buttons">
-									<a type="button" onclick="$(this).parents('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
+									<a type="button" onclick="this.closest('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
 										  <i class="la la-lg la-copy"></i>
 									</a>
-									<a type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
+									<a type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
 										  <i class="la la-lg la-minus-circle"></i>
 									</a>
 								</div>
@@ -109,6 +109,14 @@
 							  <label for="input-language" class="col-sm-2 col-form-label">Type</label>
 							  <div class="col-sm-10">
 									<select name="type" class="form-select" data-v-field-type>
+									  <option value="1" data-v-option>
+										<span data-v-option-name>Tax 1 (-2.00)</span>
+									  </option>
+									  <option value="2" data-v-country data-v-country-country_id>
+										<span data-v-country-name>Tax 2 (19%)</span>
+									  </option>
+									  
+									  <optgroup label="Basic">
 										<option value="text" selected="selected" data-v-option>Text</option>
 										<option value="textarea" data-v-option>Text Area</option>
 										<option value="number" data-v-option>Number</option>
@@ -116,6 +124,45 @@
 										<option value="email" data-v-option>Email</option>
 										<option value="url" data-v-option>Url</option>
 										<option value="password" data-v-option>Password</option>
+									  </optgroup>
+									  <optgroup label="Content">
+										<option value="image">Image</option>
+										<option value="file">File</option>
+										<option value="wysiwyg">Wysiwyg Editor</option>
+										<option value="oembed">oEmbed</option>
+										<option value="null" disabled="disabled">Gallery</option>
+									  </optgroup>
+									  <optgroup label="Choice">
+										<option value="select">Select</option>
+										<option value="checkbox">Checkbox</option>
+										<option value="radio">Radio Button</option>
+										<option value="button_group">Button Group</option>
+										<option value="true_false">True / False</option>
+									  </optgroup>
+									  <optgroup label="Relational">
+										<option value="link">Link</option>
+										<option value="post_object">Post Object</option>
+										<option value="page_link">Page Link</option>
+										<option value="relationship">Relationship</option>
+										<option value="taxonomy">Taxonomy</option>
+										<option value="user">User</option>
+									  </optgroup>
+									  <optgroup label="jQuery">
+										<option value="google_map">Google Map</option>
+										<option value="date_picker">Date Picker</option>
+										<option value="date_time_picker">Date Time Picker</option>
+										<option value="time_picker">Time Picker</option>
+										<option value="color_picker">Color Picker</option>
+									  </optgroup>
+									  <optgroup label="Layout">
+										<option value="message">Message</option>
+										<option value="accordion">Accordion</option>
+										<option value="tab">Tab</option>
+										<option value="group">Group</option>
+										<option value="repeater" disabled="disabled">Repeater</option>
+										<option value="flexible" disabled="disabled">Flexible Content</option>
+										<option value="clone" disabled="disabled">Clone</option>
+									  </optgroup>									  
 									</select>
 							  </div>
 							</div>
@@ -197,10 +244,10 @@
 							<div class="accordion-header">
 								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#field-id" aria-expanded="true" aria-controls="field-id">									<div class="flex-grow-1">(no label)</div>
 									<div class="pe-5 buttons">
-										<a type="button" onclick="$(this).parents('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
+										<a type="button" onclick="this.closest('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
 											  <i class="la la-lg la-copy"></i>
 										</a>
-										<a type="button" onclick="$(this).parents('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
+										<a type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
 											  <i class="la la-lg la-minus-circle"></i>
 										</a>
 									</div>
@@ -209,7 +256,7 @@
 
 						<div id="field-id" class="accordion-collapse collapse show">
 						  <div class="accordion-body">
-							
+							asdasd
 							 
 							
 						  </div>
@@ -266,12 +313,12 @@ function addFieldsToSelect(fieldSelect, data, field_id = 0) {
 		fieldSelect.append('<option value="' + field.field_id + '">' + field.name + '</option>');
 	}
 	fieldSelect.val(field_id);
-	//fieldSelect.removeAttr("disabled");
+	//fieldSelect.removeAttribute("disabled");
 	
 }
 /*
-$("body").on("change", "[data-v-countries]", function () {
-	let fieldGroup = $(this).parents("tr");
+document.querySelectorAll("body").on("change", "[data-v-countries]", function () {
+	let fieldGroup = this.closest("tr");
 	let fieldSelect = $("[data-v-field-field_id]", fieldGroup);
 	let country_id = this.value;
 	let field_id = this.dataset.vFieldId;
@@ -279,32 +326,32 @@ $("body").on("change", "[data-v-countries]", function () {
 
 	if (fields[country_id]) {
 		addFieldsToSelect(fieldSelect, fields[country_id], field_id);
-		$("[data-v-field] [data-v-countries]:disabled:first").change();
+		document.querySelectorAll("[data-v-field] [data-v-countries]:disabled:first").change();
 	} else {
 		$.get(fieldsUrl + "&country_id=" + country_id).done(function( data ) {
 			fields[country_id] = data;
 			addFieldsToSelect(fieldSelect, data, field_id);
-			$("[data-v-field] [data-v-countries]:disabled:first").change();
+			document.querySelectorAll("[data-v-field] [data-v-countries]:disabled:first").change();
 		});
 	}
 	
 	this.dataset.vFieldId = 0;
 });
 */
-$("#add-field-group-btn").click(function () {
+document.getElementById("add-field-group-btn").addEventListener("click", function () {
 	
-	let template = $("#field-group-template")[0].outerHTML;
+	let template = document.getElementById("field-group-template").outerHTML;
 	let id = Math.floor(Math.random() * 10000);
 	template = template.replaceAll('field-group_template[0]', 'field[' + id + ']')
 				.replace('class="d-none"', 'class="accordion-item" data-v-field')
 				.replace('id="field-group-template"', '')
 				.replaceAll('field-id',"field-" + id);
 				
-	$("[data-v-fields]").append(template);
-	$("[data-v-field] [data-v-countries]:disabled:first").change();	
+	document.querySelector("[data-v-fields]").appendChild(generateElements(template)[0]);
+	document.querySelector("[data-v-field] [data-v-countries]:disabled").change();	
 });
 
-//$("[data-v-field] [data-v-countries]:disabled:first").change();
+//document.querySelectorAll("[data-v-field] [data-v-countries]:disabled:first").change();
 </script>
 
 

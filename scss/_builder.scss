@@ -1477,8 +1477,8 @@ body
 
 	.nav-tabs .nav-link
 	{
-		padding:0.8rem 0 0.5rem;
-		padding:0.5rem 0 0.5rem;
+		//padding:0.8rem 0 0.5rem;
+		//padding:0.5rem 0 0.5rem;
 		text-align:center;
 		--bs-nav-link-color:var(--bs-secondary-color);
 		
@@ -1862,6 +1862,11 @@ li[data-type]
 	}
 }
 
+.blocks .drag-elements-sidepane li[data-type] {
+	width:45%;
+    box-shadow: 0px 1px 4px 0px rgba(var(--bs-body-color-rgb), 0.05);
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(var(--bs-body-color-rgb), 0.05);
+}
 
 .components .drag-elements-sidepane,
 #add-section-box

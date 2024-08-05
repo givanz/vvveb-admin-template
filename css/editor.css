@@ -13804,8 +13804,6 @@ textarea.form-control-lg {
           line-height: 1;
           border-radius: 4px;
           --bs-btn-border-color: rgba(var(--bs-link-color-rgb), 0.15); }
-      .tree > ol li.file.page .duplicate {
-        display: none; }
     .tree > ol li.page > label {
       background-image: url(../../../js/vvvebjs/icons/panel.svg); }
     .tree > ol li input {
@@ -14745,8 +14743,6 @@ body {
   #vvveb-builder .nav-tabs .nav-item:first-child .nav-link {
     border-left: none; }
   #vvveb-builder .nav-tabs .nav-link {
-    padding: 0.8rem 0 0.5rem;
-    padding: 0.5rem 0 0.5rem;
     text-align: center;
     --bs-nav-link-color:var(--bs-secondary-color); }
     #vvveb-builder .nav-tabs .nav-link i {
@@ -15048,6 +15044,11 @@ li[data-type] {
     max-width: 100%; }
   .blocks .drag-elements-sidepane li[data-type] .name, .sections .drag-elements-sidepane li[data-type] .name {
     visibility: hidden; }
+
+.blocks .drag-elements-sidepane li[data-type] {
+  width: 45%;
+  box-shadow: 0px 1px 4px 0px rgba(var(--bs-body-color-rgb), 0.05);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(var(--bs-body-color-rgb), 0.05); }
 
 .components .drag-elements-sidepane li[data-type],
 #add-section-box li[data-type] {
