@@ -28,7 +28,7 @@
 
       <div class="logo">
 
-        <a href="/admin" class="img" title="{$site.description.title}">
+        <a href="{$this.adminPath}index.php" class="img" title="{$site.description.title}">
           <img src="" data-v-site-logo>
           <img src="" data-v-site-logo-dark>
         </a>
@@ -1366,6 +1366,15 @@
                     <label class="col-sm-2 col-form-label" for="quantity">Sku</label>
                     <div class="col-sm-10">
                       <input type="search" class="form-control" name="filter[sku]" value="" placeholder="Sku" id="sku">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4 mb-3">
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label" for="quantity">Barcode</label>
+                    <div class="col-sm-10">
+                      <input type="search" class="form-control" name="filter[barcode]" value="" placeholder="Barcode" id="barcode">
                     </div>
                   </div>
                 </div>

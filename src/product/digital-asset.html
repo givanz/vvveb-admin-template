@@ -63,8 +63,7 @@
 				  <div class="mb-3 row">
 					<label for="input-site-title" class="col-sm-2 col-form-label">File</label>
 					<div class="col-sm-10">
-
-						<input type="hidden" data-v-image name="digital_asset[file]" id="featured-image-input" value="">
+					<!--
 									
 						<img data-v-image src="img/placeholder.svg" alt="" title=""
 						 id="featured-image-thumb"
@@ -76,17 +75,17 @@
 						 class="img-thumbnail bg-light"
 						 style="max-width:200px;"
 						 >
-							
+					-->		
+						<div class="input-group">
+							<input type="text" class="form-control" data-v-image name="digital_asset[file]" id="featured-image-input" value="" required>
 
-							<div class="py-3">
-								<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
-									data-media-gallery 
-									data-target-input="#featured-image-input"
-									data-target-thumb="#featured-image-thumb" 
-									data-type="single">
-									<i class="la la-image la-lg"></i> <span>Set file</span>
-								</button>
-							</div>
+							<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+								data-media-gallery 
+								data-target-input="#featured-image-input"
+								data-type="single">
+								<i class="la la-image la-lg"></i> <span>Set file</span>
+							</button>
+						</div>
 							
 					  
 					</div>
@@ -104,6 +103,7 @@
 let mediaPath = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
 let uploadUrl = '{ $this->uploadUrl }';
+let deleteUrl = '{ $this->deleteUrl }';
 </script>
 
 

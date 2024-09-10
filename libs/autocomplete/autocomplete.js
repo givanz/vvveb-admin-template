@@ -337,7 +337,7 @@ function _AutocompleteList(el, options) {
 			// ".remove-btn",
 			let item = event.target.closest(".remove-btn"); 
 			if (item) {
-				el.parentNode.remove();
+				item.parentNode.remove();
 				setList();
 				const e = new CustomEvent('autocompletelist.change', {bubbles: true, detail: [ JSON.stringify(values) ] });
 				event.currentTarget.dispatchEvent(e);				
