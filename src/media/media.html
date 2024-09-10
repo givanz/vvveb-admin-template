@@ -55,8 +55,13 @@
 								   data-bs-target=".upload-collapse" 
 								   aria-expanded="false" 
 								   >
-								   <i class="la la-image la-lg"></i>
-									Upload new file
+								   <i class="la la-upload la-lg"></i>
+									Upload file
+								</button>								
+								
+								<button class="btn btn-outline-secondary btn-sm btn-icon me-2 float-end btn-new-folder">
+								   <i class="la la-folder la-lg la-rotate-270"></i>
+									New folder
 								</button>
 							</div>
 							
@@ -80,8 +85,16 @@
 							<ul class="data" id="media-files"></ul>
 						
 							<div class="nothingfound">
-								<div class="nofiles"></div>
-								<span>No files here.</span>
+								<div class="nofiles">
+									<i class="la la-folder-open"></i>
+								</div>
+								<div>No files here.</div>
+								<div class="mt-4">
+									<button class="btn btn-outline-secondary btn-sm btn-icon" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+									<i class="la la-upload la-lg"></i>
+									Upload file 
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -102,6 +115,106 @@
 	</div>
 
 </div>
+
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="media-offcanvas" style="--bs-offcanvas-width: min(95vw, 90vw);">
+	<div class="offcanvas-header justify-content-between">
+		<div class="offcanvas-title">
+			<button type="button" class="btn btn-outline-secondary btn-sm" id="prev-media" style="--bs-btn-disabled-opacity:0.25">
+				<i class="la la-arrow-left la-lg"></i>
+			</button>
+
+			<button type="button" class="btn btn-outline-secondary btn-sm" id="next-media" style="--bs-btn-disabled-opacity:0.25">
+				<i class="la la-arrow-right la-lg"></i>
+			</button>
+		</div>
+
+		<div>
+			<button class="btn btn-primary btn-icon save-btn save-offcanvas" title="Save changes">
+				<span class="loading d-none">
+				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+				  <span class="progress-text"><span>Saving</span> ... </span>
+				</span>
+				<span class="button-text">
+				  <i class="icon-save-outline"></i> <span>Save</span>
+				</span>				
+			</button>
+
+			<button type="button" class="btn btn-outline-secondary mx-2" data-bs-dismiss="offcanvas" aria-label="Close">
+				  <i class="la la-times la-lg"></i>
+			</button>
+			
+		</div>
+	</div>
+
+	<div class="offcanvas-body border-top p-0 overflow-x-hidden">
+	
+		<form id="media-content-form" method="post" class="h-100" data-v-media>
+		<div class="row h-100 g-0">
+			<div class="col-xl-9 col-lg-8 col-sm-6 d-flex justify-content-center">
+				<img src="../../media/placeholder.svg" class="img-fluid m-auto">
+				<video controls src="../../media/placeholder.svg" class="img-fluid m-auto">
+			</div>
+
+			<div class="col-xl-3 col-lg-4 col-sm-6 border-start p-0">
+				<div class="mb-3 row p-4">
+						<label for="input-site-title" class="col-sm-4 col-form-label">File name</label>
+						<div class="col-sm-8">
+						  <input type="text" class="form-control" id="input-name" placeholder="Title" name="file" readonly>
+						</div>
+				 </div>		
+
+				  <ul class="nav nav-tabs justify-content-end" id="seo-language-nav" data-v-languages="content">
+					<li class="nav-item" data-v-language>
+						<a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+							<!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img --> 
+							<span data-v-language-name>English</span>
+						</a>
+					</li>
+				 </ul>
+				 
+					 
+					 
+				   <div class="tab-content p-4" data-v-languages="content" style="clear:both">
+					<div class="tab-pane" id="language1" data-v-language data-v-language-id>
+
+						<input type="hidden" name="content[1][language_id]" data-v-language_id>
+						
+						<div class="mb-3 row">
+							<label for="input-site-title" class="col-sm-4 col-form-label">Name</label>
+							<div class="col-sm-8">
+							  <input type="text" class="form-control" id="input-name" placeholder="Title" name="content[1][name]" data-v-media-content-name>
+							</div>
+						 </div>					
+						 
+						 <div class="mb-3 row">
+							<label for="input-site-title" class="col-sm-4 col-form-label">Caption</label>
+							<div class="col-sm-8">
+							  <input type="text" class="form-control" id="input-name" placeholder="Title" name="content[1][caption]" data-v-media-content-caption>
+							</div>
+						 </div>		 
+						  
+						  <div class="mb-3 row">
+							<label for="input-description" class="col-sm-4 col-form-label" >Description</label>
+							<div class="col-sm-8">
+							  <textarea type="email" class="form-control" id="input-description" rows="5" placeholder="Description" name="content[1][description]" data-v-media-content-description></textarea>
+							</div>
+						  </div>
+
+					
+						</div>
+					</div>
+			<!-- .tab-content -->
+
+			</div>
+		</div>
+		</form>
+
+		
+	
+	</div>
+</div>
+
     
 <!-- save status toast -->
 <div class="toast-container" id="top-toast">
@@ -117,11 +230,12 @@
 
 @@include('../_includes/footer-scripts.html')
 <script>
-let mediaPath = '{ $this->mediaPath }';
+let mediaPath    = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let deleteUrl = '{ $this->deleteUrl }';
-let renameUrl = '{ $this->renameUrl }';
+let uploadUrl    = '{ $this->uploadUrl }';
+let deleteUrl    = '{ $this->deleteUrl }';
+let renameUrl    = '{ $this->renameUrl }';
+let mediaUrl     = '{ $this->mediaUrl }';
 	
 
 document.addEventListener('click', function (e) {
@@ -137,8 +251,9 @@ document.addEventListener('click', function (e) {
 	}
 });
 </script>
-
+<!--
 <script id="openverse-js" src="libs/media/openverse.js"></script>
+-->
 <script id="media-js" src="libs/media/media.js"></script>
 <script src="libs/vvveb/index.js"></script>
 

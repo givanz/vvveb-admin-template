@@ -10,6 +10,16 @@ if (!mediaScanUrl) {
 	let uploadUrl = "upload.php";
 }
 
+function fileExtension(filename) {
+	return filename.split('.').pop();
+}
+
+let videoExtensions = ['mp4', 'webm', 'mov', 'ogg', 'mkv', 'flv', 'avi', '3gp', 'mpg', 'mpeg'];
+
+function isVideo(filename) {
+	return videoExtensions.indexOf(fileExtension(filename)) != -1;
+}
+
 class MediaModal {
 	constructor (modal = true)
 	{
@@ -44,13 +54,13 @@ class MediaModal {
 									<input type="search" id="media-search-input" placeholder="Find a file.." />
 								</div>
 								
-								<button class="btn btn-outline-secondary btn-sm btn-icon me-5 float-end border-secondary-subtle" 
+								<button class="btn btn-outline-secondary btn-sm btn-icon me-5 float-end" 
 								   data-bs-toggle="collapse" 
 								   data-bs-target=".upload-collapse" 
 								   aria-expanded="false" 
 								   >
-								   <i class="la la-cloud-upload-alt la-lg"></i>
-									Upload new file
+								   <i class="la la-upload la-lg"></i>
+									Upload file
 								</button>
 							</div>
 							
@@ -79,8 +89,16 @@ class MediaModal {
 							<ul class="data" id="media-files"></ul>
 						
 							<div class="nothingfound">
-								<div class="nofiles"></div>
-								<span>No files here.</span>
+								<div class="nofiles">
+									<i class="la la-folder-open"></i>
+								</div>
+								<div>No files here.</div>
+								<div class="mt-4">
+									<button class="btn btn-outline-secondary btn-sm btn-icon" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+									<i class="la la-upload la-lg"></i>
+									Upload file 
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -109,6 +127,7 @@ class MediaModal {
 		this.fileList = null;
 		this.mediaPath = mediaPath;
 		this.type = "single";
+		this.currentMedia;
 	}
 	
 	addModalHtml() {
@@ -128,22 +147,35 @@ class MediaModal {
 	}
 	
 	save() {
-		
-		let file = document.querySelector("#MediaModal .files input:checked").value ?? false;
-		let src = file;
-		
-		if (!file) return;
+		let files = [];
+		let file = "";
+		let src = "";
 
-		if (file.indexOf("//") == -1) {
-			src = this.mediaPath + file;
-		}
+		if (this.type == "single") {
+			file = document.querySelector("#MediaModal .files input:checked").value ?? false;
+			
+			if (!file) return;
 
-		if (this.targetThumb) {
-			document.querySelector(this.targetThumb).setAttribute("src", src);
+			if (file.indexOf("//") == -1) {
+				src = this.mediaPath + file;
+			}
+
+			files.push(file);
+
+			if (this.targetThumb) {
+				document.querySelector(this.targetThumb)?.setAttribute("src", src);
+			}
+		
+		} else {
+			document.querySelectorAll("#MediaModal .files input:checked").forEach(e => {
+				files.push(e.value);
+				src += this.mediaPath + e.value + ",";
+				file += e.value + ",";
+			});
 		}
 		
 		if (this.callback) {
-			this.callback(src);
+			this.callback(src, file, files);
 		}
 
 		if (this.targetInput) {
@@ -153,6 +185,7 @@ class MediaModal {
 			input.dispatchEvent(e);
 		}
 
+		document.querySelectorAll("#MediaModal .files input:checked").forEach(e => e.checked = false);
 		let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('MediaModal'));
 		if (this.isModal) modal.hide();
 	}
@@ -173,7 +206,30 @@ class MediaModal {
 				} else {
 					element = e.target.closest(".btn-rename");
 					if (element) {
-						 self.renameFile(element);
+						 self.editMedia(element);
+					} else {
+						element = e.target.closest(".btn-new-folder");
+						if (element) {
+							 self.newFolder(element);
+						}
+					}
+				}
+			});
+
+			let offcanvas = document.querySelector("#media-offcanvas");
+			offcanvas?.addEventListener("click", function (e) {
+				let element = e.target.closest(".save-btn");
+				if (element) {
+					 self.saveMediaContent(element);
+				} else {
+					element = e.target.closest("#next-media");
+					if (element) {
+						 self.nextMedia(element);
+					} else {
+						element = e.target.closest("#prev-media");
+						if (element) {
+							 self.prevMedia(element);
+						}
 					}
 				}
 			});
@@ -200,6 +256,12 @@ class MediaModal {
 		
 		this.callback = callback;
 		this.init();
+		
+		if (this.type == "single") {
+			document.querySelectorAll("#MediaModal .files input[type=checkbox]").forEach(e => e.setAttribute("type", "radio"));
+		} else {
+			document.querySelectorAll("#MediaModal .files input[type=radio]").forEach(e => e.setAttribute("type", "checkbox"));
+		}
 
 		let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('MediaModal'));
 		if (this.isModal) modal.show();
@@ -570,16 +632,65 @@ _
 			}
 		}
 
-		renameFile(el) {
-			let parent = el.closest("li");
-			let file = parent.querySelector('input[type="hidden"]').value;
-			let newfile = prompt(`Enter new file name for "${file}"`, file);
+		enableNavigateBtns(media) {
+			let nextMedia = media?.nextElementSibling?.closest(".files") ?? false;
+			let prevMedia = media?.previousElementSibling?.closest(".files") ?? false; 
 
-			if (newfile) {
-				fetch(renameUrl, {method: "POST",  body: new URLSearchParams({file, newfile})})
+			let nextBtn = document.getElementById("next-media");
+			let prevBtn = document.getElementById("prev-media");
+
+			if (nextMedia) {
+				nextBtn.disabled = false;
+			} else {
+				nextBtn.disabled = true;
+				nextMedia = false;
+			}
+
+			if (prevMedia) {
+				prevBtn.disabled = false;
+			} else {
+				prevBtn.disabled = true;
+				prevMedia = false;
+			}
+		}
+		
+		navigateMedia(media, next = true) {
+			let nextMedia = media?.nextElementSibling?.closest(".files") ?? false;
+			let prevMedia = media?.previousElementSibling?.closest(".files") ?? false; 
+
+			if (next && nextMedia) {
+				this.currentMedia = nextMedia;
+			} else if (prevMedia) {
+				this.currentMedia = prevMedia;
+			}
+
+			this.editMedia(this.currentMedia);
+		}
+		
+		nextMedia(el) {
+			this.navigateMedia(this.currentMedia);
+		}
+
+		prevMedia(el) {
+			this.navigateMedia(this.currentMedia, false);
+		}
+		
+		newFolder(el) {
+			let hash = decodeURIComponent(window.location.hash).slice(1).split('=');
+			let rendered = this.response;
+
+			if (hash[0].trim().length) {
+				rendered = this.searchByPath(hash[0]);
+			} else {
+				rendered = this.searchByPath(this.response[0].path);
+			}
+			
+			let folder = prompt('Folder name');			
+			if (folder) {
+				fetch(mediaUrl + "&action=newFolder", {method: "POST",  body: new URLSearchParams({folder, path:Vvveb.MediaModal.currentPath})})
 				.then((response) => {
 					if (!response.ok) { throw new Error(response) }
-					return response.json()
+					return response.json();
 				})
 				.then((data) => {
 					let bg = "bg-success";
@@ -588,13 +699,105 @@ _
 						bg = "bg-danger";
 					}
 					
-					parent.querySelector('input[type="hidden"]').value = newFile
-					displayToast(bg, "Rename", data.message);
+					rendered.push({
+							name: folder, 
+							type: 'folder', 
+							path: Vvveb.MediaModal.currentPath + "/" + folder, 
+							items: []});
+							
+					this.render(rendered);
+					displayToast(bg, "Save", data.message);
 				})
 				.catch(error => {
-					displayToast("bg-danger", "Error", "Error renaming file!");
+					displayToast("bg-danger", "Error", "Error saving!");
 				});	
 			}
+		}
+		
+		editMedia(el) {
+			let parent = el.closest("li");
+			let offcanvas = document.getElementById("media-offcanvas");
+			let file = parent.querySelector('input[type="hidden"]').value;
+			//if (this.currentMedia == parent) return;
+			this.currentMedia = parent;
+			this.enableNavigateBtns(parent);
+
+			//let image = parent.querySelector('img.image').getAttribute("src");
+			//let newfile = prompt(`Enter new file name for "${file}"`, file);
+			
+			let img = offcanvas.querySelector("img");
+			let video = offcanvas.querySelector("video");
+			offcanvas.querySelector("[name=file]").value = file;
+
+			if (isVideo(file)) {
+				video.setAttribute("src", mediaPath  + file);
+				video.style.display = "";
+				img.style.display = "none";
+			} else {
+				img.setAttribute("src", mediaPath  + file);
+				img.style.display = "";
+				video.style.display = "none";
+			}
+
+			//if (newfile) {
+				fetch(mediaUrl + "&action=mediaContent&" + new URLSearchParams({file}))
+				.then((response) => {
+					if (!response.ok) { throw new Error(response) }
+					return response.json();
+				})
+				.then((data) => {
+					//clear previous text
+					document.querySelectorAll("[data-v-languages] input[type=text], [data-v-languages] textarea").forEach(i => i.value = "");
+					
+					for (const lang of data) {
+						let language_id = lang["language_id"];
+						
+						for (const field of ['name', 'caption', 'description', 'language_id']) {
+							let name = `media_content[${language_id}][${field}]`;
+							let input = offcanvas.querySelector(`[name="${name}"]`);
+							if (input) {
+								input.value = lang[field] ?? "";
+							}
+						}
+					}
+				})
+				.catch(error => {
+					displayToast("bg-danger", "Error", "Error loading media content!");
+				});	
+			//}
+		}		
+		
+		saveMediaContent(el) {
+			let offcanvas = document.getElementById("media-offcanvas");
+			let saveBtn = offcanvas.querySelector('.save-btn');
+			let loading = saveBtn.querySelector('.loading');
+			let btnText = saveBtn.querySelector('.button-text');
+			
+			loading.classList.toggle("d-none");
+			btnText.classList.toggle("d-none");
+
+			fetch(mediaUrl + "&action=mediaContentSave", {method: "POST",  body:  new FormData(document.getElementById("media-content-form"))})
+			.then((response) => {
+				if (!response.ok) { throw new Error(response) }
+				return response.json();
+			})
+			.then((data) => {
+				let bg = "bg-success";
+				if (data.success) {		
+				} else {
+					bg = "bg-danger";
+				}
+				
+				displayToast(bg, "Save", data.message);
+
+				loading.classList.toggle("d-none");
+				btnText.classList.toggle("d-none");
+			})
+			.catch(error => {
+				displayToast("bg-danger", "Error", "Error saving!");
+				loading.classList.toggle("d-none");
+				btnText.classList.toggle("d-none");
+			});	
 		}
 		
 		addFile(f, selected) {
@@ -604,30 +807,33 @@ _
 				
 				let fileSize = _this.bytesToSize(f.size),
 						name = _this.escapeHTML(f.name),
-						fileType = name.split('.'),
+						fileType = name.split('.').pop(),
 						icon = '<span class="icon file"></span>';
 
-					fileType = fileType[fileType.length-1];
-					
 					if (fileType == "jpg" || fileType == "jpeg" || fileType == "png" || fileType == "gif" || fileType == "svg" || fileType == "webp") {
-						
 						//icon = '<div class="image" style="background-image: url(' + _this.mediaPath + f.path + ');"></div>';
 						icon = '<img class="image" loading="lazy" src="' + _this.mediaPath + f.path + '">';
 						isImage = true;
 					} else {
 						icon = '<span class="icon file f-'+fileType+'">.'+fileType+'</span>';
 					}
-					//icon = '<span class="icon file f-'+fileType+'">.'+fileType+'</span>';
-
 				
-				
-				actions = '<a href="javascript:void(0);" title="Rename" class="btn btn-outline-primary btn-sm border-0 btn-rename"><i class="la la-edit"></i></a> <a href="javascript:void(0);" title="Delete" class="btn btn-outline-danger btn-sm border-0 btn-delete"><i class="la la-trash"></i></a>';
+					if (!this.isModal) {
+						actions = `<a href="javascript:void(0);" title="Rename" class="btn btn-outline-primary btn-sm btn-rename py-0 border-secondary border-opacity-25" 
+								data-bs-toggle="offcanvas" aria-expanded="false" data-bs-target="#media-offcanvas" aria-controls="media-offcanvas" data-bs-reference="parent">
+								  <i class="la la-pen"></i>
+								</a>
+								<a href="javascript:void(0);" title="Delete" class="btn btn-outline-danger btn-sm btn-delete py-0 border-secondary border-opacity-25">
+								  <i class="la la-trash"></i>
+								</a>`;
+					} else {
+					}
 
 				let detail = { file: _this.mediaPath + f.path, name, fileType, fileSize, isImage, fileType, actions };
 				const event = new CustomEvent("mediaModal:fileActions", {detail});
 				window.dispatchEvent(event);			
 
-				if (isImage) detail.actions += '<a href="javascript:void(0);" class="preview-link p-2"><i class="la la-search-plus"></i></a>';
+				if (isImage && this.isModal) detail.actions += '<a href="javascript:void(0);" class="preview-link p-2"><i class="la la-search-plus"></i></a>';
 				
 				let file = generateElements('<li class="files">\
 						<label class="form-check">\
@@ -654,6 +860,31 @@ _
 				return file;
 		}
 
+
+		addFolder(f) {
+			let itemsLength = f.items.length,
+				name = this.escapeHTML(f.name),
+				icon = '<span class="icon folder"></span>';
+
+			if(itemsLength) {
+				icon = '<span class="icon folder full"></span>';
+			}
+
+			if(itemsLength == 1) {
+				itemsLength += ' item';
+			}
+			else if(itemsLength > 1) {
+				itemsLength += ' items';
+			}
+			else {
+				itemsLength = 'Empty';
+			}
+
+			let folder = generateElements('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<div class="info"><span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></div></a></li>')[0];
+			this.fileList.append(folder);
+			
+			return folder;
+		}
 		
 		render(data) {
 
@@ -697,27 +928,7 @@ _
 			if(scannedFolders.length) {
 
 				scannedFolders.forEach(function(f) {
-
-					let itemsLength = f.items.length,
-						name = _this.escapeHTML(f.name),
-						icon = '<span class="icon folder"></span>';
-
-					if(itemsLength) {
-						icon = '<span class="icon folder full"></span>';
-					}
-
-					if(itemsLength == 1) {
-						itemsLength += ' item';
-					}
-					else if(itemsLength > 1) {
-						itemsLength += ' items';
-					}
-					else {
-						itemsLength = 'Empty';
-					}
-
-					let folder = generateElements('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<div class="info"><span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></div></a></li>')[0];
-					_this.fileList.append(folder);
+					_this.addFolder(f);
 				});
 
 			}

@@ -125,6 +125,8 @@ function loadAjax(url, selector, callback = null, params = {}, method = "get") {
 					currentElement.replaceWith(newElement);
 				}
 			}
+			
+			if (callback) callback();
 		}		
 
 		window.dispatchEvent(new CustomEvent("vvveb.loadUrl", {detail: {url, selector}}));
