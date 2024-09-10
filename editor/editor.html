@@ -28,7 +28,7 @@
 
       <div class="logo">
 
-        <a href="/admin" class="img" title="{$site.description.title}">
+        <a href="{$this.adminPath}index.php" class="img" title="{$site.description.title}">
           <img src="" data-v-site-logo>
           <img src="" data-v-site-logo-dark>
         </a>
@@ -969,7 +969,7 @@
             <div class="me-2">
 
               <a href="#" class="btn btn-light btn-preview-url" target="blank" title="View page">
-                <i class="la la-external-link-alt"></i>
+                <i class="la la-external-link-alt fs-6"></i>
               </a>
 
               <div class="btn-group responsive-btns" role="group">
@@ -1104,9 +1104,9 @@
                   <i class="la la-file la-lg"></i>
                   <span>Templates<span></span>
 
-                    <div class="btn-group responsive-btns me-1 float-end" role="group">
+                    <div class="btn-group responsive-btns float-end" role="group">
                       <button class="btn btn-outline-primary btn-sm btn-add" title="New file" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
-                        <span>Add new</span>
+                        <!-- <span>Add new</span> -->
                         <i class="icon-add"></i>
                       </button>
 
@@ -1168,7 +1168,7 @@
                   <div class="tab-pane show active sections" id="sections" role="tabpanel" aria-labelledby="sections-tab">
 
 
-                    <ul class="nav nav-tabs nav-fill sections-tabs" id="sections-tabs" role="tablist">
+                    <ul class="nav nav-tabs nav-fill nav-underline sections-tabs" id="sections-tabs" role="tablist">
                       <li class="nav-item content-tab">
                         <a class="nav-link active" data-bs-toggle="tab" href="#sections-new-tab" role="tab" aria-controls="components" aria-selected="false">
                           <i class="icon-albums-outline"></i>
@@ -1292,7 +1292,7 @@
                   <div class="tab-pane show" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
 
 
-                    <ul class="nav nav-tabs nav-fill sections-tabs" role="tablist">
+                    <ul class="nav nav-tabs nav-fill nav-underline sections-tabs" role="tablist">
                       <li class="nav-item components-tab">
                         <a class="nav-link active" data-bs-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="true">
                           <i class="icon-cube-outline"></i>
@@ -1381,29 +1381,23 @@
                     <div class="component-properties-sidepane">
                       <div>
                         <div class="component-properties">
-                          <ul class="nav nav-tabs nav-fill" id="properties-tabs" role="tablist">
+                          <ul class="nav nav-tabs nav-fill nav-underline" id="properties-tabs" role="tablist">
                             <li class="nav-item content-tab">
                               <a class="nav-link content-tab active" data-bs-toggle="tab" href="#content-left-panel-tab" role="tab" aria-controls="components" aria-selected="true">
                                 <i class="icon-albums-outline"></i>
-                                <div>
-                                  <span>Content</span>
-                                </div>
+                                <span>Content</span>
                               </a>
                             </li>
                             <li class="nav-item style-tab">
                               <a class="nav-link" data-bs-toggle="tab" href="#style-left-panel-tab" role="tab" aria-controls="style" aria-selected="false">
                                 <i class="icon-color-fill-outline"></i>
-                                <div>
-                                  <span>Style</span>
-                                </div>
+                                <span>Style</span>
                               </a>
                             </li>
                             <li class="nav-item advanced-tab">
                               <a class="nav-link" data-bs-toggle="tab" href="#advanced-left-panel-tab" role="tab" aria-controls="advanced" aria-selected="false">
                                 <i class="icon-settings-outline"></i>
-                                <div>
-                                  <span>Advanced</span>
-                                </div>
+                                <span>Advanced</span>
                               </a>
                             </li>
                           </ul>
@@ -1418,6 +1412,16 @@
                             </div>
 
                             <div class="tab-pane show" id="style-left-panel-tab" data-section="style" role="tabpanel" aria-labelledby="style-tab">
+                              <div class="border-bottom pb-2 px-2">
+                                <div class="justify-content-end d-flex">
+                                  <select class="form-select w-50" data-vvveb-action="setState" data-vvveb-on="change">
+                                    <option value=""> - State - </option>
+                                    <option value="hover">hover</option>
+                                    <option value="active">active</option>
+                                    <option value="nth-of-type(2n)">nth-of-type(2n)</option>
+                                  </select>
+                                </div>
+                              </div>
                             </div>
 
                             <div class="tab-pane show" id="advanced-left-panel-tab" data-section="advanced" role="tabpanel" aria-labelledby="advanced-tab">
@@ -1430,7 +1434,7 @@
 
                   <div class="tab-pane" id="configuration" role="tabpanel" aria-labelledby="configuration-tab">
 
-                    <ul class="nav nav-tabs nav-fill sections-tabs" id="vars-tabs" role="tablist">
+                    <ul class="nav nav-tabs nav-fill nav-underline sections-tabs" id="vars-tabs" role="tablist">
                       <li class="nav-item styles-tab">
                         <a class="nav-link active" data-bs-toggle="tab" href="#styles-tab" role="tab" aria-controls="styles" aria-selected="true">
                           <i class="icon-color-wand-outline"></i>
@@ -1784,7 +1788,7 @@
                       <i class="la la-times"></i>
                     </div>
 
-                    <div class="me-4 float-end">
+                    <div class="me-4 small float-end">
 
                       <div class="form-check d-inline-block small me-1">
                         <input type="radio" id="add-section-insert-mode-after" value="after" checked="checked" name="add-section-insert-mode" class="form-check-input">
@@ -1889,29 +1893,23 @@
         <div id="right-panel">
           <div class="component-properties">
 
-            <ul class="nav nav-tabs nav-fill" id="properties-tabs" role="tablist">
+            <ul class="nav nav-tabs nav-fill nav-underline" id="properties-tabs" role="tablist">
               <li class="nav-item content-tab">
                 <a class="nav-link active" data-bs-toggle="tab" href="#content-tab" role="tab" aria-controls="components" aria-selected="true">
                   <i class="icon-albums-outline"></i>
-                  <div>
-                    <span>Content</span>
-                  </div>
+                  <span>Content</span>
                 </a>
               </li>
               <li class="nav-item style-tab">
                 <a class="nav-link" data-bs-toggle="tab" href="#style-tab" role="tab" aria-controls="blocks" aria-selected="false">
                   <i class="icon-color-fill-outline"></i>
-                  <div>
-                    <span>Style</span>
-                  </div>
+                  <span>Style</span>
                 </a>
               </li>
               <li class="nav-item advanced-tab">
                 <a class="nav-link" data-bs-toggle="tab" href="#advanced-tab" role="tab" aria-controls="blocks" aria-selected="false">
                   <i class="icon-settings-outline"></i>
-                  <div>
-                    <span>Advanced</span>
-                  </div>
+                  <span>Advanced</span>
                 </a>
               </li>
             </ul>
@@ -1926,6 +1924,16 @@
               </div>
 
               <div class="tab-pane show" id="style-tab" data-section="style" role="tabpanel" aria-labelledby="style-tab">
+                <div class="border-bottom pb-2 px-2">
+                  <div class="justify-content-end d-flex">
+                    <select class="form-select w-50" data-vvveb-action="setState" data-vvveb-on="change">
+                      <option value=""> - State - </option>
+                      <option value="hover">hover</option>
+                      <option value="active">active</option>
+                      <option value="nth-of-type(2n)">nth-of-type(2n)</option>
+                    </select>
+                  </div>
+                </div>
               </div>
 
               <div class="tab-pane show" id="advanced-tab" data-section="advanced" role="tabpanel" aria-labelledby="advanced-tab">
@@ -1949,7 +1957,7 @@
 
           <div>
 
-            <div class="breadcrumb-navigator px-2" style="--bs-breadcrumb-divider: '>';">
+            <div class="breadcrumb-navigator" style="--bs-breadcrumb-divider: '>';">
 
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -2411,7 +2419,7 @@
 	<div>
 		<img id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225">
 		<input name="{%=key%}" type="text" class="form-control mt-1" id="input-{%=key%}"/>
-		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i><span>Set image</span></button>
+		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2 px-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i><span>Set image</span></button>
 	</div>
 	
 </script>
@@ -2433,7 +2441,7 @@
 		{%  if (typeof palette !== 'undefined') { %}
 		<datalist id="{%=key%}-color-palette">
 			{% for (const color in palette) { %}
-				<option>{%=palette[color]%}</option>
+				<option value="{%=color%}">{%=palette[color]%}</option>
 			{% } %}		
 		{% } %}
 	</div>
@@ -2583,7 +2591,7 @@
 	<div>
 		<div class="alert alert-dismissible fade show alert-{%=type%}" role="alert">		  
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>		  
-			<h6><b>{%=title%}</b></h6> 
+			<strong class="d-block mb-1">{%=title%}</strong>
 			
 			{%=text%}
 		</div>
@@ -2773,17 +2781,17 @@
 
               <div class="modal-body p-0">
 
-                <ul class="nav nav-tabs" id="language-nav" data-v-languages="seo">
+                <ul class="nav nav-tabs pt-1" id="language-nav" data-v-languages="editor">
                   <li class="nav-item" data-v-language>
-                    <a href="#language1" class="nav-link active" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+                    <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
                       <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
                       <span data-v-language-name>English</span>
                     </a>
                   </li>
                 </ul>
 
-                <div class="tab-content" data-v-languages="content" style="clear:both">
-                  <div class="tab-pane show active" id="language1" data-v-language data-v-language-id>
+                <div class="tab-content" data-v-languages="editor" style="clear:both">
+                  <div class="tab-pane" id="language1" data-v-language data-v-language-id>
                     <textarea class="form-control" rows="10"></textarea>
                   </div>
                 </div>
@@ -2794,11 +2802,11 @@
               <div class="modal-header justify-content-between">
                 <span class="modal-title"></span>
                 <div class="">
-                  <button type="button" class="btn btn-light border btn-icon" data-bs-dismiss="modal">
+                  <button type="button" class="btn btn-light border btn-icon btn-sm me-1" data-bs-dismiss="modal">
                     <i class="la la-times"></i>Close
                   </button>
 
-                  <button class="btn btn-primary btn-icon save-btn" title="Save changes">
+                  <button class="btn btn-primary btn-icon save-btn btn-sm" title="Save changes">
                     <span class="loading d-none">
                       <i class="la la-save"></i>
                       <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -2876,8 +2884,8 @@
             <form action="" method="POST" class="w-100" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save">
 
               <div class="modal-content">
-                <div class="modal-header bg-primary bg-opacity-10">
-                  <span class="modal-title text-primary fw-normal">
+                <div class="modal-header bg-primary bg-opacity-10 py-2">
+                  <span class="modal-title text-secondary fw-normal">
                     <i class="la la-lg la-file"></i>
                     <span>New</span>
                   </span>
@@ -3022,10 +3030,10 @@
                 </div>
 
                 <div class="modal-footer">
-                  <button class="btn btn-outline-secondary btn-lg" type="reset" data-bs-dismiss="modal">
+                  <button class="btn btn-outline-secondary btn-icon" type="reset" data-bs-dismiss="modal">
                     <i class="la la-times"></i> Cancel
                   </button>
-                  <button class="btn btn-primary btn-lg" type="submit">
+                  <button class="btn btn-primary btn-icon" type="submit">
                     <i class="la la-check"></i>
                     <span>Create</span>
                   </button>

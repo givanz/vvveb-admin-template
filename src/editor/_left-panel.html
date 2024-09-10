@@ -4,9 +4,10 @@
 		<div class="header">
 			<span class="text-secondary"><i class="la la-file la-lg"></i><span>Templates<span></span>
 
-				<div class="btn-group responsive-btns me-1 float-end" role="group">
+				<div class="btn-group responsive-btns float-end" role="group">
 				  <button class="btn btn-outline-primary btn-sm btn-add" title="New file" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
-					   <span>Add new</span> <i class="icon-add"></i>
+					   <!-- <span>Add new</span> -->
+					   <i class="icon-add"></i>
 				  </button>
 				  
 				  <!--  
@@ -67,7 +68,7 @@
 		  <div class="tab-pane show active sections" id="sections" role="tabpanel" aria-labelledby="sections-tab">
 			  
 
-					<ul class="nav nav-tabs nav-fill sections-tabs" id="sections-tabs" role="tablist">
+					<ul class="nav nav-tabs nav-fill nav-underline sections-tabs" id="sections-tabs" role="tablist">
 					  <li class="nav-item content-tab">
 						<a class="nav-link active" data-bs-toggle="tab" href="#sections-new-tab" role="tab" aria-controls="components" aria-selected="false">
 							<i class="icon-albums-outline"></i> <div><span>Sections</span></div></a>
@@ -177,7 +178,7 @@
 			<div class="tab-pane show" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
 			  
 			  
-					<ul class="nav nav-tabs nav-fill sections-tabs" role="tablist">
+					<ul class="nav nav-tabs nav-fill nav-underline sections-tabs" role="tablist">
 					  <li class="nav-item components-tab">
 						<a class="nav-link active" data-bs-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="true">
 							<i class="icon-cube-outline"></i> <div><span>Components</span></div></a>
@@ -248,19 +249,19 @@
 				<div class="component-properties-sidepane">
 					<div>
 						<div class="component-properties">
-							<ul class="nav nav-tabs nav-fill" id="properties-tabs" role="tablist">
+							<ul class="nav nav-tabs nav-fill nav-underline" id="properties-tabs" role="tablist">
 								  <li class="nav-item content-tab">
 									<a class="nav-link content-tab active" data-bs-toggle="tab" href="#content-left-panel-tab" role="tab" aria-controls="components" aria-selected="true">
-										<i class="icon-albums-outline"></i> <div><span>Content</span></div>
+										<i class="icon-albums-outline"></i> <span>Content</span>
 									</a>
 								  </li>
 								  <li class="nav-item style-tab">
 									<a class="nav-link" data-bs-toggle="tab" href="#style-left-panel-tab" role="tab" aria-controls="style" aria-selected="false">
-										<i class="icon-color-fill-outline"></i> <div><span>Style</span></div></a>
+										<i class="icon-color-fill-outline"></i> <span>Style</span></a>
 								  </li>
 								  <li class="nav-item advanced-tab">
 									<a class="nav-link" data-bs-toggle="tab" href="#advanced-left-panel-tab" role="tab" aria-controls="advanced" aria-selected="false">
-										<i class="icon-settings-outline"></i> <div><span>Advanced</span></div></a>
+										<i class="icon-settings-outline"></i> <span>Advanced</span></a>
 								  </li>
 								</ul>
 						
@@ -273,6 +274,16 @@
 									</div>
 									
 									 <div class="tab-pane show" id="style-left-panel-tab" data-section="style" role="tabpanel" aria-labelledby="style-tab">
+										<div class="border-bottom pb-2 px-2">
+											<div class="justify-content-end d-flex">
+											<select class="form-select w-50" data-vvveb-action="setState" data-vvveb-on="change">
+												<option value=""> - State - </option>
+												<option value="hover">hover</option>
+												<option value="active">active</option>
+												<option value="nth-of-type(2n)">nth-of-type(2n)</option>
+											</select>
+											</div>
+										</div>
 									</div>
 									
 									 <div class="tab-pane show" id="advanced-left-panel-tab" data-section="advanced"  role="tabpanel" aria-labelledby="advanced-tab">
@@ -285,7 +296,7 @@
 		
 			<div class="tab-pane" id="configuration" role="tabpanel" aria-labelledby="configuration-tab">
 				
-					<ul class="nav nav-tabs nav-fill sections-tabs" id="vars-tabs" role="tablist">
+					<ul class="nav nav-tabs nav-fill nav-underline sections-tabs" id="vars-tabs" role="tablist">
 					  <li class="nav-item styles-tab">
 						<a class="nav-link active" data-bs-toggle="tab" href="#styles-tab" role="tab" aria-controls="styles" aria-selected="true">
 							<i class="icon-color-wand-outline"></i> <div><span>Styles</span></div></a>

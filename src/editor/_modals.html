@@ -63,17 +63,17 @@
 
       <div class="modal-body p-0">
 
-		  <ul class="nav nav-tabs" id="language-nav" data-v-languages="seo">
+		  <ul class="nav nav-tabs pt-1" id="language-nav" data-v-languages="editor">
 			<li class="nav-item" data-v-language>
-				<a href="#language1" class="nav-link active" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+				<a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
 					<!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img --> 
 					<span data-v-language-name>English</span>
 				</a>
 			</li>
 		 </ul>
 				 
-		   <div class="tab-content" data-v-languages="content" style="clear:both">
-			<div class="tab-pane show active" id="language1" data-v-language data-v-language-id>
+		   <div class="tab-content" data-v-languages="editor" style="clear:both">
+			<div class="tab-pane" id="language1" data-v-language data-v-language-id>
 				<textarea class="form-control" rows="10"></textarea>
 			</div>
 		</div>
@@ -84,9 +84,9 @@
       <div class="modal-header justify-content-between">
         <span class="modal-title"></span>
 		<div class="">
-			<button type="button" class="btn btn-light border btn-icon" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
+			<button type="button" class="btn btn-light border btn-icon btn-sm me-1" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
 			
-			<button class="btn btn-primary btn-icon save-btn" title="Save changes">
+			<button class="btn btn-primary btn-icon save-btn btn-sm" title="Save changes">
 				<span class="loading d-none">
 				<i class="la la-save"></i>
 				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -154,8 +154,8 @@
     <form action="" method="POST" class="w-100" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" >
 		
     <div class="modal-content">
-      <div class="modal-header bg-primary bg-opacity-10">
-        <span class="modal-title text-primary fw-normal"><i class="la la-lg la-file"></i> <span>New</span></span>
+      <div class="modal-header bg-primary bg-opacity-10 py-2">
+        <span class="modal-title text-secondary fw-normal"><i class="la la-lg la-file"></i> <span>New</span></span>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
         </button>
@@ -283,8 +283,8 @@
       </div>
 
 	  <div class="modal-footer">
-		<button class="btn btn-outline-secondary btn-lg" type="reset" data-bs-dismiss="modal"><i class="la la-times"></i> Cancel</button>
-		<button class="btn btn-primary btn-lg" type="submit"><i class="la la-check"></i> <span>Create</span></button>
+		<button class="btn btn-outline-secondary btn-icon" type="reset" data-bs-dismiss="modal"><i class="la la-times"></i> Cancel</button>
+		<button class="btn btn-primary btn-icon" type="submit"><i class="la la-check"></i> <span>Create</span></button>
 	  </div>
 	</div>
 

@@ -413,7 +413,7 @@
 	<div>
 		<img id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225">
 		<input name="{%=key%}" type="text" class="form-control mt-1" id="input-{%=key%}"/>
-		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i><span>Set image</span></button>
+		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2 px-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i><span>Set image</span></button>
 	</div>
 	
 </script>
@@ -585,7 +585,7 @@
 	<div>
 		<div class="alert alert-dismissible fade show alert-{%=type%}" role="alert">		  
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>		  
-			<h6><b>{%=title%}</b></h6> 
+			<strong class="d-block mb-1">{%=title%}</strong>
 			
 			{%=text%}
 		</div>
