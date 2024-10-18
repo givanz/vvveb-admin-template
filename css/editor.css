@@ -13796,6 +13796,7 @@ textarea.form-control-lg {
       .tree > ol li.file .file-actions {
         display: none;
         position: absolute;
+        background-color: var(--bs-body-bg);
         top: 0px;
         right: 2px; }
         .tree > ol li.file .file-actions .btn {
@@ -13806,7 +13807,13 @@ textarea.form-control-lg {
           border-radius: 4px;
           --bs-btn-border-color: rgba(var(--bs-link-color-rgb), 0.25); }
     .tree > ol li.page > label {
+      background-image: url(../../../js/vvvebjs/icons/post.svg); }
+    .tree > ol li.product > label {
+      background-image: url(../../../js/vvvebjs/icons/product.svg); }
+    .tree > ol li.url > label {
       background-image: url(../../../js/vvvebjs/icons/panel.svg); }
+    .tree > ol li.notemplate .duplicate, .tree > ol li.notemplate .rename, .tree > ol li.notemplate .delete {
+      display: none; }
     .tree > ol li input {
       position: absolute;
       left: 0;
@@ -14126,7 +14133,7 @@ body {
       #vvveb-builder #top-panel .btn-group .btn.btn-light i {
         font-size: 1.2rem; }
     #vvveb-builder #top-panel .btn-group .btn.btn-primary {
-      margin-top: 0.1rem;
+      margin-top: 0.2rem;
       margin-bottom: 0.1rem; }
       #vvveb-builder #top-panel .btn-group .btn.btn-primary i {
         font-size: 1rem;
@@ -14419,7 +14426,8 @@ body {
     height: calc( 100vh - (var(--builder-header-top-height) + var(--builder-bottom-panel-height)));
     top: var(--builder-header-top-height);
     position: fixed;
-    background-color: var(--bs-secondary-bg); }
+    background-color: var(--bs-secondary-bg);
+    overflow: hidden; }
     #vvveb-builder #canvas #iframe-wrapper {
       transition: transform 1s ease 0s,  width 1s ease 0s, width 1s ease 0s, left 1s ease 0s, height 1s ease 0s;
       transform-origin: top center; }
@@ -14898,7 +14906,7 @@ li[data-type] {
 .sections-container {
   width: 100%;
   background: var(--bs-body-bg);
-  padding-top: 1rem; }
+  padding: 1rem; }
   .sections-container > div.section-item {
     box-shadow: 0px 0px 1px 0px var(--bs-primary);
     box-shadow: 0px 0px 1px 0px rgba(18, 83, 205, 0.7), 0px 0px 5px 0px rgba(18, 83, 205, 0.1);
@@ -14940,7 +14948,7 @@ li[data-type] {
       .sections-container > div.section-item .controls .info {
         margin-left: 0.2rem; }
         .sections-container > div.section-item .controls .info .name {
-          font-size: 13px; }
+          font-size: 12px; }
         .sections-container > div.section-item .controls .info .type {
           font-size: 12px; }
       .sections-container > div.section-item .controls .buttons {
@@ -15246,7 +15254,8 @@ div.section, .header > ol {
 
 .form-select {
   -webkit-appearance: none;
-  -moz-appearance: none; }
+  -moz-appearance: none;
+  box-shadow: rgba(var(--bs-body-color-rgb), 0.08) 0px 1px 2px 0px; }
 
 input[type="number"] {
   -moz-appearance: textfield;
@@ -15289,9 +15298,6 @@ input[type="number"]:focus {
 
 .btn-group .btn.btn-gray.active {
   background-color: var(--bs-border-color); }
-
-.btn-group .btn i {
-  vertical-align: middle; }
 
 .form-control::placeholder {
   opacity: 0.7; }
@@ -15635,7 +15641,8 @@ img.preview {
   height: 500px;
   resize: both;
   overflow: hidden;
-  box-shadow: 0px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.15);
+  border: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
+  box-shadow: 0px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.05);
   background: var(--bs-body-bg); }
   #tree-list .header {
     display: flex;

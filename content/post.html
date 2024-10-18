@@ -1191,7 +1191,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1199,6 +1199,10 @@
 
 
               <div class="dropdown-menu">
+
+                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+                  <div>No active language configured!</div>
+                </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
@@ -1299,7 +1303,7 @@
 
 
         <div class="btns">
-          <a href="/admin/?module=content/posts" title="Post list" data-v-posts-list-url class="btn btn-outline-secondary me-2">
+          <a href="/admin/?module=content/posts" title="Post list" data-v-posts-list-url class="btn btn-icon btn-outline-secondary me-2">
             <i class="la la-arrow-left"></i>
             <span>
               <span data-v-type-name>Posts</span>
@@ -1307,7 +1311,7 @@
             </span>
           </a>
 
-          <button type="submit" href="" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('action').value ='save';document.getElementById('form').submit();">
+          <button type="submit" href="" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('form').requestSubmit();">
             <i class="icon-create-outline"></i>
             <span>Save</span>
             <span data-v-type-name>post</span>
@@ -1423,6 +1427,14 @@
 
 
                     <div class="tab-content" data-v-languages="desc" style="clear:both">
+
+                      <div data-v-if-not="this.languagesList" class="alert alert-warning d-flex d-flex">
+                        <div class="icon">
+                          <i class="la la-exclamation-triangle"></i>
+                        </div>
+                        <div class="flex-grow-1 align-self-center">No active language configured!</div>
+                      </div>
+
                       <div class="tab-pane" id="language1" data-v-language data-v-language-id>
 
 
@@ -1561,7 +1573,7 @@
 
 
                             <div class="content-editor">
-                              <textarea name="post_content[1][content]" placeholder="Content" class="form-control html" data-v-post-content-content required></textarea>
+                              <textarea name="post_content[1][content]" placeholder="Content" class="form-control html" data-v-post-content-content></textarea>
                               <input name="post_content[1][has_changes]" value="1" class="has_changes" data-v-post-content-has_changes type="hidden" />
                             </div>
 
@@ -1579,14 +1591,14 @@
                         <div class="mb-3 required">
                           <label class="form-label">Meta keywords</label>
                           <div>
-                            <input name="post_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-post-content-meta_keywords required />
+                            <input name="post_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-post-content-meta_keywords />
                           </div>
                         </div>
 
                         <div class="mb-3 required">
                           <label class="form-label">Meta description</label>
                           <div>
-                            <input name="post_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-post-content-meta_description required />
+                            <input name="post_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-post-content-meta_description />
                           </div>
                         </div>
 

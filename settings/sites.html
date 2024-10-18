@@ -1192,7 +1192,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1200,6 +1200,10 @@
 
 
               <div class="dropdown-menu">
+
+                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+                  <div>No active language configured!</div>
+                </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
@@ -1299,7 +1303,7 @@
 
         <div class="btns">
           <a href data-v-url-params='{"module":"settings/site"}' data-v-check-action-permission="settings/site/add" class="btn btn-primary btn-icon ms-1">
-            <i class="icon-add-circle-outline"></i>
+            <i class="icon-add-outline"></i>
             <span>Add site</span>
           </a>
         </div>
@@ -1460,17 +1464,17 @@
 										 
 									 
 										<a aria-expanded="false" data-v-edit-url title="Edit"
-												class="btn btn-icon-single btn-outline-secondary btn-sm">
+												class="btn btn-icon btn-outline-secondary btn-sm">
 											<i class="la la-pen"></i> <span> Edit</span> 
 										</a>
 
 										<a title="Design" data-v-view-url target="_blank"
-											class="btn btn-icon-single btn-outline-secondary btn-sm">
+											class="btn btn-icon btn-outline-secondary btn-sm">
 											<i class="icon-brush-outline"></i> <span>Design</span> 
 										</a>
 										
 										<a title="View" data-v-design-url target="_blank"
-											class="btn btn-icon-single btn-outline-secondary btn-sm">
+											class="btn btn-icon btn-outline-secondary btn-sm">
 											<i class="icon-eye-outline"></i> <span>View</span> 
 										</a>
 
@@ -1511,11 +1515,11 @@
                   <td class="actions">
 
                     <div class="btn-group">
-                      <a class="btn btn-outline-secondary" data-v-edit-url>
+                      <a class="btn btn-icon btn-outline-secondary" data-v-edit-url>
                         <i class="la la-pencil-alt text-primary"></i>
                         <span>Edit</span>
                       </a>
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                      <button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
 
                         <span class="visually-hidden">Toggle primary</span>
                       </button>
@@ -1541,7 +1545,7 @@
                     </div>
 
                     <a href data-v-url-params='{"module":"settings/site"}' data-v-check-action-permission="settings/site/add" class="btn btn-primary btn-icon ms-1">
-                      <i class="icon-add-circle-outline"></i>
+                      <i class="icon-add-outline"></i>
                       <span>Add site</span>
                     </a>
                   </div>

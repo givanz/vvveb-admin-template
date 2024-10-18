@@ -1070,7 +1070,7 @@
             <div class="btn-group me-2" role="group">
 
               <div class="btn-group" data-v-check-permission-save>
-                <button class="btn btn-primary btn-sm btn-icon save-btn" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
+                <button class="btn btn-primary btn-sm save-btn" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
                   <span class="loading d-none">
                     <i class="la la-save"></i>
                     <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
@@ -1082,7 +1082,7 @@
                     <span>Save</span>
                   </span>
                 </button>
-                <button type="button" class="btn btn-primary btn-sm btn-icon save-btn dropdown-toggle dropdown-toggle-split text-white" id="showChangesBtn" data-vvveb-action="showChanges" data-bs-toggle="offcanvas" aria-expanded="false" data-bs-target="#save-offcanvas" aria-controls="save-offcanvas" data-bs-reference="parent" disabled>
+                <button type="button" class="btn btn-icon btn-primary btn-sm save-btn dropdown-toggle dropdown-toggle-split text-white" id="showChangesBtn" data-vvveb-action="showChanges" data-bs-toggle="offcanvas" aria-expanded="false" data-bs-target="#save-offcanvas" aria-controls="save-offcanvas" data-bs-reference="parent" disabled>
 
                   <span class="visually-hidden">Toggle primary</span>
                 </button>
@@ -1192,7 +1192,7 @@
                       <div class="tab-pane" id="sections-list" data-section="style" role="tabpanel" aria-labelledby="style-tab">
                         <div class="drag-elements-sidepane sidepane">
                           <div>
-                            <div class="sections-container p-4">
+                            <div class="sections-container">
 
                               <div class="section-item" draggable="true">
                                 <div class="controls">
@@ -2419,7 +2419,7 @@
 	<div>
 		<img id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225">
 		<input name="{%=key%}" type="text" class="form-control mt-1" id="input-{%=key%}"/>
-		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2 px-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i><span>Set image</span></button>
+		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2 px-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg me-1"></i><span>Set image</span></button>
 	</div>
 	
 </script>
@@ -2441,7 +2441,7 @@
 		{%  if (typeof palette !== 'undefined') { %}
 		<datalist id="{%=key%}-color-palette">
 			{% for (const color in palette) { %}
-				<option value="{%=color%}">{%=palette[color]%}</option>
+				<option>{%=palette[color]%}</option>
 			{% } %}		
 		{% } %}
 	</div>
@@ -2515,7 +2515,7 @@
 </script>
 
         <script id="vvveb-filemanager-page" type="text/html">
-	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %}>
+	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %} {%if (typeof product_id !== 'undefined') { %}data-product_id="{%=product_id%}"{% } %}>
 		<label for="{%=name%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
 			<span>{%=title%}</span>
 			<div class="file-actions">
@@ -2777,27 +2777,27 @@
         <div class="modal modal-full fade" id="translateEditorModal" tabindex="-1" aria-labelledby="translateEditorModal" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-              <input type="hidden" name="file" value="">
+              <form id="translateForm">
 
-              <div class="modal-body p-0">
+                <div class="modal-body p-0">
 
-                <ul class="nav nav-tabs pt-1" id="language-nav" data-v-languages="editor">
-                  <li class="nav-item" data-v-language>
-                    <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
-                      <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
-                      <span data-v-language-name>English</span>
-                    </a>
-                  </li>
-                </ul>
+                  <ul class="nav nav-tabs pt-1" id="language-nav" data-v-languages="editor">
+                    <li class="nav-item" data-v-language>
+                      <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
+                        <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
+                        <span data-v-language-name>English</span>
+                      </a>
+                    </li>
+                  </ul>
 
-                <div class="tab-content" data-v-languages="editor" style="clear:both">
-                  <div class="tab-pane" id="language1" data-v-language data-v-language-id>
-                    <textarea class="form-control" rows="10"></textarea>
+                  <div class="tab-content" data-v-languages="editor" style="clear:both">
+                    <div class="tab-pane" id="language1" data-v-language data-v-language-id>
+                      <textarea class="form-control" rows="10" data-v-language-code></textarea>
+                    </div>
                   </div>
+
                 </div>
-
-              </div>
-
+              </form>
 
               <div class="modal-header justify-content-between">
                 <span class="modal-title"></span>
@@ -3281,12 +3281,12 @@
 
 
         <!-- builder code-->
-        <script src="../../js/vvvebjs/builder.js"></script>
+        <script id="builder" src="../../js/vvvebjs/builder.js"></script>
         <script>
 Vvveb.themeBaseUrl = '{ $this->themeBaseUrl }';
 </script>
         <!-- undo manager-->
-        <script src="../../js/vvvebjs/undo.js"></script>
+        <script id="undo" src="../../js/vvvebjs/undo.js"></script>
 
         <!-- media gallery -->
         <link href="libs/media/media.css" rel="stylesheet">
@@ -3298,6 +3298,8 @@ let uploadUrl    = '{ $this->uploadUrl }';
 let renameUrl    = '{ $this->renameUrl }';
 let deleteUrl    = '{ $this->deleteUrl }';
 //editor
+let editorUrl         = '{ $this->editorUrl }';
+let namespaceUrl         = '{ $this->namespaceUrl }';
 let saveUrl           = '{ $this->saveUrl }';
 let saveReusableUrl   = '{ $this->saveReusableUrl }';
 let renameFileUrl     = '{ $this->renameFileUrl }';
@@ -3312,36 +3314,40 @@ let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 -->
         <script id="media-js" src="libs/media/media.js"></script>
         <script id="index-js" src="libs/vvveb/index.js"></script>
-        <script src="../../js/vvvebjs/resources.js"></script>
+        <script id="resources" src="../../js/vvvebjs/resources.js"></script>
 
 
         <!-- inputs-->
-        <script src="../../js/vvvebjs/inputs.js"></script>
-        <script data-v-theme-inputs src="../../js/vvvebjs/inputs.js"></script>
-        <script src="../../js/vvvebjs/plugin-media.js"></script>
+        <script id="inputs" src="../../js/vvvebjs/inputs.js"></script>
+        <script data-v-theme-inputs id="inputs" src="../../js/vvvebjs/inputs.js"></script>
+        <script id="plugin-media" src="../../js/vvvebjs/plugin-media.js"></script>
+
+        <!-- plugins -->
+        <script src="../../js/libs/oembed.js"></script>
+        <script id="plugin-google-fonts" src="../../js/vvvebjs/plugin-google-fonts.js"></script>
+
 
         <!-- components-->
-        <script src="../../js/vvvebjs/plugin-google-fonts.js"></script>
-        <script src="../../js/vvvebjs/components-common.js"></script>
-        <script src="../../js/vvvebjs/plugin-aos.js"></script>
-        <script src="../../js/vvvebjs/components-html.js"></script>
-        <script src="../../js/vvvebjs/components-elements.js"></script>
-        <script src="../../js/vvvebjs/section.js"></script>
-        <script src="../../js/libs/oembed.js"></script>
-        <script src="../../js/vvvebjs/components-embeds.js"></script>
-        <script type="module" src="../../js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
-        <script type="module" src="../../js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
-        <script src="../../js/vvvebjs/components-widgets.js"></script>
-        <script src="../../js/vvvebjs/components-bootstrap5.js"></script>
-        <script data-v-theme-components src="../../js/vvvebjs/components.js"></script>
+        <script id="components-common" src="../../js/vvvebjs/components-common.js"></script>
+        <script id="section" src="../../js/vvvebjs/section.js"></script>
+        <script id="plugin-aos" src="../../js/vvvebjs/plugin-aos.js"></script>
+        <script id="components-html" src="../../js/vvvebjs/components-html.js"></script>
+        <script id="components-elements" src="../../js/vvvebjs/components-elements.js"></script>
+        <script id="components-embeds" src="../../js/vvvebjs/components-embeds.js"></script>
+        <script id="components-widgets" src="../../js/vvvebjs/components-widgets.js"></script>
+        <script id="components-bootstrap5" src="../../js/vvvebjs/components-bootstrap5.js"></script>
+        <script id="components-content" type="module" src="../../js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
+        <script id="components-ecommerce" type="module" src="../../js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
+
+        <script data-v-theme-components id="components" src="../../js/vvvebjs/components.js"></script>
 
         <!-- sections-->
-        <script data-v-theme-sections src="../../js/vvvebjs/sections.js"></script>
-        <script src="../../js/vvvebjs/sections-bootstrap4.js"></script>
+        <script data-v-theme-sections id="sections" src="../../js/vvvebjs/sections.js"></script>
+        <script id="sections-bootstrap4" src="../../js/vvvebjs/sections-bootstrap4.js"></script>
 
         <!-- blocks-->
-        <script data-v-theme-blocks src="../../js/vvvebjs/blocks.js"></script>
-        <script src="../../js/vvvebjs/blocks-bootstrap4.js"></script>
+        <script data-v-theme-blocks id="blocks" src="../../js/vvvebjs/blocks.js"></script>
+        <script id="blocks-bootstrap4" src="../../js/vvvebjs/blocks-bootstrap4.js"></script>
 
 
         <!-- plugins -->
@@ -3353,18 +3359,18 @@ let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
         <script src="libs/codemirror/lib/xml.js"></script>
         <script src="libs/codemirror/lib/css.js"></script>
         <script src="libs/codemirror/lib/formatting.js"></script>
-        <script src="../../js/vvvebjs/plugin-codemirror.js"></script>
+        <script id="plugin-codemirror" src="../../js/vvvebjs/plugin-codemirror.js"></script>
         <!-- jszip - download page as zip -->
         <!--
 <script src="libs/jszip/jszip.min.js"></script>
-<script src="../../js/vvvebjs/plugin-jszip.js"></script>
-<script src="../../js/vvvebjs/plugin-ai-assistant.js"></script>
+<script id="plugin-jszip" src="../../js/vvvebjs/plugin-jszip.js"></script>
+<script id="plugin-ai-assistant" src="../../js/vvvebjs/plugin-ai-assistant.js"></script>
 -->
 
         <!-- autocomplete plugin used by autocomplete input-->
         <script src="libs/autocomplete/autocomplete.js"></script>
         <script type="module" src="../../js/admin.js"></script>
-        <script src="../../js/vvvebjs/elements-changes.js"></script>
+        <script id="elements-changes" src="../../js/vvvebjs/elements-changes.js"></script>
 
         <script data-v-theme-js src="editor.js"></script>
 

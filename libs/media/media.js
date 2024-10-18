@@ -32,7 +32,7 @@ class MediaModal {
 		  <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
-				<h5 class="modal-title" id="MediaModalLabel">Media</h5>
+				<h5 class="modal-title fw-normal" id="MediaModalLabel">Media</h5>
                 
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 				  <!-- <span aria-hidden="true"><i class="la la-times la-lg"></i></span> -->
@@ -44,12 +44,12 @@ class MediaModal {
 
 						<div class="top-right d-flex justify-content-between">
                              
-                            <div class="align-left">          
+							<div class="">          
 								<div class="breadcrumbs"></div>
 							</div>
                                        
                                    
-                            <div class="align-right">                   
+							<div class="">                   
 								<div class="search">
 									<input type="search" id="media-search-input" placeholder="Find a file.." />
 								</div>
@@ -111,8 +111,14 @@ class MediaModal {
 				</div>
 			  
 				<div class="align-right">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary save-btn">Add selected</button>
+					<button type="button" class="btn btn-secondary btn-icon me-1" data-bs-dismiss="modal">
+						<i class="icon-close"></i>
+						<span>Cancel</span>
+					</button>
+					<button type="button" class="btn btn-primary btn-icon save-btn">
+						<i class="icon-add"></i>
+						<span>Add selected</span>
+					</button>
 				</div>
 			  </div>
 			</div>

@@ -1191,7 +1191,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1199,6 +1199,10 @@
 
 
               <div class="dropdown-menu">
+
+                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+                  <div>No active language configured!</div>
+                </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
@@ -1298,7 +1302,7 @@
 
         <div class="btns">
 
-          <a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary me-2" data-v-products-list-url>
+          <a href="/admin/?module=product/products" title="Product list" class="btn btn-icon btn-outline-secondary me-2" data-v-products-list-url>
             <i class="la la-arrow-left"></i>
             <span>
               <span data-v-type-name>Product</span>
@@ -1306,7 +1310,7 @@
             </span>
           </a>
 
-          <button type="submit" href="" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('action').value ='save';document.getElementById('form').submit();">
+          <button type="submit" href="" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('form').requestSubmit();">
             <i class="icon-create-outline"></i>
             <span>Save</span>
             <span data-v-type-name>product</span>
@@ -1455,6 +1459,14 @@
 
 
                     <div class="tab-content" data-v-languages="desc" style="clear:both">
+
+                      <div data-v-if-not="this.languageList" class="alert alert-warning d-flex d-flex">
+                        <div class="icon">
+                          <i class="la la-exclamation-triangle"></i>
+                        </div>
+                        <div class="flex-grow-1 align-self-center">No active language configured!</div>
+                      </div>
+
                       <div class="tab-pane" id="language1" data-v-language data-v-language-id>
                         <input name="product_content[1][language_id]" type="hidden" data-v-product-content-language_id>
                         <div class="mb-3 required">
@@ -1599,7 +1611,7 @@
 
                               <input name="product_content[1][has_changes]" value="1" class="has_changes" data-v-product-content-has_changes type="hidden" />
 
-                              <textarea name="product_content[1][content]" placeholder="Content" class="form-control html" data-v-product-content-content required></textarea>
+                              <textarea name="product_content[1][content]" placeholder="Content" class="form-control html" data-v-product-content-content></textarea>
                             </div>
                           </div>
                         </div>

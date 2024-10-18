@@ -1191,7 +1191,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1199,6 +1199,10 @@
 
 
               <div class="dropdown-menu">
+
+                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+                  <div>No active language configured!</div>
+                </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
@@ -1298,7 +1302,7 @@
           </div>
 
           <div class="btns">
-            <a href="{$this.adminPath}index.php?module=product/manufacturers" title="Manufacturer list" class="btn btn-outline-secondary me-2">
+            <a href="{$this.adminPath}index.php?module=product/manufacturers" title="Manufacturer list" class="btn btn-icon btn-outline-secondary me-2">
               <i class="la la-arrow-left"></i>
               <span>Manufacturer list</span>
             </a>

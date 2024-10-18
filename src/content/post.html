@@ -23,13 +23,13 @@
 
             <div class="btns">
 				<a href="/admin/?module=content/posts" title="Post list" data-v-posts-list-url
-					class="btn btn-outline-secondary me-2">
+					class="btn btn-icon btn-outline-secondary me-2">
 						<i class="la la-arrow-left"></i><span><span data-v-type-name>Posts</span> <span>list</span></span>
 				 </a>
 
                 <button type="submit" href="" data-v-check-permission-save
                         class="btn btn-primary btn-icon ms-1"
-						onclick="document.getElementById('action').value ='save';document.getElementById('form').submit();">
+						onclick="document.getElementById('form').requestSubmit();">
                     <i class="icon-create-outline"></i> <span>Save</span> <span data-v-type-name>post</span>
                 </button>
             </div>

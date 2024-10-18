@@ -12,6 +12,14 @@
  
  
    <div class="tab-content" data-v-languages="desc" style="clear:both">
+   
+   <div data-v-if-not="this.languagesList" class="alert alert-warning d-flex d-flex">
+		<div class="icon">
+		  <i class="la la-exclamation-triangle"></i>
+		</div>
+		<div class="flex-grow-1 align-self-center">No active language configured!</div>
+   </div>
+   
 	<div class="tab-pane" id="language1" data-v-language data-v-language-id>
 	  
 		
@@ -55,7 +63,7 @@
 			
 			
 			<div class="content-editor">
-				<textarea name="post_content[1][content]" placeholder="Content" class="form-control html" data-v-post-content-content required></textarea>
+				<textarea name="post_content[1][content]" placeholder="Content" class="form-control html" data-v-post-content-content></textarea>
 				<input name="post_content[1][has_changes]" value="1" class="has_changes" data-v-post-content-has_changes type="hidden"/>
 			</div>
 			
@@ -72,14 +80,14 @@
 	  <div class="mb-3 required">
 		<label class="form-label">Meta keywords</label>
 		<div>
-		  <input name="post_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-post-content-meta_keywords required />
+		  <input name="post_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-post-content-meta_keywords />
 		</div>
 	  </div>	  
 	  
 	  <div class="mb-3 required">
 		<label class="form-label">Meta description</label>
 		<div>
-		  <input name="post_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-post-content-meta_description required />
+		  <input name="post_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-post-content-meta_description />
 		</div>
 	  </div>
 	  

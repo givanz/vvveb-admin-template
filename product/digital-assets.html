@@ -1192,7 +1192,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1200,6 +1200,10 @@
 
 
               <div class="dropdown-menu">
+
+                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+                  <div>No active language configured!</div>
+                </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
@@ -1299,13 +1303,13 @@
         </div>
 
         <div class="btns">
-          <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-outline-secondary me-2">
+          <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary me-2">
             <i class="icon-funnel-outline"></i>&nbsp;
             <i class="icon-chevron-down-outline small"></i>
           </button>
 
           <a href data-v-url-params='{"module":"product/digital-asset"}' data-v-check-permission="product/digital-asset/save" class="btn btn-primary btn-icon ms-1">
-            <i class="icon-add-circle-outline"></i>
+            <i class="icon-add-outline"></i>
             <span>Add digital asset</span>
           </a>
         </div>
@@ -1526,11 +1530,11 @@
                   <td class="actions" style="width:150px;">
 
                     <div class="btn-group">
-                      <a class="btn btn-outline-secondary" data-v-digital_asset-edit-url>
+                      <a class="btn btn-icon btn-outline-secondary" data-v-digital_asset-edit-url>
                         <i class="la la-pencil-alt text-primary"></i>
                         <span>Edit</span>
                       </a>
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                      <button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
 
                         <span class="visually-hidden">Toggle primary</span>
                       </button>
@@ -1578,11 +1582,11 @@
                   <td class="actions" style="width:150px;">
 
                     <div class="btn-group">
-                      <a class="btn btn-outline-secondary" data-v-digital_asset-edit-url>
+                      <a class="btn btn-icon btn-outline-secondary" data-v-digital_asset-edit-url>
                         <i class="la la-pencil-alt text-primary"></i>
                         <span>Edit</span>
                       </a>
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                      <button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
 
                         <span class="visually-hidden">Toggle primary</span>
                       </button>
@@ -1630,11 +1634,11 @@
                   <td class="actions" style="width:150px;">
 
                     <div class="btn-group">
-                      <a class="btn btn-outline-secondary" data-v-digital_asset-edit-url>
+                      <a class="btn btn-icon btn-outline-secondary" data-v-digital_asset-edit-url>
                         <i class="la la-pencil-alt text-primary"></i>
                         <span>Edit</span>
                       </a>
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                      <button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
 
                         <span class="visually-hidden">Toggle primary</span>
                       </button>
@@ -1663,7 +1667,7 @@
                       <div class="mt-3">No digital assets to display!</div>
 
                       <a href data-v-url-params='{"module":"product/digital-asset"}' class="btn btn-primary btn-icon mt-3">
-                        <i class="icon-add-circle-outline"></i> Add digital asset
+                        <i class="icon-add-outline"></i> Add digital asset
                       </a>
                     </div>
 

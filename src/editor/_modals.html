@@ -59,7 +59,7 @@
 <div class="modal modal-full fade" id="translateEditorModal" tabindex="-1" aria-labelledby="translateEditorModal" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-	  <input type="hidden" name="file" value="">  	
+	<form id="translateForm">
 
       <div class="modal-body p-0">
 
@@ -72,14 +72,14 @@
 			</li>
 		 </ul>
 				 
-		   <div class="tab-content" data-v-languages="editor" style="clear:both">
+		<div class="tab-content" data-v-languages="editor" style="clear:both">
 			<div class="tab-pane" id="language1" data-v-language data-v-language-id>
-				<textarea class="form-control" rows="10"></textarea>
+				<textarea class="form-control" rows="10" data-v-language-code></textarea>
 			</div>
 		</div>
 	  
       </div>
-
+	 </form>
 	
       <div class="modal-header justify-content-between">
         <span class="modal-title"></span>

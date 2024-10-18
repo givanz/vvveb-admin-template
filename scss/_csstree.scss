@@ -89,9 +89,10 @@
 			.file-actions {
 				display:none;
 				position:absolute;
+				background-color: var(--bs-body-bg);				
 				top:0px;
 				right:2px;
-				
+
 				.btn {
 					padding:0rem 0.2rem;
 					margin-right:1px;
@@ -115,7 +116,30 @@
 		{
 			> label
 			{
+				background-image: url(../../../js/vvvebjs/icons/post.svg);
+			}
+		}		
+		
+		li.product
+		{
+			> label
+			{
+				background-image: url(../../../js/vvvebjs/icons/product.svg);
+			}
+		}
+
+		li.url
+		{
+			> label
+			{
 				background-image: url(../../../js/vvvebjs/icons/panel.svg);
+			}
+		}		
+		
+		li.notemplate
+		{
+			.duplicate, .rename, .delete {
+				display:none;
 			}
 		}
 

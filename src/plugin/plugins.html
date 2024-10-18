@@ -49,7 +49,7 @@
 	 
 				 <a href data-v-url-params='{"module":"plugin/market"}' 
 						class="btn btn-primary btn-icon ms-1">
-					<i class="icon-add-circle-outline"></i> Install plugin
+					<i class="icon-add-outline"></i> Install plugin
 				</a>
 			</div>
 		</div>
@@ -175,9 +175,20 @@ window.addEventListener('DOMContentLoaded', function(e) {
 </script>
 <script>
 let table = document.querySelector(".plugins-table");
-document.querySelectorAll('input[name="status"]').forEach(e => e.addEventListener('click', function (e) {
+let hash = window.location.hash.replace("#", "");
+function filterPluginStatus(status) {
 	table.classList.remove("active","inactive");
-	table.classList.add(this.value);
+	table.classList.add(status);
+	window.location.hash = status;
+	document.querySelector('input[name="status"][value="' + status + '"]').checked = true;
+}
+
+document.querySelectorAll('input[name="status"]').forEach(e => e.addEventListener('click', function (e) {
+	filterPluginStatus(this.value);
 }));
+
+if (["active", "inactive"].includes(hash)) {
+	filterPluginStatus(hash);
+}
 </script>
 @@include('../_includes/footer.html')

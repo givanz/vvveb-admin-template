@@ -1192,7 +1192,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1200,6 +1200,10 @@
 
 
               <div class="dropdown-menu">
+
+                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+                  <div>No active language configured!</div>
+                </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
@@ -1301,13 +1305,13 @@
           </div>
 
           <div class="btns">
-            <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-outline-secondary me-2">
+            <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary me-2">
               <i class="icon-funnel-outline"></i>&nbsp;
               <i class="icon-chevron-down-outline small"></i>
             </button>
 
             <a href data-v-addurl data-v-check-permission="product/product/save" class="btn btn-primary btn-icon ms-1">
-              <i class="icon-add-circle-outline"></i>
+              <i class="icon-add-outline"></i>
               <span>Add</span>
               <span data-v-type-name>product</span>
             </a>
@@ -1325,7 +1329,7 @@
             <div class="card card-block p-3">
 
               <div class="row">
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6 mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="search">Search</label>
                     <div class="col-sm-10">
@@ -1333,7 +1337,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="search">Model</label>
                     <div class="col-sm-10">
@@ -1342,7 +1346,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="price">Price</label>
                     <div class="col-sm-10">
@@ -1351,7 +1355,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="quantity">Quantity</label>
                     <div class="col-sm-10">
@@ -1361,7 +1365,7 @@
                 </div>
 
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="quantity">Sku</label>
                     <div class="col-sm-10">
@@ -1370,7 +1374,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="quantity">Barcode</label>
                     <div class="col-sm-10">
@@ -1379,7 +1383,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="quantity">Upc</label>
                     <div class="col-sm-10">
@@ -1388,7 +1392,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="quantity">Isbn</label>
                     <div class="col-sm-10">
@@ -1398,7 +1402,7 @@
                 </div>
 
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="input-model">Manufacturer</label>
                     <div class="col-sm-10">
@@ -1407,7 +1411,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6  mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="input-model">Vendor</label>
                     <div class="col-sm-10">
@@ -1428,7 +1432,7 @@
 							-->
 
 
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-12 col-xl-6 col-xxl-6 mb-3">
                   <div class="row">
                     <label class="col-sm-2 col-form-label" for="input-model">Status</label>
                     <div class="col-sm-10">
@@ -1562,7 +1566,7 @@
                       <i class="la la-image"></i>
                       <span>Thumbnail</span>
                     </th>
-                    <th>
+                    <th style="min-width:320px;">
                       <i class="icon-cube-outline">
                       </i>
                       <span>Product</span>
@@ -1607,22 +1611,22 @@
                       <div class="secondary-actions">
 
 
-                        <a aria-expanded="false" data-v-product-edit-url title="Edit" class="btn btn-icon-single btn-outline-secondary btn-sm">
+                        <a aria-expanded="false" data-v-product-edit-url title="Edit" class="btn btn-icon btn-outline-secondary btn-sm">
                           <i class="la la-pen"></i>
                           <span>Edit</span>
                         </a>
 
-                        <a title="Design" data-v-product-design-url target="_blank" class="btn btn-icon-single btn-outline-secondary btn-sm">
+                        <a title="Design" data-v-product-design-url target="_blank" class="btn btn-icon btn-outline-secondary btn-sm">
                           <i class="icon-brush-outline"></i>
                           <span>Design</span>
                         </a>
 
-                        <a title="View" data-v-product-view-url target="_blank" class="btn btn-icon-single btn-outline-secondary btn-sm">
+                        <a title="View" data-v-product-view-url target="_blank" class="btn btn-icon btn-outline-secondary btn-sm">
                           <i class="icon-eye-outline"></i>
                           <span>View</span>
                         </a>
 
-                        <a title="Duplicate" data-v-product-duplicate-url target="_blank" class="btn btn-icon-single btn-outline-secondary btn-sm">
+                        <a title="Duplicate" data-v-product-duplicate-url target="_blank" class="btn btn-icon btn-outline-secondary btn-sm">
                           <i class="icon-copy-outline"></i>
                           <span>Duplicate</span>
                         </a>
@@ -1641,11 +1645,11 @@
                     <td class="actions">
 
                       <div class="btn-group">
-                        <a class="btn btn-outline-secondary" data-v-product-edit-url>
+                        <a class="btn btn-icon btn-outline-secondary" data-v-product-edit-url>
                           <i class="la la-pencil-alt text-primary"></i>
                           <span>Edit</span>
                         </a>
-                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                        <button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
 
                           <span class="visually-hidden">Toggle primary</span>
                         </button>
@@ -1689,7 +1693,7 @@
                         <div class="mt-3">No <span data-v-type>product</span>s to display!</div>
 
                         <a href data-v-addurl class="btn btn-primary btn-icon mt-3">
-                          <i class="icon-add-circle-outline"></i>
+                          <i class="icon-add-outline"></i>
                           <span>Add <span data-v-type>product</span>
                           </span>
                         </a>

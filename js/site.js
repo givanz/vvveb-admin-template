@@ -1,33 +1,3 @@
-let Form = document.getElementById('settings-form');
-
-document.addEventListener('invalid', function(e){
-	//e.target.className += ' is-invalid';
-	focusInvalidElement(e);
-}, true);
-	
-function focusInvalidElement(e) {
-	//if (Form.checkValidity() == false) {
-		document.querySelectorAll(".is-invalid").forEach(e => e.classList.remove("is-invalid"));
-		//get first invalid input
-		let element = Form.querySelector(':invalid');
-		let activeTab = element.closest(".tab-pane");
-		
-		element.className += ' is-invalid';
-		//activate tab panel
-		document.querySelectorAll(".tab-pane").forEach(e => e.classList.remove("show", "active"));
-		//activate tab 
-		document.querySelectorAll(".nav-link").forEach(e => e.classList.remove("active"));
-		
-		while (activeTab) {
-			activeTab.classList.add("show", "active");
-			document.querySelector("a[href='#" + activeTab.getAttribute("id") + "']")?.classList.add("active");
-			document.getElementById(activeTab.getAttribute("id"))?.classList.add("show","active");
-			activeTab = activeTab.parentNode.closest(".tab-pane");
-		}
-		
-		element.focus();
-}
-
 document.querySelectorAll("input[type=radio][name='settings[date_format]']").forEach(e => e.addEventListener("click", function (e) {
 	let custom_date_format = document.getElementById("custom_date_format");
 	custom_date_format.value = this.value

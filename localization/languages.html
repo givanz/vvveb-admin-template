@@ -1191,7 +1191,7 @@
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1199,6 +1199,10 @@
 
 
               <div class="dropdown-menu">
+
+                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+                  <div>No active language configured!</div>
+                </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
@@ -1299,7 +1303,7 @@
 
           <div class="btns">
             <a href data-v-url-params='{"module":"localization/language"}' class="btn btn-primary btn-icon ms-1">
-              <i class="icon-add-circle-outline"></i>
+              <i class="icon-add-outline"></i>
               <span>Add language</span>
             </a>
           </div>
@@ -1379,6 +1383,13 @@
 
           </div>
 
+          <div data-v-if-not="this.languagesList" class="alert alert-warning d-flex d-flex">
+            <div class="icon">
+              <i class="la la-exclamation-triangle"></i>
+            </div>
+            <div class="flex-grow-1 align-self-center">No active language configured!</div>
+          </div>
+
           <div class="languages card-block">
             <form action="" method="post">
 
@@ -1454,10 +1465,8 @@
 
                       <td class="img" style="width:200px;text-align:center;">
 
-                        <span data-v-if="language.default = 0">
-                          <span data-v-if="language.status = 1" class="badge bg-success small">active</span>
-                          <span data-v-if="language.status = 0" class="badge bg-secondary small">inactive</span>
-                        </span>
+                        <span data-v-if="language.status = 1" class="badge bg-success small">active</span>
+                        <span data-v-if="language.status = 0" class="badge bg-secondary small">inactive</span>
 
                         <span data-v-if="language.default = 1" class="badge bg-primary small ms-2">default</span>
 
@@ -1465,18 +1474,18 @@
 
                       <td class="actions text-end" style="min-width:200px">
 
-                        <a class="btn btn-outline-secondary" data-v-if-not="language.code = 'en_US'" data-v-language-translations-url>
+                        <a class="btn btn-icon btn-outline-secondary" data-v-if-not="language.code = 'en_US'" data-v-language-translations-url>
                           <i class="la la-language text-primary"></i>
                           <span>Translations</span>
                         </a>
 
                         <div class="btn-group">
-                          <a class="btn btn-outline-secondary" data-v-language-edit-url>
+                          <a class="btn btn-icon btn-outline-secondary" data-v-language-edit-url>
                             <i class="la la-pencil-alt text-primary"></i>
                             <span>Edit</span>
                           </a>
 
-                          <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent" data-v-if-not="language.default">
+                          <button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent" data-v-if-not="language.default">
 
                             <span class="visually-hidden">Toggle primary</span>
                           </button>
@@ -1505,7 +1514,7 @@
                           </div>
 
                           <a href data-v-url-params='{"module":"localization/language"}' class="btn btn-primary btn-icon mt-3">
-                            <i class="icon-add-circle-outline"></i>
+                            <i class="icon-add-outline"></i>
                             <span>Add language</span>
                           </a>
                         </div>

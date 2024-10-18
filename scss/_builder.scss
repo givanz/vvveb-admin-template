@@ -501,7 +501,7 @@ body
 				
 				&.btn-primary {
 					//padding:0.3rem 1.2rem;
-					margin-top: 0.1rem;
+					margin-top: 0.2rem;
 					margin-bottom: 0.1rem;
 					
 					i {
@@ -956,7 +956,7 @@ body
 	// canvas
 	#canvas
 	{
-	        margin-right: $builder-right-panel-width;
+	    margin-right: $builder-right-panel-width;
 		margin-left: $builder-left-panel-width;
 	   	margin-right: var(--builder-right-panel-width);
 		margin-left: var(--builder-left-panel-width);
@@ -970,6 +970,7 @@ body
 		top:var(--builder-header-top-height);
 		position:fixed;
 		background-color:var(--bs-secondary-bg);
+		overflow:hidden;
 		//transition:width 1s ease 0s, left 1s ease 0s;
 		//border-top: 1px solid $builder-border-color;	
 	
@@ -1701,7 +1702,7 @@ li[data-type]
 .sections-container {
 	width:100%;
 	background:var(--bs-body-bg);
-	padding-top:1rem;
+	padding:1rem;
 
 	> div.section-item {
 	
@@ -1758,7 +1759,7 @@ li[data-type]
 			.info {
 				margin-left:0.2rem;
 				.name {
-					font-size: 13px;
+					font-size: 12px;
 				}
 				.type {
 					font-size: 12px;
@@ -2062,6 +2063,7 @@ div.section {
 .form-select {
     -webkit-appearance: none;
     -moz-appearance: none;
+    box-shadow:rgba(var(--bs-body-color-rgb), 0.08) 0px 1px 2px 0px;
 }
 
 
@@ -2129,7 +2131,7 @@ input[type="number"]:focus {
 
 .btn-group .btn i
 {
-	vertical-align:middle;
+	//vertical-align:middle;
 }
 
 .form-control::placeholder
@@ -2559,8 +2561,9 @@ img.preview {
     min-height: 250px;
     height: 500px;
     resize: both;
-	overflow: hidden;
-    box-shadow: 0px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.15);
+    overflow: hidden;
+    border:1px solid rgba(var(--bs-body-color-rgb), 0.1);
+    box-shadow: 0px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.05);
     background: var(--bs-body-bg);
 	
 	.header {
