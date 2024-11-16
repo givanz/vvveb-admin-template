@@ -43,12 +43,17 @@ document.querySelectorAll('#tab-general .tab-pane[data-v-language]').forEach(el 
 		let text = this.value;
 		delay(() => {
 			let slug = slugInput.value;
-			if (orig == slug || !slug) {
-				orig = slugify(text);
-				slugInput.value = slug = orig;
+
+			if ((orig == slug) || !slug) {
+				slug = orig = slugify(text);
+				const detail = {text, slug};
+				const event = new CustomEvent("content.slug", {detail});
+				document.dispatchEvent(event);
+				({text, slug} = detail);
+				slugInput.value = orig = slug;
 			}			
 
-			let url = urlInput.textContent.replace(/[^\/]+$/,'') + slug
+			let url = urlInput.textContent.replace(/[^\/]+$/,'') + slug;
 			urlInput.textContent = url;
 			urlInput.setAttribute("href", url);		
 		}, 500);
@@ -57,7 +62,7 @@ document.querySelectorAll('#tab-general .tab-pane[data-v-language]').forEach(el 
 	slugInput.addEventListener('keyup', function (e) {
 		let slug = this.value;
 		urlInput.textContent = "/" + slug;
-		urlInput.setAttribute("href", "/" + slug);
+		urlInput.setAttribute("href", urlInput.textContent.replace(/[^\/]+$/,'') + slug);
 	});
 	
 });
@@ -88,7 +93,6 @@ document.getElementById("add-new-image")?.addEventListener("click", function (e)
 
 document.addEventListener('invalid', function(e){
 	//e.target.className += ' is-invalid';
-	console.log(e);
 	focusInvalidElement(e);
 }, true);
 	

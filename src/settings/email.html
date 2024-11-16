@@ -85,7 +85,8 @@ function focusInvalidElement(e) {
 
 document.getElementById("input-mail-driver").addEventListener("change",function (e) {
 	document.querySelectorAll(".mail-engine").forEach(e => e.style.display = "none");
-	document.querySelector(".mail-engine." + this.value).style.display = "";
+	let value = this.value.replace(/^.+\\/, '').toLowerCase();
+	document.querySelector(".mail-engine." + value).style.display = "";
 });
 
 document.getElementById("input-mail-driver")?.dispatchEvent(new Event('change', {bubbles:true}));

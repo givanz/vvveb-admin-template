@@ -13994,15 +13994,6 @@ body {
       --builder-left-panel-width: 300px;
       --builder-right-panel-width: 300px;
       --builder-component-list-element-width:44%; } }
-  body ::-webkit-scrollbar {
-    width: 0.5rem;
-    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
-  body ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 1px rgba(var(--bs-body-color-rgb), 0.05);
-    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
-  body ::-webkit-scrollbar-thumb {
-    background-color: rgba(var(--bs-body-color-rgb), 0.15);
-    border-radius: 10px; }
 
 .modal-content {
   font-size: .875rem; }
@@ -14786,6 +14777,15 @@ body {
     vertical-align: bottom; }
   #vvveb-builder .sections-tabs .nav-link i {
     margin-right: 0.3rem; }
+  #vvveb-builder ::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
+  #vvveb-builder ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(var(--bs-body-color-rgb), 0.05);
+    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
+  #vvveb-builder ::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bs-body-color-rgb), 0.15);
+    border-radius: 10px; }
 
 /* style for drag element */
 li[data-type] {
@@ -15295,6 +15295,9 @@ input[type="number"]:focus {
 
 .btn-group.btn-group-fullwidth .btn {
   flex: 1 1 auto; }
+
+.btn-group-sm > .btn {
+  font-size: 12px; }
 
 .btn-group .btn.btn-gray.active {
   background-color: var(--bs-border-color); }

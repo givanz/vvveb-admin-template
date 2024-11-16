@@ -282,8 +282,6 @@ body
 	scrollbar-color: rgba(var(--bs-body-color-rgb), 0.1) var(--bs-body-bg);
 	scrollbar-width: thin;
 	-webkit-font-smoothing:subpixel-antialiased;
-
-	@include webkit-scrollbar();
 }
 
 .modal-content
@@ -1553,6 +1551,8 @@ body
 			}
 		}
 	}
+	
+	@include webkit-scrollbar();
 }
 
 /* style for drag element */
@@ -2123,6 +2123,9 @@ input[type="number"]:focus {
 	flex:1 1 auto;
 }
 
+.btn-group-sm > .btn {
+	font-size:12px;
+}
 
 .btn-group .btn.btn-gray.active
 {

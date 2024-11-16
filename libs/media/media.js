@@ -20,6 +20,12 @@ function isVideo(filename) {
 	return videoExtensions.indexOf(fileExtension(filename)) != -1;
 }
 
+function clearMedia(id = "featured-image") {
+	document.getElementById(id + "-input").value = "";
+	document.getElementById(id + "-thumb").setAttribute("src","img/placeholder.svg");
+}
+
+
 class MediaModal {
 	constructor (modal = true)
 	{

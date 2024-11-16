@@ -9949,15 +9949,6 @@ body {
       --builder-left-panel-width: 300px;
       --builder-right-panel-width: 300px;
       --builder-component-list-element-width:44%; } }
-  body ::-webkit-scrollbar {
-    width: 0.5rem;
-    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
-  body ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 1px rgba(var(--bs-body-color-rgb), 0.05);
-    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
-  body ::-webkit-scrollbar-thumb {
-    background-color: rgba(var(--bs-body-color-rgb), 0.15);
-    border-radius: 10px; }
 
 .modal-content {
   font-size: .875rem; }
@@ -10741,6 +10732,15 @@ body {
     vertical-align: bottom; }
   #vvveb-builder .sections-tabs .nav-link i {
     margin-right: 0.3rem; }
+  #vvveb-builder ::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
+  #vvveb-builder ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(var(--bs-body-color-rgb), 0.05);
+    background-color: rgba(var(--bs-body-color-rgb), 0.05); }
+  #vvveb-builder ::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bs-body-color-rgb), 0.15);
+    border-radius: 10px; }
 
 /* style for drag element */
 li[data-type] {
@@ -11250,6 +11250,9 @@ input[type="number"]:focus {
 
 .btn-group.btn-group-fullwidth .btn {
   flex: 1 1 auto; }
+
+.btn-group-sm > .btn {
+  font-size: 12px; }
 
 .btn-group .btn.btn-gray.active {
   background-color: var(--bs-border-color); }
@@ -20511,7 +20514,7 @@ body > div#container, .small-nav, .main {
       background: #f8f9fa; }
     .btn-icon.btn-outline-primary i {
       background: transparent; }
-  .btn-icon.btn-outline-secondary {
+  .btn-icon.btn-outline-secondary, .btn-icon.btn-outline-success {
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(var(--bs-body-color-rgb), 0.12) 0px 1px 2px 0px, rgba(var(--bs-body-color-rgb), 0.08) 0px 0px 0px 1px; }
   .btn-icon.btn-secondary {
     box-shadow: 1px 1px 2px 1px rgba(var(--bs-body-color-rgb), 0.07), -1px 1px 2px 0px rgba(var(--bs-body-bg-rgb), 0.15) inset; }
@@ -20536,7 +20539,7 @@ body > div#container, .small-nav, .main {
     width: 100%;
     height: 100%;
     opacity: 0.16; }
-  .btn-icon.btn-outline-secondary:after, .btn-icon.btn-outline-primary:after {
+  .btn-icon.btn-outline-secondary:after, .btn-icon.btn-outline-primary:after, .btn-icon.btn-outline-secondary:after {
     background-image: linear-gradient(rgba(var(--bs-body-color-rgb), 0), rgba(var(--bs-body-color-rgb), 1));
     opacity: 0.03; }
 
@@ -21473,7 +21476,7 @@ button.btn-close {
     background: var(--bs-secondary-bg); }
 
 .left-column .tab-pane, .settings .tab-pane {
-  padding: 2rem 1rem; }
+  padding: 1rem 0.5rem; }
 
 .left-column .tab-pane[data-v-language], .settings .tab-pane[data-v-language] {
   padding: 0; }

@@ -44,7 +44,7 @@
 
 <script id="vvveb-input-radiobuttoninput" type="text/html">
 	
-	<div class="btn-group {%if (extraclass) { %}{%=extraclass%}{% } %} clearfix" role="group">
+	<div class="btn-group btn-group-sm {%if (extraclass) { %}{%=extraclass%}{% } %} clearfix" role="group">
 		{% var namespace = 'rb-' + Math.floor(Math.random() * 100); %}
 	
 		{% for ( var i = 0; i < options.length; i++ ) { %}
