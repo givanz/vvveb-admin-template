@@ -2014,7 +2014,7 @@ button.btn-close {
 	}
 	
 	.tab-pane {
-		padding:1rem 0.5rem;
+		padding:0.5rem;
 	}
 	
 	.tab-pane[data-v-language] {
@@ -2577,6 +2577,9 @@ tr {
 		display:none;
 	}
 	
+	p {
+		overflow-wrap:anywhere;
+	}
 }	
 
 .list-card .card .info {
@@ -2692,17 +2695,17 @@ tr {
 	//border-top: 1px solid var(--bs-border-color);
 	//border-right: 1px solid var(--bs-border-color);
 	//border-radius:0;
-	border-left-width:0.25rem;
+	border-left-width:0.2rem;
 	padding:0.5rem 1rem;
 	//box-shadow:0px 0px 2px 1px rgba(var(--bs-body-color-rgb), 0.05);
 	
 	.icon {
-		background: rgba(var(--bs-body-bg-rgb), 0.9);
+		background: rgba(var(--bs-body-bg-rgb), 0.7);
 		border-radius: 80%;
 		margin-right: 1rem;
 		padding: 0 0.5rem;
 		align-self: center;
-		font-size: 2.2rem;
+		font-size: 1.8rem;
 		vertical-align: middle;
 		line-height: 1;
 		
@@ -2714,17 +2717,20 @@ tr {
 
 .alert-info {
     background-color: rgba(var(--bs-info-bg-rgb), .07);
+	--bs-alert-border-color: rgba(var(--bs-info-rgb), 0.15);
     //background-color: var(--bs-info-bg-subtle);
     //border-color: rgba(var(--bs-info-rgb), .07);
 }    
 
 .alert-danger {
     background-color: rgba(var(--bs-danger-rgb), .07);
+	--bs-alert-border-color: rgba(var(--bs-danger-rgb), 0.15);
 	//background-color: var(--bs-danger-bg-subtle);
 }    
 
 .alert-primary {
     background-color: rgba(var(--bs-primary-rgb), .07);
+	--bs-alert-border-color: rgba(var(--bs-primary-rgb), 0.15);
     //background-color: var(--bs-primary-bg-subtle);
 }    
 
@@ -2770,11 +2776,13 @@ strong {
 
 
 .language-nav {
-	position:absolute;
-	right:0;
-	margin-top:-74px;
+	//position:absolute;
+	//right:0;
+	//margin-top:-74px;
 	margin-right:0;
 	background: var(--bs-body-bg);
+	justify-content: end;
+	margin-bottom: 1rem
 }
 
 .dd-list .language-nav {

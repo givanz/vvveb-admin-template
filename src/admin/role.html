@@ -32,9 +32,10 @@
 		   </div>
 	   </div>
 	   <div>
-		  <div id="main-content">
+		  <div id="main-content" class="settings">
 
 			@@include('../_includes/notifications.html')
+			
 				<!--	
 				<div class="list-group-container">
 				  <ul class="list-group" data-v-controllers>
@@ -59,7 +60,7 @@
 							
 							<label class="form-check-label">
 								<input type="hidden" value="{$this.adminPath}">	
-								<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+								<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> </button>
 								<span></span>
 							</label>
 						  
@@ -71,8 +72,9 @@
 				<div class="tree d-none">
 					<ol data-v-permissions>
 						<li  class="folder" data-v-permission>
-							<label for="index" title="Website homepage">
-								<span data-v-name>Home page</span>
+							<label for="index" title="{$rule}">
+								<span title="{$rule}" data-v-name>Name</span>
+								<span data-v-rule>Rule</span>
 								<!--
 								<div class="file-actions">
 									<button href="#" class="rename btn btn-outline-primary" title="Rename">
@@ -196,9 +198,32 @@
 					  </div>
 					</div>
 				</div>
-				
-			  <div class="card mx-4">
-		
+
+
+				<div class="nav nav-tabs mx-4 mt-4" data-v-apps>
+				  <div class="nav-item" data-v-app>
+					<a class="nav-link" href="#" data-v-app-url>Admin</a>
+				  </div>
+				  <div class="nav-item" data-v-app>
+					<a class="nav-link" href="#"  data-v-app-url>Rest API</a>
+				  </div>
+				  <div class="nav-item" data-v-app>
+					<a class="nav-link" href="#"  data-v-app-url>GraphQL</a>
+				  </div>
+				  <div class="nav-item" data-v-app>
+					<a class="nav-link" href="#"  data-v-app-url>GraphQL</a>
+				  </div>
+
+				  <div class="text-end flex-grow-1">
+					<button class="btn btn-outline-secondary btn-sm py-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="true">
+					  <i class="la la-2x la-question-circle text-primary"></i>
+					</button>
+				  </div>
+
+				</div>
+
+			  <div class="card mx-4 border-top-0 rounded-top-0">
+				<!---
 				<div class="card-header">
 				
 					<div class="float-start mt-2">Module access control</div>
@@ -208,16 +233,17 @@
                     </button>
 
 				</div>
-				
+				-->
 				
 				
 				<div class="card-body">
+				
 				
 					<div class="collapse mb-3" id="siteKeyInfo" style="">
 						<div>
 							<div class="card-body text-bg-body-tertiary border"><i class="la la-info-circle fs-2 px-2 float-end"></i>
 							
-							<p>Click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-arrow-down"></i></button> to choose module and action or write the path directly and click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-plus"></i> Add</button></p>
+							<p>Click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-arrow-down"></i></button> to choose module and action or write the path directly and click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-plus"></i> Add rule</button></p>
 							
 							<hr>
 							<p>You can use * wildcard to allow/deny multiple modules.</<p>
@@ -235,7 +261,7 @@
 					</div>
 				
 					<div class="rules">
-						<div class="mb-3">Allow list</div>
+						<div class="small fw-semibold mb-3">Allow list</div>
 						
 							<ul class="list-group allow  border-bottom-0" data-v-allow>
 								  <li class="list-group-item" data-v-rule>
@@ -269,12 +295,13 @@
 									<div class="tree">
 										<ol data-v-permissions>
 											<li  class="folder" data-v-permission>
-												<label for="index" title="Website homepage">
+												<label for="index" title="{$rule}">
 													
 													<input type="hidden" value="{$this.adminPath}">	
-													<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+													<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> </button>
 
-													<span data-v-name>Home page</span>
+													<span title="{$rule}" data-v-name>Name</span>
+													<span data-v-rule>Rule</span>
 													
 													<!--
 													<div class="file-actions">
@@ -393,7 +420,7 @@
 					
 					<div class="rules">
 						
-						<div class="mb-3">Deny list</div>
+						<div class="small fw-semibold mb-3">Deny list</div>
 
 							<ul class="list-group deny border-bottom-0" data-v-deny>
 							  <li class="list-group-item" data-v-rule>
@@ -427,12 +454,13 @@
 											<div class="tree">
 												<ol data-v-permissions>
 													<li  class="folder" data-v-permission>
-														<label for="index" title="Website homepage">
+														<label for="index" title="{$rule}">
 															
 															<input type="hidden" value="{$this.adminPath}">	
-															<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+															<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> </button>
 
-															<span data-v-name>Home page</span>
+															<span title="{$rule}" data-v-name>Name</span>
+															<span data-v-rule>Rule</span>
 															
 															<!--
 															<div class="file-actions">
@@ -622,6 +650,39 @@
 		border:1px solid #eee;
 		max-height:350px;
 		overflow-y:auto;
+	}
+	
+	.tree > ol li label {
+		background-position: 23px 8px;
+	}
+	
+	.tree > ol li input:checked + ol, .tree > ol li input:checked + ol {
+		background-size: 14px 14px;
+	}
+
+	.btn-add {
+		margin-right: 0.3rem;
+	}	
+		
+	[data-v-permission] li:hover > label:hover > [data-v-rule] {
+		/* visibility: visible; */
+		opacity: 1;
+	}
+	
+	[data-v-permission] [data-v-rule] {
+		/* visibility: hidden; */
+		opacity: 0;
+		transition: opacity 1s;
+		margin-left: 1rem;
+		background: var(--bs-border-color);
+		color: var(--bs-body-color);
+		font-size: 85%;
+		padding: 0.15rem 0.3rem;
+		border-radius: 0.5rem;
+	}	
+	
+	[data-v-permission] [data-v-name].badge {
+		font-size:100%;
 	}
 </style>
 

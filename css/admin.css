@@ -11941,6 +11941,207 @@ img.preview {
   font-display: swap;
   src: url("../fonts/inter/InterDisplay-BlackItalic.woff2") format("woff2"); }
 
+@font-feature-values InterVariable {
+  @character-variant {
+    cv01: 1;
+    cv02: 2;
+    cv03: 3;
+    cv04: 4;
+    cv05: 5;
+    cv06: 6;
+    cv07: 7;
+    cv08: 8;
+    cv09: 9;
+    cv10: 10;
+    cv11: 11;
+    cv12: 12;
+    cv13: 13;
+    alt-1: 1;
+    /* Alternate one */
+    alt-3: 9;
+    /* Flat-top three */
+    open-4: 2;
+    /* Open four */
+    open-6: 3;
+    /* Open six */
+    open-9: 4;
+    /* Open nine */
+    lc-l-with-tail: 5;
+    /* Lower-case L with tail */
+    simplified-u: 6;
+    /* Simplified u */
+    alt-double-s: 7;
+    /* Alternate German double s */
+    uc-i-with-serif: 8;
+    /* Upper-case i with serif */
+    uc-g-with-spur: 10;
+    /* Capital G with spur */
+    single-story-a: 11;
+    /* Single-story a */
+    compact-lc-f: 12;
+    /* Compact f */
+    compact-lc-t: 13;
+    /* Compact t */ }
+  @styleset {
+    ss01: 1;
+    ss02: 2;
+    ss03: 3;
+    ss04: 4;
+    ss05: 5;
+    ss06: 6;
+    ss07: 7;
+    ss08: 8;
+    open-digits: 1;
+    /* Open digits */
+    disambiguation: 2;
+    /* Disambiguation (with zero) */
+    disambiguation-except-zero: 4;
+    /* Disambiguation (no zero) */
+    round-quotes-and-commas: 3;
+    /* Round quotes &amp; commas */
+    square-punctuation: 7;
+    /* Square punctuation */
+    square-quotes: 8;
+    /* Square quotes */
+    circled-characters: 5;
+    /* Circled characters */
+    squared-characters: 6;
+    /* Squared characters */ } }
+
+@font-feature-values Inter {
+  @character-variant {
+    cv01: 1;
+    cv02: 2;
+    cv03: 3;
+    cv04: 4;
+    cv05: 5;
+    cv06: 6;
+    cv07: 7;
+    cv08: 8;
+    cv09: 9;
+    cv10: 10;
+    cv11: 11;
+    cv12: 12;
+    cv13: 13;
+    alt-1: 1;
+    /* Alternate one */
+    alt-3: 9;
+    /* Flat-top three */
+    open-4: 2;
+    /* Open four */
+    open-6: 3;
+    /* Open six */
+    open-9: 4;
+    /* Open nine */
+    lc-l-with-tail: 5;
+    /* Lower-case L with tail */
+    simplified-u: 6;
+    /* Simplified u */
+    alt-double-s: 7;
+    /* Alternate German double s */
+    uc-i-with-serif: 8;
+    /* Upper-case i with serif */
+    uc-g-with-spur: 10;
+    /* Capital G with spur */
+    single-story-a: 11;
+    /* Single-story a */
+    compact-lc-f: 12;
+    /* Compact f */
+    compact-lc-t: 13;
+    /* Compact t */ }
+  @styleset {
+    ss01: 1;
+    ss02: 2;
+    ss03: 3;
+    ss04: 4;
+    ss05: 5;
+    ss06: 6;
+    ss07: 7;
+    ss08: 8;
+    open-digits: 1;
+    /* Open digits */
+    disambiguation: 2;
+    /* Disambiguation (with zero) */
+    disambiguation-except-zero: 4;
+    /* Disambiguation (no zero) */
+    round-quotes-and-commas: 3;
+    /* Round quotes &amp; commas */
+    square-punctuation: 7;
+    /* Square punctuation */
+    square-quotes: 8;
+    /* Square quotes */
+    circled-characters: 5;
+    /* Circled characters */
+    squared-characters: 6;
+    /* Squared characters */ } }
+
+@font-feature-values InterDisplay {
+  @character-variant {
+    cv01: 1;
+    cv02: 2;
+    cv03: 3;
+    cv04: 4;
+    cv05: 5;
+    cv06: 6;
+    cv07: 7;
+    cv08: 8;
+    cv09: 9;
+    cv10: 10;
+    cv11: 11;
+    cv12: 12;
+    cv13: 13;
+    alt-1: 1;
+    /* Alternate one */
+    alt-3: 9;
+    /* Flat-top three */
+    open-4: 2;
+    /* Open four */
+    open-6: 3;
+    /* Open six */
+    open-9: 4;
+    /* Open nine */
+    lc-l-with-tail: 5;
+    /* Lower-case L with tail */
+    simplified-u: 6;
+    /* Simplified u */
+    alt-double-s: 7;
+    /* Alternate German double s */
+    uc-i-with-serif: 8;
+    /* Upper-case i with serif */
+    uc-g-with-spur: 10;
+    /* Capital G with spur */
+    single-story-a: 11;
+    /* Single-story a */
+    compact-lc-f: 12;
+    /* Compact f */
+    compact-lc-t: 13;
+    /* Compact t */ }
+  @styleset {
+    ss01: 1;
+    ss02: 2;
+    ss03: 3;
+    ss04: 4;
+    ss05: 5;
+    ss06: 6;
+    ss07: 7;
+    ss08: 8;
+    open-digits: 1;
+    /* Open digits */
+    disambiguation: 2;
+    /* Disambiguation (with zero) */
+    disambiguation-except-zero: 4;
+    /* Disambiguation (no zero) */
+    round-quotes-and-commas: 3;
+    /* Round quotes &amp; commas */
+    square-punctuation: 7;
+    /* Square punctuation */
+    square-quotes: 8;
+    /* Square quotes */
+    circled-characters: 5;
+    /* Circled characters */
+    squared-characters: 6;
+    /* Squared characters */ } }
+
 @font-face {
   font-family: 'ionicons';
   src: url("../fonts/ionicons/ionicons.ttf?76q473") format("truetype"), url("../fonts/ionicons/ionicons.woff?76q473") format("woff"), url("../fonts/ionicons/ionicons.svg?76q473#ionicons") format("svg");
@@ -21476,7 +21677,7 @@ button.btn-close {
     background: var(--bs-secondary-bg); }
 
 .left-column .tab-pane, .settings .tab-pane {
-  padding: 1rem 0.5rem; }
+  padding: 0.5rem; }
 
 .left-column .tab-pane[data-v-language], .settings .tab-pane[data-v-language] {
   padding: 0; }
@@ -21803,6 +22004,8 @@ tr.active .form-check-input::before {
   flex-direction: column; }
   .list-card .card .btn-preview {
     display: none; }
+  .list-card .card p {
+    overflow-wrap: anywhere; }
 
 .list-card .card .info {
   float: left; }
@@ -21866,28 +22069,31 @@ tr.active .form-check-input::before {
   display: none; }
 
 .alert {
-  border-left-width: 0.25rem;
+  border-left-width: 0.2rem;
   padding: 0.5rem 1rem; }
   .alert .icon {
-    background: rgba(var(--bs-body-bg-rgb), 0.9);
+    background: rgba(var(--bs-body-bg-rgb), 0.7);
     border-radius: 80%;
     margin-right: 1rem;
     padding: 0 0.5rem;
     align-self: center;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     vertical-align: middle;
     line-height: 1; }
     .alert .icon .la, .alert .icon .header-arrow {
       line-height: 1.4; }
 
 .alert-info {
-  background-color: rgba(var(--bs-info-bg-rgb), 0.07); }
+  background-color: rgba(var(--bs-info-bg-rgb), 0.07);
+  --bs-alert-border-color: rgba(var(--bs-info-rgb), 0.15); }
 
 .alert-danger {
-  background-color: rgba(var(--bs-danger-rgb), 0.07); }
+  background-color: rgba(var(--bs-danger-rgb), 0.07);
+  --bs-alert-border-color: rgba(var(--bs-danger-rgb), 0.15); }
 
 .alert-primary {
-  background-color: rgba(var(--bs-primary-rgb), 0.07); }
+  background-color: rgba(var(--bs-primary-rgb), 0.07);
+  --bs-alert-border-color: rgba(var(--bs-primary-rgb), 0.15); }
 
 .alert-success {
   background-color: rgba(var(--bs-success-rgb), 0.07);
@@ -21906,11 +22112,10 @@ label.form-check .form-check-input {
   margin-right: 0.2rem; }
 
 .language-nav {
-  position: absolute;
-  right: 0;
-  margin-top: -74px;
   margin-right: 0;
-  background: var(--bs-body-bg); }
+  background: var(--bs-body-bg);
+  justify-content: end;
+  margin-bottom: 1rem; }
 
 .dd-list .language-nav {
   margin-top: -0.65rem; }

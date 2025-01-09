@@ -224,6 +224,15 @@ let postType = '{ $this->type }';
 <link id="media-css" href="libs/media/media.css" rel="stylesheet">
 
 <script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
+<script id="tinymce-lang-code">
+let lang = "{$this->global.locale}";
+if (lang != "en-us") {
+	tinyMceOptions["language"] = "{$this->global.locale}";
+	tinyMceOptions["directionality"] = ("{$this->global.rtl}" == "1" ? 'rtl' : 'ltr');
+	tinyMceOptions["language_load"] = true;
+	//tinyMceOptions["language_url"] = "../../js/libs/tinymce-dist/langs/" + lang + ".js";
+}
+</script>
 <!-- 
 <script type="module" src="/js/libs/tinymce-dist/jquery.tinymce.min.js"></script>
  -->

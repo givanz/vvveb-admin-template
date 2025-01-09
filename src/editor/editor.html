@@ -125,50 +125,40 @@ let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 <script data-v-theme-js src="editor.js"></script>	
 
 <script>
-
 let pages =  { $this->pages };
 Vvveb.data =  { $this->data };
 
-let ready = function() {
-	let firstPage = Object.keys(pages)[0];
-	Vvveb.Builder.init(pages[firstPage]["url"], function() {
-		//load code after page is loaded here
-	});
+let firstPage = Object.keys(pages)[0];
+Vvveb.Builder.init(pages[firstPage]["url"], function() {
+	//load code after page is loaded here
+});
 
-	Vvveb.Gui.init();
-	Vvveb.Breadcrumb.init();
-	Vvveb.Revisions.init();
+Vvveb.Gui.init();
+Vvveb.Breadcrumb.init();
+Vvveb.Revisions.init();
 
-	var fileManagerComponents = [];
-	fileManagerComponents = fileManagerComponents.concat(Vvveb.ComponentsGroup['Ecommerce'], Vvveb.ComponentsGroup['Content']);
+var fileManagerComponents = [];
+fileManagerComponents = fileManagerComponents.concat(Vvveb.ComponentsGroup['Ecommerce'], Vvveb.ComponentsGroup['Content']);
 
-	Vvveb.FileManager.init(fileManagerComponents);
-	Vvveb.SectionList.init(fileManagerComponents);
-	Vvveb.TreeList.init();
-	Vvveb.CssEditor.init();
+Vvveb.FileManager.init(fileManagerComponents);
+Vvveb.SectionList.init(fileManagerComponents);
+Vvveb.TreeList.init();
+Vvveb.CssEditor.init();
 
-	Vvveb.FileManager.addPages(pages);
+Vvveb.FileManager.addPages(pages);
 
-	Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
-	Vvveb.Gui.toggleRightColumn(false);
-	Vvveb.Breadcrumb.init();
-	
-	let options = [];
-	for (let i in Vvveb.data.menu) { 
-		let menu = Vvveb.data.menu[i];
-		options.push({value:menu.menu_id, text:menu.name});
-	}	
+Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
+Vvveb.Gui.toggleRightColumn(false);
+Vvveb.Breadcrumb.init();
 
-	let menuSelect = tmpl('vvveb-input-select', {key:"menu_id", options});
-	document.querySelector("#new-page-modal [name=menu_id]").innerHTML = menuSelect;
-}
+let options = [];
+for (let i in Vvveb.data.menu) { 
+	let menu = Vvveb.data.menu[i];
+	options.push({value:menu.menu_id, text:menu.name});
+}	
 
-
-if (document.readyState !== "loading") {
-	ready();
-} else {
-	document.addEventListener('DOMContentLoaded', ready);
-}
+let menuSelect = tmpl('vvveb-input-select', {key:"menu_id", options});
+document.querySelector("#new-page-modal [name=menu_id]").innerHTML = menuSelect;
 
 
 let newPageTab = function (event) {
@@ -192,7 +182,6 @@ let newPageTab = function (event) {
 			}
 		});
 	});
-	//$("input,select", sections.hide()).setAttribute("disabled", true);
 	//document.querySelectorAll("input,select", sections.filter("." + this.value).show()).removeAttribute("disabled");
 	;
 };

@@ -210,6 +210,18 @@ let postType = '{ $this->type }';
 <script id="revisions-js" src="../../js/admin/revisions.js"></script>
 
 <script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
+<!--
+<script id="tinymce-lang" src="../../js/libs/tinymce-dist/langs/{$this.global.locale}.js"></script>
+-->
+<script id="tinymce-lang-code">
+let lang = "{$this->global.locale}";
+if (lang != "en-us") {
+	tinyMceOptions["language"] = "{$this->global.locale}";
+	tinyMceOptions["directionality"] = ("{$this->global.rtl}" == "1" ? 'rtl' : 'ltr');
+	tinyMceOptions["language_load"] = true;
+	//tinyMceOptions["language_url"] = "../../js/libs/tinymce-dist/langs/" + lang + ".js";
+}
+</script>
 <script id="tinymce-js" src="../../js/libs/tinymce-dist/tinymce.min.js"></script>
 <script id="oembed-js" src="../../js/libs/oembed.js"></script>
 <script id="tinymce-embed-js" src="../../js/libs/tinymce-embed.js"></script>

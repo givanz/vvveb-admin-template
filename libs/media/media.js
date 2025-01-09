@@ -4,11 +4,12 @@ function ucFirst(str) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
-if (!mediaScanUrl) {
-	let mediaPath = "/public/media/";
-	let mediaScanUrl = "scan.php";
-	let uploadUrl = "upload.php";
-}
+
+/*
+var mediaPath = "/public/media/";
+var mediaScanUrl = "scan.php";
+var uploadUrl = "upload.php";
+*/
 
 function fileExtension(filename) {
 	return filename.split('.').pop();
@@ -623,8 +624,8 @@ _
 				
 			fetch(deleteUrl, {method: "POST",  body: new URLSearchParams({file})})
 				.then((response) => {
-					if (!response.ok) { throw new Error(response) }
-					return response.json()
+					if (!response.ok) {  return Promise.reject(response);  }
+					return response.json();
 				})
 				.then((data) => {
 					let bg = "bg-success";
@@ -639,7 +640,12 @@ _
 				})
 				.catch(error => {
 					console.log(error);
-					displayToast("bg-danger", "Error", "Error deleting file!");
+					let message = error.statusText ?? "Error deleting file!";
+					displayToast("bg-danger", "Error", message);
+					error.text().then( errorMessage => {
+						let message = errorMessage.substr(0, 200);
+						displayToast("bg-danger", "Error", message);
+					})	
 				});	
 			}
 		}
@@ -800,7 +806,7 @@ _
 					bg = "bg-danger";
 				}
 				
-				displayToast(bg, "Save", data.message);
+				displayToast(bg, "Save", data.message ?? data);
 
 				loading.classList.toggle("d-none");
 				btnText.classList.toggle("d-none");

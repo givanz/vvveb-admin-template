@@ -45,7 +45,7 @@
 			  
 
 					<div class="mx-auto text-center">
-						<a href="{$this.adminPath}" onclick="return window.history.back()" class="btn btn-primary"><i class="la la-arrow-left"></i> Go back</a>
+						<a href="{$this.adminPath}" id="back-btn" class="btn btn-primary"><i class="la la-arrow-left"></i> Go back</a>
 					</div>
 
 				</div> 
@@ -57,6 +57,14 @@
 
 
 </div>
+
+<script>
+document.getElementById("back-btn").addEventListener("click", function (e) {
+	e.preventDefault();
+	window.history.back();
+	return false;
+})
+</script>
 
 @@include('./_includes/footer-scripts.html')
 @@include('./_includes/footer.html') 

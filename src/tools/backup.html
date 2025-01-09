@@ -179,20 +179,17 @@
 @@include('../_includes/footer-scripts.html')
 <script type="module" src="../../js/admin/controller/backup.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => { 
-	document.querySelectorAll(".backup-btn").addEventListener("click",  function(e) {
-		if (Backup.make) {
-			e.preventDefault();
-			return Backup.make(this.attributes.href.value ?? false, this);
-		}
-	});
-
-	document.querySelectorAll(".restore-btn").addEventListener("click",  function(e) {
-		if (Backup.restore) {
-			e.preventDefault();
-			return Backup.restore(this.attributes.href.value ?? false, this);
-		}
-	});
+document.addEventListener("click",  function(e) {
+	let element = event.target.closest(".backup-btn");
+	if (element && Backup.make) {
+		e.preventDefault();
+		return Backup.make(element.attributes.href.value ?? false, this);
+	}
+	element = event.target.closest(".restore-btn");
+	if (element && Backup.restore) {
+		e.preventDefault();
+		return Backup.restore(element.attributes.href.value ?? false, this);
+	}
 });
 </script>
 

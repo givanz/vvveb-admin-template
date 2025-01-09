@@ -119,3 +119,47 @@ function focusInvalidElement(e) {
 		
 		element.focus();
 }
+
+document.getElementById('tab-general')?.addEventListener('click', function (e) {
+	let element = e.target.closest(".copy-btn");
+
+	if (element) {
+		let currentLangPane = e.target.closest("[data-v-language].tab-pane");
+		let firstLangPane = document.querySelector("[data-v-language].tab-pane");
+
+		let content = {};
+		firstLangPane.querySelectorAll("input, textarea").forEach(el => {
+			let name = el.name;
+			let index = name.lastIndexOf("[");
+			if (index) {
+				name = name.substr(index + 1, name.length - index - 2);
+			}
+			if (name == 'language_id') return;
+			if (el.tagName == "TEXTAREA" && el.id) {
+				let tiny = tinymce.get(el.id);
+				if (tiny) {
+					content[name + "_mce"] = tiny.getContent();
+				}
+			}
+			content[name] = el.value;
+		});
+
+		currentLangPane.querySelectorAll("input, textarea").forEach(el => {
+			let name = el.name;
+			let index = name.lastIndexOf("[");
+			if (index) {
+				name = name.substr(index + 1, name.length - index - 2);
+			}
+			if (name == 'language_id') return;
+			if (el.tagName == "TEXTAREA" && el.id) {
+				let tiny = tinymce.get(el.id);
+				if (tiny) {
+					tiny.setContent(content[name + "_mce"]);
+				}
+			}
+			el.value = content[name];
+		});
+		
+		e.preventDefault();
+	}
+});
