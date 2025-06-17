@@ -31,12 +31,12 @@
 @@include('../_includes/footer-scripts.html')
 
 <!-- builder code-->
-<script id="builder" src="../../js/vvvebjs/builder.js"></script>	
+<script id="builder" src="/js/vvvebjs/builder.js"></script>	
 <script>
 Vvveb.themeBaseUrl = '{ $this->themeBaseUrl }';
 </script>
 <!-- undo manager-->
-<script id="undo" src="../../js/vvvebjs/undo.js"></script>	
+<script id="undo" src="/js/vvvebjs/undo.js"></script>	
 
 <!-- media gallery -->
 <link href="libs/media/media.css" rel="stylesheet">
@@ -58,47 +58,71 @@ let revisionsUrl      = '{ $this->revisionsUrl }';
 let revisionLoadUrl   = '{ $this->revisionLoadUrl }';
 let revisionDeleteUrl = '{ $this->revisionDeleteUrl }';
 let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
+let linkUrl           = '{ $this->linkUrl }';
+
+let themeName  =  '{ $this->themeName }';
+let themeFonts =  { $this->themeFonts };
+
+if (themeFonts) {
+	ThemeFontsManager = {
+		updateFontList: function () {
+		},
+		
+		removeFont: function (fontName) {
+		},
+		
+		addFont: function (fontName) {
+		}
+	}
+
+	Vvveb.FontsManager.addProvider("theme", ThemeFontsManager);	
+	Vvveb.FontsManager.addFontList("theme", friendlyName(themeName), themeFonts);
+}
 </script>
 <!--
 <script id="openverse-js" src="libs/media/openverse.js"></script>
 -->
 <script id="media-js" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
-<script id="resources" src="../../js/vvvebjs/resources.js"></script>		
+<script id="resources" src="/js/vvvebjs/resources.js"></script>		
 
 
 <!-- inputs-->
-<script id="inputs" src="../../js/vvvebjs/inputs.js"></script>	
-<script data-v-theme-inputs id="inputs" src="../../js/vvvebjs/inputs.js"></script>	
-<script id="plugin-media" src="../../js/vvvebjs/plugin-media.js"></script>	
+<script id="inputs" src="/js/vvvebjs/inputs.js"></script>	
+<script data-v-theme-inputs id="inputs" src="/js/vvvebjs/inputs.js"></script>	
+<script id="plugin-media" src="/js/vvvebjs/plugin-media.js"></script>	
 
 <!-- plugins -->
-<script src="../../js/libs/oembed.js"></script>		
-<script id="plugin-google-fonts" src="../../js/vvvebjs/plugin-google-fonts.js"></script>
+<script src="/js/libs/oembed.js"></script>		
+<script id="plugin-google-fonts" src="/js/vvvebjs/plugin-google-fonts.js"></script>
 
+<link href="/js/libs/coloris/coloris.min.css" rel="stylesheet"/>
+<script src="/js/libs/coloris/coloris.js"></script>
+<script id="plugin-coloris" src="/js/vvvebjs/plugin-coloris.js"></script>
 
 <!-- components-->
-<script id="components-common" src="../../js/vvvebjs/components-common.js"></script>
-<script id="section" src="../../js/vvvebjs/section.js"></script>		
-<script id="plugin-aos" src="../../js/vvvebjs/plugin-aos.js"></script>
-<script id="components-html" src="../../js/vvvebjs/components-html.js"></script>	
-<script id="components-elements" src="../../js/vvvebjs/components-elements.js"></script>		
-<script id="components-embeds" src="../../js/vvvebjs/components-embeds.js"></script>		
-<script id="components-widgets" src="../../js/vvvebjs/components-widgets.js"></script>	
-<script id="components-bootstrap5" src="../../js/vvvebjs/components-bootstrap5.js"></script>	
-<script id="components-content" type="module" src="../../js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
-<script id="components-ecommerce" type="module" src="../../js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
+<script id="components-common" src="/js/vvvebjs/components-common.js"></script>
+<script id="section" src="/js/vvvebjs/section.js"></script>		
+<script id="plugin-aos" src="/js/vvvebjs/plugin-aos.js"></script>
+<script id="components-html" src="/js/vvvebjs/components-html.js"></script>	
+<script id="components-elements" src="/js/vvvebjs/components-elements.js"></script>		
+<script id="components-embeds" src="/js/vvvebjs/components-embeds.js"></script>		
+<script id="components-widgets" src="/js/vvvebjs/components-widgets.js"></script>	
+<script id="components-bootstrap5" src="/js/vvvebjs/components-bootstrap5.js"></script>	
+<script id="components-content" type="module" src="/js/vvvebjs/components/content/index.js" crossorigin="use-credentials"></script>
+<script id="components-ecommerce" type="module" src="/js/vvvebjs/components/ecommerce/index.js" crossorigin="use-credentials"></script>
 
-<script data-v-theme-components id="components" src="../../js/vvvebjs/components.js"></script>	
+<script data-v-theme-components id="components" src="/js/vvvebjs/components.js"></script>	
 
 <!-- sections-->
-<script data-v-theme-sections id="sections" src="../../js/vvvebjs/sections.js"></script>	
-<script id="sections-bootstrap4" src="../../js/vvvebjs/sections-bootstrap4.js"></script>	
+<script data-v-theme-sections id="sections" src="/js/vvvebjs/sections.js"></script>	
+<script id="sections-bootstrap4" src="/js/vvvebjs/sections-bootstrap4.js"></script>	
 
 <!-- blocks-->
-<script data-v-theme-blocks id="blocks" src="../../js/vvvebjs/blocks.js"></script>	
-<script id="blocks-bootstrap4" src="../../js/vvvebjs/blocks-bootstrap4.js"></script>	
-
+<script data-v-theme-blocks id="blocks" src="/js/vvvebjs/blocks.js"></script>	
+<!--
+<script id="blocks-bootstrap4" src="/js/vvvebjs/blocks-bootstrap4.js"></script>	
+-->
 
 <!-- plugins -->
 
@@ -109,62 +133,75 @@ let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 <script src="libs/codemirror/lib/xml.js"></script>
 <script src="libs/codemirror/lib/css.js"></script>
 <script src="libs/codemirror/lib/formatting.js"></script>
-<script id="plugin-codemirror" src="../../js/vvvebjs/plugin-codemirror.js"></script>	
+<script id="plugin-codemirror" src="/js/vvvebjs/plugin-codemirror.js"></script>	
 <!-- jszip - download page as zip -->
 <!--
 <script src="libs/jszip/jszip.min.js"></script>
-<script id="plugin-jszip" src="../../js/vvvebjs/plugin-jszip.js"></script>
-<script id="plugin-ai-assistant" src="../../js/vvvebjs/plugin-ai-assistant.js"></script>
+<script id="plugin-jszip" src="/js/vvvebjs/plugin-jszip.js"></script>
+<script id="plugin-ai-assistant" src="/js/vvvebjs/plugin-ai-assistant.js"></script>
 -->
+
+
 
 <!-- autocomplete plugin used by autocomplete input-->
 <script src="libs/autocomplete/autocomplete.js"></script>	
-<script type="module"  src="../../js/admin.js"></script>
-<script id="elements-changes" src="../../js/vvvebjs/elements-changes.js"></script>	
+<script type="module"  src="/js/admin.js"></script>
+<script id="elements-changes" src="/js/vvvebjs/elements-changes.js"></script>	
 
 <script data-v-theme-js src="editor.js"></script>	
 
 <script>
-let pages =  { $this->pages };
+let pages  =  { $this->pages };
 Vvveb.data =  { $this->data };
 
-let firstPage = Object.keys(pages)[0];
-Vvveb.Builder.init(pages[firstPage]["url"], function() {
-	//load code after page is loaded here
-});
+let ready = function() {
+	let firstPage = Object.keys(pages)[0];
+	Vvveb.Builder.init(pages[firstPage]["url"], function() {
+		//load code after page is loaded here
+	});
 
-Vvveb.Gui.init();
-Vvveb.Breadcrumb.init();
-Vvveb.Revisions.init();
+	Vvveb.Gui.init();
+	Vvveb.Breadcrumb.init();
+	Vvveb.Revisions.init();
 
-var fileManagerComponents = [];
-fileManagerComponents = fileManagerComponents.concat(Vvveb.ComponentsGroup['Ecommerce'], Vvveb.ComponentsGroup['Content']);
+	var fileManagerComponents = [];
+	fileManagerComponents = fileManagerComponents.concat(Vvveb.ComponentsGroup['Ecommerce'], Vvveb.ComponentsGroup['Content']);
 
-Vvveb.FileManager.init(fileManagerComponents);
-Vvveb.SectionList.init(fileManagerComponents);
-Vvveb.TreeList.init();
-Vvveb.CssEditor.init();
+	Vvveb.FileManager.init(fileManagerComponents);
+	Vvveb.SectionList.init(fileManagerComponents);
+	Vvveb.TreeList.init();
+	Vvveb.CssEditor.init();
 
-Vvveb.FileManager.addPages(pages);
+	Vvveb.FileManager.addPages(pages);
 
-Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
-Vvveb.Gui.toggleRightColumn(false);
-Vvveb.Breadcrumb.init();
+	Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
+	Vvveb.Gui.toggleRightColumn(false);
+	Vvveb.Breadcrumb.init();
 
-let options = [];
-for (let i in Vvveb.data.menu) { 
-	let menu = Vvveb.data.menu[i];
-	options.push({value:menu.menu_id, text:menu.name});
-}	
+	let options = [];
+	for (let i in Vvveb.data.menu) { 
+		let menu = Vvveb.data.menu[i];
+		options.push({value:menu.menu_id, text:menu.name});
+	}	
 
-let menuSelect = tmpl('vvveb-input-select', {key:"menu_id", options});
-document.querySelector("#new-page-modal [name=menu_id]").innerHTML = menuSelect;
+	let menuSelect = tmpl('vvveb-input-select', {key:"menu_id", options});
+	document.querySelector("#new-page-modal [name=menu_id]").innerHTML = menuSelect;
+}
 
+
+if (document.readyState !== "loading") {
+	ready();
+} else {
+	document.addEventListener('DOMContentLoaded', ready);
+}
+
+let defaultTemplates = {'post':'content/post.html', 'page': 'content/page.html', 'product': 'product/product.html', 'template': 'blank.html'};
+
+document.querySelector("[name='startTemplateUrl']").value = defaultTemplates['page'] ?? '';
 
 let newPageTab = function (event) {
 	let active = this.value;
 	let sections = document.querySelectorAll("#new-page-modal .form > div");
-	
 	sections.forEach((section, i) => {
 		let selected = section.classList.contains(active);
 		
@@ -181,6 +218,11 @@ let newPageTab = function (event) {
 				el.setAttribute("disabled", true);
 			}
 		});
+		
+		let templateSelect = section.querySelector("[name='startTemplateUrl']");
+		if (templateSelect) {
+			templateSelect.value = defaultTemplates[active] ?? '';
+		}
 	});
 	//document.querySelectorAll("input,select", sections.filter("." + this.value).show()).removeAttribute("disabled");
 	;

@@ -47,16 +47,16 @@
 						<div class="row">
                             <div class="col-sm-3">
 								<div class="row">
-									<label class="col-sm-2 col-form-label" for="search">Search</label>
-									<div class="col-sm-10">
+									<label class="col-sm-3 col-form-label" for="search">Search</label>
+									<div class="col-sm-9">
 										<input type="search" class="form-control" name="filter[search]" value="" placeholder="Search" id="search">
 									</div>
 								</div>
                             </div>
 							<div class="col-sm-4 mb-3">
 								<div class="row">
-                                <label class="col-sm-2 col-form-label" for="input-model">Country</label>
-									<div class="col-sm-10">
+                                <label class="col-sm-3 col-form-label" for="input-model">Country</label>
+									<div class="col-sm-9">
 									  <input name="filter[country_id]" value="" placeholder="Country" id="input-country" autocomplete="off" type="text" class="form-control autocomplete"
 				data-url="{$this.adminPath}index.php?module=localization/countries&action=countryAutocomplete" data-text=""/>
 									</div>
@@ -65,8 +65,8 @@
 							
 							<div class="col-sm-3">
 								<div class="row">
-                                <label class="col-sm-2 col-form-label" for="input-model">Status</label>
-									<div class="col-sm-10">
+                                <label class="col-sm-3 col-form-label" for="input-model">Status</label>
+									<div class="col-sm-9">
 									  <select name="filter[status]" id="filter-by-status" class="form-control" >
 										<option value="">- All -</option>
 										<option value="1" data-v-option>Active</option>
@@ -96,8 +96,20 @@
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
 									title="Delete selected"
-									class="btn btn-outline-secondary bg-body-tertiary text-danger">
+									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
 								<i class="icon-trash-outline"></i> Delete selected
+							</button>
+							
+						   <button type="submit" name="action" value="delete" aria-expanded="false" 
+									title="Delete selected"
+									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-primary">
+								<i class="icon-checkmark-outline"></i> Enable selected
+							</button>
+
+						   <button type="submit" name="action" value="delete" aria-expanded="false" 
+									title="Delete selected"
+									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-body">
+								<i class="icon-close-outline"></i> Disable selected
 							</button>
 						</div>
 						
@@ -210,6 +222,8 @@
                 </div>
             </div>
         </div>
+
+		@@include('../_includes/main-footer.html')
     </div>
 </div>
 

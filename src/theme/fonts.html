@@ -1,0 +1,593 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Theme Fonts","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+      <form id="font-form" action="" method="post" class="settings">
+        <input type="hidden" name="action" id="action" value="save">
+				
+		<div class="actions flex-column flex-md-row">
+			
+			<div class="title">
+				<h4 class="text-muted my-2">
+				      <i class="icon-reader-outline"></i>
+				      <span>Theme Fonts</span> - <span data-v-theme-name>Default</span>
+				</h4>
+			</div>
+			
+			  <div class="btns">
+			    <button type="button" id="add-font-group-btn" class="btn btn-outline-primary" aria-label="Add Rule">
+			      <i class="la la-plus"></i> Add font
+			    </button>
+
+
+			    <button type="submit" href="" class="btn btn-primary btn-icon ms-1">
+						<i class="icon-create-outline"></i>
+			      <span>Save</span>
+			    </button>
+			  </div>
+		</div>
+
+        <div id="main-content">
+
+            @@include('../_includes/notifications.html')  
+		
+          <div class="px-4">
+
+            <input type="hidden" name="font_id" data-v-font-font_id>
+
+            <div class="fonts">
+			  <h5 class="my-3">Custom fonts</h5>
+				
+              <div class="accordion" style="--bs-accordion-body-padding-x:0;--bs-accordion-body-padding-y:0;--bs-accordion-active-bg:rgba(var(--bs-primary-rgb), 0.05);" data-v-fonts>
+
+                <div class="accordion-item" data-v-font>
+                  <div class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#font-id-1" aria-controls="font-id-1">
+                      <div class="flex-grow-1"><span class="fw-semibold" data-v-font-family>Inter</span> <span class="small text-muted" data-v-font-weight>New font</span> </div>
+                      <div class="pe-4 buttons">
+                        <a type="button" onclick="this.closest('.accordion-item').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
+                          <i class="la la-lg la-minus-circle"></i>
+                        </a>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div id="font-id-1" class="accordion-collapse collapse">
+                    <div class="accordion-body p-4">
+
+					<div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Family</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][font-family]" data-v-font-family required>
+						</div>
+					 </div>						
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Weight</label>
+						<div class="col-sm-10">
+						  <select class="form-select" id="input-name" placeholder="Weight" name="font[0][font-weight]" data-v-font-weight required>
+							<option>normal</option>
+							<option value="bold">bold</option>
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="400">400</option>
+							<option value="500">500</option>
+							<option value="600">600</option>
+							<option value="700">700</option>
+							<option value="800">800</option>
+							<option value="900">900</option>
+						  </select>
+						</div>
+					 </div>						 
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Style</label>
+						<div class="col-sm-10">
+						  <select class="form-select" id="input-name" placeholder="Style" name="font[0][font-style]" data-v-font-style required>
+							<option>normal</option>
+							<option value="italic">italic</option>
+							<option value="oblique">oblique</option>
+						  </select>
+						</div>
+					 </div>	
+
+			
+
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Src</label>
+					<div class="col-sm-10">
+					<!--
+									
+						<img data-v-image src="img/placeholder.svg" alt="" title=""
+						 id="featured-image-thumb"
+						 data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" 
+						 data-type="single"
+						 class="img-thumbnail bg-light"
+						 style="max-width:200px;"
+						 >
+					-->		
+						<div class="input-group">
+							<input type="text" class="form-control" data-v-src name="font[0][src]" id="font-id-1-src" value="" required>
+
+							<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+								data-media-gallery 
+								data-target-input="#font-id-1-src"
+								data-type="single">
+								<i class="la la-language la-lg"></i> <span>Set font</span>
+							</button>
+						</div>
+							
+					  
+					</div>
+				  </div>
+
+				  <details>
+					<summary>Advanced</summary>
+					
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Display</label>
+						<div class="col-sm-10">
+						  <select class="form-select" id="input-name" placeholder="Display" name="font[0][font-display]" data-v-font-display required>
+							<option value="auto">auto</option>
+							<option value="block">block</option>
+							<option value="swap">swap</option>
+							<option value="fallback">fallback</option>
+							<option value="optional">optional</option>
+						  </select>
+						</div>
+					 </div>	
+
+				  
+					<div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Feature settings</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][font-feature-settings]" data-v-font-feature-settings>
+						</div>
+					 </div>
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Variation settings</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][font-variation-settings]" data-v-font-variation-settings>
+						</div>
+					 </div>					
+					 
+					<div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Font stretch</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][font-stretch]" data-v-font-stretch>
+						</div>
+					 </div>						
+
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Line gap override</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][line-gap-override]" data-v-font-feature-settings>
+						</div>
+					 </div>		
+			 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Size adjust settings</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][size-adjust]" data-v-font-size-adjust-settings>
+						</div>
+					 </div>
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Descent override</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][descent-override]" data-v-font-descent-override>
+						</div>
+					 </div>
+					 					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Ascent override</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][ascent-override]" data-v-font-ascent-override>
+						</div>
+					 </div>
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Unicode range</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][unicode-range]" data-v-font-unicode-ranges>
+						</div>
+					 </div>
+					 
+				  </details>
+<!--
+						<ol class="list-group">
+						  <li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+							  <div class="fw-bold">Regular 400</div>
+							  The quick brown fox jumps over the lazy dog
+							</div>
+							<span class="badge text-bg-primary rounded-pill">14</span>
+						  </li>
+						  <li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+							  <div class="fw-bold">Subheading</div>
+							  Content for list item
+							</div>
+							<span class="badge text-bg-primary rounded-pill">14</span>
+						  </li>
+						  <li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+							  <div class="fw-bold">Subheading</div>
+							  Content for list item
+							</div>
+							<span class="badge text-bg-primary rounded-pill">14</span>
+						  </li>
+						</ol>
+
+
+						<div class="mt-2 text-end">
+							
+							<button type="button" id="add-varia-group-btn" class="btn btn-outline-primary" aria-label="Add Variation">
+							  <i class="la la-plus"></i> Add Variation
+							</button>
+
+						</div>
+-->						
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+			  <!--
+				<div data-v-if-not="this.fonts">
+					<div class="text-center p-4 bg-body-tertiary border">
+					  <div>
+						<i class="icon-language-outline fs-1"></i>
+						<div class="mt-2">No custom fonts!</div>
+					  </div>
+
+					</div>
+				</div>	
+			-->		  
+            </div>
+			
+			<hr class="border-top opacity-100 my-4" style="--bs-border-style: dashed">
+			
+			<h5 class="my-3">Built in fonts</h5>
+			<ul class="list-group" data-v-builtin>
+			  <li class="list-group-item d-flex justify-content-between align-items-start" data-v-font>
+				<div class="ms-2 me-auto">
+				  <div class="fw-bold" data-v-font-family>Subheading</div>
+				  <details>
+					<summary>Variants</summary>
+					  <ul class="small text-muted" data-v-variants>
+						<li class="" data-v-variant>
+							<div data-v-values>
+								<label data-v-values-key>Style</label>: <span class="fw-semibold" data-v-values-value>normal</span>
+							<!--
+								<label>Style</label>: <span class="fw-semibold" data-v-variant-font-style>normal</span>
+								<label>Weight</label>: <span class="fw-semibold" data-v-variant-font-weight>normal</span>
+								<label>Display</label>: <span class="fw-semibold" data-v-variant-font-display>normal</span>
+							-->
+							</div>
+						</li>
+					   </ul>
+				</details>
+				</div>
+			  </li>
+			  
+			  <li class="list-group-item" data-v-font>
+			  </li>
+			  
+			  <li class="list-group-item" data-v-font>A second item</li>
+			  <li class="list-group-item" data-v-font>A third item</li>
+			  <li class="list-group-item" data-v-font>A fourth item</li>
+			  <li class="list-group-item" data-v-font>And a fifth one</li>
+			</ul>	
+
+			<div data-v-if-not="this.builtin">
+				<div class="text-center p-4 bg-body-tertiary border">
+				  <div>
+					<i class="icon-language-outline fs-1"></i>
+					<div class="mt-2">No builtin fonts!</div>
+				  </div>
+
+				</div>
+			</div>			
+          </div>
+      </form>
+
+    </div>
+
+
+	<div class="d-none" id="font-template">
+
+                <div class="accordion-item" data-v-font>
+                  <div class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#font-id-1" aria-controls="font-id-1">
+                      <div class="flex-grow-1"><span class="fw-semibold" data-v-font-family>New font</span> <span class="small text-muted" data-v-font-weight>New font</span> </div>
+                      <div class="pe-4 buttons">
+                        <a type="button" onclick="this.closest('.accordion-item').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
+                          <i class="la la-lg la-minus-circle"></i>
+                        </a>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div id="font-id-1" class="accordion-collapse collapse">
+                    <div class="accordion-body p-4">
+
+					<div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Family</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="Name" name="font[0][font-family]" data-v-font-family required disabled>
+						</div>
+					 </div>						
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Weight</label>
+						<div class="col-sm-10">
+						  <select class="form-select" id="input-name" name="font[0][font-weight]" data-v-font-weight required disabled>
+							<option>normal</option>
+							<option value="bold">bold</option>
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="400">400</option>
+							<option value="500">500</option>
+							<option value="600">600</option>
+							<option value="700">700</option>
+							<option value="800">800</option>
+							<option value="900">900</option>
+						  </select>
+						</div>
+					 </div>						 
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Style</label>
+						<div class="col-sm-10">
+						  <select class="form-select" id="input-name" name="font[0][font-style]" data-v-font-style required disabled>
+							<option>normal</option>
+							<option value="italic">italic</option>
+							<option value="oblique">oblique</option>
+						  </select>
+						</div>
+					 </div>	
+
+			
+
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Src</label>
+					<div class="col-sm-10">
+					<!--
+									
+						<img data-v-image src="img/placeholder.svg" alt="" title=""
+						 id="featured-image-thumb"
+						 data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" 
+						 data-type="single"
+						 class="img-thumbnail bg-light"
+						 style="max-width:200px;"
+						 >
+					-->		
+						<div class="input-group">
+							<input type="text" class="form-control" data-v-src name="font[0][src]" id="font-id-1-src" value="" required disabled>
+
+							<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+								data-media-gallery 
+								data-target-input="#font-id-1-src"
+								data-type="single">
+								<i class="la la-language la-lg"></i> <span>Set font</span>
+							</button>
+						</div>
+							
+					  
+					</div>
+				  </div>
+
+				  <details>
+					<summary>Advanced</summary>
+					
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Display</label>
+						<div class="col-sm-10">
+						  <select class="form-select" id="input-name" name="font[0][font-display]" data-v-font-display required disabled>
+							<option value="auto">auto</option>
+							<option value="block">block</option>
+							<option value="swap">swap</option>
+							<option value="fallback">fallback</option>
+							<option value="optional">optional</option>
+						  </select>
+						</div>
+					 </div>	
+
+				  
+					<div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Feature settings</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="font-feature-settings" name="font[0][font-feature-settings]" data-v-font-feature-settings disabled>
+						</div>
+					 </div>
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Variation settings</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="font-variation-settings" name="font[0][font-variation-settings]" data-v-font-variation-settings disabled>
+						</div>
+					 </div>					
+					 
+					<div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Font stretch</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="font-stretch" name="font[0][font-stretch]" data-v-font-stretch disabled>
+						</div>
+					 </div>						
+
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Line gap override</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="line-gap-override" name="font[0][line-gap-override]" data-v-font-feature-settings disabled>
+						</div>
+					 </div>		
+			 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Size adjust settings</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="size-adjust" name="font[0][size-adjust]" data-v-font-size-adjust-settings disabled>
+						</div>
+					 </div>
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Descent override</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="descent-override" name="font[0][descent-override]" data-v-font-descent-override disabled>
+						</div>
+					 </div>
+					 					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Ascent override</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="ascent-override" name="font[0][ascent-override]" data-v-font-ascent-override disabled>
+						</div>
+					 </div>
+					 
+					 <div class="mb-3 row">
+						<label for="input-name" class="col-sm-2 col-form-label">Unicode range</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="input-name" placeholder="unicode-range" name="font[0][unicode-range]" data-v-font-unicode-ranges disabled>
+						</div>
+					 </div>
+					 
+				  </details>
+<!--
+						<ol class="list-group">
+						  <li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+							  <div class="fw-bold">Regular 400</div>
+							  The quick brown fox jumps over the lazy dog
+							</div>
+							<span class="badge text-bg-primary rounded-pill">14</span>
+						  </li>
+						  <li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+							  <div class="fw-bold">Subheading</div>
+							  Content for list item
+							</div>
+							<span class="badge text-bg-primary rounded-pill">14</span>
+						  </li>
+						  <li class="list-group-item d-flex justify-content-between align-items-start">
+							<div class="ms-2 me-auto">
+							  <div class="fw-bold">Subheading</div>
+							  Content for list item
+							</div>
+							<span class="badge text-bg-primary rounded-pill">14</span>
+						  </li>
+						</ol>
+
+
+						<div class="mt-2 text-end">
+							
+							<button type="button" id="add-varia-group-btn" class="btn btn-outline-primary" aria-label="Add Variation">
+							  <i class="la la-plus"></i> Add Variation
+							</button>
+
+						</div>
+-->						
+                    </div>
+                  </div>
+                </div>
+
+	</div>
+
+    <script id="popper-js" src="js/popper.min.js"></script>
+    <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+    <script id="theme-js" src="js/theme.js"></script>
+
+    <!-- vvveb modules code -->
+    <script id="admin-js" type="module" src="/js/admin.js"></script>
+
+    <style>
+      .accordion-header .buttons {
+        visibility: hidden;
+      }
+
+      .accordion-header:hover .buttons {
+        visibility: visible;
+      }
+    </style>
+
+<script>
+let mediaPath         = '{ $this->mediaPath }';
+let mediaScanUrl      = '{ $this->scanUrl }';
+let uploadUrl         = '{ $this->uploadUrl }';
+let deleteUrl         = '{ $this->deleteUrl }';
+let fontsUrl          = '{ $this->fontsUrl }';
+let uploadMaxFilesize = { $this->uploadMaxFilesize };
+let postMaxSize       = { $this->postMaxSize };
+let fonts             = [];
+
+function addFontsToSelect(fontSelect, data, font_id = 0) {
+	fontSelect.html('<option value="0">All Fonts</option>');
+	for (i in data) {
+		let font = data[i];
+		fontSelect.append('<option value="' + font.font_id + '">' + font.name + '</option>');
+	}
+	fontSelect.val(font_id);
+	//fontSelect.removeAttribute("disabled");
+	
+}
+/*
+document.querySelectorAll("body").on("change", "[data-v-countries]", function () {
+	let fontGroup = this.closest("tr");
+	let fontSelect = $("[data-v-font-font_id]", fontGroup);
+	let country_id = this.value;
+	let font_id = this.dataset.vFontId;
+	this.disabled = false;
+
+	if (fonts[country_id]) {
+		addFontsToSelect(fontSelect, fonts[country_id], font_id);
+		document.querySelectorAll("[data-v-font] [data-v-countries]:disabled:first").change();
+	} else {
+		$.get(fontsUrl + "&country_id=" + country_id).done(function( data ) {
+			fonts[country_id] = data;
+			addFontsToSelect(fontSelect, data, font_id);
+			document.querySelectorAll("[data-v-font] [data-v-countries]:disabled:first").change();
+		});
+	}
+	
+	this.dataset.vFontId = 0;
+});
+*/
+let id = document.querySelectorAll(".accordion-item[data-v-font]").length;//Math.floor(Math.random() * 10000);
+document.getElementById("add-font-group-btn").addEventListener("click", function () {
+	let template = document.getElementById("font-template").outerHTML;
+	template = template.replaceAll('font[0]', 'font[' + (++id) + ']')
+				.replace('class="d-none"', 'class="accordion-item" data-v-font')
+				.replace('id="font-template"', '')
+				.replaceAll('font-id-1',"font-" + id);
+
+	let newElement = generateElements(template)[0];
+	newElement.querySelectorAll("[disabled]").forEach((e) => e.disabled = false);
+	document.querySelector("[data-v-fonts]").appendChild(newElement);
+});
+
+//document.querySelectorAll("[data-v-font] [data-v-countries]:disabled:first").change();
+</script>
+
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+<script id="content-js" src="js/content.js"></script>
+
+@@include('../_includes/footer.html')
+

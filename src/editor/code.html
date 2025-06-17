@@ -40,7 +40,7 @@
 									-->
 								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 											aria-controls="filters" title="Delete selected"
-											class="btn btn-outline-secondary bg-body-tertiary text-danger">
+											class="btn btn-outline-secondary btn-sm bg-body-tertiary text-danger">
 										<i class="icon-trash-outline"></i> Delete selected
 									</button>
 								
@@ -50,13 +50,13 @@
 									<input type="search" id="media-search-input" placeholder="Find a file.." />
 								</div>
 								
-								<button class="btn btn-outline-secondary btn-icon me-5 float-end" 
+								<button class="btn btn-outline-secondary btn-sm btn-icon me-5 float-end" 
 								   data-bs-toggle="collapse" 
 								   data-bs-target=".upload-collapse" 
 								   aria-expanded="false" 
 								   >
-								   <i class="la la-image la-lg"></i>
-									Upload new file
+								   <i class="la la-upload la-lg"></i>
+									Upload file
 								</button>
 							</div>
 							
@@ -79,18 +79,25 @@
 							
 							<ul class="data" id="media-files"></ul>
 						
-							<div class="nothingfound">
-								<div class="nofiles"></div>
-								<span>No files here.</span>
+							<div class="nothingfound" style="display:none">
+								<div class="nofiles">
+									<i class="la la-folder-open"></i>
+								</div>
+								<div>No files here.</div>
+								<div class="mt-4">
+									<button class="btn btn-outline-secondary btn-sm btn-icon" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+									<i class="la la-upload la-lg"></i>
+									Upload file 
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
 
 	 
-				   <div class="gallery-footer">
+				   <div class="modal-footer justify-content-between">
 				   
 						<div class="align-left">
-			
 						</div>
 					  
 						<div class="align-right">
@@ -101,6 +108,7 @@
 	 
 			</div>
 		</div>
+		@@include('../_includes/main-footer.html')
 	</div>
 
 </div>

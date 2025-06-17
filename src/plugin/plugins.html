@@ -31,7 +31,7 @@
 				-->
 			   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 						aria-controls="filters" title="Delete selected"
-						class="btn btn-outline-secondary bg-body-tertiary text-danger">
+						class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
 					<i class="icon-trash-outline"></i> Delete selected
 				</button>
 			
@@ -54,29 +54,26 @@
 			</div>
 		</div>
 
-    <div>
-
-    <div>
-	<div id="main-content" class="plugins card-block" data-v-plugins>
+		<div id="main-content" class="plugins card-block" data-v-plugins>
 		<!--
 		<ul class="nav nav-pills pills-border small mx-2">
 		  <li class="nav-item">
-			<a class="nav-link active" href="#">All</a>
+			<a class="nav-link active" href="javascript:void(0);">All</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#">Development</a>
+			<a class="nav-link" href="javascript:void(0);">Development</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#">Payment</a>
+			<a class="nav-link" href="javascript:void(0);">Payment</a>
 		  </li>			  
 		  <li class="nav-item">
-			<a class="nav-link" href="#">Shipping</a>
+			<a class="nav-link" href="javascript:void(0);">Shipping</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#">Performance</a>
+			<a class="nav-link" href="javascript:void(0);">Performance</a>
 		  </li>  
 		  <li class="nav-item">
-			<a class="nav-link" href="#">Seo</a>
+			<a class="nav-link" href="javascript:void(0);">Seo</a>
 		  </li>
 		</ul>
 		-->
@@ -109,22 +106,22 @@
 
 				<ul class="nav nav-pills pills-border small mx-2 mb-3 float-start" data-v-plugin-categories>
 				  <li class="nav-item">
-					<a class="nav-link" href="#"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
+					<a class="nav-link" href="javascript:void(0);"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="#"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
+					<a data-v-category-link class="nav-link" href="javascript:void(0);"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"payment"}'>Payment</a>
+					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"payment"}'>Payment</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"shipping"}'>Shipping</a>
+					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"shipping"}'>Shipping</a>
 				  </li>			  
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"development"}'>Development</a>
+					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"development"}'>Development</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"seo"}'>Seo</a>
+					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"seo"}'>Seo</a>
 				  </li>  
 				</ul>
 				
@@ -152,10 +149,9 @@
 
 		</form>
 		</div>
-	</div>
 
+		@@include('../_includes/main-footer.html')
       </div>
-  </div>
 </div>
 
 @@include('../_includes/footer-scripts.html')

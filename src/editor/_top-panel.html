@@ -3,15 +3,15 @@
 
 	<div class="btn-group" role="group">
 	  <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
-		  <img src="../../js/vvvebjs/icons/file-manager-layout.svg" width="18" height="18">
+		  <img src="/js/vvvebjs/icons/file-manager-layout.svg" width="18" height="18">
 	  </button>
 
 	  <button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
-		  <img src="../../js/vvvebjs/icons/left-column-layout.svg" width="18" height="18">
+		  <img src="/js/vvvebjs/icons/left-column-layout.svg" width="18" height="18">
 	  </button>
 	  
 	  <button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
-		  <img src="../../js/vvvebjs/icons/right-column-layout.svg" width="18" height="18">
+		  <img src="/js/vvvebjs/icons/right-column-layout.svg" width="18" height="18">
 	  </button>
 
 	</div>
@@ -23,7 +23,7 @@
 			  <i class="la la-undo"></i>
 		  </button>
 
-		  <button class="btn btn-light"  title="Redo (Ctrl/Cmd + Shift + Z)" id="redo-btn" data-vvveb-action="redo" data-vvveb-shortcut="ctrl+shift+z">
+		  <button class="btn btn-light"  title="Redo (Ctrl/Cmd + Shift + Y)" id="redo-btn" data-vvveb-action="redo" data-vvveb-shortcut="ctrl+shift+z">
 			  <i class="la la-undo la-flip-horizontal"></i>
 		  </button>
 		</div>
@@ -42,7 +42,7 @@
 			  <i class="icon-expand-outline"></i>
 		  </button>
 
-		  <button class="btn btn-light active" title="Toggle navigator" id="toggle-tree-list" data-bs-toggle="button" data-vvveb-action="toggleTreeList" aria-pressed="true">
+		  <button class="btn btn-light active" title="Toggle navigator (Ctrl + Shift + L)" id="toggle-tree-list" data-bs-toggle="button" data-vvveb-action="toggleTreeList" aria-pressed="true">
 			  <i class="icon-layers-outline"></i>
 		  </button>
 
@@ -57,7 +57,7 @@
 		
 		<div class="me-2">
 
-			<a href="#" class="btn btn-light btn-preview-url" target="blank" title="View page"><i class="la la-external-link-alt fs-6"></i></a>
+			<a href="javascript:void(0);" class="btn btn-light btn-preview-url" target="_blank" title="View page"><i class="la la-external-link-alt fs-6"></i></a>
 
 			<div class="btn-group responsive-btns" role="group">
 			 
@@ -98,7 +98,7 @@
 							(2023-06-04 10:30:31)
 						</span>
 
-						<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+						<!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
 					</div>
 					<div>
 						<button class="btn btn-sm btn-outline-primary border-0" title="Load">
@@ -118,7 +118,7 @@
 							(2023-06-03 10:30:31)
 						</span>
 
-						<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+						<!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
 					</div>
 					<div>
 						<button class="btn btn-sm btn-outline-primary border-0" title="Load">
@@ -138,7 +138,7 @@
 							(2023-06-01 10:30:31)
 						</span>
 
-						<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+						<!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
 					</div>
 					<div>
 						<button class="btn btn-sm btn-outline-primary border-0" title="Load">
@@ -157,7 +157,7 @@
 		<div class="btn-group me-2" role="group">
 		  
 			<div class="btn-group" data-v-check-permission-save>
-				<button class="btn btn-primary btn-sm save-btn" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
+				<button class="btn btn-primary btn-sm save-btn" title="Save changes (Ctrl + S)" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
 					<span class="loading d-none">
 					<i class="la la-save"></i>
 					  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>

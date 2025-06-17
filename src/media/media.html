@@ -84,7 +84,7 @@
 							
 							<ul class="data" id="media-files"></ul>
 						
-							<div class="nothingfound">
+							<div class="nothingfound" style="display:none">
 								<div class="nofiles">
 									<i class="la la-folder-open"></i>
 								</div>
@@ -112,12 +112,16 @@
 	 
 			</div>
 		</div>
+
+		@@include('../_includes/main-footer.html')
 	</div>
+
+	<div id="editor-container" class="d-none" style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:1002"></div>				
 
 </div>
 
 
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="media-offcanvas" style="--bs-offcanvas-width: min(95vw, 90vw);">
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="media-offcanvas" style="--bs-offcanvas-width: min(95vw, 90vw);--bs-offcanvas-zindex:1001;">
 	<div class="offcanvas-header justify-content-between">
 		<div class="offcanvas-title">
 			<button type="button" class="btn btn-outline-secondary btn-sm" id="prev-media" style="--bs-btn-disabled-opacity:0.25">
@@ -130,6 +134,11 @@
 		</div>
 
 		<div>
+			<button type="button" class="btn btn-outline-secondary mx-2" aria-label="Close" id="edit-image-btn">
+				  <i class="icon-brush-outline"></i>
+				  <span>Edit image</span>
+			</button>		
+		
 			<button class="btn btn-primary btn-icon save-btn save-offcanvas" title="Save changes">
 				<span class="loading d-none">
 				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
@@ -152,15 +161,18 @@
 		<form id="media-content-form" method="post" class="h-100" data-v-media>
 		<div class="row h-100 g-0">
 			<div class="col-xl-9 col-lg-8 col-sm-6 d-flex justify-content-center">
-				<img src="../../media/placeholder.svg" class="img-fluid m-auto">
-				<video controls src="../../media/placeholder.svg" class="img-fluid m-auto">
+				<img src="/media/placeholder.svg" class="img-fluid m-auto" id="current-image">
+				<video controls src="/media/placeholder.svg" class="img-fluid m-auto"  id="current-video"></video>
+				
+				
+				
 			</div>
 
 			<div class="col-xl-3 col-lg-4 col-sm-6 border-start p-0">
 				<div class="mb-3 row p-4">
 						<label for="input-site-title" class="col-sm-4 col-form-label">File name</label>
 						<div class="col-sm-8">
-						  <input type="text" class="form-control" id="input-name" placeholder="Title" name="file" readonly>
+						  <input type="text" class="form-control bg-secondary-subtle" id="input-name" placeholder="Title" name="file" readonly>
 						</div>
 				 </div>		
 
@@ -178,7 +190,7 @@
 				   <div class="tab-content p-4" data-v-languages="content" style="clear:both">
 					<div class="tab-pane" id="language1" data-v-language data-v-language-id>
 
-						<input type="hidden" name="content[1][language_id]" data-v-language_id>
+						<input type="hidden" name="content[1][language_id]" data-v-media-content-language_id>
 						
 						<div class="mb-3 row">
 							<label for="input-site-title" class="col-sm-4 col-form-label">Name</label>
@@ -210,12 +222,12 @@
 		</div>
 		</form>
 
-		
-	
 	</div>
+
 </div>
 
-    
+
+
 <!-- save status toast -->
 <div class="toast-container" id="top-toast">
   <div class="toast align-items-center text-bg-primary border-0  position-fixed end-0 top-0 me-3 mt-3" role="alert" aria-live="assertive" aria-atomic="true">
@@ -230,13 +242,15 @@
 
 @@include('../_includes/footer-scripts.html')
 <script>
-let mediaPath    = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl    = '{ $this->uploadUrl }';
-let deleteUrl    = '{ $this->deleteUrl }';
-let renameUrl    = '{ $this->renameUrl }';
-let mediaUrl     = '{ $this->mediaUrl }';
-	
+let mediaPath         = '{ $this->mediaPath }';
+let mediaScanUrl      = '{ $this->scanUrl }';
+let uploadUrl         = '{ $this->uploadUrl }';
+let deleteUrl         = '{ $this->deleteUrl }';
+let renameUrl         = '{ $this->renameUrl }';
+let mediaUrl          = '{ $this->mediaUrl }';
+let uploadMaxFilesize = { $this->uploadMaxFilesize };
+let postMaxSize       = { $this->postMaxSize };
+
 
 document.addEventListener('click', function (e) {
 	let element = e.target.closest('input[type="checkbox"][name="file[]"]');
@@ -255,6 +269,15 @@ document.addEventListener('click', function (e) {
 <script id="openverse-js" src="libs/media/openverse.js"></script>
 -->
 <script id="media-js" src="libs/media/media.js"></script>
+<script id="media-js" src="libs/media/filerobot-image-editor.min.js"></script>
+<script id="media-js" src="libs/media/image-editor.js"></script>
+<style>
+.SfxPopper-Overlay {
+	pointer-events:none;
+}
+</style>
+
 <script src="libs/vvveb/index.js"></script>
+
 
 @@include('../_includes/footer.html')

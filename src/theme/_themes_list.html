@@ -21,9 +21,9 @@
 					<div class="buttons">
 						
 						
-						<!-- div href="#" class="btn-success btn-sm" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!-- div href="javascript:void(0);" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
 						<!--	
-						<a href="#" class="btn btn-outline-primary btn-sm btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
 							<span class="loading d-none">
 								<span class="progress-text">Downloading 10%</span>
@@ -38,12 +38,12 @@
 							
 						</a> -->
 
-						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active">
+						<a href="javascript:void(0);" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active">
 							<i class="icon-eye-outline"></i>
 							<span>Preview</span>
 						</a>
 						
-						<a href="#" class="btn btn-primary btn-sm"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-icon"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
 							<span class="loading d-none">
 								<span class="progress-text">Downloading 10%</span>
@@ -53,7 +53,7 @@
 							</span>
 
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Activate</span>
+								<i class="icon-checkmark-outline"></i> <span>Activate</span>
 							</span>
 							
 						</a>
@@ -65,9 +65,12 @@
 
 				  <div class="card-footer text-muted d-flex justify-content-between">
 						<div>
-						<a href="#" class="btn btn-outline-primary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url>
+							<i class="icon-color-wand-outline"></i>
+							<span>Edit theme</span>
+						</a>
 <!--
-						<a href="#" class="btn btn-outline-primary btn-sm" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
 							<span class="button-text">
 								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
 							</span>
@@ -76,18 +79,46 @@
 						</div>
 
 						<div>
-							<a href="#" class="btn btn-outline-secondary btn-sm" onclick="duplicateTheme(this)" data-v-theme-duplicate-url>
-								<i class="icon-copy"></i>
+							<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" onclick="duplicateTheme(this)" data-v-theme-duplicate-url>
+								<i class="icon-copy-outline"></i>
 								<span>Duplicate</span>
 							</a>
-							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url>
-								<i class="icon-code"></i>
+							<!--
+							<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url>
+								<i class="icon-code-outline"></i>
 								<span>Code</span>
 							</a>
-							<a href="#" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure?')" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url>
-								<i class="icon-close"></i>
-								<span>Delete</span>
-							</a>
+							-->
+							
+							<div class="btn-group dropdown-center dropdown" data-v-if-not="theme.active" >
+							  <button type="button" class="btn btn-outline-secondary btn-sm btn-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+								Options
+							  </button>
+							  <ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#" onclick="duplicateTheme(this)" data-v-theme-duplicate-url>
+									<i class="icon-copy-outline text-muted"></i>
+									<span>Duplicate</span>
+									</a>
+								</li>
+								<li><a class="dropdown-item" href="#" target="_blank"data-v-theme-code-url>
+									<i class="icon-code-outline text-muted"></i>
+									<span>Code</span>
+									</a>
+								</li>
+								<li><a class="dropdown-item" href="#" target="_blank" data-v-theme-fonts-url>
+									<i class="icon-language-outline text-muted"></i>
+									<span>Custom fonts</span>
+									</a>
+								</li>
+								<li><hr class="dropdown-divider"></li>
+								<li>
+									<a href="javascript:void(0);" class="dropdown-item text-danger btn-sm btn-icon" onclick="return confirm('Are you sure?')" target="_blank" data-v-theme-delete-url>
+									<i class="icon-close"></i>
+									<span>Delete</span>
+									</a>
+								</li>
+							  </ul>
+							</div>
 						</div>
 			
 				  </div>                
@@ -116,9 +147,9 @@
 					<div class="buttons">
 						
 						
-						<!-- div href="#" class="btn-success btn-sm" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!-- div href="javascript:void(0);" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
 						<!--	
-						<a href="#" class="btn btn-outline-primary btn-sm btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
 							<span class="loading d-none">
 								<span class="progress-text">Downloading 10%</span>
@@ -133,12 +164,12 @@
 							
 						</a> -->
 
-						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active">
+						<a href="javascript:void(0);" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active">
 							<i class="icon-eye-outline"></i>
 							<span>Preview</span>
 						</a>
 						
-						<a href="#" class="btn btn-primary btn-sm"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-icon"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
 							<span class="loading d-none">
 								<span class="progress-text">Downloading 10%</span>
@@ -160,9 +191,9 @@
 
 				  <div class="card-footer text-muted d-flex justify-content-between">
 						<div>
-						<a href="#" class="btn btn-outline-primary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
 <!--
-						<a href="#" class="btn btn-outline-primary btn-sm" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
 							<span class="button-text">
 								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
 							</span>
@@ -171,8 +202,8 @@
 						</div>
 
 						<div>
-							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
-							<a href="#" class="btn btn-outline-danger btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
+							<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
+							<a href="javascript:void(0);" class="btn btn-outline-danger btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
 						</div>
 			
 				  </div>                
@@ -201,9 +232,9 @@
 					<div class="buttons">
 						
 						
-						<!-- div href="#" class="btn-success btn-sm" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!-- div href="javascript:void(0);" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
 						<!--	
-						<a href="#" class="btn btn-outline-primary btn-sm btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
 							<span class="loading d-none">
 								<span class="progress-text">Downloading 10%</span>
@@ -218,12 +249,12 @@
 							
 						</a> -->
 
-						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active">
+						<a href="javascript:void(0);" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active">
 							<i class="icon-eye-outline"></i>
 							<span>Preview</span>
 						</a>
 						
-						<a href="#" class="btn btn-primary btn-sm"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
+						<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-icon"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
 							<span class="loading d-none">
 								<span class="progress-text">Downloading 10%</span>
@@ -245,9 +276,9 @@
 
 				  <div class="card-footer text-muted d-flex justify-content-between">
 						<div>
-						<a href="#" class="btn btn-outline-primary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url><span>Edit theme</span></a>
 <!--
-						<a href="#" class="btn btn-outline-primary btn-sm" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
+						<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-icon" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
 							<span class="button-text">
 								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
 							</span>
@@ -256,8 +287,8 @@
 						</div>
 
 						<div>
-							<a href="#" class="btn btn-outline-secondary btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
-							<a href="#" class="btn btn-outline-danger btn-sm" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
+							<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url><span>Code</span></a>
+							<a href="javascript:void(0);" class="btn btn-outline-danger btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-delete-url><span>Delete</span></a>
 						</div>
 			
 				  </div>                

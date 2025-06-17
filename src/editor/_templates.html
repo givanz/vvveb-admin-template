@@ -50,7 +50,7 @@
 		{% for ( var i = 0; i < options.length; i++ ) { %}
 
 		<input name="{%=key%}" class="btn-check" type="radio" value="{%=options[i].value%}" id="{%=namespace%}{%=key%}{%=i%}" {%if (options[i].checked) { %}checked="{%=options[i].checked%}"{% } %} autocomplete="off">
-		<label class="btn btn-outline-primary {%if (options[i].extraclass) { %}{%=options[i].extraclass%}{% } %}" for="{%=namespace%}{%=key%}{%=i%}" title="{%=options[i].title%}">
+		<label class="btn btn-outline-secondary {%if (options[i].extraclass) { %}{%=options[i].extraclass%}{% } %}" for="{%=namespace%}{%=key%}{%=i%}" title="{%=options[i].title%}">
 		  {%if (options[i].icon) { %}<i class="{%=options[i].icon%}"></i>{% } %}
 		  {%=options[i].text%}
 		</label>
@@ -69,8 +69,8 @@
 		type="checkbox" 
 		name="{%=key%}" 
 		value="{%=on%}" 
-		{%if (off) { %} data-value-off="{%=off%}" {% } %}
-		{%if (on) { %} data-value-on="{%=on%}" {% } %} 
+		{%if (off !== null) { %} data-value-off="{%=off%}" {% } %}
+		{%if (on !== null) { %} data-value-on="{%=on%}" {% } %} 
 		class="form-check-input" type="checkbox" role="switch"
 		id="{%=key%}">
         <label class="form-check-label"for="{%=key%}">
@@ -217,7 +217,7 @@
 
 <script id="vvveb-input-listinput" type="text/html">
 
-	<div class="sections-container">
+	<div class="sections-container p-0">
 
 		{% for ( var i = 0; i < options.length; i++ ) { %}
 		<div class="section-item" draggable="true">
@@ -413,7 +413,7 @@
 	<div>
 		<img id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225">
 		<input name="{%=key%}" type="text" class="form-control mt-1" id="input-{%=key%}"/>
-		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2 px-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg me-1"></i><span>Set image</span></button>
+		<button name="button" class="btn btn-secondary btn-sm btn-icon mt-2 w-100" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg me-1"></i><span>Set image</span></button>
 	</div>
 	
 </script>
@@ -423,13 +423,13 @@
 	<div>
 		<video id="thumb-v{%=key%}" class="img-thumbnail p-0" data-target-input="#input-v{%=key%}" data-target-thumb="#thumb-v{%=key%}" style="cursor:pointer" src="" width="225" height="225" playsinline loop muted controls></video>
 		<input name="v{%=key%}" type="text" class="form-control mt-1" id="input-v{%=key%}"/>
-		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#vinput-v{%=key%}" data-target-thumb="#thumb-v{%=key%}"><i class="la la-video la-lg"></i><span>Set video</span></button>
+		<button name="button" class="btn btn-secondary btn-sm btn-icon mt-2 w-100" data-target-input="#vinput-v{%=key%}" data-target-thumb="#thumb-v{%=key%}"><i class="la la-video la-lg"></i><span>Set video</span></button>
 	</div>
 	
 </script>
 
-<script id="vvveb-input-colorinput" type="text/html">
-	
+<script id="vvveb-input-colorinput-native" type="text/html">
+
 	<div>
 		<input name="{%=key%}" {%  if (typeof palette !== 'undefined') { %} list="{%=key%}-color-palette" {% } %} type="color" {% if (typeof value !== 'undefined' && value != false) { %} value="{%=value%}" {% } %}  pattern="#[a-f0-9]{6}" class="form-control form-control-color" placeholder="#000000"/>
 		{%  if (typeof palette !== 'undefined') { %}
@@ -438,6 +438,15 @@
 				<option>{%=palette[color]%}</option>
 			{% } %}		
 		{% } %}
+	</div>
+	
+</script>
+
+<script id="vvveb-input-colorinput" type="text/html">
+
+	<div class="clr-field" style="{% if (typeof value !== 'undefined' && value != false) { %}color: {%=value%}" {% } %}">
+		<button type="button" aria-labelledby="clr-open-label"></button>
+		<input name="{%=key%}" type="text" {% if (typeof value !== 'undefined' && value != false) { %} value="{%=value%}" {% } %} class="coloris form-control"/>		
 	</div>
 	
 </script>
@@ -467,7 +476,7 @@
 
 <script id="vvveb-input-button" type="text/html">
 	<div>
-		<button class="btn btn-sm btn-primary">
+		<button class="btn btn-sm {% if (typeof className !== 'undefined') { %} {%=className%} {% } else { %}btn-outline-primary{% } %}">
 			<i class="la  {% if (typeof icon !== 'undefined') { %} {%=icon%} {% } else { %} la-plus {% } %} la-lg"></i> {%=text%}
 		</button>
 	</div>		
@@ -512,11 +521,12 @@
 	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %} {%if (typeof product_id !== 'undefined') { %}data-product_id="{%=product_id%}"{% } %}>
 		<label for="{%=name%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
 			<span>{%=title%}</span>
+			<!-- <span class="text-muted small">{%=url%}</span> -->
 			<div class="file-actions">
-				<button href="#" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
+				<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
 				<a href="{%=url%}" target="_blank" class="view btn btn-outline-primary" title="View page"><i class="la la la-external-link-alt"></i></a>
-				<button href="#" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
-				<button href="#" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
+				<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
+				<button href="javascript:void(0);" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
 			</div>
 		</label> <input type="checkbox" id="{%=name%}" />
 		<!-- <ol></ol> -->
@@ -530,10 +540,22 @@
 </script>
 
 <script id="vvveb-breadcrumb-navigaton-item" type="text/html">
-	<li class="breadcrumb-item"><a href="#" {% if (typeof className !== 'undefined') { %}class="{%=className%}"{% } %}>{%=name%}</a></li>
+	<li class="breadcrumb-item"><a href="javascript:void(0);" {% if (typeof className !== 'undefined') { %}class="{%=className%}"{% } %}>{%=name%}</a></li>
 </script>
 
 <script id="vvveb-input-sectioninput" type="text/html">
+	<div>
+		{% var namespace = '-' + Math.floor(Math.random() * 1000); %}
+		<label class="header" data-header="{%=key%}" for="header_{%=key%}{%=namespace%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}>
+			<span>{%=header%}</span> 
+			<div class="header-arrow"></div>
+		</label> 
+		<input class="header_check" type="checkbox" {% if (typeof expanded !== 'undefined' && expanded == false) { %} {% } else { %}checked="true"{% } %} id="header_{%=key%}{%=namespace%}"> 
+		<div class="section row" data-section="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}></div>		
+	</div>
+</script>
+
+<script id="vvveb-input-popoverinput" type="text/html">
 	<div>
 		{% var namespace = '-' + Math.floor(Math.random() * 1000); %}
 		<label class="header" data-header="{%=key%}" for="header_{%=key%}{%=namespace%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}>
@@ -550,7 +572,10 @@
 
 	<div class="mb-3 {% if (typeof col !== 'undefined' && col != false) { %} col-sm-{%=col%} {% } else { %}row{% } %} {% if (typeof inline !== 'undefined' && inline == true) { %}inline{% } %} " data-key="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}>
 		
-		{% if (typeof name !== 'undefined' && name != false) { %}<label class="{% if (typeof inline === 'undefined' ) { %}col-sm-4{% } %} form-label" for="input-model">{%=name%}</label>{% } %}
+		{% if (typeof name !== 'undefined' && name != false) { %}<label class="{% if (typeof inline === 'undefined' ) { %}col-sm-4{% } %} form-label" for="input-model">
+			<span>{%=name%}</span>
+			<button class="btn-close ms-1" title="Clear"></button>
+		</label>{% } %}
 		
 		<div class="{% if (typeof inline === 'undefined') { %}col-sm-{% if (typeof name !== 'undefined' && name != false) { %}8{% } else { %}12{% } } %} input"></div>
 		
@@ -572,7 +597,7 @@
 <script id="vvveb-input-tagsinput" type="text/html">
 	
 	<div>
-		<div class="form-control tags-input" style="height:auto;">
+		<div class="form-control tags-input p-0" style="height:auto;">
 				
 
 				<input name="{%=key%}" type="text" class="form-control" style="border:none;min-width:60px;"/>
@@ -687,7 +712,7 @@
 				{%=date%}
 			</span>
 
-			<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
+			<!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
 		</span>
 		<span>
 			<a class="btn btn-sm btn-outline-primary border-0 btn-revision-preview" data-date="{%=date%}" href="{%=url%}" target="_blank" title="Preview">

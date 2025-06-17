@@ -89,8 +89,9 @@ function displayToast(bg, title, message, id = "top-toast") {
 	header.classList.remove(["bg-danger", "bg-success"])
 	header.classList.add(bg);
 	header.querySelector("strong").innerHTML = title;
-	document.querySelector("#" + id + " .toast").classList.add("show");
-	delay(() => document.querySelector("#" + id + " .toast").classList.remove("show"), 5000);
+	let toast = document.querySelector("#" + id + " .toast").cloneNode();
+	toast.classList.add("show");
+	delay(() => toast.remove(), 5000);
 }	
 		
 //ajax url
@@ -109,7 +110,7 @@ function loadAjax(url, selector, callback = null, params = {}, method = "get") {
 			let response = new DOMParser().parseFromString(data, "text/html");
 
 			if (Array.isArray (selector) ) {
-				for (k in selector) {
+				for (const k in selector) {
 					let elementSelector = selector[k];
 					let currentElement = document.querySelector(elementSelector);
 					let newElement = response.querySelector(elementSelector);

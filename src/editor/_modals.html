@@ -1,25 +1,3 @@
-<div id="tree-list">
-	<div class="header">
-		<div>Navigator</div>
-			<button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
-				<i class="icon-close"></i>
-			</button>
-		</div>
-	<div class="tree">
-		<ol>
-			<!--
-			<li data-component="Products" class="file">							
-				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
-				<input type="checkbox" id="idNaN">
-			</li>
-			<li data-component="Posts" class="file">							
-				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
-				<input type="checkbox" id="idNaN">
-			</li>
-			-->
-		</ol>
-	</div>
-</div>
 
 <!-- code editor modal -->
 <div class="modal modal-full fade" id="codeEditorModal" tabindex="-1" aria-labelledby="codeEditorModal" role="dialog" aria-hidden="true">
@@ -155,10 +133,13 @@
 		
     <div class="modal-content">
       <div class="modal-header bg-primary bg-opacity-10 py-2">
-        <span class="modal-title text-secondary fw-normal"><i class="la la-lg la-file"></i> <span>New</span></span>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="modal-title text-secondary small"><i class="la la-lg la-file"></i> <span>New page</span></span>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> -->
           <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
-        </button>
+        <!-- </button> -->
+		<div id="close-section-btn" class="btn btn-outline-secondary border-0 p-1 py-0 ms-auto" data-bs-dismiss="modal">
+		  <i class="la la-times"></i>
+		</div>
       </div>
 
       <div class="modal-body text">
@@ -194,7 +175,7 @@
 					<div class="col-sm-9 input">
 						<div>   
 							<input name="name" type="text" class="form-control" placeholder="Name" required>  
-							<a href="#" class="float-end p-2" onclick="document.querySelectorAll('[data-key=content]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none');return false;"><span>More</span> +</a>
+							<a href="javascript:void(0);" class="mt-2 btn btn-sm btn-outline-secondary btn-icon px-4 text-float-end" onclick="document.querySelectorAll('[data-key=content]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none');return false;"><span>More</span> <i class="la la-angle-down"></i></a>
 						</div>
 					</div>     
 				</div>		
@@ -204,8 +185,26 @@
 					<div class="mb-3 row">     
 						 <label class="col-sm-3 col-form-label">Content</label>      
 						<div class="col-sm-9 input">
-							<div>   
-								<textarea name="content" class="form-control" placeholder="Lorem ipsum" rows="5">Lorem ipsum</textarea>  
+							<div class="row g-2">   
+								<div class="col-8">   
+									<textarea name="content" class="form-control" placeholder="Lorem ipsum" rows="10">Lorem ipsum</textarea> 
+								</div>
+								<div class="col-4">
+									<input type="hidden" data-v-image name="image" id="featured-image-input" value="">
+									
+									<img data-v-image src="img/placeholder.svg" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="img-thumbnail bg-body-tertiary p-0">
+									
+									
+									<div class="btn-group w-100 mt-2">
+										<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single">
+										  <i class="la la-image la-lg"></i>
+										  <span>Set image</span>
+										</button>
+										<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
+										  <i class="la la-times"></i>
+										</button>
+									  </div>
+								</div>
 							</div>
 							<div class="form-check mt-2">
 							  <input class="form-check-input" type="checkbox" name="add-menu" id="add-menu" value="true" onchange="document.querySelectorAll('[data-key=menu]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none')">
@@ -224,6 +223,42 @@
 								</select> 
 							</div>     
 					</div>
+					
+					<div class="mb-3 row" data-key="template">      
+						<label class="col-sm-3 col-form-label">
+							Start template 
+							<abbr title="The contents of this template will be used as a start for the new template">
+								<i class="la la-lg la-question-circle text-primary"></i>
+							</abbr>
+							
+						</label>     
+						<div class="col-sm-9 input">
+							<select class="form-select" name="startTemplateUrl" data-v-theme-templates>
+								<option value="new-page-blank-template.html" data-v-option>Blank Template</option>        
+								<option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>       
+								<option value="demo/album/index.html" data-v-option>Album</option>       
+							</select> 
+							
+							<div class="d-flex mt-3">
+								<div class="form-check">
+									<input id="template-type-global-radio" class="form-check-input" name="template-type" type="radio" value="global" checked="">
+									<label class="form-check-label" for="template-type-global-radio">
+									  <strong class="mb-0 fw-medium">Use global template</strong>
+									  <p class="text-muted">Shared with other pages using this template</p>
+									</label>
+								  </div> 
+
+
+								<div class="form-check">
+									<input id="template-type-new-radio" class="form-check-input" name="template-type" type="radio" value="new">
+									<label class="form-check-label d-block" for="template-type-new-radio">
+									  <strong class="mb-0 fw-medium">Save as new template</strong>
+									  <p class="text-muted">Unique template to this page</p>
+									</label>
+								  </div>
+							</div>
+						</div>     
+					</div>					
 				</div>
 				
 			</div>
@@ -231,7 +266,7 @@
 			<div class="template" style="display:none">     
 				<div class="mb-3 row" data-key="template">      
 					<label class="col-sm-3 col-form-label">
-						Template 
+						Start template 
 						<abbr title="The contents of this template will be used as a start for the new template">
 							<i class="la la-lg la-question-circle text-primary"></i>
 						</abbr>

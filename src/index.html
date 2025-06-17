@@ -31,12 +31,16 @@ let chartjs = {};
 										<i class="la la-times"></i>
 									</span>
                                 </button>
-                                <h5 class="card-title">Orders</h5>
-
-								<i class="la la-shopping-cart icon bg-orange text-white d-inline-block "></i>
-								<h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
-
-                                <div class="card-text float-end">
+								
+								<div class="flex-grow-1"></div>
+								<div class="icons">
+									<i class="la la-shopping-cart icon bg-success bg-opacity-25 d-inline-block "></i>
+									<h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
+									<h5 class="card-title">Orders</h5>
+								</div>
+								
+								<div class="flex-grow-1"></div>
+                                <div class="card-text">
 									<ul class="list-unstyled">
 										<li data-v-orders>
 											<a href="" class="text-body"><strong data-v-notification-orders-processing-count>0</strong> <span data-v-orders-name>Processing</span></a>
@@ -65,12 +69,15 @@ let chartjs = {};
                                     <span aria-hidden="true"><i class="la la-times"></i></span>
                                 </button>
 
-                                <h5 class="card-title">Users</h5>
+								<div class="flex-grow-1"></div>
+								<div class="icons">
+									<i class="la la-user icon bg-purple bg-opacity-25 d-inline-block"></i>
+									<h3 class="number d-inline-block" data-v-notification-users-month-count>37</h3>
+									<h5 class="card-title">Users</h5>
+								</div>
 
-                                <i class="la la-user icon bg-purple text-white d-inline-block"></i>
-                                <h3 class="number d-inline-block" data-v-notification-users-new-count>37</h3>
-
-								<div class="card-text float-end">
+								<div class="flex-grow-1"></div>
+								<div class="card-text">
 									<ul class="list-unstyled">
 										<li>
 											<a href="" class="text-body"><strong data-v-notification-users-month-count>0</strong> this month</a>
@@ -97,12 +104,15 @@ let chartjs = {};
                                     <span aria-hidden="true"><i class="la la-times"></i></span>
                                 </button>
                                 
-                                <h5 class="card-title">Comments</h5>
+								<div class="flex-grow-1"></div>
+								<div class="icons">
+									<i class="la la-comments icon bg-primary bg-opacity-25 d-inline-block"></i>
+									<h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
+									<h5 class="card-title">Comments</h5>
+								</div>
 
-                                <i class="la la-comments icon bg-success text-white d-inline-block"></i>
-                                <h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
-
-								<div class="card-text float-end">
+								<div class="flex-grow-1"></div>
+								<div class="card-text">
 									<ul class="list-unstyled">
 										<li>
 											<a href="{$this.adminPath}index.php?module=content/comments&status=0&type=post" class="text-body"><strong data-v-notification-comments-pending-count>0</strong> pending</a>
@@ -132,12 +142,15 @@ let chartjs = {};
                                     <span aria-hidden="true"><i class="la la-times"></i></span>
                                 </button>
                                 
-                                <h5 class="card-title">Reviews</h5>
+								<div class="flex-grow-1"></div>
+								<div class="icons">
+									<i class="la la-sms icon bg-orange bg-opacity-25 d-inline-block"></i>
+									<h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
+									<h5 class="card-title">Reviews</h5>
+								</div>
 
-                                <i class="la la-sms icon bg-warning text-white d-inline-block"></i>
-                                <h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
-
-								<div class="card-text float-end">
+								<div class="flex-grow-1"></div>
+								<div class="card-text">
 									<ul class="list-unstyled">
 										<li>
 											<a href="{$this.adminPath}index.php?module=product/product-reviews&status=0" class="text-body"><strong data-v-notification-reviews-pending-count>0</strong> pending</a>
@@ -161,17 +174,62 @@ let chartjs = {};
                      
                     <div class="grid-stack-item-content">
                         <div class="card">
-                            <div class="card-header">
-                                Sales
-
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
-                                </button>
+                            <div class="card-header d-flex justify-content-between align-items-center py-1">
+                                <div>Sales</div>
+								
+								<div class="d-flex me-3">
+									
+									<div class="dropdown me-2" id="stats-filters">
+									  <button class="btn btn-outline-secondary btn-icon btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										<i class="icon-filter-outline">
+									  </button>
+									  <ul class="dropdown-menu">
+										<li class="dropdown-item">
+											<label class="form-check">
+											  <input type="checkbox" class="form-check-input" value="1" name="sales" checked>
+											  <span class="form-check-label">Sales</span>
+											</label>
+										</li>
+										<li class="dropdown-item">
+											<label class="form-check">
+											  <input type="checkbox" class="form-check-input" value="1" name="users" checked>
+											  <span class="form-check-label">Users</span>
+											</label>
+										</li>
+										<!--
+										<li class="dropdown-item">
+											<label class="form-check">
+											  <input type="checkbox" class="form-check-input" value="1" name="comments">
+											  <span class="form-check-label">Comments</span>
+											</label>
+										</li>
+										<li class="dropdown-item">
+											<label class="form-check">
+											  <input type="checkbox" class="form-check-input" value="1" name="reviews">
+											  <span class="form-check-label">Reviews</span>
+											</label>
+										</li>
+										-->
+									  </ul>
+									</div>
+								
+									<div class="input-group input-group-sm">
+									  <input name="stats-date-range" id="stats-date-range" value="" type="text" class="form-control daterange border-end-0 form-control-sm text-end" autocomplete="off" size="16"  data-v-post-updated_at>
+									  <div class="input-group-text bg-body" onclick="updated_at.focus()"><i class="icon-calendar-outline"></i></div>
+									</div>
+									
+									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true"><i class="la la-times"></i></span>
+									</button>
+								</div>
 
                             </div>
                             
                             
                             <div class="card-body">
+
+
+           
 
                                 <div class="chartjs" data-chartjs="orders_users" style="height:100%">
                                     <canvas></canvas>
@@ -345,8 +403,8 @@ let chartjs = {};
                                         <td class="text-center" width="70">
 											
 											
-											<a href="#"
-											   class="btn btn-primary btn-sm"
+											<a href="javascript:void(0);"
+											   class="btn btn-icon btn-outline-primary btn-sm"
                                                
                                                data-v-order-url>
 													<i class="la la-hand-pointer"></i>
@@ -361,7 +419,7 @@ let chartjs = {};
                                         <td>31/05/2018</td>
                                         <td class="text-center">$1,005.00</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm" >
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" >
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -373,7 +431,7 @@ let chartjs = {};
                                         <td>31/05/2018</td>
                                         <td class="text-center">$1,005.00</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm">
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -392,7 +450,6 @@ let chartjs = {};
                         </div>
                     </div>
                 </div>
-
       
                 <div class="grid-stack-item stack-new-users"
                      gs-w="3" gs-h="4" 
@@ -422,7 +479,7 @@ let chartjs = {};
                                         <td><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
                                         <td width="150" data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center" width="70">
-											<a href="#" class="btn btn-primary btn-sm"  data-v-user-url>
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm"  data-v-user-url>
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -431,7 +488,7 @@ let chartjs = {};
                                         <td width="100"><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
                                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm" >
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" >
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -440,7 +497,7 @@ let chartjs = {};
                                         <td width="100"><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
                                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm" >
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" >
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -449,7 +506,7 @@ let chartjs = {};
                                         <td width="100"><span data-v-user-first_name>John</span> <span data-v-user-last_name>Doe</span></td>
                                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm"  data-v-comment-url>
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm"  data-v-comment-url>
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -503,7 +560,7 @@ let chartjs = {};
                                         <td class="text-center" width="70">
 											
 											
-											<a href="#" class="btn btn-primary btn-sm" data-v-product-url>
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" data-v-product-url>
 													<i class="la la-hand-pointer"></i>
 											</a>
                                                 
@@ -557,7 +614,7 @@ let chartjs = {};
                                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm"  data-v-comment-url>
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm"  data-v-comment-url>
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -567,7 +624,7 @@ let chartjs = {};
                                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm" >
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" >
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -577,7 +634,7 @@ let chartjs = {};
                                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm" >
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" >
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -587,7 +644,7 @@ let chartjs = {};
                                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
-											<a href="#" class="btn btn-primary btn-sm" >
+											<a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" >
 												<i class="la la-hand-pointer"></i>
 											</a>
 										</td>
@@ -669,12 +726,11 @@ let chartjs = {};
                         </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
+			</div>
         </div>
-    </div>
-</div>
+		
+		@@include('./_includes/main-footer.html')		
+	</div>
 </div>
 
 
@@ -723,11 +779,77 @@ let options = {
 };
 
 let grid = GridStack.init(options);
+let chartJsInstances = {};
 
 document.querySelectorAll(".chartjs").forEach(el => {
 	ctx = el.querySelector("canvas").getContext("2d");
-	el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
+	chartJsInstances[el.dataset.chartjs] = el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
 });
+
+let statsDateRange = document.getElementById('stats-date-range');
+let statsFilters   = document.getElementById('stats-filters');
+
+function updateStats() {
+	let stats = {};
+	document.querySelectorAll("[data-v-component-stats] input[type=checkbox]").forEach(function (e) {stats[e.name] = (e.type == "checkbox") ? e.checked : e.value });
+	if (statsDateRange.value) {
+		let dateRange = statsDateRange.value.split(' - ');
+		stats['start_date'] = dateRange[0];
+		stats['end_date'] = dateRange[1];
+	}
+	
+	const params = new URLSearchParams(stats);
+	fetch(`{$this.adminPath}?action=stats&${params}`)
+	  .then((response) => response.json())
+	  .then((data) => {
+
+		chartjs['orders_users'] = {
+			labels: data.labels,//labels: ["2022-05-01", "2022-05-02", "2022-05-03", "2022-05-04", "2022-05-05", "2022-05-06"],
+			datasets: []
+		};
+		
+		if (data.orders) {
+			chartjs['orders_users'].datasets.push({
+					label: 'Orders',
+					//data: [12, 19, 3, 5, 2, 3],
+					data: data.orders,
+					fill: true,
+					borderColor: 'rgba(255, 99, 132, 0.5)',
+					backgroundColor: 'rgba(255, 99, 132, 0.2)',
+				}
+			);
+		}	
+		
+		if (data.users) {
+			chartjs['orders_users'].datasets.push({
+					label: 'Users',
+					fill: true,
+					//data: [3, 15, 7, 4, 19, 12],
+					data: data.users,
+					borderColor: 'rgba(54, 162, 235, 0.5)',
+					backgroundColor: 'rgba(54, 162, 235, 0.2)',
+				}
+			);
+		}
+
+
+		chartJsInstances['orders_users'].data.labels   = chartjs['orders_users'].labels;
+		chartJsInstances['orders_users'].data.datasets = chartjs['orders_users'].datasets;
+		chartJsInstances['orders_users'].update();
+	  })
+	  .catch(console.error);	
+}
+
+statsFilters.addEventListener("change", updateStats);
+statsDateRange.addEventListener("change", updateStats);
 </script>
+
+<!-- date time picker -->
+<script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
+<script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
+<link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+<script id="functions-js" src="/js/admin/functions.js"></script>
+
 
 @@include('./_includes/footer.html')

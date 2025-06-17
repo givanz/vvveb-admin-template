@@ -55,7 +55,7 @@
 		  <form class="p-4" method="post">
 			<input type="hidden" name="action" id="action" value="saveLog">
 			<input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>   
-		  
+			<input type="hidden" name="customer_order_id" id="customer_order_id" value="" data-v-if="this.order.customer_order_id" data-v-order-customer_order_id>   
 		  
 			<div class="mb-3 row">
 			  <label class="col-sm-2 col-form-label" for="input-order-status">Order Status</label>
@@ -95,7 +95,7 @@
 			  <label class="col-form-label mx-2" for="input-notify">Send user notification</label>
 			  <div class="">
 				<div class="form-check">
-				  <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify">
+				  <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify" checked>
 				</div>
 			  </div>			  
 			  <label class="col-form-label mx-2" for="input-notify-note">Include note in notification, public note</label>

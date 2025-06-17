@@ -4,7 +4,7 @@
 
 <div id="container">
        
-       @@include('../_includes/sidebar.html')
+    @@include('../_includes/sidebar.html')
         
 
     <div class="main">
@@ -235,9 +235,10 @@
 						  </div>
 						  
 						  
-						</div>
+					</div>
 			
 			  </div>
+			  
 			  <div class="tab-pane" id="plugins" role="tabpanel" aria-labelledby="plugins-tab" data-v-plugins>
 				@@include('../plugin/_plugins_list.html', {"actions":false, "thumbs":false})
 			  </div>
@@ -271,10 +272,11 @@
 				</div>
 				
 	 
-			</div>
 		</div>
-	</div>
 	</form>	
+
+	@@include('../_includes/main-footer.html')
+	</div>
 </div>
     
 

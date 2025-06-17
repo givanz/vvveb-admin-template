@@ -196,7 +196,7 @@
 						-->
 						   <button type="submit" name="action" value="delete" aria-expanded="false" data-v-check-permission-delete
 								title="Delete selected"
-								class="btn btn-outline-secondary bg-body-tertiary text-danger">
+								class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
 								<i class="icon-trash-outline"></i> Delete selected
 						</button>
 					</div>
@@ -243,7 +243,7 @@
                                     </label>
                                 </td>
 								<td class="img" style="width:200px;text-align:center;">
-									<a href="#" data-v-product-url>
+									<a href="javascript:void(0);" data-v-product-url>
 										<figure  data-v-if="product.image">
 											<img class="rounded" src=""  data-v-product-image>
 										</figure>
@@ -251,7 +251,7 @@
                                 </td>
                                
                                 <td class="product" >
-                                    <a href="#" data-v-product-url>
+                                    <a href="javascript:void(0);" data-v-product-url>
                                        <span data-v-product-name>Product name</span>
                                     </a>
 
@@ -299,9 +299,9 @@
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
 										<ul class="dropdown-menu">
-										  <li><a class="dropdown-item" href="#" data-v-product-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
-										  <li><a class="dropdown-item" href="#" data-v-product-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
-										  <li><a class="dropdown-item" href="#" data-v-product-duplicate-url target="_blank"><i class="icon-copy-outline text-secondary"></i> <span>Duplicate</span></a></li>
+										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-product-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
+										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-product-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
+										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-product-duplicate-url target="_blank"><i class="icon-copy-outline text-secondary"></i> <span>Duplicate</span></a></li>
 										  <li><hr class="dropdown-divider"></li>
 										  <li data-v-check-permission-delete><a class="dropdown-item text-danger" data-v-product-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
 										</ul>
@@ -337,8 +337,9 @@
 						</div>
                     </form>
                 </div>
-            </div>
-        </div>
+		</div>
+
+	@@include('../_includes/main-footer.html')
     </div>
 </div>
 

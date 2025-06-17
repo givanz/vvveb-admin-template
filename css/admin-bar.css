@@ -8453,6 +8453,9 @@ i[class^='icon-'] {
   position: static;
   width: auto; }
 
+#page-loading-status {
+  z-index: 10001 !important; }
+
 #vvveb-admin {
   background: rgba(var(--bs-body-bg-rgb, 255, 255, 255), 0.9);
   color: var(--bs-body-color, #000);

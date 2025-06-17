@@ -32,9 +32,6 @@
 			</div>
 		</div>
 
-    <div>								
-                                
-                                      
                                 
         <div class="themes" id="main-content" >
 
@@ -59,18 +56,19 @@
 		                </div>
 										
 					</form>
-					</div>
-				</div>
-			</div>
 		</div>
+
+		@@include('../_includes/main-footer.html')                                
+                                      
+	</div>
+</div>
 
 		<div class="modal fade modal-full show" id="importModal" tabindex="-1" role="dialog" aria-labelledby="mediaModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-lg  modal-dialog-centered modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
-				<h6 class="modal-title" id="MediaModalLabel">Install resources</h6>
+				<span class="modal-title" id="MediaModalLabel">Install resources</span>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
 				</button>
 			  </div>
 			  <div class="modal-body" data-v-import>
@@ -84,7 +82,131 @@
 					data-v-vvveb-action="themes.import" 
 					data-v-vvveb-on="submit">
 				<div id="import-options">	
-				<h6>Import Demo Content</h6>
+				
+				<div class="accordion" id="accordionExport" data-v-namespaces="" style="max-height:500px;overflow-x:auto;">
+
+                <div class="accordion-item" data-v-namespace="">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseOne">
+                      <input class="form-check-input me-2" type="checkbox" value="" checked="">
+
+                      <div class="w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#namespace-0" aria-expanded="false">
+                        <span data-v-namespace-name="">Admin</span>
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="namespace-0" class="accordion-collapse collapse" data-bs-parent="#accordionExport" style="">
+                    <div class="accordion-body">
+
+
+                      <ul class="list-unstyled" data-v-subspaces="">
+                        <li class="p-2" data-v-subspace="">
+                          <span class="d-inline">
+                            <input class="form-check-input me-2" type="checkbox" value="admin" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+                            <span data-v-subspace-name="">Admin</span>
+                          </span>
+                        </li><li class="p-2" data-v-subspace="">
+                          <span class="d-inline">
+                            <input class="form-check-input me-2" type="checkbox" value="admin_password_resets" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+                            <span data-v-subspace-name="">Password resets</span>
+                          </span>
+                        </li>                        
+                        
+                        
+                        
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+				<div class="accordion-item" data-v-namespace="">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseOne">
+                      <input class="form-check-input me-2" type="checkbox" value="" checked="">
+
+                      <div class="w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#namespace-1" aria-expanded="false">
+                        <span data-v-namespace-name="">Attribute</span>
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="namespace-1" class="accordion-collapse collapse" data-bs-parent="#accordionExport">
+                    <div class="accordion-body">
+
+
+                      <ul class="list-unstyled" data-v-subspaces="">
+                        <li class="p-2" data-v-subspace="">
+                          <span class="d-inline">
+                            <input class="form-check-input me-2" type="checkbox" value="attribute" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+                            <span data-v-subspace-name="">Attribute</span>
+                          </span>
+                        </li><li class="p-2" data-v-subspace="">
+                          <span class="d-inline">
+                            <input class="form-check-input me-2" type="checkbox" value="attribute_content" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+                            <span data-v-subspace-name="">Content</span>
+                          </span>
+                        </li><li class="p-2" data-v-subspace="">
+                          <span class="d-inline">
+                            <input class="form-check-input me-2" type="checkbox" value="attribute_group" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+                            <span data-v-subspace-name="">Group</span>
+                          </span>
+                        </li><li class="p-2" data-v-subspace="">
+                          <span class="d-inline">
+                            <input class="form-check-input me-2" type="checkbox" value="attribute_group_content" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+                            <span data-v-subspace-name="">Group content</span>
+                          </span>
+                        </li>                        
+                        
+                        
+                        
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+				<div class="accordion-item" data-v-namespace="">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseOne">
+                      <input class="form-check-input me-2" type="checkbox" value="" checked="">
+
+                      <div class="w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#namespace-2" aria-expanded="false">
+                        <span data-v-namespace-name="">Comment</span>
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="namespace-2" class="accordion-collapse collapse" data-bs-parent="#accordionExport">
+                    <div class="accordion-body">
+
+
+                      <ul class="list-unstyled" data-v-subspaces="">
+                        <li class="p-2" data-v-subspace="">
+                          <span class="d-inline">
+                            <input class="form-check-input me-2" type="checkbox" value="comment" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+                            <span data-v-subspace-name="">Comment</span>
+                          </span>
+                        </li>                        
+                        
+                        
+                        
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+			  
+				<div class="alert alert-warning mt-3 d-flex align-items-center" role="alert">
+					<i class="la la-exclamation-triangle la-lg me-3"></i>
+					<div>Use remove content feature only on new installations to avoid losing data.</div>			  
+				</div>			  
+				
+				<span class="d-inline">
+				<input class="form-check-input me-2" type="checkbox" value="comment" aria-label="..." name="table[]" data-v-subspace-input="" checked="">
+				<span data-v-subspace-name="">Remove before install</span>
+			  </span>
+
+<!--
 				  <div class="menutree">
 						<ul data-v-list="import">
 						  
@@ -118,8 +240,8 @@
 
 						</ul>
 						
-						<h6 class="mt-3">Required Plugins</h6>
-						<ul data-v-list="required_plugins">
+						<span class="mt-3">Required Plugins</span>
+						<ul dataa-v-list="required_plugins">
 						  
 						  <li data-v-class-not-if-expand="hasChildren" data-v-list-item>
 							<input type="checkbox" id="m2"/>
@@ -151,7 +273,7 @@
 
 						</ul>
 						
-						<h6 class="mt-3">Recommended Plugins</h6>
+						<span class="mt-3">Recommended Plugins</span>
 						<ul data-v-list="recommended_plugins">
 						  
 						  <li data-v-class-not-if-expand="hasChildren" data-v-list-item>
@@ -184,6 +306,8 @@
 
 						</ul>
 					</div>	
+					-->
+					
 					</div>
 				</form>	
 				
@@ -268,6 +392,8 @@
 <script id="index-js" src="libs/vvveb/index.js"></script>
 
 <script>
+const myModalAlternative = new bootstrap.Modal("#importModal");
+//myModalAlternative.show();
 function duplicateTheme(e) {
 	let dest = prompt("New theme name", e.closest('.card').querySelector(".card-title").textContent);
 	

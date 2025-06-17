@@ -8,7 +8,7 @@
 
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
+  <link rel="icon" href="/favicon.ico">
 
   <base href="../">
 
@@ -36,7 +36,7 @@
     <div class="login-container">
 
       <div class="logo-content">
-        <a href="//www.vvveb.com" target="blank" title="Powered by Vvveb">
+        <a href="//www.vvveb.com" target="_blank" title="Powered by Vvveb">
           <img src="img/logom.png" alt="Powered by Vvveb" />
           <span class="visually-hidden">Powered by Vvveb</span>
         </a>
@@ -133,7 +133,7 @@
             </div>
 
             <div class="mb-4">
-              <label class="form-label d-flex justify-content-between align-items-center">
+              <label class="form-label">
                 <span>Password</span>
               </label>
 
@@ -186,8 +186,8 @@
 
             <div class="login-footer ">
               <!-- div class="info-links">
-							<a href="#" class="text-muted"><small>ToS</small></a> -
-							<a href="#" class="text-muted"><small>Privacy Policy</small></a>
+							<a href="javascript:void(0);" class="text-muted"><small>ToS</small></a> -
+							<a href="javascript:void(0);" class="text-muted"><small>Privacy Policy</small></a>
 						</div -->
 
             </div>
@@ -209,7 +209,7 @@
 
       </div>
 
-      <!-- a class="d-block m-3" href="/admin?module=recover" >Forgot your password?</a -->
+
     </div>
   </div>
 
@@ -237,7 +237,7 @@ function togglePasswordInput(element, input) {
   <script id="theme-js" src="js/theme.js"></script>
 
   <!-- vvveb modules code -->
-  <script id="admin-js" type="module" src="../../js/admin.js"></script>
+  <script id="admin-js" type="module" src="/js/admin.js"></script>
 
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
@@ -258,8 +258,8 @@ function togglePasswordInput(element, input) {
   </div>
 
   <!-- save toast -->
-  <div class="toast-container">
-    <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+  <div class="toast-container position-fixed end-0 bottom-0 me-4 my-4">
+    <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
       <div class="toast-header bg-success bg-opacity-25 border-0">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->

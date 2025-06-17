@@ -8,7 +8,7 @@
 
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
+  <link rel="icon" href="/favicon.ico">
 
   <base href="@@base_href">
 
@@ -48,9 +48,10 @@ let chartjs = {};
       <nav class="navbar navbar-expand-sm">
 
         <div class="logo">
-          <!-- h1 class="display-5"><a href="#">M.</a></h1-->
+          <!-- h1 class="display-5"><a href="javascript:void(0);">M.</a></h1-->
           <a href="/admin" class="img">
-            <!-- <img src="img/logo.png"> -->
+            <img src="" data-v-site-logo>
+            <img src="" data-v-site-logo-dark>
           </a>
         </div>
 
@@ -136,21 +137,21 @@ let chartjs = {};
 
 
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-target="#menu-edit">
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-target="#menu-edit">
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-target="#menu-post">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-target="#menu-post">
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-target="#menu-post">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
@@ -198,11 +199,11 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-target="#menu-pages">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-target="#menu-pages">
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-target="#menu-pages">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
@@ -233,21 +234,21 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-target="#menu-medialibrary">
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-target="#menu-medialibrary">
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-target="#menu-users">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-target="#menu-users">
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-target="#menu-users">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
@@ -284,29 +285,29 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-target="#menu-messages">
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-target="#menu-messages">
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
             </li>
             <li class="nav-item heading" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-target="#menu-ecommerce">
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-target="#menu-ecommerce">
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-target="#menu-sales">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-target="#menu-sales">
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-target="#menu-sales">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
@@ -349,11 +350,11 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item align-middle columns-2" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-target="#menu-product">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-target="#menu-product">
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-target="#menu-product">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
@@ -447,19 +448,19 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item heading" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-target="#menu-configuration">
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-target="#menu-configuration">
+              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
             </li>
             <li class="nav-item align-top" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-target="#menu-plugins">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-target="#menu-plugins">
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-target="#menu-plugins">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
@@ -502,11 +503,11 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-target="#menu-themes">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-target="#menu-themes">
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-target="#menu-themes">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
@@ -532,11 +533,11 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-target="#menu-field">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-target="#menu-field">
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-target="#menu-field">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
@@ -556,11 +557,11 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item align-top mega-menu" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-target="#menu-settings">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-target="#menu-settings">
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-target="#menu-settings">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
@@ -820,11 +821,11 @@ let chartjs = {};
               </ul>
             </li>
             <li class="nav-item align-top" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-target="#menu-tools">
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-target="#menu-tools">
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-target="#menu-tools">
+              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
@@ -905,7 +906,6 @@ let chartjs = {};
 
 
       </nav> <!-- /navbar -->
-
     </div>
 
     <div class="main">
@@ -922,7 +922,7 @@ let chartjs = {};
 
           <div class="dropdown-menu">
             <div data-v-site>
-              <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" data-v-site-url target="_blank">
                 <!-- i class="la la-circle la-lg me-2"></i -->
                 <span data-v-site-name class="flex-grow-1">Default website</span>
                 <i class="la la-external-link-alt"></i>
@@ -930,7 +930,7 @@ let chartjs = {};
             </div>
 
             <div data-v-site>
-              <a class="dropdown-item" href="#" data-v-site target="_blank">
+              <a class="dropdown-item" href="javascript:void(0);" data-v-site target="_blank">
                 <!--- <i class="icon-eye-outline la-lg me-2"></i> -->
                 <span data-v-site-name class="flex-grow-1">Blog</span>
                 <i class="la la-external-link-alt"></i>
@@ -939,7 +939,7 @@ let chartjs = {};
 
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/sites"}'>
+            <a class="dropdown-item" href="javascript:void(0);" data-v-url-params='{"module":"settings/sites"}'>
               <span class="flex-grow-1">Manage sites</span>
               <i class="la la-edit ms-2"></i>
             </a>
@@ -954,7 +954,7 @@ let chartjs = {};
 
           <div class="dropdown-menu">
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
                   <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
                   <span>Assets</span>
@@ -963,7 +963,7 @@ let chartjs = {};
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
                   <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
                   <span>Templates</span>
@@ -972,7 +972,7 @@ let chartjs = {};
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
                   <i class="icon-server-outline me-2 text-body-tertiary"></i>
                   <span>Database</span>
@@ -981,7 +981,7 @@ let chartjs = {};
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
                   <i class="icon-document-outline me-2 text-body-tertiary"></i>
                   <span>Page cache</span>
@@ -990,7 +990,7 @@ let chartjs = {};
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
                   <i class="icon-image-outline me-2 text-body-tertiary"></i>
                   <span>Image cache</span>
@@ -999,7 +999,7 @@ let chartjs = {};
               </a>
             </div>
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
                   <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
                   <span>Model cache</span>
@@ -1010,7 +1010,7 @@ let chartjs = {};
             <div class="dropdown-divider"></div>
 
             <div>
-              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+              <a class="dropdown-item d-flex" href="javascript:void(0);" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
                   <i class="icon-sync-outline me-2 text-body-tertiary"></i>
                   <span>All cache</span>
@@ -1034,7 +1034,7 @@ let chartjs = {};
             <div class="dropdown-menu">
               <div data-v-if="notifications.updates.core.hasUpdate">
                 <h6 class="dropdown-header">Updates</h6>
-                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                <a class="dropdown-item" href="javascript:void(0);" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
                   <i class="icon-flash-outline text-success"></i>
                   <span>Update available</span>
                   <strong class="badge bg-success small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
@@ -1043,7 +1043,7 @@ let chartjs = {};
               </div>
               <div data-v-if-not="notifications.updates.core.hasUpdate">
                 <h6 class="dropdown-header">Updates</h6>
-                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                <a class="dropdown-item" href="javascript:void(0);" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
                   <i class="icon-flash-outline"></i>
                   <span>Up to date</span>
                   <strong class="badge bg-primary small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
@@ -1056,14 +1056,14 @@ let chartjs = {};
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-group-notification-url>
+                  <a href="javascript:void(0);" data-v-group-notification-url>
                     <i class="" data-v-group-icon></i>
                     <span data-v-group-notification-name>New orders</span>
                     <strong class="badge bg-primary-subtle mx-2 bg-primary-subtle" data-v-group-notification-count>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                  <a href="javascript:void(0);" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
                     <i class="la la-file-invoice" data-v-group-icon></i>
                     <span data-v-group-notification-name>Returns</span>
                     <strong class="badge bg-danger-subtle small" data-v-group-notification-count>2</strong>
@@ -1078,14 +1078,14 @@ let chartjs = {};
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-group-notification-url>
+                  <a href="javascript:void(0);" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New comments</span>
                     <strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-group-notification-url>
+                  <a href="javascript:void(0);" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>Spam comments</span>
                     <strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong>
@@ -1099,14 +1099,14 @@ let chartjs = {};
                   <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-group-notification-url>
+                  <a href="javascript:void(0);" data-v-group-notification-url>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>New reviews</span>
                     <strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
-                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                  <a href="javascript:void(0);" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
                     <i class="la la-comment"></i>
                     <span data-v-group-notification-name>Spam questions</span>
                     <strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong>
@@ -1128,7 +1128,7 @@ let chartjs = {};
 
               <div class="dropdown-menu">
                 <div data-v-site>
-                  <button class="dropdown-item" href="#" data-v-site-site_id name="site" value="default">
+                  <button class="dropdown-item" href="javascript:void(0);" data-v-site-site_id name="site" value="default">
                     <i class="la la-window-minimize la-lg me-2" data-v-if="state = 'live'" data-v-site-icon></i>
                     <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
                     <span data-v-site-name>Default website</span>
@@ -1136,7 +1136,7 @@ let chartjs = {};
                 </div>
 
                 <div data-v-site>
-                  <a class="dropdown-item" href="#" data-v-site name="site" value="default">
+                  <a class="dropdown-item" href="javascript:void(0);" data-v-site name="site" value="default">
                     <i class="la la-window-minimize la-lg me-2" data-v-site-icon></i>
                     <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
                     <span data-v-site-name>Blog</span>
@@ -1145,7 +1145,7 @@ let chartjs = {};
 
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/site"}'>
+                <a class="dropdown-item" href="javascript:void(0);" data-v-url-params='{"module":"settings/site"}'>
                   <i class="la la-plus me-2"></i>
                   Add new
                 </a>
@@ -1164,7 +1164,7 @@ let chartjs = {};
 
               <div class="dropdown-menu">
                 <div data-v-state>
-                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
+                  <button class="dropdown-item" href="javascript:void(0);" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
                     <i class="la la-broadcast-tower la-lg me-2" data-v-state-icon></i>
                     <span data-v-state-name>
                       Live
@@ -1172,7 +1172,7 @@ let chartjs = {};
                   </button>
                 </div>
                 <div data-v-state>
-                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to maintenance?')" name="state" data-state="maintenance">
+                  <button class="dropdown-item" href="javascript:void(0);" onclick="return confirm('Are you sure you want to set your website to maintenance?')" name="state" data-state="maintenance">
                     <i class="la la-wrench la-lg me-2" data-v-state-icon></i>
                     <span data-v-state-name>
                       Maintenance
@@ -1180,7 +1180,7 @@ let chartjs = {};
                   </button>
                 </div>
                 <div data-v-state>
-                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')" name="state" data-state="coming soon">
+                  <button class="dropdown-item" href="javascript:void(0);" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')" name="state" data-state="coming soon">
                     <i class="la la-clock la-lg me-2" data-v-state-icon></i>
                     <span data-v-state-name>
                       Coming soon
@@ -1193,7 +1193,7 @@ let chartjs = {};
 
           <div class="btn-group" data-v-component-languages>
             <form method="post">
-              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-warning-subtle="this.languagesList">
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-flag me-1"></i>
                 <span data-v-language-info-name>English</span>
@@ -1201,27 +1201,27 @@ let chartjs = {};
 
 
               <div class="dropdown-menu">
-
-                <div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
-                  <div>No active language configured!</div>
-                </div>
-
+                <!--				
+					<div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+					 <div>No active language configured!</div>
+					</div>
+-->
                 <div data-v-language>
-                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                  <button class="dropdown-item" href="javascript:void(0);" name="language" data-v-language-code>
                     <i class="la la-flag la-lg me-2"></i>
                     <span data-v-language-name>English</span>
                   </button>
                 </div>
 
                 <div data-v-language>
-                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                  <button class="dropdown-item" href="javascript:void(0);" name="language" data-v-language-code>
                     <i class="la la-flag la-lg me-2"></i>
                     <span data-v-language-name>Romanian</span>
                   </button>
                 </div>
 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-v-url-params='{"module":"localization/languages"}'>
+                <a class="dropdown-item" href="javascript:void(0);" data-v-url-params='{"module":"localization/languages"}'>
                   <i class="la la-plus me-2"></i>
                   Add new
                 </a>
@@ -1261,7 +1261,7 @@ let chartjs = {};
 					
 					<div class="dropdown-divider"></div>
 					-->
-                <a class="dropdown-item" href="#" data-v-admin-edit-url>
+                <a class="dropdown-item" href="javascript:void(0);" data-v-admin-edit-url>
                   <span>Edit Profile</span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -1308,7 +1308,7 @@ let chartjs = {};
             </div>
 
 
-            <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+            <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
                 <!-- <i class="la la-times"></i> -->
               </span>
@@ -1325,7 +1325,7 @@ let chartjs = {};
               You successfully read this important alert message.
             </div>
 
-            <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+            <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
                 <!-- <i class="la la-times"></i> -->
               </span>
@@ -1342,7 +1342,7 @@ let chartjs = {};
               You successfully read this important warning message.
             </div>
 
-            <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+            <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
                 <!-- <i class="la la-times"></i> -->
               </span>
@@ -1359,7 +1359,7 @@ let chartjs = {};
               You successfully read this important alert message.
             </div>
 
-            <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+            <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
                 <!-- <i class="la la-times"></i> -->
               </span>
@@ -1381,12 +1381,16 @@ let chartjs = {};
                       <i class="la la-times"></i>
                     </span>
                   </button>
-                  <h5 class="card-title">Orders</h5>
 
-                  <i class="la la-shopping-cart icon bg-orange text-white d-inline-block "></i>
-                  <h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
+                  <div class="flex-grow-1"></div>
+                  <div class="icons">
+                    <i class="la la-shopping-cart icon bg-success bg-opacity-25 d-inline-block "></i>
+                    <h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
+                    <h5 class="card-title">Orders</h5>
+                  </div>
 
-                  <div class="card-text float-end">
+                  <div class="flex-grow-1"></div>
+                  <div class="card-text">
                     <ul class="list-unstyled">
                       <li data-v-orders>
                         <a href="" class="text-body">
@@ -1424,12 +1428,15 @@ let chartjs = {};
                     </span>
                   </button>
 
-                  <h5 class="card-title">Users</h5>
+                  <div class="flex-grow-1"></div>
+                  <div class="icons">
+                    <i class="la la-user icon bg-purple bg-opacity-25 d-inline-block"></i>
+                    <h3 class="number d-inline-block" data-v-notification-users-month-count>37</h3>
+                    <h5 class="card-title">Users</h5>
+                  </div>
 
-                  <i class="la la-user icon bg-purple text-white d-inline-block"></i>
-                  <h3 class="number d-inline-block" data-v-notification-users-new-count>37</h3>
-
-                  <div class="card-text float-end">
+                  <div class="flex-grow-1"></div>
+                  <div class="card-text">
                     <ul class="list-unstyled">
                       <li>
                         <a href="" class="text-body">
@@ -1460,12 +1467,15 @@ let chartjs = {};
                     </span>
                   </button>
 
-                  <h5 class="card-title">Comments</h5>
+                  <div class="flex-grow-1"></div>
+                  <div class="icons">
+                    <i class="la la-comments icon bg-primary bg-opacity-25 d-inline-block"></i>
+                    <h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
+                    <h5 class="card-title">Comments</h5>
+                  </div>
 
-                  <i class="la la-comments icon bg-success text-white d-inline-block"></i>
-                  <h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
-
-                  <div class="card-text float-end">
+                  <div class="flex-grow-1"></div>
+                  <div class="card-text">
                     <ul class="list-unstyled">
                       <li>
                         <a href="{$this.adminPath}index.php?module=content/comments&status=0&type=post" class="text-body">
@@ -1500,12 +1510,15 @@ let chartjs = {};
                     </span>
                   </button>
 
-                  <h5 class="card-title">Reviews</h5>
+                  <div class="flex-grow-1"></div>
+                  <div class="icons">
+                    <i class="la la-sms icon bg-orange bg-opacity-25 d-inline-block"></i>
+                    <h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
+                    <h5 class="card-title">Reviews</h5>
+                  </div>
 
-                  <i class="la la-sms icon bg-warning text-white d-inline-block"></i>
-                  <h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
-
-                  <div class="card-text float-end">
+                  <div class="flex-grow-1"></div>
+                  <div class="card-text">
                     <ul class="list-unstyled">
                       <li>
                         <a href="{$this.adminPath}index.php?module=product/product-reviews&status=0" class="text-body">
@@ -1533,19 +1546,66 @@ let chartjs = {};
 
             <div class="grid-stack-item-content">
               <div class="card">
-                <div class="card-header">
-                  Sales
+                <div class="card-header d-flex justify-content-between align-items-center py-1">
+                  <div>Sales</div>
 
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">
-                      <i class="la la-times"></i>
-                    </span>
-                  </button>
+                  <div class="d-flex me-3">
+
+                    <div class="dropdown me-2" id="stats-filters">
+                      <button class="btn btn-outline-secondary btn-icon btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="icon-filter-outline">
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                          <label class="form-check">
+                            <input type="checkbox" class="form-check-input" value="1" name="sales" checked>
+                            <span class="form-check-label">Sales</span>
+                          </label>
+                        </li>
+                        <li class="dropdown-item">
+                          <label class="form-check">
+                            <input type="checkbox" class="form-check-input" value="1" name="users" checked>
+                            <span class="form-check-label">Users</span>
+                          </label>
+                        </li>
+                        <!--
+										<li class="dropdown-item">
+											<label class="form-check">
+											  <input type="checkbox" class="form-check-input" value="1" name="comments">
+											  <span class="form-check-label">Comments</span>
+											</label>
+										</li>
+										<li class="dropdown-item">
+											<label class="form-check">
+											  <input type="checkbox" class="form-check-input" value="1" name="reviews">
+											  <span class="form-check-label">Reviews</span>
+											</label>
+										</li>
+										-->
+                      </ul>
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                      <input name="stats-date-range" id="stats-date-range" value="" type="text" class="form-control daterange border-end-0 form-control-sm text-end" autocomplete="off" size="16" data-v-post-updated_at>
+                      <div class="input-group-text bg-body" onclick="updated_at.focus()">
+                        <i class="icon-calendar-outline"></i>
+                      </div>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">
+                        <i class="la la-times"></i>
+                      </span>
+                    </button>
+                  </div>
 
                 </div>
 
 
                 <div class="card-body">
+
+
+
 
                   <div class="chartjs" data-chartjs="orders_users" style="height:100%">
                     <canvas></canvas>
@@ -1724,7 +1784,7 @@ let chartjs = {};
                         <td class="text-center" width="70">
 
 
-                          <a href="#" class="btn btn-primary btn-sm" data-v-order-url>
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" data-v-order-url>
                             <i class="la la-hand-pointer"></i>
                           </a>
 
@@ -1737,7 +1797,7 @@ let chartjs = {};
                         <td>31/05/2018</td>
                         <td class="text-center">$1,005.00</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm">
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1749,7 +1809,7 @@ let chartjs = {};
                         <td>31/05/2018</td>
                         <td class="text-center">$1,005.00</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm">
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1768,7 +1828,6 @@ let chartjs = {};
               </div>
             </div>
           </div>
-
 
           <div class="grid-stack-item stack-new-users" gs-w="3" gs-h="4" data-v-component-users>
 
@@ -1801,7 +1860,7 @@ let chartjs = {};
                         </td>
                         <td width="150" data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center" width="70">
-                          <a href="#" class="btn btn-primary btn-sm" data-v-user-url>
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" data-v-user-url>
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1813,7 +1872,7 @@ let chartjs = {};
                         </td>
                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm">
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1825,7 +1884,7 @@ let chartjs = {};
                         </td>
                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm">
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1837,7 +1896,7 @@ let chartjs = {};
                         </td>
                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm" data-v-comment-url>
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" data-v-comment-url>
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1891,7 +1950,7 @@ let chartjs = {};
                         <td class="text-center" width="70">
 
 
-                          <a href="#" class="btn btn-primary btn-sm" data-v-product-url>
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" data-v-product-url>
                             <i class="la la-hand-pointer"></i>
                           </a>
 
@@ -1946,7 +2005,7 @@ let chartjs = {};
                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm" data-v-comment-url>
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm" data-v-comment-url>
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1958,7 +2017,7 @@ let chartjs = {};
                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm">
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1970,7 +2029,7 @@ let chartjs = {};
                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm">
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -1982,7 +2041,7 @@ let chartjs = {};
                         <td data-v-comment-date data-filter-friendly_date title="data-v-created_at">31/05/2018</td>
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-primary btn-sm">
+                          <a href="javascript:void(0);" class="btn btn-icon btn-outline-primary btn-sm">
                             <i class="la la-hand-pointer"></i>
                           </a>
                         </td>
@@ -2081,10 +2140,12 @@ let chartjs = {};
 
         </div>
       </div>
+
+      <div id="main-footer">
+        Powered by <a href="https://www.vvveb.com" target="_blank">Vvveb</a>
+      </div>
+
     </div>
-  </div>
-  </div>
-  </div>
   </div>
 
 
@@ -2096,7 +2157,7 @@ let chartjs = {};
   <script id="theme-js" src="js/theme.js"></script>
 
   <!-- vvveb modules code -->
-  <script id="admin-js" type="module" src="../../js/admin.js"></script>
+  <script id="admin-js" type="module" src="/js/admin.js"></script>
 
 
   <!-- Modal -->
@@ -2143,12 +2204,78 @@ let options = {
 };
 
 let grid = GridStack.init(options);
+let chartJsInstances = {};
 
 document.querySelectorAll(".chartjs").forEach(el => {
 	ctx = el.querySelector("canvas").getContext("2d");
-	el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
+	chartJsInstances[el.dataset.chartjs] = el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
 });
+
+let statsDateRange = document.getElementById('stats-date-range');
+let statsFilters   = document.getElementById('stats-filters');
+
+function updateStats() {
+	let stats = {};
+	document.querySelectorAll("[data-v-component-stats] input[type=checkbox]").forEach(function (e) {stats[e.name] = (e.type == "checkbox") ? e.checked : e.value });
+	if (statsDateRange.value) {
+		let dateRange = statsDateRange.value.split(' - ');
+		stats['start_date'] = dateRange[0];
+		stats['end_date'] = dateRange[1];
+	}
+	
+	const params = new URLSearchParams(stats);
+	fetch(`{$this.adminPath}?action=stats&${params}`)
+	  .then((response) => response.json())
+	  .then((data) => {
+
+		chartjs['orders_users'] = {
+			labels: data.labels,//labels: ["2022-05-01", "2022-05-02", "2022-05-03", "2022-05-04", "2022-05-05", "2022-05-06"],
+			datasets: []
+		};
+		
+		if (data.orders) {
+			chartjs['orders_users'].datasets.push({
+					label: 'Orders',
+					//data: [12, 19, 3, 5, 2, 3],
+					data: data.orders,
+					fill: true,
+					borderColor: 'rgba(255, 99, 132, 0.5)',
+					backgroundColor: 'rgba(255, 99, 132, 0.2)',
+				}
+			);
+		}	
+		
+		if (data.users) {
+			chartjs['orders_users'].datasets.push({
+					label: 'Users',
+					fill: true,
+					//data: [3, 15, 7, 4, 19, 12],
+					data: data.users,
+					borderColor: 'rgba(54, 162, 235, 0.5)',
+					backgroundColor: 'rgba(54, 162, 235, 0.2)',
+				}
+			);
+		}
+
+
+		chartJsInstances['orders_users'].data.labels   = chartjs['orders_users'].labels;
+		chartJsInstances['orders_users'].data.datasets = chartjs['orders_users'].datasets;
+		chartJsInstances['orders_users'].update();
+	  })
+	  .catch(console.error);	
+}
+
+statsFilters.addEventListener("change", updateStats);
+statsDateRange.addEventListener("change", updateStats);
 </script>
+
+  <!-- date time picker -->
+  <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
+  <script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
+  <link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+  <script id="functions-js" src="/js/admin/functions.js"></script>
+
 
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
@@ -2169,8 +2296,8 @@ document.querySelectorAll(".chartjs").forEach(el => {
   </div>
 
   <!-- save toast -->
-  <div class="toast-container">
-    <div class="toast position-fixed end-0 bottom-0 me-4 my-4" role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+  <div class="toast-container position-fixed end-0 bottom-0 me-4 my-4">
+    <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
       <div class="toast-header bg-success bg-opacity-25 border-0">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->

@@ -15,7 +15,9 @@ html {
 	//margin-top:($admin-bar-height + 1) !important;
 }
 
-
+#page-loading-status {
+	z-index: 10001 !important;
+}
 
 #vvveb-admin {
 	background: $admin-bar-background;

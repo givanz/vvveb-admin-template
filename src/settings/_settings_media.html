@@ -1,159 +1,221 @@
-<div class="row mb-3 required" id="media-post-image-size">
-	<label for="category-width" class="col-md-2 col-form-label mt-4">Post image size</label>
-	<div class="col-md-10">
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Post image size</label>
 	
-		<div class="row">
-			
-			<div class="col-md-4">
-				<label for="category-width" class="form-label">Large</label>
-				<div class="input-group mb-3">
-				  <label class="pe-4 pt-2">Width</label>&nbsp;
-				  <input type="number" name="settings[post_large_width]" data-v-setting="post_large_width" value="1024" placeholder="Width" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Height</label>
-				  <input type="number" name="settings[post_large_height]" data-v-setting="post_large_height" value="0" placeholder="Height" class="form-control">
-				</div>				
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Method</label>
-				  <select data-v-resize name="settings[post_large_method]" data-v-setting="post_large_method" class="form-select">
-						<option value="s">Stretch</option>
-						<option value="c">Crop</option>
-						<option value="cs">Crop &amp; resize</option>
-				  </select>
-				</div>
-			</div>
-			
-			<div class="col-md-4">
-				<label for="category-width" class="form-label">Medium</label>
-				<div class="input-group mb-3">
-				  <label class="pe-4 pt-2">Width</label>&nbsp;
-				  <input type="number" name="settings[post_medium_width]" data-v-setting="post_medium_width" value="400" placeholder="Width" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Height</label>
-				  <input type="number" name="settings[post_medium_height]" data-v-setting="post_medium_height" value="0" placeholder="Height" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Method</label>
-				  <select data-v-resize name="settings[post_medium_method]" data-v-setting="post_medium_method" class="form-select">
-						<option value="s">Stretch</option>
-						<option value="c">Crop</option>
-						<option value="cs">Crop &amp; resize</option>
-				  </select>
-				</div>
-			</div>
-					
-			<div class="col-md-4">
-				<label for="category-width" class="form-label">Thumb</label>
-				<div class="input-group mb-3">
-				  <label class="pe-4 pt-2">Width</label>&nbsp;
-				  <input type="number" name="settings[post_thumb_width]" data-v-setting="post_thumb_width" value="150" placeholder="Width" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Height</label>
-				  <input type="number" name="settings[post_thumb_height]" data-v-setting="post_thumb_height" value="0" placeholder="Height" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Method</label>
-				  <select data-v-resize name="settings[post_thumb_method]" data-v-setting="post_thumb_method" class="form-select">
-						<option value="s">Stretch</option>
-						<option value="c">Crop</option>
-						<option value="cs">Crop &amp; resize</option>
-				  </select>
-				</div>
-			</div>
-			
+<div class="row">
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Extra large</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[post_xlarge_width]" data-v-setting="post_xlarge_width" value="1024" placeholder="Width" class="form-control">
+		</div>
 		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[post_xlarge_height]" data-v-setting="post_xlarge_height" value="0" placeholder="Height" class="form-control">
+		</div>				
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[post_xlarge_method]" data-v-setting="post_xlarge_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
 		</div>
 	</div>
-</div>
- 
-<div class="row mb-3 required" id="media-product-image-size">
-	<label for="category-width" class="col-md-2 col-form-label mt-4">Product image size</label>
-	<div class="col-md-10">
 	
-		<div class="row">
-			
-			<div class="col-md-4">
-				<label for="category-width" class="form-label">Large</label>
-				<div class="input-group mb-3">
-				  <label class="pe-4 pt-2">Width</label>&nbsp;
-				  <input type="number" name="settings[product_large_width]" data-v-setting="product_large_width" value="1024" placeholder="Width" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Height</label>
-				  <input type="number" name="settings[product_large_height]" data-v-setting="product_large_height" value="0" placeholder="Height" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Method</label>
-				  <select data-v-resize name="settings[product_large_method]" data-v-setting="product_large_method" class="form-select">
-						<option value="s">Stretch</option>
-						<option value="c">Crop</option>
-						<option value="cs">Crop &amp; resize</option>
-				  </select>
-				</div>
-			</div>
-			
-			<div class="col-md-4">
-				<label for="category-width" class="form-label">Medium</label>
-				<div class="input-group mb-3">
-				  <label class="pe-4 pt-2">Width</label>&nbsp;
-				  <input type="number" name="settings[product_medium_width]" data-v-setting="product_medium_width" value="400" placeholder="Width" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Height</label>
-				  <input type="number" name="settings[product_medium_height]" data-v-setting="product_medium_height" value="0" placeholder="Height" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Method</label>
-				  <select data-v-resize name="settings[product_medium_method]" data-v-setting="product_medium_method" class="form-select">
-						<option value="s">Stretch</option>
-						<option value="c">Crop</option>
-						<option value="cs">Crop &amp; resize</option>
-				  </select>
-				</div>
-			</div>
-					
-			<div class="col-md-4">
-				<label for="category-width" class="form-label">Thumb</label>
-				<div class="input-group mb-3">
-				  <label class="pe-4 pt-2">Width</label>&nbsp;
-				  <input type="number" name="settings[product_thumb_width]" data-v-setting="product_thumb_width" value="150" placeholder="Width" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Height</label>
-				  <input type="number" name="settings[product_thumb_height]" data-v-setting="product_thumb_height" value="0" placeholder="Height" class="form-control">
-				</div>
-				
-				<div class="input-group mb-3">
-				<label class="pe-4 pt-2">Method</label>
-				  <select data-v-resize name="settings[product_thumb_method]" data-v-setting="product_thumb_method" class="form-select">
-						<option value="s">Stretch</option>
-						<option value="c">Crop</option>
-						<option value="cs">Crop &amp; resize</option>
-				  </select>
-				</div>
-			</div>
-			
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Large</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[post_large_width]" data-v-setting="post_large_width" value="1024" placeholder="Width" class="form-control">
+		</div>
 		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[post_large_height]" data-v-setting="post_large_height" value="0" placeholder="Height" class="form-control">
+		</div>				
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[post_large_method]" data-v-setting="post_large_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
 		</div>
 	</div>
+	
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Medium</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[post_medium_width]" data-v-setting="post_medium_width" value="400" placeholder="Width" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[post_medium_height]" data-v-setting="post_medium_height" value="0" placeholder="Height" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[post_medium_method]" data-v-setting="post_medium_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
+		</div>
+	</div>
+			
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Thumb</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[post_thumb_width]" data-v-setting="post_thumb_width" value="150" placeholder="Width" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[post_thumb_height]" data-v-setting="post_thumb_height" value="0" placeholder="Height" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[post_thumb_method]" data-v-setting="post_thumb_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
+		</div>
+	</div>
+	
+
 </div>
 
 
-<div class="alert alert-light d-flex align-items-center" role="alert">
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Product image size</label>
+
+
+<div class="row">
+	
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Extra large</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[product_xlarge_width]" data-v-setting="product_xlarge_width" value="1024" placeholder="Width" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[product_xlarge_height]" data-v-setting="product_xlarge_height" value="0" placeholder="Height" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[product_xlarge_method]" data-v-setting="product_xlarge_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
+		</div>
+	</div>
+
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Large</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[product_large_width]" data-v-setting="product_large_width" value="1024" placeholder="Width" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[product_large_height]" data-v-setting="product_large_height" value="0" placeholder="Height" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[product_large_method]" data-v-setting="product_large_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
+		</div>
+	</div>			
+				
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Medium</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[product_medium_width]" data-v-setting="product_medium_width" value="400" placeholder="Width" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[product_medium_height]" data-v-setting="product_medium_height" value="0" placeholder="Height" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[product_medium_method]" data-v-setting="product_medium_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
+		</div>
+	</div>
+			
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="category-width" class="form-label">Thumb</label>
+		<div class="input-group mb-3">
+		  <label class="pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[product_thumb_width]" data-v-setting="product_thumb_width" value="150" placeholder="Width" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[product_thumb_height]" data-v-setting="product_thumb_height" value="0" placeholder="Height" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[product_thumb_method]" data-v-setting="product_thumb_method" class="form-select">
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
+		</div>
+	</div>
+	
+</div>
+	
+
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Image output</label>
+
+<div class="row">
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<div class="input-group">
+	
+		<label class="pe-4 pt-2">Format</label>
+		  <select data-v-formats name="settings[image_format]" data-v-setting="image_format" class="form-select">
+				<option value="">Original</option>
+				<option value="webp" data-v-option>Webp</option>
+				<option value="png" data-v-option>Png</option>
+				<option value="jpg" data-v-option>Jpg</option>
+		  </select>
+		</div>
+	</div>
+
+
+	<div class="col-md-3">
+		<div class="input-group">
+		<label class="pe-4 pt-2">Quality</label>
+		  <input type="number" name="settings[image_quality]" data-v-setting="image_quality" value="80" placeholder="85" class="form-control">
+		</div>	
+	</div>
+</div>
+	
+
+<div class="alert alert-light d-flex align-items-center my-3" role="alert">
   <i class="bi flex-shrink-0 me-2 la la-2x la-info-circle" ></i>
   <div>
     To keep image proportion set either height or width to 0 (zero)

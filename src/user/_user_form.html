@@ -1,6 +1,13 @@
  <div class="row">
-	 <div class="col-md-6">
+	 <div class="col-md-6 details">
 
+		<div class="mb-3 row">
+			<label for="input-username" class="col-sm-2 col-form-label">Username</label>
+			<div class="col-sm-10">
+			  <input type="text" class="form-control" id="input-username" placeholder="Username" name="@@prefix[username]" maxlength="60" data-v-user-username required>
+			</div>
+		 </div>		
+		 
 		 <div class="mb-3 row">
 			<label for="input-first_name" class="col-sm-2 col-form-label">First name</label>
 			<div class="col-sm-10">
@@ -29,14 +36,6 @@
 			</div>
 		  </div>
 
-
-		<div class="mb-3 row">
-			<label for="input-username" class="col-sm-2 col-form-label">User name</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" id="input-username" placeholder="User name" name="@@prefix[username]" maxlength="60" data-v-user-username required>
-			</div>
-		 </div>		 
-
 		 <div class="mb-3 row">
 			<label for="input-email" class="col-sm-2 col-form-label">Email</label>
 			<div class="col-sm-10">
@@ -50,10 +49,22 @@
 			  <input type="text" class="form-control" id="input-display_name" placeholder="Display name" name="@@prefix[display_name]" maxlength="100" required data-v-user-display_name>
 			</div>
 		  </div>
-
+		
+		  @@if (prefix === "user")  {
+		  <div class="mb-3 row">
+			<label for="input-user_group_id" class="col-sm-2 col-form-label" >User group</label>
+			<div class="col-sm-10">
+				<select name="@@prefix[user_group_id]" id="input-user_group_id" class="form-control" data-v-user-user_group_id>
+					<option value="0">Inactive</option>
+					<option value="1">Active</option>
+				</select>
+			</div>
+		  </div>		  
+		}
+		
 	</div>
 
-	 <div class="col-md-6">
+	 <div class="col-md-6 details2">
 
 		  <div class="mb-3 row">
 			<label for="input-site-title" class="col-sm-2 col-form-label" >Avatar</label>

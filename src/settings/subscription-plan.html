@@ -45,7 +45,14 @@
 				<div class="mb-3 row">
 					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
 					<div class="col-sm-10">
-					  <input type="text" class="form-control" id="input-name" placeholder="name" name="subscription_plan[name]" data-v-subscription_plan-name required>
+					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="subscription_plan[name]" data-v-subscription_plan-name required>
+					</div>
+				 </div>		 
+				 
+				<div class="mb-3 row">
+					<label for="input-content" class="col-sm-2 col-form-label">Content</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-content" placeholder="Description" name="subscription_plan[content]" data-v-subscription_plan-content required>
 					</div>
 				 </div>		 
  
@@ -123,8 +130,10 @@
 		
 			</div>
         </div>
-</form>
+	</form>
 
+	@@include('../_includes/main-footer.html')
+	</div>
 </div>
 
 

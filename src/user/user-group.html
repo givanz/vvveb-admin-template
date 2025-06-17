@@ -60,16 +60,18 @@
 					<label for="input-status" class="col-sm-2 col-form-label" >Status</label>
 					<div class="col-sm-10">
 						<select name="user_group[status]" id="input-status" class="form-control" data-v-user_group-status>
-							<option value="0">Inactive</option>
-							<option value="1">Active</option>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
 						</select>
 					</div>
 				  </div>
 
 			</div>
         </div>
-</form>
+	</form>
 
+	@@include('../_includes/main-footer.html')
+	</div>
 </div>
 
 

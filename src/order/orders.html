@@ -138,7 +138,7 @@
 				-->
 			   <button type="submit" name="action" value="delete" aria-expanded="false" 
 						title="Delete selected"
-						class="btn btn-outline-secondary bg-body-tertiary text-danger">
+						class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
 						<i class="icon-trash-outline"></i> Delete selected
 				</button>
 			</div>
@@ -198,7 +198,7 @@
                                     <a href="/admin?module=orders&amp;action=order&amp;id=4" data-v-order-url> #<span data-v-order_id>01</span></a>
                                 </td>
                                 
-                                <td><span class="name"><a href="#" data-v-order-url><span data-v-first_name>John</span> <span data-v-last_name>Doe</span></a></td>
+                                <td><span class="name"><a href="javascript:void(0);" data-v-order-url><span data-v-first_name>John</span> <span data-v-last_name>Doe</span></a></td>
                                 <td><span class="stock badge bg-secondary" data-v-order_status>New</span></td>
                                 <td><span class="stock badge bg-secondary" data-v-payment_status>Not paid</span></td>
                                 <td><span class="stock badge bg-secondary" data-v-shipping_status>Not fulfilled</span></td>
@@ -305,6 +305,8 @@
 
 
         </div>
+
+		@@include('../_includes/main-footer.html')
     </div>
 </div>
 

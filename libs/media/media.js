@@ -95,7 +95,7 @@ class MediaModal {
 							
 							<ul class="data" id="media-files"></ul>
 						
-							<div class="nothingfound">
+							<div class="nothingfound" style="display:none">
 								<div class="nofiles">
 									<i class="la la-folder-open"></i>
 								</div>
@@ -567,17 +567,77 @@ _
 
 
 		onUpload(event) {
-			let file;
+					
+		 const data = new FormData();
+		 let size = 0;
+		 
+		  for (const file of this.files) {
+			data.append("files[]", file, file.name);
+			size += file.size;
+		  }
+		  
+		  data.append("mediaPath", Vvveb.MediaModal.mediaPath + Vvveb.MediaModal.currentPath);
+		  data.append("onlyFilename", true);
+		  data.append("size", size);
+
+		  if (uploadMaxFilesize && size > uploadMaxFilesize) {
+			  displayToast("bg-danger", "Error", "File size bigger than upload max file size!");
+		  }
+		  
+		  if (postMaxSize && size > postMaxSize) {
+			  displayToast("bg-danger", "Error", "File size bigger than post max size!");
+		  }
+
+		  return fetch(uploadUrl, {
+			method: "POST",
+			body: data,      
+		  }).then((response) => {
+			if (!response.ok) { return Promise.reject(response); }
+			return response.json()
+		}).then((response) => {
+			  for (const data of response) {
+				Vvveb.MediaModal.hideUploadLoading();
+
+				if (data.success) {
+					displayToast("bg-success", "Success", data.message);			
+				} else {
+					displayToast("bg-danger", "Error", data.message);
+				}
+
+				if (!data.file) continue;  
+				let fileElement = Vvveb.MediaModal.addFile({
+					name:data.file,
+					size:data.size ?? 0,
+					type:"file",
+					path: Vvveb.MediaModal.currentPath + "/" + data.file,
+				},true);
+				
+				fileElement.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+			  }
+			  document.querySelector(".nothingfound").style.display = "none";
+			})
+			.catch(error => {
+				let message = error.statusText ?? "Error uploading!";
+				Vvveb.MediaModal.hideUploadLoading();						
+				displayToast("bg-danger", "Error", message);
+				error.text().then( errorMessage => {
+					let message = errorMessage.substr(0, 200);
+					displayToast("bg-danger", "Error", message);
+				});						
+			});		
+/*
+		
 			if (this.files && this.files[0]) {
 				Vvveb.MediaModal.showUploadLoading();
-				let reader = new FileReader();
-				reader.onload = imageIsLoaded;
-				reader.readAsDataURL(this.files[0]);
-				//reader.readAsBinaryString(this.files[0]);
-				file = this.files[0];
+				let file;
+				for (file of this.files) { 
+					let reader = new FileReader();
+					reader.onload = (e) => imageIsLoaded(e, file);
+					reader.readAsDataURL(file);
+				}
 			}
-
-			function imageIsLoaded(e) {
+*/
+			function imageIsLoaded(e, file) {
 					
 					let image = e.target.result;
 					
@@ -588,8 +648,12 @@ _
 
 					fetch(uploadUrl, {method: "POST",  body: formData})
 					.then((response) => {
-						if (!response.ok) { return Promise.reject(response); }
-						return response.json()
+						if (!response.ok) {
+							return Promise.resolve(response.text()).then((responseInText) => {
+								return Promise.reject([response, responseInText]);
+							});
+						}
+						return response.json();
 					})
 					.then((data) => {
 						let fileElement = Vvveb.MediaModal.addFile({
@@ -610,9 +674,10 @@ _
 						}
 					})
 					.catch(error => {
-						let message = error.statusText ?? "Error uploading!";
+						let [response, responseInText] = error;
+						let message = response.statusText ?? "Error uploading!";
 						Vvveb.MediaModal.hideUploadLoading();						
-						displayToast("bg-danger", "Error", message);
+						displayToast("bg-danger", "Error uploading!", message.substr(0, 200));
 					});		
 			}
 		}	
@@ -645,7 +710,7 @@ _
 					error.text().then( errorMessage => {
 						let message = errorMessage.substr(0, 200);
 						displayToast("bg-danger", "Error", message);
-					})	
+					});	
 				});	
 			}
 		}
@@ -828,7 +893,7 @@ _
 						fileType = name.split('.').pop(),
 						icon = '<span class="icon file"></span>';
 
-					if (fileType == "jpg" || fileType == "jpeg" || fileType == "png" || fileType == "gif" || fileType == "svg" || fileType == "webp") {
+					if (fileType == "jpg" || fileType == "jpeg" || fileType == "png" || fileType == "gif" || fileType == "svg" || fileType == "webp" || fileType == "heic" || fileType == "heif") {
 						//icon = '<div class="image" style="background-image: url(' + _this.mediaPath + f.path + ');"></div>';
 						icon = '<img class="image" loading="lazy" src="' + _this.mediaPath + f.path + '">';
 						isImage = true;

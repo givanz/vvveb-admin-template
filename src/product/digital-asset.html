@@ -92,28 +92,28 @@
 				  </div>
 			</div>
         </div>
-</form>
+	</form>
 
+	@@include('../_includes/main-footer.html')
+	</div>
 </div>
 
 
 @@include('../_includes/footer-scripts.html')
 
 <script>
-let mediaPath = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let deleteUrl = '{ $this->deleteUrl }';
+let mediaPath         = '{ $this->mediaPath }';
+let mediaScanUrl      = '{ $this->scanUrl }';
+let uploadUrl         = '{ $this->uploadUrl }';
+let deleteUrl         = '{ $this->deleteUrl }';
+let uploadMaxFilesize = { $this->uploadMaxFilesize };
+let postMaxSize       = { $this->postMaxSize };
+
 </script>
 
-
-<script id="openverse-js" src="libs/media/openverse.js"></script>
 <script id="media-js" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
-
-
-
 
 
 @@include('../_includes/footer.html')

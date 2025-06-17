@@ -87,7 +87,7 @@
 					  </li> -->
 					</ul>
 					
-					<div class="tab-content" id="site-tab-content">
+					<div class="tab-content pt-3" id="site-tab-content">
 					
 						<div class="tab-pane show active" id="general" role="tabpanel" aria-labelledby="general-tab">
 							@@include('_site-general.html')
@@ -132,6 +132,9 @@
 		  </div>
 		</form>
    </div>
+
+	@@include('../_includes/main-footer.html')
+	</div>
 </div>
 
 @@include('../_includes/footer-scripts.html')
@@ -151,9 +154,9 @@ let domain       = "{ $this->domain }";
 <script id="media-js" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
-<script id="functions-js" src="../../js/admin/functions.js"></script>
-<script id="functions-js" src="js/site.js"></script>
-<script id="functions-js" src="js/content.js"></script>
+<script id="functions-js" src="/js/admin/functions.js"></script>
+<script id="site-js" src="js/site.js"></script>
+<script id="content-js" src="js/content.js"></script>
 
 
 

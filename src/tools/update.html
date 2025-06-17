@@ -55,10 +55,10 @@
 				
                     <div class="grid-stack-item-content">
                         <div class="card">
-                            <div class="card-body info">
+                            <div class="card-body">
 								<div class="d-flex align-items-center">
 
-									<i class="la la-atom icon bg-orange text-white d-inline-block rounded-2"></i>
+									<i class="la la-atom icon bg-orange bg-opacity-75 text-white d-inline-block rounded-2"></i>
 									<div class="d-inline-block mx-4" >
 										<h5>Core</h5>
 									</div>
@@ -79,6 +79,7 @@
 										</div>
 
 									</div>
+
 
 									<div class="flex-fill mx-5" data-v-if="this.update.core.hasUpdate">
 
@@ -102,12 +103,39 @@
 
 									</div>
 
+									<div class="flex-fill mx-5" data-v-if-not="this.update.core.hasUpdate">
+										<details>
+										  <summary class="text-secondary">
+											Force update
+										  </summary>
+
+											<a class="btn btn-outline-success btn-icon update-core-btn" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}'>
+											
+												<span class="loading d-none">
+													<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+													</span>
+													<span>Updating</span>...
+												</span>
+
+												<span class="button-text">
+													<i class="la la-redo-alt la-lg"></i> Update now
+												</span>
+											
+												
+											</a>
+
+										</details>									
+									</div>
+									
+									
 									<div class="separator"></div>
 
 									<div>
 										<a class="btn btn-outline-secondary btn-icon" data-v-url-params='{"module":"tools/update", "action":"check", "type":"core"}'>
 											<i class="la la-sync-alt la-lg"></i> Check now
 										</a>
+										
+									
 										
 									</div>
                                 </div>
@@ -120,10 +148,10 @@
 				
                     <div class="grid-stack-item-content pe-none opacity-25">
                         <div class="card">
-                            <div class="card-body info">
+                            <div class="card-body">
 								<div class="d-flex align-items-center">
 
-									<i class="la la-puzzle-piece icon bg-purple text-white d-inline-block rounded-2"></i>
+									<i class="la la-puzzle-piece icon bg-purple bg-opacity-75 text-white d-inline-block rounded-2"></i>
 
 									<div>
 										<div class="d-inline-block mx-4" >
@@ -169,7 +197,7 @@
 				
                     <div class="grid-stack-item-content pe-none opacity-25">
                         <div class="card">
-                            <div class="card-body info">
+                            <div class="card-body">
 								<div class="d-flex align-items-center">
 
 									<i class="icon-copy-outline icon bg-success text-white d-inline-block rounded-2"></i>
@@ -219,13 +247,14 @@
 			
 	 
 			</div>
-		</div>
+		
+		@@include('../_includes/main-footer.html')
 	</div>
 </div>
     
 
 @@include('../_includes/footer-scripts.html')
-<script type="module" src="../../js/admin/controller/update.js"></script>
+<script type="module" src="/js/admin/controller/update.js"></script>
 <script>
 document.querySelector(".update-core-btn")?.addEventListener("click",  function(e) {
 	if (Update.core) {

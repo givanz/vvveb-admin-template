@@ -9,7 +9,7 @@
 
     <div class="main">
 
-		@@include('../_includes/top-header.html')
+			@@include('../_includes/top-header.html')
 		
 
             <div class="actions">
@@ -112,7 +112,7 @@
 						-->
 					   <button type="submit" name="action" value="delete" aria-expanded="false" 
 								title="Delete selected"
-								class="btn btn-outline-secondary bg-body-tertiary text-danger">
+								class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
 								<i class="icon-trash-outline"></i> Delete selected
 						</button>
 					</div>
@@ -171,7 +171,7 @@
                                     <a href="/admin?module=returns&amp;action=return&amp;id=4" data-v-return-url><span>#<span data-v-return-return_id>01</span></span></a>
                                 </td>
                                 
-                                <td><span class="name"><a href="#" data-v-return-url><span data-v-return-first_name>John</span> <span data-v-return-last_name>Doe</span></a></td>
+                                <td><span class="name"><a href="javascript:void(0);" data-v-return-url><span data-v-return-first_name>John</span> <span data-v-return-last_name>Doe</span></a></td>
 								
                                 <td><span class="price" data-v-return-return_reason>reason</span></td>
                                 <td><span class="price" data-v-return-return_status>status</span></td>
@@ -276,6 +276,8 @@
 
 
         </div>
+
+		@@include('../_includes/main-footer.html')
     </div>
 </div>
 

@@ -65,6 +65,7 @@
 									Install language pack <i class="la la-flag"></i>
 								</button>
 						</div>
+  						<div id="not-available" class="mt-2 d-none"><a href="https://www.vvveb.com/page/contribute#language" target="_blank">Translations</a> <i class="la la-external-link-alt fs-6"></i></div>
 					</div>
 				 </div>		 
 
@@ -133,6 +134,8 @@
         </div>
 </form>
 
+	@@include('../_includes/main-footer.html')
+	</div>
 </div>
 
 @@include('../_includes/footer-scripts.html')
@@ -144,7 +147,7 @@ let languageSelect = document.getElementById("input-language");
 for (let code in language_list) {
 	let language = language_list[code];
 	languageSelect.append(new Option(
-		(language.emoji ? language.emoji + " " :"") + language.name + (language.installed ? " ✅" :""), code
+		(language.emoji ? language.emoji + " " :"") + language.name + (language.pack ? " 🟩" :"") + (language.installed ? " ✅" :""), code
 	));
 }
 
@@ -174,12 +177,19 @@ languageSelect.addEventListener("change", (e) => {
 	document.getElementById("input-rtl").value = (language.rtl ?? 0) ? "1" : "0";
 	
 	if (currentCode) {
-		if (language.installed) {
-			document.getElementById("installed").classList.remove("d-none");
-			document.getElementById("not-installed").classList.add("d-none");
+		if (language.pack) {
+			document.getElementById("not-available").classList.add("d-none");
+			if (language.pack && language.installed) {
+				document.getElementById("installed").classList.remove("d-none");
+				document.getElementById("not-installed").classList.add("d-none");
+			} else {
+				document.getElementById("installed").classList.add("d-none");
+				document.getElementById("not-installed").classList.remove("d-none");
+			}
 		} else {
-			document.getElementById("installed").classList.add("d-none");
-			document.getElementById("not-installed").classList.remove("d-none");
+				document.getElementById("installed").classList.add("d-none");
+				document.getElementById("not-installed").classList.add("d-none");
+				document.getElementById("not-available").classList.remove("d-none");
 		}
 	}
 })

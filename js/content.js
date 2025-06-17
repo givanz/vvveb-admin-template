@@ -11,7 +11,7 @@ document.querySelectorAll('.taxonomies input.tags-input').forEach(el => {
 		}
 	}*/
 	new _TagsInput(el,{
-		url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags&post_type=" + postType,
+		url: window.location.pathname + "?module=product/product&action=categoriesAutocomplete&type=tags&post_type=" + postType,
 		parameters:el.dataset,
 		listName:"tag",
 		//listName:"tag[]",
@@ -101,9 +101,10 @@ function focusInvalidElement(e) {
 		let form = e.target.closest("form");
 		document.querySelectorAll(".is-invalid").forEach(e => e.classList.remove("is-invalid"));
 		//get first invalid input
-		let element = form.querySelector(':invalid');
-		let activeTab = element.closest(".tab-pane");
-		
+		let element        = form.querySelector(':invalid');
+		let activeTab      = element.closest(".tab-pane");
+		let activeCollapse = element.closest(".collapse:not(.show)");
+
 		element.className += ' is-invalid';
 		//activate tab panel
 		document.querySelectorAll(".tab-pane").forEach(e => e.classList.remove("show", "active"));
@@ -115,6 +116,11 @@ function focusInvalidElement(e) {
 			document.querySelector("a[href='#" + activeTab.getAttribute("id") + "']")?.classList.add("active");
 			document.getElementById(activeTab.getAttribute("id"))?.classList.add("show","active");
 			activeTab = activeTab.parentNode.closest(".tab-pane");
+		}
+
+		while (activeCollapse) {
+			activeCollapse.classList.add("show");
+			activeCollapse = activeCollapse.parentNode.closest(".collapse:not(.show)");
 		}
 		
 		element.focus();

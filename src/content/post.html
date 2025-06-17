@@ -10,7 +10,7 @@
 
 		@@include('../_includes/top-header.html')
 			
-		<div class="actions flex-column flex-md-row">
+		<div class="actions flex-column flex-md-row mb-0">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
@@ -47,14 +47,14 @@
    <input type="hidden" name="post_id" id="post_id" value="" data-v-if="this.post.post_id" data-v-post-post_id>   
     
     <div class="columns">
-    <div class="left-column">
+		<div class="left-column pt-3">
 		
 			<ul class="nav nav-tabs" id="post-tabs">
 				<li class="nav-item"><a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a></li>
 			</ul>
 					
 					
-			<div class="tab-content" id="post-tab-content">
+			<div class="tab-content pe-2" id="post-tab-content">
 				
 				@@include('_post-general.html')
 				
@@ -62,7 +62,7 @@
 								
 			</div>
 
-            <div class="right-column flat">
+            <div class="right-column flat small">
 
                 <label class="header" data-v-header="element_header"
                        for="header_featured_image"><span>Featured Media</span>
@@ -79,7 +79,7 @@
 					 data-media-gallery 
 					 data-target-input="#featured-image-input"
 					 data-target-thumb="#featured-image-thumb" data-type="single"
-					 class="img-thumbnail border-0 p-0 bg-light-subtle">
+					 class="bg-body-tertiary rounded img-fluid">
 						
 
 						<div class="py-3 text-center">
@@ -185,8 +185,9 @@
 </div>
 </div>
  
-</div>
+	</div>
  
+	@@include('../_includes/main-footer.html')
 </div>
 
 @@include('../_includes/footer-scripts.html')
@@ -201,17 +202,18 @@ let oEmbedProxyUrl = '{ $this->oEmbedProxyUrl }';
 let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 let contentType = 'post';
 let postType = '{ $this->type }';
+let themeFonts = { $this->themeFonts };
 </script>
 <script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
 <script id="openverse-js" src="libs/media/openverse.js"></script>
 <script id="media-js"src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
-<script id="revisions-js" src="../../js/admin/revisions.js"></script>
+<script id="revisions-js" src="/js/admin/revisions.js"></script>
 
-<script id="tinymce-options-js" src="../../js/libs/tinymce-options.js"></script>
+<script id="tinymce-options-js" src="/js/libs/tinymce-options.js"></script>
 <!--
-<script id="tinymce-lang" src="../../js/libs/tinymce-dist/langs/{$this.global.locale}.js"></script>
+<script id="tinymce-lang" src="/js/libs/tinymce-dist/langs/{$this.global.locale}.js"></script>
 -->
 <script id="tinymce-lang-code">
 let lang = "{$this->global.locale}";
@@ -222,16 +224,16 @@ if (lang != "en-us") {
 	//tinyMceOptions["language_url"] = "../../js/libs/tinymce-dist/langs/" + lang + ".js";
 }
 </script>
-<script id="tinymce-js" src="../../js/libs/tinymce-dist/tinymce.min.js"></script>
-<script id="oembed-js" src="../../js/libs/oembed.js"></script>
-<script id="tinymce-embed-js" src="../../js/libs/tinymce-embed.js"></script>
+<script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
+<script id="oembed-js" src="/js/libs/oembed.js"></script>
+<script id="tinymce-embed-js" src="/js/libs/tinymce-embed.js"></script>
 
 <!-- date time picker -->
 <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
 <script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
 <link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
 
-<script id="functions-js" src="../../js/admin/functions.js"></script>
+<script id="functions-js" src="/js/admin/functions.js"></script>
 <script id="content-js"src="js/content.js"></script>
 
 @@include('../_includes/footer.html')

@@ -55,8 +55,8 @@ function _AutocompleteInput(el, params) {
 	
 	let valueInput = el.nextElementSibling;
 	//create the ul that will hold the text and values
-	valueInput.after(generateElements('<ul class="autocomplete"></ul>')[0]);
-	let list = valueInput.nextElementSibling;
+	valueInput.before(generateElements('<ul class="autocomplete"></ul>')[0]);
+	let list = valueInput.previousElementSibling;
 	list.after(generateElements('<button class="btn-close"></button>')[0]);
 	let btnClose = list.nextElementSibling;
 
@@ -76,6 +76,7 @@ function _AutocompleteInput(el, params) {
 		validSelection : true,
 		allowFreeText:false,
 		searchOnFocus:true,
+		useKeyAsValue:false,
 		url : el.dataset.url,
 		listName : el.dataset.listName ?? "list",
 		parameters : {'inputName' : valueInput.getAttribute('name'), 'inputId' : textInput.getAttribute('id')}
@@ -101,7 +102,11 @@ function _AutocompleteInput(el, params) {
 		if (item) {
 			value = item.getAttribute('value'); 
 			text = item.textContent;
-			selectOption(value, text);
+			if (settings.useKeyAsValue) {
+				selectOption(value, value);
+			} else {
+				selectOption(value, text);
+			}
 		}
 	});	
 
@@ -115,13 +120,9 @@ function _AutocompleteInput(el, params) {
 
 			textInput.classList.add('autocomplete-loading');
 			settings.parameters.text = text.trim();
-
-			fetch(settings.url + "&"+ new URLSearchParams(settings.parameters))
-			.then((response) => {
-				if (!response.ok) { throw new Error(response) }
-				return response.json()
-			})
-			.then((data) => {
+			
+			
+			let results = (data) => {
 				let items = '';
 				if (data) {
 					size = 0;
@@ -129,7 +130,9 @@ function _AutocompleteInput(el, params) {
 					  for ( key in data ) {//get key => value
 							let txt = generateElements("<span>" + data[key] + "<span>")[0].textContent;
 							let replace = txt.replace(text, "<strong>" + text + "</strong>");
-							items += '<li value="' + key + '">' + data[key].replace(txt, replace) + '</li>';
+							let value = data[key].replace(txt, replace);
+							
+							items += '<li value="' + key + '">' + value + '</li>';
 							size++;
 					  }
 
@@ -144,12 +147,24 @@ function _AutocompleteInput(el, params) {
 					textInput.classList.add('autocomplete-open');
 				}
 				textInput.classList.remove('autocomplete-loading');
-			})
-			.catch(error => {
-				console.log(error.statusText);
-				//displayToast("bg-danger", "Error", "Error saving!");
-			});			
+			};
 			
+			if (settings.url) {
+				fetch(settings.url + "&"+ new URLSearchParams(settings.parameters))
+				.then((response) => {
+					if (!response.ok) { throw new Error(response) }
+					return response.json()
+				})
+				.then(results)
+				.catch(error => {
+					console.log(error.statusText);
+					//displayToast("bg-danger", "Error", "Error saving!");
+				});			
+			}
+			
+			if (settings.data) {
+				results(settings.data.filter((search) => search.indexOf(text) !== -1));
+			}
 			
 			oldText = text;
 		}
@@ -178,10 +193,10 @@ function _AutocompleteInput(el, params) {
 	textInput.addEventListener("focusout", function(e) {
 		//if no valid selection empty input
 		setTimeout(() => {
-			if (!hiddenInput.value) {
+			if (!hiddenInput.value && !settings.allowFreeText) {
 				textInput.value = "";
-				clear();
 			}
+			clear();
 		}, 500);
 	});	
 	
@@ -208,7 +223,11 @@ function _AutocompleteInput(el, params) {
 			} else {
 				let selected = list.querySelector("li.selected");
 				if (selected) {
-					selectOption(selected.getAttribute('value'), selected.textContent);
+					if (settings.useKeyAsValue) {
+						selectOption(selected.getAttribute('value'), selected.getAttribute('value'));
+					} else {
+						selectOption(selected.getAttribute('value'), selected.textContent);
+					}
 					clear();
 				}
 			}
@@ -304,8 +323,14 @@ function _AutocompleteList(el, options) {
 		
 		function setValue(value) { 
 			if (value == "" || value == undefined) return false;
+			let values = [];
 //			value = decodeURIComponent(value);
-			values = JSON.parse(value);
+
+			if (typeof value == "string") {
+				values = JSON.parse(value);
+			} else /*if (typeof value == "string")*/ {
+				values = value;
+			}
 			
 			for (key in values) {
 				addItem(key, values[key]);
@@ -325,7 +350,6 @@ function _AutocompleteList(el, options) {
 		);		
 /*
 		autocomplete.on("autocomplete.change", function(event, value, text) { 
-			console.log(event, value, text);
 				autocomplete.addItem(value, text);
 				values = autocomplete.setList();
 				const e = new CustomEvent('autocompletelist.change', {bubbles: true, detail: [ JSON.stringify(values) ] });
@@ -334,13 +358,12 @@ function _AutocompleteList(el, options) {
 		 });
 */
 		list.addEventListener("click", function (event, value, text)  {
-			// ".remove-btn",
 			let item = event.target.closest(".remove-btn"); 
 			if (item) {
 				item.parentNode.remove();
-				setList();
-				const e = new CustomEvent('autocompletelist.change', {bubbles: true, detail: [ JSON.stringify(values) ] });
-				event.currentTarget.dispatchEvent(e);				
+				let values = setList();
+				const e = new CustomEvent('autocompletelist.change', {bubbles: true, detail: [ values ] });
+				autocomplete.dispatchEvent(e);				
 				//autocomplete.trigger("autocompletelist.change", [ JSON.stringify(values) ]);
 				event.preventDefault();
 				return false;
@@ -402,17 +425,24 @@ function _AutocompleteList(el, options) {
 			});
 
 			//values = encodeURIComponent(JSON.stringify(values));
-			values = JSON.stringify(values);//.replace('"', '\"');
-			autocomplete_list_hidden.value = values;
+			//values = JSON.stringify(values);//.replace('"', '\"');
+			autocomplete_list_hidden.value = JSON.stringify(values);
 			return values;
 		};
 
 		
 		function setValue(value) { 
 			if (value == "" || value == undefined) return false;
-			values = JSON.parse(value);
+			let values = [];
+//			value = decodeURIComponent(value);
+
+			if (typeof value == "string") {
+				values = JSON.parse(value);
+			} else /*if (typeof value == "string")*/ {
+				values = value;
+			}
 			
-			for (key in values){
+			for (key in values) {
 				addItem(key, values[key]);
 			}
 			
@@ -432,12 +462,12 @@ function _AutocompleteList(el, options) {
 		list.addEventListener("click", function (event)  {
 			let item = event.target.closest(".remove-btn"); 
 			if (item) {
-				el.parentNode.remove();
-				
-				let values = setList();
-				const e = new CustomEvent('tagsinput.change', {bubbles: true, detail: [ JSON.stringify(values) ] });
-				event.currentTarget.dispatchEvent(e);				
+				item.parentNode.remove();
 
+				let values = setList();
+				const e = new CustomEvent('tagsinput.change', {bubbles: true, detail: [ values ] });
+				autocomplete.dispatchEvent(e);				
+				
 				event.preventDefault();
 				return false;
 			}

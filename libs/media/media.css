@@ -52,9 +52,9 @@
 	background-color: var(--bs-body-bg);
 	color: var(--bs-primary-text);
 	display: block;
-    position: sticky;
-    top: 0;
-    padding: 1rem;
+	position: sticky;
+	top: 0;
+	padding: 0 1rem;
 	z-index:2;
 }
 
@@ -199,8 +199,8 @@
 }
 
 .filemanager .data.animated {
-	-webkit-animation: showSlowlyElement 700ms; /* Chrome, Safari, Opera */
-	animation: showSlowlyElement 700ms; /* Standard syntax */
+	-webkit-animation: showSlowlyElement 500ms; /* Chrome, Safari, Opera */
+	animation: showSlowlyElement 500ms; /* Standard syntax */
 }
 
 .filemanager .data li {
@@ -224,7 +224,7 @@
 	padding:0;
 }
 
-.filemanager .data li:hover {
+.filemanager .data li:hover, .filemanager .data li.active {
 	padding:0px;
 	border-color: #007bff;
 	border-width: 1px;
@@ -283,8 +283,8 @@
 	margin: 0 auto;
 	border-radius:20px;
 	text-align:center;
-	-webkit-animation: showSlowlyElement 700ms; /* Chrome, Safari, Opera */
-	animation: showSlowlyElement 700ms; /* Standard syntax */
+	-webkit-animation: showSlowlyElement 500ms; /* Chrome, Safari, Opera */
+	animation: showSlowlyElement 500ms; /* Standard syntax */
 }
 
 .filemanager .nothingfound .nofiles {

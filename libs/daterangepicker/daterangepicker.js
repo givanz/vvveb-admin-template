@@ -1627,7 +1627,7 @@ var DateRangePicker;
                 }
                 if (newValue !== this.element.value) {
                     this.element.value = newValue;
-                    /* this.element.dispatchEvent(new Event('change')); Note: イベント？ */
+                    this.element.dispatchEvent(new Event('change'));// Note: イベント？
                 }
             }
         },
