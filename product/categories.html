@@ -1338,7 +1338,7 @@
                 </div>
 
 
-                <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
+                <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
                     <!-- <i class="la la-times"></i> -->
                   </span>
@@ -1355,7 +1355,7 @@
                   You successfully read this important alert message.
                 </div>
 
-                <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
+                <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
                     <!-- <i class="la la-times"></i> -->
                   </span>
@@ -1372,7 +1372,7 @@
                   You successfully read this important warning message.
                 </div>
 
-                <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
+                <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
                     <!-- <i class="la la-times"></i> -->
                   </span>
@@ -1389,7 +1389,7 @@
                   You successfully read this important alert message.
                 </div>
 
-                <button type="button" class="btn-close mt-2" data-bs-dismiss="alert" aria-label="Close">
+                <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
                     <!-- <i class="la la-times"></i> -->
                   </span>
@@ -1810,14 +1810,20 @@
   <script src="libs/autocomplete/autocomplete.js"></script>
 
   <script>
-let mediaPath     = '{ $this->mediaPath }';
-let mediaScanUrl  =  '{ $this->scanUrl }';
-let uploadUrl     = '{ $this->uploadUrl }';
-let linkUrl       = '{ $this->linkUrl }';
-let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let mediaPath         = '{ $this->mediaPath }';
+let mediaScanUrl      = '{ $this->scanUrl }';
+let uploadUrl         = '{ $this->uploadUrl }';
+let deleteUrl         = '{ $this->deleteUrl }';
+let renameUrl         = '{ $this->renameUrl }';
+let mediaUrl          = '{ $this->mediaUrl }';
+let uploadMaxFilesize = '{ $this->uploadMaxFilesize }';
+let postMaxSize       = '{ $this->postMaxSize }';
+
+let linkUrl           = '{ $this->linkUrl }';
+let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 </script>
   <script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>
-  <script id="openverse-js" src="libs/media/openverse.js"></script>
+  <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
   <script id="media-js" src="libs/media/media.js"></script>
   <script id="index-js" src="libs/vvveb/index.js"></script>
   <link href="libs/media/media.css" rel="stylesheet">
@@ -2235,7 +2241,7 @@ document.addEventListener("click", function (e) {
         <!-- <small class="badge bg-success">status</small> -->
         <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div class="toast-body ">
+      <div class="toast-body">
         <div class="flex-grow-1">
           <div class="message">
             <div>Elements saved!</div>
@@ -2248,6 +2254,27 @@ document.addEventListener("click", function (e) {
         </div>
       </div>
     </div>
+
+    <div class="toast-container position-fixed end-0 top-0 me-4 my-4">
+      <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="top-toast">
+        <div class="toast-header bg-success bg-opacity-25 border-0">
+          <strong class="me-auto">Page save</strong>
+          <!-- <small class="badge bg-success">status</small> -->
+          <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <div class="flex-grow-1">
+            <div class="message">
+              <div>Elements saved!</div>
+              <div>Template backup was saved!</div>
+              <div>Template was saved!</div>
+            </div>
+            <div>
+              <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
 
 </body>
 

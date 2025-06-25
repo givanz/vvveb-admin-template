@@ -23,7 +23,7 @@ function isVideo(filename) {
 
 function clearMedia(id = "featured-image") {
 	document.getElementById(id + "-input").value = "";
-	document.getElementById(id + "-thumb").setAttribute("src","img/placeholder.svg");
+	document.getElementById(id + "-thumb").setAttribute("src", "../media/placeholder.svg");
 }
 
 
@@ -305,7 +305,7 @@ class MediaModal {
 		})
 		.catch(error => {
 			console.log(error.statusText);
-			displayToast("bg-danger", "Error", "Error loading media!");
+			displayToast("danger", "Error", "Error loading media!", "top");
 		});
 
 		// This event listener monitors changes on the URL. We use it to
@@ -580,12 +580,12 @@ _
 		  data.append("onlyFilename", true);
 		  data.append("size", size);
 
-		  if (uploadMaxFilesize && size > uploadMaxFilesize) {
-			  displayToast("bg-danger", "Error", "File size bigger than upload max file size!");
+		  if (typeof uploadMaxFilesize !== "undefined" && uploadMaxFilesize && (size > parseInt(uploadMaxFilesize))) {
+			  displayToast("danger", "Error", "File size bigger than upload max file size!", "top");
 		  }
 		  
-		  if (postMaxSize && size > postMaxSize) {
-			  displayToast("bg-danger", "Error", "File size bigger than post max size!");
+		  if (typeof postMaxSize !== "undefined" && postMaxSize && (size > parseInt(postMaxSize))) {
+			  displayToast("danger", "Error", "File size bigger than post max size!", "top");
 		  }
 
 		  return fetch(uploadUrl, {
@@ -599,9 +599,9 @@ _
 				Vvveb.MediaModal.hideUploadLoading();
 
 				if (data.success) {
-					displayToast("bg-success", "Success", data.message);			
+					displayToast("success", "Success", data.message, "top");			
 				} else {
-					displayToast("bg-danger", "Error", data.message);
+					displayToast("danger", "Error", data.message, "top");
 				}
 
 				if (!data.file) continue;  
@@ -619,10 +619,10 @@ _
 			.catch(error => {
 				let message = error.statusText ?? "Error uploading!";
 				Vvveb.MediaModal.hideUploadLoading();						
-				displayToast("bg-danger", "Error", message);
+				displayToast("danger", "Error", message, "top");
 				error.text().then( errorMessage => {
 					let message = errorMessage.substr(0, 200);
-					displayToast("bg-danger", "Error", message);
+					displayToast("danger", "Error", message, "top");
 				});						
 			});		
 /*
@@ -668,16 +668,16 @@ _
 						Vvveb.MediaModal.hideUploadLoading();
 	
 						if (data.success) {
-							displayToast("bg-success", "Success", data.message);			
+							displayToast("success", "Success", data.message, "top");			
 						} else {
-							displayToast("bg-danger", "Error", data.message);
+							displayToast("danger", "Error", data.message, "top");
 						}
 					})
 					.catch(error => {
 						let [response, responseInText] = error;
 						let message = response.statusText ?? "Error uploading!";
 						Vvveb.MediaModal.hideUploadLoading();						
-						displayToast("bg-danger", "Error uploading!", message.substr(0, 200));
+						displayToast("danger", "Error uploading!", message.substr(0, 200), "top");
 					});		
 			}
 		}	
@@ -693,23 +693,23 @@ _
 					return response.json();
 				})
 				.then((data) => {
-					let bg = "bg-success";
+					let bg = "success";
 					if (data.success) {		
 					} else {
-						//bg = "bg-danger";
+						//bg = "danger";
 					}
 					
-					displayToast(bg, "Delete", data.message);
+					displayToast(bg, "Delete", data.message, "top");
 					
 					parent.remove();	
 				})
 				.catch(error => {
 					console.log(error);
 					let message = error.statusText ?? "Error deleting file!";
-					displayToast("bg-danger", "Error", message);
+					displayToast("danger", "Error", message, "top");
 					error.text().then( errorMessage => {
 						let message = errorMessage.substr(0, 200);
-						displayToast("bg-danger", "Error", message);
+						displayToast("danger", "Error", message, "top");
 					});	
 				});	
 			}
@@ -776,10 +776,10 @@ _
 					return response.json();
 				})
 				.then((data) => {
-					let bg = "bg-success";
+					let bg = "success";
 					if (data.success) {		
 					} else {
-						bg = "bg-danger";
+						bg = "danger";
 					}
 					
 					rendered.push({
@@ -789,10 +789,10 @@ _
 							items: []});
 							
 					this.render(rendered);
-					displayToast(bg, "Save", data.message);
+					displayToast(bg, "Save", data.message, "top");
 				})
 				.catch(error => {
-					displayToast("bg-danger", "Error", "Error saving!");
+					displayToast("danger", "Error", "Error saving!", "top");
 				});	
 			}
 		}
@@ -845,7 +845,7 @@ _
 					}
 				})
 				.catch(error => {
-					displayToast("bg-danger", "Error", "Error loading media content!");
+					displayToast("danger", "Error", "Error loading media content!", "top");
 				});	
 			//}
 		}		
@@ -865,19 +865,19 @@ _
 				return response.json();
 			})
 			.then((data) => {
-				let bg = "bg-success";
+				let bg = "success";
 				if (data.success) {		
 				} else {
-					bg = "bg-danger";
+					bg = "danger";
 				}
 				
-				displayToast(bg, "Save", data.message ?? data);
+				displayToast(bg, "Save", data.message ?? data, "top");
 
 				loading.classList.toggle("d-none");
 				btnText.classList.toggle("d-none");
 			})
 			.catch(error => {
-				displayToast("bg-danger", "Error", "Error saving!");
+				displayToast("danger", "Error", "Error saving!", "top");
 				loading.classList.toggle("d-none");
 				btnText.classList.toggle("d-none");
 			});	

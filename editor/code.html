@@ -1455,12 +1455,18 @@
   <script src="libs/codemirror/lib/formatting.js"></script>
 
   <script>
-let mediaPath = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let loadFileUrl = '{ $this->loadFileUrl }';
-let saveUrl = '{ $this->saveUrl }';
-let type = '{ $this->type }';
+let mediaPath         = '{ $this->mediaPath }';
+let mediaScanUrl      = '{ $this->scanUrl }';
+let uploadUrl         = '{ $this->uploadUrl }';
+let deleteUrl         = '{ $this->deleteUrl }';
+let renameUrl         = '{ $this->renameUrl }';
+let mediaUrl          = '{ $this->mediaUrl }';
+let uploadMaxFilesize = '{ $this->uploadMaxFilesize }';
+let postMaxSize       = '{ $this->postMaxSize }';
+
+let loadFileUrl       = '{ $this->loadFileUrl }';
+let saveUrl           = '{ $this->saveUrl }';
+let type              = '{ $this->type }';
 </script>
 
   <script id="content-js" src="js/code-editor.js"></script>
@@ -1494,7 +1500,7 @@ let type = '{ $this->type }';
         <!-- <small class="badge bg-success">status</small> -->
         <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div class="toast-body ">
+      <div class="toast-body">
         <div class="flex-grow-1">
           <div class="message">
             <div>Elements saved!</div>
@@ -1507,6 +1513,27 @@ let type = '{ $this->type }';
         </div>
       </div>
     </div>
+
+    <div class="toast-container position-fixed end-0 top-0 me-4 my-4">
+      <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="top-toast">
+        <div class="toast-header bg-success bg-opacity-25 border-0">
+          <strong class="me-auto">Page save</strong>
+          <!-- <small class="badge bg-success">status</small> -->
+          <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <div class="flex-grow-1">
+            <div class="message">
+              <div>Elements saved!</div>
+              <div>Template backup was saved!</div>
+              <div>Template was saved!</div>
+            </div>
+            <div>
+              <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
 
 </body>
 

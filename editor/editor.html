@@ -1618,23 +1618,23 @@
                   </a>
 
                   <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <span class="hint" aria-label="Text align">
                         <i class="la la-align-left"></i>
                       </span>
                     </button>
 
                     <div id="justify-btn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="javascript:void(0);" data-value="Left">
+                      <a class="dropdown-item" href="#" data-value="Left">
                         <i class="la la-lg la-align-left"></i> Align Left
                       </a>
-                      <a class="dropdown-item" href="javascript:void(0);" data-value="Center">
+                      <a class="dropdown-item" href="#" data-value="Center">
                         <i class="la la-lg la-align-center"></i> Align Center
                       </a>
-                      <a class="dropdown-item" href="javascript:void(0);" data-value="Right">
+                      <a class="dropdown-item" href="#" data-value="Right">
                         <i class="la la-lg la-align-right"></i> Align Right
                       </a>
-                      <a class="dropdown-item" href="javascript:void(0);" data-value="Full">
+                      <a class="dropdown-item" href="#" data-value="Full">
                         <i class="la la-lg la-align-justify"></i> Align Justify
                       </a>
                     </div>
@@ -3420,8 +3420,13 @@ Vvveb.themeBaseUrl = '{ $this->themeBaseUrl }';
 let mediaPath    = '{ $this->mediaPath }';
 let mediaScanUrl =  '{ $this->scanUrl }';
 let uploadUrl    = '{ $this->uploadUrl }';
-let renameUrl    = '{ $this->renameUrl }';
 let deleteUrl    = '{ $this->deleteUrl }';
+let renameUrl         = '{ $this->renameUrl }';
+let mediaUrl          = '{ $this->mediaUrl }';
+let uploadMaxFilesize = '{ $this->uploadMaxFilesize }';
+let postMaxSize       = '{ $this->postMaxSize }';
+
+
 //editor
 let editorUrl         = '{ $this->editorUrl }';
 let namespaceUrl         = '{ $this->namespaceUrl }';
@@ -3454,9 +3459,7 @@ if (themeFonts) {
 	Vvveb.FontsManager.addFontList("theme", friendlyName(themeName), themeFonts);
 }
 </script>
-        <!--
-<script id="openverse-js" src="libs/media/openverse.js"></script>
--->
+        <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
         <script id="media-js" src="libs/media/media.js"></script>
         <script id="index-js" src="libs/vvveb/index.js"></script>
         <script id="resources" src="/js/vvvebjs/resources.js"></script>
@@ -3627,6 +3630,27 @@ document.querySelectorAll("#new-page-modal input[name=type]").forEach(e => e.add
         <!-- save toast -->
         <div class="toast-container position-fixed end-0 bottom-0 me-4 my-4">
           <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+            <div class="toast-header bg-success bg-opacity-25 border-0">
+              <strong class="me-auto">Page save</strong>
+              <!-- <small class="badge bg-success">status</small> -->
+              <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              <div class="flex-grow-1">
+                <div class="message">
+                  <div>Elements saved!</div>
+                  <div>Template backup was saved!</div>
+                  <div>Template was saved!</div>
+                </div>
+                <div>
+                  <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toast-container position-fixed end-0 top-0 me-4 my-4">
+            <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="top-toast">
             <div class="toast-header bg-success bg-opacity-25 border-0">
               <strong class="me-auto">Page save</strong>
               <!-- <small class="badge bg-success">status</small> -->

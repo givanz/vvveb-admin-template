@@ -153,14 +153,12 @@
 <script src="libs/autocomplete/autocomplete.js"></script>	
 
 <script>
-let mediaPath     = '{ $this->mediaPath }';
-let mediaScanUrl  =  '{ $this->scanUrl }';
-let uploadUrl     = '{ $this->uploadUrl }';
-let linkUrl       = '{ $this->linkUrl }';
-let vvvebThemeCss = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+@@include('../_includes/media-variables.html')
+let linkUrl           = '{ $this->linkUrl }';
+let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 </script>
 <script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
-<script id="openverse-js" src="libs/media/openverse.js"></script>
+<!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
 <script id="media-js"src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">

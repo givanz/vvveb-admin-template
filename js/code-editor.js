@@ -29,10 +29,10 @@ function saveCodeEditor() {
 		return response.json();
 	}).then(function (data) {
 		console.log(data);
-		let bg = "bg-success";
+		let bg = "success";
 		if (data.success) {		
 		} else {
-			bg = "bg-danger";
+			bg = "danger";
 		}
 		
 		displayToast(bg, "Save", data.message);
@@ -46,11 +46,11 @@ function saveCodeEditor() {
 	}).catch(error => {
 		console.log(error);
 		let message = error?.statusText ?? "Error saving!";
-		displayToast("bg-danger", "Error", message);
+		displayToast("danger", "Error", message);
 
 		if (error.hasOwnProperty('text')) error.text().then( errorMessage => {
 			let message = errorMessage.substr(0, 200);
-			displayToast("bg-danger", "Error", message);
+			displayToast("danger", "Error", message);
 		});
 
 		btn.querySelector(".loading").classList.toggle("d-none");
@@ -103,11 +103,11 @@ function openCodeEditorModal(file = '', name = null, fileType = 'html', type = n
 		bootstrap.Modal.getOrCreateInstance(codeModal)?.show();
 	}).catch(error => {
 		let message = error?.statusText ?? "Error loading!";
-		displayToast("bg-danger", "Error", message);
+		displayToast("danger", "Error", message);
 
 		if (error.hasOwnProperty('text')) error.text().then( errorMessage => {
 			let message = errorMessage.substr(0, 200);
-			displayToast("bg-danger", "Error", message);
+			displayToast("danger", "Error", message);
 		});
 	});
 }

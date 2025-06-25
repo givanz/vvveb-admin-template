@@ -132,12 +132,10 @@
 <script src="libs/codemirror/lib/formatting.js"></script>
 
 <script>
-let mediaPath = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let loadFileUrl = '{ $this->loadFileUrl }';
-let saveUrl = '{ $this->saveUrl }';
-let type = '{ $this->type }';
+@@include('../_includes/media-variables.html')
+let loadFileUrl       = '{ $this->loadFileUrl }';
+let saveUrl           = '{ $this->saveUrl }';
+let type              = '{ $this->type }';
 </script>
 
 <script id="content-js"src="js/code-editor.js"></script>

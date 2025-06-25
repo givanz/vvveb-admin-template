@@ -83,16 +83,6 @@ function generateElements(html) {
   return template.content.children;
 }
 
-function displayToast(bg, title, message, id = "top-toast") {
-	document.querySelector("#" + id + " .toast-body .message").innerHTML = message;
-	let header = document.querySelector("#" + id + " .toast-header");
-	header.classList.remove(["bg-danger", "bg-success"])
-	header.classList.add(bg);
-	header.querySelector("strong").innerHTML = title;
-	let toast = document.querySelector("#" + id + " .toast").cloneNode();
-	toast.classList.add("show");
-	delay(() => toast.remove(), 5000);
-}	
 		
 //ajax url
 function loadAjax(url, selector, callback = null, params = {}, method = "get") {

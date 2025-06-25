@@ -527,14 +527,9 @@
     </style>
 
 <script>
-let mediaPath         = '{ $this->mediaPath }';
-let mediaScanUrl      = '{ $this->scanUrl }';
-let uploadUrl         = '{ $this->uploadUrl }';
-let deleteUrl         = '{ $this->deleteUrl }';
-let fontsUrl          = '{ $this->fontsUrl }';
-let uploadMaxFilesize = { $this->uploadMaxFilesize };
-let postMaxSize       = { $this->postMaxSize };
-let fonts             = [];
+@@include('../_includes/media-variables.html')
+let fontsUrl = '{ $this->fontsUrl }';
+let fonts    = [];
 
 function addFontsToSelect(fontSelect, data, font_id = 0) {
 	fontSelect.html('<option value="0">All Fonts</option>');
