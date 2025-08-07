@@ -968,6 +968,11 @@
 
             <div class="me-2">
 
+              <button class="btn btn-light border-0 btn-sm btn-dark-mode" data-vvveb-action="darkMode">
+                <!-- i class="la la-adjust la-lg"></i -->
+                <i class="la la-sun"></i>
+              </button>
+
               <a href="javascript:void(0);" class="btn btn-light btn-preview-url" target="_blank" title="View page">
                 <i class="la la-external-link-alt fs-6"></i>
               </a>
@@ -2342,10 +2347,10 @@
 
         <script id="vvveb-input-grid" type="text/html">
 
-	<div class="row">
+	<div class="row g-2">
 		<div class="col-6">
 		
-			<label>Extra small</label>
+			<label class="form-label">Extra small</label>
 			<select class="form-select" name="col" autocomplete="off">
 				
 				<option value="">None</option>
@@ -2358,7 +2363,7 @@
 
 				
 		<div class="col-6">
-			<label>Small</label>
+			<label class="form-label">Small</label>
 			<select class="form-select" name="col-sm" autocomplete="off">
 				
 				<option value="">None</option>
@@ -2370,7 +2375,7 @@
 		</div>
 		
 		<div class="col-6">
-			<label>Medium</label>
+			<label class="form-label">Medium</label>
 			<select class="form-select" name="col-md" autocomplete="off">
 				
 				<option value="">None</option>
@@ -2382,7 +2387,7 @@
 		</div>
 		
 		<div class="col-6">
-			<label>Large</label>
+			<label class="form-label">Large</label>
 			<select class="form-select" name="col-lg" autocomplete="off">
 				
 				<option value="">None</option>
@@ -2395,7 +2400,7 @@
 		
 		
 		<div class="col-6">
-			<label>Extra large </label>
+			<label class="form-label">Extra large </label>
 			<select class="form-select" name="col-xl" autocomplete="off">
 				
 				<option value="">None</option>
@@ -2407,7 +2412,7 @@
 		</div>
 		
 		<div class="col-6">
-			<label>Extra extra large</label>
+			<label class="form-label">Extra extra large</label>
 			<select class="form-select" name="col-xxl" autocomplete="off">
 				
 				<option value="">None</option>
@@ -2436,12 +2441,12 @@
 
 	<div class="row">
 		<div class="col-6 mb-1">
-			<label>Value</label>
+			<label class="form-label">Value</label>
 			<input name="value" type="text" value="{%=value%}" class="form-control" autocomplete="off" />
 		</div>
 
 		<div class="col-6 mb-1">
-			<label>Text</label>
+			<label class="form-label">Text</label>
 			<input name="text" type="text" value="{%=text%}" class="form-control" autocomplete="off" />
 		</div>
 
@@ -2640,11 +2645,11 @@
 
         <script id="vvveb-property" type="text/html">
 
-	<div class="mb-3 {% if (typeof col !== 'undefined' && col != false) { %} col-sm-{%=col%} {% } else { %}row{% } %} {% if (typeof inline !== 'undefined' && inline == true) { %}inline{% } %} " data-key="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}>
+	<div class="mb-2 {% if (typeof col !== 'undefined' && col != false) { %} col-sm-{%=col%} {% } else { %}row{% } %} {% if (typeof inline !== 'undefined' && inline == true) { %}inline{% } %} " data-key="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}>
 		
 		{% if (typeof name !== 'undefined' && name != false) { %}<label class="{% if (typeof inline === 'undefined' ) { %}col-sm-4{% } %} form-label" for="input-model">
 			<span>{%=name%}</span>
-			<button class="btn-close ms-1" title="Clear"></button>
+			<!-- <button class="btn-close ms-1" title="Clear"></button> -->
 		</label>{% } %}
 		
 		<div class="{% if (typeof inline === 'undefined') { %}col-sm-{% if (typeof name !== 'undefined' && name != false) { %}8{% } else { %}12{% } } %} input"></div>
@@ -3417,10 +3422,10 @@ Vvveb.themeBaseUrl = '{ $this->themeBaseUrl }';
         <link href="libs/media/media.css" rel="stylesheet">
         <script>
 //media
-let mediaPath    = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl    = '{ $this->uploadUrl }';
-let deleteUrl    = '{ $this->deleteUrl }';
+let mediaPath         = '{ $this->mediaPath }';
+let mediaScanUrl      = '{ $this->scanUrl }';
+let uploadUrl         = '{ $this->uploadUrl }';
+let deleteUrl         = '{ $this->deleteUrl }';
 let renameUrl         = '{ $this->renameUrl }';
 let mediaUrl          = '{ $this->mediaUrl }';
 let uploadMaxFilesize = '{ $this->uploadMaxFilesize }';
@@ -3429,7 +3434,7 @@ let postMaxSize       = '{ $this->postMaxSize }';
 
 //editor
 let editorUrl         = '{ $this->editorUrl }';
-let namespaceUrl         = '{ $this->namespaceUrl }';
+let namespaceUrl      = '{ $this->namespaceUrl }';
 let saveUrl           = '{ $this->saveUrl }';
 let saveReusableUrl   = '{ $this->saveReusableUrl }';
 let renameFileUrl     = '{ $this->renameFileUrl }';
@@ -3651,24 +3656,24 @@ document.querySelectorAll("#new-page-modal input[name=type]").forEach(e => e.add
 
           <div class="toast-container position-fixed end-0 top-0 me-4 my-4">
             <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="top-toast">
-            <div class="toast-header bg-success bg-opacity-25 border-0">
-              <strong class="me-auto">Page save</strong>
-              <!-- <small class="badge bg-success">status</small> -->
-              <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body ">
-              <div class="flex-grow-1">
-                <div class="message">
-                  <div>Elements saved!</div>
-                  <div>Template backup was saved!</div>
-                  <div>Template was saved!</div>
-                </div>
-                <div>
-                  <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+              <div class="toast-header bg-success bg-opacity-25 border-0">
+                <strong class="me-auto">Page save</strong>
+                <!-- <small class="badge bg-success">status</small> -->
+                <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                <div class="flex-grow-1">
+                  <div class="message">
+                    <div>Elements saved!</div>
+                    <div>Template backup was saved!</div>
+                    <div>Template was saved!</div>
+                  </div>
+                  <div>
+                    <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
 </body>
 

@@ -619,12 +619,13 @@ body
 		.nav-item
 		{
 		
-			.nav-link
+			a.nav-link
 			{
 				text-align:center;
 				border-top-color: var(--bs-body-bg);
 				border-radius:0px;
 				min-width:4.5rem;
+				padding:0.3rem 0;
 				//color:var(--bs-body-color);
 				--bs-nav-link-color:var(--bs-secondary-color);
 				line-height:1.4;
@@ -636,7 +637,7 @@ body
 				
 				i {
 					font-size:1.1rem;
-					vertical-align:bottom;
+					vertical-align:middle;
 				}
 				
 				small
@@ -956,10 +957,12 @@ body
 			padding:.275rem 0.25rem;
 		}*/
 
-		.mb-3
+		.mb-2
 		{
 			//margin-right:0px;			
-			//margin-left:0px;			
+			//margin-left:0px;
+			vertical-align: middle;
+			align-items: center;
 			
 			&.row {
 				margin:0;
@@ -974,7 +977,7 @@ body
 			> label
 			{
 				font-size:11px;
-				font-weight:600;
+				font-weight:500;
 				margin-bottom:5px;
 				color:var(--bs-secondary-color);
 				flex-grow:1;
@@ -996,7 +999,7 @@ body
 					input[type="number"] {
 						position: absolute;
 						right: 0;
-						top: -1.2rem;
+						top: -0.8rem;
 						width: 5em;
 						padding: 0.2rem 0.2rem;
 						text-align: center;
@@ -1715,7 +1718,7 @@ li[data-type]
 			label
 			{
 				font-size: 11px;
-				font-weight: 600;
+				font-weight: 500;
 				line-height: 28px;
 				text-align: left;
 				//padding-left:1rem;
@@ -1838,7 +1841,7 @@ li[data-type]
 			
 			.name {
 				text-transform:capitalize;
-				font-weight:500;
+				font-weight:400;
 			}
 			
 			.type {
@@ -1851,7 +1854,7 @@ li[data-type]
 					font-size: 12px;
 				}
 				.type {
-					font-size: 12px;
+					font-size: 11px;
 				}
 			}
 			
@@ -2026,7 +2029,7 @@ li[data-type]
 label.header
 {
 	font-size: 11px;
-	font-weight: 600;
+	font-weight: 500;
 	height: auto;
 	margin: 0;
 	padding: 0;

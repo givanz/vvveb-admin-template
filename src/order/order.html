@@ -23,7 +23,7 @@
             <div class="btns">
 
 				<a href="{$this.adminPath}index.php?module=order/orders" title="Order list"
-					class="btn btn-icon btn-outline-secondary me-2">
+					class="btn btn-icon btn-outline-secondary">
 						<i class="la la-arrow-left"></i>
 						<span>Order list</span>
 				 </a>
@@ -40,7 +40,7 @@
                     <i class="icon-boat-outline"></i> <span>Print Shipping</span>
                 </a>&nbsp;
 				
-                <button type="submit" href="" onclick="orderFormSubmit()" class="btn btn-primary btn-icon ms-1">
+                <button type="submit" onclick="orderFormSubmit()" class="btn btn-primary btn-icon ms-1">
                     <i class="icon-create-outline"></i> Save order
                 </button>
             </div>
@@ -205,8 +205,8 @@ if (productDetails) {
 	function onSelect(value, text, name, listName) {
 		productDetails.innerHTML = "";
 		productDetails.style.display = "";
-		loadAjax(window.location.href, ".product-details > div", null, {product_id:value},  "post");
-		//document.querySelector(".product-details").load(window.location.href + " .product-details > div", {product_id:value});
+		loadAjax(window.location.pathname + location.search, ".product-details > div", null, {product_id:value},  "post");
+		//document.querySelector(".product-details").load(window.location.pathname + location.search + " .product-details > div", {product_id:value});
 		
 	}
 	/*

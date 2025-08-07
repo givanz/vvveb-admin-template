@@ -77,19 +77,55 @@
 			</div>
 		</div> 
 	  
-	  <div class="mb-3 required">
-		<label class="form-label">Meta keywords</label>
-		<div>
-		  <input name="post_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-post-content-meta_keywords />
-		</div>
-	  </div>	  
+	  <div class="mb-3 row">
+		<div class="col-md-6">
+			<label class="form-label">Meta keywords</label>
+			<div>
+			  <input name="post_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-post-content-meta_keywords />
+			</div>
+		  </div>	  
 	  
-	  <div class="mb-3 required">
-		<label class="form-label">Meta description</label>
-		<div>
-		  <input name="post_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-post-content-meta_description />
-		</div>
+		  <div class="col-md-6">
+			<label class="form-label">Meta description</label>
+			<div>
+			  <input name="post_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-post-content-meta_description />
+			</div>
+		  </div>
 	  </div>
+	  
+	  
+	  
+	  <div data-v-field-groups>
+		  <div class="card field-group" data-v-field-group>
+			
+			<label class="header" for="field_header">
+				<span data-v-field-group-name>Field group</span>
+                <div class="header-arrow"></div>
+			</label>
+			
+            <input class="header_check" type="checkbox" checked="" id="field_header">
+			
+			<div class="fields section" data-v-fields>
+
+				<div class="row" data-v-row>
+				
+					<div class="col" data-v-field>
+						
+							<div class="input">
+							  <label for="input-name" class="col-form-label" data-v-field-label>Label</label>
+							  <div class="">
+								<input readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][name]" data-v-field-name="" value="test">
+							  </div>
+							</div>
+					
+					</div>
+					
+				</div>
+
+			</div>
+		
+		</div>
+	</div>
 	  
 
 	</div>

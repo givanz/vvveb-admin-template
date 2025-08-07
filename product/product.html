@@ -1302,7 +1302,7 @@
 
         <div class="btns">
 
-          <a href="/admin/?module=product/products" title="Product list" class="btn btn-icon btn-outline-secondary me-2" data-v-products-list-url>
+          <a href="/admin/?module=product/products" title="Product list" class="btn btn-icon btn-outline-secondary" data-v-products-list-url>
             <i class="la la-arrow-left"></i>
             <span>
               <span data-v-type-name>Product</span>
@@ -1310,11 +1310,47 @@
             </span>
           </a>
 
-          <button type="submit" href="" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('form').requestSubmit();">
+          <input type="checkbox" class="btn-check" id="btn-preview" autocomplete="off">
+          <label class="btn btn-outline-primary btn-icon btn-preview" for="btn-preview" data-v-if="this.product.product_id">
+            <div class="preview">
+              <i class="icon-eye-outline"></i>
+              <span>Preview</span>
+            </div>
+            <div class="close">
+              <i class="icon-close-outline"></i>
+              <span>Close</span>
+            </div>
+          </label>
+
+          <button type="submit" data-v-check-permission-save class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('form').requestSubmit();">
             <i class="icon-create-outline"></i>
             <span>Save</span>
             <span data-v-type-name>product</span>
           </button>
+
+
+          <div class="btn-group preview-responsive d-none ms-2" role="group">
+
+            <input type="radio" name="responsive-view" class="btn-check" id="btn-mobile-view" autocomplete="off">
+            <label id="mobile-view" data-view="mobile" class="btn btn-outline-secondary btn-icon" for="btn-mobile-view" title="Mobile view" onclick="previewViewport(this)">
+              <i class="la la-mobile la-lg"></i>
+            </label>
+
+            <input type="radio" name="responsive-view" class="btn-check" id="btn-tablet-view" autocomplete="off">
+            <label id="tablet-view" data-view="tablet" class="btn btn-outline-secondary btn-icon" for="btn-tablet-view" title="Tablet view" onclick="previewViewport(this)">
+              <i class="la la-tablet la-lg"></i>
+            </label>
+
+            <input type="radio" name="responsive-view" class="btn-check" id="btn-desktop-view" autocomplete="off">
+            <label id="desktop-view" data-view="" class="btn btn-outline-secondary btn-icon" for="btn-desktop-view" title="Desktop view" onclick="previewViewport(this)">
+              <i class="la la-laptop la-lg"></i>
+            </label>
+
+            <div class="percent">
+              <input type="number" id="zoom" value="100" step="10" min="10" max="100" class="form-control" data-vvveb-action="zoomChange" data-vvveb-on="change">
+            </div>
+
+          </div>
         </div>
       </div>
 
@@ -1640,6 +1676,38 @@
 			</div>
 			-->
 
+                        <div data-v-field-groups>
+                          <div class="card field-group" data-v-field-group>
+
+                            <label class="header" for="field_header">
+                              <span data-v-field-group-name>Field group</span>
+                              <div class="header-arrow"></div>
+                            </label>
+
+                            <input class="header_check" type="checkbox" checked="" id="field_header">
+
+                            <div class="fields section" data-v-fields>
+
+                              <div class="row" data-v-row>
+
+                                <div class="col" data-v-field>
+
+                                  <div class="input">
+                                    <label for="input-name" class="col-form-label" data-v-field-label>Label</label>
+                                    <div class="">
+                                      <input readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][name]" data-v-field-name="" value="test">
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </div>
+
                       </div>
                     </div>
 
@@ -1677,7 +1745,7 @@
                         <div class="taxonomies" data-v-taxonomies>
                           <div class="taxonomy" data-v-taxonomy_item>
 
-                            <label class="header" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label>
+                            <label class="col-form-label" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label>
                               <span data-v-taxonomy_item-name>Categories</span>
                               <div class="header-arrow"></div>
                             </label>
@@ -1686,8 +1754,9 @@
 
 
                               <div class="categories-list" data-v-categories>
-                                <div data-v-cats>
+                                <div class="alert alert-warning m-0" data-v-if="taxonomy_item.taxonomy_item.count = 0 && taxonomy_item.type = 'categories'">No items!</div>
 
+                                <div data-v-cats>
                                   <ul class="dd-list" data-v-if="taxonomy_item.type = 'categories'">
 
                                     <li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
@@ -1706,6 +1775,7 @@
                                 </div>
 
                                 <div data-v-tags>
+                                  <!-- <div class="alert alert-warning" data-v-if-not="_categories">No items!</div> -->
 
                                   <div class="tags-input">
 
@@ -2513,11 +2583,11 @@
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-price">Price</label>
                       <div class="col-sm-4">
-                        <input name="price" value="0.00" placeholder="Price" id="input-price" class="form-control" type="number" data-v-product-price>
+                        <input name="price" value="0.00" step="0.01" min="0" placeholder="Price" id="input-price" class="form-control" type="number" data-v-product-price>
                       </div>
                       <label class="col-sm-2 form-label" for="input-old_price">Old price</label>
                       <div class="col-sm-4">
-                        <input name="old_price" value="0.00" placeholder="Old price" id="input-old_price" class="form-control" type="number" data-v-product-old_price>
+                        <input name="old_price" value="0.00" step="0.01" min="0" placeholder="Old price" id="input-old_price" class="form-control" type="number" data-v-product-old_price>
                       </div>
                     </div>
                     <div class="mb-3 row">
@@ -2605,20 +2675,20 @@
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-model">Width</label>
                       <div class="col-sm-4">
-                        <input name="width" value="0.00" placeholder="Width" id="input-width" class="form-control" type="number" data-v-product-width>
+                        <input name="width" value="0.00" step="0.01" min="0" placeholder="Width" id="input-width" class="form-control" type="number" data-v-product-width>
                       </div>
                       <label class="col-sm-2 form-label" for="input-sku">
                         <span>Height</span>
                       </label>
                       <div class="col-sm-4">
-                        <input name="height" value="0.00" placeholder="Height" id="input-height" class="form-control" type="number" data-v-product-height>
+                        <input name="height" value="0.00" step="0.01" min="0" placeholder="Height" id="input-height" class="form-control" type="number" data-v-product-height>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-model">Length</label>
                       <div class="col-sm-4">
-                        <input name="length" value="0.00" placeholder="Length" id="input-length" class="form-control" type="number" data-v-product-length>
+                        <input name="length" value="0.00" step="0.01" min="0" placeholder="Length" id="input-length" class="form-control" type="number" data-v-product-length>
                       </div>
                       <label class="col-sm-2 form-label" for="input-sku">
                         <span>Length Class</span>
@@ -2637,7 +2707,7 @@
                     <div class="mb-3 row">
                       <label class="col-sm-2 form-label" for="input-weight">Weight</label>
                       <div class="col-sm-4">
-                        <input name="weight" value="0.00" placeholder="Weight" id="input-weight" class="form-control" type="text" data-v-product-weight>
+                        <input name="weight" value="0.00" step="0.01" min="0" placeholder="Weight" id="input-weight" class="form-control" type="text" data-v-product-weight>
                       </div>
 
                       <label class="col-sm-2 form-label" for="input-weight-type">Weight Class</label>
@@ -3172,7 +3242,7 @@
                               <input name="product_promotion[0][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
                             </td>
                             <td class="text-end">
-                              <input name="product_promotion[0][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
+                              <input name="product_promotion[0][price]" value="90.0000" placeholder="Price" class="form-control" type="number" data-v-promotion-price>
                             </td>
                             <td class="text-start" style="width: 20%;">
                               <input name="product_promotion[0][from_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-from_date>
@@ -3314,119 +3384,123 @@
 								-->
 
                 </div>
+              </div>
+              <div class="right-column flat small">
+
+                <label class="header" data-v-header="element_header" for="header_featured_image">
+                  <span>Featured Media</span>
+                  <div class="header-arrow"></div>
+                </label>
+                <input class="header_check" type="checkbox" checked="true" id="header_featured_image">
+                <div class="section" data-v-section="element_header">
+
+                  <input type="hidden" data-v-image name="image" id="featured-image-input" value="">
+
+                  <img data-v-image src="" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="bg-body-tertiary rounded img-fluid">
+
+
+                  <div class="py-3 text-center">
+                    <div class="btn-group w-100">
+                      <button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single">
+                        <i class="la la-image la-lg"></i> Set featured media
+                      </button>
+
+                      <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
+                        <i class="la la-times"></i>
+                      </button>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <!-- @-@include('_product_taxonomies.html') -->
+
+                <label class="header" data-v-header="default" for="header_product_options">
+                  <span data-v-type-name>Product</span> options
+                  <div class="header-arrow"></div>
+                </label>
+                <input class="header_check" type="checkbox" checked="true" id="header_product_options">
+                <div class="section" data-v-section="default">
+
+                  <div class="mb-3">
+                    <label class="form-label" for="input-status">
+                      <span>Status</span>
+                    </label>
+
+                    <div class="input-group">
+                      <select name="status" id="input-status" placeholder="Visibility" class="form-select" data-v-product-status>
+                        <option value="0" data-v-option>Disabled</option>
+                        <option value="1" data-v-option>Enabled</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <label class="header mt-4" data-v-header="default" for="header_sites">Sites
+                  <div class="header-arrow"></div>
+                </label>
+                <input class="header_check" type="checkbox" checked="true" id="header_sites">
+                <div class="section" data-v-section="default">
+
+                  <div class="mb-3">
+
+                    <div class="categories-list px-2" data-v-sites>
+                      <label class="form-check" data-v-site>
+                        <input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site-site_id>
+                        <span class="form-check-label" data-v-site-name title="Default">Default</span>
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+
+                <label class="header mt-4" data-v-header="default" for="header_template">Template
+                  <div class="header-arrow"></div>
+                </label>
+                <input class="header_check" type="checkbox" checked="true" id="header_template">
+                <div class="section" data-v-section="default">
+
+                  <div class="mb-3">
+
+                    <div class="input-group">
+                      <!-- div class="input-group-addon"><i class="icon-eye-outline"></i></div-->
+                      <select class="form-select" placeholder="Visibility" name="template" data-v-templates>
+                        <option value="" title="Default template used for this page">-- Default template --</option>
+                        <option value="published" data-v-option>Published</option>
+                        <option value="pending" data-v-option>Pending</option>
+                        <option value="draft" data-v-option>Draft</option>
+                        <option value="private" data-v-option>Private</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3" data-v-if="this.template_missing">
+                    <div class="alert alert-warning" role="alert">
+                      <div data-v-template_missing></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </form>
         </div>
-        <div class="right-column flat small">
 
-          <label class="header" data-v-header="element_header" for="header_featured_image">
-            <span>Featured Media</span>
-            <div class="header-arrow"></div>
-          </label>
-          <input class="header_check" type="checkbox" checked="true" id="header_featured_image">
-          <div class="section" data-v-section="element_header">
-
-            <input type="hidden" data-v-image name="image" id="featured-image-input" value="">
-
-            <img data-v-image src="" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="bg-body-tertiary rounded img-fluid">
-
-
-            <div class="py-3 text-center">
-              <div class="btn-group w-100">
-                <button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single">
-                  <i class="la la-image la-lg"></i> Set featured media
-                </button>
-
-                <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-                  <i class="la la-times"></i>
-                </button>
-              </div>
-            </div>
-
-
-          </div>
-
-          <!-- @-@include('_product_taxonomies.html') -->
-
-          <label class="header" data-v-header="default" for="header_product_options">
-            <span data-v-type-name>Product</span> options
-            <div class="header-arrow"></div>
-          </label>
-          <input class="header_check" type="checkbox" checked="true" id="header_product_options">
-          <div class="section" data-v-section="default">
-
-            <div class="mb-3">
-              <label class="form-label" for="input-status">
-                <span>Status</span>
-              </label>
-
-              <div class="input-group">
-                <select name="status" id="input-status" placeholder="Visibility" class="form-select" data-v-product-status>
-                  <option value="0" data-v-option>Disabled</option>
-                  <option value="1" data-v-option>Enabled</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <label class="header mt-4" data-v-header="default" for="header_sites">Sites
-            <div class="header-arrow"></div>
-          </label>
-          <input class="header_check" type="checkbox" checked="true" id="header_sites">
-          <div class="section" data-v-section="default">
-
-            <div class="mb-3">
-
-              <div class="categories-list px-2" data-v-sites>
-                <label class="form-check" data-v-site>
-                  <input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site_id>
-                  <span class="form-check-label" data-v-name title="Default">Default</span>
-                </label>
-              </div>
-
-            </div>
-          </div>
-
-          <label class="header mt-4" data-v-header="default" for="header_template">Template
-            <div class="header-arrow"></div>
-          </label>
-          <input class="header_check" type="checkbox" checked="true" id="header_template">
-          <div class="section" data-v-section="default">
-
-            <div class="mb-3">
-
-              <div class="input-group">
-                <!-- div class="input-group-addon"><i class="icon-eye-outline"></i></div-->
-                <select class="form-select" placeholder="Visibility" name="template" data-v-templates>
-                  <option value="" title="Default template used for this page">-- Default template --</option>
-                  <option value="published" data-v-option>Published</option>
-                  <option value="pending" data-v-option>Pending</option>
-                  <option value="draft" data-v-option>Draft</option>
-                  <option value="private" data-v-option>Private</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="mb-3" data-v-if="this.template_missing">
-              <div class="alert alert-warning" role="alert">
-                <div data-v-template_missing></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
     </div>
-
-    </form>
+    <div id="preview-separator">
+      <div>.. .. .. .. ..</div>
+    </div>
+    <div id="preview">
+      <iframe id="preview-iframe"></iframe>
+    </div>
 
     <div id="main-footer">
       Powered by <a href="https://www.vvveb.com" target="_blank">Vvveb</a>
     </div>
 
-  </div>
-  </div>
 
-  </div>
   </div>
 
   <!--

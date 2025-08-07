@@ -1301,7 +1301,7 @@
             </h4>
           </div>
           <div>
-            <a href="{$this.adminPath}index.php?module=user/users" title="User list" class="btn btn-icon btn-outline-secondary me-2">
+            <a href="{$this.adminPath}index.php?module=user/users" title="User list" class="btn btn-icon btn-outline-secondary">
               <i class="la la-arrow-left"></i>
               <span>User list</span>
             </a>
@@ -1311,7 +1311,7 @@
               <span>Login as user</span>
             </button>
 
-            <button type="submit" href="" class="btn btn-primary btn-icon ms-1">
+            <button type="submit" class="btn btn-primary btn-icon ms-1">
               <i class="icon-create-outline me-2"></i>
               <span>Save user</span>
             </button>
@@ -1486,6 +1486,30 @@
               </div>
 
               <div class="mb-3 row">
+                <label for="input-site-title" class="col-sm-2 col-form-label">Cover</label>
+                <div class="col-sm-10">
+
+                  <input type="hidden" data-v-cover name="user[cover]" id="cover-input" value="">
+
+                  <img data-v-cover src="img/placeholder.svg" alt="" title="" id="cover-thumb" data-v-placeholder="" data-media-gallery data-target-input="#cover-input" data-target-thumb="#cover-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;">
+
+                  <div class="py-3">
+                    <div class="btn-group">
+                      <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-media-gallery data-target-input="#cover-input" data-target-thumb="#cover-thumb" data-type="single">
+                        <i class="la la-image la-lg"></i>
+                        <span>Set image</span>
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('cover')">
+                        <i class="la la-times"></i>
+                      </button>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div class="mb-3 row">
                 <label for="input-bio" class="col-sm-2 col-form-label">Bio</label>
                 <div class="col-sm-10">
                   <textarea class="form-control" id="input-bio" placeholder="Biography" name="user[bio]" data-v-user-bio></textarea>
@@ -1506,7 +1530,7 @@
               <div class="mb-3 row">
                 <label for="input-password" class="col-sm-2 col-form-label">
                   Password
-                  <span class="form-text">Enter new password to reset</span>
+                  <div class="form-text">Enter new password to reset</div>
                 </label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="input-password" placeholder="Password" name="user[password]" data-v-user-password>

@@ -13950,6 +13950,7 @@ div.autocomplete-list {
   padding: 0 0.3rem;
   border: 1px solid var(--bs-primary-bg-subtle);
   background-color: var(--bs-primary-bg-subtle);
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
   color: var(--bs-primary-text-emphasis);
   border-radius: 4px;
   margin: 0.2rem; }
@@ -14189,17 +14190,18 @@ body {
       height: 100%;
       display: flex;
       flex-direction: column; }
-    #vvveb-builder .drag-elements .nav-item .nav-link {
+    #vvveb-builder .drag-elements .nav-item a.nav-link {
       text-align: center;
       border-top-color: var(--bs-body-bg);
       border-radius: 0px;
       min-width: 4.5rem;
+      padding: 0.3rem 0;
       --bs-nav-link-color:var(--bs-secondary-color);
       line-height: 1.4; }
-      #vvveb-builder .drag-elements .nav-item .nav-link i {
+      #vvveb-builder .drag-elements .nav-item a.nav-link i {
         font-size: 1.1rem;
-        vertical-align: bottom; }
-      #vvveb-builder .drag-elements .nav-item .nav-link small, #vvveb-builder .drag-elements .nav-item .nav-link .small {
+        vertical-align: middle; }
+      #vvveb-builder .drag-elements .nav-item a.nav-link small, #vvveb-builder .drag-elements .nav-item a.nav-link .small {
         font-size: 0.8rem; }
     #vvveb-builder .drag-elements#add-section-box .nav-item:first-child .nav-link {
       border-left: none; }
@@ -14374,40 +14376,43 @@ body {
       font-size: 0.8rem; }
     #vvveb-builder .component-properties .form-select {
       height: auto; }
-    #vvveb-builder .component-properties .mb-3.row {
-      margin: 0; }
-    #vvveb-builder .component-properties .mb-3 > label {
-      font-size: 11px;
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: var(--bs-secondary-color);
-      flex-grow: 1; }
-      #vvveb-builder .component-properties .mb-3 > label i {
-        font-size: 14px; }
-    #vvveb-builder .component-properties .mb-3 .input .input-range {
-      position: relative;
-      padding-top: 0.4rem; }
-      #vvveb-builder .component-properties .mb-3 .input .input-range input[type="number"] {
-        position: absolute;
-        right: 0;
-        top: -1.2rem;
-        width: 5em;
-        padding: 0.2rem 0.2rem;
-        text-align: center;
-        line-height: 12px;
-        font-size: 12px; }
-    #vvveb-builder .component-properties .mb-3 .input [type="color"], #vvveb-builder .component-properties .mb-3 .input .form-check-input {
-      float: right; }
-    #vvveb-builder .component-properties .mb-3 .custom-control {
-      min-height: 1.1rem; }
-    #vvveb-builder .component-properties .mb-3.inline {
-      display: flex;
+    #vvveb-builder .component-properties .mb-2 {
+      vertical-align: middle;
       align-items: center; }
-      #vvveb-builder .component-properties .mb-3.inline .control-label {
+      #vvveb-builder .component-properties .mb-2.row {
+        margin: 0; }
+      #vvveb-builder .component-properties .mb-2 > label {
+        font-size: 11px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: var(--bs-secondary-color);
         flex-grow: 1; }
-      #vvveb-builder .component-properties .mb-3.inline .input {
-        flex: 1 1 auto;
-        width: auto; }
+        #vvveb-builder .component-properties .mb-2 > label i {
+          font-size: 14px; }
+      #vvveb-builder .component-properties .mb-2 .input .input-range {
+        position: relative;
+        padding-top: 0.4rem; }
+        #vvveb-builder .component-properties .mb-2 .input .input-range input[type="number"] {
+          position: absolute;
+          right: 0;
+          top: -0.8rem;
+          width: 5em;
+          padding: 0.2rem 0.2rem;
+          text-align: center;
+          line-height: 12px;
+          font-size: 12px; }
+      #vvveb-builder .component-properties .mb-2 .input [type="color"], #vvveb-builder .component-properties .mb-2 .input .form-check-input {
+        float: right; }
+      #vvveb-builder .component-properties .mb-2 .custom-control {
+        min-height: 1.1rem; }
+      #vvveb-builder .component-properties .mb-2.inline {
+        display: flex;
+        align-items: center; }
+        #vvveb-builder .component-properties .mb-2.inline .control-label {
+          flex-grow: 1; }
+        #vvveb-builder .component-properties .mb-2.inline .input {
+          flex: 1 1 auto;
+          width: auto; }
   #vvveb-builder #canvas {
     margin-right: 15vw;
     margin-left: 15vw;
@@ -14866,7 +14871,7 @@ li[data-type] {
         position: relative; }
         .drag-elements-sidepane ul > li.header label {
           font-size: 11px;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 28px;
           text-align: left;
           padding: 0.3rem 1rem;
@@ -14938,7 +14943,7 @@ li[data-type] {
           margin-top: 3px; }
       .sections-container > div.section-item .controls .name {
         text-transform: capitalize;
-        font-weight: 500; }
+        font-weight: 400; }
       .sections-container > div.section-item .controls .type {
         color: #777; }
       .sections-container > div.section-item .controls .info {
@@ -14946,7 +14951,7 @@ li[data-type] {
         .sections-container > div.section-item .controls .info .name {
           font-size: 12px; }
         .sections-container > div.section-item .controls .info .type {
-          font-size: 12px; }
+          font-size: 11px; }
       .sections-container > div.section-item .controls .buttons {
         margin-right: 2rem;
         margin-top: 0.2rem; }
@@ -15137,7 +15142,7 @@ li[data-type] {
 
 label.header {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   height: auto;
   margin: 0;
   padding: 0;

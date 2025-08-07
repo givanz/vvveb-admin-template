@@ -22,16 +22,53 @@
 				
 
             <div class="btns">
-				<a href="/admin/?module=content/posts" title="Post list" data-v-posts-list-url
-					class="btn btn-icon btn-outline-secondary me-2">
-						<i class="la la-arrow-left"></i><span><span data-v-type-name>Posts</span> <span>list</span></span>
+
+				 <a href="/admin/?module=content/posts" title="Post list" data-v-posts-list-url class="btn btn-icon btn-outline-secondary me-3">
+					<i class="la la-arrow-left"></i><span><span data-v-type-name>Posts</span> <span>list</span></span>
 				 </a>
 
-                <button type="submit" href="" data-v-check-permission-save
+				  <input type="checkbox" class="btn-check" id="btn-preview" autocomplete="off">
+				  <label class="btn btn-outline-primary btn-icon btn-preview" for="btn-preview" data-v-if="this.post.post_id">
+						<div class="preview">
+							<i class="icon-eye-outline"></i>
+							<span>Preview</span>
+						</div>
+						<div class="close">
+							<i class="icon-close-outline"></i>
+							<span>Close</span>
+						</div>
+				  </label>
+
+                <button type="submit" data-v-check-permission-save
                         class="btn btn-primary btn-icon ms-1"
 						onclick="document.getElementById('form').requestSubmit();">
                     <i class="icon-create-outline"></i> <span>Save</span> <span data-v-type-name>post</span>
                 </button>
+						  
+								  
+				  <div class="btn-group preview-responsive d-none ms-2" role="group">
+
+					<input type="radio" name="responsive-view" class="btn-check" id="btn-mobile-view" autocomplete="off">
+					<label id="mobile-view" data-view="mobile" class="btn btn-outline-secondary btn-icon" for="btn-mobile-view" title="Mobile view" onclick="previewViewport(this)">
+					  <i class="la la-mobile la-lg"></i>
+					</label>
+
+					<input type="radio" name="responsive-view" class="btn-check" id="btn-tablet-view" autocomplete="off">
+					<label id="tablet-view" data-view="tablet" class="btn btn-outline-secondary btn-icon" for="btn-tablet-view" title="Tablet view" onclick="previewViewport(this)">
+					  <i class="la la-tablet la-lg"></i>
+					</label>
+
+					<input type="radio" name="responsive-view" class="btn-check" id="btn-desktop-view" autocomplete="off">
+					<label id="desktop-view" data-view="" class="btn btn-outline-secondary btn-icon" for="btn-desktop-view" title="Desktop view" onclick="previewViewport(this)">
+					  <i class="la la-laptop la-lg"></i>
+					</label>
+
+					<div class="percent">
+					  <input type="number" id="zoom" value="100" step="10" min="10" max="100" class="form-control" data-vvveb-action="zoomChange" data-vvveb-on="change">
+					</div>
+					
+				  </div>
+
             </div>
 		</div>		
 	
@@ -67,9 +104,9 @@
                 <label class="header" data-v-header="element_header"
                        for="header_featured_image"><span>Featured Media</span>
                             <div class="header-arrow"></div>
-                        </label>
-                        <input class="header_check" type="checkbox" checked="true" id="header_featured_image">
-                        <div class="section" data-v-section="element_header">
+				</label>
+				<input class="header_check" type="checkbox" checked="true" id="header_featured_image">
+				<div class="section" data-v-section="element_header">
 
 					<input type="hidden" data-v-image name="image" id="featured-image-input" value="">
 								
@@ -95,6 +132,7 @@
 								</button>
 							</div>
                         </div>
+					</div>
 
 
 
@@ -144,8 +182,8 @@
 
                                <div class="categories-list px-2" data-v-sites>
 									<label class="form-check" data-v-site>
-										<input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site_id>
-										<span class="form-check-label" data-v-name title="Default">Default</span>
+										<input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site-site_id>
+										<span class="form-check-label" data-v-site-name title="Default">Default</span>
 									  </label>
 							   </div>
 								
@@ -182,11 +220,15 @@
                     </div>
 			</div>	
 	</form>
-</div>
-</div>
- 
 	</div>
  
+	</div>
+	</div>
+
+	
+ 	<div id="preview-separator"><div>.. .. .. .. ..</div></div>
+ 	<div id="preview"><iframe id="preview-iframe"></iframe></div>
+
 	@@include('../_includes/main-footer.html')
 </div>
 

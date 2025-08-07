@@ -1,0 +1,276 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Api Auth Tokens","scripts":"","base_href":"../"})
+
+<body class="currencies">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+	
+        <div id="content">
+           
+		<form id="token-form" action="" method="post" class="settings">
+		   <input type="hidden" name="action" id="action" value="save">
+            <div class="actions">
+				
+				<div class="title">
+					<h4 class="text-muted my-2">
+						<i class="icon-key-outline"></i>
+						<span>Api Auth Tokens</span>
+					</h4>
+				</div>
+				
+				<div class="btns">
+
+					 <a href="" class="btn btn-outline-secondary btn-icon ms-1" data-v-user-url>
+						<i class="la la-arrow-left"></i> <span>User</span>
+					 </a>
+					
+					 <button onclick="addToken()" class="btn btn-outline-primary btn-icon ms-1">
+						<i class="icon-add-outline"></i> <span>Add token</span>
+					</button>
+					
+					<button type="submit" class="btn btn-primary btn-icon ms-1">
+						<i class="icon-create-outline me-2"></i>
+						<span>Save</span>
+					</button>
+				</div>
+            </div>
+
+            <div id="main-content">
+                @@include('../_includes/notifications.html')
+
+                <div class="currencies card-block">
+                    <form action="" method="post">
+						
+						
+						<div class="bulk-actions px-2 mb-2" style="display:none">
+							<!--
+						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+									aria-controls="filters" title="Edit selected"
+									class="btn btn-primary btn-sm">
+								<i class="icon-create-outline"></i> Edit selected
+							</button>
+							-->
+						   <button type="submit" name="action" value="delete" aria-expanded="false" 
+									title="Delete selected"
+									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
+								<i class="icon-trash-outline"></i> Delete
+							</button>
+						
+						</div>
+
+
+				<div class="table-responsive">
+					<table class="table table-hover middle-align" id="admin_auth_token" data-v-admin_auth_tokens>
+					  <thead>
+						<tr>
+							<th scope="col" class="col-cb">
+								<div class="checkbox_outer">
+
+									<label class="form-check">
+										<input type="checkbox" class="form-check-input" value="4"
+											   name="admin_auth_token_id[]"
+											   data-v-vvveb-action="table.bulkSelect">
+										<span class="form-check-label"></span>
+										<span class="custom-control-description">&nbsp;</span>
+									</label>
+
+
+								</div>
+							</th>						  
+						  <th scope="col">Token</th>
+						  <th scope="col">Description</th>
+						  <th scope="col">Created at</th>
+						  <th scope="col">Actions</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr data-v-admin_auth_token>
+						  <td class="checkbox">
+							<label class="form-check">
+								<input type="checkbox" class="form-check-input" value="4" name="admin_auth_token_id[]" data-v-vvveb-action="table.selectRow" data-v-admin_auth_token-admin_auth_token_id>
+								<span class="form-check-label"></span>
+								<span class="custom-control-description">&nbsp;</span>
+							</label>
+						  </td>
+						  <td>
+							<div class="input-group">
+								<input type="hidden" class="form-control" name="admin_auth_token[0][admin_auth_token_id]" value="" data-v-admin_auth_token-admin_auth_token_id>
+								<input type="password" name="admin_auth_token[0][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm" class="form-control" required data-v-admin_auth_token-token>
+								<button type="button" class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Copy" onclick="copyText(this)">
+									<i class="icon-copy-outline"></i>
+								</button>
+								<button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Randomize" type="button" onclick="randomizePassword(this)">
+									<i class="icon-shuffle-outline"></i>
+								</button>
+							    <button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Toggle" type="button" onclick="togglePasswordInput(this)">
+									<i class="icon-eye-off-outline"></i>
+							  </button>								
+							</div>	
+						  </td>
+						  <td>
+							<input type="text" class="form-control" name="admin_auth_token[0][description]" value="Frontend Rest API" data-v-admin_auth_token-description required>
+						  </td>
+						  <td data-v-admin_auth_token-created_at data-filter-friendly_date>Last month</td>
+						  <td>	
+							<button type="submit" name="action" value="delete" aria-expanded="false" title="Delete selected" class="btn btn-outline-danger btn-sm btn-icon" onclick="removeToken(this, event)">
+								<i class="icon-trash-outline"></i> Delete 
+							</button>
+						  </td>
+						</tr>
+						<tr data-v-admin_auth_token>
+						  <td class="checkbox">
+							<label class="form-check">
+								<input type="checkbox" class="form-check-input" value="4" name="admin_auth_token_id[]" data-v-vvveb-action="table.selectRow" data-v-admin_auth_token-admin_auth_token_id>
+								<span class="form-check-label"></span>
+								<span class="custom-control-description">&nbsp;</span>
+							</label>
+						  </td>
+						  <td>
+							<div class="input-group">
+								<input type="hidden" class="form-control" name="admin_auth_token[0][admin_auth_token_id]" value="" data-v-admin_auth_token-admin_auth_token_id>
+								<input type="password" name="admin_auth_token[0][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm"class="form-control" required data-v-admin_auth_token-token>
+								<button type="button" class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Copy" onclick="copyText(this)">
+									<i class="icon-copy-outline"></i>
+								</button>
+								<button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Randomize" type="button" onclick="randomizePassword(this)">
+									<i class="icon-shuffle-outline"></i>
+								</button>
+							    <button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Toggle" type="button" onclick="togglePasswordInput(this)">
+									<i class="icon-eye-off-outline"></i>
+							  </button>								
+							</div>							  
+							</td>
+						  <td>
+							<input type="text" class="form-control" name="admin_auth_token[0][description]" value="Frontend GraphQL API" data-v-admin_auth_token-description required>
+						  </td>
+						  <td data-v-admin_auth_token-created_at data-filter-friendly_date>Last month</td>
+						  <td>	
+							<button type="submit" name="action" value="delete" aria-expanded="false" title="Delete selected" class="btn btn-outline-danger btn-sm btn-icon" onclick="removeToken(this, event)">
+								<i class="icon-trash-outline"></i> Delete 
+							</button>
+						  </td>
+						</tr>						
+						<tr class="d-none" id="admin_auth_token-template">
+						  <td class="checkbox">
+							<label class="form-check">
+								<input type="checkbox" class="form-check-input" value="4" name="admin_auth_token_id[]" data-v-vvveb-action="table.selectRow" data-v-admin_auth_token-admin_auth_token_id>
+								<span class="form-check-label"></span>
+								<span class="custom-control-description">&nbsp;</span>
+							</label>
+						  </td>
+						  <td>
+							<div class="input-group">
+								<input type="hidden" class="form-control" name="admin_auth_token[#][admin_auth_token_id]" value="" disabled data-v-admin_auth_token-admin_auth_token_id>
+								<input type="text" name="admin_auth_token[#][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm"class="form-control" disabled data-v-admin_auth_token-token>
+								<button type="button" class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Copy" onclick="copyText(this)">
+									<i class="icon-copy-outline"></i>
+								</button>
+								<button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Randomize" type="button" onclick="randomizePassword(this)">
+									<i class="icon-shuffle-outline"></i>
+								</button>
+							    <button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Toggle" type="button" onclick="togglePasswordInput(this)">
+									<i class="icon-eye-off-outline"></i>
+							  </button>								
+							</div>							  
+							</td>
+						  <td>
+							<input type="text" class="form-control" name="admin_auth_token[#][description]" value="" data-v-admin_auth_token-description disabled required>
+						  </td>
+						  <td data-v-admin_auth_token-created_at data-filter-friendly_date>Now</td>
+						  <td>	
+							<button type="submit" name="action" value="delete" aria-expanded="false" title="Delete selected" class="btn btn-outline-danger btn-sm btn-icon" onclick="removeToken(this, event)">
+								<i class="icon-trash-outline"></i> Delete 
+							</button>
+						  </td>
+						</tr>
+						<tr data-v-if-not="this.count > 0" class="no-items">
+								<td colspan="100">
+									<div class="text-center mb-4">
+										<div>
+											<i class="la la-key display-4 lh-1 text-secondary text-opacity-75"></i>
+											<div class="mt-3">No tokens to display!</div>
+										</div>
+
+										<button data-v-url-params='{"module":"localization/admin_auth_token"}' 
+												class="btn btn-outline-secondary btn-icon mt-4" onclick="addToken()">
+											<i class="icon-add-outline"></i> <span>Add token</span>
+										</button>
+									</div>
+								</td>
+							</tr>						
+					  </tbody>
+					</table>
+					</div>
+
+            </div>
+
+
+        </div>
+
+		@@include('../_includes/main-footer.html')
+    </div>
+		</form>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+<script>
+
+
+function togglePasswordInput(element) {
+		let password = element.parentNode.querySelector("[data-v-admin_auth_token-token]");
+		if (password.type == "password") {
+			password.type = "text"; 
+			//element.innerHTML = "&#x1F513;";
+			element.firstElementChild.className = "icon-eye-outline";
+		} else {
+			password.type = "password";
+			//element.innerHTML = "&#x1F512;";
+			element.firstElementChild.className = "icon-eye-off-outline";
+		}
+	}			
+		
+function randomPassword(length, chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890") {
+	let pass = "";
+	for (let x = 0; x < length; x++) {
+		let i = Math.floor(Math.random() * chars.length);
+		pass += chars.charAt(i);
+	}
+	return pass;
+}
+
+function copyText(element) {
+	let password = element.parentNode.querySelector("[data-v-admin_auth_token-token]");
+    password.select();
+    document.execCommand("copy");
+
+}
+
+function randomizePassword(element) {
+	let password = element.parentNode.querySelector("[data-v-admin_auth_token-token]");
+	password.value = randomPassword(42);   
+}
+
+function removeToken(element, event) {
+	if (confirm("Are you sure?")) {
+		let row = element.closest("tr");
+		row.querySelector('input[type="checkbox"]').checked = true;
+	} else {
+		event.preventDefault();
+	}
+}
+
+function addToken() {
+	let row = addTemplate("#admin_auth_token-template", "admin_auth_token", "#admin_auth_token");
+	row.querySelector("[data-v-admin_auth_token-token]").value = randomPassword(42);
+	document.querySelector(".no-items").classList.add("d-none");
+	
+}
+</script>
+<script id="functions-js" src="/js/admin/functions.js"></script>
+
+@@include('../_includes/footer.html')

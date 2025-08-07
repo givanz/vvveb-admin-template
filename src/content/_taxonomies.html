@@ -23,13 +23,13 @@
 
 			<div>
 				<a href="{$this.adminPath}index.php?module=content/menus" title="Comment list"
-					class="btn btn-icon btn-outline-secondary me-2">
+					class="btn btn-icon btn-outline-secondary me-1">
 						<i class="la la-arrow-left"></i><span>Menu list</span>
 				 </a>
 			 </div>
 			 
 			<div @@add_button>
-				<button type="submit" href="" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
+				<button type="submit" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
 					<i class="la la-plus"></i> <span>Add item</span>
 				</button>
 			</div>
@@ -69,6 +69,23 @@
 								<button type="submit" class="btn btn-primary"><i class="la la-save"></i> Save</button>
 							  </div>
 							</div>
+							
+							<div class="row mt-3">
+								<div class="col-auto">
+									<label class="col-form-label">Sites</label>
+								</div>
+								<div class="col">
+
+								   <div class="categories-list p-2" data-v-sites>
+										<label class="form-check d-inline-block me-4" data-v-site>
+											<input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site-site_id>
+											<span class="form-check-label" data-v-site-name title="Default">Default</span>
+										  </label>
+								   </div>
+										
+								</div> 
+							</div>
+							
 						</div>
 					</form>
 				</div>
@@ -93,13 +110,13 @@
 							-->
 						   <button type="submit" name="action" value="delete" id="bulk-delete-btn" aria-expanded="false" data-v-check-permission-delete
 									title="Delete selected"
-									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
+									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger btn-sm">
 									<i class="icon-trash-outline"></i> Delete selected
 							</button>
 						
 						</div>		
 					</div>		
-
+				
                     <ol class="dd-list" data-v-cats>
                         
 						<input type="hidden" name="@@prefix_id" value="" data-v-taxonomy_id>
@@ -109,17 +126,22 @@
                     </ol>
                 </div>
 
-
-				<div data-v-if="this.menu_id">
-					<div data-v-if-not="this.count > 0">
-						<div colspan="100">
-							<div class="text-center">
-								<div class="mt-3">No taxonomies to display!</div>
-							</div>
-						</div>
-					</div>
-				</div>
 				
+				<div data-v-class-if-d-none="this.@@prefix_id && this.count > 0" class="no-items">
+                    <div>
+                      <div class="text-center mb-4">
+                        <i class="icon-cube-outline display-4 lh-1 text-secondary text-opacity-75"></i>
+                        <div class="mt-3">No items to display!</div>
+
+                        <a href="#" onclick="addTaxonomy(this)" class="btn btn-outline-secondary btn-icon mt-4" data-v-class-if-not-d-none="this.@@prefix_id">
+                          <i class="icon-add-outline"></i>
+                          <span>Add item</span>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+
             </div>
 
 		<div id="taxonomy-item-template" style="display:none">
@@ -252,7 +274,7 @@ function saveOrder(item) {
 	let data =  getOrder(item);
 
 		$.ajax({
-			url: location.href + "&action=reorder",
+			url: location.pathname + location.search + "&action=reorder",
 			type: 'post',
 			data: {@@prefix_items:data},
 			//dataType: 'json',
@@ -281,7 +303,7 @@ function saveOrder(item) {
 
 function deleteItem(item) {
 		$.ajax({
-			url: location.href + "&action=delete",
+			url: location.pathname + location.search + "&action=delete",
 			type: 'post',
 			data: {@@prefix_item_id:item.data("vId")},
 			//dataType: 'json',
@@ -289,6 +311,10 @@ function deleteItem(item) {
 				$("#taxonomyToast .message").html(data.responseText);
 				toast.show();
 				item.remove();
+				
+				if (!document.querySelector(".dd-list .dd3-item")) {
+					noItems.classList.remove("d-none");
+				}
 				//$('#cart > button').button('reset');
 			},
 			success: function(data) {
@@ -339,7 +365,7 @@ function save() {
 		if (el.offsetParent) data[el.name] = el.value;
 	});	
 
-	fetch(location.href + "&action=add", {
+	fetch(location.pathname + location.search + "&action=add", {
 			method: "POST",   
 			body: new URLSearchParams(data),
 			headers: {
@@ -386,7 +412,7 @@ function save() {
 		});
 */		
 	$.ajax({
-			url: location.href + "&action=add",
+			url: location.pathname + location.search + "&action=add",
 			type: 'post',
 			data: data,
 			//dataType: 'json',
@@ -428,10 +454,13 @@ function save() {
 }
 
 $("#taxonomies").on("click", ".btn-save", save);
+let noItems = document.querySelector(".no-items");
 
-function addTaxonomy(button) {
+function addTaxonomy(button, event) {
+	console.log(button, event);
 	let parent = $(button).closest(".dd3-item");
-
+	noItems.classList.add("d-none");
+	
 	if (!parent.length) {
 		parent = $("#taxonomies > ol");
 		//if list empty create it
@@ -510,7 +539,7 @@ document.getElementById('bulk-delete-btn')?.addEventListener('click', e => {
 
 	if (ids) {
 		$.ajax({
-			url: location.href + "&action=delete",
+			url: location.pathname + location.search + "&action=delete",
 			type: 'post',
 			data: {@@prefix_item_id:ids},
 			//dataType: 'json',

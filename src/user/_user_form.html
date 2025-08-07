@@ -103,6 +103,42 @@
 		  </div>
 		  
 		  <div class="mb-3 row">
+			<label for="input-site-title" class="col-sm-2 col-form-label" >Cover</label>
+			<div class="col-sm-10">
+
+				<input type="hidden" data-v-cover name="@@prefix[cover]" id="cover-input" value="">
+							
+				<img data-v-cover src="img/placeholder.svg" alt="" title=""
+				 id="cover-thumb"
+				 data-v-placeholder=""
+				 data-media-gallery 
+				 data-target-input="#cover-input"
+				 data-target-thumb="#cover-thumb" 
+				 data-type="single"
+				 class="img-thumbnail bg-light"
+				 style="max-width:200px;"
+				 >
+					
+					<div class="py-3">
+						<div class="btn-group">
+							<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+								data-media-gallery 
+								data-target-input="#cover-input"
+								data-target-thumb="#cover-thumb" 
+								data-type="single">
+								<i class="la la-image la-lg"></i> <span>Set image</span>
+							</button>
+							<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('cover')">
+								<i class="la la-times"></i>
+							</button>
+						</div>
+					</div>
+					
+			  
+			</div>
+		  </div>
+		  
+		  <div class="mb-3 row">
 			<label for="input-bio" class="col-sm-2 col-form-label">Bio</label>
 			<div class="col-sm-10">
 			  <textarea class="form-control" id="input-bio" placeholder="Biography" name="@@prefix[bio]" data-v-user-bio></textarea>
@@ -123,7 +159,7 @@
 		 <div class="mb-3 row">
 			<label for="input-password" class="col-sm-2 col-form-label">
 				Password
-				<span class="form-text">Enter new password to reset</span>
+				<div class="form-text">Enter new password to reset</div>
 			</label>
 			<div class="col-sm-10">
 			  <input type="text" class="form-control" id="input-password" placeholder="Password" name="@@prefix[password]" data-v-user-password>

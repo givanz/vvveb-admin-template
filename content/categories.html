@@ -1303,14 +1303,14 @@
         </div>
 
         <div>
-          <a href="{$this.adminPath}index.php?module=content/menus" title="Comment list" class="btn btn-icon btn-outline-secondary me-2">
+          <a href="{$this.adminPath}index.php?module=content/menus" title="Comment list" class="btn btn-icon btn-outline-secondary me-1">
             <i class="la la-arrow-left"></i>
             <span>Menu list</span>
           </a>
         </div>
 
         <div>
-          <button type="submit" href="" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
+          <button type="submit" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
             <i class="la la-plus"></i>
             <span>Add item</span>
           </button>
@@ -1417,7 +1417,7 @@
 								<i class="icon-create-outline"></i> Edit selected
 							</button>
 							-->
-                  <button type="submit" name="action" value="delete" id="bulk-delete-btn" aria-expanded="false" data-v-check-permission-delete title="Delete selected" class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
+                  <button type="submit" name="action" value="delete" id="bulk-delete-btn" aria-expanded="false" data-v-check-permission-delete title="Delete selected" class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger btn-sm">
                     <i class="icon-trash-outline"></i> Delete selected
                   </button>
 
@@ -1466,6 +1466,8 @@
 
                         <!-- languages -->
 
+                        <input name="taxonomy_id" type="hidden" data-v-taxonomy_id>
+
                         <ul class="nav nav-tabs language-nav" data-v-languages="taxonomy">
                           <li class="nav-item" data-v-language>
                             <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
@@ -1477,7 +1479,6 @@
 
                         <div class="tab-content" data-v-languages="taxonomy" style="clear:both">
                           <div class="tab-pane" id="language1" data-v-language data-v-language-id>
-
 
                             <input name="taxonomy_item_content[1][language_id]" type="hidden" data-v-language_id>
 
@@ -1561,12 +1562,17 @@
             </div>
 
 
-            <div data-v-if="this.menu_id">
-              <div data-v-if-not="this.count > 0">
-                <div colspan="100">
-                  <div class="text-center">
-                    <div class="mt-3">No taxonomies to display!</div>
-                  </div>
+            <div data-v-class-if-d-none="this.taxonomy_id && this.count > 0" class="no-items">
+              <div>
+                <div class="text-center mb-4">
+                  <i class="icon-cube-outline display-4 lh-1 text-secondary text-opacity-75"></i>
+                  <div class="mt-3">No items to display!</div>
+
+                  <a href="#" onclick="addTaxonomy(this)" class="btn btn-outline-secondary btn-icon mt-4" data-v-class-if-not-d-none="this.taxonomy_id">
+                    <i class="icon-add-outline"></i>
+                    <span>Add item</span>
+                  </a>
+
                 </div>
               </div>
             </div>
@@ -1612,6 +1618,8 @@
 
                     <!-- languages -->
 
+                    <input name="taxonomy_id" type="hidden" data-v-taxonomy_id>
+
                     <ul class="nav nav-tabs language-nav" data-v-languages="taxonomy">
                       <li class="nav-item" data-v-language>
                         <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
@@ -1623,7 +1631,6 @@
 
                     <div class="tab-content" data-v-languages="taxonomy" style="clear:both">
                       <div class="tab-pane" id="language1" data-v-language data-v-language-id>
-
 
                         <input name="taxonomy_item_content[1][language_id]" type="hidden" data-v-language_id>
 
@@ -1707,6 +1714,8 @@
           <div id="taxonomy-fields-template" style="display:none">
             <!-- languages -->
 
+            <input name="taxonomy_id" type="hidden" data-v-taxonomy_id>
+
             <ul class="nav nav-tabs language-nav" data-v-languages="taxonomy">
               <li class="nav-item" data-v-language>
                 <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
@@ -1718,7 +1727,6 @@
 
             <div class="tab-content" data-v-languages="taxonomy" style="clear:both">
               <div class="tab-pane" id="language1" data-v-language data-v-language-id>
-
 
                 <input name="taxonomy_item_content[1][language_id]" type="hidden" data-v-language_id>
 
@@ -1917,7 +1925,7 @@ function saveOrder(item) {
 	let data =  getOrder(item);
 
 		$.ajax({
-			url: location.href + "&action=reorder",
+			url: location.pathname + location.search + "&action=reorder",
 			type: 'post',
 			data: {taxonomy_items:data},
 			//dataType: 'json',
@@ -1946,7 +1954,7 @@ function saveOrder(item) {
 
 function deleteItem(item) {
 		$.ajax({
-			url: location.href + "&action=delete",
+			url: location.pathname + location.search + "&action=delete",
 			type: 'post',
 			data: {taxonomy_item_id:item.data("vId")},
 			//dataType: 'json',
@@ -1954,6 +1962,10 @@ function deleteItem(item) {
 				$("#taxonomyToast .message").html(data.responseText);
 				toast.show();
 				item.remove();
+				
+				if (!document.querySelector(".dd-list .dd3-item")) {
+					noItems.classList.remove("d-none");
+				}
 				//$('#cart > button').button('reset');
 			},
 			success: function(data) {
@@ -2004,7 +2016,7 @@ function save() {
 		if (el.offsetParent) data[el.name] = el.value;
 	});	
 
-	fetch(location.href + "&action=add", {
+	fetch(location.pathname + location.search + "&action=add", {
 			method: "POST",   
 			body: new URLSearchParams(data),
 			headers: {
@@ -2051,7 +2063,7 @@ function save() {
 		});
 */		
 	$.ajax({
-			url: location.href + "&action=add",
+			url: location.pathname + location.search + "&action=add",
 			type: 'post',
 			data: data,
 			//dataType: 'json',
@@ -2093,10 +2105,13 @@ function save() {
 }
 
 $("#taxonomies").on("click", ".btn-save", save);
+let noItems = document.querySelector(".no-items");
 
-function addTaxonomy(button) {
+function addTaxonomy(button, event) {
+	console.log(button, event);
 	let parent = $(button).closest(".dd3-item");
-
+	noItems.classList.add("d-none");
+	
 	if (!parent.length) {
 		parent = $("#taxonomies > ol");
 		//if list empty create it
@@ -2175,7 +2190,7 @@ document.getElementById('bulk-delete-btn')?.addEventListener('click', e => {
 
 	if (ids) {
 		$.ajax({
-			url: location.href + "&action=delete",
+			url: location.pathname + location.search + "&action=delete",
 			type: 'post',
 			data: {taxonomy_item_id:ids},
 			//dataType: 'json',

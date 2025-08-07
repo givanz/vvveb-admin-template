@@ -139,12 +139,12 @@
 
 .dd3-content {
     display: block;
-    height: 40px;
+    height: 45px;
     margin: 5px 0;
     padding: 5px 80px 5px 60px;
     color: var(--bs-body-color);
     text-decoration: none;
-    border: 1px solid rgba(var(--bs-body-color-rgb), 0.15);
+    border: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
     background: var(--bs-body-bg);
 /*    background: -webkit-linear-gradient(top, #fafafa 0%, var(--bs-border-color) 100%);
     background: -moz-linear-gradient(top, #fafafa 0%, var(--bs-border-color) 100%);
@@ -154,7 +154,7 @@
 	//box-shadow:1px 1px 8px 2px rgba(var(--bs-body-color-rgb), 0.03);
 	box-shadow:1px 1px 2px 1px rgba(var(--bs-body-color-rgb), 0.02);
     -webkit-border-radius: 3px;
-    border-radius: 3px;
+    border-radius: 5px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
@@ -170,6 +170,7 @@
 .dd3-content  label.form-check .form-check-input {
     vertical-align: text-bottom;
     margin-right:0.2rem;
+    margin-top:0.5rem;
 }
 
 .dd3-content:hover {
@@ -192,8 +193,8 @@
 .dd3-item > .dd3-buttons {
     position: absolute;
     margin: 0;
-    right: 5px;
-    top: 4px;
+    right: 10px;
+    top: 6px;
     cursor: pointer;
 }
 
@@ -217,6 +218,7 @@
     top: 0;
     cursor: pointer;
     width: 40px;
+    height: 45px;
     text-indent: 300%;
     white-space: nowrap;
     overflow: hidden;
@@ -227,7 +229,7 @@
 	background: #fafafa;
 	background: #f5f7fa;    
 	background: var(--bs-tertiary-bg);
-	background: rgba(var(--bs-body-color-rgb), 0.025);
+	background: rgba(var(--bs-body-color-rgb), 0.015);
 /*    background: -webkit-linear-gradient(top, var(--bs-border-color) 0%, #bbb 100%);
     background: -moz-linear-gradient(top, var(--bs-border-color) 0%, #bbb 100%);
     background: linear-gradient(top, var(--bs-border-color) 0%, #bbb 100%);*/
@@ -245,7 +247,7 @@
     width: 100%;
     text-align: center;
     text-indent: 0;
-    color: var(--bs-body-color);
+    color: rgba(var(--bs-body-color-rgb), 0.7);
     font-size: 22px;
     font-weight: normal;
 }

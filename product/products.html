@@ -1305,7 +1305,7 @@
           </div>
 
           <div class="btns">
-            <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary me-2">
+            <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary">
               <i class="icon-funnel-outline"></i>&nbsp;
               <i class="icon-chevron-down-outline small"></i>
             </button>
@@ -1686,13 +1686,13 @@
 
                     </td>
                   </tr>
-                  <tr data-v-if-not="this.count > 0">
+                  <tr data-v-if-not="this.count > 0" class="no-items">
                     <td colspan="100">
-                      <div class="text-center p-4 bg-body-tertiary border">
-                        <i class="icon-cube-outline fs-1 mb-2"></i>
+                      <div class="text-center mb-4">
+                        <i class="icon-cube-outline display-4 lh-1 text-secondary text-opacity-75"></i>
                         <div class="mt-3">No <span data-v-type>product</span>s to display!</div>
 
-                        <a href data-v-addurl class="btn btn-primary btn-icon mt-3">
+                        <a href data-v-addurl class="btn btn-outline-secondary btn-icon mt-4">
                           <i class="icon-add-outline"></i>
                           <span>Add <span data-v-type>product</span>
                           </span>

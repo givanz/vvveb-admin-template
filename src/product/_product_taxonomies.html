@@ -9,7 +9,7 @@
 		<div class="taxonomies" data-v-taxonomies>
 			<div class="taxonomy" data-v-taxonomy_item>
 				
-				<label class="header" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label><span data-v-taxonomy_item-name>Categories</span>
+				<label class="col-form-label" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label><span data-v-taxonomy_item-name>Categories</span>
 					<div class="header-arrow"></div>
 				</label>
 				<input class="header_check" type="checkbox" checked="true" id="header_categories" data-v-taxonomy_item-input>
@@ -17,8 +17,9 @@
 										
 										
 					<div class="categories-list" data-v-categories>
+						<div class="alert alert-warning m-0" data-v-if="taxonomy_item.taxonomy_item.count = 0 && taxonomy_item.type = 'categories'">No items!</div>
+
 						<div data-v-cats>
-							
 							<ul class="dd-list"  data-v-if="taxonomy_item.type = 'categories'">
 
 								<li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
@@ -37,6 +38,7 @@
 						</div>
 						
 						<div data-v-tags>
+							<!-- <div class="alert alert-warning" data-v-if-not="_categories">No items!</div> -->
 							
 							<div class="tags-input">
 								

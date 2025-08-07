@@ -21,6 +21,7 @@ $btn-font-size: 15px;
 $card-cap-bg: rgba(var(--bs-body-color-rgb), 0.02);
 $card-border-color: var(--bs-border-color);
 $btn-disabled-opacity: 0.35;
+$border-radius: 0.25rem;
 // Buttons
 
 //$input-btn-padding-y:         0.5rem !default;
@@ -133,12 +134,131 @@ body > div#container, .small-nav, .main
 	min-height:100%;
     display: flex;
     flex-direction: row;
+	.main,
+	#preview {
+		transition: width 1s, transform 1s ease 0s, width 1s ease 0s, width 1s ease 0s, left 1s ease 0s, height 1s ease 0s;
+		transform-origin: top center;
+	}
+	
+	#preview-separator {
+		position: absolute;
+		opacity: 0;
+		height:100%;
+	
+		> div {
+			top: 50%;
+			position:absolute;
+			border: 1px solid var(--bs-border-color);
+			overflow: hidden;
+			letter-spacing: 2px;
+			color: var(--bs-secondary);
+			background: var(--bs-body-bg);
+			display: inline-block;
+			letter-spacing: -1px;
+			cursor: col-resize;
+			line-height: 4px;
+			width: 15px;
+			height: 0px;
+			padding: 0px 3px;
+			//display:none;
+			overflow:hidden;
+			user-select: none;
+			border-radius: 8px;
+			transition: opacity 1s 1s;
+			
+			&:hover {
+				background-color :rgba(var(--bs-primary-rgb), 0.75);
+				color: var(--bs-light);
+			}
+		}
+
+		&.active {
+			background-color :rgba(var(--bs-primary-rgb), 0.25);
+			width:15px;
+		}
+	}
+	
+	#preview {
+		width:0;
+		overflow:hidden;
+		
+		iframe {
+			border: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events:none;
+		}
+	}
+}
+
+.btn-preview {
+	.preview {
+		display:block;
+	}
+	.close {
+		display:none;
+	}
+	
+	&.btn.close {
+		background-color:var(--bs-body-bg);
+		color:var(--bs-body-color);
+		float:right;
+		margin-left:1rem;
+
+		.preview {
+			display:none;
+		}
+		.close {
+			display:block;
+		}
+	}
+}
+
+.preview-responsive {
+	.percent input {height:100%;margin-top:0;}
 }
 
 #content, .main
 {
 	display: flex;
 	flex-flow: column;
+}
+
+#container.preview {
+	background-color: var(--bs-border-color);
+	
+	.main,
+	#preview {
+		width:50%;
+
+		iframe {
+			margin: 0 auto;
+			display:block;
+		}
+	
+		&.tablet iframe {
+			width: 768px;
+		}
+    
+		&.mobile iframe {
+			width: 320px;
+		}
+	}
+	
+	.main {
+		background-color:var(--bs-body-bg);
+		border-right: 1px solid var(--bs-border-color);
+	}
+	
+	#preview-separator {
+		left: calc(50% + 14px);
+		opacity: 1;
+
+		> div {
+			height: 32px;
+			//display: block;
+		}
+	}
 }
 /*
 .content
@@ -220,7 +340,9 @@ body > div#container, .small-nav, .main
 	position:relative;
 	//padding:0.5rem 2.1rem;
 	//padding:0.5rem 1rem;
+	box-shadow:0 4px 4px #08080814, 0 1px 2px #08080833, inset 0 6px 12px #ffffff1f, inset 0 1px 1px #fff3;
 	box-shadow:1px 1px 2px 1px rgba(var(--bs-body-color-rgb),0.07),1px 1px 2px 1px rgba(var(--bs-body-bg-rgb),0.15) inset;
+	box-shadow:0 4px 4px rgba(var(--bs-body-color-rgb),0.08), 0 6px 12px rgba(var(--bs-body-color-rgb),0.012), 0 6px 12px rgba(var(--bs-body-bg-rgb),0.12) inset, 0 1px 1px rgba(var(--bs-body-bg-rgb),0.2) inset;
 	border:none;
 	font-weight:500;
 	/*
@@ -233,7 +355,7 @@ body > div#container, .small-nav, .main
 	*/
 	&.btn-outline-primary {
 		border-width:0px;
-		box-shadow:0px 0px 1px 0px #3478f2;
+		box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(var(--bs-primary-rgb), 0.15) 0px 1px 2px 0px, rgba(var(--bs-primary-rgb), 0.2) 0px 0px 0px 1px;
 
 		&:hover
 		{
@@ -247,7 +369,7 @@ body > div#container, .small-nav, .main
 		}
 	}
 	
-	&.btn-outline-secondary, &.btn-outline-success {
+	&.btn-outline-secondary, &.btn-outline-success , &.btn-outline-danger {
 		//box-shadow:0px 0px 3px 1px rgba(var(--bs-body-color-rgb), 0.1), -1px 1px 2px 0px rgba(var(--bs-body-bg-rgb), 0.15) inset;
 		box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(var(--bs-body-color-rgb), 0.12) 0px 1px 2px 0px, rgba(var(--bs-body-color-rgb), 0.08) 0px 0px 0px 1px;
 		//--bs-btn-bg:var(--bs-body-bg);
@@ -509,9 +631,12 @@ img[src=""]::after
 			font-weight: 600;
 			//color:var(--bs-body-color);
 			padding:0.5rem 1rem;
-			
-			
 		}		
+
+		> label.header:first-child 
+		{
+				border: none;
+		}
 		
 		.section
 		{
@@ -603,6 +728,10 @@ td.actions {
 
 td:hover .secondary-actions {
 	visibility:visible;
+}
+
+tr.no-items {
+	--bs-table-hover-bg: transparent;
 }
 
 .flat
@@ -1664,7 +1793,7 @@ td:hover .secondary-actions {
 #main-footer {
 	font-size:12px;
 	padding: 0.5rem 1rem;
-	position: absolute;
+	position: fixed;
 	bottom: 0;width: 100%;
 	text-align: right;
 	color:var(--bs-secondary-color);

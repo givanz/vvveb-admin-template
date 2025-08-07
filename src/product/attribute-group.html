@@ -22,11 +22,11 @@
 			
 			<div class="btns">
 				<a href="{$this.adminPath}index.php?module=product/attribute-groups" title="Attribute list"
-					class="btn btn-icon btn-outline-secondary me-2">
+					class="btn btn-icon btn-outline-secondary">
 						<i class="la la-arrow-left"></i><span>Attribute group list</span>
 				 </a>
 				  
-				  <button type="submit" href=""class="btn btn-primary btn-icon ms-1">
+				  <button type="submit"class="btn btn-primary btn-icon ms-1">
 					<i class="icon-create-outline"></i> <span>Save</span>
 				  </button>
 		   </div>
@@ -50,7 +50,7 @@
 				 <div class="mb-3 row">
 					<label for="input-sort_order" class="col-sm-2 col-form-label">Sort Order</label>
 					<div class="col-sm-10">
-					  <input type="text" class="form-control" id="input-sort_order" placeholder="Sort Order" name="attribute_group[sort_order]" data-v-attribute_group-sort_order required>
+					  <input type="number" class="form-control" value="0" id="input-sort_order" placeholder="Sort Order" name="attribute_group[sort_order]" data-v-attribute_group-sort_order required>
 					</div>
 				 </div>		
 

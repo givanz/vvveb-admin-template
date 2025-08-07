@@ -1304,7 +1304,7 @@
           </div>
 
           <div class="btns">
-            <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary me-2">
+            <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary">
               <i class="icon-funnel-outline"></i>&nbsp;
               <i class="icon-chevron-down-outline small"></i>
             </button>
@@ -1536,7 +1536,6 @@
 
 
                     <td class="actions">
-
                       <div class="btn-group">
                         <a class="btn btn-icon btn-outline-secondary" data-v-edit-url>
                           <i class="la la-pencil-alt text-primary"></i>
@@ -1547,6 +1546,14 @@
                           <span class="visually-hidden">Toggle primary</span>
                         </button>
                         <ul class="dropdown-menu">
+
+                          <li>
+                            <a class="dropdown-item" data-v-auth-token-url>
+                              <i class="icon-key-outline"></i>
+                              <span>Api Tokens</span>
+                            </a>
+                          </li>
+
 
                           <li>
                             <hr class="dropdown-divider">
@@ -1565,11 +1572,11 @@
                 </tbody>
                 <tr data-v-if-not="this.count >= 1">
                   <td colspan="100">
-                    <div class="text-center p-4 bg-body-tertiary border">
-                      <i class="icon-person-outline fs-1 mb-2"></i>
+                    <div class="text-center mb-4">
+                      <i class="icon-person-outline display-4 lh-1 text-secondary text-opacity-75"></i>
                       <div class="mt-3">No users to display!</div>
 
-                      <a href data-v-url-params='{"module":"user/user"}' class="btn btn-primary btn-icon mt-3">
+                      <a href data-v-url-params='{"module":"user/user"}' class="btn btn-outline-secondary btn-icon mt-4">
                         <i class="icon-add-outline"></i> Add user
                       </a>
 
