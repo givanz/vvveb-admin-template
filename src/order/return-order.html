@@ -12,6 +12,8 @@
 
 	<form id="settings-form" action="" method="post" class="settings" data-v-return>
 	   <input type="hidden" name="action" id="action" value="save">
+	   <input type="hidden" name="csrf" data-v-csrf>
+	   
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
 					<h4 class="text-muted my-2">
@@ -45,7 +47,7 @@
 				<div class="mb-3 row">
 					<label for="input-order_id" class="col-sm-2 col-form-label">Customer order id</label>
 					<div class="col-sm-10">
-					  <a href="javascript:void(0);" data-v-return-order_url>Order</a>
+					  <a href="#" data-v-return-order_url>Order</a>
 					  <input type="text" class="form-control" id="input-first_name" placeholder="First name" name="return[first_name]" data-v-return-customer_order_id required>
 					</div>
 				 </div>					

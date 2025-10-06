@@ -81,6 +81,7 @@
    <form id="form" action="" method="post" class="settings"  data-v-post>
    
    <input type="hidden" name="action" id="action" value="save">   
+   <input type="hidden" name="csrf" data-v-csrf>
    <input type="hidden" name="post_id" id="post_id" value="" data-v-if="this.post.post_id" data-v-post-post_id>   
     
     <div class="columns">
@@ -276,5 +277,6 @@ if (lang != "en-us") {
 
 <script id="functions-js" src="/js/admin/functions.js"></script>
 <script id="content-js"src="js/content.js"></script>
+<script id="preview-js"src="js/preview.js"></script>
 
 @@include('../_includes/footer.html')

@@ -43,10 +43,10 @@
       </div>
 
       <!-- navbar -->
-      <nav class="navbar navbar-expand-sm">
+      <nav class="navbar navbar-expand-md">
 
         <div class="logo">
-          <!-- h1 class="display-5"><a href="javascript:void(0);">M.</a></h1-->
+          <!-- h1 class="display-5"><a href="#">M.</a></h1-->
           <a href="/admin" class="img">
             <img src="" data-v-site-logo>
             <img src="" data-v-site-logo-dark>
@@ -973,7 +973,7 @@
                 <i class="la la-sun"></i>
               </button>
 
-              <a href="javascript:void(0);" class="btn btn-light btn-preview-url" target="_blank" title="View page">
+              <a href="#" class="btn btn-light btn-preview-url" target="_blank" title="View page">
                 <i class="la la-external-link-alt fs-6"></i>
               </a>
 
@@ -1016,7 +1016,7 @@
                         (2023-06-04 10:30:31)
                       </span>
 
-                      <!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
+                      <!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
                     </div>
                     <div>
                       <button class="btn btn-sm btn-outline-primary border-0" title="Load">
@@ -1036,7 +1036,7 @@
                         (2023-06-03 10:30:31)
                       </span>
 
-                      <!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
+                      <!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
                     </div>
                     <div>
                       <button class="btn btn-sm btn-outline-primary border-0" title="Load">
@@ -1056,7 +1056,7 @@
                         (2023-06-01 10:30:31)
                       </span>
 
-                      <!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
+                      <!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
                     </div>
                     <div>
                       <button class="btn btn-sm btn-outline-primary border-0" title="Load">
@@ -2030,13 +2030,13 @@
 
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="javascript:void(0);">body</a>
+                  <a href="#">body</a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="javascript:void(0);">section</a>
+                  <a href="#">section</a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="javascript:void(0);">img</a>
+                  <a href="#">img</a>
                 </li>
               </ol>
             </div>
@@ -2593,15 +2593,15 @@
 </script>
 
         <script id="vvveb-filemanager-page" type="text/html">
-	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %} {%if (typeof product_id !== 'undefined') { %}data-product_id="{%=product_id%}"{% } %}>
+	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %} {%if (typeof product_id !== 'undefined') { %}data-product_id="{%=product_id%}"{% } %} {%if (typeof global !== 'undefined' && global) { %}data-global="true"{% } %}>
 		<label for="{%=name%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
 			<span>{%=title%}</span>
 			<!-- <span class="text-muted small">{%=url%}</span> -->
 			<div class="file-actions">
-				<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
+				<button href="#" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
 				<a href="{%=url%}" target="_blank" class="view btn btn-outline-primary" title="View page"><i class="la la la-external-link-alt"></i></a>
-				<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
-				<button href="javascript:void(0);" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
+				<button href="#" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
+				<button href="#" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
 			</div>
 		</label> <input type="checkbox" id="{%=name%}" />
 		<!-- <ol></ol> -->
@@ -2615,7 +2615,7 @@
 </script>
 
         <script id="vvveb-breadcrumb-navigaton-item" type="text/html">
-	<li class="breadcrumb-item"><a href="javascript:void(0);" {% if (typeof className !== 'undefined') { %}class="{%=className%}"{% } %}>{%=name%}</a></li>
+	<li class="breadcrumb-item"><a href="#" {% if (typeof className !== 'undefined') { %}class="{%=className%}"{% } %}>{%=name%}</a></li>
 </script>
 
         <script id="vvveb-input-sectioninput" type="text/html">
@@ -2787,7 +2787,7 @@
 				{%=date%}
 			</span>
 
-			<!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
+			<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
 		</span>
 		<span>
 			<a class="btn btn-sm btn-outline-primary border-0 btn-revision-preview" data-date="{%=date%}" href="{%=url%}" target="_blank" title="Preview">
@@ -2817,7 +2817,7 @@
                 <span class="modal-title"></span>
                 <div class="">
                   <button type="button" class="btn btn-light border btn-icon" data-bs-dismiss="modal">
-                    <i class="la la-times"></i>Close
+                    <i class="la la-times"></i>Cancel
                   </button>
 
                   <button class="btn btn-primary btn-icon save-btn" title="Save changes">
@@ -2850,7 +2850,7 @@
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <form id="translateForm">
-
+                <input type="hidden" name="csrf" data-v-csrf>
                 <div class="modal-body p-0">
 
                   <ul class="nav nav-tabs pt-1" id="language-nav" data-v-languages="editor">
@@ -2875,7 +2875,7 @@
                 <span class="modal-title"></span>
                 <div class="">
                   <button type="button" class="btn btn-light border btn-icon btn-sm me-1" data-bs-dismiss="modal">
-                    <i class="la la-times"></i>Close
+                    <i class="la la-times"></i>Cancel
                   </button>
 
                   <button class="btn btn-primary btn-icon save-btn btn-sm" title="Save changes">
@@ -2906,7 +2906,7 @@
                 <p class="modal-title text-primary">
                   <i class="la la-lg la-save"></i> Export html
                 </p>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel">
                   <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
                 </button>
               </div>
@@ -2917,7 +2917,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-dismiss="modal">
-                  <i class="la la-times"></i> Close
+                  <i class="la la-times"></i> Cancel
                 </button>
               </div>
             </div>
@@ -2932,7 +2932,7 @@
                 <p class="modal-title text-primary">
                   <i class="la la-lg la-comment"></i> VvvebJs
                 </p>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel">
                   <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
                 </button>
               </div>
@@ -2942,7 +2942,7 @@
               <div class="modal-footer">
                 <!-- <button type="button" class="btn btn-primary">Ok</button> -->
                 <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-dismiss="modal">
-                  <i class="la la-times"></i> Close
+                  <i class="la la-times"></i> Cancel
                 </button>
               </div>
             </div>
@@ -2954,6 +2954,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
 
             <form action="" method="POST" class="w-100" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save">
+              <input type="hidden" name="csrf" data-v-csrf>
 
               <div class="modal-content">
                 <div class="modal-header bg-primary bg-opacity-10 py-2">
@@ -3014,7 +3015,7 @@
                         <div class="col-sm-9 input">
                           <div>
                             <input name="name" type="text" class="form-control" placeholder="Name" required>
-                            <a href="javascript:void(0);" class="mt-2 btn btn-sm btn-outline-secondary btn-icon px-4 text-float-end" onclick="document.querySelectorAll('[data-key=content]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none');return false;">
+                            <a href="#" class="mt-2 btn btn-sm btn-outline-secondary btn-icon px-4 text-float-end" onclick="document.querySelectorAll('[data-key=content]').forEach(e => e.style.display = e.style.display == 'none' ? '' : 'none');return false;">
                               <span>More</span>
                               <i class="la la-angle-down"></i>
                             </a>
@@ -3409,6 +3410,8 @@
         <!-- vvveb modules code -->
         <script id="admin-js" type="module" src="/js/admin.js"></script>
 
+
+        <input type="hidden" name="csrf" id="csrf" data-v-csrf>
 
         <!-- builder code-->
         <script id="builder" src="/js/vvvebjs/builder.js"></script>

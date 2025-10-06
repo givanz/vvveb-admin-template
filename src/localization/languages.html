@@ -40,6 +40,7 @@
 			   
                 <div class="languages card-block">
                     <form action="" method="post">
+						<input type="hidden" name="csrf" data-v-csrf>
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
@@ -105,7 +106,7 @@
                                 </td>
 
 								<td class="img" style="width:200px;text-align:center;">
-									<a href="javascript:void(0);" data-v-language-edit-url>
+									<a href="#" data-v-language-edit-url>
                                         <span data-v-language-code>en_US</span>
 									</a>
                                 </td>                                

@@ -8,11 +8,10 @@
 
     <div class="main">
 
-	@@include('../_includes/top-header.html')
+		@@include('../_includes/top-header.html')
 	
         <div id="content">
            
-
             <div class="actions">
 				
 				<div class="title">
@@ -26,7 +25,7 @@
 					
 					 <a href data-v-url-params='{"module":"field/field-group"}' 
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-circle-outline"></i> <span>Add field group</span>
+						<i class="icon-add-outline"></i> <span>Add field group</span>
 					</a>
 				</div>
             </div>
@@ -36,6 +35,7 @@
 
                 <div class="field_groups card-block">
                     <form action="" method="post">
+						<input type="hidden" name="csrf" data-v-csrf>
 						
 						<div class="bulk-actions px-2 pb-4" style="display:none">
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
@@ -77,10 +77,10 @@
                                 <th class="field_group">
 									<i class="icon-cube-outline"></i><span>Name</span>
 								</th>
-                                <th style="width:200px;text-align:center;" class="type">
+                                <th style="width:200px;" class="type">
 									<i class="la la-cog"></i><span>Type</span>
 								</th>
-                                <th class="subtype"  style="width:200px;text-align:center;" >
+                                <th class="subtype"  style="width:200px;" >
 									<i class="la la-boxes"></i><span>Subtype</span>
 								</th>	
 								<!--
@@ -139,10 +139,10 @@
                                 <td class="actions">
 
 									<div class="btn-group">
-										<a  class="btn btn-outline-secondary" data-v-edit-url>
+										<a class="btn btn-icon btn-outline-secondary" data-v-field_group-url>
 											<i class="la la-pencil-alt text-primary"></i>
 											<span>Edit</span></a>
-										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+											<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -158,17 +158,17 @@
 
                                 </td>
                             </tr>
-							<tr data-v-if-not="this.count > 0">
+							<tr data-v-if-not="this.count > 0" class="no-items">
 								<td colspan="100">
-									<div class="text-center p-4 bg-body-tertiary border">
+									<div class="text-center mb-4">
 										<div>
-											<i class="la la-file-alt fs-1 mb-2"></i>
+											<i class="icon-reader-outline display-4 lh-1 text-secondary text-opacity-75"></i>
 											<div class="mt-3">No field groups to display!</div>
 										</div>
 
 										<a href data-v-url-params='{"module":"field/field-group"}' 
-												class="btn btn-primary btn-icon mt-3">
-											<i class="icon-add-circle-outline"></i> Add field group
+												class="btn btn-outline-secondary btn-icon mt-4">
+											<i class="icon-add-outline"></i> Add field group
 										</a>
 									</div>
 								</td>
@@ -200,6 +200,7 @@
 
 
         </div>
+		@@include('../_includes/main-footer.html')
     </div>
 </div>
 

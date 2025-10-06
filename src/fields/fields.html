@@ -23,14 +23,14 @@
 				<div class="btns">
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
-							class="btn btn-outline-secondary me-2">
+							class="btn btn-icon btn-outline-secondary">
 						<i class="icon-funnel-outline"></i>&nbsp;
 						<i class="icon-chevron-down-outline small"></i>
 					</button>
 
 					 <a href data-v-url-params='{"module":"localization/field"}' 
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-circle-outline"></i> <span>Add field</span>
+						<i class="icon-add-outline"></i> <span>Add field</span>
 					</a>
 				</div>
             </div>
@@ -92,11 +92,11 @@
 
                 <div class="field card-block">
                     <form action="" method="post">
-						
+						<input type="hidden" name="csrf" data-v-csrf>
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
 									title="Delete selected"
-									class="btn btn-outline-secondary bg-body-tertiary text-danger">
+									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
 								<i class="icon-trash-outline"></i> Delete selected
 							</button>
 						</div>
@@ -163,8 +163,8 @@
                                 <td class="actions" style="width:200px;">
 
 									<div class="btn-group">
-										<a  class="btn btn-outline-secondary" data-v-field-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
-										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<a class="btn btn-icon btn-outline-secondary" data-v-field-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
+										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -180,17 +180,17 @@
 
                                 </td>
                             </tr>
-							<tr data-v-if-not="this.count > 0">
+							<tr data-v-if-not="this.count > 0" class="no-items">
 								<td colspan="100">
-									<div class="text-center p-4 bg-body-tertiary border">
+									<div class="text-center mb-4">
 										<div>
-											<i class="la la-file-alt fs-1 mb-2"></i>
+											<i class="la la-file-alt display-4 lh-1 text-secondary text-opacity-75"></i>
 											<div class="mt-3">No field to display!</div>
 										</div>
 
 										<a href data-v-url-params='{"module":"fields/field"}' 
-												class="btn btn-primary btn-icon mt-3">
-											<i class="icon-add-circle-outline"></i> <span>Add field</span>
+												class="btn btn-outline-secondary btn-icon mt-4">
+											<i class="icon-add-outline"></i> <span>Add field</span>
 										</a>
 									</div>
 								</td>
@@ -210,6 +210,7 @@
                 </div>
             </div>
         </div>
+		@@include('../_includes/main-footer.html')
     </div>
 </div>
 

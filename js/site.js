@@ -87,9 +87,12 @@ function insertInvoiceFormat(inputName, variable) {
 
 
 
-let name = document.getElementById("input-site-name");
+let name    = document.getElementById("input-site-name");
 //let key = document.getElementById("input-site-key");
-let host = document.getElementById("input-site-host");
+let host    = document.getElementById("input-site-host");
+let path    = document.getElementById("input-site-path");
+let fullUrl = document.querySelector("[data-v-site-full-url]");
+let url     = fullUrl.querySelector("span");
 
 //let keyTextOrig = nameToKey(key.value);
 let hostTextOrig = nameToHost(host.value.replace(domain, ''));
@@ -103,19 +106,25 @@ function nameToHost(name) {
 	return (slugify(name) + "." + domain); 
 }
 
-name.addEventListener('keyup', function(e) {
-	let text = this.value;
+let updateDomain = function(e) {
+	let text = name.value;
 	delay(() => {
 		let hostText = host.value;
 
 		if (hostTextOrig == hostText || !hostText) {
 			hostTextOrig = nameToHost(text);
-			host.value = hostTextOrig;
+			host.value   = hostTextOrig;
 		}
+		
+		url.textContent = host.value + (subdir ? '/' + subdir : "") + (path.value ? '/' + path.value : "");
+		fullUrl.href    = "//" + url.textContent;
 	}, 500);
-});
+}
 
-
+name.addEventListener('keyup', updateDomain);
+host.addEventListener('keyup', updateDomain);
+path.addEventListener('keyup', updateDomain);
+	
 let regions = [];
 
 function addRegionsToSelect(regionSelect, data) {

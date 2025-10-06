@@ -185,6 +185,8 @@
 
                 <div class="products card-block"  data-v-products>
                     <form action="" method="post">
+					<input type="hidden" name="csrf" data-v-csrf>
+					<input type="hidden" name="action" id="action">
 
 					<div class="bulk-actions px-2 mb-2" style="display:none">
 						<!--
@@ -243,7 +245,7 @@
                                     </label>
                                 </td>
 								<td class="img" style="width:200px;text-align:center;">
-									<a href="javascript:void(0);" data-v-product-url>
+									<a href="#" data-v-product-url>
 										<figure  data-v-if="product.image">
 											<img class="rounded" src=""  data-v-product-image>
 										</figure>
@@ -251,7 +253,7 @@
                                 </td>
                                
                                 <td class="product" >
-                                    <a href="javascript:void(0);" data-v-product-url>
+                                    <a href="#" data-v-product-url>
                                        <span data-v-product-name>Product name</span>
                                     </a>
 
@@ -274,10 +276,9 @@
 											<i class="icon-eye-outline"></i> <span>View</span> 
 										</a>
 
-										<a title="Duplicate" data-v-product-duplicate-url target="_blank"
-											class="btn btn-icon btn-outline-secondary btn-sm">
+										<button type="submit" name="product_id" value=""aria-expanded="false" onclick="document.getElementById('action').value='duplicate';" class="btn btn-icon btn-outline-secondary btn-sm" data-v-product-product_id>		
 											<i class="icon-copy-outline"></i> <span>Duplicate</span> 
-										</a>
+										</button>
 
 									</div>
 
@@ -299,11 +300,20 @@
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
 										<ul class="dropdown-menu">
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-product-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-product-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-product-duplicate-url target="_blank"><i class="icon-copy-outline text-secondary"></i> <span>Duplicate</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-product-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-product-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
+										  <li>
+											<button type="submit" name="product_id" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='duplicate';" data-v-product-product_id>							
+												<i class="icon-copy-outline"></i><span>Duplicate</span>
+											</button>
+											<!-- <a class="dropdown-item" href="#" data-v-product-duplicate-url target="_blank"><i class="icon-copy-outline text-secondary"></i> <span>Duplicate</span></a>--></li>
 										  <li><hr class="dropdown-divider"></li>
-										  <li data-v-check-permission-delete><a class="dropdown-item text-danger" data-v-product-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
+										  <li data-v-check-permission-delete>
+											<!--  formaction="{$product.delete-url}" -->
+											<button type="submit" name="product_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-product-product_id>							
+												<i class="icon-trash-outline"></i><span>Delete</span>
+											</button>										  
+										  <!-- <a class="dropdown-item text-danger" data-v-product-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a> --></li>
 										</ul>
 									 </div>
 								  

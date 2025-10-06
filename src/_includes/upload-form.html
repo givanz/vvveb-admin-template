@@ -1,6 +1,11 @@
 <form id="upload" method="post" enctype="multipart/form-data"class="upload-collapse collapse">
+	<input type="hidden" name="csrf" data-v-csrf>
 	<input type="hidden" name="action" value="upload">
 	<div>
+	   <button id="upload-close" type="button" class="btn btn-sm btn-light" aria-label="Close" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="true">
+		   <span aria-hidden="true"><i class="la la-times la-lg"></i></span>
+		</button>
+
 		<h3>Drop or choose files to upload</h3>
 
 		<input type="file" name="file"  onchange="upload.submit()"  @@if (typeof accept !== 'undefined') {accept="@@accept"} @@if (typeof  multiple !== 'undefined') { multiple}>

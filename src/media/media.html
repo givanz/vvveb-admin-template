@@ -70,6 +70,10 @@
 						<div class="top-panel">
 
 							<div class="upload-collapse collapse">
+							   <button id="upload-close" type="button" class="btn btn-sm" aria-label="Close" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="true">
+								   <span aria-hidden="true"><i class="la la-times la-lg"></i></span>
+								</button>
+							
 							   <h3>Drop or choose files to upload</h3>
 							   
 							   <input type="file" multiple> 
@@ -159,6 +163,8 @@
 	<div class="offcanvas-body border-top p-0 overflow-x-hidden">
 	
 		<form id="media-content-form" method="post" class="h-100" data-v-media>
+		<input type="hidden" name="csrf" data-v-csrf>
+		
 		<div class="row h-100 g-0">
 			<div class="col-xl-9 col-lg-8 col-sm-6 d-flex justify-content-center">
 				<img src="/media/placeholder.svg" class="img-fluid m-auto" id="current-image">

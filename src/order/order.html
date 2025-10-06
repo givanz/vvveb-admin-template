@@ -59,6 +59,7 @@
 
 				<form id="order-form" name="order_form" action="" method="post" >
 
+				<input type="hidden" name="csrf" data-v-csrf>
 				<input type="hidden" name="action" id="action" value="save">
 				<input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>   
 
@@ -79,8 +80,8 @@
                     </div>
                     
                     <div class="ms-md-3">
-                      <a href="javascript:void(0);" class="btn btn-primary">Save</a>
-                      <a href="javascript:void(0);" class="btn btn-outline-secondary">Download Invoice</a>
+                      <a href="#" class="btn btn-primary">Save</a>
+                      <a href="#" class="btn btn-outline-secondary">Download Invoice</a>
                     </div>
 					
 					 -->

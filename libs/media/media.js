@@ -77,7 +77,7 @@ class MediaModal {
 
 							<div class="upload-collapse collapse">
 
-								<button id="upload-close" type="button" class="btn btn-sm btn-light" aria-label="Close" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="true">
+								<button id="upload-close" type="button" class="btn btn-sm" aria-label="Close" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="true">
 								   <span aria-hidden="true"><i class="la la-times la-lg"></i></span>
 								</button>
 								
@@ -579,6 +579,7 @@ _
 		  data.append("mediaPath", Vvveb.MediaModal.mediaPath + Vvveb.MediaModal.currentPath);
 		  data.append("onlyFilename", true);
 		  data.append("size", size);
+		  data.append("csrf", document.querySelector("[name='csrf']")?.value);
 
 		  if (typeof uploadMaxFilesize !== "undefined" && uploadMaxFilesize && (size > parseInt(uploadMaxFilesize))) {
 			  displayToast("danger", "Error", "File size bigger than upload max file size!", "top");
@@ -645,6 +646,7 @@ _
 					formData.append("file", file);
 					formData.append("mediaPath", Vvveb.MediaModal.mediaPath + Vvveb.MediaModal.currentPath);
 					formData.append("onlyFilename", true);
+					formData.append("csrf", document.querySelector("[name='csrf']")?.value);
 
 					fetch(uploadUrl, {method: "POST",  body: formData})
 					.then((response) => {
@@ -686,8 +688,12 @@ _
 			let parent = el.closest("li");
 			let file = parent.querySelector('input[type="hidden"]').value;
 			if (confirm(`Are you sure you want to delete "${file}"template?`)) {
-				
-			fetch(deleteUrl, {method: "POST",  body: new URLSearchParams({file})})
+			
+			const data = new FormData();				
+			data.append("file", file);	
+			data.append("csrf", document.querySelector("[name='csrf']")?.value);	
+			
+			fetch(deleteUrl, {method: "POST",  body: data})
 				.then((response) => {
 					if (!response.ok) {  return Promise.reject(response);  }
 					return response.json();
@@ -770,7 +776,12 @@ _
 			
 			let folder = prompt('Folder name');			
 			if (folder) {
-				fetch(mediaUrl + "&action=newFolder", {method: "POST",  body: new URLSearchParams({folder, path:Vvveb.MediaModal.currentPath})})
+				const data = new FormData();				
+				data.append("folder", folder);	
+				data.append("path", Vvveb.MediaModal.currentPath);	
+				data.append("csrf", document.querySelector("[name='csrf']")?.value);	
+				
+				fetch(mediaUrl + "&action=newFolder", {method: "POST",  body: data})
 				.then((response) => {
 					if (!response.ok) { throw new Error(response) }
 					return response.json();
@@ -859,7 +870,10 @@ _
 			loading.classList.toggle("d-none");
 			btnText.classList.toggle("d-none");
 
-			fetch(mediaUrl + "&action=mediaContentSave", {method: "POST",  body:  new FormData(document.getElementById("media-content-form"))})
+			const data = new FormData(document.getElementById("media-content-form"));				
+			data.append("csrf", document.querySelector("[name='csrf']")?.value);	
+
+			fetch(mediaUrl + "&action=mediaContentSave", {method: "POST",  body: data})
 			.then((response) => {
 				if (!response.ok) { throw new Error(response) }
 				return response.json();

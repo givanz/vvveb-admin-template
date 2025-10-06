@@ -50,6 +50,7 @@
 					<form method="post">
 						
 						<input type="hidden" name="@@prefix_id" value="" data-v-taxonomy_id>
+						<input type="hidden" name="csrf" data-v-csrf>
 						
 						<div class="container-fluid m-3 pe-5" id="edit-form">
 							<div class="row">
@@ -272,11 +273,11 @@ function getOrder(item) {
 
 function saveOrder(item) {
 	let data =  getOrder(item);
-
+	
 		$.ajax({
 			url: location.pathname + location.search + "&action=reorder",
 			type: 'post',
-			data: {@@prefix_items:data},
+			data: {@@prefix_items:data, csrf: $("[name=csrf]").val()},
 			//dataType: 'json',
 			complete: function(data) {
 				$("#taxonomyToast .message").html('<i class="la la-info-circle fs-2 me-2"></i><span class="fs-6">' + data.responseText + '</span>');
@@ -305,7 +306,7 @@ function deleteItem(item) {
 		$.ajax({
 			url: location.pathname + location.search + "&action=delete",
 			type: 'post',
-			data: {@@prefix_item_id:item.data("vId")},
+			data: {@@prefix_item_id:item.data("vId"), csrf:$("[name=csrf]").val()},
 			//dataType: 'json',
 			complete: function(data) {
 				$("#taxonomyToast .message").html(data.responseText);
@@ -360,6 +361,7 @@ function save() {
 	if (@@prefix_item_id) data.push({"name":"@@prefix_item_id", "value": @@prefix_item_id});
 	data.push({"name":"@@prefix_id", "value": @@prefix_id});
 	data.push({"name":"parent_id", "value": parent_id ?? 0});
+	data.push({"name":"csrf", "value": $("[name=csrf]").val()});
 /*
 	item.querySelectorAll(":scope > .expand input:not([name=item_id]):not([name=item_id_text]),> .expand .field:visible input[name=item_id],:scope >  .expand .field:visible input[name=item_id_text],:scope > .expand select, :scope > .expand textarea").forEach( (el, i) => {
 		if (el.offsetParent) data[el.name] = el.value;
@@ -411,6 +413,8 @@ function save() {
 				toast.show();
 		});
 */		
+    data["csrf"] = $("[name=csrf]").val();
+
 	$.ajax({
 			url: location.pathname + location.search + "&action=add",
 			type: 'post',
@@ -541,7 +545,7 @@ document.getElementById('bulk-delete-btn')?.addEventListener('click', e => {
 		$.ajax({
 			url: location.pathname + location.search + "&action=delete",
 			type: 'post',
-			data: {@@prefix_item_id:ids},
+			data: {@@prefix_item_id:ids, csrf:$("[name=csrf]").val()},
 			//dataType: 'json',
 			complete: function(data) {
 				$("#taxonomyToast .message").html(data.responseText);
@@ -576,6 +580,7 @@ document.addEventListener("click", function (e) {
 	}
 	
 });
+
 
 </script>
 

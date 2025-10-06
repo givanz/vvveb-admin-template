@@ -34,24 +34,25 @@
 
 				<ul class="nav nav-pills pills-border small mx-2 mb-3" data-v-@@name-status>
 				  <li class="nav-item" data-v-status>
-					<a data-v-status-link class="nav-link" href="javascript:void(0);"  data-v-url-params='{"module":"@@module"}'>All</a>
+					<a data-v-status-link class="nav-link" href="#"  data-v-url-params='{"module":"@@module"}'>All</a>
 				  </li>
 				  <li class="nav-item" data-v-status>
-					<a data-v-status-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"@@module","status":"pending"}'>Pending</a>
+					<a data-v-status-link class="nav-link" href="#" data-v-url-params='{"module":"@@module","status":"pending"}'>Pending</a>
 				  </li>
 				  <li class="nav-item" data-v-status>
-					<a data-v-status-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"@@module","status":"approved"}'>Approved</a>
+					<a data-v-status-link class="nav-link" href="#" data-v-url-params='{"module":"@@module","status":"approved"}'>Approved</a>
 				  </li>			  
 				  <li class="nav-item" data-v-status>
-					<a data-v-status-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"@@module","status":"spam"}'>Spam</a>
+					<a data-v-status-link class="nav-link" href="#" data-v-url-params='{"module":"@@module","status":"spam"}'>Spam</a>
 				  </li>
 				  <li class="nav-item" data-v-status>
-					<a data-v-status-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"@@module","status":"trash"}'>Trash</a>
+					<a data-v-status-link class="nav-link" href="#" data-v-url-params='{"module":"@@module","status":"trash"}'>Trash</a>
 				  </li>  
 				</ul>
 				
                 <div class="@@list card-block">
                     <form action="" method="post">
+						<input type="hidden" name="csrf" data-v-csrf>
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 							<!--
@@ -178,9 +179,9 @@
 										</button>
 										<ul class="dropdown-menu">
 										  
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-@@name-approve-url target="_blank"><i class="la la-check text-secondary"></i><span>Approve</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-@@name-spam-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Spam</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-@@name-trash-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Trash</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-@@name-approve-url target="_blank"><i class="la la-check text-secondary"></i><span>Approve</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-@@name-spam-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Spam</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-@@name-trash-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Trash</span></a></li>
 										  <li><hr class="dropdown-divider"></li>
 										  <li><a class="dropdown-item text-danger" data-v-@@name-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
 										</ul>

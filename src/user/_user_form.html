@@ -1,5 +1,5 @@
  <div class="row">
-	 <div class="col-md-6 details">
+	 <div class="col-lg-6 details">
 
 		<div class="mb-3 row">
 			<label for="input-username" class="col-sm-2 col-form-label">Username</label>
@@ -55,16 +55,30 @@
 			<label for="input-user_group_id" class="col-sm-2 col-form-label" >User group</label>
 			<div class="col-sm-10">
 				<select name="@@prefix[user_group_id]" id="input-user_group_id" class="form-control" data-v-user-user_group_id>
-					<option value="0">Inactive</option>
-					<option value="1">Active</option>
+					<option value="0" data-v-option>Inactive</option>
+					<option value="1" data-v-option>Active</option>
 				</select>
 			</div>
 		  </div>		  
 		}
 		
+		  <div class="row">
+			<label for="input-display_name" class="col-sm-2 col-form-label" >Created at</label>
+			<div class="col-sm-10">
+			  <span data-v-user-created_at data-filter-friendly_date></span>
+			</div>
+		  </div>
+		  <div class="row">
+			<label for="input-display_name" class="col-sm-2 col-form-label">Last updated</label>
+			<div class="col-sm-10">
+			  <span data-v-user_updated_at data-filter-friendly_date></span>
+			</div>
+		  </div>
+		
+		
 	</div>
 
-	 <div class="col-md-6 details2">
+	 <div class="col-lg-6 details2">
 
 		  <div class="mb-3 row">
 			<label for="input-site-title" class="col-sm-2 col-form-label" >Avatar</label>

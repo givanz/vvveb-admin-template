@@ -18,6 +18,32 @@
 					<span>Themes</span>
 				</h4>
 			</div>
+			
+			<div class="btns d-flex">
+			
+				<form action="" method="get" class="me-3" data-v-url-params='{"module":"theme/market"}'>	
+					<div class="input-group me-3">
+						<input type="search" name="search" class="form-control" placeholder="Search" data-v-search>
+						<input type="hidden" name="module" value="theme/market">	
+						
+						<button class="btn btn-outline-primary border border-start-0" type="submit" title="Search">
+						  <div class="la-flip-horizontal">
+							<i class="la la-search la-lg" aria-hidden="true"></i>
+						  </div>
+						</button>
+					  </div>
+				  </form>
+			
+				<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary text-nowrap me-2">
+				  <i class="icon-funnel-outline"></i>&nbsp; <i class="icon-chevron-down-outline small"></i>
+				</button>
+
+				<a href data-v-url-params='{"module":"theme/market"}'  data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false"
+						class="btn btn-outline-secondary btn-icon ms-1 text-nowrap" >
+						<i class="la la-cloud-upload-alt la-lg"></i> <span>Upload theme</span>
+				</a>
+
+			</div>				
 			<!--
 			 <a href data-v-url-params='{"module":"theme/market"}' 
 					class="btn btn-outline-secondary btn-icon ms-1" data-bs-toggle="collapse" data-bs-target=".upload-collapse" > 
@@ -34,11 +60,37 @@
 	<div class="themes" id="main-content" >
     
     @@include('../_includes/upload-form.html')
-    
+	
     <form action="" method="post">		
-    
+		<input type="hidden" name="csrf" data-v-csrf>
+		<input type="hidden" name="action" id="action" value="">	
+		
 		@@include('../_includes/notifications.html')
-                                                                            
+																					
+																					
+			<div id="filters" class="collapse mx-3" data-v-class-if-show="this.taxonomy_item_id">
+				<ul class="nav nav-pills pills-border small mx-2 mb-3" data-v-theme-categories>
+				  <li class="nav-item">
+					<a class="nav-link" href="#"  data-v-url-params='{"module":"theme/market"}'>All</a>
+				  </li>
+				  <li class="nav-item" data-v-theme-category>
+					<a data-v-category-link class="nav-link" href="#"  data-v-url-params='{"module":"theme/market"}'>All</a>
+				  </li>
+				  <li class="nav-item" data-v-theme-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"theme/market","category":"payment"}'>Payment</a>
+				  </li>
+				  <li class="nav-item" data-v-theme-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"theme/market","category":"shipping"}'>Shipping</a>
+				  </li>			  
+				  <li class="nav-item" data-v-theme-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"theme/market","category":"development"}'>Development</a>
+				  </li>
+				  <li class="nav-item" data-v-theme-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"theme/market","category":"seo"}'>Seo</a>
+				  </li>  
+				</ul>	
+			</div>																			
+																			
              <div class="list clearfix" data-v-themes>
                  
                  
@@ -46,11 +98,12 @@
                         <!-- Card-->
                         <div class="card">
                             <div class="card-img-top" >
-					<img class="img-fluid mx-auto" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
-				</div>
+								<img class="img-fluid mx-auto" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
+							</div>
+							
                             <div class="card-body">
                                 <div class="info">
-                                    <a href="javascript:void(0);" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
+                                    <a href="#" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
 									<div class="text-muted" data-v-if="theme.author"><span>by</span><span data-v-theme-author>Author</span></div>					
                                 </div>
 								<!--
@@ -74,12 +127,12 @@
                             </div>
                               <div class="card-footer text-muted">
 									<div class="float-start">
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-copy-outline"></i>
 											<span>Theme details</span>
 										</a>
 										
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-eye-outline"></i>
 											<span>Preview</span>
 										</a>
@@ -88,7 +141,7 @@
 									<div class="float-end">
 									
 
-										<a data-v-if-not="theme.installed" title="Install theme" data-v-vvveb-action2="themes.install" data-slug="landing" data-market="vvveb" <button data-v-if-not="plugin.installed" class="btn btn-primary btn-sm btn-icon" title="Install theme" data-slug="landing" data-market="vvveb" data-v-theme-install-url>
+									<button type="submit" name="slug" value="" data-v-if-not="theme.installed" class="btn btn-primary btn-icon btn-sm" title="Install theme" data-v-vvveb-action2="plugins.install" data-slug="" data-market="vvveb" onclick="document.getElementById('action').value='install';" data-v-theme-slug>	
 											<span class="loading d-none">
 											  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
 											  <span>Downloading </span> ... </span>
@@ -96,9 +149,9 @@
 											<span class="button-text">
 											  <i class="icon-color-wand-outline"></i> <span>Install</span>
 											</span>				
-										</a>
+										</button>
 				   
-										<button data-v-if="theme.installed" href="javascript:void(0);" class="btn btn-light btn-sm btn-icon border" disabled>
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm btn-icon border" disabled>
 											<i class="icon-color-wand-outline"></i> <span>Installed</span>
 										</button>
 
@@ -115,7 +168,7 @@
                             <img class="card-img-top img-fluid d-block mx-auto mb-3" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
                             <div class="card-body">
                                 <div class="info">
-                                    <a href="javascript:void(0);" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
+                                    <a href="#" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
 									<div class="text-muted" data-v-if="theme.author"><span>by</span><span data-v-theme-author>Author</span></div>					
                                 </div>
 								<!--
@@ -139,12 +192,12 @@
                             </div>
                               <div class="card-footer text-muted">
 									<div class="float-start">
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-copy-outline"></i>
 											<span>Theme details</span>
 										</a>
 										
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-eye-outline"></i>
 											<span>Preview</span>
 										</a>
@@ -163,7 +216,7 @@
 											</span>				
 										</a>
 				   
-										<button data-v-if="theme.installed" href="javascript:void(0);" class="btn btn-light btn-sm btn-icon border" disabled>
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm btn-icon border" disabled>
 											<i class="icon-color-wand-outline"></i> <span>Installed</span>
 										</button>
 
@@ -180,7 +233,7 @@
                             <img class="card-img-top img-fluid d-block mx-auto mb-3" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
                             <div class="card-body">
                                 <div class="info">
-                                    <a href="javascript:void(0);" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
+                                    <a href="#" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
                                     by <h6 class="card-subtitle mb-2 text-muted d-inline" data-v-theme-author>Author</h6>					
                                 </div>
 								<!--
@@ -204,12 +257,12 @@
                             </div>
                               <div class="card-footer text-muted">
 									<div class="float-start">
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-copy-outline"></i>
 											<span>Theme details</span>
 										</a>
 										
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-eye-outline"></i>
 											<span>Preview</span>
 										</a>
@@ -228,7 +281,7 @@
 											</span>				
 										</a>
 				   
-										<button data-v-if="theme.installed" href="javascript:void(0);" class="btn btn-light btn-sm btn-icon border" disabled>
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm btn-icon border" disabled>
 											<i class="icon-color-wand-outline"></i> <span>Installed</span>
 										</button>
 
@@ -245,7 +298,7 @@
                             <img class="card-img-top img-fluid d-block mx-auto mb-3" src="img/logo-symbol.png" alt="Card image cap" data-v-theme-image>
                             <div class="card-body">
                                 <div class="info">
-                                    <a href="javascript:void(0);" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
+                                    <a href="#" target="_blank" data-v-theme-homepage><h6 class="card-title" data-v-theme-name>Theme name</h6></a>
                                     by <h6 class="card-subtitle mb-2 text-muted d-inline" data-v-theme-author>Author</h6>					
                                 </div>
 								<!--
@@ -269,12 +322,12 @@
                             </div>
                               <div class="card-footer text-muted">
 									<div class="float-start">
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-copy-outline"></i>
 											<span>Theme details</span>
 										</a>
 										
-										<a href="javascript:void(0);" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
+										<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-theme-url>
 											<i class="icon-eye-outline"></i>
 											<span>Preview</span>
 										</a>
@@ -293,7 +346,7 @@
 											</span>				
 										</a>
 				   
-										<button data-v-if="theme.installed" href="javascript:void(0);" class="btn btn-light btn-sm btn-icon border" disabled>
+										<button data-v-if="theme.installed" href="#" class="btn btn-light btn-sm btn-icon border" disabled>
 											<i class="icon-color-wand-outline"></i> <span>Installed</span>
 										</button>
 

@@ -11,7 +11,9 @@
 	@@include('../_includes/top-header.html')
 
 	<form id="user-form" action="" method="post" class="settings" data-v-user>
-	   <input type="hidden" name="action" id="action" value="save">
+	   <input type="hidden" name="action" id="action" value="loginAs">
+	   <input type="hidden" name="csrf" data-v-csrf>
+	   
 	   <div class="actions clearfix">
 			<div class="title">
 					<h4 class="text-muted my-2">
@@ -38,7 +40,12 @@
 				  </button>
 		   </div>
 	 </div>
-
+	 </form>
+	 
+	<form id="user-form" action="" method="post" class="settings" data-v-user>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <input type="hidden" name="csrf" data-v-csrf>
+	   
 	  <div id="main-content" class="px-4">
 
 				@@include('../_includes/notifications.html')
@@ -73,7 +80,7 @@
 								<td class="text-center" width="70">
 									
 									
-									<a href="javascript:void(0);"
+									<a href="#"
 									   class="btn btn-primary btn-sm"
 									   
 									   data-v-order-url>
@@ -89,7 +96,7 @@
 								<td>31/05/2018</td>
 								<td class="text-center">$1,005.00</td>
 								<td class="text-center">
-									<a href="javascript:void(0);" class="btn btn-primary btn-sm" >
+									<a href="#" class="btn btn-primary btn-sm" >
 										<i class="la la-hand-pointer"></i>
 									</a>
 								</td>
@@ -101,7 +108,7 @@
 								<td>31/05/2018</td>
 								<td class="text-center">$1,005.00</td>
 								<td class="text-center">
-									<a href="javascript:void(0);" class="btn btn-primary btn-sm">
+									<a href="#" class="btn btn-primary btn-sm">
 										<i class="la la-hand-pointer"></i>
 									</a>
 								</td>

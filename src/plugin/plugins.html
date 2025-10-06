@@ -58,22 +58,22 @@
 		<!--
 		<ul class="nav nav-pills pills-border small mx-2">
 		  <li class="nav-item">
-			<a class="nav-link active" href="javascript:void(0);">All</a>
+			<a class="nav-link active" href="#">All</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="javascript:void(0);">Development</a>
+			<a class="nav-link" href="#">Development</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="javascript:void(0);">Payment</a>
+			<a class="nav-link" href="#">Payment</a>
 		  </li>			  
 		  <li class="nav-item">
-			<a class="nav-link" href="javascript:void(0);">Shipping</a>
+			<a class="nav-link" href="#">Shipping</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="javascript:void(0);">Performance</a>
+			<a class="nav-link" href="#">Performance</a>
 		  </li>  
 		  <li class="nav-item">
-			<a class="nav-link" href="javascript:void(0);">Seo</a>
+			<a class="nav-link" href="#">Seo</a>
 		  </li>
 		</ul>
 		-->
@@ -103,25 +103,27 @@
 		@@include('../_includes/upload-form.html')
 
 		<form action="" method="post">
+			<input type="hidden" name="csrf" data-v-csrf>
+			<input type="hidden" name="action" id="action" value="">
 
 				<ul class="nav nav-pills pills-border small mx-2 mb-3 float-start" data-v-plugin-categories>
 				  <li class="nav-item">
-					<a class="nav-link" href="javascript:void(0);"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
+					<a class="nav-link" href="#"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="javascript:void(0);"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
+					<a data-v-category-link class="nav-link" href="#"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"payment"}'>Payment</a>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"payment"}'>Payment</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"shipping"}'>Shipping</a>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"shipping"}'>Shipping</a>
 				  </li>			  
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"development"}'>Development</a>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"development"}'>Development</a>
 				  </li>
 				  <li class="nav-item" data-v-plugin-category>
-					<a data-v-category-link class="nav-link" href="javascript:void(0);" data-v-url-params='{"module":"plugin/plugins","category":"seo"}'>Seo</a>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/plugins","category":"seo"}'>Seo</a>
 				  </li>  
 				</ul>
 				

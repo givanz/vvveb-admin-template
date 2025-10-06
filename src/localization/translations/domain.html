@@ -91,6 +91,8 @@
 				
 			</div>
         </div>
+		
+		<input type="hidden" name="csrf" id="csrf" data-v-csrf>
 		@@include('../../_includes/main-footer.html')
     </div>
 </div>
@@ -263,7 +265,7 @@ let save = function (e) {
 		headers: {
 			"Content-Type": "application/x-www-form-urlencoded",
 		},
-		body: nestedFormData({translations})})
+		body: nestedFormData({translations,csrf:document.getElementById("csrf")?.value})})
 	 .then(response => {
 		if (!response.ok) { return Promise.reject(response); }
 		return response.json()

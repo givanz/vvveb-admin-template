@@ -13811,6 +13811,8 @@ textarea.form-control-lg {
       background-image: url(../../../js/vvvebjs/icons/panel.svg); }
     .tree > ol li.notemplate .duplicate, .tree > ol li.notemplate .rename, .tree > ol li.notemplate .delete {
       display: none; }
+    .tree > ol li[data-global] .rename, .tree > ol li[data-global] .delete {
+      display: none; }
     .tree > ol li input {
       position: absolute;
       left: 0;

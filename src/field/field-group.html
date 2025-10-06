@@ -12,6 +12,7 @@
 
 	<form id="field-form" action="" method="post" class="settings" data-v-field_group>
 	   <input type="hidden" name="action" id="action" value="save">
+	   <input type="hidden" name="csrf" data-v-csrf>
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
 					<h4 class="text-muted my-2">
@@ -22,18 +23,33 @@
 			
 			<div class="btns">
 				<a href="/admin/?module=field/field-groups" title="Return to field groups"
-					class="btn btn-outline-secondary me-2">
+					class="btn btn-icon btn-outline-secondary me-2">
 						<i class="la la-arrow-left"></i><span>Return to field groups</span>
 				 </a>
 				 
-				<button type="button" id="add-field-group-btn" class="btn btn-outline-primary" aria-label="Add Rule" data-v-if="this.field_group.field_group_id">
-					<i class="la la-plus"></i> Add field
-				</button>
+
+				<div class="btn-group" role="group" aria-label="Field types">
+					<button type="button" class="btn btn-outline-primary btn-icon" id="add-btn"><i class="la la-plus"></i> Add field</button>
+					<button type="button" class="btn btn-outline-primary btn-icon px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left:1px"></button>
+					<div class="dropdown-menu pt-0 field-types">
+						<input type="search" id="field-type-search" class="form-control form-control-sm" placeholder="Type to filter" name="search">
+						<div id="field-type-list" style="max-height:500px;min-width:250px;overflow-y:auto">
+						<ul class="group list-unstyled">
+						  <li>
+							<h6 class="dropdown-header">Basic</h6>
+						  </li>
+						  <li class="field">
+							<a class="dropdown-item" href="#"><i class="icon-text-outline"></i><span>Text</span></a>
+						  </li>
+						</ul>
+						</div>
+					</div>
+				</div>
 				 
 				  
-				  <button type="submit" href=""
-					 class="btn btn-primary btn-icon ms-1"
-					<i class="icon-create-outline"></i> <span>Save</span>
+				  <button type="submit" onclick="saveFieldGroup(event)"  class="btn btn-primary btn-icon ms-1">
+					<i class="icon-create-outline"></i> 
+					<span>Save</span>
 				  </button>
 		   </div>
 	 </div>
@@ -45,319 +61,383 @@
 			<div class="px-4">
 				
 				<input type="hidden" name="field_group_id" data-v-field_group-field_group_id>
-
+<!--
 				<div class="card p-3 mb-3">
 					<div class="row">
 						<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
-						<div class="col-sm-10">
-						  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field_group[name]" data-v-field_group-name required>
+						<div class="col-sm-10 col-xl-8 col-xxl-6">
+						  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field[#][name]" data-v-field[#]-name required>
 						</div>
 					 </div>	
 				 </div>					
-	 
-
-				<div class="fields" data-v-if="this.field_group_id">
-	 
-					<div class="accordion" style="--bs-accordion-body-padding-x:0;--bs-accordion-body-padding-y:0;--bs-accordion-active-bg:rgba(var(--bs-primary-rgb), 0.05);" data-v-fields>
-					  
-					  <div class="accordion-item" data-v-field>
-							<div class="accordion-header">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#field-id-1" aria-controls="field-id-1">
-								<div class="flex-grow-1">Label 1</div>
-								<div class="pe-5 buttons">
-									<a type="button" onclick="this.closest('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
-										  <i class="la la-lg la-copy"></i>
-									</a>
-									<a type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
-										  <i class="la la-lg la-minus-circle"></i>
-									</a>
-								</div>
-								</button>
-							</div>
-
-						<div id="field-id-1" class="accordion-collapse collapse">
-						  <div class="accordion-body">
+-->	 
 
 
-					<ul class="nav nav-tabs px-3 pt-2" id="myTab" role="tablist">
-					
-					  <li class="nav-item" role="presentation">
-						<button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General</button>
-					  </li>
-
-					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Validation</button>
-					  </li>
-						
-					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Presentation</button>
-					  </li>		  
-
-					  
-
-					   <li class="nav-item" role="presentation">
-						<button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false" tabindex="-1">Conditionals</button>
-					  </li>					 
-					  
-					</ul>
-					
-					<div class="tab-content p-4">
-					
-						<div class="tab-pane active show" id="general" role="tabpanel" aria-labelledby="general-tab">
-
-							<div class="row mb-3">
-							  <label for="input-language" class="col-sm-2 col-form-label">Type</label>
-							  <div class="col-sm-10">
-									<select name="type" class="form-select" data-v-field-type>
-									  <option value="1" data-v-option>
-										<span data-v-option-name>Tax 1 (-2.00)</span>
-									  </option>
-									  <option value="2" data-v-country data-v-country-country_id>
-										<span data-v-country-name>Tax 2 (19%)</span>
-									  </option>
-									  
-									  <optgroup label="Basic">
-										<option value="text" selected="selected" data-v-option>Text</option>
-										<option value="textarea" data-v-option>Text Area</option>
-										<option value="number" data-v-option>Number</option>
-										<option value="range" data-v-option>Range</option>
-										<option value="email" data-v-option>Email</option>
-										<option value="url" data-v-option>Url</option>
-										<option value="password" data-v-option>Password</option>
-									  </optgroup>
-									  <optgroup label="Content">
-										<option value="image">Image</option>
-										<option value="file">File</option>
-										<option value="wysiwyg">Wysiwyg Editor</option>
-										<option value="oembed">oEmbed</option>
-										<option value="null" disabled="disabled">Gallery</option>
-									  </optgroup>
-									  <optgroup label="Choice">
-										<option value="select">Select</option>
-										<option value="checkbox">Checkbox</option>
-										<option value="radio">Radio Button</option>
-										<option value="button_group">Button Group</option>
-										<option value="true_false">True / False</option>
-									  </optgroup>
-									  <optgroup label="Relational">
-										<option value="link">Link</option>
-										<option value="post_object">Post Object</option>
-										<option value="page_link">Page Link</option>
-										<option value="relationship">Relationship</option>
-										<option value="taxonomy">Taxonomy</option>
-										<option value="user">User</option>
-									  </optgroup>
-									  <optgroup label="jQuery">
-										<option value="google_map">Google Map</option>
-										<option value="date_picker">Date Picker</option>
-										<option value="date_time_picker">Date Time Picker</option>
-										<option value="time_picker">Time Picker</option>
-										<option value="color_picker">Color Picker</option>
-									  </optgroup>
-									  <optgroup label="Layout">
-										<option value="message">Message</option>
-										<option value="accordion">Accordion</option>
-										<option value="tab">Tab</option>
-										<option value="group">Group</option>
-										<option value="repeater" disabled="disabled">Repeater</option>
-										<option value="flexible" disabled="disabled">Flexible Content</option>
-										<option value="clone" disabled="disabled">Clone</option>
-									  </optgroup>									  
-									</select>
-							  </div>
-							</div>
-							<div class="row mb-3">
-							  <label for="input-label" class="col-sm-2 col-form-label">Label</label>
-							  <div class="col-sm-10">
-								<input type="text" class="form-control" placeholder="" name="settings[label]" value="">
-							  </div>
-							</div>
-
-							<div class="row mb-3">
-							  <label for="input-name" class="col-sm-2 col-form-label">Name</label>
-							  <div class="col-sm-10">
-								<input type="text" class="form-control" placeholder="" name="settings[name]" value="">
-							  </div>
-							</div>
-							
-							<div class="row mb-3">
-							  <label for="input-default" class="col-sm-2 col-form-label">Default</label>
-							  <div class="col-sm-10">
-								<input type="text" class="form-control" placeholder="" name="settings[default]" value="">
-							  </div>
-							</div>
-
-
-						</div>
-						
-								<div class="tab-pane" id="local" role="tabpanel" aria-labelledby="local-tab">
-								
-								
-									<div class="row mb-3">
-									  <label for="input-default" class="col-sm-2 col-form-label">Requiered</label>
-									  <div class="col-sm-10">
-										
-										<div class="form-check form-switch">
-										  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-										  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-										</div>
-										
-									  </div>
-									</div>
-									
-									
-									<div class="row mb-3">
-									  <label for="input-max_length" class="col-sm-2 col-form-label">Max Length</label>
-									  <div class="col-sm-10">
-										<input type="number" class="form-control" placeholder="" name="settings[max_length]" value="">
-									  </div>
-									</div>									
-									
-								</div>	
-								
-								<div class="tab-pane" id="media" role="tabpanel" aria-labelledby="media-tab">
-									media
-								</div>
-								
-
-								<div class="tab-pane" id="comments" role="tabpanel" aria-labelledby="comments-tab">
-									comments
-								</div>
-
-								<div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab">
-									orders
-								</div>			
-													
-								
-						 
-								</div>
-
-							
-							
-						  </div>
-						</div>
-						  
-						</div>
-						
-					  <div class="d-none" id="field-group-template">
-							
-							<div class="accordion-header">
-								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#field-id" aria-expanded="true" aria-controls="field-id">									<div class="flex-grow-1">(no label)</div>
-									<div class="pe-5 buttons">
-										<a type="button" onclick="this.closest('tr').remove();" title="Duplicate" class="btn btn-outline-secondary border-secondary-subtle btn-sm">
-											  <i class="la la-lg la-copy"></i>
-										</a>
-										<a type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger border-danger-subtle btn-sm">
-											  <i class="la la-lg la-minus-circle"></i>
-										</a>
-									</div>
-								</button>
-							 </div>
-
-						<div id="field-id" class="accordion-collapse collapse show">
-						  <div class="accordion-body">
-							asdasd
-							 
-							
-						  </div>
-						  
-						</div>
-						
-					  </div>
-		
-					
-				</div>
+	
+<section title="four columns" id="dragcontainer">
+ 
+	<div class="container-fluid dragzone" data-v-fields>
+<!--
+		<div class="row" draggable="true">
+			
+			<div class="col" draggable="true">
 				
-				
-				<div class="card mt-4">
-					<div class="card-header bg-body border-bottom">Settings</div>	
-					<div class="m-3">
-						<div class="mb-3 row">
-							<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
-							<div class="col-sm-10">
-							  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field_group[name]" data-v-field_group-name required>
-							</div>
-						 </div>	
-					</div>	
-				 </div>	
-				 
+					<div class="input">
+                      <label for="input-name" class="col-form-label">Name</label>
+                      <div class="">
+                        <input readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][name]" data-v-field_group-name="" required="" value="test">
+                      </div>
+                    </div>
+
+					<div class="edit">
+						@@include('_field-item.html')
+                    </div>
+			
 			</div>
-        </div>
-</form>
+
+			<div class="col" draggable="true">
+				
+					<div class="input">
+                      <label for="input-name" class="col-form-label">Slug</label>
+                      <div class="">
+                        <input readonly type="text" class="form-control" id="input-slug" placeholder="Name" name="field[#][slug]" data-v-field_group-slug="" required="" value="test">
+                      </div>
+                    </div>
+
+					<div class="edit">
+						@@include('_field-item.html')
+                    </div>			
+			</div>
+
+			<div class="col" draggable="true">
+				
+					<div class="input">
+                      <label for="input-name" class="col-form-label">Description</label>
+                      <div class="">
+                        <textarea readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][1][name]" data-v-field_group-name="" required="" value="test">
+						</textarea>
+                      </div>
+                    </div>
+
+					<div class="edit">
+						@@include('_field-item.html')
+                    </div>			
+			</div>
+
+		</div>
+		
+		<div class="row" draggable="true">
+			<div class="col" draggable="true">col 1</div>
+			<div class="col" draggable="true">col 2</div>
+			<div class="col" draggable="true">col 3</div>
+			<div class="col" draggable="true">col 4</div>
+			<div class="col" draggable="true">col 5</div>
+			<div class="col" draggable="true">col 7</div>
+		</div>
+		
+-->		
+		
+		<div class="row" draggable="true" data-v-row>
+		
+			<div class="col" draggable="true" data-v-field>
+				
+					<div class="input">
+                      <label for="input-label" class="col-form-label" data-v-field-label>Label</label>
+                      <div class="">
+                        <input readonly type="text" class="form-control" id="input-label" placeholder="Name" name="field[#][name]" data-v-field-name="" value="test">
+                      </div>
+                    </div>
+					
+					<div class="edit">
+						@@include('_field-item.html')
+					</div>
+			
+			</div>
+			
+		</div>
+
+	</div>
+
+
+</section>
+
+
+<div id="edit" class="bg-body border p-0 border-top-0">
+
+	@@include('_field-item.html')
 
 </div>
 
 
-@@include('../_includes/footer-scripts.html')
-<style>
-.accordion-header .buttons {
-	visibility:hidden;
-}
+<div id="template" style="display:none">
 
-.accordion-header:hover .buttons {
-	visibility:visible;
-}
-</style>
+		<div class="row" draggable="true" data-v-row>
+		
+			<div class="col" draggable="true" data-id="#" data-v-field>
+				
+					<div class="input">
+                      <label for="input-name" class="col-form-label">Name</label>
+                      <div class="">
+                        <input readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][name]" data-v-field_group-name="" value="test">
+                      </div>
+                    </div>
+					
+					<div class="edit">
+						@@include('_field-item.html')
+					</div>
+			
+			</div>
+			
+		</div>
+
+</div>
+  
+
+				<div class="fields" data-v-if="this.field_group_id">
+	 
+				</div>
+				
+				<div class="mt-1 settings">
+					<!--
+					<div class="card-header">Settings</div>	
+					-->
+					
+					<ul class="nav nav-tabs" id="settings-tabs" role="tablist" style="margin-top: -1px;margin-left: -1px;">
+					
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link active" id="group-general-tab" data-bs-toggle="tab" data-bs-target="#group-general" type="button" role="tab" aria-controls="group-general" aria-selected="true"><i class="icon-settings-outline"></i> <span>General</span></button>
+					  </li>
+
+<!--						
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="group-presentation-tab" data-bs-toggle="tab" data-bs-target="#group-presentation" type="button" role="tab" aria-controls="presentation" aria-selected="false" tabindex="-1"><i class="icon-brush-outline"></i> <span>Presentation</span></button>
+					  </li>		  
+-->
+<!--
+					   <li class="nav-item" role="presentation">
+						<button class="nav-link" id="group-conditionals-tab" data-bs-toggle="tab" data-bs-target="#group-conditionals" type="button" role="tab" aria-controls="group-conditionals" aria-selected="false" tabindex="-1"><i class="icon-help-circle-outline"></i> <span>Conditionals</span></button>
+					  </li>					 
+-->					  
+					</ul>
+					
+					<div class="tab-content" style="border-left: 1px solid var(--bs-border-color);border-right: 1px solid var(--bs-border-color);border-bottom: 1px solid var(--bs-border-color);">
+					
+						<div class="tab-pane active show" id="group-general" role="tabpanel" aria-labelledby="general-tab">					
+						
+							<div class="m-3">
+								<div class="mb-3 row">
+									<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <input type="text" class="form-control" id="input-name" placeholder="Name" name="field_group[name]" data-v-field_group-name required>
+									</div>
+								 </div>	
+								 
+								<div class="mb-3 row">
+									<label for="input-slug" class="col-sm-2 col-form-label">Slug</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <input type="text" class="form-control" id="input-slug" placeholder="Slug" name="field_group[slug]" data-v-field_group-slug required>
+									</div>
+								 </div>	
+								<div class="mb-3 row">
+									<label for="input-description" class="col-sm-2 col-form-label">Description</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <textarea class="form-control" id="input-description" placeholder="Description" name="field_group[content]" data-v-field_group-content required>
+									  </textarea>
+									</div>
+								 </div>	
+								<div class="mb-3 row">
+									<label class="col-sm-2 col-form-label">Type</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <select class="form-control" name="field_group[type]" data-v-field_group-type required>
+										<option value="post">Post</option>
+										<option value="product">Product</option>
+										<option value="user">User</option>
+										<option value="taxonomy_item">Taxonomy</option>
+										<option value="menu_item">Menu</option>
+										<option value="order">Order</option>
+									  </select>
+									</div>
+								 </div>	
+								<div class="mb-3 row d-none" data-post-subtype="post">
+									<label class="col-sm-2 col-form-label">Post type</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <select class="form-control" name="field_group[subtype]" data-v-field_group-subtype>
+										<option value="">All</option>
+										<option data-option value="post">Post</option>
+										<option data-option value="product">Page</option>
+									  </select>
+									</div>
+								 </div>									
+								 <div class="mb-3 row d-none" data-post-subtype="product">
+									<label class="col-sm-2 col-form-label">Product type</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <select class="form-control" name="field_group[subtype]" data-v-field_group-subtype>
+										<option value="">All</option>
+										<option data-option value="product">Product</option>
+									  </select>
+									</div>
+								 </div>	
+								 <div class="mb-3 row d-none" data-post-subtype="taxonomy_item">
+									<label class="col-sm-2 col-form-label">Taxonomy type</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <select class="form-control" name="field_group[subtype]" data-v-field_group-subtype>
+										<option value="">All</option>
+										<option data-option value="product">Page</option>
+									  </select>
+									</div>
+								 </div>									 
+								 <div class="mb-3 row d-none" data-post-subtype="user">
+									<label class="col-sm-2 col-form-label">User type</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <select class="form-control" name="field_group[subtype]" data-v-field_group-subtype>
+										<option value="">All</option>
+										<option data-option value="user">User</option>
+									  </select>
+									</div>
+								 </div>	
+							</div>	
+						</div>					
+<!--						
+						<div class="tab-pane" id="group-presentation" role="tabpanel" aria-labelledby="presentation-tab">					
+						
+							<div class="m-3">
+								<div class="mb-3 row">
+									<label for="input-site-title" class="col-sm-2 col-form-label">presentation</label>
+									<div class="col-sm-10 col-xl-8 col-xxl-6">
+									  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="field[#][1][name]" data-v-field[#]-name required>
+									</div>
+								 </div>	
+							</div>	
+						</div>							
+-->						
+						<div class="tab-pane" id="group-conditionals" role="tabpanel" aria-labelledby="conditionals-tab">					
+
+							<div class="m-3">
+							
+								<div class="group">
+									<label class="group-label">Show this group if</label>
+								
+									@@include('_field-rule.html')
+								</div>
+							
+								<button class="btn btn-outline-primary btn-icon" id="btn-rule-group-add">+ Add rule group</button>
+							</div>	
+
+							</div>	
+						</div>	
+					</div>	
+				 </div>	
+			</div>
+		</div>
+	</form>
+
+	@@include('../_includes/main-footer.html')
+	</div>
+</div>
+
+
+<div id="actions" class="bg-body-tertiary border">
+	<button class="btn btn-sm btn-outline-primary btn-edit border-0" title="Edit">
+		<i class="la la-angle-down"></i>
+	</button>
+
+	<button class="btn btn-sm btn-outline-primary btn-add border-0" title="Add new">
+		<i class="la la-plus"></i>
+	</button>
+
+	<button class="btn btn-sm btn-outline-primary btn-clone border-0" title="Clone">
+		<i class="la la-copy"></i>
+	</button>
+
+	<button class="btn btn-sm btn-outline-danger btn-remove border-0" title="Delete">
+		<i class="la la-times"></i>
+	</button>
+</div>
+
+
+<div class="d-none" id="field-group-template">
+	@@include('_field-item.html')
+</div>
+
+<div class="d-none" id="field-group-rule-template">
+	@@include('_field-rule.html')
+</div>
+
+<div class="d-none" id="field-group-rule-group-template">
+	<div class="group">
+		<label class="group-label">Show this group if</label>
+		<label class="or-label">or</label>
+
+		@@include('_field-rule.html')
+	</div>
+</div>
 
 <script>
-let mediaPath = '{ $this->mediaPath }';
-let mediaScanUrl =  '{ $this->scanUrl }';
-let uploadUrl = '{ $this->uploadUrl }';
-let fieldsUrl = '{ $this->fieldsUrl }';
-let fields = [];
+@@include('../_includes/media-variables.html')
 
-function addFieldsToSelect(fieldSelect, data, field_id = 0) {
-	fieldSelect.html('<option value="0">All Fields</option>');
-	for (i in data) {
-		let field = data[i];
-		fieldSelect.append('<option value="' + field.field_id + '">' + field.name + '</option>');
-	}
-	fieldSelect.val(field_id);
-	//fieldSelect.removeAttribute("disabled");
+let sortOrder = 0;
+function saveFieldGroup(e) {
+	sortOrder = 0;
+	let rows = document.querySelectorAll(".dragzone > [data-v-row].row");
+	rows.forEach(el => {
+		el.dataset.index = sortOrder++;
+		console.log(el.dataset.index);
+	});
+
+	sortOrder = 0;
+	let fields = document.querySelectorAll(".dragzone .col");
+	fields.forEach(el => {
+		let sort_order = el.querySelector("[data-v-field-sort_order]");
+		if (sort_order) sort_order.value = sortOrder++;
+		
+		let row = el.querySelector("[data-v-field-row]");
+		if (row) row.value = el.parentNode.dataset.index;//row index
+	});
 	
+	//e.preventDefault();
 }
-/*
-document.querySelectorAll("body").on("change", "[data-v-countries]", function () {
-	let fieldGroup = this.closest("tr");
-	let fieldSelect = $("[data-v-field-field_id]", fieldGroup);
-	let country_id = this.value;
-	let field_id = this.dataset.vFieldId;
-	this.disabled = false;
 
-	if (fields[country_id]) {
-		addFieldsToSelect(fieldSelect, fields[country_id], field_id);
-		document.querySelectorAll("[data-v-field] [data-v-countries]:disabled:first").change();
-	} else {
-		$.get(fieldsUrl + "&country_id=" + country_id).done(function( data ) {
-			fields[country_id] = data;
-			addFieldsToSelect(fieldSelect, data, field_id);
-			document.querySelectorAll("[data-v-field] [data-v-countries]:disabled:first").change();
-		});
-	}
-	
-	this.dataset.vFieldId = 0;
-});
-*/
-document.getElementById("add-field-group-btn").addEventListener("click", function () {
-	
-	let template = document.getElementById("field-group-template").outerHTML;
-	let id = Math.floor(Math.random() * 10000);
-	template = template.replaceAll('field-group_template[0]', 'field[' + id + ']')
-				.replace('class="d-none"', 'class="accordion-item" data-v-field')
-				.replace('id="field-group-template"', '')
-				.replaceAll('field-id',"field-" + id);
-				
-	document.querySelector("[data-v-fields]").appendChild(generateElements(template)[0]);
-	document.querySelector("[data-v-field] [data-v-countries]:disabled").change();	
+let fieldSearch = document.getElementById("field-type-search");
+let fieldList = document.getElementById("field-type-list");
+fieldSearch.addEventListener("input", function (e) {
+	let text = this.value.toLowerCase();
+	fieldList.querySelectorAll("li").forEach((el) => {
+		if (!text || el.textContent.toLowerCase().includes(text)) {
+			el.classList.remove("d-none");
+		} else {
+			el.classList.add("d-none");
+		}
+	});
 });
 
-//document.querySelectorAll("[data-v-field] [data-v-countries]:disabled:first").change();
+let groupType = document.querySelector("[data-v-field_group-type]");
+groupType.addEventListener("change", function (e) {
+	let value = this.value;
+	document.querySelectorAll("[data-post-subtype]").forEach(el => {
+		if (el.dataset.postSubtype == value) {
+			el.classList.remove("d-none");
+			el.querySelector("select").disabled = false;
+		} else {
+			el.classList.add("d-none");
+			el.querySelector("select").disabled = true;
+		}
+	});
+});
+
+groupType.dispatchEvent(new Event('change'));
 </script>
 
 
-<script id="openverse-js" src="libs/media/openverse.js"></script>
+<script src="drag.js"></script>
+<link href="drag.css"  rel="stylesheet"></link>
+
+@@include('../_includes/footer-scripts.html')
+
+<!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
 <script id="media-js" src="libs/media/media.js"></script>
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
+<script id="field-group-js" src="js/field-group.js"></script>
+<script id="functions-js" src="/js/admin/functions.js"></script>
 
 @@include('../_includes/footer.html')

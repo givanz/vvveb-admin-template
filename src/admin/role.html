@@ -12,6 +12,8 @@
 
 	<form id="settings-form" action="" method="post" class="settings" data-v-role>
 	   <input type="hidden" name="action" id="action" value="save">
+	   <input type="hidden" name="csrf" data-v-csrf>
+	   
 	   <div class="actions">
 		<div class="title">
 				<h4 class="text-muted my-2">
@@ -77,10 +79,10 @@
 								<span data-v-rule>Rule</span>
 								<!--
 								<div class="file-actions">
-									<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+									<button href="#" class="rename btn btn-outline-primary" title="Rename">
 										<i class="la la-pen"></i>
 									</button>
-									<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+									<button href="#" class="delete btn btn-outline-danger" title="Delete">
 										<i class="la la-trash"></i>
 									</button>
 								</div>
@@ -94,10 +96,10 @@
 							<label for="contact" title="Contact us page">
 								<span>Contact us page</span>
 								<div class="file-actions">
-									<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+									<button href="#" class="rename btn btn-outline-primary" title="Rename">
 										<i class="la la-pen"></i>
 									</button>
-									<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+									<button href="#" class="delete btn btn-outline-danger" title="Delete">
 										<i class="la la-trash"></i>
 									</button>
 								</div>
@@ -111,10 +113,10 @@
 							<label for="supporters">
 								<span>Supporters</span>
 								<div class="file-actions">
-									<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+									<button href="#" class="rename btn btn-outline-primary" title="Rename">
 										<i class="la la-pen"></i>
 									</button>
-									<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+									<button href="#" class="delete btn btn-outline-danger" title="Delete">
 										<i class="la la-trash"></i>
 									</button>
 								</div>
@@ -133,10 +135,10 @@
 									<label for="checkout-checkout">
 										<span>Checkout</span>
 										<div class="file-actions">
-											<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+											<button href="#" class="rename btn btn-outline-primary" title="Rename">
 												<i class="la la-pen"></i>
 											</button>
-											<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+											<button href="#" class="delete btn btn-outline-danger" title="Delete">
 												<i class="la la-trash"></i>
 											</button>
 										</div>
@@ -149,10 +151,10 @@
 									<label for="checkout-confirm">
 										<span>Confirm</span>
 										<div class="file-actions">
-											<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+											<button href="#" class="rename btn btn-outline-primary" title="Rename">
 												<i class="la la-pen"></i>
 											</button>
-											<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+											<button href="#" class="delete btn btn-outline-danger" title="Delete">
 												<i class="la la-trash"></i>
 											</button>
 										</div>
@@ -165,10 +167,10 @@
 									<label for="checkout-order">
 										<span>Order</span>
 										<div class="file-actions">
-											<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+											<button href="#" class="rename btn btn-outline-primary" title="Rename">
 												<i class="la la-pen"></i>
 											</button>
-											<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+											<button href="#" class="delete btn btn-outline-danger" title="Delete">
 												<i class="la la-trash"></i>
 											</button>
 										</div>
@@ -202,16 +204,16 @@
 
 				<div class="nav nav-tabs mx-4 mt-4" data-v-apps>
 				  <div class="nav-item" data-v-app>
-					<a class="nav-link" href="javascript:void(0);" data-v-app-url>Admin</a>
+					<a class="nav-link" href="#" data-v-app-url>Admin</a>
 				  </div>
 				  <div class="nav-item" data-v-app>
-					<a class="nav-link" href="javascript:void(0);"  data-v-app-url>Rest API</a>
+					<a class="nav-link" href="#"  data-v-app-url>Rest API</a>
 				  </div>
 				  <div class="nav-item" data-v-app>
-					<a class="nav-link" href="javascript:void(0);"  data-v-app-url>GraphQL</a>
+					<a class="nav-link" href="#"  data-v-app-url>GraphQL</a>
 				  </div>
 				  <div class="nav-item" data-v-app>
-					<a class="nav-link" href="javascript:void(0);"  data-v-app-url>GraphQL</a>
+					<a class="nav-link" href="#"  data-v-app-url>GraphQL</a>
 				  </div>
 
 				  <div class="text-end flex-grow-1">
@@ -305,10 +307,10 @@
 													
 													<!--
 													<div class="file-actions">
-														<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+														<button href="#" class="rename btn btn-outline-primary" title="Rename">
 															<i class="la la-pen"></i>
 														</button>
-														<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+														<button href="#" class="delete btn btn-outline-danger" title="Delete">
 															<i class="la la-trash"></i>
 														</button>
 													</div>
@@ -322,10 +324,10 @@
 												<label for="contact" title="Contact us page">
 													<span>Contact us page</span>
 													<div class="file-actions">
-														<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+														<button href="#" class="rename btn btn-outline-primary" title="Rename">
 															<i class="la la-pen"></i>
 														</button>
-														<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+														<button href="#" class="delete btn btn-outline-danger" title="Delete">
 															<i class="la la-trash"></i>
 														</button>
 													</div>
@@ -339,10 +341,10 @@
 												<label for="supporters">
 													<span>Supporters</span>
 													<div class="file-actions">
-														<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+														<button href="#" class="rename btn btn-outline-primary" title="Rename">
 															<i class="la la-pen"></i>
 														</button>
-														<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+														<button href="#" class="delete btn btn-outline-danger" title="Delete">
 															<i class="la la-trash"></i>
 														</button>
 													</div>
@@ -361,10 +363,10 @@
 														<label for="checkout-checkout">
 															<span>Checkout</span>
 															<div class="file-actions">
-																<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																	<i class="la la-pen"></i>
 																</button>
-																<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																	<i class="la la-trash"></i>
 																</button>
 															</div>
@@ -377,10 +379,10 @@
 														<label for="checkout-confirm">
 															<span>Confirm</span>
 															<div class="file-actions">
-																<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																	<i class="la la-pen"></i>
 																</button>
-																<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																	<i class="la la-trash"></i>
 																</button>
 															</div>
@@ -393,10 +395,10 @@
 														<label for="checkout-order">
 															<span>Order</span>
 															<div class="file-actions">
-																<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																	<i class="la la-pen"></i>
 																</button>
-																<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																	<i class="la la-trash"></i>
 																</button>
 															</div>
@@ -464,10 +466,10 @@
 															
 															<!--
 															<div class="file-actions">
-																<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																	<i class="la la-pen"></i>
 																</button>
-																<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																	<i class="la la-trash"></i>
 																</button>
 															</div>
@@ -481,10 +483,10 @@
 														<label for="contact" title="Contact us page">
 															<span>Contact us page</span>
 															<div class="file-actions">
-																<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																	<i class="la la-pen"></i>
 																</button>
-																<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																	<i class="la la-trash"></i>
 																</button>
 															</div>
@@ -498,10 +500,10 @@
 														<label for="supporters">
 															<span>Supporters</span>
 															<div class="file-actions">
-																<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																	<i class="la la-pen"></i>
 																</button>
-																<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																	<i class="la la-trash"></i>
 																</button>
 															</div>
@@ -520,10 +522,10 @@
 																<label for="checkout-checkout">
 																	<span>Checkout</span>
 																	<div class="file-actions">
-																		<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																			<i class="la la-pen"></i>
 																		</button>
-																		<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																			<i class="la la-trash"></i>
 																		</button>
 																	</div>
@@ -536,10 +538,10 @@
 																<label for="checkout-confirm">
 																	<span>Confirm</span>
 																	<div class="file-actions">
-																		<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																			<i class="la la-pen"></i>
 																		</button>
-																		<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																			<i class="la la-trash"></i>
 																		</button>
 																	</div>
@@ -552,10 +554,10 @@
 																<label for="checkout-order">
 																	<span>Order</span>
 																	<div class="file-actions">
-																		<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename">
+																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
 																			<i class="la la-pen"></i>
 																		</button>
-																		<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete">
+																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
 																			<i class="la la-trash"></i>
 																		</button>
 																	</div>

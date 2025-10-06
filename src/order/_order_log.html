@@ -53,6 +53,7 @@
 	</div>
 
 		  <form class="p-4" method="post">
+			<input type="hidden" name="csrf" data-v-csrf>
 			<input type="hidden" name="action" id="action" value="saveLog">
 			<input type="hidden" name="order_id" id="order_id" value="" data-v-if="this.order.order_id" data-v-order-order_id>   
 			<input type="hidden" name="customer_order_id" id="customer_order_id" value="" data-v-if="this.order.customer_order_id" data-v-order-customer_order_id>   

@@ -136,23 +136,25 @@
                 @@include('../_includes/notifications.html')
                 
                 <div class="posts card-block">
-                    <form action="" method="post">
+					<form action="" method="post">
+						<input type="hidden" name="csrf" data-v-csrf>
+						<input type="hidden" name="action" id="action">
+								
+						<div class="bulk-actions px-2 mb-2" style="display:none">
+							<!--
+						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+									aria-controls="filters" title="Edit selected"
+									class="btn btn-primary btn-sm">
+								<i class="icon-create-outline"></i> Edit selected
+							</button>
+							-->
+						   <button type="submit" name="action" value="delete" aria-expanded="false" data-v-check-permission-delete
+									title="Delete selected"
+									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
+									<i class="icon-trash-outline"></i> Delete selected
+						   </button>
 						
-				<div class="bulk-actions px-2 mb-2" style="display:none">
-					<!--
-				   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
-							aria-controls="filters" title="Edit selected"
-							class="btn btn-primary btn-sm">
-						<i class="icon-create-outline"></i> Edit selected
-					</button>
-					-->
-				   <button type="submit" name="action" value="delete" aria-expanded="false" data-v-check-permission-delete
-							title="Delete selected"
-							class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-							<i class="icon-trash-outline"></i> Delete selected
-				   </button>
-				
-				</div>						
+						</div>						
 						
 						
                         <div class="table-responsive">
@@ -207,7 +209,7 @@
                                 </td>
 
 								<td class="img" style="width:200px;text-align:center;">
-									<a href="javascript:void(0);" data-v-post-url>
+									<a href="#" data-v-post-url>
 										<figure  data-v-if="post.image">
 											<img class="rounded" src=""  data-v-post-image>
 										</figure>
@@ -215,7 +217,7 @@
                                 </td>
                                
                                 <td class="post" >
-                                    <a href="javascript:void(0);" data-v-post-url>
+                                    <a href="#" data-v-post-url>
                                        <span data-v-post-name>Post name</span>
                                     </a>							
 
@@ -237,12 +239,10 @@
 											class="btn btn-icon btn-outline-secondary btn-sm">
 											<i class="icon-eye-outline"></i> <span>View</span> 
 										</a>										
-										
-										<a title="Duplicate" data-v-post-duplicate-url target="_blank"
-											class="btn btn-icon btn-outline-secondary btn-sm">
+								
+										<button type="submit" name="post_id" value="" data-action="duplicate" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='duplicate'" data-v-post-post_id>		
 											<i class="icon-copy-outline"></i> <span>Duplicate</span> 
-										</a>
-
+										</button>
 									</div>
                                 </td>
 
@@ -276,11 +276,23 @@
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
 										<ul class="dropdown-menu">
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-post-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-post-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-post-duplicate-url target="_blank"><i class="icon-copy-outline text-secondary"></i> <span>Duplicate</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-post-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-post-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
+										  <li>
+										  <button type="submit" name="post_id" value=""aria-expanded="false" class="dropdown-item"  onclick="document.getElementById('action').value='duplicate';" data-v-post-post_id>							
+												<i class="icon-copy-outline"></i><span>Duplicate</span>
+											</button>
+										  <!-- <a class="dropdown-item" href="#" data-v-post-duplicate-url target="_blank"><i class="icon-copy-outline text-secondary"></i> <span>Duplicate</span></a>--></li>
 										  <li><hr class="dropdown-divider"></li>
-										  <li data-v-check-permission-delete><a class="dropdown-item text-danger" data-v-post-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
+										  <li data-v-check-permission-delete>
+											<!-- formaction="{$post.delete-url}" -->
+											<button type="submit" name="post_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-post-post_id>							
+												<i class="icon-trash-outline"></i><span>Delete</span>
+											</button>
+										  <!--
+											<a class="dropdown-item text-danger" data-v-post-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a>
+											-->
+											</li>
 										</ul>
 									 </div>
 

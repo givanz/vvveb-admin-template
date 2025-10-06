@@ -40,22 +40,24 @@
 			@@include('../_includes/upload-form.html')
 
 			<form action="" method="post">		
+				<input type="hidden" name="csrf" data-v-csrf>
+				<input type="hidden" name="action" id="action" value="">
+				<input type="hidden" name="dest" id="dest" value="">
 
-
-						@@include('_themes_list.html', {"actions":true})
+				@@include('_themes_list.html', {"actions":true})
 							
-								
-					  <div class="bottom clearfix mb-3">
-						<div class="float-start"></div>
-						<div class="float-end">
-					
-							@@include('../_includes/pagination.html')
+							
+				  <div class="bottom clearfix mb-3">
+					<div class="float-start"></div>
+					<div class="float-end">
+				
+						@@include('../_includes/pagination.html')
 
-						</div>
+					</div>
 
-		                </div>
-										
-					</form>
+					</div>
+									
+				</form>
 		</div>
 
 		@@include('../_includes/main-footer.html')                                
@@ -398,10 +400,12 @@ function duplicateTheme(e) {
 	let dest = prompt("New theme name", e.closest('.card').querySelector(".card-title").textContent);
 	
 	if (dest) {
-		e.href += "&dest=" + dest;
+		document.getElementById('action').value = 'duplicate';
+		document.getElementById('dest').value   = dest;
+		//e.href += "&dest=" + dest;
+	} else {
+		return false;
 	}
-	
-	return false;
 }
 </script>
 

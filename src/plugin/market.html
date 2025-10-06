@@ -19,10 +19,26 @@
 				</h4>
 			</div>
 
-			<div class="btns">
+			<div class="btns d-flex">
+				<form action="" method="get" class="me-3" data-v-url-params='{"module":"plugin/market"}'>	
+					<div class="input-group ">
+						<input type="search" name="search" class="form-control" placeholder="Search" data-v-search>
+						<input type="hidden" name="module" value="plugin/market">
+						
+						<button class="btn btn-outline-primary border border-start-0" type="submit" title="Search">
+						  <div class="la-flip-horizontal">
+							<i class="la la-search la-lg" aria-hidden="true"></i>
+						  </div>
+						</button>
+					  </div>
+				  </form>
 			
+				<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Filter" class="btn btn-icon btn-outline-secondary text-nowrap me-2">
+				  <i class="icon-funnel-outline"></i>&nbsp; <i class="icon-chevron-down-outline small"></i>
+				</button>
+
 				 <a href data-v-url-params='{"module":"plugin/plugin"}'title=""
-						class="btn btn-outline-secondary btn-icon ms-1" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
+						class="btn btn-outline-secondary btn-icon ms-1 text-nowrap" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
 						<i class="la la-cloud-upload-alt la-lg"></i> Upload plugin
 				</a>
 
@@ -47,13 +63,37 @@
 	<div class="plugins" id="main-content" >
 	@@include('../_includes/upload-form.html')
 
-	<form action="" method="post">		
-		
-	 @@include('../_includes/notifications.html')
-		
-	 <div class="list clearfix" data-v-plugins>
+	<form action="" method="post">	
+		<input type="hidden" name="csrf" data-v-csrf>	
+		<input type="hidden" name="action" id="action" value="">	
+			
+		 @@include('../_includes/notifications.html')
+
+		  <div id="filters" class="collapse mx-3" data-v-class-if-show="this.taxonomy_item_id">
+				<ul class="nav nav-pills pills-border small mx-2 mb-3" data-v-plugin-categories>
+				  <li class="nav-item">
+					<a class="nav-link" href="#"  data-v-url-params='{"module":"plugin/market"}'>All</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#"  data-v-url-params='{"module":"plugin/market"}'>All</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/market","category":"payment"}'>Payment</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/market","category":"shipping"}'>Shipping</a>
+				  </li>			  
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/market","category":"development"}'>Development</a>
+				  </li>
+				  <li class="nav-item" data-v-plugin-category>
+					<a data-v-category-link class="nav-link" href="#" data-v-url-params='{"module":"plugin/market","category":"seo"}'>Seo</a>
+				  </li>  
+				</ul>	
+			</div>
+			
+		 <div class="list" data-v-plugins>
 		 
-		 
 			<div class="list-card" data-v-plugin>
 				<!-- Card-->
 				<div class="card">
@@ -68,10 +108,10 @@
 								</div>
 							</div>
 							<div class="px-4">
-								<a href="javascript:void(0);" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
-								<p class="text-muted d-inline-block" data-v-plugin-content data-filter-html_to_text>Content</h6>			
+								<a href="#" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
+								<p class="text-muted d-inline-block" data-v-plugin-content data-filter-html_to_text data-filter-truncate="200">Content</h6>			
 								<div class="text-muted" data-v-if="plugin.author"><span>by</span><span data-v-plugin-author>Author</span></div>
-								<!-- a href="javascript:void(0);" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
+								<!-- a href="#" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
 								<!--
 								<div class="column-downloaded">
 									5+ Million Active Installations				
@@ -113,10 +153,9 @@
 							
 							<div class="plugin-card-bottom float-end">
 
-								<a href="javascript:void(0);" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
+								<a href="#" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
 								
-
-								<a data-v-if-not="plugin.installed" class="btn btn-primary btn-icon btn-sm" title="Install theme" data-v-vvveb-action2="plugins.install" data-slug="landing" data-market="vvveb" data-v-plugin-install-url>
+								<button type="submit" name="slug" value="" data-v-if-not="plugin.installed" class="btn btn-primary btn-icon btn-sm" title="Install plugin" data-v-vvveb-action2="plugins.install" data-slug="landing" data-market="vvveb" onclick="document.getElementById('action').value='install';" data-v-plugin-slug>
 									<span class="loading d-none">
 									  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
 									  <span>Downloading </span> ... </span>
@@ -124,9 +163,9 @@
 									<span class="button-text">
 									  <i class="icon-color-wand-outline"></i> <span>Install</span>
 									</span>				
-								</a>							
+								</button>							
 
-								<button data-v-if="plugin.installed" href="javascript:void(0);" class="btn btn-light border btn-sm" disabled>
+								<button data-v-if="plugin.installed" href="#" class="btn btn-light border btn-sm" disabled>
 									<i class="icon-color-wand-outline"></i> <span>Installed</span>
 								</button>
 
@@ -155,10 +194,10 @@
 								</div>
 							</div>
 							<div class="px-4">
-								<a href="javascript:void(0);" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
+								<a href="#" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
 								<div class="text-muted" data-v-plugin-content>Content</div>			
 								<div class="text-muted" data-v-if="plugin.author"><span>by</span><span data-v-plugin-author>Author</span></div>
-								<!-- a href="javascript:void(0);" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
+								<!-- a href="#" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
 								<!--
 								<div class="column-downloaded">
 									5+ Million Active Installations				
@@ -200,7 +239,7 @@
 							
 							<div class="plugin-card-bottom float-end">
 
-								<a href="javascript:void(0);" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
+								<a href="#" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
 								
 
 								<a data-v-if-not="plugin.installed" class="btn btn-primary btn-sm" title="Install theme" data-v-vvveb-action2="plugins.install" data-slug="landing" data-market="vvveb" data-v-plugin-install-url>
@@ -213,7 +252,7 @@
 									</span>				
 								</a>							
 
-								<button data-v-if="plugin.installed" href="javascript:void(0);" class="btn btn-light border btn-sm" disabled>
+								<button data-v-if="plugin.installed" href="#" class="btn btn-light border btn-sm" disabled>
 									<i class="icon-color-wand-outline"></i> <span>Installed</span>
 								</button>
 
@@ -242,10 +281,10 @@
 								</div>
 							</div>
 							<div class="px-4">
-								<a href="javascript:void(0);" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
+								<a href="#" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
 								<div class="text-muted" data-v-plugin-content>Content</div>			
 								<div class="text-muted" data-v-if="plugin.author"><span>by</span><span data-v-plugin-author>Author</span></div>
-								<!-- a href="javascript:void(0);" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
+								<!-- a href="#" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
 								<!--
 								<div class="column-downloaded">
 									5+ Million Active Installations				
@@ -287,7 +326,7 @@
 							
 							<div class="plugin-card-bottom float-end">
 
-								<a href="javascript:void(0);" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
+								<a href="#" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
 								
 
 								<a data-v-if-not="plugin.installed" class="btn btn-primary btn-sm" title="Install theme" data-v-vvveb-action2="plugins.install" data-slug="landing" data-market="vvveb" data-v-plugin-install-url>
@@ -300,7 +339,7 @@
 									</span>				
 								</a>							
 
-								<button data-v-if="plugin.installed" href="javascript:void(0);" class="btn btn-light border btn-sm" disabled>
+								<button data-v-if="plugin.installed" href="#" class="btn btn-light border btn-sm" disabled>
 									<i class="icon-color-wand-outline"></i> <span>Installed</span>
 								</button>
 
@@ -329,10 +368,10 @@
 								</div>
 							</div>
 							<div class="px-4">
-								<a href="javascript:void(0);" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
+								<a href="#" target="_blank" data-v-plugin-homepage><h6 class="card-title" data-v-plugin-name>Plugin name</h6></a>
 								<div class="text-muted" data-v-plugin-content>Content</div>			
 								<div class="text-muted" data-v-if="plugin.author"><span>by</span><span data-v-plugin-author>Author</span></div>
-								<!-- a href="javascript:void(0);" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
+								<!-- a href="#" class="btn btn-outline-primary" target="_blank" data-v-plugin-preview_url><span>Preview</span></a -->		
 								<!--
 								<div class="column-downloaded">
 									5+ Million Active Installations				
@@ -374,7 +413,7 @@
 							
 							<div class="plugin-card-bottom float-end">
 
-								<a href="javascript:void(0);" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
+								<a href="#" class="btn btn-outline-primary border-0 btn-sm me-2" target="_blank" data-v-plugin-url><span>Plugin details</span></a>
 								
 
 								<a data-v-if-not="plugin.installed" class="btn btn-primary btn-sm" title="Install theme" data-v-vvveb-action2="plugins.install" data-slug="landing" data-market="vvveb" data-v-plugin-install-url>
@@ -387,7 +426,7 @@
 									</span>				
 								</a>							
 
-								<button data-v-if="plugin.installed" href="javascript:void(0);" class="btn btn-light border btn-sm" disabled>
+								<button data-v-if="plugin.installed" href="#" class="btn btn-light border btn-sm" disabled>
 									<i class="icon-color-wand-outline"></i> <span>Installed</span>
 								</button>
 

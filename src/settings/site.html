@@ -12,6 +12,8 @@
 	
 	<form id="settings-form" action="" method="post" data-v-product>
 	   <input type="hidden" name="action" id="action" value="save">
+	   <input type="hidden" name="csrf" data-v-csrf>
+	   
 	   <div class="actions">
 		  <div class="title">
 			 <h4 class="text-muted my-2">
@@ -23,9 +25,9 @@
 		  
 		  <div class="btns">
 		  
-				<a href="#" target="_blank" class="btn btn-link btn-sm me-3" data-v-site-full-url>
-					<i class="la la-external-link-alt fs-6">
-					<span class="small" data-v-site-url>site</span>
+				<a href="#" target="_blank" class="btn btn-outline-primary me-3 border-0" data-v-site-full-url>
+					<i class="la la-external-link-alt fs-6"></i>
+					<span data-v-site-url>site</span>
 				</a>
 
 				<a href="{$this.adminPath}index.php?module=settings/sites" title="Sites list"
@@ -34,8 +36,7 @@
 				 </a>
 
 			  <button type="submit"
-				 class="btn btn-primary btn-icon ms-1"
-				 >
+				 class="btn btn-primary btn-icon ms-1">
 					<i class="icon-create-outline"></i>
 					<span>Save site</span>
 			  </button>
@@ -149,6 +150,7 @@
 <script>
 @@include('../_includes/media-variables.html')
 let domain = "{ $this->domain }";
+let subdir = "{ $this->subdir }";
 </script>
 
 

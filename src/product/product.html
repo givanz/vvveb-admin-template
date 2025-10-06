@@ -81,7 +81,7 @@
 			@@include('../_includes/notifications.html')
 
                 <form id="form" action="" method="post" class="settings" data-v-product>
-
+					<input type="hidden" name="csrf" data-v-csrf>
                     <input type="hidden" name="action" id="action" value="save">
 					<input type="hidden" name="product_id" id="product_id" value="" data-v-if="this.product.product_id" data-v-product-product_id>   
 
@@ -287,7 +287,7 @@ if (lang != "en-us") {
 <script id="revisions-js" src="/js/admin/revisions.js"></script>
 <script id="functions-js" src="/js/admin/functions.js"></script>
 <script id="content-js"src="js/content.js"></script>
-
+<script id="preview-js"src="js/preview.js"></script>
 
 <script>
 let data = {};

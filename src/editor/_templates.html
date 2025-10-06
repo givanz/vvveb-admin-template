@@ -518,15 +518,15 @@
 </script>
 
 <script id="vvveb-filemanager-page" type="text/html">
-	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %} {%if (typeof product_id !== 'undefined') { %}data-product_id="{%=product_id%}"{% } %}>
+	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %} {%if (typeof product_id !== 'undefined') { %}data-product_id="{%=product_id%}"{% } %} {%if (typeof global !== 'undefined' && global) { %}data-global="true"{% } %}>
 		<label for="{%=name%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
 			<span>{%=title%}</span>
 			<!-- <span class="text-muted small">{%=url%}</span> -->
 			<div class="file-actions">
-				<button href="javascript:void(0);" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
+				<button href="#" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
 				<a href="{%=url%}" target="_blank" class="view btn btn-outline-primary" title="View page"><i class="la la la-external-link-alt"></i></a>
-				<button href="javascript:void(0);" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
-				<button href="javascript:void(0);" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
+				<button href="#" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
+				<button href="#" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
 			</div>
 		</label> <input type="checkbox" id="{%=name%}" />
 		<!-- <ol></ol> -->
@@ -540,7 +540,7 @@
 </script>
 
 <script id="vvveb-breadcrumb-navigaton-item" type="text/html">
-	<li class="breadcrumb-item"><a href="javascript:void(0);" {% if (typeof className !== 'undefined') { %}class="{%=className%}"{% } %}>{%=name%}</a></li>
+	<li class="breadcrumb-item"><a href="#" {% if (typeof className !== 'undefined') { %}class="{%=className%}"{% } %}>{%=name%}</a></li>
 </script>
 
 <script id="vvveb-input-sectioninput" type="text/html">
@@ -712,7 +712,7 @@
 				{%=date%}
 			</span>
 
-			<!-- <a href="javascript:void(0);" target="_blank" class="small text-muted">Admin</a> -->
+			<!-- <a href="#" target="_blank" class="small text-muted">Admin</a> -->
 		</span>
 		<span>
 			<a class="btn btn-sm btn-outline-primary border-0 btn-revision-preview" data-date="{%=date%}" href="{%=url%}" target="_blank" title="Preview">

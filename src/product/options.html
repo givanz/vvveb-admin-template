@@ -56,6 +56,7 @@
 				
                 <div class="option card-block">
                     <form action="" method="post">
+						<input type="hidden" name="csrf" data-v-csrf>
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 							<!--
@@ -113,7 +114,7 @@
 
 							
                                 <td class="option position-relative">
-									<a href="javascript:void(0);" data-v-option-edit-url><span data-v-option-name></span></a>
+									<a href="#" data-v-option-edit-url><span data-v-option-name></span></a>
 
                                 </td>
 
@@ -131,9 +132,9 @@
 										</button>
 										<ul class="dropdown-menu">
 										  
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-option-approve-url target="_blank"><i class="la la-check text-secondary"></i><span>Approve</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-option-spam-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Spam</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-option-trash-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Trash</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-option-approve-url target="_blank"><i class="la la-check text-secondary"></i><span>Approve</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-option-spam-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Spam</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-option-trash-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Trash</span></a></li>
 										  <li><hr class="dropdown-divider"></li>
 										  <li><a class="dropdown-item text-danger" data-v-option-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
 										</ul>

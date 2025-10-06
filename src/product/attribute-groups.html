@@ -56,6 +56,7 @@
 				
                 <div class="attribute_group card-block">
                     <form action="" method="post">
+						<input type="hidden" name="csrf" data-v-csrf>
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 							<!--
@@ -113,7 +114,7 @@
 
 							
                                 <td class="attribute_group position-relative">
-									<a href="javascript:void(0);" data-v-attribute_group-edit-url><span data-v-attribute_group-name></span></a>
+									<a href="#" data-v-attribute_group-edit-url><span data-v-attribute_group-name></span></a>
                                         
                                 </td>
 
@@ -132,9 +133,9 @@
 										</button>
 										<ul class="dropdown-menu">
 										  
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-attribute_group-approve-url target="_blank"><i class="la la-check text-secondary"></i><span>Approve</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-attribute_group-spam-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Spam</span></a></li>
-										  <li><a class="dropdown-item" href="javascript:void(0);" data-v-attribute_group-trash-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Trash</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-attribute_group-approve-url target="_blank"><i class="la la-check text-secondary"></i><span>Approve</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-attribute_group-spam-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Spam</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-attribute_group-trash-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Trash</span></a></li>
 										  <li><hr class="dropdown-divider"></li>
 										  <li><a class="dropdown-item text-danger" data-v-attribute_group-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
 										</ul>

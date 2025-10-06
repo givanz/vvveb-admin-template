@@ -101,6 +101,7 @@
 
                 <div class="subscriptions card-block" id="main-content" data-v-subscription>
           		<form action="" method="post">
+					<input type="hidden" name="csrf" data-v-csrf>
 
 					<div class="bulk-actions px-2 mb-2" style="display:none">
 						<!--
@@ -171,7 +172,7 @@
                                     <a href="/admin?module=subscriptions&amp;action=subscription&amp;id=4" data-v-subscription-url><span>#<span data-v-subscription-subscription_id>01</span></span></a>
                                 </td>
                                 
-                                <td><span class="name"><a href="javascript:void(0);" data-v-subscription-url><span data-v-subscription-first_name>John</span> <span data-v-subscription-last_name>Doe</span></a></td>
+                                <td><span class="name"><a href="#" data-v-subscription-url><span data-v-subscription-first_name>John</span> <span data-v-subscription-last_name>Doe</span></a></td>
 								
                                 <td><span class="price" data-v-subscription-subscription_reason>reason</span></td>
                                 <td><span class="price" data-v-subscription-subscription_status>status</span></td>
