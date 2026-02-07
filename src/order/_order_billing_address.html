@@ -1,7 +1,8 @@
 <div class="billing_address">
-	<div class="clearfix">
-		<h6 class="float-start">Billing Address</h6>
-		<div class="btn btn-outline-secondary btn-sm float-end" onclick="document.querySelector('.billing_address').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
+	<div class="d-flex justify-content-between mb-3">
+		<h6 class="my-2">Billing Address</h6>
+		<div class="btn btn-outline-secondary btn-sm edit" onclick="copyFields('shipping','billing')"><i class="la la-copy"></i> Copy shipping</div>
+		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.billing_address').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
 	</div>		
 	<div class="display mb-1 lh-lg">
 		<div data-v-order-billing_first_name data-billing_first_name-text></div>

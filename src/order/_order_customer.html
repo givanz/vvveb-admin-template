@@ -1,7 +1,7 @@
 <div class="customer_details">
-	<div class="clearfix">
-		<h6 class="float-start">Customer Details</h6>
-		<div class="btn btn-outline-secondary btn-sm float-end" onclick="document.querySelector('.customer_details').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
+	<div class="d-flex justify-content-between mb-3">
+		<h6 class="my-2">Customer Details</h6>
+		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.customer_details').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
 	</div>		
 	<div class="display mb-1 lh-lg">
 	    <div data-v-order-first_name data-first_name-text>First Name</div> 
@@ -17,6 +17,11 @@
 		</div>
 	</div>	
 	<div class="edit">
+		<div class="mb-3 row"><label for="first_name" class="col-sm-4 col-form-label">Customer</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" id="user_id" name="first_name" data-v-order-user_id>
+			</div>
+		</div>
 		<div class="mb-3 row"><label for="first_name" class="col-sm-4 col-form-label">First name</label>
 			<div class="col-sm-8"><input type="text" class="form-control" id="first_name" name="first_name" data-v-order-first_name></div>
 		</div>

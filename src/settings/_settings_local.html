@@ -48,11 +48,68 @@
 <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Defaults</label>
 
 <div class="row mb-3">
+	<label for="input-language" class="col-sm-2 col-form-label">Languages</label>
+	<div class="col-sm-10">
+		<div class="language-list" data-v-language-list>
+			<div class="border border-primary border-opacity-25 rounded-2 p-1 px-2 d-inline-block me-3">
+				<div class="form-check form-check-inline">
+				  <label class="form-check-label">
+					<input class="form-check-input" type="checkbox" value="" id="all-languages-check" name="settings[languages]">
+					<span data-v-name>All languages</span>
+				  </label>
+				</div>						
+			</div>	
+		
+			<div class="form-check form-check-inline" data-v-language>
+			  <input class="form-check-input" type="checkbox" id="lang-1" value="en_us" name="settings[languages][]" data-v-language_id>
+			  <label class="form-check-label" for="lang-1" data-v-name>English</label>
+			</div>
+			<div class="form-check form-check-inline" data-v-language>
+			  <input class="form-check-input" type="checkbox" id="lang-2" value="ro_ro" name="settings[languages][]" data-v-language_id>
+			  <label class="form-check-label" for="lang-2" data-v-name>Romanian</label>
+			</div>
+			<div class="form-check form-check-inline" data-v-language>
+			  <input class="form-check-input" type="checkbox" id="lang-3" value="it_it" name="settings[languages][]" data-v-language_id>
+			  <label class="form-check-label" for="lang-3" data-v-name>Italian</label>
+			</div>	
+		</div>
+	</div>
+</div>
+<div class="row mb-3">
 	<label for="input-language" class="col-sm-2 col-form-label">Default Language</label>
+	<!-- <input type="hidden" value="en" name="settings[language][]" id="language" data-v-language> -->
 	<div class="col-sm-10">
 		<select class="form-select" name="settings[language_id]" data-v-setting="language_id" id="input-language" data-v-site-language_id>
 			<option value="en-gb" data-v-option>English</option>
 		</select>
+	</div>
+</div>
+<div class="row mb-3">
+	<label for="input-currency" class="col-sm-2 col-form-label">Currencies</label>
+	<div class="col-sm-10">
+		<div class="currency-list" data-v-currency-list>
+			<div class="border border-primary border-opacity-25 rounded-2 p-1 px-2 d-inline-block me-3">
+				<div class="form-check form-check-inline">
+				  <label class="form-check-label">
+					<input class="form-check-input" type="checkbox" value="" id="all-currencies-check" name="settings[currencies]">
+					<span data-v-name>All currencies</span>
+				  </label>
+				</div>						
+			</div>	
+		
+			<div class="form-check form-check-inline" data-v-currency>
+			  <input class="form-check-input" type="checkbox" id="currency-1" value="1" name="settings[currencies][]" data-v-currency_id>
+			  <label class="form-check-label" for="currency-1" data-v-name>Dollar</label>
+			</div>
+			<div class="form-check form-check-inline" data-v-currency>
+			  <input class="form-check-input" type="checkbox" id="currency-2" value="2" name="settings[currencies][]" data-v-currency_id>
+			  <label class="form-check-label" for="currency-2" data-v-name>Euro</label>
+			</div>
+			<div class="form-check form-check-inline" data-v-currency>
+			  <input class="form-check-input" type="checkbox" id="currency-3" value="3" name="settings[currencies][]" data-v-currency_id>
+			  <label class="form-check-label" for="currency-3" data-v-name>Yen</label>
+			</div>	
+		</div>
 	</div>
 </div>
 <div class="row mb-3">

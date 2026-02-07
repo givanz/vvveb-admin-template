@@ -136,9 +136,22 @@
 			<ul class="dropdown-menu">
 			  <li  data-v-if="plugin.settings"><a class="dropdown-item" data-v-plugin-settings><i class="la la-cog"></i><span>Settings</span></a></li>
 			  <li class="dropdown-header">Global</li>
-			  <li><a class="dropdown-item" data-v-plugin-global-activate-url><i class="la la-play-circle"></i> <span>Activate on all sites</span></a></li>
-			  <li><a class="dropdown-item" data-v-plugin-global-deactivate-url><i class="la la-power-off"></i> <span>Deactivate on all sites</span></a></li>
+			  <li>		
+				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='deactivate';" data-v-plugin-folder>							
+					<i class="la la-power-off"></i><span>Deactivate on all sites</span>
+				</button>
+			  </li>
+			  <li>			
+				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='checkPluginAndActivate';" data-v-plugin-folder>							
+					<i class="la la-play-circle"></i><span>Activate on all sites</span>
+				</button>
+	  		  </li>
 			  <li><hr class="dropdown-divider"></li>
+			  <li>			
+				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='update';return confirm('Are you sure?')" data-v-plugin-folder>							
+					<i class="la la-sync"></i><span>Force update</span>
+				</button>
+	  		  </li>
 			  <li>
 				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-plugin-folder>							
 					<i class="icon-trash-outline"></i><span>Delete</span>

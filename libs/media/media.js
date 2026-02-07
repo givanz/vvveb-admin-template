@@ -39,7 +39,7 @@ class MediaModal {
 		  <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
-				<h5 class="modal-title fw-normal" id="MediaModalLabel">Media</h5>
+				<h6 class="modal-title fw-normal" id="MediaModalLabel">Media</h6>
                 
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 				  <!-- <span aria-hidden="true"><i class="la la-times la-lg"></i></span> -->
@@ -212,14 +212,19 @@ class MediaModal {
 			this.isInit = true;
 
 			document.querySelector(".filemanager input[type=file]").addEventListener("change", this.onUpload);
+			document.getElementById("bulk-delete")?.addEventListener("click", e => self.deleteFile());
+		
 			document.querySelector(".filemanager").addEventListener("click", function (e) {
 				let element = e.target.closest(".btn-delete");
 				if (element) {
-					 self.deleteFile(element);
+					// self.deleteFile(element);
 				} else {
 					element = e.target.closest(".btn-rename");
 					if (element) {
-						 self.editMedia(element);
+						// self.editMedia(element);
+						// e.preventDefault();
+						// e.stopImmediatePropagation();
+						 return;
 					} else {
 						element = e.target.closest(".btn-new-folder");
 						if (element) {
@@ -394,33 +399,51 @@ class MediaModal {
 		});
 
 		// Clicking on folders
-
+		let self = this;
 		this.fileList.addEventListener('click', function(e) {
-			let el = event.target.closest('li.folders');
+			let el = e.target.closest(".btn-delete");
 			if (el) {
-				e.preventDefault();
+				 self.deleteFile(el);
+			} else {
+				el = e.target.closest(".btn-rename");
+				if (el) {
+					 self.editMedia(el);
+					 e.preventDefault();
+					 e.stopImmediatePropagation();
+					 return;
+				} else {
+					el = e.target.closest(".btn-new-folder");
+					if (el) {
+						 self.newFolder(el);
+					} else {
+						el = event.target.closest('li.folders');
+						if (el) {
+							e.preventDefault();
 
-				let nextDir = el.querySelector('a').getAttribute('href');
+							let nextDir = el.querySelector('a').getAttribute('href');
 
-				if(_this.filemanager.classList.contains('searching')) {
+							if(_this.filemanager.classList.contains('searching')) {
 
-					// Building the this.breadcrumbs
+								// Building the this.breadcrumbs
 
-					_this.breadcrumbsUrls = _this.generateBreadcrumbs(nextDir);
+								_this.breadcrumbsUrls = _this.generateBreadcrumbs(nextDir);
 
-					_this.filemanager.classList.remove('searching');
-					let search = _this.filemanager.querySelector('input[type=search]');
-					search.val('')
-					search.style.display = 'none';
-					_this.filemanager.querySelectorAll('span').forEach(e => e.style.display = '');
+								_this.filemanager.classList.remove('searching');
+								let search = _this.filemanager.querySelector('input[type=search]');
+								search.val('')
+								search.style.display = 'none';
+								_this.filemanager.querySelectorAll('span').forEach(e => e.style.display = '');
+							}
+							else {
+								_this.breadcrumbsUrls.push(nextDir);
+							}
+
+							window.location.hash = encodeURIComponent(nextDir);
+							_this.currentPath = nextDir;
+						}						
+					}
 				}
-				else {
-					_this.breadcrumbsUrls.push(nextDir);
-				}
-
-				window.location.hash = encodeURIComponent(nextDir);
-				_this.currentPath = nextDir;
-			}
+			}	
 		});
 
 
@@ -684,13 +707,38 @@ _
 			}
 		}	
 	
-		deleteFile(el) {
-			let parent = el.closest("li");
-			let file = parent.querySelector('input[type="hidden"]').value;
-			if (confirm(`Are you sure you want to delete "${file}"template?`)) {
+		deleteFile(el = null) {
+			let parent, file, message;
+			
+			if (el) {
+				parent = el.closest("li");
+				file = parent.querySelector('input[type="hidden"]').value;
+				message = `Are you sure you want to delete "${file}"?`;
+			} else {
+				file = [];
+				parent = [];
+				document.querySelectorAll('input[type="checkbox"][name="file[]"]:checked').forEach((e, i) => {
+					file.push(e.value);
+					parent.push(e.closest("li"));
+				});
+				
+				if (!file.length) {
+					alert("No files selected!");
+					return;
+				}
+				
+				message = "Are you sure you want to delete selected files?";
+			}
+
+			if (confirm(message)) {
 			
 			const data = new FormData();				
-			data.append("file", file);	
+			if (Array.isArray(parent)) {
+				for (const f of file) data.append("file[]", f);	
+			} else {
+				data.append("file", file);
+			}
+			
 			data.append("csrf", document.querySelector("[name='csrf']")?.value);	
 			
 			fetch(deleteUrl, {method: "POST",  body: data})
@@ -700,14 +748,17 @@ _
 				})
 				.then((data) => {
 					let bg = "success";
-					if (data.success) {		
+					if (data.success) {	
+						if (Array.isArray(parent)) {
+							for (const e of parent) e.remove();
+						}  else {
+							parent.remove();	
+						}
 					} else {
-						//bg = "danger";
+						bg = "danger";
 					}
 					
 					displayToast(bg, "Delete", data.message, "top");
-					
-					parent.remove();	
 				})
 				.catch(error => {
 					console.log(error);
@@ -810,8 +861,49 @@ _
 		
 		editMedia(el) {
 			let parent = el.closest("li");
-			let offcanvas = document.getElementById("media-offcanvas");
 			let file = parent.querySelector('input[type="hidden"]').value;
+			let name = parent.querySelector('.name');
+			//folder
+			if (parent.classList.contains("folders")) {
+				let folder = prompt('Folder name', name.innerText);	
+		
+				if (folder) {
+					const data = new FormData();				
+					data.append("file", file);	
+					data.append("newname", folder);	
+					data.append("csrf", document.querySelector("[name='csrf']")?.value);
+			
+					fetch(renameUrl, {method: "POST",  body: data})
+					.then((response) => {
+						if (!response.ok) {  return Promise.reject(response);  }
+						return response.json();
+					})
+					.then((data) => {
+						let bg = "success";
+						if (data.success) {	
+							name.innerText = folder;	
+						} else {
+							bg = "danger";
+						}
+						
+						displayToast(bg, "Rename", data.message, "top");
+					})
+					.catch(error => {
+						console.log(error);
+						let message = error.statusText ?? "Error renaming file!";
+						displayToast("danger", "Error", message, "top");
+						error.text().then( errorMessage => {
+							let message = errorMessage.substr(0, 200);
+							displayToast("danger", "Error", message, "top");
+						});	
+					});	
+				}
+				
+				return;
+			}
+			
+			//file
+			let offcanvas = document.getElementById("media-offcanvas");
 			//if (this.currentMedia == parent) return;
 			this.currentMedia = parent;
 			this.enableNavigateBtns(parent);
@@ -958,7 +1050,9 @@ _
 		}
 
 
-		addFolder(f) {
+		addFolder(f, selected) {
+			let actions = '';
+			
 			let itemsLength = f.items.length,
 				name = this.escapeHTML(f.name),
 				icon = '<span class="icon folder"></span>';
@@ -977,7 +1071,21 @@ _
 				itemsLength = 'Empty';
 			}
 
-			let folder = generateElements('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<div class="info"><span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></div></a></li>')[0];
+			if (!this.isModal) {
+				actions = `<a href="javascript:void(0);" title="Rename" class="btn btn-outline-primary btn-sm btn-rename py-0 border-secondary border-opacity-25">
+						  <i class="la la-pen"></i>
+						</a>
+						<a href="javascript:void(0);" title="Delete" class="btn btn-outline-danger btn-sm btn-delete py-0 border-secondary border-opacity-25">
+						  <i class="la la-trash"></i>
+						</a>`;
+			} else {
+			}
+			
+			let _this= this;
+			let folder = generateElements('<li class="folders">\
+						<input type="hidden" value="' + f.path + '" name="filename[]">\
+						  <!-- <input type="' + ((_this.type == "single") ? "radio" : "checkbox") + '" class="form-check-input" value="' + f.path + '" name="file[]" ' + ((selected == "single") ? "checked" : "") + '><span class="form-check-label"></span>-->\
+						<a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<div class="info"><span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span>' + actions + '</div></a></li>')[0];
 			this.fileList.append(folder);
 			
 			return folder;

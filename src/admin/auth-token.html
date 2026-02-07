@@ -14,6 +14,7 @@
            
 		<form id="token-form" action="" method="post" class="settings">
 		   <input type="hidden" name="action" id="action" value="save">
+		   <input type="hidden" name="csrf" data-v-csrf>
             <div class="actions">
 				
 				<div class="title">
@@ -46,6 +47,7 @@
                 <div class="currencies card-block">
                     <form action="" method="post">
 						<input type="hidden" name="csrf" data-v-csrf>
+						<input type="hidden" id="action" name="action" value="">
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 							<!--
@@ -234,7 +236,7 @@ function togglePasswordInput(element) {
 		}
 	}			
 		
-function randomPassword(length, chars = "abcdefghijklmnopqrstuvwxyz!@$^*()-<>ABCDEFGHIJKLMNOP1234567890") {
+function randomPassword(length, chars = "abcdefghijklmnopqrstuvwxyz!@$^*()-ABCDEFGHIJKLMNOP1234567890") {
 	let pass = "";
 	for (let x = 0; x < length; x++) {
 		let i = Math.floor(Math.random() * chars.length);

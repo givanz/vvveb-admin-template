@@ -1,0 +1,85 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Search","scripts":'',"base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+        
+
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+			
+
+		<div id="content" class="container mt-4">
+			<h3>Search</h3>
+			
+			<form action="{$this.adminPath}/index.php?module=tools/search" method="get" class="mb-4"> 
+			  <input type="hidden" name="module" value="tools/search">
+			  <div class="d-flex">
+				  <div class="input-group shadow">
+					<input type="search" name="search" class="form-control border-0 p-3 px-4" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+					<button class="btn btn-outline-primary border-0" type="submit" title="Search">
+					  <div class="la-flip-horizontal">
+						<i class="la la-search la-lg" aria-hidden="true"></i>
+					  </div>
+					</button>
+				  </div>
+			  </div>
+
+				<div class="loading d-none d-flex justify-content-center m-5">
+				  <div class="spinner-border" role="status">
+					<span class="visually-hidden">Loading...</span>
+				  </div>
+				</div>
+			</form>				
+			
+			<div class="search-results">	
+	
+				<div class="group mb-3">
+					<h6 class="my-3" data-v-group-name>Posts</h6>
+					
+					<ul class="list-group shadow-sm">
+					  <li class="list-group-item" data-v-item>
+						<i class="icon-document-text-outline"  data-v-item-icon><span></span></i>
+						<img src="" width="32" data-v-item-image>
+						<a href="#" data-v-item-url>
+							<span data-v-item-text>About</span>
+						</a>
+					  </li>
+					  <li class="list-group-item">A list item</li>
+					  <li class="list-group-item">A list item</li>
+					</ul>
+				</div>				
+				
+				<div class="group">
+					<h6 class="my-3">Posts</h6>
+					
+					<ul class="list-group shadow-sm">
+					  <li class="list-group-item">
+						<i class="icon-document-text-outline"></i>
+						<a href="#">
+							<span>About</span>
+						</a>
+					  </li>
+					  <li class="list-group-item">A list item</li>
+					  <li class="list-group-item">A list item</li>
+					</ul>
+				</div>
+				
+				<div class="p-4 shadow-sm" data-v-if-not="this.search">
+					No results found!
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+
+		@@include('../_includes/main-footer.html')
+	</div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+@@include('../_includes/footer.html') 

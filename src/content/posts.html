@@ -27,7 +27,7 @@
 			
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
-							class="btn btn-icon btn-outline-secondary">
+							class="btn btn-icon btn-outline-secondary me-1">
 						<i class="icon-funnel-outline"></i>&nbsp;
 						<i class="icon-chevron-down-outline small"></i>
 					</button>
@@ -43,7 +43,7 @@
 				<form method="get">
 				 
 				 <input type="hidden" class="form-control" name="module" value="">
-				 <input type="hidden" class="form-control" name="action" value="">
+				 <input type="hidden" name="action" value="">
 				 <input type="hidden" class="form-control" name="type" value="">
 				 
                 <div class="card card-block p-3">
@@ -138,7 +138,7 @@
                 <div class="posts card-block">
 					<form action="" method="post">
 						<input type="hidden" name="csrf" data-v-csrf>
-						<input type="hidden" name="action" id="action">
+						<input type="hidden" id="action" name="action" value="">
 								
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 							<!--
@@ -177,7 +177,7 @@
 
                                     </div>
                                 </th>
-                                <th style="width:200px;text-align:center;">
+                                <th style="width:150px;text-align:center;">
 									<i class="la la-image"></i><span>Thumbnail</span>
 								</th>
                                 <th class="post position-relative" style="min-width:320px;">
@@ -186,13 +186,16 @@
                                 <th style="width:200px;text-align:center;" class="author">
 									<i class="la la-user"></i><span>Author</span>
 								</th>
-                                <th class="comments" data-v-if-not="this.type = 'page'">
+                                <th class="comments text-center" data-v-if-not="this.type = 'page'">
 									<i class="la la-comments"></i><span>Comments</span>
 								</th>	
                                 <th class="date">
 									<i class="la la-calendar"></i><span>Date</span>
+								</th>                                
+								<th class="status">
+									<i class="la la-page"></i><span>Status</span>
 								</th>
-                                <th class="actions text-center" style="width:250px">
+                                <th class="actions text-center" style="width:200px">
 									<i class="la la-edit"></i><span>Actions</span>
 								</th>
                             </tr>
@@ -208,7 +211,7 @@
 
                                 </td>
 
-								<td class="img" style="width:200px;text-align:center;">
+								<td class="img" style="width:150px;text-align:center;">
 									<a href="#" data-v-post-url>
 										<figure  data-v-if="post.image">
 											<img class="rounded" src=""  data-v-post-image>
@@ -252,12 +255,15 @@
 										<span  data-v-post-display_name>Admin</span>
 									</a>
                                 </td>
-                                <td class="comments" data-v-if-not="this.type = 'page'">
+                                <td class="comments text-center" data-v-if-not="this.type = 'page'">
 									<div class="stock badge bg-body-secondary text-body" data-v-if="post.comment_count <= 0" data-v-post-comment_count></div>
 									<div class="badge bg-success" data-v-if="post.comment_count > 0" data-v-post-comment_count></div>
                                 </td>
                                 <td class="date">
                                     <span data-v-post-updated_at data-filter-friendly_date title="{$post.created_at}">Date</span>
+                                </td>                                
+								<td class="status">
+                                    <span class="badge bg-secondary" data-v-class-if-bg-success="post.status = 'publish'" data-v-post-status>Status</span>
                                 </td>
 
                                 <td class="actions">
@@ -317,7 +323,7 @@
                         </table>
                         </div>
 
-                        <div class="bottom clearfix">
+                        <div class="bottom">
                             <div class="float-start"></div>
 							<div class="float-end">
 								@@include('../_includes/pagination.html')

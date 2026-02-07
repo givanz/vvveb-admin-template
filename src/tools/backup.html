@@ -20,8 +20,11 @@
 				</h4>
 			</div>
 
+			<form method="post">
+			<input type="hidden" name="csrf" data-v-csrf>
+			<input type="hidden" name="action" value="">
 			<div class="btns">
-				<a href="" id="" data-v-url-params='{"module":"tools/backup", "action":"save"}' class="btn btn-primary btn-icon ms-1 backup-btn">
+				<button formaction="{$this.backupUrl}" name="action" value="save" class="btn btn-primary btn-icon ms-1 backup-btn">
 						<span class="loading d-none">
 							<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
 							</span>
@@ -31,8 +34,9 @@
 						<span class="button-text">
 							<i class="la la-recycle la-lg"></i> <span>Backup now</span>
 						</span>
-				</a>
+				</button>
 			</div>
+			</form>
 		</div>
 
 		<div id="content" class="px-4">
@@ -52,7 +56,11 @@
 					<span id="progress-count"></span>
 				</div>
 			</div>
-		
+			
+			<form method="post">
+			<input type="hidden" name="csrf" data-v-csrf>
+			<input type="hidden" name="action" value="">
+
 			<div class="accordion accordion-flush" id="backupAccordion" data-v-backups>
 				  
 				  <div class="accordion-item" data-v-backup>
@@ -73,13 +81,13 @@
 								<small class="ms-5 p-2 bg-body-tertiary" data-v-backup-created_at>500MB</small>
 							
 								<div class="text-end">
-									<a class="btn btn-outline-danger btn-icon d-inline-block" data-v-backup-delete-url>
+									<button class="btn btn-outline-danger btn-icon d-inline-block" formaction="{$backup.delete-url}" name="file" value="{$backup.name}" data-v-backup-delete-url>
 										<i class="la la-trash"></i> <span>Delete</span>
-									  </a>
-									  <a class="btn btn-outline-primary d-inline-block" data-v-backup-download-url>
+									  </button>
+									  <button class="btn btn-outline-primary d-inline-block" formaction="{$backup.download-url}" name="file" value="{$backup.name}" data-v-backup-download-url>
 										<i class="la la-download"></i> <span>Download</span>
-									  </a>
-									  <a class="btn btn-success btn-icon d-inline-block restore-btn" data-v-backup-restore-url>
+									  </button>
+									  <button class="btn btn-success btn-icon d-inline-block restore-btn" formaction="{$backup.restore-url}" name="file" value="{$backup.name}" data-v-backup-restore-url>
 									  
 									  	<span class="loading d-none">
 											<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -92,7 +100,7 @@
 										</span>
 
 										
-									  </a>
+									  </button>
 								</div>			
 							
 							</div>
@@ -101,6 +109,7 @@
 					
 				</div>
 
+			</form>
 				<div class="alert alert-primary d-flex" data-v-if="count = 0">
 
 					<div class="icon">
@@ -109,20 +118,17 @@
 
 					<div class="flex-grow-1 align-self-center"data-v-notification-text>
 						No backups available yet. 
-						<a href data-v-url-params='{"module":"tools/backup", "action":"save"}' 
-							class="btn btn-primary btn-icon ms-5 btn-sm backup-btn">
-							
-								<span class="loading d-none">
-									<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
-									</span>
-									<span>Backing up</span>...
+						<button formaction="{$this.backupUrl}" name="action" value="save" class="btn btn-primary btn-icon ms-1 backup-btn">
+							<span class="loading d-none">
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
 								</span>
+								<span>Backing up</span>...
+							</span>
 
-								<span class="button-text">
-									<i class="la la-recycle la-lg"></i> <span>Backup now</span>
-								</span>
-
-						</a>
+							<span class="button-text">
+								<i class="la la-recycle la-lg"></i> <span>Backup now</span>
+							</span>
+						</button>
 					</div>
 					
 				</div>
@@ -183,12 +189,14 @@ document.addEventListener("click",  function(e) {
 	let element = event.target.closest(".backup-btn");
 	if (element && Backup.make) {
 		e.preventDefault();
-		return Backup.make(element.attributes.href.value ?? false, this);
+		let params = {};
+		return Backup.make(element.formAction ?? false, params, element);
 	}
 	element = event.target.closest(".restore-btn");
 	if (element && Backup.restore) {
 		e.preventDefault();
-		return Backup.restore(element.attributes.href.value ?? false, this);
+		let params = {file:element.value};
+		return Backup.restore(element.formAction ?? false, params, element);
 	}
 });
 </script>

@@ -34,6 +34,7 @@
                 <div class="taxonomies card-block">
                     <form action="" method="post">
 						<input type="hidden" name="csrf" data-v-csrf>
+						<input type="hidden" id="action" name="action" value="">
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
@@ -161,7 +162,7 @@
                         </table>
 			</div>
 
-						<div class="bottom clearfix">
+						<div class="bottom">
 							<div class="float-start"></div>
 							<div class="float-end">
 								@@include('../_includes/pagination.html')

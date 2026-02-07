@@ -4,7 +4,7 @@
 		<div class="mb-3 row">
 			<label for="input-username" class="col-sm-2 col-form-label">Username</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" id="input-username" placeholder="Username" name="@@prefix[username]" maxlength="60" data-v-user-username required>
+			  <input type="text" class="form-control" id="input-username" placeholder="Username" name="@@prefix[username]" maxlength="60" required data-v-user-username>
 			</div>
 		 </div>		
 		 
@@ -18,7 +18,7 @@
 		  <div class="mb-3 row">
 			<label for="input-last_name" class="col-sm-2 col-form-label">Last name</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" id="input-last_name" placeholder="Last name" name="@@prefix[last_name]" maxlength="32" data-v-user-last_name>
+			  <input type="text" class="form-control" id="input-last_name" placeholder="Last name" name="@@prefix[last_name]" maxlength="32" required data-v-user-last_name>
 			</div>
 		  </div>  
 		  
@@ -41,7 +41,17 @@
 			<div class="col-sm-10">
 			  <input type="email" class="form-control" id="input-email" placeholder="Email" name="@@prefix[email]" maxlength="100" data-v-user-email required>
 			</div>
+		  </div>			 
+		  
+		  
+		  @@if (prefix === "admin")  {
+		  <div class="mb-3 row">
+			<label for="input-public_email" class="col-sm-2 col-form-label">Public Email</label>
+			<div class="col-sm-10">
+			  <input type="email" class="form-control" id="input-public_email" placeholder="Public Email" name="@@prefix[public_email]" maxlength="100" data-v-user-public_email>
+			</div>
 		  </div>		 
+		  }
 
 		  <div class="mb-3 row">
 			<label for="input-display_name" class="col-sm-2 col-form-label" >Display name</label>
@@ -151,14 +161,6 @@
 			  
 			</div>
 		  </div>
-		  
-		  <div class="mb-3 row">
-			<label for="input-bio" class="col-sm-2 col-form-label">Bio</label>
-			<div class="col-sm-10">
-			  <textarea class="form-control" id="input-bio" placeholder="Biography" name="@@prefix[bio]" data-v-user-bio></textarea>
-			</div>
-		  </div>
-		  
 
 		  <div class="mb-3 row">
 			<label for="input-status" class="col-sm-2 col-form-label" >Status</label>
@@ -166,6 +168,7 @@
 				<select name="@@prefix[status]" id="input-status" class="form-control" data-v-user-status>
 					<option value="0">Inactive</option>
 					<option value="1">Active</option>
+					<option value="3">Delete request</option>
 				</select>
 			</div>
 		  </div>
@@ -181,4 +184,15 @@
 		</div>
 
 	</div>
+
+	<div class="col-lg-12 details3">			  
+		  <div class="mb-3">
+			<label for="input-bio" class="col-form-label">Bio</label>
+			<div>
+			  <textarea class="form-control html" rows="5" id="input-bio" placeholder="Biography" name="@@prefix[bio]" data-v-user-bio></textarea>
+			  <input name="@@prefix[bio_has_changes]" value="1" class="has_changes" type="hidden"/>
+			</div>
+		  </div>
+	</div>
+	
 </div>

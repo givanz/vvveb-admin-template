@@ -33,13 +33,10 @@
           <img src="" data-v-site-logo-dark>
         </a>
 
-        <a id="color-theme-switch" title="Switch sidebar color theme">
-          <i class="la la-sun"></i>
+        <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <i class="icon-search"></i>
         </a>
 
-        <a class="menu-toggle" title="Toggle sidebar width">
-          <i class="icon-menu-outline"></i>
-        </a>
       </div>
 
       <!-- navbar -->
@@ -51,6 +48,11 @@
             <img src="" data-v-site-logo>
             <img src="" data-v-site-logo-dark>
           </a>
+
+          <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="icon-search"></i>
+          </a>
+
         </div>
 
 
@@ -108,7 +110,7 @@
                 <span class="badge badge-primary" data-v-menu-item-badge></span>
               </a>
 
-              <a class="nav-link mobile d-block d-sm-none" href="/admin" data-v-menu-item-url>
+              <a class="nav-link mobile d-block d-md-none" href="/admin" data-v-menu-item-url>
                 <i class="icon-pulse-outline" data-v-menu-item-icon></i>
                 <img src="#" class="icon-img" data-v-menu-item-icon-img>
                 <span class="title" data-v-menu-item-name>Dashboard</span>
@@ -139,7 +141,7 @@
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
@@ -149,7 +151,7 @@
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
@@ -201,7 +203,7 @@
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
@@ -236,7 +238,7 @@
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
@@ -246,7 +248,7 @@
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
@@ -287,7 +289,7 @@
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
@@ -296,7 +298,7 @@
               <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
             </li>
@@ -305,7 +307,7 @@
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
@@ -352,7 +354,7 @@
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
@@ -449,7 +451,7 @@
               <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
             </li>
@@ -458,7 +460,7 @@
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
@@ -505,7 +507,7 @@
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
@@ -535,7 +537,7 @@
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
@@ -559,7 +561,7 @@
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
@@ -823,7 +825,7 @@
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
@@ -912,6 +914,12 @@
       <div class="top-header">
 
         <div class="btn-group" data-v-component-sites>
+
+          <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
+            <i class="icon-menu-outline"></i>
+          </button>
+
+
           <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
             <i class="icon-eye-outline"></i>
@@ -946,7 +954,7 @@
         </div>
 
         <div class="btn-group">
-          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <button type="button" class="btn px-1 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="icon-reload-circle-outline"></i>
             <span>Clear cache</span>
           </button>
@@ -958,7 +966,6 @@
                   <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
                   <span>Assets</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -967,7 +974,6 @@
                   <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
                   <span>Templates</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -976,7 +982,6 @@
                   <i class="icon-server-outline me-2 text-body-tertiary"></i>
                   <span>Database</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -985,7 +990,6 @@
                   <i class="icon-document-outline me-2 text-body-tertiary"></i>
                   <span>Page cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -994,7 +998,6 @@
                   <i class="icon-image-outline me-2 text-body-tertiary"></i>
                   <span>Image cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -1003,7 +1006,6 @@
                   <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
                   <span>Model cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
@@ -1014,7 +1016,6 @@
                   <i class="icon-sync-outline me-2 text-body-tertiary"></i>
                   <span>All cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1023,6 +1024,10 @@
 
 
         <div class="float-end">
+
+          <button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
+            <i class="la la-sun"></i>
+          </button>
 
           <div class="btn-group top-notifications" data-v-component-notifications>
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1247,9 +1252,8 @@
               <input type="hidden" name="csrf" data-v-csrf>
 
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="la la-user"></i>
+                <img class="me-2 rounded-circle avatar" src="" height="24" data-v-admin-avatar>
                 <span data-v-admin-display_name>Admin</span>
-                <img class="ms-2 rounded-circle" src="" height="24" data-v-admin-avatar>
               </button>
 
               <div class="dropdown-menu dropdown-menu-end">
@@ -1263,6 +1267,7 @@
 					<div class="dropdown-divider"></div>
 					-->
                 <a class="dropdown-item" href="#" data-v-admin-edit-url>
+                  <i class="la la-edit me-2"></i>
                   <span>Edit Profile</span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -1270,7 +1275,7 @@
 
                   <input type="hidden" name="logout">
 
-                  <button type="submit" value="logout" class="btn btn-primary w-100">
+                  <button type="submit" value="logout" class="btn btn-primary btn-icon w-100">
 
                     <span class="loading d-none">
                       <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -1279,7 +1284,7 @@
                     </span>
 
                     <span class="button-text">
-                      Logout
+                      <span>Logout</span>
                     </span>
 
                   </button>
@@ -1295,7 +1300,7 @@
 
 
 
-      <div class="actions clearfix">
+      <div class="actions">
 
         <div class="title">
           <h4 class="text-muted my-2">
@@ -1307,7 +1312,7 @@
         <div>
           <a href="{$this.adminPath}index.php?module=content/menus" title="Comment list" class="btn btn-icon btn-outline-secondary me-1">
             <i class="la la-arrow-left"></i>
-            <span>Menu list</span>
+            <span>Categories list</span>
           </a>
         </div>
 
@@ -1405,6 +1410,10 @@
 
             <div class="dd" id="taxonomies" data-v-categories>
               <div class="d-flex">
+                <button class="btn btn-icon btn-outline-secondary btn-sm me-2 mb-1" onclick="toggleAll(this)">
+                  <i class="icon-chevron-down-outline"></i>
+                </button>
+
                 <label class="form-check">
                   <input type="checkbox" class="form-check-input" data-v-vvveb-action="table.bulkSelect">
                   <span class="form-check-label"></span>
@@ -1424,6 +1433,8 @@
                   </button>
 
                 </div>
+
+
               </div>
 
               <ol class="dd-list" data-v-cats>
@@ -1566,7 +1577,7 @@
 
                       <div class="card-footer text-end">
 
-                        <button type="submit" value="logout" class="btn btn-primary btn-save">
+                        <button type="submit" class="btn btn-primary btn-icon btn-save">
 
                           <span class="loading d-none">
                             <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -1575,7 +1586,8 @@
                           </span>
 
                           <span class="button-text">
-                            Save changes
+                            <i class="icon-create-outline"></i>
+                            <span>Save changes</span>
                           </span>
 
                         </button>
@@ -1744,7 +1756,7 @@
 
                   <div class="card-footer text-end">
 
-                    <button type="submit" value="logout" class="btn btn-primary btn-save">
+                    <button type="submit" class="btn btn-primary btn-icon btn-save">
 
                       <span class="loading d-none">
                         <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -1753,7 +1765,8 @@
                       </span>
 
                       <span class="button-text">
-                        Save changes
+                        <i class="icon-create-outline"></i>
+                        <span>Save changes</span>
                       </span>
 
                     </button>
@@ -1872,6 +1885,42 @@
     </div>
   </div>
 
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+
+          <form action="{$this.adminPath}/index.php?module=tools/search" method="get">
+            <input type="hidden" name="module" value="tools/search">
+            <div class="d-flex">
+              <div class="input-group">
+                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <button class="btn btn-outline-primary border-0" type="submit" title="Search">
+                  <div class="la-flip-horizontal">
+                    <i class="la la-search la-lg" aria-hidden="true"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div class="loading d-none d-flex justify-content-center m-5">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </form>
+
+          <div class="search-results">
+          </div>
+
+        </div>
+      </div>
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+  </div>
+
+  <div id="page-loading-status" class="progress progress-bar"></div>
   <!--
 <script id="jquery-js" src="js/jquery.min.js"></script>
 -->
@@ -1935,7 +1984,21 @@ let editorInstances = [];
 if (typeof tinyMceOptions  !== 'undefined') {
 	delete tinyMceOptions["selector"];
 }
-//nestable.nestable('collapseAll');
+
+
+function toggleAll(btn) {
+	let icon = btn.querySelector("i");
+
+	if (icon.className == "icon-chevron-down-outline") {
+		icon.className = "icon-chevron-up-outline";
+		nestable.nestable('expandAll');
+	} else {
+		icon.className = "icon-chevron-down-outline";
+		nestable.nestable('collapseAll');
+	}
+}
+
+nestable.nestable('collapseAll');
 $("#taxonomies").on("click", ".expand-btn",function () {
 	let item = $(this).closest(".dd3-item");
 	let id = item[0].dataset.vId;
@@ -2092,12 +2155,13 @@ function save() {
 	data.push({"name":"taxonomy_id", "value": taxonomy_id});
 	data.push({"name":"parent_id", "value": parent_id ?? 0});
 	data.push({"name":"csrf", "value": $("[name=csrf]").val()});
+	data.push({"name": "sort_order", "value": element.closest(".dd3-item").parentElement.querySelectorAll(".dd3-item").length});
 /*
 	item.querySelectorAll(":scope > .expand input:not([name=item_id]):not([name=item_id_text]),> .expand .field:visible input[name=item_id],:scope >  .expand .field:visible input[name=item_id_text],:scope > .expand select, :scope > .expand textarea").forEach( (el, i) => {
 		if (el.offsetParent) data[el.name] = el.value;
 	});	
 
-	fetch(location.pathname + location.search + "&action=add", {
+	fetch(location.pathname + location.search + "&action=save", {
 			method: "POST",   
 			body: new URLSearchParams(data),
 			headers: {
@@ -2143,12 +2207,11 @@ function save() {
 				toast.show();
 		});
 */		
-    data["csrf"] = $("[name=csrf]").val();
 
 	$.ajax({
-			url: location.pathname + location.search + "&action=add",
+			url: location.pathname + location.search + "&action=save",
 			type: 'post',
-			data: data,
+			data,
 			//dataType: 'json',
 			beforeSend: function() {
 				$('.loading', element).removeClass('d-none');

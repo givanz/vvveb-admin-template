@@ -92,22 +92,24 @@
 				<textarea name="log[note]" rows="8" id="input-note" class="form-control"></textarea>
 			  </div>
 			</div>
-			<div class="mb-3 mb-3 d-flex float-end align-items-center">
-			  <label class="col-form-label mx-2" for="input-notify">Send user notification</label>
-			  <div class="">
-				<div class="form-check">
-				  <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify" checked>
+			<div class="mb-3 row align-items-center justify-content-end">
+				<div class="col-md-3">
+					<div class="form-check">
+					  <label class="form-check-label" for="input-notify">Send user notification</label>
+					  <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify" checked">
+					</div>	  
+				</div>			  
+				<div class="col-md-3">
+					<div class="form-check">
+					  <label class="form-check-label" for="input-notify-note">Include note in notification, public note</label>
+					  <input type="checkbox" class="form-check-input" name="log[public]" value="1" id="input-public">
+					</div>	  
+				</div>	
+				<div class="col-md-3 d-flex justify-content-end">			  
+					<div class="ms-4">
+					  <button class="btn btn-primary btn-icon"><i class="la la-plus"></i> <span>Add status</span></button>
+					</div>
 				</div>
-			  </div>			  
-			  <label class="col-form-label mx-2" for="input-notify-note">Include note in notification, public note</label>
-			  <div class="">
-				<div class="form-check">
-				  <input type="checkbox" class="form-check-input" name="log[public]" value="1" id="input-public">
-				</div>
-			  </div>
-			<div class="ms-4">
-			  <button class="btn btn-primary btn-icon"><i class="la la-plus"></i> <span>Add status</span></button>
-			</div>
 			</div>
 
 		  </form>

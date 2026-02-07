@@ -39,9 +39,9 @@
 									</button>
 									-->
 								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
-											aria-controls="filters" title="Delete selected"
-											class="btn btn-outline-secondary btn-sm bg-body-tertiary text-danger">
-										<i class="icon-trash-outline"></i> Delete selected
+											aria-controls="filters" title="Delete selected" id="bulk-delete"
+											class="btn btn-outline-secondary btn-sm btn-icon">
+										<i class="icon-trash-outline text-danger"></i> Delete selected
 									</button>
 								
 								</div>
@@ -164,6 +164,7 @@
 	
 		<form id="media-content-form" method="post" class="h-100" data-v-media>
 		<input type="hidden" name="csrf" data-v-csrf>
+		<input type="hidden" name="action" value="">
 		
 		<div class="row h-100 g-0">
 			<div class="col-xl-9 col-lg-8 col-sm-6 d-flex justify-content-center">

@@ -8,7 +8,23 @@
 			<li class="breadcrumb-item"><a href="#">body</a></li>
 			<li class="breadcrumb-item"><a href="#">section</a></li>
 			<li class="breadcrumb-item"><a href="#">img</a></li>
-		  </ol>			
+		  </ol>		
+
+
+			<ul class="nav nav-tabs nav-fill d-none" id="code-tabs" role="tablist">
+			  <li class="nav-item styles-tab" role="presentation">
+				<a class="nav-link active" data-bs-toggle="tab" href="#code-tab" role="tab" aria-controls="code" aria-selected="false" tabindex="-1">
+				  <i class="icon-code-slash-outline"></i>
+				  <span>Html</span>
+				</a>
+			  </li>
+			  <li class="nav-item css-tab" role="presentation">
+				<a class="nav-link" data-bs-toggle="tab" href="#csscode-tab" role="tab" aria-controls="css" aria-selected="true">
+				  <i class="icon-color-fill-outline"></i>
+				  <span>Css</span>
+				</a>
+			  </li>
+			</ul>	
 		</div>
 
 
@@ -30,9 +46,15 @@
 		</div>
 			
 		<div id="vvveb-code-editor">
-			<textarea class="form-control"></textarea>
-		<div>
-
-	<div>
+			<div class="tab-content">
+			 <div class="tab-pane active" id="code-tab" data-section="code" role="tabpanel" aria-labelledby="code-tab">
+				<textarea class="form-control"></textarea>
+			 </div>
+			
+			 <div class="tab-pane" id="csscode-tab" data-section="csscode" role="tabpanel" aria-labelledby="csscode-tab">
+				<textarea id="css-editor" class="form-control" rows="24"></textarea>
+			 </div>
+			</div>
+		</div>
 </div>
 

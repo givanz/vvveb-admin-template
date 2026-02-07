@@ -1,6 +1,12 @@
 <div class="top-header">
 
 	<div class="btn-group" data-v-component-sites>
+
+		<button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
+			<i class="icon-menu-outline"></i>
+		</button>
+
+	
 		<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 			
 			<i class="icon-eye-outline"></i> 
@@ -35,7 +41,7 @@
 	</div>
 	
 	<div class="btn-group">
-		<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+		<button type="button" class="btn px-1 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 			<i class="icon-reload-circle-outline"></i> 
 			<span>Clear cache</span>
 		</button>
@@ -47,7 +53,6 @@
 						<i class="icon-document-text-outline me-2 text-body-tertiary"></i>
 						<span>Assets</span>
 					</div>
-					 <i class="la la-circle-notch ms-2"></i>
 				</a>
 			</div>
 			<div>
@@ -56,7 +61,6 @@
 						<i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
 						<span>Templates</span>
 					</div>
-					 <i class="la la-circle-notch ms-2"></i>
 				</a>
 			</div>
 			<div>
@@ -65,7 +69,6 @@
 						<i class="icon-server-outline me-2 text-body-tertiary"></i>
 						<span>Database</span>
 					</div>
-					 <i class="la la-circle-notch ms-2"></i>
 				</a>
 			</div>			
 			<div>
@@ -74,7 +77,6 @@
 						<i class="icon-document-outline me-2 text-body-tertiary"></i>
 						<span>Page cache</span>
 					</div>
-					 <i class="la la-circle-notch ms-2"></i>
 				</a>
 			</div>
 			<div>
@@ -83,7 +85,6 @@
 						<i class="icon-image-outline me-2 text-body-tertiary"></i>
 						<span>Image cache</span>
 					</div>
-					 <i class="la la-circle-notch ms-2"></i>
 				</a>
 			</div>			
 			<div>
@@ -92,7 +93,6 @@
 						<i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
 						<span>Model cache</span>
 					</div>
-					 <i class="la la-circle-notch ms-2"></i>
 				</a>
 			</div>
 			<div class="dropdown-divider"></div>
@@ -103,7 +103,6 @@
 						<i class="icon-sync-outline me-2 text-body-tertiary"></i>
 						<span>All cache</span>
 					</div>
-					 <i class="la la-circle-notch ms-2"></i>
 				</a>
 			</div>
 			
@@ -112,6 +111,10 @@
 	
 
 	<div class="float-end">	
+
+		<button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
+			<i class="la la-sun"></i>
+		</button>
 
 		<div class="btn-group top-notifications" data-v-component-notifications>
 			<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -330,9 +333,8 @@
 			   <input type="hidden" name="csrf" data-v-csrf>
 
 				<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="la la-user"></i> 
+					<img class="me-2 rounded-circle avatar" src="" height="24"data-v-admin-avatar>
 					<span data-v-admin-display_name>Admin</span>
-					<img class="ms-2 rounded-circle" src="" height="24"data-v-admin-avatar>
 				</button>
 				
 				<div class="dropdown-menu dropdown-menu-end">
@@ -345,13 +347,16 @@
 					
 					<div class="dropdown-divider"></div>
 					-->
-					<a class="dropdown-item" href="#" data-v-admin-edit-url><span>Edit Profile</span></a>
+					<a class="dropdown-item" href="#" data-v-admin-edit-url>
+						<i class="la la-edit me-2"></i>
+						<span>Edit Profile</span>
+					</a>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
 					
 						<input type="hidden" name="logout">
 						
-						<button type="submit" value="logout" class="btn btn-primary w-100">
+						<button type="submit" value="logout" class="btn btn-primary btn-icon w-100">
 							
 							<span class="loading d-none">
 								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -360,7 +365,7 @@
 							</span>
 
 							<span class="button-text">
-								Logout
+								<span>Logout</span>
 							</span>
 						
 						</button>					

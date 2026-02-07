@@ -12,7 +12,7 @@
 		@@include('../_includes/top-header.html')
 
 			
-		<div class="actions clearfix">
+		<div class="actions">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
@@ -24,7 +24,7 @@
 			<div>
 				<a href="{$this.adminPath}index.php?module=content/menus" title="Comment list"
 					class="btn btn-icon btn-outline-secondary me-1">
-						<i class="la la-arrow-left"></i><span>Menu list</span>
+						<i class="la la-arrow-left"></i><span>@@title list</span>
 				 </a>
 			 </div>
 			 
@@ -51,6 +51,7 @@
 						
 						<input type="hidden" name="@@prefix_id" value="" data-v-taxonomy_id>
 						<input type="hidden" name="csrf" data-v-csrf>
+						<input type="hidden" id="action" name="action" value="">
 						
 						<div class="container-fluid m-3 pe-5" id="edit-form">
 							<div class="row">
@@ -67,7 +68,7 @@
 								<input type="text" class="form-control" placeholder="Slug" aria-label="Slug" name="menu_data[slug]" data-v-slug>
 							  </div>
 							  <div class="col-auto">
-								<button type="submit" class="btn btn-primary"><i class="la la-save"></i> Save</button>
+								<button type="submit" class="btn btn-outline-primary btn-icon"><i class="icon-create-outline"></i><span>Save</span></button>
 							  </div>
 							</div>
 							
@@ -95,6 +96,10 @@
 				  
                 <div class="dd" id="taxonomies" data-v-categories>
 					<div class="d-flex">
+						<button class="btn btn-icon btn-outline-secondary btn-sm me-2 mb-1" onclick="toggleAll(this)">
+								<i class="icon-chevron-down-outline"></i>
+						</button>	
+					
 						<label class="form-check">
 							<input type="checkbox" class="form-check-input" data-v-vvveb-action="table.bulkSelect">
 							<span class="form-check-label"></span>
@@ -115,7 +120,9 @@
 									<i class="icon-trash-outline"></i> Delete selected
 							</button>
 						
-						</div>		
+						</div>	
+
+							
 					</div>		
 				
                     <ol class="dd-list" data-v-cats>
@@ -205,7 +212,21 @@ let editorInstances = [];
 if (typeof tinyMceOptions  !== 'undefined') {
 	delete tinyMceOptions["selector"];
 }
-//nestable.nestable('collapseAll');
+
+
+function toggleAll(btn) {
+	let icon = btn.querySelector("i");
+
+	if (icon.className == "icon-chevron-down-outline") {
+		icon.className = "icon-chevron-up-outline";
+		nestable.nestable('expandAll');
+	} else {
+		icon.className = "icon-chevron-down-outline";
+		nestable.nestable('collapseAll');
+	}
+}
+
+nestable.nestable('collapseAll');
 $("#taxonomies").on("click", ".expand-btn",function () {
 	let item = $(this).closest(".dd3-item");
 	let id = item[0].dataset.vId;
@@ -362,12 +383,13 @@ function save() {
 	data.push({"name":"@@prefix_id", "value": @@prefix_id});
 	data.push({"name":"parent_id", "value": parent_id ?? 0});
 	data.push({"name":"csrf", "value": $("[name=csrf]").val()});
+	data.push({"name": "sort_order", "value": element.closest(".dd3-item").parentElement.querySelectorAll(".dd3-item").length});
 /*
 	item.querySelectorAll(":scope > .expand input:not([name=item_id]):not([name=item_id_text]),> .expand .field:visible input[name=item_id],:scope >  .expand .field:visible input[name=item_id_text],:scope > .expand select, :scope > .expand textarea").forEach( (el, i) => {
 		if (el.offsetParent) data[el.name] = el.value;
 	});	
 
-	fetch(location.pathname + location.search + "&action=add", {
+	fetch(location.pathname + location.search + "&action=save", {
 			method: "POST",   
 			body: new URLSearchParams(data),
 			headers: {
@@ -413,12 +435,11 @@ function save() {
 				toast.show();
 		});
 */		
-    data["csrf"] = $("[name=csrf]").val();
 
 	$.ajax({
-			url: location.pathname + location.search + "&action=add",
+			url: location.pathname + location.search + "&action=save",
 			type: 'post',
-			data: data,
+			data,
 			//dataType: 'json',
 			beforeSend: function() {
 				$('.loading', element).removeClass('d-none');

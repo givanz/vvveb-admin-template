@@ -11,7 +11,7 @@
 <script id="vvveb-input-textareainput" type="text/html">
 	
 	<div>
-		<textarea name="{%=key%}" {% if (typeof rows !== 'undefined') { %} rows="{%=rows%}" {% } else { %} rows="3" {% } %} class="form-control"/>
+		<textarea name="{%=key%}" {% if (typeof rows !== 'undefined') { %} rows="{%=rows%}" {% } else { %} rows="3" {% } %} class="form-control"></textarea> 
 	</div>
 	
 </script>
@@ -44,7 +44,7 @@
 
 <script id="vvveb-input-radiobuttoninput" type="text/html">
 	
-	<div class="btn-group btn-group-sm {%if (extraclass) { %}{%=extraclass%}{% } %} clearfix" role="group">
+	<div class="btn-group btn-group-sm {%if (extraclass) { %}{%=extraclass%}{% } %}" role="group">
 		{% var namespace = 'rb-' + Math.floor(Math.random() * 100); %}
 	
 		{% for ( var i = 0; i < options.length; i++ ) { %}
@@ -239,9 +239,9 @@
 			</div>
 
 
-			<input class="header_check" type="checkbox" id="section-components-{%=options[i].suffix%}">
+			<input class="header_check" type="checkbox" id="section-components-{%=key%}-{%=i%}">
 
-			<label for="section-components-{%=options[i].suffix%}"> 
+			<label for="section-components-{%=key%}-{%=i%}"> 
 				<div class="header-arrow"></div>
 			</label>
 			
@@ -259,7 +259,7 @@
 		{% if (typeof hide_remove === 'undefined') { %}
 		<div class="mt-3">
 		
-			<button class="btn btn-sm btn-outline-primary btn-new">
+			<button class="btn btn-sm btn-outline-primary btn-new btn-icon">
 				<i class="la la-plus la-lg"></i> Add new
 			</button>
 			
@@ -413,7 +413,17 @@
 	<div>
 		<img id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225">
 		<input name="{%=key%}" type="text" class="form-control mt-1" id="input-{%=key%}"/>
-		<button name="button" class="btn btn-secondary btn-sm btn-icon mt-2 w-100" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg me-1"></i><span>Set image</span></button>
+		<button name="button" class="btn btn-outline-primary btn-sm btn-icon mt-2 w-100" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg me-1"></i><span>Set image</span></button>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-svginput-gallery" type="text/html">
+	
+	<div>
+		<svg id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225"></svg>
+		<input name="{%=key%}" type="text" class="form-control mt-1 d-none" id="input-{%=key%}"/>
+		<button name="button" class="btn btn-outline-primary btn-sm btn-icon mt-2 w-100" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg me-1"></i><span>Set image</span></button>
 	</div>
 	
 </script>
@@ -511,15 +521,19 @@
 
 
 <script id="vvveb-filemanager-folder" type="text/html">
+	{% var rand = Math.floor(Math.random() * 10000); %}
+
 	<li data-folder="{%=folder%}" class="folder">
-		<label for="{%=folder%}"><span>{%=folderTitle%}</span></label> <input type="checkbox" id="{%=folder%}" />
+		<label for="{%=folder%}{%=rand%}"><span>{%=folderTitle%}</span></label> <input type="checkbox" id="{%=folder%}{%=rand%}" />
 		<ol></ol>
 	</li>
 </script>
 
 <script id="vvveb-filemanager-page" type="text/html">
+	{% var rand = Math.floor(Math.random() * 10000); %}
+
 	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}" {%if (typeof post_id !== 'undefined') { %}data-post_id="{%=post_id%}"{% } %} {%if (typeof product_id !== 'undefined') { %}data-product_id="{%=product_id%}"{% } %} {%if (typeof global !== 'undefined' && global) { %}data-global="true"{% } %}>
-		<label for="{%=name%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
+		<label for="{%=name%}{%=rand%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
 			<span>{%=title%}</span>
 			<!-- <span class="text-muted small">{%=url%}</span> -->
 			<div class="file-actions">
@@ -528,7 +542,7 @@
 				<button href="#" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
 				<button href="#" class="duplicate btn btn-outline-primary" title="Duplicate"><i class="icon-copy-outline"></i></button>
 			</div>
-		</label> <input type="checkbox" id="{%=name%}" />
+		</label> <input type="checkbox" id="{%=name%}{%=rand%}" />
 		<!-- <ol></ol> -->
 	</li>
 </script>

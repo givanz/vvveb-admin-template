@@ -46,11 +46,11 @@
 
 	  <div id="main-content">
 		  
-		 <div class="content clearfix site px-2">
+		 <div class="content site px-2">
 
 			@@include('../_includes/notifications.html')
 
-				<div class="content clearfix settings" data-v-site>
+				<div class="content settings" data-v-site>
 													 
 					<ul class="nav nav-tabs" id="site-tabs" role="tablist">
 					
@@ -161,10 +161,29 @@ let subdir = "{ $this->subdir }";
 <script id="functions-js" src="/js/admin/functions.js"></script>
 <script id="site-js" src="js/site.js"></script>
 <script id="content-js" src="js/content.js"></script>
-
-
-
 <script>
+let languagesCheckBox = document.querySelectorAll(".language-list input[type=checkbox]");
+let allLanguagesCheckbox = document.getElementById("all-languages-check");
 
+languagesCheckBox.forEach(e => e.addEventListener("change", function (e) {
+	if (this.id == "all-languages-check" && this.checked) {
+		languagesCheckBox.forEach(e => e.checked = false);
+		allLanguagesCheckbox.checked = true;
+	} else {
+		allLanguagesCheckbox.checked = false;
+	}
+}));
+
+let currenciesCheckBox = document.querySelectorAll(".currency-list input[type=checkbox]");
+let allCurrenciesCheckbox = document.getElementById("all-currencies-check");
+
+currenciesCheckBox.forEach(e => e.addEventListener("change", function (e) {
+	if (this.id == "all-currencies-check" && this.checked) {
+		currenciesCheckBox.forEach(e => e.checked = false);
+		allCurrenciesCheckbox.checked = true;
+	} else {
+		allCurrenciesCheckbox.checked = false;
+	}
+}));
 </script>
 @@include('../_includes/footer.html')

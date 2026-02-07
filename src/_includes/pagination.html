@@ -1,13 +1,11 @@
 <div id="pagination" data-pagination>
 	<div data-v-if="pagecount > 1">
 
-		<form method="get" action="?" class="d-inline-block" data-current-url>
-			<span class="pages" data-count>100</span> items, page
-				<input type="text" name="page" class="form-control d-inline-block w-auto pages" size="1" data-current-page>
-			of <span class="pages" data-pagecount></span> 
-		</form>
+		<span class="pages" data-count>100</span> items, page
+			<input type="number" name="page" class="form-control d-inline-block text-align-center" size="2" min="1" max="{$pagecount}" style="width:4.5rem" onchange="window.location.href = window.location.href.replace(/&page=\d+/, '') + '&page=' + this.value" data-current-page>
+		of <span class="pages" data-pagecount></span> 
 
-		<nav class="d-inline-block">
+		<nav class="d-inline-block ms-2">
 			<ul class="pagination">
 			
 				<li class="page-item pager-first" data-first>

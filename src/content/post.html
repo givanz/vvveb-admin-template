@@ -23,7 +23,7 @@
 
             <div class="btns">
 
-				 <a href="/admin/?module=content/posts" title="Post list" data-v-posts-list-url class="btn btn-icon btn-outline-secondary me-3">
+				 <a href="/admin/?module=content/posts" title="Post list" data-v-posts-list-url class="btn btn-icon btn-outline-secondary">
 					<i class="la la-arrow-left"></i><span><span data-v-type-name>Posts</span> <span>list</span></span>
 				 </a>
 
@@ -74,7 +74,7 @@
 	
 	<div id="content">
 	
-	<div class="content clearfix">
+	<div class="content">
 
 	@@include('../_includes/notifications.html')
    
@@ -102,46 +102,60 @@
 
             <div class="right-column flat small">
 
-                <label class="header" data-v-header="element_header"
-                       for="header_featured_image"><span>Featured Media</span>
-                            <div class="header-arrow"></div>
-				</label>
-				<input class="header_check" type="checkbox" checked="true" id="header_featured_image">
-				<div class="section" data-v-section="element_header">
+					<label class="header" data-v-header="header_featured_image"
+						   for="header_featured_image"><span>Featured Media</span>
+								<div class="header-arrow"></div>
+					</label>
+					<input class="header_check" type="checkbox" checked="true" id="header_featured_image">
+					<div class="section" data-v-section="header_featured_image">
 
-					<input type="hidden" data-v-image name="image" id="featured-image-input" value="">
-								
-				    <img data-v-image src="" alt=""
-					 id="featured-image-thumb"
-					 data-v-placeholder=""
-					 data-media-gallery 
-					 data-target-input="#featured-image-input"
-					 data-target-thumb="#featured-image-thumb" data-type="single"
-					 class="bg-body-tertiary rounded img-fluid">
-						
+						<input type="hidden" data-v-image name="image" id="featured-image-input" value="">
+									
+						<img data-v-image src="" alt=""
+						 id="featured-image-thumb"
+						 data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" data-type="single"
+						 class="bg-body-tertiary rounded img-fluid">
+							
 
-						<div class="py-3 text-center">
-							<div class="btn-group w-100">
-								<button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100"
-								data-media-gallery data-target-input="#featured-image-input"
-								data-target-thumb="#featured-image-thumb" data-type="single">
-									<i class="la la-image la-lg"></i> Set featured media
-								</button>	
-								
-								<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-									<i class="la la-times"></i>
-								</button>
+							<div class="py-3 text-center">
+								<div class="btn-group w-100">
+									<button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100"
+									data-media-gallery data-target-input="#featured-image-input"
+									data-target-thumb="#featured-image-thumb" data-type="single">
+										<i class="la la-image la-lg"></i> Set featured media
+									</button>	
+									
+									<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
+										<i class="la la-times"></i>
+									</button>
+								</div>
 							</div>
-                        </div>
-					</div>
+						</div>
 
 
 
-                        <label class="header" data-v-header="default" for="header_post_options"><span data-v-type-name>Post</span> options
+                        <label class="header" data-v-header="header_post_options" for="header_post_options"><span data-v-type-name>Post</span> options
                             <div class="header-arrow"></div>
                         </label>
                         <input class="header_check" type="checkbox" checked="true" id="header_post_options">
-                        <div class="section" data-v-section="default">
+                        <div class="section" data-v-section="header_post_options">
+
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+
+                                <div class="input-group">
+                                    <select class="form-select" placeholder="Visibility" name="status" onChange="statusChange(event)" data-v-post-status>
+                                        <option value="publish" data-v-option>Published</option>
+                                        <option value="pending" data-v-option>Pending</option>
+                                        <option value="draft" 	data-v-option>Draft</option>
+                                        <option value="private" data-v-option>Private</option>
+                                        <option value="password"data-v-option>Password protected</option>
+                                    </select>
+                                </div>
+                            </div>       
 
                             <div class="mb-3">
                                 <label class="form-label">Publish date</label>
@@ -154,19 +168,31 @@
 								</div>
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Status</label>
-
-                                <div class="input-group">
-                                    <select class="form-select" placeholder="Visibility" name="status" data-v-post-status>
-                                        <option value="publish" data-v-option>Published</option>
-                                        <option value="pending" data-v-option>Pending</option>
-                                        <option value="draft" 	data-v-option>Draft</option>
-                                        <option value="private" data-v-option>Private</option>
-                                        <option value="password"data-v-option>Password protected</option>
-                                    </select>
-                                </div>
+							<div class="row mb-3">
+								<div class="col">
+								   <label class="form-check">
+										<input type="checkbox" class="form-check-input" value="1" name="sticky" data-v-post-sticky>
+										<span class="form-check-label" title="Shows above all other posts">Sticky</span>
+									</label>
+								</div>
+								<div class="col">
+								   <label class="form-check">
+										<input type="checkbox" class="form-check-input" value="1" name="password_protected" onchange="postPassword.style.display = this.checked ? 'block' : 'none'" data-v-post-password_protected>
+										<span class="form-check-label text-nowrap" title="Password protected">Password protected</span>
+									</label>
+								</div>
                             </div>
+							
+							<div class="mb-3" id="postPassword">
+								<!-- <label class="form-label">Password</label> -->
+							
+								<div class="input-group">
+									  <input type="password" autocorrect="off" class="form-control" placeholder="Password" id="input-password" autocomplete="off" value="" aria-label="Password" name="password" data-v-post-password>
+									  <div class="input-group-append">
+										<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this, 'input-password')"><i class="icon-eye-off-outline"></i></button>
+									  </div>
+								  </div>
+							</div>							
                         </div>
                         
                         
@@ -181,7 +207,7 @@
 
                             <div class="mb-3">
 
-                               <div class="categories-list px-2" data-v-sites>
+                               <div class="categories-list px-2 pt-2" data-v-sites>
 									<label class="form-check" data-v-site>
 										<input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site-site_id>
 										<span class="form-check-label" data-v-site-name title="Default">Default</span>

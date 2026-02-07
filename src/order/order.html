@@ -11,7 +11,7 @@
 
 		@@include('../_includes/top-header.html')
 
-        <div class="actions clearfix">
+        <div class="actions">
 
 			<div class="title">
 				<h4 class="text-muted my-2">
@@ -49,7 +49,7 @@
         <div id="content">
 
 		
-         <div class="content clearfix"  data-v-order>
+         <div class="content"  data-v-order>
 		 
 			@@include('../_includes/notifications.html')
 
@@ -100,12 +100,12 @@
                     </div>
                     <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
-						@@include('_order_billing_address.html')				
+						@@include('_order_shipping_address.html')				
                       </div>
                     </div>
                     <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
-						@@include('_order_shipping_address.html')				
+						@@include('_order_billing_address.html')				
                       </div>
                     </div>
                   </div>
@@ -218,6 +218,16 @@ if (productDetails) {
 	});
 	*/
 	let autocomplete = new _AutocompleteInput(document.querySelector('input.autocomplete'), {onSelect});
+}
+
+function copyFields(from, to) {
+	
+	document.querySelectorAll("." + from + "_address input").forEach(e => { 
+		let toInput = document.querySelector("." + to + "_address [name='" + e.name.replace(from + "_", to + "_") + "']");
+		if (toInput) {
+			toInput.value = e.value;
+		}
+	});
 }
 </script>
 @@include('../_includes/footer.html')

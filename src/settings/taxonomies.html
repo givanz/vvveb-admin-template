@@ -34,6 +34,7 @@
                 <div class="taxonomies card-block">
                     <form action="" method="post">
 						<input type="hidden" name="csrf" data-v-csrf>
+						<input type="hidden" id="action" name="action" value="">
 						
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
@@ -54,7 +55,7 @@
 							<div class="checkbox_outer">
 
 								<label class="form-check">
-					<input type="checkbox" class="form-check-input" value="4" name="taxonomy[]" data-v-vvveb-action="table.bulkSelect">
+					<input type="checkbox" class="form-check-input" value="4" name="taxonomy_id[]" data-v-vvveb-action="table.bulkSelect">
 									<span class="form-check-label"></span>
 									<span class="custom-control-description">&nbsp;</span>
 								</label>
@@ -83,7 +84,7 @@
 					<tr class="taxonomy" data-v-taxonomy>
 						<td class="checkbox">
 							<label class="form-check">
-								<input type="checkbox" class="form-check-input" value="4" name="taxonomy[]" data-v-vvveb-action="table.selectRow">
+								<input type="checkbox" class="form-check-input" value="4" name="taxonomy_id[]" data-v-taxonomy-taxonomy_id data-v-vvveb-action="table.selectRow">
 								<span class="form-check-label"></span>
 								<span class="custom-control-description">&nbsp;</span>
 							</label>
@@ -129,12 +130,11 @@
 								</button>
 									<ul class="dropdown-menu">
 										</li>
-										<li>
-										  <a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')">
-											<i class="icon-trash-outline"></i>
-											<span>Delete</span>
-										  </a>
-										</li>
+										<li data-v-check-permission-delete>
+										<button type="submit" name="taxonomy_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-taxonomy-taxonomy_id>							
+											<i class="icon-trash-outline"></i><span>Delete</span>
+										</button>
+									</li>
 									</ul>
 								 </div>
 
@@ -158,7 +158,7 @@
                         </table>
                         </div>
 
-						<div class="bottom clearfix">
+						<div class="bottom">
 							<div class="float-start"></div>
 							<div class="float-end">
 								@@include('../_includes/pagination.html')

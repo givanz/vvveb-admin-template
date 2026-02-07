@@ -6,8 +6,8 @@
 					<th class="text-start">Attribute</th>
 					<th class="text-start">Value</th>
 					<th class="text-end">
-						<button type="button" class="btn btn-sm btn-primary" id="add-attribute-btn" onclick='addTemplate("#attribute-template", "product_attribute", "#attribute").querySelectorAll("[autocomplete]").forEach(el => new _AutocompleteInput(el, el.dataset));'>
-							<i class="la la-plus la-lg text-white"></i>
+						<button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-attribute-btn" onclick='addTemplate("#attribute-template", "product_attribute", "#attribute").querySelectorAll("[autocomplete]").forEach(el => new _AutocompleteInput(el, el.dataset));'>
+							<i class="la la-plus la-lg"></i>
 						</button>
 					</th>
 				</tr>
@@ -23,7 +23,7 @@
 						<input name="product_attribute[0][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
 					</td>
 					<td class="text-end">
-						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
 							<i class="la la-minus-circle la-lg"></i>
 						</button>
 					</td>
@@ -40,7 +40,7 @@
 						</div>
 					</td>
 					<td class="text-end">
-						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-danger">
+						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
 							<i class="la la-minus-circle la-lg"></i>
 						</button>
 					</td>

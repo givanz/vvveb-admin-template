@@ -33,13 +33,10 @@
           <img src="" data-v-site-logo-dark>
         </a>
 
-        <a id="color-theme-switch" title="Switch sidebar color theme">
-          <i class="la la-sun"></i>
+        <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <i class="icon-search"></i>
         </a>
 
-        <a class="menu-toggle" title="Toggle sidebar width">
-          <i class="icon-menu-outline"></i>
-        </a>
       </div>
 
       <!-- navbar -->
@@ -51,6 +48,11 @@
             <img src="" data-v-site-logo>
             <img src="" data-v-site-logo-dark>
           </a>
+
+          <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="icon-search"></i>
+          </a>
+
         </div>
 
 
@@ -108,7 +110,7 @@
                 <span class="badge badge-primary" data-v-menu-item-badge></span>
               </a>
 
-              <a class="nav-link mobile d-block d-sm-none" href="/admin" data-v-menu-item-url>
+              <a class="nav-link mobile d-block d-md-none" href="/admin" data-v-menu-item-url>
                 <i class="icon-pulse-outline" data-v-menu-item-icon></i>
                 <img src="#" class="icon-img" data-v-menu-item-icon-img>
                 <span class="title" data-v-menu-item-name>Dashboard</span>
@@ -139,7 +141,7 @@
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
@@ -149,7 +151,7 @@
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
@@ -201,7 +203,7 @@
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
@@ -236,7 +238,7 @@
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
@@ -246,7 +248,7 @@
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
@@ -287,7 +289,7 @@
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
@@ -296,7 +298,7 @@
               <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
             </li>
@@ -305,7 +307,7 @@
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
@@ -352,7 +354,7 @@
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
@@ -449,7 +451,7 @@
               <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
             </li>
@@ -458,7 +460,7 @@
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
@@ -505,7 +507,7 @@
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
@@ -535,7 +537,7 @@
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
@@ -559,7 +561,7 @@
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
@@ -823,7 +825,7 @@
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
@@ -911,6 +913,12 @@
       <div class="top-header">
 
         <div class="btn-group" data-v-component-sites>
+
+          <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
+            <i class="icon-menu-outline"></i>
+          </button>
+
+
           <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
             <i class="icon-eye-outline"></i>
@@ -945,7 +953,7 @@
         </div>
 
         <div class="btn-group">
-          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <button type="button" class="btn px-1 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="icon-reload-circle-outline"></i>
             <span>Clear cache</span>
           </button>
@@ -957,7 +965,6 @@
                   <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
                   <span>Assets</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -966,7 +973,6 @@
                   <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
                   <span>Templates</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -975,7 +981,6 @@
                   <i class="icon-server-outline me-2 text-body-tertiary"></i>
                   <span>Database</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -984,7 +989,6 @@
                   <i class="icon-document-outline me-2 text-body-tertiary"></i>
                   <span>Page cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -993,7 +997,6 @@
                   <i class="icon-image-outline me-2 text-body-tertiary"></i>
                   <span>Image cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -1002,7 +1005,6 @@
                   <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
                   <span>Model cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
@@ -1013,7 +1015,6 @@
                   <i class="icon-sync-outline me-2 text-body-tertiary"></i>
                   <span>All cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1022,6 +1023,10 @@
 
 
         <div class="float-end">
+
+          <button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
+            <i class="la la-sun"></i>
+          </button>
 
           <div class="btn-group top-notifications" data-v-component-notifications>
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1246,9 +1251,8 @@
               <input type="hidden" name="csrf" data-v-csrf>
 
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="la la-user"></i>
+                <img class="me-2 rounded-circle avatar" src="" height="24" data-v-admin-avatar>
                 <span data-v-admin-display_name>Admin</span>
-                <img class="ms-2 rounded-circle" src="" height="24" data-v-admin-avatar>
               </button>
 
               <div class="dropdown-menu dropdown-menu-end">
@@ -1262,6 +1266,7 @@
 					<div class="dropdown-divider"></div>
 					-->
                 <a class="dropdown-item" href="#" data-v-admin-edit-url>
+                  <i class="la la-edit me-2"></i>
                   <span>Edit Profile</span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -1269,7 +1274,7 @@
 
                   <input type="hidden" name="logout">
 
-                  <button type="submit" value="logout" class="btn btn-primary w-100">
+                  <button type="submit" value="logout" class="btn btn-primary btn-icon w-100">
 
                     <span class="loading d-none">
                       <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -1278,7 +1283,7 @@
                     </span>
 
                     <span class="button-text">
-                      Logout
+                      <span>Logout</span>
                     </span>
 
                   </button>
@@ -1328,7 +1333,7 @@
 
           <div id="main-content">
 
-            <div class="content clearfix site px-2">
+            <div class="content site px-2">
 
               <div class="notifications" data-v-notifications>
 
@@ -1403,7 +1408,7 @@
 
               </div>
 
-              <div class="content clearfix settings" data-v-site>
+              <div class="content settings" data-v-site>
 
                 <ul class="nav nav-tabs" id="site-tabs" role="tablist">
 
@@ -1453,7 +1458,12 @@
                     <div class="mb-3 row">
                       <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name required>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name required>
+                          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false">
+                            <i class="la la-arrow-down text-primary"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                     <!--
@@ -1477,7 +1487,7 @@
    </div>
 </div>
 -->
-                    <div class="mb-3 row">
+                    <div class="mb-3 row" id="siteDomain" data-v-class-if-collapse="this.site.site_id">
 
                       <label for="input-site-host" class="col-sm-2 col-form-label">
                         <span>Site domain/subdomain</span>
@@ -1491,11 +1501,11 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host required>
-                          <span class="input-group-text">Path</span>
-                          <input type="text" class="form-control" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
+                          <span class="input-group-text d-none">Path</span>
+                          <input type="text" class="form-control d-none" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
 
-                          <button class="input-group-text" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
-                            <i class="la la-lg la-question-circle text-primary"></i>
+                          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
+                            <i class="la la-question-circle text-primary"></i>
                           </button>
 
                         </div>
@@ -1847,11 +1857,68 @@
                     <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Defaults</label>
 
                     <div class="row mb-3">
+                      <label for="input-language" class="col-sm-2 col-form-label">Languages</label>
+                      <div class="col-sm-10">
+                        <div class="language-list" data-v-language-list>
+                          <div class="border border-primary border-opacity-25 rounded-2 p-1 px-2 d-inline-block me-3">
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" id="all-languages-check" name="settings[languages]">
+                                <span data-v-name>All languages</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form-check form-check-inline" data-v-language>
+                            <input class="form-check-input" type="checkbox" id="lang-1" value="en_us" name="settings[languages][]" data-v-language_id>
+                            <label class="form-check-label" for="lang-1" data-v-name>English</label>
+                          </div>
+                          <div class="form-check form-check-inline" data-v-language>
+                            <input class="form-check-input" type="checkbox" id="lang-2" value="ro_ro" name="settings[languages][]" data-v-language_id>
+                            <label class="form-check-label" for="lang-2" data-v-name>Romanian</label>
+                          </div>
+                          <div class="form-check form-check-inline" data-v-language>
+                            <input class="form-check-input" type="checkbox" id="lang-3" value="it_it" name="settings[languages][]" data-v-language_id>
+                            <label class="form-check-label" for="lang-3" data-v-name>Italian</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
                       <label for="input-language" class="col-sm-2 col-form-label">Default Language</label>
+                      <!-- <input type="hidden" value="en" name="settings[language][]" id="language" data-v-language> -->
                       <div class="col-sm-10">
                         <select class="form-select" name="settings[language_id]" data-v-setting="language_id" id="input-language" data-v-site-language_id>
                           <option value="en-gb" data-v-option>English</option>
                         </select>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="input-currency" class="col-sm-2 col-form-label">Currencies</label>
+                      <div class="col-sm-10">
+                        <div class="currency-list" data-v-currency-list>
+                          <div class="border border-primary border-opacity-25 rounded-2 p-1 px-2 d-inline-block me-3">
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" id="all-currencies-check" name="settings[currencies]">
+                                <span data-v-name>All currencies</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form-check form-check-inline" data-v-currency>
+                            <input class="form-check-input" type="checkbox" id="currency-1" value="1" name="settings[currencies][]" data-v-currency_id>
+                            <label class="form-check-label" for="currency-1" data-v-name>Dollar</label>
+                          </div>
+                          <div class="form-check form-check-inline" data-v-currency>
+                            <input class="form-check-input" type="checkbox" id="currency-2" value="2" name="settings[currencies][]" data-v-currency_id>
+                            <label class="form-check-label" for="currency-2" data-v-name>Euro</label>
+                          </div>
+                          <div class="form-check form-check-inline" data-v-currency>
+                            <input class="form-check-input" type="checkbox" id="currency-3" value="3" name="settings[currencies][]" data-v-currency_id>
+                            <label class="form-check-label" for="currency-3" data-v-name>Yen</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="row mb-3">
@@ -1999,17 +2066,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Extra large</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[post_xlarge_width]" data-v-setting="post_xlarge_width" value="1024" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[post_xlarge_height]" data-v-setting="post_xlarge_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_xlarge_method]" data-v-setting="post_xlarge_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2021,17 +2088,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Large</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[post_large_width]" data-v-setting="post_large_width" value="1024" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[post_large_height]" data-v-setting="post_large_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_large_method]" data-v-setting="post_large_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2043,17 +2110,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Medium</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[post_medium_width]" data-v-setting="post_medium_width" value="400" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[post_medium_height]" data-v-setting="post_medium_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_medium_method]" data-v-setting="post_medium_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2065,17 +2132,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Thumb</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[post_thumb_width]" data-v-setting="post_thumb_width" value="150" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[post_thumb_height]" data-v-setting="post_thumb_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_thumb_method]" data-v-setting="post_thumb_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2096,17 +2163,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Extra large</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[product_xlarge_width]" data-v-setting="product_xlarge_width" value="1024" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[product_xlarge_height]" data-v-setting="product_xlarge_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_xlarge_method]" data-v-setting="product_xlarge_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2118,17 +2185,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Large</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[product_large_width]" data-v-setting="product_large_width" value="1024" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[product_large_height]" data-v-setting="product_large_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_large_method]" data-v-setting="product_large_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2140,17 +2207,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Medium</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[product_medium_width]" data-v-setting="product_medium_width" value="400" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[product_medium_height]" data-v-setting="product_medium_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_medium_method]" data-v-setting="product_medium_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2162,17 +2229,17 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <label for="category-width" class="form-label">Thumb</label>
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Width</label>&nbsp;
+                          <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
                           <input type="number" name="settings[product_thumb_width]" data-v-setting="product_thumb_width" value="150" placeholder="Width" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Height</label>
+                          <label class="col-form-label pe-4 pt-2">Height</label>
                           <input type="number" name="settings[product_thumb_height]" data-v-setting="product_thumb_height" value="0" placeholder="Height" class="form-control">
                         </div>
 
                         <div class="input-group mb-3">
-                          <label class="pe-4 pt-2">Method</label>
+                          <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_thumb_method]" data-v-setting="product_thumb_method" class="form-select">
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
@@ -2190,7 +2257,7 @@
                       <div class="col-sm-12 col-md-6 col-xl-3">
                         <div class="input-group">
 
-                          <label class="pe-4 pt-2">Format</label>
+                          <label class="col-form-label pe-4 pt-2">Format</label>
                           <select data-v-formats name="settings[image_format]" data-v-setting="image_format" class="form-select">
                             <option value="">Original</option>
                             <option value="webp" data-v-option>Webp</option>
@@ -2320,7 +2387,7 @@
                         <label for="anonymous_comments" class="col-form-label">
                           <input name="settings[anonymous_comments]" data-v-setting="anonymous_comments" class="form-check-input" type="checkbox" id="anonymous_comments" value="1" class="form-check-control">
 
-                          <span>Allow comments only from logged in users</span>
+                          <span>Allow comments without user account</span>
                         </label>
                       </div>
                     </div>
@@ -2673,6 +2740,42 @@
   </div>
   </div>
 
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+
+          <form action="{$this.adminPath}/index.php?module=tools/search" method="get">
+            <input type="hidden" name="module" value="tools/search">
+            <div class="d-flex">
+              <div class="input-group">
+                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <button class="btn btn-outline-primary border-0" type="submit" title="Search">
+                  <div class="la-flip-horizontal">
+                    <i class="la la-search la-lg" aria-hidden="true"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div class="loading d-none d-flex justify-content-center m-5">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </form>
+
+          <div class="search-results">
+          </div>
+
+        </div>
+      </div>
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+  </div>
+
+  <div id="page-loading-status" class="progress progress-bar"></div>
   <!--
 <script id="jquery-js" src="js/jquery.min.js"></script>
 -->
@@ -2707,11 +2810,30 @@ let subdir = "{ $this->subdir }";
   <script id="functions-js" src="/js/admin/functions.js"></script>
   <script id="site-js" src="js/site.js"></script>
   <script id="content-js" src="js/content.js"></script>
-
-
-
   <script>
+let languagesCheckBox = document.querySelectorAll(".language-list input[type=checkbox]");
+let allLanguagesCheckbox = document.getElementById("all-languages-check");
 
+languagesCheckBox.forEach(e => e.addEventListener("change", function (e) {
+	if (this.id == "all-languages-check" && this.checked) {
+		languagesCheckBox.forEach(e => e.checked = false);
+		allLanguagesCheckbox.checked = true;
+	} else {
+		allLanguagesCheckbox.checked = false;
+	}
+}));
+
+let currenciesCheckBox = document.querySelectorAll(".currency-list input[type=checkbox]");
+let allCurrenciesCheckbox = document.getElementById("all-currencies-check");
+
+currenciesCheckBox.forEach(e => e.addEventListener("change", function (e) {
+	if (this.id == "all-currencies-check" && this.checked) {
+		currenciesCheckBox.forEach(e => e.checked = false);
+		allCurrenciesCheckbox.checked = true;
+	} else {
+		allCurrenciesCheckbox.checked = false;
+	}
+}));
 </script>
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">

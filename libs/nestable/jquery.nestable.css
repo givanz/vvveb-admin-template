@@ -74,7 +74,7 @@
   width: 100%;
   text-align: center;
   text-indent: 0;
-  font-size:14px;
+  font-size:12px;
   color:var(--bs-body-color);
 }
 .dd-item > button.dd-expand:before {
@@ -223,7 +223,7 @@
     white-space: nowrap;
     overflow: hidden;
     border: 1px solid var(--bs-border-color);
-	border-right: none;
+	border: none;
 	border-right: 1px solid rgba(var(--bs-body-color-rgb), 0.075);
   
 	background: #fafafa;

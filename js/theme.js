@@ -82,13 +82,28 @@ function generateElements(html) {
   template.innerHTML = html.trim();
   return template.content.children;
 }
-
-		
+/*
+function displayToast(bg, title, message, id = "top-toast") {
+	document.querySelector("#" + id + " .toast-body .message").innerHTML = message;
+	let header = document.querySelector("#" + id + " .toast-header");
+	header.classList.remove(["bg-danger", "bg-success"])
+	header.classList.add(bg);
+	header.querySelector("strong").innerHTML = title;
+	let toast = document.querySelector("#" + id + " .toast").cloneNode();
+	toast.classList.add("show");
+	delay(() => toast.remove(), 5000);
+}	
+*/		
 //ajax url
 function loadAjax(url, selector, callback = null, params = {}, method = "get") {
 	let options = {method};
-	if (method == "post" && params) {
-		options.body = new URLSearchParams(params);
+	if (params) {
+		let p = new URLSearchParams(params);
+		if (method == "post") {
+			options.body = p;
+		} else {
+			url += (url.indexOf('?') > 0 ? '&' :'?') + p.toString();
+		}
 	}
 	
 	fetch(url, options).
@@ -124,4 +139,13 @@ function loadAjax(url, selector, callback = null, params = {}, method = "get") {
 	}).catch(error => {
 		console.log(error.statusText);
 	});
+}
+
+var VvvebTheme = {};
+
+VvvebTheme.ajax = {
+	selector:"a[data-url], a[data-page-url], a[data-v-url]",
+	siteContainer:["#main-content"],
+	scrollContainer:"body",
+	skipUrl:[]
 }

@@ -1,0 +1,38 @@
+<div data-v-field-image>
+  <label class="col-form-label">
+    <div>Text</div>
+    <span class="form-text"></span>
+  </label>
+  <div class="col">
+
+
+	<input type="hidden" data-v-image name="image[image]" id="featured-image-input" value="" name="value">
+								
+	<img data-v-image src="img/placeholder.svg" alt=""
+	 id="featured-image-thumb"
+	 data-v-placeholder=""
+	 data-media-gallery 
+	 data-target-input="#featured-image-input"
+	 data-target-thumb="#featured-image-thumb" data-type="single"
+	 class="img-thumbnail bg-body-tertiary"
+	 style="max-width:200px;"
+	 >
+		
+
+		<div class="py-3">
+			<div class="btn-group">
+				<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
+					data-media-gallery data-target-input="#featured-image-input"
+					data-target-thumb="#featured-image-thumb" data-type="single">
+					<i class="la la-image la-lg"></i> <span>Set image</span>
+				</button>
+				<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
+					<i class="la la-times"></i>
+				</button>
+			</div>
+		</div>
+
+
+
+  </div>
+</div>

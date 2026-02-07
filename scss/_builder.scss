@@ -537,7 +537,15 @@ body
 				}
 			}
 		}
-		
+
+		.menu-toggle, #color-theme-switch {
+				i {
+					font-size: 15px;
+					line-height: 1.4;
+					vertical-align: middle;
+				}
+			}
+
 		html[data-bs-theme="dark"] & img {
 			//filter: brightness(3);
 			filter: invert(93%) hue-rotate(180deg);
@@ -549,6 +557,7 @@ body
 		height:$builder-bottom-panel-height;
 		bottom:0px;
 		position:fixed;
+		z-index:100;
 		border-top:1px solid var(--bs-border-color);
 		left: $builder-left-panel-width;
 		left: calc($builder-left-panel-width +  $builder-canvas-margin);
@@ -562,13 +571,23 @@ body
 		
 			.btn-group {
 				position:absolute;
-				right:0;
-				top:0;
+				right:0px;
+				top:0px;
 				background:var(--bs-body-bg);
 			}
 		}
 		
-	
+		.nav-tabs {
+			background-color: rgba(var(--bs-body-color-rgb), 0.1);
+			
+			.nav-item {
+				max-width:300px;
+				.nav-link {
+					padding:0.3rem 0;
+				}
+			}
+		}
+		
 		#vvveb-code-editor 
 		{
 			//height:calc( 100% - #{$builder-bottom-panel-height});
@@ -595,6 +614,7 @@ body
 		
 		#canvas {
 			height:50%;
+			position:relative;
 		}
 	}
 
@@ -2156,7 +2176,7 @@ div.section {
 .form-select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    box-shadow:rgba(var(--bs-body-color-rgb), 0.08) 0px 1px 2px 0px;
+    box-shadow:rgba(var(--bs-body-color-rgb), 0.05) 0px 1px 2px 0px;
 }
 
 /*
@@ -2470,11 +2490,11 @@ input[type="color"] {
 
 
 .breadcrumb-navigator {
-	padding:0.5rem 0.7rem;
 	min-height:30px;
 	font-size:12px;
 	
 	.breadcrumb {
+		padding:0.5rem 0.7rem;
 		margin:0;
 		
 		.breadcrumb-item {
@@ -2670,7 +2690,8 @@ img.preview {
 		height:30px;
 		font-size: 12px;
 		color: rgba(var(--bs-body-color-rgb), 0.7);
-		background: rgba(var(--bs-primary-rgb), 0.15);	
+		//background: rgba(var(--bs-primary-rgb), 0.15);	
+		border-bottom: 1px solid var(--bs-border-color);
 		cursor:grabbing;
 		
 		> div {

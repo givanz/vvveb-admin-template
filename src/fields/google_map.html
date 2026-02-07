@@ -1,0 +1,26 @@
+<div data-v-field-google_map>
+  <label class="col-form-label">
+    <span>Google maps</span>
+    <span class="form-text"></span>
+  </label>
+  <div>
+    <div class="input-group">
+		<span class="input-group-text">Address</span>
+		<input type="text" class="form-control address" placeholder="Name" name="address">
+	
+		<span class="input-group-text">Lat</span>
+		<input type="text" class="form-control lat" size="5" placeholder="Latitude" value="" name="lat">
+	
+		<span class="input-group-text">Long</span>
+		<input type="text" class="form-control long" size="5" placeholder="Longitude" value="" name="long">
+	
+		<span class="input-group-text">Zoom</span>
+		<input type="number" class="form-control zoom"  size="2" placeholder="Zoom" value="" name="zoom">
+		</div>
+  </div>
+
+  <iframe data-v-if="field.value" frameborder="0" src="https://maps.google.com/maps?q={$field.value.address}&amp;z={$field.value.zoom}&center={$field.value.lat},{$field.value.long}&amp;t=q&amp;key=&amp;output=embed" width="100%" height="100%" style="width:100%;height:100%;left:0px"></iframe>
+  <iframe data-v-if="field.lat && field.long && !field.value" frameborder="0" src="https://maps.google.com/maps?center={$field.value.lat},{$field.value.long}&amp;z={$field.value.zoom}&amp;t=q&amp;key=&amp;output=embed" width="100%" height="100%" style="width:100%;height:100%;left:0px"></iframe>
+
+</div>
+</div>

@@ -14,14 +14,14 @@
 	   <input type="hidden" name="action" id="action" value="loginAs">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions clearfix">
+	   <div class="actions">
 			<div class="title">
 					<h4 class="text-muted my-2">
 						<i class="icon-person-outline"></i>
 						<span>User</span>
 					</h4>
 			</div>
-			<div>			
+			<div class="btns">			
 				<a href="{$this.adminPath}index.php?module=user/users" title="User list"
 					class="btn btn-icon btn-outline-secondary">
 						<i class="la la-arrow-left"></i><span>User list</span>
@@ -32,7 +32,7 @@
 						<i class="la la-user"></i><span>Login as user</span>
 				 </button>
 				  
-				  <button type="submit"
+				  <button type="submit" name="action" value="save" 
 					 class="btn btn-primary btn-icon ms-1"
 					>
 						<i class="icon-create-outline me-2"></i>
@@ -40,11 +40,6 @@
 				  </button>
 		   </div>
 	 </div>
-	 </form>
-	 
-	<form id="user-form" action="" method="post" class="settings" data-v-user>
-	   <input type="hidden" name="action" id="action" value="save">
-	   <input type="hidden" name="csrf" data-v-csrf>
 	   
 	  <div id="main-content" class="px-4">
 
@@ -190,6 +185,12 @@
 <script>
 @@include('../_includes/media-variables.html')
 let usersUrl = '{ $this->usersUrl }';
+let linkUrl           = '{ $this->linkUrl }';
+let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
+let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let contentType       = 'post';
+let postType          = '{ $this->type }';
+let themeFonts        = {};//{ $this->themeFonts };
 </script>
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
@@ -197,4 +198,19 @@ let usersUrl = '{ $this->usersUrl }';
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 
+<script id="tinymce-options-js" src="/js/libs/tinymce-options.js"></script>
+<script id="tinymce-lang-code">
+let lang = "{$this->global.locale}";
+if (lang != "en-us") {
+	tinyMceOptions["language"] = "{$this->global.locale}";
+	tinyMceOptions["directionality"] = ("{$this->global.rtl}" == "1" ? 'rtl' : 'ltr');
+	tinyMceOptions["language_load"] = true;
+	//tinyMceOptions["language_url"] = "../../js/libs/tinymce-dist/langs/" + lang + ".js";
+}
+</script>
+<script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
+<script id="oembed-js" src="/js/libs/oembed.js"></script>
+<script id="tinymce-embed-js" src="/js/libs/tinymce-embed.js"></script>
+
+<script id="content-js"src="js/content.js"></script>
 @@include('../_includes/footer.html')

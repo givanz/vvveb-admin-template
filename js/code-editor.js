@@ -22,6 +22,7 @@ function saveCodeEditor() {
 	
 	let formData = new FormData();
 	formData.append("content", content);
+	formData.append("csrf", document.querySelector('input[name=csrf]')?.value);
 					
 	fetch(url, {method:"POST", body:formData}).
 	then((response) => {
@@ -131,7 +132,7 @@ if (codemirror == false) {
 		indentUnit: 4,
         indentWithTabs: true,
 		viewportMargin:Infinity,
-		theme: 'material'
+		theme: 'duotone-dark'
 	});
 	
 	this.isActive = true;

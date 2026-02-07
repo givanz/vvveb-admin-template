@@ -25,7 +25,7 @@
 				<div class="btns">
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
-							class="btn btn-icon btn-outline-secondary">
+							class="btn btn-icon btn-outline-secondary me-1">
 						<i class="icon-funnel-outline"></i>&nbsp;
 						<i class="icon-chevron-down-outline small"></i>
 					</button>
@@ -43,7 +43,7 @@
 				<form method="get">
 				 
 				 <input type="hidden" class="form-control" name="module" value="">
-				 <input type="hidden" class="form-control" name="action" value="">
+				 <input type="hidden" name="action" value="">
 				 <input type="hidden" class="form-control" name="type" value="">
 				 
                 <div class="card card-block p-3">
@@ -81,8 +81,9 @@
 									<div class="col-sm-10">
 									  <select name="filter[status]" id="filter-by-status" class="form-control" >
 										<option value="">- All -</option>
-										<option value="active" data-v-option>Active</option>
-										<option value="inactive" data-v-option>Inactive</option>
+										<option value="1" data-v-option>Active</option>
+										<option value="0" data-v-option>Inactive</option>
+										<option value="3" data-v-option>Delete request</option>
 									  </select>
 									</div>
 								</div>
@@ -106,6 +107,7 @@
                 <div class="users card-block" data-v-users>
                     <form action="" method="post">
 						<input type="hidden" name="csrf" data-v-csrf>
+						<input type="hidden" id="action" name="action" value="">
 
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 							<!--
@@ -154,7 +156,7 @@
                             <tr data-v-user>
                                 <td class="checkbox">
                                     <label class="form-check">
-                                        <input type="checkbox" class="form-check-input" value="4" name="@@prefix_id[]" data-v-vvveb-action="table.selectRow" data-v-@@prefix_id>
+                                        <input type="checkbox" class="form-check-input" value="" name="@@prefix_id[]" data-v-vvveb-action="table.selectRow" data-v-@@prefix_id>
                                         <span class="form-check-label"></span>
                                         <span class="custom-control-description">&nbsp;</span>
                                     </label>
@@ -176,7 +178,7 @@
                                 <td><span class="small text-muted" data-v-first_name>joe</span></td>
                                 <td><span class="small text-muted" data-v-last_name>joe</span></td>
                                 <td><span class="price" data-v-email>mail@mail.com</span></td>
-                                <td><span class="price badge small" data-v-status>Active</span></td>
+                                <td><span class="price badge small bg-secondary" data-v-status>Active</span></td>
 
 
 								<td class="actions">
@@ -196,7 +198,11 @@
 											}									
 																			  
 										  <li><hr class="dropdown-divider"></li>
-										  <li><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
+										  </li data-v-check-permission-delete>
+											<button type="submit" name="@@prefix_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-@@prefix_id>							
+												<i class="icon-trash-outline"></i><span>Delete</span>
+											</button>
+											</li>	
 										</ul>
 									 </div>
 
@@ -223,7 +229,7 @@
                         
 
 
-                         <div class="bottom clearfix">
+                         <div class="bottom">
                                 <div class="float-start"></div>
 								<div class="float-end">
 							

@@ -76,12 +76,12 @@
         <div id="content">
 
 
-            <div class="content clearfix">
+            <div class="content">
 
 			@@include('../_includes/notifications.html')
 
                 <form id="form" action="" method="post" class="settings" data-v-product>
-					<input type="hidden" name="csrf" data-v-csrf>
+                    <input type="hidden" name="csrf" data-v-csrf>
                     <input type="hidden" name="action" id="action" value="save">
 					<input type="hidden" name="product_id" id="product_id" value="" data-v-if="this.product.product_id" data-v-product-product_id>   
 
@@ -129,12 +129,12 @@
 					</div>
 					<div class="right-column flat small">
 
-						<label class="header" data-v-header="element_header"
+						<label class="header" data-v-header="header_featured_image"
 							   for="header_featured_image"><span>Featured Media</span>
 							<div class="header-arrow"></div>
 						</label>
 						<input class="header_check" type="checkbox" checked="true" id="header_featured_image">
-						<div class="section" data-v-section="element_header">
+						<div class="section" data-v-section="header_featured_image">
 
 							<input type="hidden" data-v-image name="image" id="featured-image-input" value="">
 
@@ -192,7 +192,7 @@
 
 							<div class="mb-3">
 
-							   <div class="categories-list px-2" data-v-sites>
+							   <div class="categories-list px-2 pt-2" data-v-sites>
 									<label class="form-check" data-v-site>
 										<input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site-site_id>
 										<span class="form-check-label" data-v-site-name title="Default">Default</span>

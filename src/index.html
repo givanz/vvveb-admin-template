@@ -1,4 +1,4 @@
-@@include('./_includes/html-head.html', {"title": "Vvveb - Dashboard","scripts":'<link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">'})
+@@include('./_includes/html-head.html', {"title": "Vvveb - Dasboard","scripts":'<link rel="stylesheet" type="text/css" href="libs/gridstack/gridstack.min.css">'})
 
 <body class="home">
 <script>
@@ -34,9 +34,9 @@ let chartjs = {};
 								
 								<div class="flex-grow-1"></div>
 								<div class="icons">
-									<i class="la la-shopping-cart icon bg-success bg-opacity-25 d-inline-block "></i>
-									<h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
 									<h5 class="card-title">Orders</h5>
+									<i class="la la-shopping-cart icon text-success d-inline-block "></i>
+									<h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
 								</div>
 								
 								<div class="flex-grow-1"></div>
@@ -71,9 +71,9 @@ let chartjs = {};
 
 								<div class="flex-grow-1"></div>
 								<div class="icons">
-									<i class="la la-user icon bg-purple bg-opacity-25 d-inline-block"></i>
-									<h3 class="number d-inline-block" data-v-notification-users-month-count>37</h3>
 									<h5 class="card-title">Users</h5>
+									<i class="la la-user icon text-purple d-inline-block"></i>
+									<h3 class="number d-inline-block" data-v-notification-users-month-count>37</h3>
 								</div>
 
 								<div class="flex-grow-1"></div>
@@ -106,9 +106,9 @@ let chartjs = {};
                                 
 								<div class="flex-grow-1"></div>
 								<div class="icons">
-									<i class="la la-comments icon bg-primary bg-opacity-25 d-inline-block"></i>
-									<h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
 									<h5 class="card-title">Comments</h5>
+									<i class="la la-comments icon text-primary d-inline-block"></i>
+									<h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
 								</div>
 
 								<div class="flex-grow-1"></div>
@@ -144,9 +144,9 @@ let chartjs = {};
                                 
 								<div class="flex-grow-1"></div>
 								<div class="icons">
-									<i class="la la-sms icon bg-orange bg-opacity-25 d-inline-block"></i>
-									<h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
 									<h5 class="card-title">Reviews</h5>
+									<i class="la la-sms icon text-success d-inline-block"></i>
+									<h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
 								</div>
 
 								<div class="flex-grow-1"></div>
@@ -261,6 +261,7 @@ let chartjs = {};
                                             responsive: true,
                                             legend: {
                                                 position: 'bottom',
+												display: false,
                                             },
                                             title: {
                                                 display: true,
@@ -336,6 +337,7 @@ let chartjs = {};
                                             responsive: true,
                                             legend: {
                                                 position: 'bottom',
+												display: false,
                                             },
                                             title: {
                                                 display: true,

@@ -77,8 +77,6 @@
 		  </li>
 		</ul>
 		-->
-
-		@@include('../_includes/notifications.html')
 		
 		<div id="safemode" class="alert alert-warning d-flex alert-dismissable">
 			<div class="icon">
@@ -105,6 +103,8 @@
 		<form action="" method="post">
 			<input type="hidden" name="csrf" data-v-csrf>
 			<input type="hidden" name="action" id="action" value="">
+			
+			@@include('../_includes/notifications.html')
 
 				<ul class="nav nav-pills pills-border small mx-2 mb-3 float-start" data-v-plugin-categories>
 				  <li class="nav-item">

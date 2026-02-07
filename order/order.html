@@ -33,13 +33,10 @@
           <img src="" data-v-site-logo-dark>
         </a>
 
-        <a id="color-theme-switch" title="Switch sidebar color theme">
-          <i class="la la-sun"></i>
+        <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <i class="icon-search"></i>
         </a>
 
-        <a class="menu-toggle" title="Toggle sidebar width">
-          <i class="icon-menu-outline"></i>
-        </a>
       </div>
 
       <!-- navbar -->
@@ -51,6 +48,11 @@
             <img src="" data-v-site-logo>
             <img src="" data-v-site-logo-dark>
           </a>
+
+          <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="icon-search"></i>
+          </a>
+
         </div>
 
 
@@ -108,7 +110,7 @@
                 <span class="badge badge-primary" data-v-menu-item-badge></span>
               </a>
 
-              <a class="nav-link mobile d-block d-sm-none" href="/admin" data-v-menu-item-url>
+              <a class="nav-link mobile d-block d-md-none" href="/admin" data-v-menu-item-url>
                 <i class="icon-pulse-outline" data-v-menu-item-icon></i>
                 <img src="#" class="icon-img" data-v-menu-item-icon-img>
                 <span class="title" data-v-menu-item-name>Dashboard</span>
@@ -139,7 +141,7 @@
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
                 <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
@@ -149,7 +151,7 @@
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
                 <i class="icon-document-text-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
@@ -201,7 +203,7 @@
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
                 <i class="icon-document-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
@@ -236,7 +238,7 @@
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
                 <i class="icon-images-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
@@ -246,7 +248,7 @@
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
                 <i class="icon-people-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
@@ -287,7 +289,7 @@
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
                 <i class="icon-mail-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
@@ -296,7 +298,7 @@
               <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
                 <span class="title" data-v-menu-item-name>Ecommerce</span>
               </a>
             </li>
@@ -305,7 +307,7 @@
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
                 <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
@@ -352,7 +354,7 @@
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
                 <i class="icon-cube-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
@@ -449,7 +451,7 @@
               <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
                 <span class="title" data-v-menu-item-name>Configuration</span>
               </a>
             </li>
@@ -458,7 +460,7 @@
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
                 <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
@@ -505,7 +507,7 @@
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
                 <i class="icon-copy-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
@@ -535,7 +537,7 @@
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
                 <i class="icon-reader-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
@@ -559,7 +561,7 @@
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
                 <i class="icon-settings-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
@@ -823,7 +825,7 @@
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
-              <a class="nav-link mobile d-block d-sm-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
                 <i class="icon-globe-outline" data-v-menu-item-icon></i>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
@@ -912,6 +914,12 @@
       <div class="top-header">
 
         <div class="btn-group" data-v-component-sites>
+
+          <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
+            <i class="icon-menu-outline"></i>
+          </button>
+
+
           <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
             <i class="icon-eye-outline"></i>
@@ -946,7 +954,7 @@
         </div>
 
         <div class="btn-group">
-          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <button type="button" class="btn px-1 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="icon-reload-circle-outline"></i>
             <span>Clear cache</span>
           </button>
@@ -958,7 +966,6 @@
                   <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
                   <span>Assets</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -967,7 +974,6 @@
                   <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
                   <span>Templates</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -976,7 +982,6 @@
                   <i class="icon-server-outline me-2 text-body-tertiary"></i>
                   <span>Database</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -985,7 +990,6 @@
                   <i class="icon-document-outline me-2 text-body-tertiary"></i>
                   <span>Page cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -994,7 +998,6 @@
                   <i class="icon-image-outline me-2 text-body-tertiary"></i>
                   <span>Image cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div>
@@ -1003,7 +1006,6 @@
                   <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
                   <span>Model cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
             <div class="dropdown-divider"></div>
@@ -1014,7 +1016,6 @@
                   <i class="icon-sync-outline me-2 text-body-tertiary"></i>
                   <span>All cache</span>
                 </div>
-                <i class="la la-circle-notch ms-2"></i>
               </a>
             </div>
 
@@ -1023,6 +1024,10 @@
 
 
         <div class="float-end">
+
+          <button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
+            <i class="la la-sun"></i>
+          </button>
 
           <div class="btn-group top-notifications" data-v-component-notifications>
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1247,9 +1252,8 @@
               <input type="hidden" name="csrf" data-v-csrf>
 
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="la la-user"></i>
+                <img class="me-2 rounded-circle avatar" src="" height="24" data-v-admin-avatar>
                 <span data-v-admin-display_name>Admin</span>
-                <img class="ms-2 rounded-circle" src="" height="24" data-v-admin-avatar>
               </button>
 
               <div class="dropdown-menu dropdown-menu-end">
@@ -1263,6 +1267,7 @@
 					<div class="dropdown-divider"></div>
 					-->
                 <a class="dropdown-item" href="#" data-v-admin-edit-url>
+                  <i class="la la-edit me-2"></i>
                   <span>Edit Profile</span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -1270,7 +1275,7 @@
 
                   <input type="hidden" name="logout">
 
-                  <button type="submit" value="logout" class="btn btn-primary w-100">
+                  <button type="submit" value="logout" class="btn btn-primary btn-icon w-100">
 
                     <span class="loading d-none">
                       <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -1279,7 +1284,7 @@
                     </span>
 
                     <span class="button-text">
-                      Logout
+                      <span>Logout</span>
                     </span>
 
                   </button>
@@ -1294,7 +1299,7 @@
       </div>
 
 
-      <div class="actions clearfix">
+      <div class="actions">
 
         <div class="title">
           <h4 class="text-muted my-2">
@@ -1334,7 +1339,7 @@
       <div id="content">
 
 
-        <div class="content clearfix" data-v-order>
+        <div class="content" data-v-order>
 
           <div class="notifications" data-v-notifications>
 
@@ -1448,9 +1453,9 @@
                     <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
                         <div class="customer_details">
-                          <div class="clearfix">
-                            <h6 class="float-start">Customer Details</h6>
-                            <div class="btn btn-outline-secondary btn-sm float-end" onclick="document.querySelector('.customer_details').classList.toggle('edit');">
+                          <div class="d-flex justify-content-between mb-3">
+                            <h6 class="my-2">Customer Details</h6>
+                            <div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.customer_details').classList.toggle('edit');">
                               <i class="la la-pen"></i> Edit
                             </div>
                           </div>
@@ -1470,6 +1475,12 @@
                             </div>
                           </div>
                           <div class="edit">
+                            <div class="mb-3 row">
+                              <label for="first_name" class="col-sm-4 col-form-label">Customer</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="user_id" name="first_name" data-v-order-user_id>
+                              </div>
+                            </div>
                             <div class="mb-3 row">
                               <label for="first_name" class="col-sm-4 col-form-label">First name</label>
                               <div class="col-sm-8">
@@ -1508,9 +1519,9 @@
                     <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
                         <div class="order_details">
-                          <div class="clearfix">
-                            <h6 class="float-start">Order Details</h6>
-                            <div class="btn btn-outline-secondary btn-sm float-end" onclick="document.querySelector('.order_details').classList.toggle('edit');">
+                          <div class="d-flex justify-content-between mb-3">
+                            <h6 class="my-2">Order Details</h6>
+                            <div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.order_details').classList.toggle('edit');">
                               <i class="la la-pen"></i> Edit
                             </div>
                           </div>
@@ -1811,112 +1822,13 @@
                     </div>
                     <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
                       <div class="mb-6">
-                        <div class="billing_address">
-                          <div class="clearfix">
-                            <h6 class="float-start">Billing Address</h6>
-                            <div class="btn btn-outline-secondary btn-sm float-end" onclick="document.querySelector('.billing_address').classList.toggle('edit');">
-                              <i class="la la-pen"></i> Edit
-                            </div>
-                          </div>
-                          <div class="display mb-1 lh-lg">
-                            <div data-v-order-billing_first_name data-billing_first_name-text></div>
-                            <div data-v-order-billing_last_name data-billing_last_name-text></div>
-                            <div data-v-order-billing_company data-billing_company-text></div>
-                            <div data-v-order-billing_address_1 data-billing_address_1-text></div>
-                            <div data-v-order-billing_address_2 data-billing_address_2-text></div>
-                            <div data-v-order-billing_city data-billing_city-text></div>
-                            <div data-v-order-billing_post_code data-billing_post_code-text></div>
-                            <div data-v-order-billing_country data-billing_country_id></div>
-                            <div data-v-order-billing_region data-billing_region></div>
-                            <!--
-		<div data-v-order-billing_fields data-billing_fields-text></div>
-		-->
-                          </div>
-                          <div class="edit">
-                            <div class="mb-3 row">
-                              <label for="billing_first_name" class="col-sm-4 col-form-label">First name</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="billing_first_name" name="billing_first_name" data-v-order-billing_first_name>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_last_name" class="col-sm-4 col-form-label">Last name</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="billing_last_name" name="billing_last_name" data-v-order-billing_last_name>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_company" class="col-sm-4 col-form-label">Company</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="billing_company" name="billing_company" data-v-order-billing_company>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_address_1" class="col-sm-4 col-form-label">Address 1</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="billing_address_1" name="billing_address_1" data-v-order-billing_address_1>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_address_2" class="col-sm-4 col-form-label">Address 2</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="billing_address_2" name="billing_address_2" data-v-order-billing_address_2>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_city" class="col-sm-4 col-form-label">City</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="billing_city" name="billing_city" data-v-order-billing_city>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_post_code" class="col-sm-4 col-form-label">Post code</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="billing_post_code" name="billing_post_code" data-v-order-billing_post_code>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_country_id" class="col-sm-4 col-form-label">Country</label>
-                              <div class="col-sm-8">
-                                <select class="form-control" id="billing_country_id" name="billing_country_id" data-text="data-v-order-billing_country" data-v-order-billing_country_id>
-                                  <option value="1" data-v-option>Country name</option>
-                                  <option value="2" data-v-option>Country name</option>
-                                  <option value="3" data-v-option>Country name</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="mb-3 row">
-                              <label for="billing_region_id" class="col-sm-4 col-form-label">Region</label>
-                              <div class="col-sm-8">
-                                <select class="form-control" id="billing_region_id" name="billing_region_id" data-text="data-v-order-billing_region" data-v-order-billing_region_id>
-                                  <option value="1" data-v-option>Country name</option>
-                                  <option value="2" data-v-option>Country name</option>
-                                  <option value="3" data-v-option>Country name</option>
-                                </select>
-                              </div>
-                            </div>
-                            <!--
-		<div class="mb-3 row"><label for="billing_fields" class="col-sm-4 col-form-label">Custom field</label>
-			<div class="col-sm-8"><input type="text" class="form-control" id="billing_fields" name="billing_fields" data-v-order-billing_fields></div>
-		</div>
-		-->
-                            <!--		
-		<div classs="mt-3">
-			<button class="btn btn-success float-end">
-				<i class="la la-save"></i> <span>Save</span>
-			</button>
-		</div>
-		-->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
-                      <div class="mb-6">
                         <div class="shipping_address">
-                          <div class="clearfix">
-                            <h6 class="float-start">Shipping Address</h6>
-                            <div class="btn btn-outline-secondary btn-sm float-end" onclick="document.querySelector('.shipping_address').classList.toggle('edit');">
+                          <div class="d-flex justify-content-between mb-3">
+                            <h6 class="my-2">Shipping Address</h6>
+                            <div class="btn btn-outline-secondary btn-sm edit" onclick="copyFields('billing','shipping')">
+                              <i class="la la-copy"></i> Copy billing
+                            </div>
+                            <div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.shipping_address').classList.toggle('edit');">
                               <i class="la la-pen"></i> Edit
                             </div>
                           </div>
@@ -2013,6 +1925,111 @@
                         </div>
                       </div>
                     </div>
+                    <div class="col-xxl-3 col-lg-6 col-md-12 col-12">
+                      <div class="mb-6">
+                        <div class="billing_address">
+                          <div class="d-flex justify-content-between mb-3">
+                            <h6 class="my-2">Billing Address</h6>
+                            <div class="btn btn-outline-secondary btn-sm edit" onclick="copyFields('shipping','billing')">
+                              <i class="la la-copy"></i> Copy shipping
+                            </div>
+                            <div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.billing_address').classList.toggle('edit');">
+                              <i class="la la-pen"></i> Edit
+                            </div>
+                          </div>
+                          <div class="display mb-1 lh-lg">
+                            <div data-v-order-billing_first_name data-billing_first_name-text></div>
+                            <div data-v-order-billing_last_name data-billing_last_name-text></div>
+                            <div data-v-order-billing_company data-billing_company-text></div>
+                            <div data-v-order-billing_address_1 data-billing_address_1-text></div>
+                            <div data-v-order-billing_address_2 data-billing_address_2-text></div>
+                            <div data-v-order-billing_city data-billing_city-text></div>
+                            <div data-v-order-billing_post_code data-billing_post_code-text></div>
+                            <div data-v-order-billing_country data-billing_country_id></div>
+                            <div data-v-order-billing_region data-billing_region></div>
+                            <!--
+		<div data-v-order-billing_fields data-billing_fields-text></div>
+		-->
+                          </div>
+                          <div class="edit">
+                            <div class="mb-3 row">
+                              <label for="billing_first_name" class="col-sm-4 col-form-label">First name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_first_name" name="billing_first_name" data-v-order-billing_first_name>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_last_name" class="col-sm-4 col-form-label">Last name</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_last_name" name="billing_last_name" data-v-order-billing_last_name>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_company" class="col-sm-4 col-form-label">Company</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_company" name="billing_company" data-v-order-billing_company>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_address_1" class="col-sm-4 col-form-label">Address 1</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_address_1" name="billing_address_1" data-v-order-billing_address_1>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_address_2" class="col-sm-4 col-form-label">Address 2</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_address_2" name="billing_address_2" data-v-order-billing_address_2>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_city" class="col-sm-4 col-form-label">City</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_city" name="billing_city" data-v-order-billing_city>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_post_code" class="col-sm-4 col-form-label">Post code</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" id="billing_post_code" name="billing_post_code" data-v-order-billing_post_code>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_country_id" class="col-sm-4 col-form-label">Country</label>
+                              <div class="col-sm-8">
+                                <select class="form-control" id="billing_country_id" name="billing_country_id" data-text="data-v-order-billing_country" data-v-order-billing_country_id>
+                                  <option value="1" data-v-option>Country name</option>
+                                  <option value="2" data-v-option>Country name</option>
+                                  <option value="3" data-v-option>Country name</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label for="billing_region_id" class="col-sm-4 col-form-label">Region</label>
+                              <div class="col-sm-8">
+                                <select class="form-control" id="billing_region_id" name="billing_region_id" data-text="data-v-order-billing_region" data-v-order-billing_region_id>
+                                  <option value="1" data-v-option>Country name</option>
+                                  <option value="2" data-v-option>Country name</option>
+                                  <option value="3" data-v-option>Country name</option>
+                                </select>
+                              </div>
+                            </div>
+                            <!--
+		<div class="mb-3 row"><label for="billing_fields" class="col-sm-4 col-form-label">Custom field</label>
+			<div class="col-sm-8"><input type="text" class="form-control" id="billing_fields" name="billing_fields" data-v-order-billing_fields></div>
+		</div>
+		-->
+                            <!--		
+		<div classs="mt-3">
+			<button class="btn btn-success float-end">
+				<i class="la la-save"></i> <span>Save</span>
+			</button>
+		</div>
+		-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -2035,7 +2052,7 @@
                       </div>
                     </div>
 
-                    <div class="product-details p-4" data-v-component-product>
+                    <div class="product-details p-2" data-v-component-product>
 
                       <div>
                         <div class="mb-3 row">
@@ -2054,7 +2071,7 @@
                       </div>
 
                       <div class="mb-3 text-end">
-                        <button class="btn btn-primary btn-add-product" type="submit">
+                        <button class="btn btn-outline-secondary btn-icon btn-add-product" type="submit">
                           <i class="la la-plus"></i>
                           <span>Add product</span>
                         </button>
@@ -2268,24 +2285,26 @@
                         <textarea name="log[note]" rows="8" id="input-note" class="form-control"></textarea>
                       </div>
                     </div>
-                    <div class="mb-3 mb-3 d-flex float-end align-items-center">
-                      <label class="col-form-label mx-2" for="input-notify">Send user notification</label>
-                      <div class="">
+                    <div class="mb-3 row align-items-center justify-content-end">
+                      <div class="col-md-3">
                         <div class="form-check">
-                          <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify" checked>
+                          <label class="form-check-label" for="input-notify">Send user notification</label>
+                          <input type="checkbox" class="form-check-input" name="log[notify]" value="1" id="input-notify" checked">
                         </div>
                       </div>
-                      <label class="col-form-label mx-2" for="input-notify-note">Include note in notification, public note</label>
-                      <div class="">
+                      <div class="col-md-3">
                         <div class="form-check">
+                          <label class="form-check-label" for="input-notify-note">Include note in notification, public note</label>
                           <input type="checkbox" class="form-check-input" name="log[public]" value="1" id="input-public">
                         </div>
                       </div>
-                      <div class="ms-4">
-                        <button class="btn btn-primary btn-icon">
-                          <i class="la la-plus"></i>
-                          <span>Add status</span>
-                        </button>
+                      <div class="col-md-3 d-flex justify-content-end">
+                        <div class="ms-4">
+                          <button class="btn btn-primary btn-icon">
+                            <i class="la la-plus"></i>
+                            <span>Add status</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
 
@@ -2310,6 +2329,42 @@
   </div>
 
 
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+
+          <form action="{$this.adminPath}/index.php?module=tools/search" method="get">
+            <input type="hidden" name="module" value="tools/search">
+            <div class="d-flex">
+              <div class="input-group">
+                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <button class="btn btn-outline-primary border-0" type="submit" title="Search">
+                  <div class="la-flip-horizontal">
+                    <i class="la la-search la-lg" aria-hidden="true"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div class="loading d-none d-flex justify-content-center m-5">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </form>
+
+          <div class="search-results">
+          </div>
+
+        </div>
+      </div>
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+  </div>
+
+  <div id="page-loading-status" class="progress progress-bar"></div>
   <!--
 <script id="jquery-js" src="js/jquery.min.js"></script>
 -->
@@ -2402,6 +2457,16 @@ if (productDetails) {
 	});
 	*/
 	let autocomplete = new _AutocompleteInput(document.querySelector('input.autocomplete'), {onSelect});
+}
+
+function copyFields(from, to) {
+	
+	document.querySelectorAll("." + from + "_address input").forEach(e => { 
+		let toInput = document.querySelector("." + to + "_address [name='" + e.name.replace(from + "_", to + "_") + "']");
+		if (toInput) {
+			toInput.value = e.value;
+		}
+	});
 }
 </script>
   <!-- Modal -->

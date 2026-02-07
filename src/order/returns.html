@@ -24,7 +24,7 @@
 				<div class="btns">
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
-							class="btn btn-icon btn-outline-secondary">
+							class="btn btn-icon btn-outline-secondary me-1">
 						<i class="icon-funnel-outline"></i>&nbsp;
 						<i class="icon-chevron-down-outline small"></i>
 					</button>
@@ -40,7 +40,7 @@
 				<form method="get">
 				 
 				 <input type="hidden" class="form-control" name="module" value="">
-				 <input type="hidden" class="form-control" name="action" value="">
+				 <input type="hidden" name="action" value="">
 				 <input type="hidden" class="form-control" name="type" value="">
 				 
                 <div class="card card-block p-3">
@@ -102,6 +102,7 @@
                 <div class="returns card-block" id="main-content" data-v-return>
           		<form action="" method="post">
 					<input type="hidden" name="csrf" data-v-csrf>
+					<input type="hidden" name="action" value="">
 					<div class="bulk-actions px-2 mb-2" style="display:none">
 						<!--
 					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
@@ -196,7 +197,11 @@
 										<ul class="dropdown-menu">
 										  
 										  <li><hr class="dropdown-divider"></li>
-										  <li><a class="dropdown-item text-danger" data-v-return-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
+										  <li data-v-check-permission-delete>
+	<button type="submit" name="return_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-return-return_id>							
+		<i class="icon-trash-outline"></i><span>Delete</span>
+	</button>
+</li>
 										</ul>
 									 </div>
 
@@ -258,7 +263,7 @@
 
                         </table>
 
-						<div class="bottom clearfix">
+						<div class="bottom">
 						<div class="float-start"></div>
 						<div class="float-end">
 					

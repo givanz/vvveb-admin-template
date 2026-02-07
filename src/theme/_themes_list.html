@@ -1,4 +1,4 @@
- <div class="list themes clearfix" data-v-themes>
+ <div class="list themes" data-v-themes>
 	 
 		<div class="list-card" data-v-theme data-v-class-if-active="theme.active">
 
@@ -64,7 +64,7 @@
 
 				  <div class="card-footer text-muted d-flex justify-content-between">
 						<div>
-						<a href="#" class="btn btn-outline-primary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-edit-url>
+						<a href="#" class="btn btn-outline-primary btn-sm btn-icon" target="_blank" data-v-theme-edit-url>
 							<i class="icon-color-wand-outline"></i>
 							<span>Edit theme</span>
 						</a>
@@ -79,7 +79,7 @@
 
 						<div>
 
-							<button type="submit" name="theme" value="" aria-expanded="false" class="btn btn-outline-secondary btn-sm btn-icon" onclick="return duplicateTheme(this)" class="btn btn-primary btn-sm btn-icon"  data-slug="landing" data-market="vvveb"  data-v-if-not="theme.active" data-v-theme-slug>							
+							<button type="submit" name="theme" value="" aria-expanded="false" class="btn btn-outline-secondary btn-sm btn-icon" onclick="return duplicateTheme(this)" class="btn btn-primary btn-sm btn-icon"  data-slug="landing" data-market="vvveb" data-v-theme-slug>							
 								<span class="loading d-none">
 									<span class="progress-text">Downloading 10%</span>
 									<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -99,13 +99,13 @@
 							</a>
 							-->
 							
-							<div class="btn-group dropdown-center dropdown" data-v-if-not="theme.active" >
+							<div class="btn-group dropdown-center dropdown">
 							  <button type="button" class="btn btn-outline-secondary btn-sm btn-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 								Options
 							  </button>
 							  <ul class="dropdown-menu">
 								<li>
-									<button type="submit" name="theme" value="" aria-expanded="false" class="dropdown-item" onclick="return duplicateTheme(this)" data-slug="landing" data-market="vvveb"  data-v-if-not="theme.active" data-v-theme-slug>							
+									<button type="submit" name="theme" value="" aria-expanded="false" class="dropdown-item" onclick="return duplicateTheme(this)" data-slug="landing" data-market="vvveb"  data-v-theme-slug>							
 										<span class="loading d-none">
 											<span class="progress-text">Downloading 10%</span>
 											<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -130,11 +130,31 @@
 									</a>
 								</li>
 								<li><hr class="dropdown-divider"></li>
-								<li>
-									<a href="#" class="dropdown-item text-danger btn-sm btn-icon" onclick="return confirm('Are you sure?')" target="_blank" data-v-theme-delete-url>
-									<i class="icon-close"></i>
-									<span>Delete</span>
-									</a>
+								<li>									
+									<button type="submit" name="theme" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='update';return confirm('Are you sure?')" data-slug="landing" data-v-theme-folder>							
+										<span class="loading d-none">
+											<span class="progress-text">Updating 10%</span>
+											<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+											</span>
+											<span>Updating</span>...
+										</span>
+
+										<span class="button-text">
+											<i class="icon-sync"></i> <span>Force update</span>
+										</span>
+									</button>
+									<button type="submit" name="theme" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-slug="landing" data-v-if-not="theme.active" data-v-theme-folder>							
+										<span class="loading d-none">
+											<span class="progress-text">Downloading 10%</span>
+											<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+											</span>
+											<span>Installing</span>...
+										</span>
+
+										<span class="button-text">
+											<i class="icon-close"></i> <span>Delete</span>
+										</span>
+									</button>				
 								</li>
 							  </ul>
 							</div>

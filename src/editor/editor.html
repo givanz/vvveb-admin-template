@@ -125,11 +125,13 @@ if (themeFonts) {
 
 <!-- code mirror - code editor syntax highlight -->
 <link href="libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
-<link href="libs/codemirror/theme/material.css" rel="stylesheet"/>
+<link href="libs/codemirror/theme/duotone-dark.css" rel="stylesheet"/>
 <script src="libs/codemirror/lib/codemirror.js"></script>
 <script src="libs/codemirror/lib/xml.js"></script>
 <script src="libs/codemirror/lib/css.js"></script>
 <script src="libs/codemirror/lib/formatting.js"></script>
+<script src="libs/codemirror/lib/searchcursor.js"></script>
+<script src="libs/codemirror/lib/search.js"></script>
 <script id="plugin-codemirror" src="/js/vvvebjs/plugin-codemirror.js"></script>	
 <!-- jszip - download page as zip -->
 <!--
@@ -148,11 +150,11 @@ if (themeFonts) {
 <script data-v-theme-js src="editor.js"></script>	
 
 <script>
-let pages  =  { $this->pages };
-Vvveb.data =  { $this->data };
+let pages  = { $this->pages };
+Vvveb.data = { $this->data };
 
 let ready = function() {
-	let firstPage = Object.keys(pages)[0];
+	let firstPage = '{ $this->firstPage }' || Object.keys(pages)[0];
 	Vvveb.Builder.init(pages[firstPage]["url"], function() {
 		//load code after page is loaded here
 	});
@@ -167,11 +169,10 @@ let ready = function() {
 	Vvveb.FileManager.init(fileManagerComponents);
 	Vvveb.SectionList.init(fileManagerComponents);
 	Vvveb.TreeList.init();
-	Vvveb.CssEditor.init();
 
 	Vvveb.FileManager.addPages(pages);
 
-	Vvveb.FileManager.loadPage(firstPage, fileManagerComponents);
+	Vvveb.FileManager.loadPage(pages[firstPage]["name"], fileManagerComponents);
 	Vvveb.Gui.toggleRightColumn(false);
 	Vvveb.Breadcrumb.init();
 

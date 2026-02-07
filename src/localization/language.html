@@ -13,7 +13,7 @@
 	<form id="localization-form" action="" method="post" class="settings" data-v-language>
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
-	   
+
 	   <div class="actions flex-column flex-md-row">
 			<div class="title">
 					<h4 class="text-muted my-2">
@@ -76,8 +76,17 @@
 					<div class="col-sm-10">
 					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="language[name]" data-v-language-name maxlength="64" required>
 					</div>
-				 </div>		 
-
+				 </div>	
+	 
+				  <div class="mb-3 row">
+					<label for="input-slug" class="col-sm-2 col-form-label">
+						<span>Slug</span><br>
+					</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-slug" placeholder="Slug" name="language[slug]" data-v-language-slug maxlength="12" required>
+					</div>
+				  </div>
+				  
 				 <div class="mb-3 row">
 					<label for="input-code" class="col-sm-2 col-form-label">Code</label>
 					<div class="col-sm-10">
@@ -90,7 +99,9 @@
 					<div class="col-sm-10">
 					  <input type="text" class="form-control" id="input-locale" placeholder="Locale" name="language[locale]" data-v-language-locale maxlength="20" required>
 					</div>
-				  </div>		 
+				  </div>				 
+				  
+		 
 
 				  <div class="mb-3 row">
 					<label for="input-site-status" class="col-sm-2 col-form-label" >Status</label>
@@ -149,7 +160,7 @@ let languageSelect = document.getElementById("input-language");
 for (let code in language_list) {
 	let language = language_list[code];
 	languageSelect.append(new Option(
-		(language.emoji ? language.emoji + " " :"") + language.name + (language.pack ? " 🟩" :"") + (language.installed ? " ✅" :""), code
+		(language.emoji ? language.emoji + " " :"") + language.name + (language.pack ? " 🌐" :"") + (language.installed ? " ✅" :""), code
 	));
 }
 
@@ -174,8 +185,9 @@ languageSelect.addEventListener("change", (e) => {
 	let language = language_list[code];
 
 	document.getElementById("input-code").value = code;
-	document.getElementById("input-name").value = language.name;
+	document.getElementById("input-name").value = language.name.match(/[\w ]+/)[0].trim() ?? language.name;
 	document.getElementById("input-locale").value = language.code;
+	document.getElementById("input-slug").value = language.code.match(/[a-z]+/)[0] ?? language.code;
 	document.getElementById("input-rtl").value = (language.rtl ?? 0) ? "1" : "0";
 	
 	if (currentCode) {

@@ -73,14 +73,14 @@
 				  <div class="mb-3 row">
 					<label for="input-site-decimal_place" class="col-sm-2 col-form-label">Decimal place</label>
 					<div class="col-sm-10">
-					  <input type="number" class="form-control" id="input-site-decimal_place" placeholder="Decimal place" name="currency[decimal_place]" data-v-currency-decimal_place required>
+					  <input type="number" class="form-control" id="input-site-decimal_place" placeholder="Decimal place" name="currency[decimal_place]" value="2" data-v-currency-decimal_place required>
 					</div>
 				  </div>					  
 				  
 				  <div class="mb-3 row">
 					<label for="input-site-value" class="col-sm-2 col-form-label">Value</label>
 					<div class="col-sm-10">
-					  <input type="number" class="form-control" id="input-site-value" placeholder="Value" name="currency[value]" data-v-currency-value required>
+					  <input type="number" class="form-control" id="input-site-value" placeholder="Value" name="currency[value]" step="any" min="0" value="1" data-v-currency-value required>
 					</div>
 				  </div>		 
 				 

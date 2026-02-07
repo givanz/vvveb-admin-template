@@ -34,8 +34,6 @@
 
                                 
         <div class="themes" id="main-content" >
-
-            @@include('../_includes/notifications.html')  
             
 			@@include('../_includes/upload-form.html')
 
@@ -44,10 +42,13 @@
 				<input type="hidden" name="action" id="action" value="">
 				<input type="hidden" name="dest" id="dest" value="">
 
+
+				@@include('../_includes/notifications.html')  
+
 				@@include('_themes_list.html', {"actions":true})
 							
 							
-				  <div class="bottom clearfix mb-3">
+				  <div class="bottom mb-3">
 					<div class="float-start"></div>
 					<div class="float-end">
 				

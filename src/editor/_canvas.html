@@ -189,136 +189,6 @@
 
 			</div>
 			
-			<!-- add section box -->
-			<div id="add-section-box" class="drag-elements">
-		
-					<div class="header">							
-						<ul class="nav nav-tabs bg-primary bg-opacity-10" id="box-elements-tabs" role="tablist">
-						  <li class="nav-item component-tab">
-							<a class="nav-link px-3 active" id="box-components-tab" data-bs-toggle="tab" href="#box-components" role="tab" aria-controls="components" aria-selected="true"><i class="icon-cube-outline"></i><small>Components</small></a>
-						  </li>
-						  <li class="nav-item blocks-tab">
-							<a class="nav-link px-3" id="box-blocks-tab" data-bs-toggle="tab" href="#box-blocks" role="tab" aria-controls="blocks" aria-selected="false"><i class="icon-copy-outline"></i> <small>Blocks</small></a>
-						  </li>
-						  <li class="nav-item sections-tab">
-							<a class="nav-link px-3" id="box-sections-tab" data-bs-toggle="tab" href="#box-sections" role="tab" aria-controls="sections" aria-selected="false"><i class="icon-layers-outline"></i> <small>Sections</small></a>
-						  </li>
-                          <!--
-						  <li class="nav-item component-properties-tab" style="display:none">
-							<a class="nav-link" id="box-properties-tab" data-bs-toggle="tab" href="#box-properties" role="tab" aria-controls="properties" aria-selected="false"><i class="la la-lg la-cog"></i> <div><small>Properties</small></div></a>
-						  </li>
-                          -->
-						</ul>
-						
-						<div class="section-box-actions">
-
-							<div id="close-section-btn" class="btn btn-outline-secondary border-0 p-1 py-0 float-end"><i class="la la-times"></i></div>
-						
-							<div class="me-4 small float-end">
-							
-								<div class="form-check d-inline-block small me-1">
-								  <input type="radio" id="add-section-insert-mode-after" value="after" checked="checked" name="add-section-insert-mode" class="form-check-input">
-								  <label class="form-check-label" for="add-section-insert-mode-after">After</label>
-								</div>
-								
-								<div class="form-check d-inline-block small">
-								  <input type="radio" id="add-section-insert-mode-inside" value="inside" name="add-section-insert-mode" class="form-check-input">
-								  <label class="form-check-label" for="add-section-insert-mode-inside">Inside</label>
-								</div>
-						
-							</div>
-							
-						</div>
-						
-						<div class="tab-content">
-						  <div class="tab-pane show active" id="box-components" role="tabpanel" aria-labelledby="components-tab">
-							  
-									<div class="search">
-										  <div class="expand">
-											  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
-											  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
-										  </div>	
-
-										  <input class="form-control component-search" placeholder="Search components" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
-										  <button class="clear-backspace" data-vvveb-action="clearSearch">
-										  <i class="la la-times"></i>
-									  </button>
-								  </div>
-
-								<div class="overflow-y-auto mb-5">
-								  <div>
-									  
-									<ul class="components-list clearfix" data-type="addbox">
-									</ul>
-
-								  </div>
-								</div>
-						  
-						  </div>
-						  <div class="tab-pane" id="box-blocks" role="tabpanel" aria-labelledby="blocks-tab">
-							  
-								<div class="search">
-										  <div class="expand">
-											  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
-											  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
-										  </div>	
-
-										  <input class="form-control block-search" placeholder="Search blocks" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
-										  <button class="clear-backspace"  data-vvveb-action="clearSearch">
-										  <i class="la la-times"></i>
-									  </button>
-								  </div>
-
-								<div class="overflow-y-auto mb-5">
-								  <div>
-									  
-									<ul class="blocks-list clearfix"  data-type="addbox">
-									</ul>
-
-								  </div>
-								</div>
-						  
-						  </div>						  
-						  
-						  <div class="tab-pane" id="box-sections" role="tabpanel" aria-labelledby="sections-tab">
-							  
-								<div class="search">
-										  <div class="expand">
-											  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
-											  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
-										  </div>	
-
-										  <input class="form-control section-search" placeholder="Search sections" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
-										  <button class="clear-backspace"  data-vvveb-action="clearSearch">
-										  <i class="la la-times"></i>
-									  </button>
-								  </div>
-
-								<div class="overflow-y-auto mb-5">
-								  <div>
-									  
-									<ul class="sections-list clearfix"  data-type="addbox">
-									</ul>
-
-								  </div>
-								</div>
-						  
-						  </div>
-						
-							<!-- div class="tab-pane" id="box-properties" role="tabpanel" aria-labelledby="blocks-tab">
-								<div class="component-properties-sidepane">
-									<div>
-										<div class="component-properties">
-											<div class="mt-4 text-center">Click on an element to edit.</div>
-										</div>
-									</div>
-								</div>
-							</div -->
-						</div>
-					</div>		
-
-			</div>
-			<!-- //add section box -->
 
 		<div id="drop-highlight-box">
 		</div>
@@ -327,36 +197,166 @@
 														
 		<iframe src="" id="iframe1">
 		</iframe>
+	</div>
 
-		<div id="tree-list">
-			<div class="header">
-				<div>Navigator</div>
-					<span>
-						<button class="btn btn-sm" data-vvveb-action="treeListRight" aria-pressed="true">
-							<i class="icon-stop-outline"></i>
-						</button>
-						<button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
-							<i class="icon-close"></i>
-						</button>
-					</span>
+	<!-- add section box -->
+	<div id="add-section-box" class="drag-elements">
+
+			<div class="header">							
+				<ul class="nav nav-tabs bg-primary bg-opacity-10" id="box-elements-tabs" role="tablist">
+				  <li class="nav-item component-tab">
+					<a class="nav-link px-3 active" id="box-components-tab" data-bs-toggle="tab" href="#box-components" role="tab" aria-controls="components" aria-selected="true"><i class="icon-cube-outline"></i><small>Components</small></a>
+				  </li>
+				  <li class="nav-item blocks-tab">
+					<a class="nav-link px-3" id="box-blocks-tab" data-bs-toggle="tab" href="#box-blocks" role="tab" aria-controls="blocks" aria-selected="false"><i class="icon-copy-outline"></i> <small>Blocks</small></a>
+				  </li>
+				  <li class="nav-item sections-tab">
+					<a class="nav-link px-3" id="box-sections-tab" data-bs-toggle="tab" href="#box-sections" role="tab" aria-controls="sections" aria-selected="false"><i class="icon-layers-outline"></i> <small>Sections</small></a>
+				  </li>
+				  <!--
+				  <li class="nav-item component-properties-tab" style="display:none">
+					<a class="nav-link" id="box-properties-tab" data-bs-toggle="tab" href="#box-properties" role="tab" aria-controls="properties" aria-selected="false"><i class="la la-lg la-cog"></i> <div><small>Properties</small></div></a>
+				  </li>
+				  -->
+				</ul>
+				
+				<div class="section-box-actions">
+
+					<div id="close-section-btn" class="btn btn-outline-secondary border-0 p-1 py-0 float-end"><i class="la la-times"></i></div>
+				
+					<div class="me-4 small float-end">
+					
+						<div class="form-check d-inline-block small me-1">
+						  <input type="radio" id="add-section-insert-mode-after" value="after" checked="checked" name="add-section-insert-mode" class="form-check-input">
+						  <label class="form-check-label" for="add-section-insert-mode-after">After</label>
+						</div>
+						
+						<div class="form-check d-inline-block small">
+						  <input type="radio" id="add-section-insert-mode-inside" value="inside" name="add-section-insert-mode" class="form-check-input">
+						  <label class="form-check-label" for="add-section-insert-mode-inside">Inside</label>
+						</div>
+				
+					</div>
+					
 				</div>
-			<div class="tree">
-				<ol>
-					<!--
-					<li data-component="Products" class="file">							
-						<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
-						<input type="checkbox" id="idNaN">
-					</li>
-					<li data-component="Posts" class="file">							
-						<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
-						<input type="checkbox" id="idNaN">
-					</li>
-					-->
-				</ol>
-			</div>
-		</div>
+				
+				<div class="tab-content">
+				  <div class="tab-pane show active" id="box-components" role="tabpanel" aria-labelledby="components-tab">
+					  
+							<div class="search">
+								  <div class="expand">
+									  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
+									  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+								  </div>	
+
+								  <input class="form-control component-search" placeholder="Search components" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+								  <button class="clear-backspace" data-vvveb-action="clearSearch">
+								  <i class="la la-times"></i>
+							  </button>
+						  </div>
+
+						<div class="overflow-y-auto mb-5">
+						  <div>
+							  
+							<ul class="components-list" data-type="addbox">
+							</ul>
+
+						  </div>
+						</div>
+				  
+				  </div>
+				  <div class="tab-pane" id="box-blocks" role="tabpanel" aria-labelledby="blocks-tab">
+					  
+						<div class="search">
+								  <div class="expand">
+									  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
+									  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+								  </div>	
+
+								  <input class="form-control block-search" placeholder="Search blocks" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+								  <button class="clear-backspace"  data-vvveb-action="clearSearch">
+								  <i class="la la-times"></i>
+							  </button>
+						  </div>
+
+						<div class="overflow-y-auto mb-5">
+						  <div>
+							  
+							<ul class="blocks-list"  data-type="addbox">
+							</ul>
+
+						  </div>
+						</div>
+				  
+				  </div>						  
+				  
+				  <div class="tab-pane" id="box-sections" role="tabpanel" aria-labelledby="sections-tab">
+					  
+						<div class="search">
+								  <div class="expand">
+									  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
+									  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+								  </div>	
+
+								  <input class="form-control section-search" placeholder="Search sections" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+								  <button class="clear-backspace"  data-vvveb-action="clearSearch">
+								  <i class="la la-times"></i>
+							  </button>
+						  </div>
+
+						<div class="overflow-y-auto mb-5">
+						  <div>
+							  
+							<ul class="sections-list"  data-type="addbox">
+							</ul>
+
+						  </div>
+						</div>
+				  
+				  </div>
+				
+					<!-- div class="tab-pane" id="box-properties" role="tabpanel" aria-labelledby="blocks-tab">
+						<div class="component-properties-sidepane">
+							<div>
+								<div class="component-properties">
+									<div class="mt-4 text-center">Click on an element to edit.</div>
+								</div>
+							</div>
+						</div>
+					</div -->
+				</div>
+			</div>		
 
 	</div>
+	<!-- //add section box -->
+
 	
+	<div id="tree-list">
+		<div class="header">
+			<div>Navigator</div>
+				<span>
+					<button class="btn btn-sm" data-vvveb-action="treeListRight" aria-pressed="true">
+						<i class="icon-stop-outline"></i>
+					</button>
+					<button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
+						<i class="icon-close"></i>
+					</button>
+				</span>
+			</div>
+		<div class="tree">
+			<ol>
+				<!--
+				<li data-component="Products" class="file">							
+					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+					<input type="checkbox" id="idNaN">
+				</li>
+				<li data-component="Posts" class="file">							
+					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+					<input type="checkbox" id="idNaN">
+				</li>
+				-->
+			</ol>
+		</div>
+	</div>	
 	
 </div>

@@ -68,6 +68,9 @@ previewIframe?.addEventListener('load', function(e) {
 	titleElement = previewIframe.contentDocument.querySelector("[data-v-component-post] [data-v-post-name], [data-v-component-product] [data-v-product-name]");
 	contentElement = previewIframe.contentDocument.querySelector("[data-v-component-post] [data-v-post-content], [data-v-component-product] [data-v-product-content]");
 	imageElement = previewIframe.contentDocument.querySelector("[data-v-component-post] [data-v-post-image], [data-v-component-product] [data-v-product-main-image]");
+	let body = previewIframe.contentDocument.querySelector("body");
+	body.style.pointerEvents = "none";
+	body.style.userSelect = "none";
 });
 
 let isDown = false;

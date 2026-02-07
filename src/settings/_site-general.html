@@ -1,7 +1,12 @@
 <div class="mb-3 row">
    <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
    <div class="col-sm-10">
+	<div class="input-group">
 	  <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name  required>
+	  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false">
+			<i class="la la-arrow-down text-primary"></i>
+		</button>
+	</div>
    </div>
 </div>
 <!--
@@ -25,7 +30,7 @@
    </div>
 </div>
 -->
-<div class="mb-3 row">
+<div class="mb-3 row" id="siteDomain" data-v-class-if-collapse="this.site.site_id">
    
    <label for="input-site-host" class="col-sm-2 col-form-label">		
 		<span>Site domain/subdomain</span>
@@ -37,12 +42,12 @@
    <div class="col-sm-10">
 	  <div class="input-group">
 		<input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host  required>
-		<span class="input-group-text">Path</span>
-		<input type="text" class="form-control" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
+		<span class="input-group-text d-none">Path</span>
+		<input type="text" class="form-control d-none" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
 	  
-		<button class="input-group-text" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
-			<i class="la la-lg la-question-circle text-primary"></i>
-		  </button>
+		<button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
+			<i class="la la-question-circle text-primary"></i>
+		</button>
 	  
 	   </div>
 	   

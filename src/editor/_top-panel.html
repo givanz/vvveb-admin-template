@@ -2,6 +2,10 @@
 	
 
 	<div class="btn-group" role="group">
+	  <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
+		  <i class="icon-menu-outline"></i>
+	  </button>
+		  
 	  <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
 		  <img src="/js/vvvebjs/icons/file-manager-layout.svg" width="18" height="18">
 	  </button>
@@ -42,9 +46,14 @@
 			  <i class="icon-expand-outline"></i>
 		  </button>
 
+		  <button class="btn btn-light" title="Show hidden elements" id="toggle-hidden" data-bs-toggle="button" data-vvveb-action="toggleHidden" aria-pressed="false">
+			  <i class="icon-scan-outline"></i>
+		  </button>
+
 		  <button class="btn btn-light active" title="Toggle navigator (Ctrl + Shift + L)" id="toggle-tree-list" data-bs-toggle="button" data-vvveb-action="toggleTreeList" aria-pressed="true">
 			  <i class="icon-layers-outline"></i>
 		  </button>
+		  
 
 		  <!-- button class="btn btn-light" title="Download" id="download-btn" data-vvveb-action="download" data-v-download="index.html">
 			  <i class="la la-download"></i>
@@ -57,11 +66,10 @@
 		
 		<div class="me-2">
 
-			<button class="btn btn-light border-0 btn-sm btn-dark-mode" data-vvveb-action="darkMode">
-				<!-- i class="la la-adjust la-lg"></i -->
+			<button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
 				<i class="la la-sun"></i>
 			</button>
-			
+		
 			<a href="#" class="btn btn-light btn-preview-url" target="_blank" title="View page"><i class="la la-external-link-alt fs-6"></i></a>
 
 			<div class="btn-group responsive-btns" role="group">
@@ -162,7 +170,7 @@
 		<div class="btn-group me-2" role="group">
 		  
 			<div class="btn-group" data-v-check-permission-save>
-				<button class="btn btn-primary btn-sm save-btn" title="Save changes (Ctrl + S)" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
+				<button class="btn btn-primary btn-icon btn-sm save-btn" title="Save changes (Ctrl + S)" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
 					<span class="loading d-none">
 					<i class="la la-save"></i>
 					  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>

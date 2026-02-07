@@ -25,7 +25,7 @@
 				<th class="text-start">
 					<div class="d-flex justify-content-between">
 						<div class="mt-1">Variant</div>
-						<button type="button" class="btn btn-sm btn-outline-primary" id="add-variant-btn" onclick='addAllVariants()'>
+						<button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addAllVariants()'>
 							<i class="la la-plus"></i>
 							<span>All variants</span>
 						</button>
@@ -42,8 +42,8 @@
 				<th class="text-end">Sku</th>
 				<th class="text-end">Barcode</th>
 				<th class="text-end">
-					<button type="button" class="btn btn-sm btn-primary" id="add-variant-btn" onclick='addTemplate("#variant-template", "product_variant", "#variant")'>
-						<i class="la la-plus la-lg text-white"></i>
+					<button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addTemplate("#variant-template", "product_variant", "#variant")'>
+						<i class="la la-plus la-lg"></i>
 					</button>
 				</th>
 			</tr>
@@ -85,7 +85,7 @@
 							<input name="product_variant[0][barcode]" value="" placeholder="Barcode" class="form-control" type="text" data-v-variant-barcode>
 					  </td>
 					  <td class="text-start">
-						<button type="button" onclick="removeRow(this, 'product_variant_id')" title="" class="btn btn-sm btn-danger">
+						<button type="button" onclick="removeRow(this, 'product_variant_id')" title="" class="btn btn-sm btn-outline-danger btn-icon">
 						  <i class="la la-minus-circle la-lg"></i>
 						</button>
 					  </td>
@@ -124,7 +124,7 @@
 						<input name="product_variant[#][barcode]" value="" placeholder="Barcode" class="form-control" type="text" data-v-variant-barcode>
 					  </td>
 					  <td class="text-start">
-						<button type="button" onclick="removeRow(this, 'product_variant_id')" title="" class="btn btn-sm btn-danger">
+						<button type="button" onclick="removeRow(this, 'product_variant_id')" title="" class="btn btn-sm btn-outline-danger btn-icon">
 						  <i class="la la-minus-circle la-lg"></i>
 						</button>
 					  </td>

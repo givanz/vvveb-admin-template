@@ -103,7 +103,11 @@ function nameToKey(name) {
 }
 
 function nameToHost(name) {
-	return (slugify(name) + "." + domain); 
+	if (name.indexOf(".") > 0) {
+		return "*." + name;
+	} else {
+		return (slugify(name) + "." + domain); 
+	}
 }
 
 let updateDomain = function(e) {

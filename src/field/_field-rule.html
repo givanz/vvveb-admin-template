@@ -1,0 +1,58 @@
+<div class="rule row g-2 mb-3">
+	<div class="col-sm-4">
+		<select class="form-select" name="field_group[conditionals][type]" data-ui="0" data-ajax="0" data-multiple="0" data-placeholder="Select" data-allow_null="0">
+		  <optgroup label="Post">
+			<option value="post_type" selected="selected" data-i="0">Post Type</option>
+			<option value="post_template">Post Template</option>
+			<option value="post_status">Post Status</option>
+			<option value="post_format">Post Format</option>
+			<option value="post_category">Post Category</option>
+			<option value="post_taxonomy">Post Taxonomy</option>
+			<option value="post">Post</option>
+		  </optgroup>
+		  <optgroup label="Page">
+			<option value="page_template">Page Template</option>
+			<option value="page_type">Page Type</option>
+			<option value="page_parent">Page Parent</option>
+			<option value="page">Page</option>
+		  </optgroup>
+		  <optgroup label="User">
+			<option value="current_user">Current User</option>
+			<option value="current_user_role">Current User Role</option>
+			<option value="user_form">User Form</option>
+			<option value="user_role">User Role</option>
+		  </optgroup>
+		  <optgroup label="Forms">
+			<option value="taxonomy">Taxonomy</option>
+			<option value="attachment">Attachment</option>
+			<option value="comment">Comment</option>
+			<option value="widget">Widget</option>
+			<option value="nav_menu">Menu</option>
+			<option value="nav_menu_item">Menu Item</option>
+		  </optgroup>
+		</select>
+	</div>
+	<div class="col-sm-4">
+		<select class="form-select" name="field_group[conditionals][operator]" data-ui="0" data-ajax="0" data-multiple="0" data-placeholder="Select" data-allow_null="0">
+		  <option value="==" selected="selected" data-i="0">is equal to</option>
+		  <option value="!=">is not equal to</option>
+		</select>
+	</div>
+	<div class="col-sm-4">
+		<div class="d-flex">
+			<select class="form-select" name="field_group[conditionals][value]" data-ui="0" data-ajax="0" data-multiple="0" data-placeholder="Select" data-allow_null="0">
+			   <option value="post" selected="selected" data-i="0">Post</option>
+			   <option value="page">Page</option>
+			   <option value="product">Product</option>
+			   <option value="shop_order">Order</option>
+			   <option value="shop_coupon">Coupon</option>
+			 </select>
+		  <button class="btn btn-outline-primary btn-icon text-nowrap mx-2 btn-add">
+			<span>and</span> <i class="la la-plus"></i>
+		  </button>
+		  <button class="btn btn-danger btn-icon btn-remove">
+			<i class="la la-minus-circle"></i>
+		  </button>
+		</div>
+	</div>
+ </div>	
