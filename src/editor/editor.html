@@ -117,6 +117,9 @@ if (themeFonts) {
 
 <!-- blocks-->
 <script data-v-theme-blocks id="blocks" src="/js/vvvebjs/blocks.js"></script>	
+
+<!-- styles-->
+<script data-v-theme-styles id="styles" src="/js/vvvebjs/styles.js"></script>	
 <!--
 <script id="blocks-bootstrap4" src="/js/vvvebjs/blocks-bootstrap4.js"></script>	
 -->
@@ -168,6 +171,7 @@ let ready = function() {
 
 	Vvveb.FileManager.init(fileManagerComponents);
 	Vvveb.SectionList.init(fileManagerComponents);
+	Vvveb.StyleList.init();
 	Vvveb.TreeList.init();
 
 	Vvveb.FileManager.addPages(pages);

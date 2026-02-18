@@ -700,7 +700,7 @@ _
 					})
 					.catch(error => {
 						let [response, responseInText] = error;
-						let message = response.statusText ?? "Error uploading!";
+						let message = responseInText ?? response.statusText ?? "Error uploading!";
 						Vvveb.MediaModal.hideUploadLoading();						
 						displayToast("danger", "Error uploading!", message.substr(0, 200), "top");
 					});		

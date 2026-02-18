@@ -180,3 +180,34 @@ section:hover .container-fluid > .row > .col {
   outline: 1px dashed rgba(var(--bs-success-rgb), 0.35);
   outline-offset: -2px;
 }
+
+#vvvebjs-new-section {
+  background: rgb(248, 249, 250);
+  background: var(--bs-tertiary-bg);
+  display: block;
+}
+#vvvebjs-new-section .col {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #fff;
+  background: var(--bs-body-bg);
+  border: 1px dashed #ccc;
+}
+#vvvebjs-new-section button {
+  margin: 0.5rem;
+  background: #0030C0;
+  padding: 0.4rem 2.5rem;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 3px;
+  border-color: #0030C0;
+  border-width: 1px;
+}
+#vvvebjs-new-section .container,
+#vvvebjs-new-section .row,
+#vvvebjs-new-section .col {
+  padding: 1rem;
+  justify-content: center;
+}

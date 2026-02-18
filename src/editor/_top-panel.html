@@ -2,19 +2,19 @@
 	
 
 	<div class="btn-group" role="group">
-	  <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
+	  <button class="btn px-2 mx-1 menu-toggle" title="Toggle sidebar width">
 		  <i class="icon-menu-outline"></i>
 	  </button>
 		  
-	  <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
+	  <button class="btn btn-light px-1" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
 		  <img src="/js/vvvebjs/icons/file-manager-layout.svg" width="18" height="18">
 	  </button>
 
-	  <button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
+	  <button class="btn btn-light px-1" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
 		  <img src="/js/vvvebjs/icons/left-column-layout.svg" width="18" height="18">
 	  </button>
 	  
-	  <button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
+	  <button class="btn btn-light px-1" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
 		  <img src="/js/vvvebjs/icons/right-column-layout.svg" width="18" height="18">
 	  </button>
 
@@ -66,25 +66,46 @@
 		
 		<div class="me-2">
 
-			<button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
+			<button id="color-theme-switch" title="Switch sidebar color theme" class="btn btn-light px-1 ms-1">
 				<i class="la la-sun"></i>
 			</button>
 		
-			<a href="#" class="btn btn-light btn-preview-url" target="_blank" title="View page"><i class="la la-external-link-alt fs-6"></i></a>
+			<a href="#" class="btn btn-light px-1 btn-preview-url" target="_blank" title="View page"><i class="la la-external-link-alt fs-6"></i></a>
 
 			<div class="btn-group responsive-btns" role="group">
-			 
-			 <button id="mobile-view" data-view="mobile" class="btn btn-light" title="Mobile view" data-vvveb-action="viewport">
-				  <i class="la la-mobile"></i>
-			  </button>
+			
+				<button type="button" class="btn btn-light btn-sm px-1 me-1" data-bs-toggle="dropdown" aria-expanded="false" title="Breakpoints">
+					<i class="la la-mobile"></i>
+				</button>
+			
+				<div class="dropdown-menu">			
 
-			  <button id="tablet-view"  data-view="tablet" class="btn btn-light" title="Tablet view" data-vvveb-action="viewport">
-				  <i class="la la-tablet"></i>
-			  </button>
-			  
-			  <button id="desktop-view"  data-view="" class="btn btn-light" title="Desktop view" data-vvveb-action="viewport">
-				  <i class="la la-laptop"></i>
-			  </button>
+					<button id="mobile-view" data-view="sm" class="btn btn-light w-100" title="Mobile view" data-vvveb-action="viewport">
+						  <i class="la la-mobile"></i>
+						  <span>Mobile view</span>
+						</button>
+
+					  <button id="tablet-view"  data-view="md" class="btn btn-light w-100" title="Tablet view" data-vvveb-action="viewport">
+						  <i class="la la-tablet la-rotate-90"></i>
+						  <span>Tablet view</span>
+					  </button>
+					
+					  <button id="tablet-landscape-view"  data-view="lg" class="btn btn-light w-100" title="Tablet landscape view" data-vvveb-action="viewport">
+						  <i class="la la-tablet"></i>
+						  <span>Tablet landscape view</span>
+					  </button>
+				
+					  <button id="laptop-view"  data-view="xl" class="btn btn-light w-100" title="Laptop view" data-vvveb-action="viewport">
+						  <i class="la la-laptop"></i>
+						  <span>Laptop view</span>
+					  </button>
+					
+					  <button id="desktop-view"  data-view="xxl" class="btn btn-light w-100" title="Desktop view" data-vvveb-action="viewport">
+						  <i class="la la-desktop"></i>
+						  <span>Desktop view</span>
+					  </button>
+
+				</div>
 
 				<div class="percent">
 				   <input type="number" id="zoom" value="100" step="10" min="10" max="100" class="form-control" data-vvveb-action="zoomChange" data-vvveb-on="change">
@@ -96,7 +117,7 @@
 		<div class="align-self-center">
 			<button type="button" class="btn btn-light btn-sm me-2" data-bs-toggle="dropdown" aria-expanded="false" title="Revisions">
 				<strong class="small revisions-count">0</strong> 
-				<i class="la la-lg la-history"></i> 
+				<i class="la la-lg la-history" style="font-size:1rem"></i> 
 				<!-- <span>revisions</span> -->
 			</button>
 		
@@ -172,13 +193,18 @@
 			<div class="btn-group" data-v-check-permission-save>
 				<button class="btn btn-primary btn-icon btn-sm save-btn" title="Save changes (Ctrl + S)" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+s" disabled>
 					<span class="loading d-none">
-					<i class="la la-save"></i>
+					  <!--
+					  <i class="icon-save-outline"></i> 
+					  -->
 					  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
 						<span>Saving </span> ... 
 					  </span>
 
 					<span class="button-text">
-					  <i class="icon-save-outline"></i> <span>Save</span>
+					  <!--
+					  <i class="icon-save-outline"></i> 
+					  -->
+					  <span>Save</span>
 					</span>				
 				</button>
 				<button type="button" class="btn btn-icon btn-primary btn-sm save-btn dropdown-toggle dropdown-toggle-split text-white" 

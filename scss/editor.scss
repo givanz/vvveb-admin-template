@@ -131,6 +131,13 @@ $font-size-base: 1rem;
 	}
 }
 
+.btn-xs {
+    --bs-btn-font-size: 0.75rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-padding-y:0.5rem;
+    --bs-btn-padding-x:1rem;
+}
+
 label.form-check .form-check-input {
     float: none;
     vertical-align: middle;

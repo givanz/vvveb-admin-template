@@ -328,6 +328,13 @@ body > div#container, .small-nav, .main
 	/*box-shadow: 0px 2px 3px #eee;*/
 }
 
+.btn-xs {
+    --bs-btn-font-size: 0.75rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-padding-y:0.5rem;
+    --bs-btn-padding-x:1rem;
+}
+
 .btn-icon-single
 {
 	padding:0rem;
@@ -362,8 +369,8 @@ body > div#container, .small-nav, .main
 	//padding:0.5rem 2.1rem;
 	//padding:0.5rem 1rem;
 	box-shadow:0 4px 4px #08080814, 0 1px 2px #08080833, inset 0 6px 12px #ffffff1f, inset 0 1px 1px #fff3;
-	box-shadow:1px 1px 2px 1px rgba(var(--bs-body-color-rgb),0.07),1px 1px 2px 1px rgba(var(--bs-body-bg-rgb),0.15) inset;
-	box-shadow:0 4px 4px rgba(var(--bs-body-color-rgb),0.08), 0 6px 12px rgba(var(--bs-body-color-rgb),0.012), 0 6px 12px rgba(var(--bs-body-bg-rgb),0.12) inset, 0 1px 1px rgba(var(--bs-body-bg-rgb),0.2) inset;
+	box-shadow:1px 1px 2px 1px rgba(0, 0, 0,0.07),1px 1px 2px 1px rgba(255, 255, 255,0.15) inset;
+	box-shadow:0 4px 4px rgba(0, 0, 0,0.08), 0 6px 12px rgba(0, 0, 0,0.012), 0 6px 12px rgba(255, 255, 255,0.12) inset, 0 1px 1px rgba(255, 255, 255,0.2) inset;
 	//border:none;
 	font-weight:500;
 	/*
@@ -376,7 +383,7 @@ body > div#container, .small-nav, .main
 	*/
 	&.btn-outline-primary {
 		border-width:0px;
-		box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(var(--bs-primary-rgb), 0.15) 0px 1px 2px 0px, rgba(var(--bs-primary-rgb), 0.2) 0px 0px 0px 1px;
+		box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(var(--bs-primary-rgb), 0.15) 0px 1px 2px 0px, rgba(var(--bs-primary-rgb), 0.4) 0px 0px 0px 1px;
 
 		&:hover
 		{
@@ -385,17 +392,18 @@ body > div#container, .small-nav, .main
 		}
 		
 		i {
-			//border-right:1px solid rgba(var(--bs-body-color-rgb), 0.1);
+			//border-right:1px solid rgba(0, 0, 0, 0.1);
 			background:transparent;
 		}
 	}
 	
 	&.btn-outline-secondary, &.btn-outline-success , &.btn-outline-danger {
-		//box-shadow:0px 0px 3px 1px rgba(var(--bs-body-color-rgb), 0.1), -1px 1px 2px 0px rgba(var(--bs-body-bg-rgb), 0.15) inset;
-		box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(var(--bs-body-color-rgb), 0.12) 0px 1px 2px 0px, rgba(var(--bs-body-color-rgb), 0.08) 0px 0px 0px 1px;
+		//box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.1), -1px 1px 2px 0px rgba(255, 255, 255, 0.15) inset;
+		box-shadow:rgba(var(--bs-body-color-rgb), 0) 0px 0px 0px 0px, rgba(var(--bs-body-color-rgb), 0) 0px 0px 0px 0px, rgba(var(--bs-body-color-rgb), 0.12) 0px 1px 2px 0px, rgba(var(--bs-body-color-rgb), 0.08) 0px 0px 0px 1px;
 		//--bs-btn-bg:var(--bs-body-bg);
 		border: none;
 		--bs-border-width:0;
+		color:rgba(var(--bs-body-color-rgb), 0.7);
 	}
 	
 	&.btn-gray {
@@ -404,7 +412,7 @@ body > div#container, .small-nav, .main
 	}
 	
 	&.btn-secondary {
-		box-shadow:1px 1px 2px 1px rgba(var(--bs-body-color-rgb),0.07),-1px 1px 2px 0px rgba(var(--bs-body-bg-rgb),0.15) inset;
+		box-shadow:1px 1px 2px 1px rgba(0, 0, 0,0.07),-1px 1px 2px 0px rgba(255, 255, 255,0.15) inset;
 		//--bs-btn-bg:var(--bs-body-bg);
 		i {
 			background: transparent;
@@ -412,7 +420,7 @@ body > div#container, .small-nav, .main
 	}
 
 	&.btn-primary {
-		//box-shadow:1px 1px 2px 1px rgba(var(--bs-body-color-rgb),0.07),1px 1px 2px 1px rgba(var(--bs-body-bg-rgb),0.15) inset;
+		//box-shadow:1px 1px 2px 1px rgba(0, 0, 0,0.07),1px 1px 2px 1px rgba(255, 255, 255,0.15) inset;
 		//box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.2) 0px 0.75px 0px 0px inset, rgba(var(--bs-primary-rgb), 0.4) 0px 1px 2px 0px, rgba(var(--bs-primary-rgb), 0.8) 0px 0px 0px 1px;
 		//padding:0.5rem 2.1rem;
 		//padding-left:2.1rem;
@@ -425,7 +433,7 @@ body > div#container, .small-nav, .main
 		
 
 		i {
-			/*background: rgba(var(--bs-body-bg-rgb), 0.1);*/
+			/*background: rgba(255, 255, 255, 0.1);*/
 		}
 	}
 	
@@ -439,7 +447,7 @@ body > div#container, .small-nav, .main
 
 	&:after {
 		content: ".";
-		background-image:linear-gradient(rgba(var(--bs-body-bg-rgb), 1), rgba(var(--bs-body-bg-rgb), 0));
+		background-image:linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -449,7 +457,7 @@ body > div#container, .small-nav, .main
 	}
 
 	&.btn-outline-secondary:after,&.btn-outline-primary:after,&.btn-outline-secondary:after {
-		background-image: linear-gradient(rgba(var(--bs-body-color-rgb), 0), rgba(var(--bs-body-color-rgb), 1));
+		background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 		opacity: 0.03;
 	}
 
@@ -2213,24 +2221,6 @@ select[name=visibility] option[value="public"]   {  }
 	}
 }
 
-button.btn-close {
-    padding: 0;
-    background-color: transparent;
-    border: 0;
-    appearance: none;
-	vertical-align:middle;
-}
-/*
-.btn-close {
-    //float: right;
-    //font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1;
-    //color: #000;
-    //text-shadow: 0 1px 0 var(--bs-gray-100);
-    opacity: .5;
-}
-*/
 
 .editor
 {

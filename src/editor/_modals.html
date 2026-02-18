@@ -234,15 +234,10 @@
 							
 						</label>     
 						<div class="col-sm-9 input">
-							<select class="form-select" name="startTemplateUrl" data-v-theme-templates>
-								<option value="new-page-blank-template.html" data-v-option>Blank Template</option>        
-								<option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>       
-								<option value="demo/album/index.html" data-v-option>Album</option>       
-							</select> 
-							
+				
 							<div class="d-flex mt-3">
 								<div class="form-check">
-									<input id="template-type-global-radio" class="form-check-input" name="template-type" type="radio" value="global" checked="">
+									<input id="template-type-global-radio" class="form-check-input" name="template-type" type="radio" value="global" checked="" onclick="startTemplate.style.display = 'none'">
 									<label class="form-check-label" for="template-type-global-radio">
 									  <strong class="mb-0 fw-medium">Use global template</strong>
 									  <p class="text-muted">Shared with other pages using this template</p>
@@ -251,13 +246,19 @@
 
 
 								<div class="form-check">
-									<input id="template-type-new-radio" class="form-check-input" name="template-type" type="radio" value="new">
+									<input id="template-type-new-radio" class="form-check-input" name="template-type" type="radio" value="new" onclick="startTemplate.style.display = ''">
 									<label class="form-check-label d-block" for="template-type-new-radio">
 									  <strong class="mb-0 fw-medium">Save as new template</strong>
 									  <p class="text-muted">Unique template to this page</p>
 									</label>
 								  </div>
 							</div>
+							
+							<select class="form-select" name="startTemplateUrl" id="startTemplate" style="display:none" data-v-theme-templates>
+								<option value="new-page-blank-template.html" data-v-option>Blank Template</option>        
+								<option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>       
+								<option value="demo/album/index.html" data-v-option>Album</option>       
+							</select> 						
 						</div>     
 					</div>					
 				</div>
