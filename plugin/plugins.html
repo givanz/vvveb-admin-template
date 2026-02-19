@@ -1317,7 +1317,7 @@
 					<i class="icon-create-outline"></i> Edit selected
 				</button>
 				-->
-          <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Delete selected" class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
+          <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Delete selected" onclick="var action=document.getElementById('action');action.value='delete';if(confirm('Are you sure?')) action.form.submit()" class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
             <i class="icon-trash-outline"></i> Delete selected
           </button>
 
