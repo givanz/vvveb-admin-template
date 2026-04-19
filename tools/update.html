@@ -1203,7 +1203,7 @@
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-flag me-1"></i>
-                <span data-v-language-info-name>English</span>
+                <span data-v-language-info-slug>English</span>
               </button>
 
 
@@ -1417,7 +1417,7 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center">
 
-                    <i class="la la-atom icon bg-orange bg-opacity-75 text-white d-inline-block rounded-2"></i>
+                    <i class="la la-atom icon text-orange d-inline-block rounded-2 px-2"></i>
                     <div class="d-inline-block mx-4">
                       <h5>Core</h5>
                     </div>
@@ -1442,7 +1442,7 @@
 
                     <div class="flex-fill mx-5" data-v-if="this.update.core.hasUpdate">
 
-                      <a class="btn btn-outline-success btn-icon update-core-btn" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}'>
+                      <a class="btn btn-outline-secondary btn-icon update-core-btn" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}'>
 
                         <span class="loading d-none">
                           <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -1468,7 +1468,7 @@
                           Force update
                         </summary>
 
-                        <a class="btn btn-outline-success btn-icon update-core-btn" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}'>
+                        <a class="btn btn-outline-secondary btn-icon update-core-btn" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}'>
 
                           <span class="loading d-none">
                             <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -1510,7 +1510,7 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center">
 
-                    <i class="la la-puzzle-piece icon bg-purple bg-opacity-75 text-white d-inline-block rounded-2"></i>
+                    <i class="la la-puzzle-piece icon text-purple d-inline-block rounded-2 px-2"></i>
 
                     <div>
                       <div class="d-inline-block mx-4">
@@ -1537,7 +1537,7 @@
 
                     <div class="flex-fill mx-4">
 
-                      <a class="btn btn-outline-success btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"plugins"}'>
+                      <a class="btn btn-outline-secondary btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"plugins"}'>
                         <i class="la la-redo-alt la-lg"></i> Update now
                       </a>
 
@@ -1565,7 +1565,7 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center">
 
-                    <i class="icon-copy-outline icon bg-success text-white d-inline-block rounded-2"></i>
+                    <i class="icon-copy-outline icon text-success d-inline-block rounded-2 px-2"></i>
 
                     <div>
                       <div class="d-inline-block mx-4">
@@ -1592,7 +1592,7 @@
 
                     <div class="flex-fill mx-4">
 
-                      <a class="btn btn-outline-success btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"themes"}'>
+                      <a class="btn btn-outline-secondary btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"themes"}'>
                         <i class="la la-redo-alt la-lg"></i> Update now
                       </a>
 
@@ -1629,6 +1629,7 @@
 
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-content">
         <div class="modal-body p-0">
 
@@ -1636,7 +1637,7 @@
             <input type="hidden" name="module" value="tools/search">
             <div class="d-flex">
               <div class="input-group">
-                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
                   <div class="la-flip-horizontal">
                     <i class="la la-search la-lg" aria-hidden="true"></i>
@@ -1657,7 +1658,6 @@
 
         </div>
       </div>
-      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
   </div>

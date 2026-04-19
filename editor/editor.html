@@ -915,7 +915,7 @@
 
 
           <div class="btn-group" role="group">
-            <button class="btn px-2 mx-1 menu-toggle" title="Toggle sidebar width">
+            <button class="btn px-2 menu-toggle" title="Toggle sidebar width">
               <i class="icon-menu-outline"></i>
             </button>
 
@@ -1140,11 +1140,11 @@
           <div>
             <div id="filemanager">
               <div class="header">
-                <span class="text-muted lh-lg">
-                  <span>Pages</span>
-                </span>
+                <div class="search">
+                  <input class="form-control h-100" placeholder="Pages" type="search" data-vvveb-action="searchPages" data-vvveb-on="input">
+                </div>
 
-                <div class="float-end" role="group">
+                <div class="btns" role="group">
 
                   <button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
                     <span>Add page</span>
@@ -1156,9 +1156,9 @@
                     <i class="icon-add"></i>
                   </button>
                   <!--  
-				  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
-					  <i class="la la-trash"></i> <small>Delete</small>
-				  </button> -->
+			  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
+				  <i class="la la-trash"></i> <small>Delete</small>
+			  </button> -->
                 </div>
 
               </div>
@@ -1959,6 +1959,9 @@
                 <button class="btn btn-sm" data-vvveb-action="treeListRight" aria-pressed="true">
                   <i class="icon-stop-outline"></i>
                 </button>
+                <button class="btn btn-sm" data-vvveb-action="treeListPanel" aria-pressed="true">
+                  <i class="icon-chevron-back-outline"></i>
+                </button>
                 <button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
                   <i class="icon-close"></i>
                 </button>
@@ -2554,7 +2557,7 @@
 	<div>
 		<video id="thumb-v{%=key%}" class="img-thumbnail p-0" data-target-input="#input-v{%=key%}" data-target-thumb="#thumb-v{%=key%}" style="cursor:pointer" src="" width="225" height="225" playsinline loop muted controls></video>
 		<input name="v{%=key%}" type="text" class="form-control mt-1" id="input-v{%=key%}"/>
-		<button name="button" class="btn btn-secondary btn-sm btn-icon mt-2 w-100" data-target-input="#vinput-v{%=key%}" data-target-thumb="#thumb-v{%=key%}"><i class="la la-video la-lg"></i><span>Set video</span></button>
+		<button name="button" class="btn btn-secondary btn-sm btn-icon mt-2 w-100" data-target-input="#input-v{%=key%}" data-target-thumb="#thumb-v{%=key%}"><i class="la la-video la-lg"></i><span>Set video</span></button>
 	</div>
 	
 </script>
@@ -3095,7 +3098,7 @@
                         <div class="col-4">
                           <input type="hidden" data-v-image name="image" id="featured-image-input" value="">
 
-                          <img data-v-image src="img/placeholder.svg" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="img-thumbnail bg-body-tertiary p-0">
+                          <img data-v-image src="/media/placeholder.svg" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="img-thumbnail bg-body-tertiary p-0">
 
 
                           <div class="btn-group w-100 mt-2">
@@ -3156,65 +3159,79 @@
                         </div>
                       </div>
 
-                      <select class="form-select" name="startTemplateUrl" id="startTemplate" style="display:none" data-v-theme-templates>
-                        <option value="new-page-blank-template.html" data-v-option>Blank Template</option>
-                        <option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>
-                        <option value="demo/album/index.html" data-v-option>Album</option>
-                      </select>
+                      <div id="startTemplate" style="display:none">
+                        <select class="form-select" id="page-url" name="startTemplateUrl" data-v-theme-templates>
+                          <option value="new-page-blank-template.html" data-v-option>Blank Template</option>
+                          <option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>
+                          <option value="demo/album/index.html" data-v-option>Album</option>
+                        </select>
+                        <div class="page-preview-col mt-2">
+                          <div class="page-preview">
+                            <iframe id="page-preview" src="http://vvveb.net/themes/landing/index-landing.html"></iframe>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
               </div>
 
-              <div class="template" style="display:none">
-                <div class="mb-3 row" data-key="template">
-                  <label class="col-sm-3 col-form-label">
-                    Start template
-                    <abbr title="The contents of this template will be used as a start for the new template">
-                      <i class="la la-lg la-question-circle text-primary"></i>
-                    </abbr>
+              <div class="template row" style="display:none">
+                <div class="col">
+                  <div class="mb-3 row" data-key="template">
+                    <label class="col-sm-4 col-form-label">
+                      Start template
+                      <abbr title="The contents of this template will be used as a start for the new template">
+                        <i class="la la-lg la-question-circle text-primary"></i>
+                      </abbr>
 
-                  </label>
-                  <div class="col-sm-9 input">
-                    <select class="form-select" name="startTemplateUrl" disabled data-v-theme-templates>
-                      <option value="new-page-blank-template.html" data-v-option>Blank Template</option>
-                      <option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>
-                      <option value="demo/album/index.html" data-v-option>Album</option>
-                    </select>
+                    </label>
+                    <div class="col-sm-8 input">
+                      <select class="form-select" id="template-url" name="startTemplateUrl" disabled data-v-theme-templates>
+                        <option value="new-page-blank-template.html" data-v-option>Blank Template</option>
+                        <option value="demo/narrow-jumbotron/index.html" data-v-option>Narrow jumbotron</option>
+                        <option value="demo/album/index.html" data-v-option>Album</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
 
-                <div class="mb-3 row" data-key="href">
-                  <label class="col-sm-3 col-form-label">File name</label>
-                  <div class="col-sm-9 input">
-                    <div>
-                      <input name="file" type="text" class="form-control" placeholder="my-page.html" disabled required>
+                  <div class="mb-3 row" data-key="href">
+                    <label class="col-sm-4 col-form-label">File name</label>
+                    <div class="col-sm-8 input">
+                      <div>
+                        <input name="file" type="text" class="form-control" placeholder="my new page" disabled required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--
+					<div class="mb-3 row" data-key="href">     
+						 <label class="col-sm-3 form-label">Url</label>      
+						<div class="col-sm-9 input">
+							<div>   
+								<input name="url" type="text" class="form-control" placeholder="/my-page.html" required>  
+							</div>
+						</div>     
+					</div>
+					-->
+                  <div class="mb-3 row" data-key="href">
+                    <label class="col-sm-4 col-form-label">
+                      Save to folder
+                    </label>
+                    <div class="col-sm-8 input">
+                      <select class="form-select" name="folder" disabled data-v-theme-folders>
+                        <option value="/" data-v-option>/</option>
+                        <option value="content" data-v-option>Content</option>
+                        <option value="product" data-v-option>Product</option>
+                        <option value="checkout" data-v-option>Checkout</option>
+                      </select>
                     </div>
                   </div>
                 </div>
-
-                <!--
-				<div class="mb-3 row" data-key="href">     
-					 <label class="col-sm-3 form-label">Url</label>      
-					<div class="col-sm-9 input">
-						<div>   
-							<input name="url" type="text" class="form-control" placeholder="/my-page.html" required>  
-						</div>
-					</div>     
-				</div>
-				-->
-                <div class="mb-3 row" data-key="href">
-                  <label class="col-sm-3 col-form-label">
-                    Save to folder
-                  </label>
-                  <div class="col-sm-9 input">
-                    <select class="form-select" name="folder" disabled data-v-theme-folders>
-                      <option value="/" data-v-option>/</option>
-                      <option value="content" data-v-option>Content</option>
-                      <option value="product" data-v-option>Product</option>
-                      <option value="checkout" data-v-option>Checkout</option>
-                    </select>
+                <div class="col page-preview-col">
+                  <div class="page-preview">
+                    <iframe id="template-preview" src="http://vvveb.net/themes/landing/index-landing.html"></iframe>
                   </div>
                 </div>
               </div>
@@ -3463,6 +3480,7 @@
 
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-content">
         <div class="modal-body p-0">
 
@@ -3470,7 +3488,7 @@
             <input type="hidden" name="module" value="tools/search">
             <div class="d-flex">
               <div class="input-group">
-                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
                   <div class="la-flip-horizontal">
                     <i class="la la-search la-lg" aria-hidden="true"></i>
@@ -3491,7 +3509,6 @@
 
         </div>
       </div>
-      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
   </div>
@@ -3685,7 +3702,21 @@ if (document.readyState !== "loading") {
 
 let defaultTemplates = {'post':'content/post.html', 'page': 'content/page.html', 'product': 'product/product.html', 'template': 'blank.html'};
 
-document.querySelector("[name='startTemplateUrl']").value = defaultTemplates['page'] ?? '';
+let pageUrl         = document.getElementById("page-url");
+let templateUrl     = document.getElementById("template-url");
+let pagePreview     = document.getElementById("page-preview");
+let templatePreview = document.getElementById("template-preview");
+
+pageUrl.value   = defaultTemplates['page'] ?? '';
+pagePreview.src = Vvveb.themeBaseUrl + (defaultTemplates['page'] ?? '');
+
+pageUrl.addEventListener('change', e => {
+	pagePreview.src = Vvveb.themeBaseUrl + pageUrl.value;
+});
+
+templateUrl.addEventListener('change', e => {
+	templatePreview.src = Vvveb.themeBaseUrl + templateUrl.value;
+});
 
 let newPageTab = function (event) {
 	let active = this.value;
@@ -3708,7 +3739,9 @@ let newPageTab = function (event) {
 		});
 		
 		let templateSelect = section.querySelector("[name='startTemplateUrl']");
+
 		if (templateSelect) {
+			section.querySelector(".page-preview iframe").src = Vvveb.themeBaseUrl + (defaultTemplates[active] ?? '');
 			templateSelect.value = defaultTemplates[active] ?? '';
 		}
 	});

@@ -20,7 +20,7 @@
 </head>
 
 
-<body>
+<body class="site-settings">
 
   <div id="container">
 
@@ -1202,7 +1202,7 @@
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-flag me-1"></i>
-                <span data-v-language-info-name>English</span>
+                <span data-v-language-info-slug>English</span>
               </button>
 
 
@@ -1417,15 +1417,15 @@
                   </li>
 
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="contact" aria-selected="false">Description</button>
+                    <button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="false">Description</button>
                   </li>
 
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="contact" aria-selected="false">Local</button>
+                    <button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="local" aria-selected="false">Local</button>
                   </li>
 
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="contact" aria-selected="false">Media settings</button>
+                    <button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="media" aria-selected="false">Media settings</button>
                   </li>
 
                   <!--
@@ -1439,7 +1439,10 @@
                   </li>
 
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
+                    <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false">Orders</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="routes-tab" data-bs-toggle="tab" data-bs-target="#routes" type="button" role="tab" aria-controls="routes" aria-selected="false">Routes</button>
                   </li>
                   <!--
 						<li class="nav-item" role="presentation">
@@ -1455,125 +1458,215 @@
                 <div class="tab-content pt-3" id="site-tab-content">
 
                   <div class="tab-pane show active" id="general" role="tabpanel" aria-labelledby="general-tab">
-                    <div class="mb-3 row">
-                      <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
-                      <div class="col-sm-10">
-                        <div class="input-group">
-                          <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name required>
-                          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false">
-                            <i class="la la-arrow-down text-primary"></i>
-                          </button>
+                    <div class="row">
+                      <div class="col">
+
+                        <div class="mb-3 row">
+                          <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
+                          <div class="col-sm-10">
+                            <div class="input-group">
+                              <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name required>
+                              <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false" data-v-if="this.site.site_id > 1">
+                                <i class="la la-arrow-down text-primary"></i>
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <!--
-<div class="mb-3 row">
-   <div class="col-sm-2">
-	   <label for="input-site-host" class="col-form-label">
-		<span>Site domain/subdomain</span>
-		<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
-		<br/>
-		<span class="form-text">Used to generate links for the site</span>
-	   </label>
-		<br/>
-		<a class="" data-bs-toggle="collapse" data-bs-target="#siteKeyInput" aria-expanded="false">
-			Advanced <i class="la la-lg la-arrow-down"></i>
-		</a>
-   </div>
-   <div class="col-sm-10">
-	  <input type="text" class="form-control" id="input-site-host" placeholder="subdomain.mysite.com" name="site[host]" data-v-site-host required />
-	  
-		<span class="form-text">Use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*</span>
-   </div>
-</div>
--->
-                    <div class="mb-3 row" id="siteDomain" data-v-class-if-collapse="this.site.site_id">
+                        <!--
+	<div class="mb-3 row">
+	   <div class="col-sm-2">
+		   <label for="input-site-host" class="col-form-label">
+			<span>Site domain/subdomain</span>
+			<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+			<br/>
+			<span class="form-text">Used to generate links for the site</span>
+		   </label>
+			<br/>
+			<a class="" data-bs-toggle="collapse" data-bs-target="#siteKeyInput" aria-expanded="false">
+				Advanced <i class="la la-lg la-arrow-down"></i>
+			</a>
+	   </div>
+	   <div class="col-sm-10">
+		  <input type="text" class="form-control" id="input-site-host" placeholder="subdomain.mysite.com" name="site[host]" data-v-site-host required />
+		  
+			<span class="form-text">Use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*</span>
+	   </div>
+	</div>
+	-->
+                        <div class="my-3 row" id="siteDomain" data-v-class-if-collapse="this.site.site_id">
 
-                      <label for="input-site-host" class="col-sm-2 col-form-label">
-                        <span>Site domain/subdomain</span>
-                        <span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*">
-                          <i class="la la-lg la-question-circle text-primary"></i>
-                        </span>
-                        <br />
-                        <span class="form-text">Used to match site and generate links</span>
-                      </label>
-
-                      <div class="col-sm-10">
-                        <div class="input-group">
-                          <input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host required>
-                          <span class="input-group-text d-none">Path</span>
-                          <input type="text" class="form-control d-none" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
-
-                          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
-                            <i class="la la-question-circle text-primary"></i>
-                          </button>
-
-                        </div>
-
-
-                        <div class="collapse mt-1" id="siteKeyInfo">
-                          <div class="card card-body text-bg-body-tertiary">
-                            <span>
-                              <i class="la la-info-circle fs-2 px-2 float-end"></i>
-                              <p>Examples:
-                                <span class="badge border text-body">www.mydomain.com</span>
-                                <span class="badge border text-body">subdomain.domain.com</span>
-                                <span class="badge border text-body">domain.com</span>
-                              </p>
-                              <span>Use * wildcard to match any subdomain or domain.</span>
-                              <br>
-                              <span>For example:</span>
-                              <span class="badge border text-body">shop.*.*</span>
-                              <span>for your shop subdomain</span>
-                              <br>
-                              <span class="badge border text-body">blog.mydomain.*</span>
-                              <span>to match blog on all tld's</span>
-                              <br>
-                              <span class="badge border text-body">*.mydomain.*</span>
-                              <span>to match all subdomains and tld.</span>
-                              <br />
-                              <span>Use</span>
-                              <span class="badge border text-body">*.*.*</span>
-                              <span>to match all other hosts.</span>
-                              <br />
-                              <span>Must be unique for each site.</span>
+                          <label for="input-site-host" class="col-sm-2 col-form-label">
+                            <span>Site domain/subdomain</span>
+                            <span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*">
+                              <i class="la la-lg la-question-circle text-primary"></i>
                             </span>
+                            <br />
+                            <span class="form-text">Used to match site and generate links</span>
+                          </label>
+
+                          <div class="col-sm-10">
+
+                            <div class="d-flex justify-content-between" id="site-type">
+
+                              <div class="form-check">
+                                <input id="site-type-subdomain-radio" class="form-check-input" name="site-type" type="radio" value="subdomain" checked>
+                                <label class="form-check-label" for="site-type-subdomain-radio">
+                                  <strong class="mb-0 fw-medium">Domain/subdomain</strong>
+                                  <p class="text-muted">
+                                    <span class="subdomain">subdomain.example.com</span>
+                                  </p>
+                                </label>
+                              </div>
+
+                              <div class="form-check">
+                                <input id="site-type-subfolder-radio" class="form-check-input" name="site-type" type="radio" value="subfolder">
+                                <label class="form-check-label d-block" for="site-type-subfolder-radio">
+                                  <strong class="mb-0 fw-medium">Subfolder</strong>
+                                  <p class="text-muted">
+                                    <span class="domain">example.com</span>/<span class="subfolder">blog</span>
+                                  </p>
+                                </label>
+                              </div>
+
+                              <div class="form-check">
+                                <input id="site-type-both-radio" class="form-check-input" name="site-type" type="radio" value="both">
+                                <label class="form-check-label d-block" for="site-type-both-radio">
+                                  <strong class="mb-0 fw-medium">Domain/subdomain and subfolder</strong>
+                                  <p class="text-muted">
+                                    <span class="subdomain">subdomain.example.com</span>/<span class="subfolder">blog</span>
+                                  </p>
+                                </label>
+                              </div>
+                            </div>
+
+
+                            <div class="input-group">
+                              <input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host>
+                              <span class="input-group-text d-none" id="input-site-path-text">Subfolder</span>
+                              <input type="text" class="form-control d-none" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
+
+                              <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
+                                <i class="la la-question-circle text-primary"></i>
+                              </button>
+
+                            </div>
+
+
+                            <div class="collapse mt-1" id="siteKeyInfo">
+                              <div class="card card-body text-bg-body-tertiary">
+                                <span>
+                                  <i class="la la-info-circle fs-2 px-2 float-end"></i>
+                                  <p>Examples:
+                                    <span class="badge border text-body">www.mydomain.com</span>
+                                    <span class="badge border text-body">mysite.domain.com</span>
+                                    <span class="badge border text-body">domain.com</span>
+                                    <span class="badge border text-body">domain.com/mysite</span>
+                                  </p>
+                                  <span>Use * wildcard to match any subdomain or domain.</span>
+                                  <br>
+                                  <span>For example:</span>
+                                  <span class="badge border text-body">shop.*.*</span>
+                                  <span>for your shop subdomain</span>
+                                  <br>
+                                  <span class="badge border text-body">blog.mydomain.*</span>
+                                  <span>to match blog on all tld's</span>
+                                  <br>
+                                  <span class="badge border text-body">*.mydomain.*</span>
+                                  <span>to match all subdomains and tld.</span>
+                                  <br />
+                                  <span>Use</span>
+                                  <span class="badge border text-body">*.*.*</span>
+                                  <span>to match all other hosts.</span>
+                                  <br />
+                                  <span>Must be unique for each site.</span>
+                                </span>
+                              </div>
+                            </div>
+
                           </div>
                         </div>
 
+
+                        <div class="mb-3 row">
+                          <label for="input-site-theme" class="col-sm-2 col-form-label">Theme</label>
+                          <div class="col-sm-10">
+
+                            <select class="theme-list form-select flex-fill" name="site[theme]" id="input-site-theme" data-v-theme-list>
+                              <option value="1">
+                                <img src="">
+                                Theme 1
+                              </option>
+
+                              <option value="2">
+                                <img src="">
+                                Theme 2
+                              </option>
+                            </select>
+
+                          </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                          <label for="input-site-template" class="col-sm-2 col-form-label">Home template</label>
+                          <div class="col-sm-10">
+
+                            <div class="input-group">
+                              <select class="template-list form-select flex-fill" name="site[template][0]" id="input-site-template" data-v-template_id="0" data-v-template-list>
+                                <option value="" title="Default template">-- <span>Default template</span> --</option>
+
+                                <option value="published" data-v-option>Published</option>
+                              </select>
+
+                              <div data-v-if-not="this.site.site_id" class="input-group-text">
+
+                                <label class="form-check-label">
+                                  <input class="form-check-input" name="new-homepage[]" type="checkbox" value="0">
+                                  <span>Create new site specific home page</span>
+                                </label>
+
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                        <div data-v-languages>
+                          <div data-v-language>
+                            <div class="mb-3 row" data-v-if-not="language.language_id = this.setting.language_id">
+                              <label class="col-sm-2 col-form-label">
+                                <span data-v-language-name>English</span>
+                                <span>Home template</span>
+                              </label>
+                              <div class="col-sm-10">
+
+                                <div class="input-group">
+                                  <select class="template-list-lang form-select flex-fill" name="site[template]" data-v-template-list>
+                                    <option value="" title="Default template">-- <span>Same as default language</span> --</option>
+
+                                    <option value="published" data-v-option>Published</option>
+                                  </select>
+
+                                  <div data-v-if-not="this.site.site_id" class="input-group-text">
+
+                                    <label class="form-check-label">
+                                      <input class="form-check-input new-homepage" name="new-homepage[]" type="checkbox" value="0">
+                                      <span>Create new site language specific home page</span>
+                                    </label>
+
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-
-
-                    <div class="mb-3 row">
-                      <label for="input-site-theme" class="col-sm-2 col-form-label">Theme</label>
-                      <div class="col-sm-10">
-
-                        <select class="theme-list form-select flex-fill" name="site[theme]" id="input-site-theme" data-v-theme-list>
-                          <option value="1">
-                            <img src="">
-                            Theme 1
-                          </option>
-
-                          <option value="2">
-                            <img src="">
-                            Theme 2
-                          </option>
-                        </select>
-
-                      </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                      <label for="input-site-template" class="col-sm-2 col-form-label">Home template</label>
-                      <div class="col-sm-10">
-
-                        <select class="template-list form-select flex-fill" name="site[template]" id="input-site-template" data-v-template-list>
-                          <option value="" title="Default template">-- Default template --</option>
-
-                          <option value="published" data-v-option>Published</option>
-                        </select>
-
+                      <div class="col page-preview-col">
+                        <div class="page-preview">
+                          <iframe id="page-preview" src=""></iframe>
+                        </div>
                       </div>
                     </div>
 
@@ -1606,7 +1699,7 @@
 
                           <input type="hidden" data-v-image name="settings[favicon]" name="settings[favicon]" data-v-setting="favicon" id="favicon-input" value="">
 
-                          <img data-v-image src="img/placeholder.svg" alt="" id="favicon-thumb" data-v-placeholder="" data-media-gallery data-target-input="#favicon-input" data-target-thumb="#favicon-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="favicon-src">
+                          <img data-v-image src="/media/placeholder.svg" alt="" id="favicon-thumb" data-v-placeholder="" data-media-gallery data-target-input="#favicon-input" data-target-thumb="#favicon-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="favicon-src">
 
 
                           <div class="py-3">
@@ -1629,7 +1722,7 @@
 
                           <input type="hidden" data-v-image name="settings[logo]" name="settings[logo]" data-v-setting="logo" id="logo-input" value="">
 
-                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-input" data-target-thumb="#logo-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="logo-src">
+                          <img data-v-image src="/media/placeholder.svg" alt="" id="logo-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-input" data-target-thumb="#logo-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="logo-src">
 
 
                           <div class="py-3">
@@ -1652,7 +1745,7 @@
 
                           <input type="hidden" data-v-image name="settings[logo-sticky]" name="settings[logo-sticky]" data-v-setting="logo-sticky" id="logo-sticky-input" value="">
 
-                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-sticky-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-sticky-input" data-target-thumb="#logo-sticky-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="logo-sticky-src">
+                          <img data-v-image src="/media/placeholder.svg" alt="" id="logo-sticky-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-sticky-input" data-target-thumb="#logo-sticky-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;" data-v-setting="logo-sticky-src">
 
 
                           <div class="py-3">
@@ -1674,7 +1767,7 @@
 
                           <input type="hidden" data-v-image name="settings[logo-dark]" name="settings[logo-dark]" data-v-setting="logo-dark" id="logo-dark-input" value="">
 
-                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-dark-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-dark-input" data-target-thumb="#logo-dark-thumb" data-type="single" class="img-thumbnail bg-dark" style="max-width:200px;" data-v-setting="logo-dark-src">
+                          <img data-v-image src="/media/placeholder.svg" alt="" id="logo-dark-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-dark-input" data-target-thumb="#logo-dark-thumb" data-type="single" class="img-thumbnail bg-dark" style="max-width:200px;" data-v-setting="logo-dark-src">
 
 
                           <div class="py-3">
@@ -1696,7 +1789,7 @@
 
                           <input type="hidden" data-v-image name="settings[logo-dark-sticky]" name="settings[logo-dark-sticky]" data-v-setting="logo-dark-sticky" id="logo-dark-sticky-input" value="">
 
-                          <img data-v-image src="img/placeholder.svg" alt="" id="logo-dark-sticky-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-dark-sticky-input" data-target-thumb="#logo-dark-sticky-thumb" data-type="single" class="img-thumbnail bg-dark" style="max-width:200px;" data-v-setting="logo-dark-sticky-src">
+                          <img data-v-image src="/media/placeholder.svg" alt="" id="logo-dark-sticky-thumb" data-v-placeholder="" data-media-gallery data-target-input="#logo-dark-sticky-input" data-target-thumb="#logo-dark-sticky-thumb" data-type="single" class="img-thumbnail bg-dark" style="max-width:200px;" data-v-setting="logo-dark-sticky-src">
 
 
                           <div class="py-3">
@@ -1729,7 +1822,7 @@
 
                           <input type="hidden" data-v-image name="settings[webbanner]" name="settings[webbanner]" data-v-setting="webbanner" id="webbanner-input" value="">
 
-                          <img data-v-image src="img/placeholder.svg" alt="" id="webbanner-thumb" data-v-placeholder="" data-media-gallery data-target-input="#webbanner-input" data-target-thumb="#webbanner-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:300px;" data-v-setting="webbanner-src">
+                          <img data-v-image src="/media/placeholder.svg" alt="" id="webbanner-thumb" data-v-placeholder="" data-media-gallery data-target-input="#webbanner-input" data-target-thumb="#webbanner-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:300px;" data-v-setting="webbanner-src">
 
 
                           <div class="py-3">
@@ -2078,6 +2171,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_xlarge_method]" data-v-setting="post_xlarge_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2100,6 +2194,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_large_method]" data-v-setting="post_large_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2122,6 +2217,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_medium_method]" data-v-setting="post_medium_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2144,6 +2240,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[post_thumb_method]" data-v-setting="post_thumb_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2175,6 +2272,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_xlarge_method]" data-v-setting="product_xlarge_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2197,6 +2295,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_large_method]" data-v-setting="product_large_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2219,6 +2318,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_medium_method]" data-v-setting="product_medium_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2241,6 +2341,7 @@
                         <div class="input-group mb-3">
                           <label class="col-form-label pe-4 pt-2">Method</label>
                           <select data-v-resize name="settings[product_thumb_method]" data-v-setting="product_thumb_method" class="form-select">
+                            <option value="r">Resize</option>
                             <option value="s">Stretch</option>
                             <option value="c">Crop</option>
                             <option value="cs">Crop &amp; resize</option>
@@ -2675,6 +2776,94 @@
                     </div>
                   </div>
 
+                  <div class="tab-pane" id="routes" role="tabpanel" aria-labelledby="routes-tab">
+                    <div class="row" id="routes-type">
+                      <div class="col">
+                        <div class="card p-3">
+                          <label class="form-check form-check-label" for="routes-type-global-radio">
+                            <input id="routes-type-global-radio" class="form-check-input" name="routes-type" type="radio" value="global" onclick="siteRoutes.style.display='none'">
+                            <strong class="mb-0 fw-medium">Global</strong>
+                            <p class="text-muted">
+                              Use global routes
+                            </p>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="card p-3">
+                          <label class="form-check form-check-label d-block" for="routes-type-site-radio">
+                            <input id="routes-type-site-radio" class="form-check-input" name="routes-type" type="radio" value="site" onclick="siteRoutes.style.display='block'">
+                            <strong class="mb-0 fw-medium">Custom</strong>
+                            <p class="text-muted">
+                              Use site specific routes
+                            </p>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3" id="siteRoutes">
+
+                      <table class="table" data-v-routes>
+                        <thead>
+                          <tr>
+                            <th scope="col">Route</th>
+                            <th scope="col">Module</th>
+                            <th scope="col" width="50px">
+                              <button type="button" class="btn btn-icon btn-outline-primary" onclick="addRoute(this)">
+                                <i class="icon-add-outline"></i>
+                              </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-v-route>
+                            <td>
+                              <input type="text" class="form-control" name="route[route]" value="/" data-v-route-route>
+                            </td>
+                            <td>
+                              <select class="form-select" name="route[module]" data-v-route-module>
+                                <option value="index/index">Homepage</option>
+                                <option value="">Custom</option>
+                              </select>
+                              <!--
+			<input type="text" name="route[module]" class="form-control custom d-none" value="index/index" disabled data-v-route-module>
+			<label>
+				<input type="checkbox" value="" title="Custom route">
+			</label>
+			-->
+                              <input type="hidden" name="route[edit]" value="" data-v-route-edit>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-icon btn-outline-danger" onclick="deleteRoute(this)">
+                                <i class="icon-close-outline"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr class="route-template d-none">
+                            <td>
+                              <input type="text" class="form-control" name="" value="/" data-v-route-route>
+                            </td>
+                            <td>
+                              <select class="form-select" name="" data-v-route-module>
+                                <option value="index/index">Homepage</option>
+                                <option value="">Custom</option>
+                              </select>
+                              <input type="text" class="form-control custom d-none" value="index/index" data-v-route-module>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-icon btn-outline-danger" onclick="deleteRoute(this)">
+                                <i class="icon-close-outline"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+
                   <div class="tab-pane" id="mail_notifications" role="tabpanel" aria-labelledby="orders-tab">
                     <div class="row mb-3">
                       <label class="col-sm-2 col-form-label">
@@ -2742,6 +2931,7 @@
 
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-content">
         <div class="modal-body p-0">
 
@@ -2749,7 +2939,7 @@
             <input type="hidden" name="module" value="tools/search">
             <div class="d-flex">
               <div class="input-group">
-                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
                   <div class="la-flip-horizontal">
                     <i class="la la-search la-lg" aria-hidden="true"></i>
@@ -2770,7 +2960,6 @@
 
         </div>
       </div>
-      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
   </div>
@@ -2787,7 +2976,6 @@
   <script id="admin-js" type="module" src="/js/admin.js"></script>
 
 
-
   <script>
 let mediaPath         = '{ $this->mediaPath }';
 let mediaScanUrl      = '{ $this->scanUrl }';
@@ -2800,6 +2988,7 @@ let postMaxSize       = '{ $this->postMaxSize }';
 
 let domain = "{ $this->domain }";
 let subdir = "{ $this->subdir }";
+let publicPath = '{$this->publicPath}';
 </script>
 
 
@@ -2834,6 +3023,155 @@ currenciesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 		allCurrenciesCheckbox.checked = false;
 	}
 }));
+
+
+let homepage = document.getElementById("page-preview");
+let homepageSelect = document.getElementById("input-site-template");
+let themes = document.getElementById("input-site-theme");
+let homepageLangsSelect = document.querySelectorAll(".template-list-lang");
+
+function changeTheme(e) {
+	fetch(window.location.pathname + window.location.search + "&action=getThemeTemplates&theme=" + this.value)
+		.then((response) => {
+			if (!response.ok) { throw new Error(response) }
+			return response.json()
+		})
+		.then((data) => {
+			let firstOption  = homepageSelect.firstElementChild;
+			homepageSelect.replaceChildren(firstOption);
+			let folder = homepageSelect;
+			
+			function addOption(parent, value, name) {
+				let el = document.createElement('option');
+				el.textContent = name;
+				el.value = value;
+				parent.appendChild(el);
+			}
+			
+			for (const value in data) {
+				let name = data[value];
+			
+				if (typeof name === "object") {
+					
+					folder = document.createElement('optgroup');
+					folder.label = value;
+					homepageSelect.appendChild(folder);
+					
+					for (const item in name) {
+						addOption(folder, item, name[item]);
+					}
+				} else {
+					addOption(homepageSelect, value, name);
+				}
+			}
+			
+			homepageLangsSelect.forEach(e => {
+				let value = e.value;
+				let firstOption  = e.firstElementChild.cloneNode(true);
+				e.replaceChildren(...homepageSelect.cloneNode(true).childNodes);
+				e.firstElementChild.replaceWith(firstOption);
+				e.value = "";
+				e.value = value;
+			});
+			
+			changeHomepage();
+		})
+		.catch(error => {
+			console.log(error.statusText);
+			//displayToast("danger", "Error", "Error loading theme templates!");
+		});			
+}
+
+function changeHomepage(e) {
+	homepage.src = publicPath + "themes/" + themes.value + "/" + homepageSelect.value;
+}
+
+function iframeLoad(e) {
+	homepage.contentWindow.document.body.style.userSelect = "none";
+	homepage.contentWindow.document.body.style.overflowX = "hidden";
+	homepage.contentWindow.document.body.addEventListener("click", (e) => {e.stopPropagation();e.preventDefault();return false;});
+}
+
+homepage.addEventListener("load", iframeLoad);
+homepageSelect.addEventListener("change", changeHomepage);
+themes.addEventListener("change", changeTheme);
+changeHomepage();
+if (window.location.hash) document.querySelector(window.location.hash)?.click();
+
+function addRoute() {
+	
+}
+
+function deleteRoute(element) {
+	element.closest("[data-v-route]").remove();
+}
+
+
+let routesContainer = document.querySelector("[data-v-routes]");
+
+routesContainer.addEventListener("dragstart", routesdragStart);
+routesContainer.addEventListener("dragover", routesdragOver);
+routesContainer.addEventListener("dragend", routesdragEnd);
+
+let selected = null;
+let dragover = null;
+
+//drag and drop 
+function routesdragOver(e) {
+	let element = e.target.closest("TR");
+	console.log(element);
+	if (element) {
+		if (e.target != dragover && 
+			e.target.tagName == "TR") {
+
+			if (dragover) {
+				dragover.classList.remove("drag-over");
+			}
+			
+			dragover = e.target;  
+			dragover.classList.add("drag-over");
+		}
+	}
+}
+
+function routesdragEnd(e) {
+	let element = e.target.closest("TR");
+	console.log(element);
+	if (element) {
+
+		if (dragover) {
+			let parent = selected.parentNode;
+			let selectedNode = selected._node;
+			let replaceNode = dragover._node;
+
+			if ((dragover.offsetTop > selected.offsetTop)) {
+				//replace section item list
+				parent.insertBefore(selected, dragover.nextElementSibling);
+				//replace section
+				replaceNode.parentNode.insertBefore(selectedNode, replaceNode.nextElementSibling);
+			} else {
+				//replace section item list
+				parent.insertBefore(selected, dragover);
+				//replace section
+				replaceNode.parentNode.insertBefore(selectedNode, replaceNode);
+			}
+			
+			dragover.classList.remove("drag-over");
+			
+		}
+
+		selected = null;
+		dragover = null;
+	}
+}
+
+function routesdragStart(e) {
+	let element = e.target.closest("TR");
+	if (element) {
+		selected = e.target
+	}
+}
+
 </script>
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">

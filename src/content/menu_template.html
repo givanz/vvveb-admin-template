@@ -14,22 +14,60 @@
 <div class="tab-content" data-v-languages="taxonomy" style="clear:both">
 
 
-	<div class="my-3 required">
-	  <label class="form-label">Type</label>
-	  <select class="form-control" name="type" data-v-menu-type>
-		<option value="link">Link</option>
-		<option value="text">Text</option>
-		<option value="post">Post</option>
-		<option value="page">Page</option>
-		<option value="product">Product</option>
-		<option value="home">Home page</option>
-		<option value="blog">Blog</option>
-		<option value="shop">Shop</option>
-		<!--
-		<option value="taxonomy">Post Taxonomy (Category, Tag)</option>
-		<option value="taxonomy">Product Taxonomy (Category, Tag)</option>
-		-->
-	  </select>
+	<div class="my-3 row">
+	  <div class="col">
+		  <label class="form-label">Type</label>
+		  <select class="form-control" name="type" data-v-menu-type>
+			<option value="link">Link</option>
+			<option value="text">Content</option>
+			<option value="post">Post</option>
+			<option value="page">Page</option>
+			<option value="product">Product</option>
+			<option value="home">Home page</option>
+			<option value="blog">Blog</option>
+			<option value="shop">Shop</option>
+			<!--
+			<option value="taxonomy">Post Taxonomy (Category, Tag)</option>
+			<option value="taxonomy">Product Taxonomy (Category, Tag)</option>
+			-->
+		  </select>	  
+	  </div>
+	  <div class="col">
+		  <label class="form-label">Columns</label>
+		  <select class="form-control" name="options[columns]" data-v-options-columns>
+			<option value="">auto</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+		  </select>
+	  </div>	  
+	  <div class="col">
+		  <label class="form-label">Width</label>
+		  <select class="form-control" name="options[width]" data-v-options-width>
+			<option value="">auto</option>
+			<option value="100">100%</option>
+			<option value="75">75%</option>
+			<option value="50">50%</option>
+			<option value="25">25%</option>
+		  </select>
+	  </div>
+		<div class="col">
+		  <label class="form-label">Padding horizontal</label>
+			<input name="options[padding_x]" data-v-options-padding_x value="0" placeholder="Padding" class="form-control" type="number"/>		
+		</div>		  
+		<div class="col">
+		  <label class="form-label">Padding vertical</label>
+			<input name="options[padding_y]" data-v-options-padding_y value="0" placeholder="Padding" class="form-control" type="number"/>		
+		</div>		  
 	</div>
 
 	<div class="mb-3 required field field-product">
@@ -55,63 +93,89 @@
 			data-url="{$this.adminPath}index.php?module=editor/autocomplete&action=posts&type=page" data-text="" data-v-menu-item_id/>
 	  </div>
 	</div>
-
-  <div class="tab-pane" id="language1" data-v-language data-v-language-id>
-
-    <!-- input name="taxonomy_content[1][language_id]" type="hidden" data-v-taxonomy-content-language_id -->
-    
-    <input name="menu_item_content[1][language_id]" type="hidden" data-v-language_id>
-
-    <div class="mb-3 required field field-name">
-      <label class="form-label">Name</label>
-      <input name="menu_item_content[1][name]" value="Name" placeholder="Name" class="form-control dd-title" type="text" data-v-language-name required />
-    </div>
 	
-    <div class="mb-3 required field field-content">
-      <label class="form-label">Content</label>
-      <textarea name="taxonomy_content[1][content]" value="Title" placeholder="Content" class="form-control html" type="text" data-v-language-content required></textarea>
-    </div>
-
-	
-  </div>
-  <!-- languages end -->
-	<!--
-	<div class="mb-3 required field field-image">
-	  <label class="form-label">Image</label>
-	  <div>
-			<input type="hidden" data-v-image name="image" id="featured-image-input" value="">
-
-			<img data-v-image src="" alt=""
-				 id="featured-image-thumb"
-				 data-v-placeholder=""
-				 data-media-gallery 
-				 data-target-input="#featured-image-input"
-				 data-target-thumb="#featured-image-thumb" data-type="single"                         
-				 class="bg-body-tertiary rounded img-fluid">
-
-
-			<div class="py-3 text-center">
-					<div class="btn-group w-100">
-						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100"
-								data-media-gallery data-target-input="#featured-image-input"
-								data-target-thumb="#featured-image-thumb" data-type="single">
-								<i class="la la-image la-lg"></i> Set media
-						</button>
-
-						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-							<i class="la la-times"></i>
-						</button>
-					</div>
-			</div>
-	  </div>
-	</div>
-	-->
 	<div class="mb-3 required field field-url">
 	  <label class="form-label">Url</label>
 	  <div>
-		<input name="url" value="url" placeholder="Name" class="form-control" type="text" data-v-menu-url required />
+		<input name="url" value="" placeholder="Name" class="form-control" type="text" data-v-menu-url required />
 	  </div>
 	</div>
+	
+	<div class="tab-pane" id="language1" data-v-language data-v-language-id>
+
+		<!-- input name="taxonomy_content[1][language_id]" type="hidden" data-v-taxonomy-content-language_id -->
+		
+		<input name="menu_item_content[1][language_id]" type="hidden" data-v-language_id>
+
+		<div class="mb-3 required field field-name">
+		  <label class="form-label">Name</label>
+		  <input name="menu_item_content[1][name]" value="Name" placeholder="Name" class="form-control dd-title" type="text" data-v-language-name required />
+		</div>
+		
+		<div class="mb-3 required field field-content">
+		  <label class="form-label">Content</label>
+		  <textarea name="taxonomy_content[1][content]" value="Title" placeholder="Content" class="form-control html" type="text" data-v-language-content required></textarea>
+		</div>
+
+	
+	</div>
+
+	<div class="mb-3 required field field-img">
+		<label class="form-label">Image</label>
+		<div>
+
+			<input type="hidden" data-v-options-img name="options[img]" id="menu_item-input" class="menu_input" value="">
+						
+			<img data-v-image-src src="/media/placeholder.svg" alt="" title=""
+			 id="menu_item-thumb"
+			 data-v-placeholder=""
+			 data-media-gallery 
+			 data-target-input="#menu_item-input"
+			 data-target-thumb="#menu_item-thumb" 
+			 data-type="single"
+			 class="img-thumbnail bg-light"
+			 style="max-width:200px;"
+			 >
+				
+
+				<div class="py-3 row">
+					<div class="col">
+						<div class="btn-group">
+							<button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm"
+								data-v-image-btn
+								data-media-gallery 
+								data-target-input="#menu_item-input"
+								data-target-thumb="#menu_item-thumb" 
+								data-type="single">
+								<i class="la la-image la-lg"></i> <span>Set image</span>
+							</button>
+							<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
+								<i class="la la-times"></i>
+							</button>
+						</div>
+					</div>
+					
+					<div class="col">
+						<div class="row">
+						  <label class="col-sm-2 col-form-label">Width</label>
+						   <div class="col-sm-10">
+								<input name="options[img_width]" data-v-options-img_width value="0" placeholder="Width" class="form-control" type="number"/>
+							</div>		
+						</div>		
+					</div>		
+					<div class="col">
+						<div class="row">
+						  <label class="col-sm-2 col-form-label">Height</label>
+						   <div class="col-sm-10">
+							<input name="options[img_height]" data-v-options-img_height value="0" placeholder="Height" class="form-control" type="number"/>
+							</div>		
+						</div>		
+					</div>		
+										
+				</div>
+		</div>
+	</div>
+
 </div>
 
 

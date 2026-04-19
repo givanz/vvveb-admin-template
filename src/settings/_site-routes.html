@@ -1,0 +1,75 @@
+<div class="row" id="routes-type">
+  <div class="col">
+	<div class="card p-3">
+		<label class="form-check form-check-label" for="routes-type-global-radio">
+			<input id="routes-type-global-radio" class="form-check-input" name="routes-type" type="radio" value="global" onclick="siteRoutes.style.display='none'">
+			  <strong class="mb-0 fw-medium">Global</strong>
+			  <p class="text-muted">
+				Use global routes
+			  </p>
+		  </label>
+	  </div>
+  </div>
+
+  <div class="col">
+	  <div class="card p-3">
+		<label class="form-check form-check-label d-block" for="routes-type-site-radio">
+			<input id="routes-type-site-radio" class="form-check-input" name="routes-type" type="radio" value="site" onclick="siteRoutes.style.display='block'">
+			  <strong class="mb-0 fw-medium">Custom</strong>
+			  <p class="text-muted">
+				Use site specific routes
+			  </p>
+		  </label>
+	  </div>
+  </div>
+</div>
+
+<div class="mb-3" id="siteRoutes">
+	
+	<table class="table" data-v-routes>
+	  <thead>
+		<tr>
+		  <th scope="col">Route</th>
+		  <th scope="col">Module</th>
+		  <th scope="col" width="50px">
+			<button type="button" class="btn btn-icon btn-outline-primary" onclick="addRoute(this)"><i class="icon-add-outline"></i></button>
+		  </th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr data-v-route>
+		  <td><input type="text" class="form-control" name="route[route]" value="/" data-v-route-route></td>
+		  <td>
+			<select class="form-select" name="route[module]" data-v-route-module>
+				<option value="index/index">Homepage</option>
+				<option value="">Custom</option>
+			</select>
+			<!--
+			<input type="text" name="route[module]" class="form-control custom d-none" value="index/index" disabled data-v-route-module>
+			<label>
+				<input type="checkbox" value="" title="Custom route">
+			</label>
+			-->
+			<input type="hidden" name="route[edit]" value="" data-v-route-edit>
+		   </td>
+		   <td>
+			<button type="button" class="btn btn-icon btn-outline-danger" onclick="deleteRoute(this)"><i class="icon-close-outline"></i></button>
+		   </td>
+		</tr>		
+		<tr class="route-template d-none">
+		  <td><input type="text" class="form-control" name="" value="/" data-v-route-route></td>
+		  <td>
+			<select class="form-select" name="" data-v-route-module>
+				<option value="index/index">Homepage</option>
+				<option value="">Custom</option>
+			</select>
+			<input type="text" class="form-control custom d-none" value="index/index"  data-v-route-module>
+		   </td>
+		   <td>
+			<button type="button" class="btn btn-icon btn-outline-danger" onclick="deleteRoute(this)"><i class="icon-close-outline"></i></button>
+		   </td>
+		</tr>
+	  </tbody>
+	</table>
+	
+</div>

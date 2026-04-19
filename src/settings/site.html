@@ -1,6 +1,6 @@
 @@include('../_includes/html-head.html', {"title": "Vvveb - Site","scripts":"","base_href":"../"})
 
-<body>
+<body class="site-settings">
 
 <div id="container">
        
@@ -59,15 +59,15 @@
 					  </li>
 
 					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="contact" aria-selected="false">Description</button>
+						<button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="false">Description</button>
 					  </li>
 					  
 					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="contact" aria-selected="false">Local</button>
+						<button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="local" aria-selected="false">Local</button>
 					  </li>
 						
 					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="contact" aria-selected="false">Media settings</button>
+						<button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="media" aria-selected="false">Media settings</button>
 					  </li>		  
 
 					  <!--
@@ -81,7 +81,10 @@
 					  </li>					 
 					  
 					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
+						<button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false">Orders</button>
+					  </li>							  
+					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="routes-tab" data-bs-toggle="tab" data-bs-target="#routes" type="button" role="tab" aria-controls="routes" aria-selected="false">Routes</button>
 					  </li>					 
 <!--
 						<li class="nav-item" role="presentation">
@@ -122,6 +125,10 @@
 
 						<div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab">
 							@@include('_settings_orders.html')
+						</div>						
+						
+						<div class="tab-pane" id="routes" role="tabpanel" aria-labelledby="routes-tab">
+							@@include('_site-routes.html')
 						</div>			
 						
 						<div class="tab-pane" id="mail_notifications" role="tabpanel" aria-labelledby="orders-tab">
@@ -146,11 +153,11 @@
 
 @@include('../_includes/footer-scripts.html')
 
-
 <script>
 @@include('../_includes/media-variables.html')
 let domain = "{ $this->domain }";
 let subdir = "{ $this->subdir }";
+let publicPath = '{$this->publicPath}';
 </script>
 
 
@@ -185,5 +192,154 @@ currenciesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 		allCurrenciesCheckbox.checked = false;
 	}
 }));
+
+
+let homepage = document.getElementById("page-preview");
+let homepageSelect = document.getElementById("input-site-template");
+let themes = document.getElementById("input-site-theme");
+let homepageLangsSelect = document.querySelectorAll(".template-list-lang");
+
+function changeTheme(e) {
+	fetch(window.location.pathname + window.location.search + "&action=getThemeTemplates&theme=" + this.value)
+		.then((response) => {
+			if (!response.ok) { throw new Error(response) }
+			return response.json()
+		})
+		.then((data) => {
+			let firstOption  = homepageSelect.firstElementChild;
+			homepageSelect.replaceChildren(firstOption);
+			let folder = homepageSelect;
+			
+			function addOption(parent, value, name) {
+				let el = document.createElement('option');
+				el.textContent = name;
+				el.value = value;
+				parent.appendChild(el);
+			}
+			
+			for (const value in data) {
+				let name = data[value];
+			
+				if (typeof name === "object") {
+					
+					folder = document.createElement('optgroup');
+					folder.label = value;
+					homepageSelect.appendChild(folder);
+					
+					for (const item in name) {
+						addOption(folder, item, name[item]);
+					}
+				} else {
+					addOption(homepageSelect, value, name);
+				}
+			}
+			
+			homepageLangsSelect.forEach(e => {
+				let value = e.value;
+				let firstOption  = e.firstElementChild.cloneNode(true);
+				e.replaceChildren(...homepageSelect.cloneNode(true).childNodes);
+				e.firstElementChild.replaceWith(firstOption);
+				e.value = "";
+				e.value = value;
+			});
+			
+			changeHomepage();
+		})
+		.catch(error => {
+			console.log(error.statusText);
+			//displayToast("danger", "Error", "Error loading theme templates!");
+		});			
+}
+
+function changeHomepage(e) {
+	homepage.src = publicPath + "themes/" + themes.value + "/" + homepageSelect.value;
+}
+
+function iframeLoad(e) {
+	homepage.contentWindow.document.body.style.userSelect = "none";
+	homepage.contentWindow.document.body.style.overflowX = "hidden";
+	homepage.contentWindow.document.body.addEventListener("click", (e) => {e.stopPropagation();e.preventDefault();return false;});
+}
+
+homepage.addEventListener("load", iframeLoad);
+homepageSelect.addEventListener("change", changeHomepage);
+themes.addEventListener("change", changeTheme);
+changeHomepage();
+if (window.location.hash) document.querySelector(window.location.hash)?.click();
+
+function addRoute() {
+	
+}
+
+function deleteRoute(element) {
+	element.closest("[data-v-route]").remove();
+}
+
+
+let routesContainer = document.querySelector("[data-v-routes]");
+
+routesContainer.addEventListener("dragstart", routesdragStart);
+routesContainer.addEventListener("dragover", routesdragOver);
+routesContainer.addEventListener("dragend", routesdragEnd);
+
+let selected = null;
+let dragover = null;
+
+//drag and drop 
+function routesdragOver(e) {
+	let element = e.target.closest("TR");
+	console.log(element);
+	if (element) {
+		if (e.target != dragover && 
+			e.target.tagName == "TR") {
+
+			if (dragover) {
+				dragover.classList.remove("drag-over");
+			}
+			
+			dragover = e.target;  
+			dragover.classList.add("drag-over");
+		}
+	}
+}
+
+function routesdragEnd(e) {
+	let element = e.target.closest("TR");
+	console.log(element);
+	if (element) {
+
+		if (dragover) {
+			let parent = selected.parentNode;
+			let selectedNode = selected._node;
+			let replaceNode = dragover._node;
+
+			if ((dragover.offsetTop > selected.offsetTop)) {
+				//replace section item list
+				parent.insertBefore(selected, dragover.nextElementSibling);
+				//replace section
+				replaceNode.parentNode.insertBefore(selectedNode, replaceNode.nextElementSibling);
+			} else {
+				//replace section item list
+				parent.insertBefore(selected, dragover);
+				//replace section
+				replaceNode.parentNode.insertBefore(selectedNode, replaceNode);
+			}
+			
+			dragover.classList.remove("drag-over");
+			
+		}
+
+		selected = null;
+		dragover = null;
+	}
+}
+
+function routesdragStart(e) {
+	let element = e.target.closest("TR");
+	if (element) {
+		selected = e.target
+	}
+}
+
 </script>
 @@include('../_includes/footer.html')

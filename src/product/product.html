@@ -164,8 +164,6 @@
 
 						</div>
 
-						 <!-- @-@include('_product_taxonomies.html') -->
-
 						<label class="header" data-v-header="default" for="header_product_options"><span data-v-type-name>Product</span> options
 							<div class="header-arrow"></div>
 						</label>
@@ -184,7 +182,9 @@
 							</div>
 						</div>
 
-						<label class="header mt-4" data-v-header="default" for="header_sites">Sites
+						@@include('_product_taxonomies.html')
+
+						<label class="header mt-2" data-v-header="default" for="header_sites">Sites
 							<div class="header-arrow"></div>
 						</label>
 						<input class="header_check" type="checkbox" checked="true" id="header_sites">
@@ -202,7 +202,7 @@
 							</div>
 						</div>  
 						 
-						<label class="header mt-4" data-v-header="default" for="header_template">Template
+						<label class="header mt-2" data-v-header="default" for="header_template">Template
 							<div class="header-arrow"></div>
 						</label>
 						<input class="header_check" type="checkbox" checked="true" id="header_template">

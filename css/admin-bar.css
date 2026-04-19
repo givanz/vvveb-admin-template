@@ -11298,7 +11298,7 @@ i[class^=icon-] {
   line-height: 35px;
 }
 #vvveb-admin ul li a > i, #vvveb-admin ul li a > img {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #777;
   margin-right: 0.5rem;
   vertical-align: sub;
@@ -11328,9 +11328,6 @@ i[class^=icon-] {
 #vvveb-admin > ul > li {
   min-width: auto;
   display: inline-block;
-}
-#vvveb-admin > ul > li > a > i, #vvveb-admin > ul > li > button > i {
-  margin-right: 0.3rem;
 }
 #vvveb-admin > ul > li ul {
   position: absolute;

@@ -242,7 +242,7 @@
 								<div class="mb-3 row">
 									<label for="input-description" class="col-sm-2 col-form-label">Description</label>
 									<div class="col-sm-10 col-xl-8 col-xxl-6">
-									  <textarea class="form-control" id="input-description" placeholder="Description" name="field_group[content]" data-v-field_group-content required>
+									  <textarea class="form-control" id="input-description" placeholder="Description" name="field_group[content]" data-v-field_group-content>
 									  </textarea>
 									</div>
 								 </div>	
@@ -373,6 +373,7 @@
 	</div>
 </div>
 
+<script id="functions-js" src="/js/admin/functions.js"></script>
 <script>
 @@include('../_includes/media-variables.html')
 
@@ -426,6 +427,29 @@ groupType.addEventListener("change", function (e) {
 });
 
 groupType.dispatchEvent(new Event('change'));
+
+
+let nameInput = document.querySelector('#group-general [data-v-field_group-name]');
+let slugInput = document.querySelector('#group-general [data-v-field_group-slug]');
+let orig = slugify(nameInput.value);
+
+//change slug only if current value is the same as the text
+nameInput.addEventListener('keyup', function (e) {
+	let text = this.value;
+	delay(() => {
+		let slug = slugInput.value;
+
+		if ((orig == slug) || !slug) {
+			slug = orig = slugify(text);
+			const detail = {text, slug};
+			const event = new CustomEvent("content.slug", {detail});
+			document.dispatchEvent(event);
+			({text, slug} = detail);
+			slugInput.value = orig = slug;
+		}			
+		
+	}, 500);
+});
 </script>
 
 
@@ -439,6 +463,5 @@ groupType.dispatchEvent(new Event('change'));
 <script id="index-js" src="libs/vvveb/index.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 <script id="field-group-js" src="js/field-group.js"></script>
-<script id="functions-js" src="/js/admin/functions.js"></script>
 
 @@include('../_includes/footer.html')

@@ -29,6 +29,12 @@
 			 </div>
 			 
 			<div @@add_button>
+				@@if (prefix !== "taxonomy") {
+				<button class="btn btn-icon btn-outline-secondary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu-settings" aria-expanded="false">
+					<i class="la la-cog text-primary"></i>
+				  </button>
+				}
+
 				<button type="submit" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
 					<i class="la la-plus"></i> <span>Add item</span>
 				</button>
@@ -45,8 +51,8 @@
 
 				@@include('../_includes/notifications.html')
 
-				@@if (prefix !== "taxonomy"){ 
-				<div class="card m-4">	
+				@@if (prefix !== "taxonomy") { 
+				<div class="card m-4" id="menu-settings" data-v-class-if-collapse="this.@@prefix_id">	
 					<form method="post">
 						
 						<input type="hidden" name="@@prefix_id" value="" data-v-taxonomy_id>
@@ -59,16 +65,16 @@
 								<label class="col-form-label">Name</label>
 							  </div>
 							  <div class="col">
-								<input type="text" class="form-control" placeholder="Name" aria-label="Name" name="menu_data[name]" data-v-name>
+								<input type="text" class="form-control" placeholder="Name" aria-label="Name" name="menu_data[name]" required data-v-name>
 							  </div>
 							  <div class="col-auto">
 								<label class="col-form-label">Slug</label>
 							  </div>
 							  <div class="col">
-								<input type="text" class="form-control" placeholder="Slug" aria-label="Slug" name="menu_data[slug]" data-v-slug>
+								<input type="text" class="form-control" placeholder="Slug" aria-label="Slug" name="menu_data[slug]" required data-v-slug>
 							  </div>
 							  <div class="col-auto">
-								<button type="submit" class="btn btn-outline-primary btn-icon"><i class="icon-create-outline"></i><span>Save</span></button>
+								<button type="submit" class="btn btn-primary btn-icon"><i class="icon-create-outline"></i><span>Save</span></button>
 							  </div>
 							</div>
 							
@@ -96,7 +102,7 @@
 				  
                 <div class="dd" id="taxonomies" data-v-categories>
 					<div class="d-flex">
-						<button class="btn btn-icon btn-outline-secondary btn-sm me-2 mb-1" onclick="toggleAll(this)">
+						<button class="btn btn-outline-secondary btn-sm me-2 mb-1" onclick="toggleAll(this)">
 								<i class="icon-chevron-down-outline"></i>
 						</button>	
 					
@@ -181,6 +187,7 @@
 <script id="jquery-js" src="js/jquery.min.js"></script>
 <script id="nestable-js" src="libs/nestable/jquery.nestable.js"></script>
 <script src="libs/autocomplete/autocomplete.js"></script>	
+<script id="functions-js" src="/js/admin/functions.js"></script>	
 
 <script>
 @@include('../_includes/media-variables.html')
@@ -324,37 +331,42 @@ function saveOrder(item) {
 }
 
 function deleteItem(item) {
-		$.ajax({
-			url: location.pathname + location.search + "&action=delete",
-			type: 'post',
-			data: {@@prefix_item_id:item.data("vId"), csrf:$("[name=csrf]").val()},
-			//dataType: 'json',
-			complete: function(data) {
-				$("#taxonomyToast .message").html(data.responseText);
-				toast.show();
-				item.remove();
-				
-				if (!document.querySelector(".dd-list .dd3-item")) {
-					noItems.classList.remove("d-none");
+		let itemId = item.data("vId");
+		if (itemId) {
+			$.ajax({
+				url: location.pathname + location.search + "&action=delete",
+				type: 'post',
+				data: {@@prefix_item_id:itemId, csrf:$("[name=csrf]").val()},
+				//dataType: 'json',
+				complete: function(data) {
+					$("#taxonomyToast .message").html(data.responseText);
+					toast.show();
+					item.remove();
+					
+					if (!document.querySelector(".dd-list .dd3-item")) {
+						noItems.classList.remove("d-none");
+					}
+					//$('#cart > button').button('reset');
+				},
+				success: function(data) {
+					//$("header [data-v-component-cart]")[0].outerHTML = data;
+					//if (callback) callback(data);
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 				}
-				//$('#cart > button').button('reset');
-			},
-			success: function(data) {
-				//$("header [data-v-component-cart]")[0].outerHTML = data;
-				//if (callback) callback(data);
-			},
-			error: function(xhr, ajaxOptions, thrownError) {
-				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-			}
-		})
-		.always(function(data) {
-		})
-		.done(function(data) {
-			//$("> .expand", item).toggle();
-		})
-		.fail(function(xhr, ajaxOptions, thrownError) {
-				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-		});
+			})
+			.always(function(data) {
+			})
+			.done(function(data) {
+				//$("> .expand", item).toggle();
+			})
+			.fail(function(xhr, ajaxOptions, thrownError) {
+					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			});
+	} else {
+		item.remove();
+	}
 }
 
 function save() {
@@ -516,9 +528,9 @@ function addTaxonomy(button, event) {
 	
 	$([document.documentElement, document.body]).animate({
         scrollTop: item.offset().top
-    }, 2000);
+    }, 1000);
 	
-	item.delay(100).fadeOut().fadeIn('slow');
+	item.fadeOut().fadeIn('slow');
 }
 
 function removeTaxonomy(btnDelete) {
@@ -529,15 +541,15 @@ function removeTaxonomy(btnDelete) {
 
 
 let typeFields = {
-	'product':['product'],
-	'post':['post'],
-	'page':['page'],
-	'link':['name','url'],
-	'text':['name', 'content', 'image', 'url', 'lang'],
-	'taxonomy':['taxonomy'],
-	'home':['name'],
-	'blog':['name'],
-	'shop':['name'],
+	'product':['product', 'img'],
+	'post':['post', 'img'],
+	'page':['page', 'img'],
+	'link':['name', 'content','url', 'lang', 'img'],
+	'text':['name', 'content','url', 'lang', 'img'],
+	'taxonomy':['taxonomy', 'img'],
+	'home':['name', 'img'],
+	'blog':['name', 'img'],
+	'shop':['name', 'img'],
 };
 
 function changeMenuType(e) {
@@ -602,6 +614,27 @@ document.addEventListener("click", function (e) {
 	
 });
 
+let nameInput = document.querySelector('[data-v-name]');
+let slugInput = document.querySelector('[data-v-slug]');
+let orig = slugify(nameInput.value);
+
+//change slug only if current value is the same as the text
+nameInput.addEventListener('keyup', function (e) {
+	let text = this.value;
+	delay(() => {
+		let slug = slugInput.value;
+
+		if ((orig == slug) || !slug) {
+			slug = orig = slugify(text);
+			const detail = {text, slug};
+			const event = new CustomEvent("content.slug", {detail});
+			document.dispatchEvent(event);
+			({text, slug} = detail);
+			slugInput.value = orig = slug;
+		}			
+		
+	}, 500);
+});
 
 </script>
 

@@ -453,6 +453,7 @@
 
 .icon.file {
 	width: 2.5em;
+	min-width: 2.5em;
 	height: 3em;
 	line-height: 3em;
 	text-align: center;

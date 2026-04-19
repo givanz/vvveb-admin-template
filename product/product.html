@@ -1202,7 +1202,7 @@
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-flag me-1"></i>
-                <span data-v-language-info-name>English</span>
+                <span data-v-language-info-slug>English</span>
               </button>
 
 
@@ -1741,71 +1741,6 @@
                       </div>
                     </div>
 
-                    <div class="mb-3 row">
-                      <label class="col-sm-2 form-label" for="input-related">
-                        <span>Taxonomy</span>
-                      </label>
-
-                      <div class="col-sm-10">
-
-
-                        <div class="taxonomies" data-v-taxonomies>
-                          <div class="taxonomy" data-v-taxonomy_item>
-
-                            <label class="col-form-label" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label>
-                              <span data-v-taxonomy_item-name>Categories</span>
-                              <div class="header-arrow"></div>
-                            </label>
-                            <input class="header_check" type="checkbox" checked="true" id="header_categories" data-v-taxonomy_item-input>
-                            <div class="" data-v-section="element_header">
-
-
-                              <div class="categories-list" data-v-categories>
-                                <div class="alert alert-warning m-0" data-v-if="taxonomy_item.taxonomy_item.count = 0 && taxonomy_item.type = 'categories'">No items!</div>
-
-                                <div data-v-cats>
-                                  <ul class="dd-list" data-v-if="taxonomy_item.type = 'categories'">
-
-                                    <li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
-                                      <div class="dd3-content">
-
-                                        <label class="form-check">
-                                          <input type="checkbox" class="form-check-input" value="4" name="taxonomy_item_id[]" data-v-post-taxonomy_item-taxonomy_item_id>
-                                          <span class="form-check-label" data-v-taxonomy_item-name>Item 135</span>
-                                        </label>
-
-                                      </div>
-
-                                    </li>
-
-                                  </ul>
-                                </div>
-
-                                <div data-v-tags>
-                                  <!-- <div class="alert alert-warning" data-v-if-not="_categories">No items!</div> -->
-
-                                  <div class="tags-input">
-
-                                    <div class="tag" data-v-tag>
-                                      <span data-v-taxonomy_item-name>Product 10</span>
-                                      <a href="#" class="btn-link remove-btn">
-                                        <i class="la la-times"></i>
-                                      </a>
-                                      <input type="hidden" value="4" name="tag[]" data-v-post-taxonomy_item-taxonomy_item_id data-v-taxonomy_item-list-name>
-                                    </div>
-
-                                    <input type="text" name="text" class="tags-input form-control" data-taxonomy_id>
-                                  </div>
-
-                                </div>
-
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
 
 
                     <div class="mb-3 row">
@@ -2982,7 +2917,7 @@
 
                         <div class="col-12 col-lg-3 col-xl-2 mb-3 add-new-image-card">
                           <div class="card shadow" style="justify-content: center;align-items: center;display:flex;height:100%;position:relative;min-height: 200px;">
-                            <img src="img/placeholder.svg" style="opacity:0.15;margin:0 2rem;">
+                            <img src="/media/placeholder.svg" style="opacity:0.15;margin:0 2rem;">
                             <a href="#" class="align-middle btn btn-primary btn-icon" id="add-new-image" style="z-index:1">
                               <i class="la la-plus la-lg"></i>
                               <span>Add new</span>
@@ -3000,7 +2935,7 @@
                   <div style="display:none" id="add-new-image-template">
                     <div class="col-12 col-lg-3 col-xl-2 mb-3" data-v-image>
                       <div class="card shadow">
-                        <img data-v-image-src="" src="img/placeholder.svg" alt="" id="gallery-image-0" data-media-gallery="" data-target-input="#gallery-image-0-input" data-target-thumb="#gallery-image-0" data-type="single" class="card-img-top">
+                        <img data-v-image-src="" src="/media/placeholder.svg" alt="" id="gallery-image-0" data-media-gallery="" data-target-input="#gallery-image-0-input" data-target-thumb="#gallery-image-0" data-type="single" class="card-img-top">
 
                         <input type="hidden" name="product_image[]" value="img/placeholder.svg" id="gallery-image-0-input" data-target-input="#gallery-image-0-input" disabled>
 
@@ -3421,8 +3356,6 @@
 
                 </div>
 
-                <!-- @-@include('_product_taxonomies.html') -->
-
                 <label class="header" data-v-header="default" for="header_product_options">
                   <span data-v-type-name>Product</span> options
                   <div class="header-arrow"></div>
@@ -3444,7 +3377,62 @@
                   </div>
                 </div>
 
-                <label class="header mt-4" data-v-header="default" for="header_sites">Sites
+                <div class="taxonomies" data-v-taxonomies>
+                  <div class="taxonomy" data-v-taxonomy_item>
+
+                    <label class="header" data-v-header="element_header" for="header_categories" data-v-taxonomy_item-label>
+                      <span data-v-taxonomy_item-name>Categories</span>
+                      <div class="header-arrow"></div>
+                    </label>
+                    <input class="header_check" type="checkbox" checked="true" id="header_categories" data-v-taxonomy_item-input>
+                    <div class="section" data-v-section="element_header">
+
+
+                      <div class="categories-list" data-v-categories>
+                        <div data-v-cats>
+
+                          <ul class="dd-list" data-v-if="taxonomy_item.type = 'categories'">
+
+                            <li class="dd-item dd3-item dd-collapsed" data-v-id data-v-cat>
+                              <div class="dd3-content">
+
+                                <label class="form-check">
+                                  <input type="checkbox" class="form-check-input" value="4" name="taxonomy_item_id[]" data-v-post-taxonomy_item-taxonomy_item_id>
+                                  <span class="form-check-label" data-v-taxonomy_item-name>Item 135</span>
+                                </label>
+
+                              </div>
+
+                            </li>
+
+                          </ul>
+                        </div>
+
+                        <div data-v-tags>
+
+                          <div class="tags-input">
+
+                            <div class="tag" data-v-tag>
+                              <span data-v-taxonomy_item-name>Product 10</span>
+                              <a href="#" class="btn-link remove-btn">
+                                <i class="la la-times"></i>
+                              </a>
+                              <input type="hidden" value="4" name="tag[]" data-v-post-taxonomy_item-taxonomy_item_id data-v-taxonomy_item-list-name>
+                            </div>
+
+                            <input type="text" name="text" class="tags-input form-control" data-taxonomy_id>
+                          </div>
+
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <label class="header mt-2" data-v-header="default" for="header_sites">Sites
                   <div class="header-arrow"></div>
                 </label>
                 <input class="header_check" type="checkbox" checked="true" id="header_sites">
@@ -3462,7 +3450,7 @@
                   </div>
                 </div>
 
-                <label class="header mt-4" data-v-header="default" for="header_template">Template
+                <label class="header mt-2" data-v-header="default" for="header_template">Template
                   <div class="header-arrow"></div>
                 </label>
                 <input class="header_check" type="checkbox" checked="true" id="header_template">
@@ -3512,6 +3500,7 @@
 
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-content">
         <div class="modal-body p-0">
 
@@ -3519,7 +3508,7 @@
             <input type="hidden" name="module" value="tools/search">
             <div class="d-flex">
               <div class="input-group">
-                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
                   <div class="la-flip-horizontal">
                     <i class="la la-search la-lg" aria-hidden="true"></i>
@@ -3540,7 +3529,6 @@
 
         </div>
       </div>
-      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
   </div>

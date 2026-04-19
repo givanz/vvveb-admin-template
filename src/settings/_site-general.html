@@ -1,110 +1,191 @@
-<div class="mb-3 row">
-   <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
-   <div class="col-sm-10">
-	<div class="input-group">
-	  <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name  required>
-	  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false">
-			<i class="la la-arrow-down text-primary"></i>
-		</button>
-	</div>
-   </div>
-</div>
-<!--
-<div class="mb-3 row">
-   <div class="col-sm-2">
-	   <label for="input-site-host" class="col-form-label">
-		<span>Site domain/subdomain</span>
-		<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
-		<br/>
-		<span class="form-text">Used to generate links for the site</span>
-	   </label>
-		<br/>
-		<a class="" data-bs-toggle="collapse" data-bs-target="#siteKeyInput" aria-expanded="false">
-			Advanced <i class="la la-lg la-arrow-down"></i>
-		</a>
-   </div>
-   <div class="col-sm-10">
-	  <input type="text" class="form-control" id="input-site-host" placeholder="subdomain.mysite.com" name="site[host]" data-v-site-host required />
-	  
-		<span class="form-text">Use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*</span>
-   </div>
-</div>
--->
-<div class="mb-3 row" id="siteDomain" data-v-class-if-collapse="this.site.site_id">
-   
-   <label for="input-site-host" class="col-sm-2 col-form-label">		
-		<span>Site domain/subdomain</span>
-		<span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
-		<br/>
-		<span class="form-text">Used to match site and generate links</span>
-   </label>
-   
-   <div class="col-sm-10">
-	  <div class="input-group">
-		<input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host  required>
-		<span class="input-group-text d-none">Path</span>
-		<input type="text" class="form-control d-none" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
-	  
-		<button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
-			<i class="la la-question-circle text-primary"></i>
-		</button>
-	  
+<div class="row">
+	<div class="col">
+
+	<div class="mb-3 row">
+	   <label for="input-site-name" class="col-sm-2 col-form-label">Site name</label>
+	   <div class="col-sm-10">
+		<div class="input-group">
+		  <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name  required>
+		  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false" data-v-if="this.site.site_id > 1">
+				<i class="la la-arrow-down text-primary"></i>
+			</button>
+		</div>
 	   </div>
+	</div>
+	<!--
+	<div class="mb-3 row">
+	   <div class="col-sm-2">
+		   <label for="input-site-host" class="col-form-label">
+			<span>Site domain/subdomain</span>
+			<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+			<br/>
+			<span class="form-text">Used to generate links for the site</span>
+		   </label>
+			<br/>
+			<a class="" data-bs-toggle="collapse" data-bs-target="#siteKeyInput" aria-expanded="false">
+				Advanced <i class="la la-lg la-arrow-down"></i>
+			</a>
+	   </div>
+	   <div class="col-sm-10">
+		  <input type="text" class="form-control" id="input-site-host" placeholder="subdomain.mysite.com" name="site[host]" data-v-site-host required />
+		  
+			<span class="form-text">Use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*</span>
+	   </div>
+	</div>
+	-->
+	<div class="my-3 row" id="siteDomain" data-v-class-if-collapse="this.site.site_id">
 	   
-								
-		<div class="collapse mt-1" id="siteKeyInfo">
-		  <div class="card card-body text-bg-body-tertiary">
-			<span>
-			<i class="la la-info-circle fs-2 px-2 float-end"></i>
-			<p>Examples: 
-				<span class="badge border text-body">www.mydomain.com</span> 
-				<span class="badge border text-body">subdomain.domain.com</span> 
-				<span class="badge border text-body">domain.com</span>
-			</p>
-			<span>Use * wildcard to match any subdomain or domain.</span><br>
-			<span>For example:</span> <span class="badge border text-body">shop.*.*</span><span>for your shop subdomain</span><br>
-			<span class="badge border text-body">blog.mydomain.*</span><span>to match blog on all tld's</span><br> 
-			<span class="badge border text-body">*.mydomain.*</span><span>to match all subdomains and tld.</span><br/>
-			<span>Use</span><span class="badge border text-body">*.*.*</span><span>to match all other hosts.</span><br/>
-			<span>Must be unique for each site.</span>
-			</span>
+	   <label for="input-site-host" class="col-sm-2 col-form-label">		
+			<span>Site domain/subdomain</span>
+			<span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+			<br/>
+			<span class="form-text">Used to match site and generate links</span>
+	   </label>
+	   
+	   <div class="col-sm-10">
+		  
+		<div class="d-flex justify-content-between" id="site-type">
+	
+			<div class="form-check">
+			  <input id="site-type-subdomain-radio" class="form-check-input" name="site-type" type="radio" value="subdomain" checked>
+			  <label class="form-check-label" for="site-type-subdomain-radio">
+				<strong class="mb-0 fw-medium">Domain/subdomain</strong>
+				<p class="text-muted"><span class="subdomain">subdomain.example.com</span></p>
+			  </label>
+			</div>
+					
+			<div class="form-check">
+			  <input id="site-type-subfolder-radio" class="form-check-input" name="site-type" type="radio" value="subfolder">
+			  <label class="form-check-label d-block" for="site-type-subfolder-radio">
+				<strong class="mb-0 fw-medium">Subfolder</strong>
+				<p class="text-muted"><span class="domain">example.com</span>/<span class="subfolder">blog</span></p>
+			  </label>
+			</div>	
+			
+			<div class="form-check">
+			  <input id="site-type-both-radio" class="form-check-input" name="site-type" type="radio" value="both">
+			  <label class="form-check-label d-block" for="site-type-both-radio">
+				<strong class="mb-0 fw-medium">Domain/subdomain and subfolder</strong>
+				<p class="text-muted"><span class="subdomain">subdomain.example.com</span>/<span class="subfolder">blog</span></p>
+			  </label>
+			</div>
 		  </div>
+
+	
+		  <div class="input-group">
+			<input type="text" class="form-control" id="input-site-host" placeholder="* mysite com" name="site[host]" data-v-site-host>
+			<span class="input-group-text d-none" id="input-site-path-text">Subfolder</span>
+			<input type="text" class="form-control d-none" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
+		  
+			<button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
+				<i class="la la-question-circle text-primary"></i>
+			</button>
+		  
+		   </div>
+		   
+									
+			<div class="collapse mt-1" id="siteKeyInfo">
+			  <div class="card card-body text-bg-body-tertiary">
+				<span>
+				<i class="la la-info-circle fs-2 px-2 float-end"></i>
+				<p>Examples: 
+					<span class="badge border text-body">www.mydomain.com</span> 
+					<span class="badge border text-body">mysite.domain.com</span> 
+					<span class="badge border text-body">domain.com</span>
+					<span class="badge border text-body">domain.com/mysite</span>
+				</p>
+				<span>Use * wildcard to match any subdomain or domain.</span><br>
+				<span>For example:</span> <span class="badge border text-body">shop.*.*</span><span>for your shop subdomain</span><br>
+				<span class="badge border text-body">blog.mydomain.*</span><span>to match blog on all tld's</span><br> 
+				<span class="badge border text-body">*.mydomain.*</span><span>to match all subdomains and tld.</span><br/>
+				<span>Use</span><span class="badge border text-body">*.*.*</span><span>to match all other hosts.</span><br/>
+				<span>Must be unique for each site.</span>
+				</span>
+			  </div>
+			</div>
+
+	   </div>
+	</div>
+
+
+		<div class="mb-3 row">
+		   <label for="input-site-theme" class="col-sm-2 col-form-label">Theme</label>
+		   <div class="col-sm-10">
+				 
+				   <select class="theme-list form-select flex-fill" name="site[theme]" id="input-site-theme" data-v-theme-list>
+						<option value="1">
+							<img src="">
+							Theme 1
+						</option>
+
+						<option value="2">
+							<img src="">
+							Theme 2
+						</option>
+				   </select>
+			  
+		   </div>
 		</div>
 
-   </div>
-</div>
+		<div class="mb-3 row">
+		   <label for="input-site-template" class="col-sm-2 col-form-label">Home template</label>
+		   <div class="col-sm-10">
+				 
+				<div class="input-group">
+				   <select class="template-list form-select flex-fill" name="site[template][0]" id="input-site-template" data-v-template_id="0" data-v-template-list>
+						<option value="" title="Default template">-- <span>Default template</span> --</option>
 
+						<option value="published" data-v-option>Published</option>
+				   </select>
+				   
+				    <div data-v-if-not="this.site.site_id" class="input-group-text">
+						
+					  <label class="form-check-label">
+						<input class="form-check-input" name="new-homepage[]" type="checkbox" value="0">
+						<span>Create new site specific home page</span>
+					  </label>
+			   
+					</div>
+				</div>
+			  
+		   </div>
 
-<div class="mb-3 row">
-   <label for="input-site-theme" class="col-sm-2 col-form-label">Theme</label>
-   <div class="col-sm-10">
-		 
-		   <select class="theme-list form-select flex-fill" name="site[theme]" id="input-site-theme" data-v-theme-list>
-				<option value="1">
-					<img src="">
-					Theme 1
-				</option>
+		</div>	
+		
+		<div data-v-languages>
+		<div data-v-language>
+			<div class="mb-3 row" data-v-if-not="language.language_id = this.setting.language_id">
+			   <label class="col-sm-2 col-form-label"><span data-v-language-name>English</span> <span>Home template</span></label>
+			   <div class="col-sm-10">
+					 
+					<div class="input-group">
+					   <select class="template-list-lang form-select flex-fill" name="site[template]" data-v-template-list>
+							<option value="" title="Default template">-- <span>Same as default language</span> --</option>
 
-				<option value="2">
-					<img src="">
-					Theme 2
-				</option>
-		   </select>
-	  
-   </div>
-</div>
+							<option value="published" data-v-option>Published</option>
+					   </select>
+					   
+						<div data-v-if-not="this.site.site_id" class="input-group-text">
+							
+						  <label class="form-check-label">
+							<input class="form-check-input new-homepage" name="new-homepage[]" type="checkbox" value="0">
+							<span>Create new site language specific home page</span>
+						  </label>
+				   
+						</div>
+					</div>
+				  
+			   </div>
 
-<div class="mb-3 row">
-   <label for="input-site-template" class="col-sm-2 col-form-label">Home template</label>
-   <div class="col-sm-10">
-		 
-		   <select class="template-list form-select flex-fill" name="site[template]" id="input-site-template"  data-v-template-list>
-				<option value="" title="Default template">-- Default template --</option>
-
-				<option value="published" data-v-option>Published</option>
-		   </select>
-	  
-   </div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="col page-preview-col">	
+	 <div class="page-preview">
+		<iframe id="page-preview" src=""></iframe>	
+	 </div> 
+	</div>
 </div>
 
 <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Email</label>
@@ -136,7 +217,7 @@
 			
 			<input type="hidden" data-v-image name="settings[favicon]" name="settings[favicon]"  data-v-setting="favicon" id="favicon-input" value="">
 						
-			<img data-v-image src="img/placeholder.svg" alt=""
+			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="favicon-thumb"
 			 data-v-placeholder=""
 			 data-media-gallery 
@@ -172,7 +253,7 @@
 			
 			<input type="hidden" data-v-image name="settings[logo]" name="settings[logo]"  data-v-setting="logo" id="logo-input" value="">
 						
-			<img data-v-image src="img/placeholder.svg" alt=""
+			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-thumb"
 			 data-v-placeholder=""
 			 data-media-gallery 
@@ -208,7 +289,7 @@
 			
 			<input type="hidden" data-v-image name="settings[logo-sticky]" name="settings[logo-sticky]"  data-v-setting="logo-sticky" id="logo-sticky-input" value="">
 						
-			<img data-v-image src="img/placeholder.svg" alt=""
+			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-sticky-thumb"
 			 data-v-placeholder=""
 			 data-media-gallery 
@@ -243,7 +324,7 @@
 			
 			<input type="hidden" data-v-image name="settings[logo-dark]" name="settings[logo-dark]"  data-v-setting="logo-dark" id="logo-dark-input" value="">
 						
-			<img data-v-image src="img/placeholder.svg" alt=""
+			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-dark-thumb"
 			 data-v-placeholder=""
 			 data-media-gallery 
@@ -278,7 +359,7 @@
 			
 			<input type="hidden" data-v-image name="settings[logo-dark-sticky]" name="settings[logo-dark-sticky]"  data-v-setting="logo-dark-sticky" id="logo-dark-sticky-input" value="">
 						
-			<img data-v-image src="img/placeholder.svg" alt=""
+			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-dark-sticky-thumb"
 			 data-v-placeholder=""
 			 data-media-gallery 
@@ -324,7 +405,7 @@
 				
 				<input type="hidden" data-v-image name="settings[webbanner]" name="settings[webbanner]"  data-v-setting="webbanner" id="webbanner-input" value="">
 							
-				<img data-v-image src="img/placeholder.svg" alt=""
+				<img data-v-image src="/media/placeholder.svg" alt=""
 				 id="webbanner-thumb"
 				 data-v-placeholder=""
 				 data-media-gallery 

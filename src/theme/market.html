@@ -38,11 +38,6 @@
 				  <i class="icon-funnel-outline"></i>&nbsp; <i class="icon-chevron-down-outline small"></i>
 				</button>
 
-				<a href data-v-url-params='{"module":"theme/market"}'  data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false"
-						class="btn btn-outline-secondary btn-icon ms-1 text-nowrap" >
-						<i class="la la-cloud-upload-alt la-lg"></i> <span>Upload theme</span>
-				</a>
-
 			</div>				
 			<!--
 			 <a href data-v-url-params='{"module":"theme/market"}' 
@@ -58,8 +53,6 @@
 
 					
 	<div class="themes" id="main-content" >
-    
-    @@include('../_includes/upload-form.html')
 	
     <form action="" method="post">		
 		<input type="hidden" name="csrf" data-v-csrf>
@@ -67,7 +60,26 @@
 		
 		@@include('../_includes/notifications.html')
 																					
-																					
+		<div class="notifications" data-v-logs>
+			<div class="alert alert-light d-flex alert-dismissable" role="alert">
+
+				<ul class="flex-grow-1 my-3" style="list-style-type: '&#x2713; ';">
+					<li data-v-logs-line>
+						<div data-v-log-text>
+							
+						</div>
+					</li>
+				</ul>
+				
+				<button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">
+					  
+					</span>
+				</button>
+			
+			</div>
+		 </div>		
+																				
 			<div id="filters" class="collapse mx-3" data-v-class-if-show="this.taxonomy_item_id">
 				<ul class="nav nav-pills pills-border small mx-2 mb-3" data-v-theme-categories>
 				  <li class="nav-item">

@@ -113,25 +113,43 @@ function loadAjax(url, selector, callback = null, params = {}, method = "get") {
 	}).then(function (data) {
 		if (selector) {
 			let response = new DOMParser().parseFromString(data, "text/html");
-
-			if (Array.isArray (selector) ) {
-				for (const k in selector) {
-					let elementSelector = selector[k];
-					let currentElement = document.querySelector(elementSelector);
-					let newElement = response.querySelector(elementSelector);
-					if (currentElement && newElement) {
-						currentElement.replaceWith(newElement);
-					}
-				}
-			} else {
-				let currentElement = document.querySelector(selector);
-				let newElement = response.querySelector(selector);
-
-				if (currentElement && newElement) {
-					currentElement.replaceWith(newElement);
-				}
+			if (!Array.isArray (selector) ) {
+				selector = [selector];
 			}
 			
+			for (const k in selector) {
+				let elementSelector = selector[k];
+				let currentElements = document.querySelectorAll(elementSelector);
+				let newElements = response.querySelectorAll(elementSelector);
+				
+				if (currentElements && newElements) {
+					currentElements.forEach( (e, i) => {
+						let newElement = newElements[i] ?? document.createElement("null");
+						e.replaceWith(newElement);
+						newElement.querySelectorAll('script').forEach(oldScriptEl => {
+							  const newScriptEl = document.createElement("script");
+							  
+							  Array.from(oldScriptEl.attributes).forEach( attr => {
+								newScriptEl.setAttribute(attr.name, attr.value) 
+							  });
+							  
+							  const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+							  newScriptEl.appendChild(scriptText);
+							  oldScriptEl.replaceChildren();
+							  oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+							  oldScriptEl.remove();
+							  
+						});
+					});
+				} /*if (currentElements) {
+					currentElements.forEach(e => e.remove());
+				} else if (newElements) {
+					//new elements don't  have corresponding elements on the page, reload hole page
+					response = new DOMParser().parseFromString(data, "text/html")
+					document.querySelector("body").replaceWith(response.querySelector("body"));
+					break;
+				}*/
+			}
 			if (callback) callback();
 		}		
 
@@ -144,8 +162,9 @@ function loadAjax(url, selector, callback = null, params = {}, method = "get") {
 var VvvebTheme = {};
 
 VvvebTheme.ajax = {
-	selector:"a[data-url], a[data-page-url], a[data-v-url]",
-	siteContainer:["#main-content"],
+	selector:"a",
+	//selector:"a[data-url], a[data-page-url], a[data-v-url]",
+	siteContainer:["body"],
 	scrollContainer:"body",
 	skipUrl:[]
 }

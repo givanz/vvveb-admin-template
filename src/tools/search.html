@@ -18,7 +18,7 @@
 			<form action="{$this.adminPath}/index.php?module=tools/search" method="get" class="mb-4"> 
 			  <input type="hidden" name="module" value="tools/search">
 			  <div class="d-flex">
-				  <div class="input-group shadow">
+				  <div class="input-group shadow-sm border rounded">
 					<input type="search" name="search" class="form-control border-0 p-3 px-4" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
 					<button class="btn btn-outline-primary border-0" type="submit" title="Search">
 					  <div class="la-flip-horizontal">
@@ -40,35 +40,38 @@
 				<div class="group mb-3">
 					<h6 class="my-3" data-v-group-name>Posts</h6>
 					
-					<ul class="list-group shadow-sm">
-					  <li class="list-group-item" data-v-item>
-						<i class="icon-document-text-outline"  data-v-item-icon><span></span></i>
-						<img src="" width="32" data-v-item-image>
+					<ul class="">
+					  <li class="" data-v-item>
 						<a href="#" data-v-item-url>
-							<span data-v-item-text>About</span>
+							<i class="icon-document-text-outline"  data-v-item-icon><span></span></i>
+							<img src="" width="48" data-v-item-image>
+							<div>
+								<span data-v-item-text>About</span>
+								<p data-v-item-description></p>
+							</div>
 						</a>
 					  </li>
-					  <li class="list-group-item">A list item</li>
-					  <li class="list-group-item">A list item</li>
+					  <li class="">A list item</li>
+					  <li class="">A list item</li>
 					</ul>
 				</div>				
 				
 				<div class="group">
 					<h6 class="my-3">Posts</h6>
 					
-					<ul class="list-group shadow-sm">
-					  <li class="list-group-item">
+					<ul class="">
+					  <li class="">
 						<i class="icon-document-text-outline"></i>
 						<a href="#">
 							<span>About</span>
 						</a>
 					  </li>
-					  <li class="list-group-item">A list item</li>
-					  <li class="list-group-item">A list item</li>
+					  <li class="">A list item</li>
+					  <li class="">A list item</li>
 					</ul>
 				</div>
 				
-				<div class="p-4 shadow-sm" data-v-if-not="this.search">
+				<div class="p-3" data-v-if-not="this.search">
 					No results found!
 				</div>
 				

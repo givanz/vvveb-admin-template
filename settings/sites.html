@@ -1203,7 +1203,7 @@
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-flag me-1"></i>
-                <span data-v-language-info-name>English</span>
+                <span data-v-language-info-slug>English</span>
               </button>
 
 
@@ -1433,10 +1433,7 @@
                     <span>Url</span>
                   </th>
                   <!-- <th><i class="la la-link"></i><span>Key</span></th> -->
-                  <th>
-                    <i class="la la-link"></i>
-                    <span>Host</span>
-                  </th>
+                  <!--  <th><i class="la la-link"></i><span>Host</span></th> -->
                   <th style="width:200px;">
                     <i class="icon-cube-outline"></i>
                     <span>Theme</span>
@@ -1454,7 +1451,7 @@
               <tbody>
                 <tr data-v-site>
                   <td class="checkbox">
-                    <label class="form-check" data-v-if="count > 1">
+                    <label class="form-check" data-v-if="count > 1 && site.site_id > 1">
                       <input type="checkbox" class="form-check-input" value="4" name="site_id[]" data-v-vvveb-action="table.selectRow" data-v-site_id>
                       <span class="form-check-label"></span>
                       <span class="custom-control-description">&nbsp;</span>
@@ -1501,22 +1498,20 @@
 										www.vvveb.com
 									</span>
 								</td>
+								
+                                <td>
+									<span  data-v-host>
+										www.vvveb.com
+									</span>
+								</td>
 								-->
-
-                  <td>
-                    <span data-v-host>
-                      www.vvveb.com
-                    </span>
-                  </td>
 
                   <td>
                     <span data-v-theme>Landing</span>
                   </td>
 
                   <td>
-                    <span class="template" data-v-template>
-                      <a href="//www.vvveb.com" target="_blank" data-v-template>index.html</a>
-                    </span>
+                    <span class="template" data-v-template-friendly></span>
                   </td>
 
 
@@ -1532,7 +1527,7 @@
                         <span class="visually-hidden">Toggle primary</span>
                       </button>
                       <ul class="dropdown-menu" data-v-if="count > 1">
-                        <li data-v-check-permission-delete>
+                        <li data-v-if="site.site_id > 1" data-v-check-permission-delete>
                           <a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')">
                             <i class="icon-trash-outline"></i>
                             <span>Delete</span>
@@ -1650,6 +1645,7 @@
 
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-content">
         <div class="modal-body p-0">
 
@@ -1657,7 +1653,7 @@
             <input type="hidden" name="module" value="tools/search">
             <div class="d-flex">
               <div class="input-group">
-                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
                   <div class="la-flip-horizontal">
                     <i class="la la-search la-lg" aria-hidden="true"></i>
@@ -1678,7 +1674,6 @@
 
         </div>
       </div>
-      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
   </div>

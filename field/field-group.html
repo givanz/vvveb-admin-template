@@ -1202,7 +1202,7 @@
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
                 <i class="la la-flag me-1"></i>
-                <span data-v-language-info-name>English</span>
+                <span data-v-language-info-slug>English</span>
               </button>
 
 
@@ -2962,7 +2962,7 @@
                     <div class="mb-3 row">
                       <label for="input-description" class="col-sm-2 col-form-label">Description</label>
                       <div class="col-sm-10 col-xl-8 col-xxl-6">
-                        <textarea class="form-control" id="input-description" placeholder="Description" name="field_group[content]" data-v-field_group-content required>
+                        <textarea class="form-control" id="input-description" placeholder="Description" name="field_group[content]" data-v-field_group-content>
 									  </textarea>
                       </div>
                     </div>
@@ -3505,6 +3505,7 @@
     </div>
   </div>
 
+  <script id="functions-js" src="/js/admin/functions.js"></script>
   <script>
 let mediaPath         = '{ $this->mediaPath }';
 let mediaScanUrl      = '{ $this->scanUrl }';
@@ -3566,6 +3567,29 @@ groupType.addEventListener("change", function (e) {
 });
 
 groupType.dispatchEvent(new Event('change'));
+
+
+let nameInput = document.querySelector('#group-general [data-v-field_group-name]');
+let slugInput = document.querySelector('#group-general [data-v-field_group-slug]');
+let orig = slugify(nameInput.value);
+
+//change slug only if current value is the same as the text
+nameInput.addEventListener('keyup', function (e) {
+	let text = this.value;
+	delay(() => {
+		let slug = slugInput.value;
+
+		if ((orig == slug) || !slug) {
+			slug = orig = slugify(text);
+			const detail = {text, slug};
+			const event = new CustomEvent("content.slug", {detail});
+			document.dispatchEvent(event);
+			({text, slug} = detail);
+			slugInput.value = orig = slug;
+		}			
+		
+	}, 500);
+});
 </script>
 
 
@@ -3575,6 +3599,7 @@ groupType.dispatchEvent(new Event('change'));
 
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-content">
         <div class="modal-body p-0">
 
@@ -3582,7 +3607,7 @@ groupType.dispatchEvent(new Event('change'));
             <input type="hidden" name="module" value="tools/search">
             <div class="d-flex">
               <div class="input-group">
-                <input type="search" name="search" class="form-control border-0 p-3 px-4" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
                   <div class="la-flip-horizontal">
                     <i class="la la-search la-lg" aria-hidden="true"></i>
@@ -3603,7 +3628,6 @@ groupType.dispatchEvent(new Event('change'));
 
         </div>
       </div>
-      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
   </div>
@@ -3625,7 +3649,6 @@ groupType.dispatchEvent(new Event('change'));
   <script id="index-js" src="libs/vvveb/index.js"></script>
   <link href="libs/media/media.css" rel="stylesheet">
   <script id="field-group-js" src="js/field-group.js"></script>
-  <script id="functions-js" src="/js/admin/functions.js"></script>
 
   <!-- Modal -->
   <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">

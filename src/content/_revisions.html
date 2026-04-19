@@ -50,7 +50,7 @@
 			<div class="col">
 				<div class="p-3 input-group">
 
-					<button class="btn btn-light border" onclick="restore()">
+					<button class="btn btn-outline-secondary btn-icon" onclick="restore()">
 						<i class="la la-lg la-arrow-left"></i>
 						<span>Apply</span>
 					</button>
@@ -205,7 +205,10 @@ function save() {
 }
 
 function restore(select) {
-	dv.edit.setValue(document.getElementsByClassName("CodeMirror")[1].CodeMirror.getDoc().getValue());
+	let value = document.getElementsByClassName("CodeMirror")[1].CodeMirror.getDoc().getValue();
+	if (value) {
+		dv.edit.setValue(value);
+	}
 }
 
 function loadRevision(select) {

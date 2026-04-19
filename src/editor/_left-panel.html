@@ -2,24 +2,26 @@
  <div> 
   <div id="filemanager"> 
 		<div class="header">
-			<span class="text-muted lh-lg"><span>Pages</span></span>
+			<div class="search">
+			  <input class="form-control h-100" placeholder="Pages" type="search" data-vvveb-action="searchPages" data-vvveb-on="input">
+			</div>
+			
+			<div class="btns" role="group">			 
 
-				<div class="float-end" role="group">			 
-
-					<button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
-					   <span>Add page</span>
-					   <i class="icon-add"></i>
-				  </button>
+				<button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
+				   <span>Add page</span>
+				   <i class="icon-add"></i>
+			  </button>
+			  
+			  <button class="btn btn-primary btn-sm btn-icon btn-add" title="New section (Ctrl + Shift + S)" id="new-section" data-vvveb-action="newSection" data-vvveb-shortcut="">
 				  
-				  <button class="btn btn-primary btn-sm btn-icon btn-add" title="New section (Ctrl + Shift + S)" id="new-section" data-vvveb-action="newSection" data-vvveb-shortcut="">
-					  
-					   <i class="icon-add"></i>
-				  </button>	
-				  <!--  
-				  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
-					  <i class="la la-trash"></i> <small>Delete</small>
-				  </button> -->
-				</div>
+				   <i class="icon-add"></i>
+			  </button>	
+			  <!--  
+			  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
+				  <i class="la la-trash"></i> <small>Delete</small>
+			  </button> -->
+			</div>
 
 			</div>
 

@@ -59,7 +59,7 @@
                             </div>
                             <div class="col-sm-12 col-xl-6 col-xxl-6 mb-3">
 								<div class="row">
-                                <label class="col-sm-2 col-form-label" for="input-model">Month</label>
+                                <label class="col-sm-2 col-form-label" for="filter-by-archives">Month</label>
 									<div class="col-sm-10">
 									  <select name="filter[archives]" id="filter-by-archives" class="form-control" >
 										<option value="">- All dates -</option>
@@ -95,7 +95,7 @@
                             </div> 
 							<div class="col-sm-12 col-xl-6 col-xxl-6 mb-3">
 								<div class="row">
-                                <label class="col-sm-2 col-form-label" for="input-model">Status</label>
+                                <label class="col-sm-2 col-form-label" for="filter-by-status">Status</label>
 									<div class="col-sm-10">
 									  <select name="filter[status]" id="filter-by-status" class="form-control" >
 										<option value="">- All -</option>
@@ -103,18 +103,42 @@
 										<option value="draft" data-v-option>Draft</option>
 										<option value="pending" data-v-option>Pending</option>
 										<option value="private" data-v-option>Private</option>
+										<option value="scheduled" data-v-option>Scheduled</option>
 										<option value="password" data-v-option>Password</option>
-
 									  </select>
 									</div>
 								</div>
                             </div>							
 							<div class="col-sm-12 col-xl-6 col-xxl-6 mb-3">
 								<div class="row">
-									<label class="col-sm-2 col-form-label" for="input-model">Author</label>
+									<label class="col-sm-2 col-form-label" for="input-author">Author</label>
 										<div class="col-sm-10">
 										 <input name="filter[admin_id]" value="" placeholder="Author" id="input-author" autocomplete="off" type="text" class="form-control autocomplete"
 					data-url="{$this.adminPath}index.php?module=content/post&action=adminsAutocomplete" data-text=""/>	
+										</div>
+								</div>
+                            </div>							
+							
+							<div class="col-sm-12 col-xl-6 col-xxl-6 mb-3">
+								<div class="row">
+									<label class="col-sm-2 col-form-label" for="filter-by-site">Site</label>
+										<div class="col-sm-10">
+										<div class="form-check form-check-inline">
+										  <input class="form-check-input" type="radio" name="filter[site_id]" id="current-site" value="{$this.global.site_id}">
+										  <label class="form-check-label" for="current-site">Current site</label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <input class="form-check-input" type="radio" name="filter[site_id]" id="all-sites" value="">
+										  <label class="form-check-label" for="all-sites">All sites</label>
+										</div>
+										<!--
+										 <select name="filter[site_id]" id="filter-by-site" class="form-control" >
+											<option value="">-- <span>Current site</span> --</option>
+											<option value="">-- <span>All sites</span> --</option>
+											<option value="1" data-v-option>Default</option>
+											<option value="2" data-v-option>Site name</option>
+										  </select>
+										  -->
 										</div>
 								</div>
                             </div>

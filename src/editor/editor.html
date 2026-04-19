@@ -199,7 +199,21 @@ if (document.readyState !== "loading") {
 
 let defaultTemplates = {'post':'content/post.html', 'page': 'content/page.html', 'product': 'product/product.html', 'template': 'blank.html'};
 
-document.querySelector("[name='startTemplateUrl']").value = defaultTemplates['page'] ?? '';
+let pageUrl         = document.getElementById("page-url");
+let templateUrl     = document.getElementById("template-url");
+let pagePreview     = document.getElementById("page-preview");
+let templatePreview = document.getElementById("template-preview");
+
+pageUrl.value   = defaultTemplates['page'] ?? '';
+pagePreview.src = Vvveb.themeBaseUrl + (defaultTemplates['page'] ?? '');
+
+pageUrl.addEventListener('change', e => {
+	pagePreview.src = Vvveb.themeBaseUrl + pageUrl.value;
+});
+
+templateUrl.addEventListener('change', e => {
+	templatePreview.src = Vvveb.themeBaseUrl + templateUrl.value;
+});
 
 let newPageTab = function (event) {
 	let active = this.value;
@@ -222,7 +236,9 @@ let newPageTab = function (event) {
 		});
 		
 		let templateSelect = section.querySelector("[name='startTemplateUrl']");
+
 		if (templateSelect) {
+			section.querySelector(".page-preview iframe").src = Vvveb.themeBaseUrl + (defaultTemplates[active] ?? '');
 			templateSelect.value = defaultTemplates[active] ?? '';
 		}
 	});
