@@ -292,18 +292,33 @@ if (lang != "en-us") {
 <script>
 let data = {};
 let variants = {};
+let prices = {};
 let options = document.querySelectorAll("[data-v-poption].tab-pane");
 options.forEach(option => {
 	let values = option.querySelectorAll("[data-v-option-value]");
 	let input = option.querySelector("[data-v-poption-product_option_id]");
 	let optionId = input.value;
 	variants[optionId] = {};
+	prices[optionId] = {};
 	values.forEach(value => { 
 		let textInput = value.querySelector("[data-v-option-value-option_value_id]");
 		let valInput = value.querySelector("[data-v-option-value-product_option_value_id]");
+		let priceInput = value.querySelector("[data-v-option-value-price]");
+		let operatorInput = value.querySelector("[data-v-option-value-price_operator]:checked");
 		let valueId = valInput.value;
 		let text = textInput.options[textInput.selectedIndex].text;
+		let price = 0;
+		
+		if (priceInput.value) {
+			if (operatorInput.value == "+") {
+				price += parseFloat(priceInput.value);
+			} else {
+				price -= parseFloat(priceInput.value);
+			}
+		}
+
 		variants[optionId][valueId] = text;
+		prices[optionId][valueId] = price;
 	});
 });
 
@@ -312,41 +327,50 @@ let combinations = {};
 let result = {};
 
 
-function comb(arr) {
-	let names = [], values = [];
+function comb(arr, optionPrices) {
+	let names = [], values = [], prices = [];
 	
-	for (optionId in arr) {
+	for (let optionId in arr) {
 		let set = arr[optionId];
+		let price = 0;
+		
 		if (!names.length) {
 			for (let i in set) {
 				names.push(set[i]);
 				values.push(optionId + ":" + i);
+				prices.push(optionPrices[optionId][i]);
 			}
 		} else {
 			let length = names.length;
 			let newNames = [];
 			let newValues = [];
+			let newPrices = [];
+			
 			for (let i = 0; i < length; i++) {
 				let currName = names[i];
+				
 				for (let j in set) {
 					newNames.push(currName + " - " + set[j]);
 					newValues.push(values[i] + "," + optionId + ":" +j);
+					newPrices.push(prices[i] + optionPrices[optionId][j]);
 				}
 			}
 			
 			names = newNames;
 			values = newValues;
+			prices = newPrices;
 		}		
 	}
 	
-	return [names, values];
+	return [names, values, prices];
 }
+let price = document.getElementById("input-price");
 
 function addAllVariants() {
 	//get existing variants to skip them
 	let existingVariants = [];
-	document.querySelectorAll("#tab-variant [data-v-variant-combination]").forEach(e => existingVariants.push(e.value));
-
+	document.querySelectorAll("#tab-variant tr:not(#variant-template) [data-v-variant-combination]").forEach(e => existingVariants.push(e.value));
+	let counter = 0;
 	for (let i in result[1]) {
 		let options = result[1][i];
 		if (existingVariants.indexOf(options) > -1) {
@@ -354,12 +378,15 @@ function addAllVariants() {
 		}
 		
 		let row = addTemplate("#variant-template", "product_variant", "#variant");
-		row.querySelector("#variant-template [data-v-variant-combination]").value = options;
-		
+		row.querySelector("[data-v-variant-combination]").value = options;
+		row.querySelector("[data-v-variant-price]").value = parseFloat(price.value) + result[2][i];;
+		counter++;
 	}
+	
+	displayToast("success", "Variants", counter + " variants added");	
 }
 
-result = comb(variants);
+result = comb(variants, prices);
 
 let variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
 variantSelect.innerHTML = "";
