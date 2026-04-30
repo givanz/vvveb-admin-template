@@ -178,7 +178,7 @@ document.querySelector("#order-form").addEventListener("change", function (e) {
 		let name = element.name;
 		let textSelector = "[data-" + name + "-text]";
 
-		document.querySelector(textSelector).innerHTML = element.value;
+		document.querySelector(textSelector).textContent = element.value;
 	}
 	
 });
@@ -189,7 +189,7 @@ document.querySelector("#order-form").addEventListener("change", function (e) {
 		let name = element.dataset.text;
 		let value = element.options[element.selectedIndex].text
 		let textSelector = "[" + name + "]";
-		document.querySelector(textSelector).innerHTML = value;
+		document.querySelector(textSelector).textContent = value;
 	}	
 });
 
@@ -204,7 +204,7 @@ if (productDetails) {
 	productDetails.style.display = "none";
 
 	function onSelect(value, text, name, listName) {
-		productDetails.innerHTML = "";
+		productDetails.textContent = "";
 		productDetails.style.display = "";
 		loadAjax(window.location.pathname + location.search, ".product-details > div", null, {product_id:value},  "post");
 		//document.querySelector(".product-details").load(window.location.pathname + location.search + " .product-details > div", {product_id:value});
