@@ -24,21 +24,6 @@
 
 
 				<div class="btns">
-					<div class="bulk-actions px-2" style="display:none">
-						<!--
-					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
-								aria-controls="filters" title="Delete selected"
-								class="btn btn-primary">
-							<i class="icon-create-outline"></i> Edit selected
-						</button>
-						-->
-					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
-								aria-controls="filters" title="Delete selected"
-								class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-							<i class="icon-trash-outline"></i> <span>Delete selected</span>
-						</button>
-					</div>
-
 					<a href data-v-url-params='{"module":"product/option"}' data-v-check-permission="product/option/save"
 							class="btn btn-primary btn-icon ms-1">
 						<i class="icon-add-outline"></i> <span>Add option</span>
@@ -132,16 +117,17 @@
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
 										<ul class="dropdown-menu">
-										  
-										  <li><a class="dropdown-item" href="#" data-v-option-approve-url target="_blank"><i class="la la-check text-secondary"></i><span>Approve</span></a></li>
-										  <li><a class="dropdown-item" href="#" data-v-option-spam-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Spam</span></a></li>
-										  <li><a class="dropdown-item" href="#" data-v-option-trash-url target="_blank"><i class="la la-trash text-secondary"></i> <span>Trash</span></a></li>
+										  <li>
+											<button type="submit" name="option_id" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='duplicate';" data-v-option-option_id>							
+												<i class="la la-copy text-secondary"></i><span>Duplicate</span
+											</button>
+										  </li>
 										  <li><hr class="dropdown-divider"></li>
 										  <li data-v-check-permission-delete>
-	<button type="submit" name="option_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-option-option_id>							
-		<i class="icon-trash-outline"></i><span>Delete</span>
-	</button>
-</li>
+											<button type="submit" name="option_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-option-option_id>							
+												<i class="icon-trash-outline"></i><span>Delete</span>
+											</button>
+										</li>
 										</ul>
 									 </div>
 
@@ -160,7 +146,8 @@
 							</tr>
 
                         </table>
-								<div class="bottom">
+						
+						<div class="bottom">
                                 <div class="float-start"></div>
 								<div class="float-end">
 							
@@ -171,7 +158,8 @@
 		                </div>
 
                   </form>
-                </div>
+               
+				</div>
 
 
             </div>

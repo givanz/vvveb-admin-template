@@ -1312,20 +1312,6 @@
 
 
           <div class="btns">
-            <div class="bulk-actions px-2" style="display:none">
-              <!--
-					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
-								aria-controls="filters" title="Delete selected"
-								class="btn btn-primary">
-							<i class="icon-create-outline"></i> Edit selected
-						</button>
-						-->
-              <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" title="Delete selected" class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-                <i class="icon-trash-outline"></i>
-                <span>Delete selected</span>
-              </button>
-            </div>
-
             <a href data-v-url-params='{"module":"product/option"}' data-v-check-permission="product/option/save" class="btn btn-primary btn-icon ms-1">
               <i class="icon-add-outline"></i>
               <span>Add option</span>
@@ -1488,24 +1474,10 @@
                           <span class="visually-hidden">Toggle primary</span>
                         </button>
                         <ul class="dropdown-menu">
-
                           <li>
-                            <a class="dropdown-item" href="#" data-v-option-approve-url target="_blank">
-                              <i class="la la-check text-secondary"></i>
-                              <span>Approve</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#" data-v-option-spam-url target="_blank">
-                              <i class="la la-trash text-secondary"></i>
-                              <span>Spam</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#" data-v-option-trash-url target="_blank">
-                              <i class="la la-trash text-secondary"></i>
-                              <span>Trash</span>
-                            </a>
+                            <button type="submit" name="option_id" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='duplicate';" data-v-option-option_id>
+                              <i class="la la-copy text-secondary"></i>
+                              <span>Duplicate</span </button>
                           </li>
                           <li>
                             <hr class="dropdown-divider">
@@ -1534,6 +1506,7 @@
                 </tr>
 
               </table>
+
               <div class="bottom">
                 <div class="float-start"></div>
                 <div class="float-end">
@@ -1606,6 +1579,7 @@
               </div>
 
             </form>
+
           </div>
 
 
@@ -1689,12 +1663,12 @@
   <!-- save toast -->
   <div class="toast-container position-fixed end-0 bottom-0 me-4 my-4">
     <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
-      <div class="toast-header bg-success bg-opacity-10 border-0">
+      <div class="toast-header bg-success bg-opacity-10 border-0  py-1">
         <strong class="me-auto">Page save</strong>
         <!-- <small class="badge bg-success">status</small> -->
-        <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div class="toast-body">
+      <div class="toast-body py-2">
         <div class="flex-grow-1">
           <div class="message">
             <div>Elements saved!</div>
@@ -1710,12 +1684,12 @@
 
     <div class="toast-container position-fixed end-0 top-0 me-4 my-4">
       <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="top-toast">
-        <div class="toast-header bg-success bg-opacity-10 border-0">
+        <div class="toast-header bg-success bg-opacity-10 border-0  py-1">
           <strong class="me-auto">Page save</strong>
           <!-- <small class="badge bg-success">status</small> -->
-          <button type="button" class="btn-close me-1" data-bs-dismiss="toast" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
-        <div class="toast-body">
+        <div class="toast-body py-2">
           <div class="flex-grow-1">
             <div class="message">
               <div>Elements saved!</div>
