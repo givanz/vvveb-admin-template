@@ -22,7 +22,12 @@
 
 					<h1 class="heading1 text-center fw-normal mb-3">Page not found!</h1>
 					<h4 class="text-muted text-center fw-normal">Error 404</h4>
-					<p data-v-message></p>
+
+					<div class="text-center">
+						<div class="alert alert-light m-auto d-inline-block my-3"data-v-if="this.message">
+							<span data-v-message></span>
+						</div>
+					</div>
 
 					<div data-debug class="my-3">
 
