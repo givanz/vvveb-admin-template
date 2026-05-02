@@ -146,7 +146,10 @@
 
                                 <td style="width:200px;text-align:center;" class="author">
                                         <img class="rounded" data-v-if="@@name.avatar" data-v-@@name-avatar src="#">
-		                                <a href="{$this.adminPath}index.php?module=@@list&amp;action=@@name&amp;id=4" data-v-@@name-author>Admin</a>
+		                                <a href="" data-v-@@name-author-url data-v-if="@@name.author-url">
+											<span data-v-@@name-author>Admin</span>
+										</a>
+		                                <span data-v-@@name-author data-v-if-not="@@name.author-url">Admin</span>
                                 </td>
                                 <td class="@@list">
 									<div class="badge bg-secondary" data-v-@@list>0</div>
