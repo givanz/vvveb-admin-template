@@ -1,12 +1,12 @@
 <div id="pagination" data-pagination>
-	<div data-v-if="pagecount > 1">
+	<div data-v-if="pagecount > 1" class="small">
 
 		<span class="pages" data-count>100</span> items, page
-			<input type="number" name="page" class="form-control d-inline-block text-align-center" size="2" min="1" max="{$pagecount}" style="width:4.5rem" onchange="window.location.href = window.location.href.replace(/&page=\d+/, '') + '&page=' + this.value" data-current-page>
+			<input type="number" name="page" class="form-control form-control-sm d-inline-block text-align-center" size="2" min="1" max="{$pagecount}" style="width:3.5rem" onchange="window.location.href = window.location.href.replace(/&page=\d+/, '') + '&page=' + this.value" data-current-page>
 		of <span class="pages" data-pagecount></span> 
 
 		<nav class="d-inline-block ms-2">
-			<ul class="pagination">
+			<ul class="pagination pagination-sm">
 			
 				<li class="page-item pager-first" data-first>
 					<a class="page-link" title="First page" href="#" data-page-url>
