@@ -915,7 +915,7 @@
         <div class="btn-group" data-v-component-sites>
 
           <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
-            <i class="icon-menu-outline"></i>
+            <i class="icon-menu-outline fs-6 text-muted"></i>
           </button>
 
 
@@ -1023,10 +1023,6 @@
 
 
         <div class="float-end">
-
-          <button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
-            <i class="la la-sun"></i>
-          </button>
 
           <div class="btn-group top-notifications" data-v-component-notifications>
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1214,14 +1210,12 @@
 -->
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
-                    <i class="la la-flag la-lg me-2"></i>
                     <span data-v-language-name>English</span>
                   </button>
                 </div>
 
                 <div data-v-language>
                   <button class="dropdown-item" href="#" name="language" data-v-language-code>
-                    <i class="la la-flag la-lg me-2"></i>
                     <span data-v-language-name>Romanian</span>
                   </button>
                 </div>
@@ -1237,8 +1231,12 @@
 
           <div class="vr align-middle mx-1"></div>
 
+          <button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
+            <i class="la la-sun"></i>
+          </button>
 
-          <a target="_blank" id="top-docs-btn" href="{$this.adminPath}index.php?action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn" aria-expanded="false">
+
+          <a target="_blank" id="top-docs-btn" href="{$this.adminPath}index.php?action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn px-1" aria-expanded="false">
             <i class="la la-lg la-question-circle"></i>
             <span>Docs</span>
           </a>
@@ -1266,7 +1264,6 @@
 					<div class="dropdown-divider"></div>
 					-->
                 <a class="dropdown-item" href="#" data-v-admin-edit-url>
-                  <i class="la la-edit me-2"></i>
                   <span>Edit Profile</span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -2355,8 +2352,8 @@
                         <thead>
                           <tr>
                             <th class="text-start">
-                              <div class="d-flex justify-content-between">
-                                <div class="mt-1">Variant</div>
+                              <div class="d-flex justify-content-between text-nowrap">
+                                <div class="mt-1 me-1">Variant</div>
                                 <button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addAllVariants()'>
                                   <i class="la la-plus"></i>
                                   <span>All variants</span>
@@ -2366,14 +2363,14 @@
                             <!--
 				<th class="text-start">Image</th>
 				-->
-                            <th class="text-end">Price</th>
-                            <th class="text-end">Old price</th>
-                            <th class="text-end">Quantity</th>
-                            <th class="text-end">Stock</th>
-                            <th class="text-end">Weight</th>
-                            <th class="text-end">Sku</th>
-                            <th class="text-end">Barcode</th>
-                            <th class="text-end">
+                            <th class="text-end" width="200">Price</th>
+                            <th class="text-end" width="200">Old price</th>
+                            <th class="text-end" width="100">Quantity</th>
+                            <th class="text-end" width="50">Stock</th>
+                            <th class="text-end" width="150">Weight</th>
+                            <th class="text-end" width="200">Sku</th>
+                            <th class="text-end" width="200">Barcode</th>
+                            <th class="text-end" width="50">
                               <button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addTemplate("#variant-template", "product_variant", "#variant")'>
                                 <i class="la la-plus la-lg"></i>
                               </button>
@@ -2383,13 +2380,16 @@
                         <tbody>
                           <tr data-v-variant>
                             <td class="text-start">
-                              <select name="product_variant[0][options]" class="form-select" data-v-variant-combination>
-                                <option value="1" data-v-option>Value 1</option>
-                                <option value="2" data-v-option>Value 2</option>
-                                <option value="3" data-v-option>Value 3</option>
-                                <option value="4" data-v-option>Value 4</option>
-                              </select>
-
+                              <input type="hidden" name="product_variant[0][options]" data-v-variant-combination>
+                              <div data-v-variant-name></div>
+                              <!--
+						<select name="product_variant[0][options]" class="form-select" data-v-variant-combination>
+						  <option value="1" data-v-option>Value 1</option>
+						  <option value="2" data-v-option>Value 2</option>
+						  <option value="3" data-v-option>Value 3</option>
+						  <option value="4" data-v-option>Value 4</option>
+						</select>
+						-->
                               <input name="product_variant[0][product_variant_id]" value="" type="hidden" data-v-variant-product_variant_id>
 
                             </td>
@@ -2400,7 +2400,7 @@
                               <input name="product_variant[0][old_price]" value="0" placeholder="Old price" class="form-control" type="text" data-v-variant-old_price>
                             </td>
                             <td class="text-end">
-                              <input name="product_variant[0][stock_quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-variant-stock_quantity>
+                              <input name="product_variant[0][stock_quantity]" value="0" placeholder="Quantity" class="form-control" type="number" data-v-variant-stock_quantity>
                             </td>
                             <td class="text-center">
                               <label class="form-check form-check-lg form-switch">
@@ -2424,6 +2424,9 @@
                           </tr>
                           <tr class="template d-none" data-id="#" id="variant-template">
                             <td class="text-start">
+                              <input type="hidden" name="product_variant[#][options]" data-v-variant-combination>
+                              <div data-v-variant-name></div>
+
                               <select name="product_variant[#][options]" class="form-select" data-v-variant-combination>
                                 <option value="1" data-v-option>Value 1</option>
                                 <option value="2" data-v-option>Value 2</option>
@@ -3338,7 +3341,7 @@
 
                   <input type="hidden" data-v-image name="image" id="featured-image-input" value="">
 
-                  <img data-v-image src="" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="bg-body-tertiary rounded img-fluid">
+                  <img data-v-image src="" alt="" id="featured-image-thumb" data-v-placeholder="" data-media-gallery data-target-input="#featured-image-input" data-target-thumb="#featured-image-thumb" data-type="single" class="bg-body-tertiary rounded border img-fluid">
 
 
                   <div class="py-3 text-center">
@@ -3658,7 +3661,7 @@ function comb(arr, optionPrices) {
 				let currName = names[i];
 				
 				for (let j in set) {
-					newNames.push(currName + " - " + set[j]);
+					newNames.push(currName + " / " + set[j]);
 					newValues.push(values[i] + "," + optionId + ":" +j);
 					newPrices.push(prices[i] + optionPrices[optionId][j]);
 				}
@@ -3672,25 +3675,35 @@ function comb(arr, optionPrices) {
 	
 	return [names, values, prices];
 }
-let price = document.getElementById("input-price");
+let priceInput = document.getElementById("input-price");
 
 function addAllVariants() {
 	//get existing variants to skip them
+	let tableBody = document.querySelector("#variant tbody");
+
+	tableBody.classList.add("d-none");
 	let existingVariants = [];
 	document.querySelectorAll("#tab-variant tr:not(#variant-template) [data-v-variant-combination]").forEach(e => existingVariants.push(e.value));
 	let counter = 0;
 	for (let i in result[1]) {
 		let options = result[1][i];
+		let name = result[0][i];
+		let price = result[2][i];
+		
 		if (existingVariants.indexOf(options) > -1) {
 			continue;
 		}
 		
 		let row = addTemplate("#variant-template", "product_variant", "#variant");
-		row.querySelector("[data-v-variant-combination]").value = options;
-		row.querySelector("[data-v-variant-price]").value = parseFloat(price.value) + result[2][i];;
+		//row.querySelector("select[data-v-variant-combination]").value = options;
+		row.querySelector("select[data-v-variant-combination]").remove();
+		row.querySelector("input[data-v-variant-combination]").value = options;
+		row.querySelector("[data-v-variant-name]").textContent = name;
+		row.querySelector("[data-v-variant-price]").value = parseFloat(priceInput.value) + price;
 		counter++;
 	}
 	
+	tableBody.classList.remove("d-none");
 	displayToast("success", "Variants", counter + " variants added");	
 }
 

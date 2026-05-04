@@ -144,7 +144,7 @@
 								 data-media-gallery 
 								 data-target-input="#featured-image-input"
 								 data-target-thumb="#featured-image-thumb" data-type="single"                         
-								 class="bg-body-tertiary rounded img-fluid">
+								 class="bg-body-tertiary rounded border img-fluid">
 
 
 							<div class="py-3 text-center">
@@ -350,7 +350,7 @@ function comb(arr, optionPrices) {
 				let currName = names[i];
 				
 				for (let j in set) {
-					newNames.push(currName + " - " + set[j]);
+					newNames.push(currName + " / " + set[j]);
 					newValues.push(values[i] + "," + optionId + ":" +j);
 					newPrices.push(prices[i] + optionPrices[optionId][j]);
 				}
@@ -364,25 +364,35 @@ function comb(arr, optionPrices) {
 	
 	return [names, values, prices];
 }
-let price = document.getElementById("input-price");
+let priceInput = document.getElementById("input-price");
 
 function addAllVariants() {
 	//get existing variants to skip them
+	let tableBody = document.querySelector("#variant tbody");
+
+	tableBody.classList.add("d-none");
 	let existingVariants = [];
 	document.querySelectorAll("#tab-variant tr:not(#variant-template) [data-v-variant-combination]").forEach(e => existingVariants.push(e.value));
 	let counter = 0;
 	for (let i in result[1]) {
 		let options = result[1][i];
+		let name = result[0][i];
+		let price = result[2][i];
+		
 		if (existingVariants.indexOf(options) > -1) {
 			continue;
 		}
 		
 		let row = addTemplate("#variant-template", "product_variant", "#variant");
-		row.querySelector("[data-v-variant-combination]").value = options;
-		row.querySelector("[data-v-variant-price]").value = parseFloat(price.value) + result[2][i];;
+		//row.querySelector("select[data-v-variant-combination]").value = options;
+		row.querySelector("select[data-v-variant-combination]").remove();
+		row.querySelector("input[data-v-variant-combination]").value = options;
+		row.querySelector("[data-v-variant-name]").textContent = name;
+		row.querySelector("[data-v-variant-price]").value = parseFloat(priceInput.value) + price;
 		counter++;
 	}
 	
+	tableBody.classList.remove("d-none");
 	displayToast("success", "Variants", counter + " variants added");	
 }
 
