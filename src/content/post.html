@@ -75,18 +75,18 @@
 	<div id="content">
 	
 	<div class="content">
-
-	@@include('../_includes/notifications.html')
    
-   <form id="form" action="" method="post" class="settings"  data-v-post>
-   
-   <input type="hidden" name="action" id="action" value="save">   
-   <input type="hidden" name="csrf" data-v-csrf>
-   <input type="hidden" name="post_id" id="post_id" value="" data-v-if="this.post.post_id" data-v-post-post_id>   
-    
-    <div class="columns">
-		<div class="left-column pt-3">
+	   <form id="form" action="" method="post" class="settings"  data-v-post>
+	   
+	   <input type="hidden" name="action" id="action" value="save">   
+	   <input type="hidden" name="csrf" data-v-csrf>
+	   <input type="hidden" name="post_id" id="post_id" value="" data-v-if="this.post.post_id" data-v-post-post_id>   
 		
+		<div class="columns">
+			<div class="left-column pt-3">
+			
+			@@include('../_includes/notifications.html', {"_class":"me-3"})
+
 			<ul class="nav nav-tabs" id="post-tabs">
 				<li class="nav-item"><a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a></li>
 			</ul>
@@ -265,7 +265,6 @@
 <script>
 @@include('../_includes/media-variables.html')
 let linkUrl           = '{ $this->linkUrl }';
-let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 let contentType       = 'post';
 let postType          = '{ $this->type }';
@@ -294,7 +293,6 @@ if (lang != "en-us") {
 </script>
 <script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
 <script id="oembed-js" src="/js/libs/oembed.js"></script>
-<script id="tinymce-embed-js" src="/js/libs/tinymce-embed.js"></script>
 
 <!-- date time picker -->
 <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>

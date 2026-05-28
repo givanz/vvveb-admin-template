@@ -252,7 +252,7 @@ function changeTheme(e) {
 }
 
 function changeHomepage(e) {
-	homepage.src = publicPath + "themes/" + themes.value + "/" + homepageSelect.value;
+	homepage.src = publicPath + "themes/" + themes.value + "/" + (homepageSelect.value ? homepageSelect.value : 'index.html');
 }
 
 function iframeLoad(e) {

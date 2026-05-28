@@ -1,9 +1,15 @@
 /* CSS Tree menu styles */
+:root {
+--tree-font-size: 12px;
+--tree-font-weight: 400;
+}
+
 .tree
 {
 	width:100%;
 	padding:0;
-
+	letter-spacing:-0.2px;
+	
 	> ol
 	{
 		padding: 0rem 0 0 0rem;
@@ -11,7 +17,8 @@
 		//width: 300px;
 		//min-width: $builder-right-panel-width + 15;
 		//margin:0 0.5rem;
-		font-size:12px;
+		font-size:var(--tree-font-size);
+		font-weight:var(--tree-font-weight);
 		color:var(--bs-body-color);
 
 		li 
@@ -75,7 +82,8 @@
 				display: block;
 				padding-left: 33px;
 				margin:0;
-				font-size:12px;
+				font-size:var(--tree-font-size);
+				font-weight:var(--tree-font-weight);
 				line-height:28px;
 				max-height:2rem;
 
@@ -89,7 +97,7 @@
 			.file-actions {
 				display:none;
 				position:absolute;
-				//background-color: var(--bs-body-bg);				
+				background-color: var(--bs-white);				
 				top:0px;
 				right:2px;
 
@@ -182,7 +190,7 @@
 			display: block;
 			padding-left: 50px;
 			margin:0px;
-			font-size:12px;
+			font-size:var(--tree-font-size);
 			line-height:24px;
 
 			/*

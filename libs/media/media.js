@@ -97,7 +97,7 @@ class MediaModal {
 						
 							<div class="nothingfound" style="display:none">
 								<div class="nofiles">
-									<i class="la la-folder-open"></i>
+									<i class="icon-folder-open-outline"></i>
 								</div>
 								<div>No files here.</div>
 								<div class="mt-4">

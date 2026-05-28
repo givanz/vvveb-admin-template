@@ -19,32 +19,35 @@
 
 	
 	<div class="table-responsive" data-v-product-variant>
-		<table id="variant" class="table table-hover table-bordered">
+		<table id="variant" class="table table-hover table-bordered align-middle">
 			<thead>
 			<tr>
 				<th class="text-start">
 					<div class="d-flex justify-content-between text-nowrap">
-						<div class="mt-1 me-1">Variant</div>
-						<button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addAllVariants()'>
+						<div class="mt-1 me-2">Variant</div>
+
+						<button type="button" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal" data-bs-target="#variantsModal" onclick="addOptionsModal()" id="add-variant-btn">
 							<i class="la la-plus"></i>
-							<span>All variants</span>
+							<span>Add variants</span>
 						</button>
 					</div>
 				</th>
 				<!--
 				<th class="text-start">Image</th>
 				-->
-				<th class="text-end" width="200">Price</th>
-				<th class="text-end" width="200">Old price</th>
+				<th class="text-end" width="150">Price</th>
+				<th class="text-end" width="150">Old price</th>
 				<th class="text-end" width="100">Quantity</th>
 				<th class="text-end" width="50">Stock</th>
 				<th class="text-end" width="150">Weight</th>
 				<th class="text-end" width="200">Sku</th>
 				<th class="text-end" width="200">Barcode</th>
 				<th class="text-end" width="50">
+					<!--
 					<button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addTemplate("#variant-template", "product_variant", "#variant")'>
 						<i class="la la-plus la-lg"></i>
 					</button>
+					-->
 				</th>
 			</tr>
 			</thead>
@@ -52,7 +55,7 @@
 				<tr data-v-variant>
 					  <td class="text-start">
 						<input type="hidden" name="product_variant[0][options]" data-v-variant-combination>
-						<div data-v-variant-name></div>
+						<div class="small" data-v-variant-name></div>
 						<!--
 						<select name="product_variant[0][options]" class="form-select" data-v-variant-combination>
 						  <option value="1" data-v-option>Value 1</option>
@@ -96,7 +99,7 @@
 					<tr class="template d-none" data-id="#" id="variant-template">
 					  <td class="text-start">
 						<input type="hidden" name="product_variant[#][options]" data-v-variant-combination>
-						<div data-v-variant-name></div>
+						<div class="small" data-v-variant-name></div>
 						
 						<select name="product_variant[#][options]" class="form-select" data-v-variant-combination>
 						  <option value="1" data-v-option>Value 1</option>

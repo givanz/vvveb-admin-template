@@ -916,19 +916,19 @@
 
           <div class="btn-group" role="group">
             <button class="btn px-2 menu-toggle" title="Toggle sidebar width">
-              <i class="icon-menu-outline fs-6"></i>
+              <i class="la la-bars"></i>
             </button>
 
             <button class="btn btn-light px-1" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
-              <img src="/js/vvvebjs/icons/file-manager-layout.svg" width="16" height="16">
+              <img src="/js/vvvebjs/icons/file-manager-layout.svg" width="12" height="12">
             </button>
 
             <button class="btn btn-light px-1" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
-              <img src="/js/vvvebjs/icons/left-column-layout.svg" width="16" height="16">
+              <img src="/js/vvvebjs/icons/left-column-layout.svg" width="12" height="12">
             </button>
 
             <button class="btn btn-light px-1" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
-              <img src="/js/vvvebjs/icons/right-column-layout.svg" width="16" height="16">
+              <img src="/js/vvvebjs/icons/right-column-layout.svg" width="12" height="12">
             </button>
 
           </div>
@@ -947,9 +947,11 @@
 
 
             <div class="btn-group me-3" role="group">
-              <button class="btn btn-light" title="Designer Mode (Free dragging)" id="designer-mode-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="setDesignerMode">
-                <i class="la la-hand-rock"></i>
-              </button>
+              <!--
+		  <button class="btn btn-light" title="Designer Mode (Free dragging)" id="designer-mode-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="setDesignerMode">
+			  <i class="la la-hand-rock"></i>
+		  </button>
+		  -->
 
               <button class="btn btn-light" title="Preview" id="preview-btn" type="button" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="preview">
                 <i class="icon-eye-outline"></i>
@@ -995,27 +997,27 @@
 
                 <div class="dropdown-menu">
 
-                  <button id="mobile-view" data-view="sm" class="btn btn-light w-100" title="Mobile view" data-vvveb-action="viewport">
+                  <button id="mobile-view" data-view="sm" class="btn btn-light w-100" title="Mobile" data-vvveb-action="viewport">
                     <i class="la la-mobile"></i>
                     <span>Mobile view</span>
                   </button>
 
-                  <button id="tablet-view" data-view="md" class="btn btn-light w-100" title="Tablet view" data-vvveb-action="viewport">
+                  <button id="tablet-view" data-view="md" class="btn btn-light w-100" title="Tablet" data-vvveb-action="viewport">
                     <i class="la la-tablet la-rotate-90"></i>
                     <span>Tablet view</span>
                   </button>
 
-                  <button id="tablet-landscape-view" data-view="lg" class="btn btn-light w-100" title="Tablet landscape view" data-vvveb-action="viewport">
+                  <button id="tablet-landscape-view" data-view="lg" class="btn btn-light w-100" title="Tablet landscape" data-vvveb-action="viewport">
                     <i class="la la-tablet"></i>
                     <span>Tablet landscape view</span>
                   </button>
 
-                  <button id="laptop-view" data-view="xl" class="btn btn-light w-100" title="Laptop view" data-vvveb-action="viewport">
+                  <button id="laptop-view" data-view="xl" class="btn btn-light w-100" title="Laptop" data-vvveb-action="viewport">
                     <i class="la la-laptop"></i>
                     <span>Laptop view</span>
                   </button>
 
-                  <button id="desktop-view" data-view="xxl" class="btn btn-light w-100" title="Desktop view" data-vvveb-action="viewport">
+                  <button id="desktop-view" data-view="xxl" class="btn btn-light w-100" title="Desktop" data-vvveb-action="viewport">
                     <i class="la la-desktop"></i>
                     <span>Desktop view</span>
                   </button>
@@ -1586,7 +1588,7 @@
                   <defs>
                     <filter id="goo">
                       <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" />
+                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 27 -7" />
                     </filter>
                   </defs>
                 </svg>
@@ -3308,7 +3310,7 @@
     <div class="offcanvas-header">
       <span class="offcanvas-title">
 
-        <button class="btn btn-primary btn-sm btn-icon save-btn save-offcanvas" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+e">
+        <button class="btn btn-primary btn-icon save-btn save-offcanvas" title="Save changes" data-vvveb-action="saveAjax" data-vvveb-url="{$this.adminPath}index.php?module=editor/editor&action=save" data-v-vvveb-shortcut="ctrl+e">
           <span class="loading d-none">
             <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
             <span class="progress-text">
@@ -3334,7 +3336,7 @@
           <label class="form-check-label" for="global-template-radio">
             <h6 class="mb-0">Default template</h6>
             <p class="fs-6 text-muted">Applies to all pages using template</p>
-            <small class="p-1 bg-body-tertiary border" data-v-filename>product/product.html</small>
+            <small class="p-2 bg-body-tertiary border rounded" data-v-filename>product/product.html</small>
           </label>
         </div>
       </div>
@@ -3472,7 +3474,7 @@
           </div>
         </div>
       </div>
-      <hr>
+      <hr class="text-secondary text-opacity-50">
 
     </div>
   </div>
@@ -3547,6 +3549,7 @@ let renameUrl         = '{ $this->renameUrl }';
 let mediaUrl          = '{ $this->mediaUrl }';
 let uploadMaxFilesize = '{ $this->uploadMaxFilesize }';
 let postMaxSize       = '{ $this->postMaxSize }';
+let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 
 
 //editor
@@ -3559,7 +3562,6 @@ let deleteFileUrl     = '{ $this->deleteFileUrl }';
 let revisionsUrl      = '{ $this->revisionsUrl }';
 let revisionLoadUrl   = '{ $this->revisionLoadUrl }';
 let revisionDeleteUrl = '{ $this->revisionDeleteUrl }';
-let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 let linkUrl           = '{ $this->linkUrl }';
 let adminId           = '{ $this->adminId }';
 let userKey           = '{ $this->userKey }';

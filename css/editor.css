@@ -17892,7 +17892,7 @@ textarea.form-control-lg {
 .tree > ol li.file .file-actions {
   display: none;
   position: absolute;
-  background-color: var(--bs-body-bg);
+  background-color: var(--bs-white);
   top: 0px;
   right: 2px;
 }
@@ -18326,6 +18326,7 @@ html[data-bs-theme=dark] #vvveb-builder {
 #vvveb-builder #top-panel .menu-toggle i,
 #vvveb-builder #top-panel #color-theme-switch i {
   vertical-align: middle;
+  font-size: 12px;
 }
 html[data-bs-theme=dark] #vvveb-builder #top-panel img {
   filter: invert(93%) hue-rotate(180deg);
@@ -18657,14 +18658,14 @@ html[data-bs-theme=dark] #vvveb-builder #top-panel img {
 #vvveb-builder .component-properties .mb-2.row {
   margin: 0;
 }
-#vvveb-builder .component-properties .mb-2 > label {
+#vvveb-builder .component-properties .mb-2 label {
   font-size: 11px;
   font-weight: 500;
   margin-bottom: 5px;
   color: var(--bs-secondary-color);
   flex-grow: 1;
 }
-#vvveb-builder .component-properties .mb-2 > label i {
+#vvveb-builder .component-properties .mb-2 label i {
   font-size: 14px;
 }
 #vvveb-builder .component-properties .mb-2 .input .input-range {
@@ -19899,8 +19900,8 @@ input[type="number"]:focus {
 }
 
 .animation-container {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -19911,8 +19912,8 @@ input[type="number"]:focus {
 }
 
 .dot {
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background-color: rgba(var(--bs-body-bg-rgb), 0.7);
   position: absolute;
@@ -19945,13 +19946,13 @@ input[type="number"]:focus {
     transform: scale(1);
   }
   45% {
-    transform: translateY(-18px) scale(0.45);
+    transform: translateY(-18px) scale(0.75);
   }
   60% {
-    transform: translateY(-90px) scale(0.45);
+    transform: translateY(-30px) scale(0.75);
   }
   80% {
-    transform: translateY(-90px) scale(0.45);
+    transform: translateY(-30px) scale(0.75);
   }
   100% {
     transform: translateY(0px) scale(1);
@@ -19962,13 +19963,13 @@ input[type="number"]:focus {
     transform: scale(1);
   }
   45% {
-    transform: translate(-16px, 12px) scale(0.45);
+    transform: translate(-16px, 12px) scale(0.75);
   }
   60% {
-    transform: translate(-80px, 80px) scale(0.45);
+    transform: translate(-20px, 20px) scale(0.75);
   }
   80% {
-    transform: translate(-80px, 80px) scale(0.45);
+    transform: translate(-20px, 20px) scale(0.75);
   }
   100% {
     transform: translateY(0px) scale(1);
@@ -19979,13 +19980,13 @@ input[type="number"]:focus {
     transform: scale(1);
   }
   45% {
-    transform: translate(16px, 12px) scale(0.45);
+    transform: translate(16px, 12px) scale(0.75);
   }
   60% {
-    transform: translate(80px, 70px) scale(0.45);
+    transform: translate(20px, 10px) scale(0.75);
   }
   80% {
-    transform: translate(80px, 60px) scale(0.45);
+    transform: translate(20px, 0px) scale(0.75);
   }
   100% {
     transform: translateY(0px) scale(1);

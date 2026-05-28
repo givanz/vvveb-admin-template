@@ -916,7 +916,7 @@
         <div class="btn-group" data-v-component-sites>
 
           <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
-            <i class="icon-menu-outline fs-6 text-muted"></i>
+            <i class="la la-bars"></i>
           </button>
 
 
@@ -1530,7 +1530,7 @@
                     <div class="card">
                       <div class="card-body">
 
-                        <input name="sort_order" type="hidden" value="0" data-v-menu-sort_order>
+                        <input name="sort_order" type="hidden" value="" data-v-menu-sort_order>
 
                         <!-- languages -->
 
@@ -1547,7 +1547,7 @@
 
 
                           <div class="my-3 row">
-                            <div class="col">
+                            <div class="col-sm-4">
                               <label class="form-label">Type</label>
                               <select class="form-control" name="type" data-v-menu-type>
                                 <option value="link">Link</option>
@@ -1564,8 +1564,8 @@
 			-->
                               </select>
                             </div>
-                            <div class="col">
-                              <label class="form-label">Columns</label>
+                            <div class="col-sm-4">
+                              <label class="form-label">Submenu columns</label>
                               <select class="form-control" name="options[columns]" data-v-options-columns>
                                 <option value="">auto</option>
                                 <option value="1">1</option>
@@ -1582,8 +1582,8 @@
                                 <option value="12">12</option>
                               </select>
                             </div>
-                            <div class="col">
-                              <label class="form-label">Width</label>
+                            <div class="col-sm-4">
+                              <label class="form-label">Submenu width</label>
                               <select class="form-control" name="options[width]" data-v-options-width>
                                 <option value="">auto</option>
                                 <option value="100">100%</option>
@@ -1592,14 +1592,7 @@
                                 <option value="25">25%</option>
                               </select>
                             </div>
-                            <div class="col">
-                              <label class="form-label">Padding horizontal</label>
-                              <input name="options[padding_x]" data-v-options-padding_x value="0" placeholder="Padding" class="form-control" type="number" />
-                            </div>
-                            <div class="col">
-                              <label class="form-label">Padding vertical</label>
-                              <input name="options[padding_y]" data-v-options-padding_y value="0" placeholder="Padding" class="form-control" type="number" />
-                            </div>
+
                           </div>
 
                           <div class="mb-3 required field field-product">
@@ -1649,45 +1642,49 @@
 
                           </div>
 
-                          <div class="mb-3 required field field-img">
-                            <label class="form-label">Image</label>
-                            <div>
-
+                          <div class="mb-3 required d-flex">
+                            <div class="field field-img m-3" style="width:150px;">
                               <input type="hidden" data-v-options-img name="options[img]" id="menu_item-input" class="menu_input" value="">
 
-                              <img data-v-image-src src="/media/placeholder.svg" alt="" title="" id="menu_item-thumb" data-v-placeholder="" data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;">
+                              <img data-v-image-src src="/media/placeholder.svg" alt="" title="" id="menu_item-thumb" data-v-placeholder="" data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single" class="img-thumbnail bg-light d-block">
 
-
-                              <div class="py-3 row">
-                                <div class="col">
-                                  <div class="btn-group">
-                                    <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-v-image-btn data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single">
-                                      <i class="la la-image la-lg"></i>
-                                      <span>Set image</span>
-                                    </button>
-                                    <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-                                      <i class="la la-times"></i>
-                                    </button>
-                                  </div>
+                              <div class="col mt-2">
+                                <div class="btn-group">
+                                  <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-v-image-btn data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single">
+                                    <i class="la la-image la-lg"></i>
+                                    <span>Set image</span>
+                                  </button>
+                                  <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('menu-{$menu.menu_item_id}')">
+                                    <i class="la la-times"></i>
+                                  </button>
                                 </div>
+                              </div>
+                            </div>
 
-                                <div class="col">
-                                  <div class="row">
-                                    <label class="col-sm-2 col-form-label">Width</label>
-                                    <div class="col-sm-10">
-                                      <input name="options[img_width]" data-v-options-img_width value="0" placeholder="Width" class="form-control" type="number" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="row">
-                                    <label class="col-sm-2 col-form-label">Height</label>
-                                    <div class="col-sm-10">
-                                      <input name="options[img_height]" data-v-options-img_height value="0" placeholder="Height" class="form-control" type="number" />
-                                    </div>
-                                  </div>
-                                </div>
-
+                            <div class="py-3 row w-100">
+                              <div class="col-sm-4">
+                                <label class="form-label">Image width</label>
+                                <input name="options[img_width]" data-v-options-img_width value="" placeholder="Width" class="form-control" type="number" />
+                              </div>
+                              <div class="col-sm-4">
+                                <label class="form-label">Image height</label>
+                                <input name="options[img_height]" data-v-options-img_height value="" placeholder="Height" class="form-control" type="number" />
+                              </div>
+                              <div class="col-sm-4">
+                                <label class="form-label">Padding horizontal</label>
+                                <input name="options[padding-x]" data-v-options-padding-x value="" placeholder="Padding" class="form-control" type="number" />
+                              </div>
+                              <div class="col-sm-4">
+                                <label class="form-label">Padding vertical</label>
+                                <input name="options[padding-y]" data-v-options-padding-y value="" placeholder="Padding" class="form-control" type="number" />
+                              </div>
+                              <div class="col-sm-4">
+                                <label class="form-label">Submenu padding horizontal</label>
+                                <input name="options[sub-padding-x]" data-v-options-sub-padding-x value="" placeholder="Padding" class="form-control" type="number" />
+                              </div>
+                              <div class="col-sm-4">
+                                <label class="form-label">Submenu padding vertical</label>
+                                <input name="options[sub-padding-y]" data-v-options-sub-padding-y value="" placeholder="Padding" class="form-control" type="number" />
                               </div>
                             </div>
                           </div>
@@ -1783,7 +1780,7 @@
                 <div class="card">
                   <div class="card-body">
 
-                    <input name="sort_order" type="hidden" value="0" data-v-menu-sort_order>
+                    <input name="sort_order" type="hidden" value="" data-v-menu-sort_order>
 
                     <!-- languages -->
 
@@ -1800,7 +1797,7 @@
 
 
                       <div class="my-3 row">
-                        <div class="col">
+                        <div class="col-sm-4">
                           <label class="form-label">Type</label>
                           <select class="form-control" name="type" data-v-menu-type>
                             <option value="link">Link</option>
@@ -1817,8 +1814,8 @@
 			-->
                           </select>
                         </div>
-                        <div class="col">
-                          <label class="form-label">Columns</label>
+                        <div class="col-sm-4">
+                          <label class="form-label">Submenu columns</label>
                           <select class="form-control" name="options[columns]" data-v-options-columns>
                             <option value="">auto</option>
                             <option value="1">1</option>
@@ -1835,8 +1832,8 @@
                             <option value="12">12</option>
                           </select>
                         </div>
-                        <div class="col">
-                          <label class="form-label">Width</label>
+                        <div class="col-sm-4">
+                          <label class="form-label">Submenu width</label>
                           <select class="form-control" name="options[width]" data-v-options-width>
                             <option value="">auto</option>
                             <option value="100">100%</option>
@@ -1845,14 +1842,7 @@
                             <option value="25">25%</option>
                           </select>
                         </div>
-                        <div class="col">
-                          <label class="form-label">Padding horizontal</label>
-                          <input name="options[padding_x]" data-v-options-padding_x value="0" placeholder="Padding" class="form-control" type="number" />
-                        </div>
-                        <div class="col">
-                          <label class="form-label">Padding vertical</label>
-                          <input name="options[padding_y]" data-v-options-padding_y value="0" placeholder="Padding" class="form-control" type="number" />
-                        </div>
+
                       </div>
 
                       <div class="mb-3 required field field-product">
@@ -1902,45 +1892,49 @@
 
                       </div>
 
-                      <div class="mb-3 required field field-img">
-                        <label class="form-label">Image</label>
-                        <div>
-
+                      <div class="mb-3 required d-flex">
+                        <div class="field field-img m-3" style="width:150px;">
                           <input type="hidden" data-v-options-img name="options[img]" id="menu_item-input" class="menu_input" value="">
 
-                          <img data-v-image-src src="/media/placeholder.svg" alt="" title="" id="menu_item-thumb" data-v-placeholder="" data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;">
+                          <img data-v-image-src src="/media/placeholder.svg" alt="" title="" id="menu_item-thumb" data-v-placeholder="" data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single" class="img-thumbnail bg-light d-block">
 
-
-                          <div class="py-3 row">
-                            <div class="col">
-                              <div class="btn-group">
-                                <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-v-image-btn data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single">
-                                  <i class="la la-image la-lg"></i>
-                                  <span>Set image</span>
-                                </button>
-                                <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-                                  <i class="la la-times"></i>
-                                </button>
-                              </div>
+                          <div class="col mt-2">
+                            <div class="btn-group">
+                              <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-v-image-btn data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single">
+                                <i class="la la-image la-lg"></i>
+                                <span>Set image</span>
+                              </button>
+                              <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('menu-{$menu.menu_item_id}')">
+                                <i class="la la-times"></i>
+                              </button>
                             </div>
+                          </div>
+                        </div>
 
-                            <div class="col">
-                              <div class="row">
-                                <label class="col-sm-2 col-form-label">Width</label>
-                                <div class="col-sm-10">
-                                  <input name="options[img_width]" data-v-options-img_width value="0" placeholder="Width" class="form-control" type="number" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="row">
-                                <label class="col-sm-2 col-form-label">Height</label>
-                                <div class="col-sm-10">
-                                  <input name="options[img_height]" data-v-options-img_height value="0" placeholder="Height" class="form-control" type="number" />
-                                </div>
-                              </div>
-                            </div>
-
+                        <div class="py-3 row w-100">
+                          <div class="col-sm-4">
+                            <label class="form-label">Image width</label>
+                            <input name="options[img_width]" data-v-options-img_width value="" placeholder="Width" class="form-control" type="number" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label class="form-label">Image height</label>
+                            <input name="options[img_height]" data-v-options-img_height value="" placeholder="Height" class="form-control" type="number" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label class="form-label">Padding horizontal</label>
+                            <input name="options[padding-x]" data-v-options-padding-x value="" placeholder="Padding" class="form-control" type="number" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label class="form-label">Padding vertical</label>
+                            <input name="options[padding-y]" data-v-options-padding-y value="" placeholder="Padding" class="form-control" type="number" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label class="form-label">Submenu padding horizontal</label>
+                            <input name="options[sub-padding-x]" data-v-options-sub-padding-x value="" placeholder="Padding" class="form-control" type="number" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label class="form-label">Submenu padding vertical</label>
+                            <input name="options[sub-padding-y]" data-v-options-sub-padding-y value="" placeholder="Padding" class="form-control" type="number" />
                           </div>
                         </div>
                       </div>
@@ -1979,7 +1973,7 @@
           </div>
 
           <div id="taxonomy-fields-template" style="display:none">
-            <input name="sort_order" type="hidden" value="0" data-v-menu-sort_order>
+            <input name="sort_order" type="hidden" value="" data-v-menu-sort_order>
 
             <!-- languages -->
 
@@ -1996,7 +1990,7 @@
 
 
               <div class="my-3 row">
-                <div class="col">
+                <div class="col-sm-4">
                   <label class="form-label">Type</label>
                   <select class="form-control" name="type" data-v-menu-type>
                     <option value="link">Link</option>
@@ -2013,8 +2007,8 @@
 			-->
                   </select>
                 </div>
-                <div class="col">
-                  <label class="form-label">Columns</label>
+                <div class="col-sm-4">
+                  <label class="form-label">Submenu columns</label>
                   <select class="form-control" name="options[columns]" data-v-options-columns>
                     <option value="">auto</option>
                     <option value="1">1</option>
@@ -2031,8 +2025,8 @@
                     <option value="12">12</option>
                   </select>
                 </div>
-                <div class="col">
-                  <label class="form-label">Width</label>
+                <div class="col-sm-4">
+                  <label class="form-label">Submenu width</label>
                   <select class="form-control" name="options[width]" data-v-options-width>
                     <option value="">auto</option>
                     <option value="100">100%</option>
@@ -2041,14 +2035,7 @@
                     <option value="25">25%</option>
                   </select>
                 </div>
-                <div class="col">
-                  <label class="form-label">Padding horizontal</label>
-                  <input name="options[padding_x]" data-v-options-padding_x value="0" placeholder="Padding" class="form-control" type="number" />
-                </div>
-                <div class="col">
-                  <label class="form-label">Padding vertical</label>
-                  <input name="options[padding_y]" data-v-options-padding_y value="0" placeholder="Padding" class="form-control" type="number" />
-                </div>
+
               </div>
 
               <div class="mb-3 required field field-product">
@@ -2098,45 +2085,49 @@
 
               </div>
 
-              <div class="mb-3 required field field-img">
-                <label class="form-label">Image</label>
-                <div>
-
+              <div class="mb-3 required d-flex">
+                <div class="field field-img m-3" style="width:150px;">
                   <input type="hidden" data-v-options-img name="options[img]" id="menu_item-input" class="menu_input" value="">
 
-                  <img data-v-image-src src="/media/placeholder.svg" alt="" title="" id="menu_item-thumb" data-v-placeholder="" data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single" class="img-thumbnail bg-light" style="max-width:200px;">
+                  <img data-v-image-src src="/media/placeholder.svg" alt="" title="" id="menu_item-thumb" data-v-placeholder="" data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single" class="img-thumbnail bg-light d-block">
 
-
-                  <div class="py-3 row">
-                    <div class="col">
-                      <div class="btn-group">
-                        <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-v-image-btn data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single">
-                          <i class="la la-image la-lg"></i>
-                          <span>Set image</span>
-                        </button>
-                        <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-                          <i class="la la-times"></i>
-                        </button>
-                      </div>
+                  <div class="col mt-2">
+                    <div class="btn-group">
+                      <button type="button" title="" class="btn btn-outline-secondary btn-icon btn-sm" data-v-image-btn data-media-gallery data-target-input="#menu_item-input" data-target-thumb="#menu_item-thumb" data-type="single">
+                        <i class="la la-image la-lg"></i>
+                        <span>Set image</span>
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('menu-{$menu.menu_item_id}')">
+                        <i class="la la-times"></i>
+                      </button>
                     </div>
+                  </div>
+                </div>
 
-                    <div class="col">
-                      <div class="row">
-                        <label class="col-sm-2 col-form-label">Width</label>
-                        <div class="col-sm-10">
-                          <input name="options[img_width]" data-v-options-img_width value="0" placeholder="Width" class="form-control" type="number" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="row">
-                        <label class="col-sm-2 col-form-label">Height</label>
-                        <div class="col-sm-10">
-                          <input name="options[img_height]" data-v-options-img_height value="0" placeholder="Height" class="form-control" type="number" />
-                        </div>
-                      </div>
-                    </div>
-
+                <div class="py-3 row w-100">
+                  <div class="col-sm-4">
+                    <label class="form-label">Image width</label>
+                    <input name="options[img_width]" data-v-options-img_width value="" placeholder="Width" class="form-control" type="number" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label class="form-label">Image height</label>
+                    <input name="options[img_height]" data-v-options-img_height value="" placeholder="Height" class="form-control" type="number" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label class="form-label">Padding horizontal</label>
+                    <input name="options[padding-x]" data-v-options-padding-x value="" placeholder="Padding" class="form-control" type="number" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label class="form-label">Padding vertical</label>
+                    <input name="options[padding-y]" data-v-options-padding-y value="" placeholder="Padding" class="form-control" type="number" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label class="form-label">Submenu padding horizontal</label>
+                    <input name="options[sub-padding-x]" data-v-options-sub-padding-x value="" placeholder="Padding" class="form-control" type="number" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label class="form-label">Submenu padding vertical</label>
+                    <input name="options[sub-padding-y]" data-v-options-sub-padding-y value="" placeholder="Padding" class="form-control" type="number" />
                   </div>
                 </div>
               </div>
@@ -2227,6 +2218,7 @@ let renameUrl         = '{ $this->renameUrl }';
 let mediaUrl          = '{ $this->mediaUrl }';
 let uploadMaxFilesize = '{ $this->uploadMaxFilesize }';
 let postMaxSize       = '{ $this->postMaxSize }';
+let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 
 let linkUrl           = '{ $this->linkUrl }';
 let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
@@ -2243,7 +2235,7 @@ let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-
  -->
   <script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
   <script id="oembed-js" src="/js/libs/oembed.js"></script>
-  <script id="tinymce-embed-js" src="/js/libs/tinymce-embed.js"></script>
+  btn btn-outline-primary btn-sm btn-icon ms-2
 
   <script>
 var nestable = $('#taxonomies').nestable({
@@ -2432,7 +2424,10 @@ function save() {
 	data.push({"name":"menu_id", "value": menu_id});
 	data.push({"name":"parent_id", "value": parent_id ?? 0});
 	data.push({"name":"csrf", "value": $("[name=csrf]").val()});
-	data.push({"name": "sort_order", "value": element.closest(".dd3-item").parentElement.querySelectorAll(".dd3-item").length});
+	//if sort order is empty add last
+	if (!$("[name=sort_order]", item).val()) {
+		data.push({"name": "sort_order", "value": element.closest(".dd3-item").parentElement.querySelectorAll(".dd3-item").length});
+	}
 /*
 	item.querySelectorAll(":scope > .expand input:not([name=item_id]):not([name=item_id_text]),> .expand .field:visible input[name=item_id],:scope >  .expand .field:visible input[name=item_id_text],:scope > .expand select, :scope > .expand textarea").forEach( (el, i) => {
 		if (el.offsetParent) data[el.name] = el.value;
@@ -2558,7 +2553,7 @@ function addTaxonomy(button, event) {
 	}
 	let item = $($("#taxonomy-item-template").html());
 	parent.append(item);
-	$(".expand-btn", item).click();
+	$(".btn-sm.expand-btn", item).click();
 	
 	item[0].querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
 	item[0].querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
@@ -2567,7 +2562,7 @@ function addTaxonomy(button, event) {
         scrollTop: item.offset().top
     }, 1000);
 	
-	item.fadeOut().fadeIn('slow');
+	//item.fadeOut().fadeIn('slow');
 }
 
 function removeTaxonomy(btnDelete) {

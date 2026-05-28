@@ -915,7 +915,7 @@
         <div class="btn-group" data-v-component-sites>
 
           <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
-            <i class="icon-menu-outline fs-6 text-muted"></i>
+            <i class="la la-bars"></i>
           </button>
 
 
@@ -1363,79 +1363,6 @@
 
         <div class="content">
 
-          <div class="notifications" data-v-notifications>
-
-            <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
-
-              <div class="icon">
-                <i class="la la-exclamation-triangle"></i>
-              </div>
-
-              <div class="flex-grow-1 align-self-center" data-v-notification-text>
-                Vvveb 0.2 is now available! <a href="update">Update now</a>
-              </div>
-
-
-              <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
-                </span>
-              </button>
-            </div>
-
-            <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
-
-              <div class="icon">
-                <i class="la la-check-circle"></i>
-              </div>
-
-              <div class="flex-grow-1 align-self-center" data-v-notification-text>
-                You successfully read this important alert message.
-              </div>
-
-              <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
-                </span>
-              </button>
-            </div>
-
-            <div class="alert alert-warning d-flex alert-dismissable d-flex" role="alert" data-v-notification-warning>
-
-              <div class="icon">
-                <i class="la la-exclamation-triangle"></i>
-              </div>
-
-              <div class="flex-grow-1 align-self-center" data-v-notification-text>
-                You successfully read this important warning message.
-              </div>
-
-              <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
-                </span>
-              </button>
-            </div>
-
-            <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
-
-              <div class="icon">
-                <i class="la la-info-circle"></i>
-              </div>
-
-              <div class="flex-grow-1 align-self-center" data-v-notification-text>
-                You successfully read this important alert message.
-              </div>
-
-              <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
-                </span>
-              </button>
-            </div>
-
-          </div>
-
           <form id="form" action="" method="post" class="settings" data-v-product>
             <input type="hidden" name="csrf" data-v-csrf>
             <input type="hidden" name="action" id="action" value="save">
@@ -1443,6 +1370,79 @@
 
             <div class="columns">
               <div class="left-column pt-3">
+
+                <div class="notifications  me-3" data-v-notifications>
+
+                  <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+
+                    <div class="icon">
+                      <i class="la la-exclamation-triangle"></i>
+                    </div>
+
+                    <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                      Vvveb 0.2 is now available! <a href="update">Update now</a>
+                    </div>
+
+
+                    <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">
+                        <!-- <i class="la la-times"></i> -->
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
+
+                    <div class="icon">
+                      <i class="la la-check-circle"></i>
+                    </div>
+
+                    <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                      You successfully read this important alert message.
+                    </div>
+
+                    <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">
+                        <!-- <i class="la la-times"></i> -->
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="alert alert-warning d-flex alert-dismissable d-flex" role="alert" data-v-notification-warning>
+
+                    <div class="icon">
+                      <i class="la la-exclamation-triangle"></i>
+                    </div>
+
+                    <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                      You successfully read this important warning message.
+                    </div>
+
+                    <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">
+                        <!-- <i class="la la-times"></i> -->
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+                    <div class="icon">
+                      <i class="la la-info-circle"></i>
+                    </div>
+
+                    <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                      You successfully read this important alert message.
+                    </div>
+
+                    <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">
+                        <!-- <i class="la la-times"></i> -->
+                      </span>
+                    </button>
+                  </div>
+
+                </div>
 
                 <ul class="nav nav-tabs" id="product-tabs">
                   <li class="nav-item">
@@ -2009,11 +2009,11 @@
                                 <thead>
                                   <tr>
                                     <th class="text-start">Option Value</th>
-                                    <th class="text-end">Quantity</th>
-                                    <th class="text-start text-nowrap">Subtract Stock</th>
-                                    <th class="text-end">Price</th>
-                                    <th class="text-end">Points</th>
-                                    <th class="text-end">Weight</th>
+                                    <th class="text-end" width="100">Quantity</th>
+                                    <th class="text-start text-nowrap" width="50">Subtract Stock</th>
+                                    <th class="text-end" width="200">Price</th>
+                                    <th class="text-end" width="200">Points</th>
+                                    <th class="text-end" width="200">Weight</th>
                                     <th>
                                       <button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-outline-primary btn-icon">
                                         <i class="la la-plus la-lg"></i>
@@ -2033,7 +2033,7 @@
                                       <input name="product_option[0][product_option_value][0][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
                                     </td>
                                     <td class="text-end">
-                                      <input name="product_option[0][product_option_value][0][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+                                      <input name="product_option[0][product_option_value][0][quantity]" value="0" placeholder="Quantity" class="form-control" type="number" data-v-option-value-quantity>
                                     </td>
                                     <td class="text-center">
                                       <label class="form-check form-check-lg form-switch">
@@ -2046,13 +2046,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-price_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-price_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2065,13 +2065,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-points_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-points_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2084,13 +2084,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-weight_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-weight_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2114,7 +2114,7 @@
                                       <input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
                                     </td>
                                     <td class="text-end">
-                                      <input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+                                      <input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="number" data-v-option-value-quantity>
                                     </td>
                                     <td class="text-center">
                                       <label class="form-check form-check-lg form-switch">
@@ -2127,13 +2127,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-price_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-price_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2146,13 +2146,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-points_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-points_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2165,13 +2165,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-weight_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-weight_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2225,11 +2225,11 @@
                                 <thead>
                                   <tr>
                                     <th class="text-start">Option Value</th>
-                                    <th class="text-end">Quantity</th>
-                                    <th class="text-start text-nowrap">Subtract Stock</th>
-                                    <th class="text-end">Price</th>
-                                    <th class="text-end">Points</th>
-                                    <th class="text-end">Weight</th>
+                                    <th class="text-end" width="100">Quantity</th>
+                                    <th class="text-start text-nowrap" width="50">Subtract Stock</th>
+                                    <th class="text-end" width="200">Price</th>
+                                    <th class="text-end" width="200">Points</th>
+                                    <th class="text-end" width="200">Weight</th>
                                     <th>
                                       <button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-outline-primary btn-icon">
                                         <i class="la la-plus la-lg"></i>
@@ -2249,7 +2249,7 @@
                                       <input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
                                     </td>
                                     <td class="text-end">
-                                      <input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="text" data-v-option-value-quantity>
+                                      <input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="number" data-v-option-value-quantity>
                                     </td>
                                     <td class="text-center">
                                       <label class="form-check form-check-lg form-switch">
@@ -2262,13 +2262,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-price_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-price_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2281,13 +2281,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-points_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-points_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2300,13 +2300,13 @@
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-weight_operator>
-                                            <span class="btn btn-outline-success btn-sm btn-icon fs-4 lh-1">+</span>
+                                            <span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
                                           </label>
 
 
                                           <label>
                                             <input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-weight_operator>
-                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-4 lh-1">-</span>
+                                            <span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
                                           </label>
                                         </div>
 
@@ -2348,32 +2348,35 @@
 
 
                     <div class="table-responsive" data-v-product-variant>
-                      <table id="variant" class="table table-hover table-bordered">
+                      <table id="variant" class="table table-hover table-bordered align-middle">
                         <thead>
                           <tr>
                             <th class="text-start">
                               <div class="d-flex justify-content-between text-nowrap">
-                                <div class="mt-1 me-1">Variant</div>
-                                <button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addAllVariants()'>
+                                <div class="mt-1 me-2">Variant</div>
+
+                                <button type="button" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal" data-bs-target="#variantsModal" onclick="addOptionsModal()" id="add-variant-btn">
                                   <i class="la la-plus"></i>
-                                  <span>All variants</span>
+                                  <span>Add variants</span>
                                 </button>
                               </div>
                             </th>
                             <!--
 				<th class="text-start">Image</th>
 				-->
-                            <th class="text-end" width="200">Price</th>
-                            <th class="text-end" width="200">Old price</th>
+                            <th class="text-end" width="150">Price</th>
+                            <th class="text-end" width="150">Old price</th>
                             <th class="text-end" width="100">Quantity</th>
                             <th class="text-end" width="50">Stock</th>
                             <th class="text-end" width="150">Weight</th>
                             <th class="text-end" width="200">Sku</th>
                             <th class="text-end" width="200">Barcode</th>
                             <th class="text-end" width="50">
-                              <button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addTemplate("#variant-template", "product_variant", "#variant")'>
-                                <i class="la la-plus la-lg"></i>
-                              </button>
+                              <!--
+					<button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-variant-btn" onclick='addTemplate("#variant-template", "product_variant", "#variant")'>
+						<i class="la la-plus la-lg"></i>
+					</button>
+					-->
                             </th>
                           </tr>
                         </thead>
@@ -2381,7 +2384,7 @@
                           <tr data-v-variant>
                             <td class="text-start">
                               <input type="hidden" name="product_variant[0][options]" data-v-variant-combination>
-                              <div data-v-variant-name></div>
+                              <div class="small" data-v-variant-name></div>
                               <!--
 						<select name="product_variant[0][options]" class="form-select" data-v-variant-combination>
 						  <option value="1" data-v-option>Value 1</option>
@@ -2425,7 +2428,7 @@
                           <tr class="template d-none" data-id="#" id="variant-template">
                             <td class="text-start">
                               <input type="hidden" name="product_variant[#][options]" data-v-variant-combination>
-                              <div data-v-variant-name></div>
+                              <div class="small" data-v-variant-name></div>
 
                               <select name="product_variant[#][options]" class="form-select" data-v-variant-combination>
                                 <option value="1" data-v-option>Value 1</option>
@@ -3501,6 +3504,47 @@
 
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="variantsModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="variantsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <strong class="modal-title" id="staticBackdropLabel">Options</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-check form-check-inline fw-medium" data-option>
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="" checked>
+              <span>Size</span>
+            </label>
+          </div>
+          <div class="form-check form-check-inline fw-medium" data-option>
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="" checked>
+              <span>Color</span>
+            </label>
+          </div>
+          <div class="form-check form-check-inline fw-medium" data-option>
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="" checked>
+              <span>Material</span>
+            </label>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary btn-icon" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-icon" onclick="addVariants()">
+            <i class="la la-plus"></i>
+            <span>Add variants</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -3557,9 +3601,9 @@ let renameUrl         = '{ $this->renameUrl }';
 let mediaUrl          = '{ $this->mediaUrl }';
 let uploadMaxFilesize = '{ $this->uploadMaxFilesize }';
 let postMaxSize       = '{ $this->postMaxSize }';
+let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 ;
 let linkUrl           = '{ $this->linkUrl }';
-let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 let productOption     = { $this->option };
 let contentType       = 'product';
@@ -3588,7 +3632,7 @@ if (lang != "en-us") {
  -->
   <script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
   <script id="oembed-js" src="/js/libs/oembed.js"></script>
-  <script id="tinymce-embed-js" src="/js/libs/tinymce-embed.js"></script>
+  btn btn-outline-primary btn-sm btn-icon ms-2
 
   <!-- date time picker -->
   <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
@@ -3604,38 +3648,57 @@ if (lang != "en-us") {
 let data = {};
 let variants = {};
 let prices = {};
-let options = document.querySelectorAll("[data-v-poption].tab-pane");
-options.forEach(option => {
-	let values = option.querySelectorAll("[data-v-option-value]");
-	let input = option.querySelector("[data-v-poption-product_option_id]");
-	let optionId = input.value;
-	variants[optionId] = {};
-	prices[optionId] = {};
-	values.forEach(value => { 
-		let textInput = value.querySelector("[data-v-option-value-option_value_id]");
-		let valInput = value.querySelector("[data-v-option-value-product_option_value_id]");
-		let priceInput = value.querySelector("[data-v-option-value-price]");
-		let operatorInput = value.querySelector("[data-v-option-value-price_operator]:checked");
-		let valueId = valInput.value;
-		let text = textInput.options[textInput.selectedIndex].text;
-		let price = 0;
+
+function generateVariants() {
+	let options = document.querySelectorAll("[data-v-poption].tab-pane");
+	variants = {};
+	prices = {};
+	console.log(selectedOptions);
+
+	options.forEach(option => {
+		let values = option.querySelectorAll("[data-v-option-value]");
+		let input = option.querySelector("[data-v-poption-product_option_id]");
+		let optionId = input.value;
 		
-		if (priceInput.value) {
-			if (operatorInput.value == "+") {
-				price += parseFloat(priceInput.value);
-			} else {
-				price -= parseFloat(priceInput.value);
-			}
+		if (!selectedOptions.includes(optionId)) return;
+			
+		prices[optionId] = {};
+		if (values.length) {
+			variants[optionId] = {};
+			values.forEach(value => { 
+				let textInput = value.querySelector("[data-v-option-value-option_value_id]");
+				let valInput = value.querySelector("[data-v-option-value-product_option_value_id]");
+				let priceInput = value.querySelector("[data-v-option-value-price]");
+				let operatorInput = value.querySelector("[data-v-option-value-price_operator]:checked");
+				let valueId = valInput.value;
+				let text = textInput.options[textInput.selectedIndex].text;
+				let price = 0;
+				
+				if (priceInput.value) {
+					if (operatorInput.value == "+") {
+						price += parseFloat(priceInput.value);
+					} else {
+						price -= parseFloat(priceInput.value);
+					}
+				}
+
+				variants[optionId][valueId] = text;
+				prices[optionId][valueId] = price;
+			});
 		}
-
-		variants[optionId][valueId] = text;
-		prices[optionId][valueId] = price;
 	});
-});
-
+}
 
 let combinations = {};
 let result = {};
+
+result = comb(variants, prices);
+
+let variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
+variantSelect.innerHTML = "";
+for (let i in result[0]) {
+	variantSelect.options.add(new Option(result[0][i], result[1][i]));
+}
 
 
 function comb(arr, optionPrices) {
@@ -3675,6 +3738,8 @@ function comb(arr, optionPrices) {
 	
 	return [names, values, prices];
 }
+
+
 let priceInput = document.getElementById("input-price");
 
 function addAllVariants() {
@@ -3707,12 +3772,51 @@ function addAllVariants() {
 	displayToast("success", "Variants", counter + " variants added");	
 }
 
-result = comb(variants, prices);
+let selectedOptions;
 
-let variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
-variantSelect.innerHTML = "";
-for (let i in result[0]) {
-	variantSelect.options.add(new Option(result[0][i], result[1][i]));
+function addOptionsModal() {
+	let modalBody  = document.querySelector("#variantsModal .modal-body");
+	let variantOptions = variantsModal.querySelectorAll("[data-option]");
+	//remove all keep first
+	let optionTemplate = variantOptions[0].cloneNode(true);
+	variantOptions.forEach((el, i) => el.remove());
+	
+	let options = document.querySelectorAll("[data-v-poption].tab-pane");
+	options.forEach(option => {
+		let values = option.querySelectorAll("[data-v-option-value]");
+		if (!values.length) return;
+		
+		let name = option.querySelector("[data-v-product-option]");
+		let input = option.querySelector("[data-v-poption-product_option_id]");
+		let optionId = input.value;
+		let newOption = optionTemplate.cloneNode(option);
+		
+		newOption.querySelector("span").textContent = name.options[name.selectedIndex].text;
+		let checkbox = newOption.querySelector("input");
+		checkbox.value = optionId;
+		checkbox.checked = true;
+		
+		modalBody.append(newOption);
+	});	
+}
+
+function addVariants() {
+	selectedOptions = [];
+	let variantOptions = document.querySelectorAll("#variantsModal [data-option] [type=checkbox]:checked");
+	variantOptions.forEach(option => {
+		selectedOptions.push(option.value);
+	});
+	
+	if (selectedOptions.length < 2) {
+		displayToast("warning", "Variants", "Select at least two options!");	
+		return;
+	}
+	
+	bootstrap.Modal.getInstance(document.getElementById("variantsModal")).hide();
+	
+	generateVariants();
+	result = comb(variants, prices);
+	addAllVariants();
 }
 
 /*

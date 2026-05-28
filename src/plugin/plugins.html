@@ -160,9 +160,8 @@
 
 <script data-v-if="this.checkPluginUrl">
 function resizeIFrameToFitContent( iFrame ) {
-
     iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
-    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+    iFrame.height = iFrame.contentWindow.document.body.scrollHeight + 24;
 }
 
 window.addEventListener('DOMContentLoaded', function(e) {

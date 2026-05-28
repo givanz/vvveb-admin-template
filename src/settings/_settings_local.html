@@ -79,9 +79,17 @@
 	<label for="input-language" class="col-sm-2 col-form-label">Default Language</label>
 	<!-- <input type="hidden" value="en" name="settings[language][]" id="language" data-v-language> -->
 	<div class="col-sm-10">
-		<select class="form-select" name="settings[language_id]" data-v-setting="language_id" id="input-language" data-v-site-language_id>
-			<option value="en-gb" data-v-option>English</option>
-		</select>
+		<div class="input-group">
+			<select class="form-select" name="settings[language_id]" data-v-setting="language_id" id="input-language" data-v-site-language_id>
+				<option value="en-gb" data-v-option>English</option>
+			</select>
+			<div class="input-group-text">
+			  <label class="form-check-label">
+				<input class="form-check-input" type="checkbox" value="1" id="all-default_lang_slug-check" name="settings[default_lang_slug]" data-v-setting="default_lang_slug">
+				<span data-v-name>Include url slug</span>
+			  </label>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="row mb-3">

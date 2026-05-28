@@ -915,7 +915,7 @@
         <div class="btn-group" data-v-component-sites>
 
           <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
-            <i class="icon-menu-outline fs-6 text-muted"></i>
+            <i class="la la-bars"></i>
           </button>
 
 
@@ -1481,17 +1481,17 @@
                       <p data-v-comment-content></p>
 
                       <div class="secondary-actions">
-                        <button type="submit" name="comment_id[]" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=1" data-v-comment-comment_id>
+                        <button type="submit" name="comment_id" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=1" data-v-comment-comment_id>
                           <i class="la la-pen"></i>
                           <span>Approve</span>
                         </button>
 
-                        <button type="submit" name="comment_id[]" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=2" data-v-comment-comment_id>
+                        <button type="submit" name="comment_id" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=2" data-v-comment-comment_id>
                           <i class="la la-fire-alt"></i>
                           <span>Spam</span>
                         </button>
 
-                        <button type="submit" name="comment_id[]" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=3" data-v-comment-comment_id>
+                        <button type="submit" name="comment_id" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=3" data-v-comment-comment_id>
                           <i class="la la-trash-alt"></i>
                           <span>Trash</span>
                         </button>
@@ -1505,7 +1505,7 @@
 
 
                     <td style="width:200px;text-align:center;" class="author">
-                      <img class="rounded" data-v-if="comment.avatar" data-v-comment-avatar src="#">
+                      <img class="rounded-circle me-2" data-v-if="comment.avatar" data-v-comment-avatar src="#">
                       <a href="" data-v-comment-author-url data-v-if="comment.author-url">
                         <span data-v-comment-author>Admin</span>
                       </a>

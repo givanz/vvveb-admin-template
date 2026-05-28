@@ -78,8 +78,6 @@
 
             <div class="content">
 
-			@@include('../_includes/notifications.html')
-
                 <form id="form" action="" method="post" class="settings" data-v-product>
                     <input type="hidden" name="csrf" data-v-csrf>
                     <input type="hidden" name="action" id="action" value="save">
@@ -87,6 +85,8 @@
 
                     <div class="columns">
                         <div class="left-column pt-3">
+
+							@@include('../_includes/notifications.html', {"_class":"me-3"})
 
     						<ul class="nav nav-tabs" id="product-tabs">
 								<li class="nav-item"><a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a></li>
@@ -243,12 +243,52 @@
 
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="variantsModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="variantsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <strong class="modal-title" id="staticBackdropLabel">Options</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+		<div class="form-check form-check-inline fw-medium" data-option>
+		  <label class="form-check-label">
+			<input class="form-check-input" type="checkbox" value="" checked>
+			<span>Size</span>
+		  </label>
+		</div>
+		<div class="form-check form-check-inline fw-medium" data-option>
+		  <label class="form-check-label">
+			<input class="form-check-input" type="checkbox" value="" checked>
+			<span>Color</span>
+		  </label>
+		</div>
+		<div class="form-check form-check-inline fw-medium" data-option>
+		  <label class="form-check-label">
+			<input class="form-check-input" type="checkbox" value="" checked>
+			<span>Material</span>
+		  </label>
+		</div>
+		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-icon" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-icon" onclick="addVariants()">
+			<i class="la la-plus"></i>
+			<span>Add variants</span>
+		</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 @@include('../_includes/footer-scripts.html')
 
 <script>
 @@include('../_includes/media-variables.html');
 let linkUrl           = '{ $this->linkUrl }';
-let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
 let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 let productOption     = { $this->option };
 let contentType       = 'product';
@@ -277,7 +317,7 @@ if (lang != "en-us") {
  -->
 <script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
 <script id="oembed-js" src="/js/libs/oembed.js"></script>
-<script id="tinymce-embed-js" src="/js/libs/tinymce-embed.js"></script>
+btn btn-outline-primary btn-sm btn-icon ms-2
 
 <!-- date time picker -->
 <script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
@@ -293,38 +333,57 @@ if (lang != "en-us") {
 let data = {};
 let variants = {};
 let prices = {};
-let options = document.querySelectorAll("[data-v-poption].tab-pane");
-options.forEach(option => {
-	let values = option.querySelectorAll("[data-v-option-value]");
-	let input = option.querySelector("[data-v-poption-product_option_id]");
-	let optionId = input.value;
-	variants[optionId] = {};
-	prices[optionId] = {};
-	values.forEach(value => { 
-		let textInput = value.querySelector("[data-v-option-value-option_value_id]");
-		let valInput = value.querySelector("[data-v-option-value-product_option_value_id]");
-		let priceInput = value.querySelector("[data-v-option-value-price]");
-		let operatorInput = value.querySelector("[data-v-option-value-price_operator]:checked");
-		let valueId = valInput.value;
-		let text = textInput.options[textInput.selectedIndex].text;
-		let price = 0;
+
+function generateVariants() {
+	let options = document.querySelectorAll("[data-v-poption].tab-pane");
+	variants = {};
+	prices = {};
+	console.log(selectedOptions);
+
+	options.forEach(option => {
+		let values = option.querySelectorAll("[data-v-option-value]");
+		let input = option.querySelector("[data-v-poption-product_option_id]");
+		let optionId = input.value;
 		
-		if (priceInput.value) {
-			if (operatorInput.value == "+") {
-				price += parseFloat(priceInput.value);
-			} else {
-				price -= parseFloat(priceInput.value);
-			}
+		if (!selectedOptions.includes(optionId)) return;
+			
+		prices[optionId] = {};
+		if (values.length) {
+			variants[optionId] = {};
+			values.forEach(value => { 
+				let textInput = value.querySelector("[data-v-option-value-option_value_id]");
+				let valInput = value.querySelector("[data-v-option-value-product_option_value_id]");
+				let priceInput = value.querySelector("[data-v-option-value-price]");
+				let operatorInput = value.querySelector("[data-v-option-value-price_operator]:checked");
+				let valueId = valInput.value;
+				let text = textInput.options[textInput.selectedIndex].text;
+				let price = 0;
+				
+				if (priceInput.value) {
+					if (operatorInput.value == "+") {
+						price += parseFloat(priceInput.value);
+					} else {
+						price -= parseFloat(priceInput.value);
+					}
+				}
+
+				variants[optionId][valueId] = text;
+				prices[optionId][valueId] = price;
+			});
 		}
-
-		variants[optionId][valueId] = text;
-		prices[optionId][valueId] = price;
 	});
-});
-
+}
 
 let combinations = {};
 let result = {};
+
+result = comb(variants, prices);
+
+let variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
+variantSelect.innerHTML = "";
+for (let i in result[0]) {
+	variantSelect.options.add(new Option(result[0][i], result[1][i]));
+}
 
 
 function comb(arr, optionPrices) {
@@ -364,6 +423,8 @@ function comb(arr, optionPrices) {
 	
 	return [names, values, prices];
 }
+
+
 let priceInput = document.getElementById("input-price");
 
 function addAllVariants() {
@@ -396,12 +457,51 @@ function addAllVariants() {
 	displayToast("success", "Variants", counter + " variants added");	
 }
 
-result = comb(variants, prices);
+let selectedOptions;
 
-let variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
-variantSelect.innerHTML = "";
-for (let i in result[0]) {
-	variantSelect.options.add(new Option(result[0][i], result[1][i]));
+function addOptionsModal() {
+	let modalBody  = document.querySelector("#variantsModal .modal-body");
+	let variantOptions = variantsModal.querySelectorAll("[data-option]");
+	//remove all keep first
+	let optionTemplate = variantOptions[0].cloneNode(true);
+	variantOptions.forEach((el, i) => el.remove());
+	
+	let options = document.querySelectorAll("[data-v-poption].tab-pane");
+	options.forEach(option => {
+		let values = option.querySelectorAll("[data-v-option-value]");
+		if (!values.length) return;
+		
+		let name = option.querySelector("[data-v-product-option]");
+		let input = option.querySelector("[data-v-poption-product_option_id]");
+		let optionId = input.value;
+		let newOption = optionTemplate.cloneNode(option);
+		
+		newOption.querySelector("span").textContent = name.options[name.selectedIndex].text;
+		let checkbox = newOption.querySelector("input");
+		checkbox.value = optionId;
+		checkbox.checked = true;
+		
+		modalBody.append(newOption);
+	});	
+}
+
+function addVariants() {
+	selectedOptions = [];
+	let variantOptions = document.querySelectorAll("#variantsModal [data-option] [type=checkbox]:checked");
+	variantOptions.forEach(option => {
+		selectedOptions.push(option.value);
+	});
+	
+	if (selectedOptions.length < 2) {
+		displayToast("warning", "Variants", "Select at least two options!");	
+		return;
+	}
+	
+	bootstrap.Modal.getInstance(document.getElementById("variantsModal")).hide();
+	
+	generateVariants();
+	result = comb(variants, prices);
+	addAllVariants();
 }
 
 /*
