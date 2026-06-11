@@ -1,80 +1,101 @@
 <div id="left-panel">
  <div> 
-  <div id="filemanager"> 
-		<div class="header">
-			<div class="search">
-			  <input class="form-control h-100" placeholder="Pages" type="search" data-vvveb-action="searchPages" data-vvveb-on="input">
-			</div>
-			
-			<div class="btns" role="group">			 
-
-			  <button class="btn btn-outline-secondary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
-				   <span>Add page</span>
-				   <i class="icon-add"></i>
-			  </button>
-			  
-			  <button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New section (Ctrl + Shift + S)" id="new-section" data-vvveb-action="newSection" data-vvveb-shortcut="">
-				  
-				   <i class="icon-add"></i>
-			  </button>	
-			  <!--  
-			  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
-				  <i class="la la-trash"></i> <small>Delete</small>
-			  </button> -->
-			</div>
-
-			</div>
-
-			<div class="tree">
-				<ol>
-				</ol>
-			</div>
-  </div>
 	
   
   <div class="drag-elements">
 	
 	<div class="header">
+		<!--
 		<ul class="nav nav-tabs  nav-fill" id="elements-tabs" role="tablist">
 		  <li class="nav-item component-tab">
 			<a class="nav-link active" id="components-tab" data-bs-toggle="tab" href="#components-tabs" role="tab" aria-controls="components" aria-selected="true" title="Components">
 				<i class="icon-cube-outline"></i>
-				<!-- img src="/js/vvvebjs/icons/product.svg" height="23" --> 
-				<!-- div><small>Components</small></div -->
 			</a>
 		  </li>
 		  <li class="nav-item sections-tab">
 			<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections">
 				<i class="icon-layers-outline"></i>
-				<!-- img src="/js/vvvebjs/icons/list_group.svg" height="23" --> 
-				<!-- div><small>Sections</small></div -->
 			</a>
 		  </li>
-		  <!-- li class="nav-item sections-tab">
-			<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections"><img src="/js/vvvebjs/icons/list_group.svg" width="24" height="23"> <div><small>Sections</small></div></a>
-		  </li -->
 		  <li class="nav-item component-configuration-tab">
 			<a class="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration" role="tab" aria-controls="configuration" aria-selected="false" title="Style">
 				<i class="icon-sparkles-outline"></i>
-				<!-- img src="/js/vvvebjs/icons/filters.svg" height="23"--> 
-				<!-- div><small>Properties</small></div -->
 			</a>
 		  </li>		  
 		  <li class="nav-item component-properties-tab d-none">
 			<a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab" aria-controls="properties" aria-selected="false" title="Properties">
 				<i class="icon-settings-outline"></i>
-				<!-- img src="/js/vvvebjs/icons/filters.svg" height="23"--> 
-				<!-- div><small>Properties</small></div -->
 			</a>
 		  </li>
 
 		</ul>
+		-->
 
 		<div class="tab-content">
 		  
-			<div class="tab-pane show active" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
-			  
-			  
+			<div class="tab-pane show active" id="pages-tabs" role="tabpanel" aria-labelledby="pages-tab">
+			  <div id="filemanager"> 
+					<div class="header">
+						<div class="search">
+						  <input class="form-control h-100" placeholder="Pages" type="search" data-vvveb-action="searchPages" data-vvveb-on="input">
+						</div>
+						
+						<div class="btns" role="group">			 
+
+						  <button class="btn btn-outline-secondary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
+							   <span>Add page</span>
+							   <i class="icon-add"></i>
+						  </button>
+						  
+						  <button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New section (Ctrl + Shift + S)" id="new-section" data-vvveb-action="newSection" data-vvveb-shortcut="">
+							  
+							   <i class="icon-add"></i>
+						  </button>	
+						  <!--  
+						  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
+							  <i class="la la-trash"></i> <small>Delete</small>
+						  </button> -->
+						</div>
+
+						</div>
+
+						<div class="tree">
+							<ol>
+							</ol>
+						</div>
+			  </div>
+				<div id="tree-list">
+						<div class="header">
+							<div>Navigator</div>
+								<span>
+									<button class="btn btn-sm" data-vvveb-action="treeListRight" aria-pressed="true">
+										<i class="icon-remove-outline"></i>
+									</button>			
+									<button class="btn btn-sm" data-vvveb-action="treeListPanel" aria-pressed="true">
+										<i class="icon-chevron-forward-outline"></i>
+									</button>
+									<button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
+										<i class="icon-close"></i>
+									</button>
+								</span>
+							</div>
+						<div class="tree">
+							<ol>
+								<!--
+								<li data-component="Products" class="file">							
+									<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+									<input type="checkbox" id="idNaN">
+								</li>
+								<li data-component="Posts" class="file">							
+									<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+									<input type="checkbox" id="idNaN">
+								</li>
+								-->
+							</ol>
+						</div>
+					</div>				  
+			</div>
+			<div class="tab-pane" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
 					<ul class="nav nav-tabs nav-fill sections-tabs" role="tablist">
 					  <li class="nav-item components-tab">
 						<a class="nav-link active" data-bs-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="true">

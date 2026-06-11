@@ -12765,6 +12765,26 @@ body {
   font-size: 0.875rem;
 }
 
+#elements-tabs .nav-link {
+  border: 1px solid transparent;
+  margin: 4px;
+  padding: 4px;
+}
+#elements-tabs .nav-link i {
+  color: inherit;
+  margin-left: 0.15rem;
+  vertical-align: text-top;
+}
+#elements-tabs .nav-link.active {
+  background: rgba(var(--bs-primary-rgb), 0.08);
+  color: var(--bs-link-hover-color);
+  border: 1px solid rgba(var(--bs-primary-rgb), 0.3);
+  border-radius: 4px;
+}
+#elements-tabs .nav-link:hover {
+  color: var(--bs-link-hover-color);
+}
+
 #vvveb-builder {
   display: block;
   height: 100%;
@@ -12851,6 +12871,9 @@ html[data-bs-theme=dark] #vvveb-builder {
 }
 #vvveb-builder #left-panel #filemanager .tree:hover {
   overflow-y: auto;
+}
+#vvveb-builder #left-panel #filemanager:only-child .tree {
+  height: 100%;
 }
 #vvveb-builder #left-panel .components-list,
 #vvveb-builder #left-panel .blocks-list,
@@ -13021,7 +13044,7 @@ html[data-bs-theme=dark] #vvveb-builder #top-panel img {
   line-height: 1.4;
 }
 #vvveb-builder .drag-elements .nav-item a.nav-link i {
-  font-size: 1rem;
+  font-size: 14px;
   vertical-align: middle;
 }
 #vvveb-builder .drag-elements .nav-item a.nav-link small, #vvveb-builder .drag-elements .nav-item a.nav-link .small {
@@ -13050,7 +13073,7 @@ html[data-bs-theme=dark] #vvveb-builder #top-panel img {
   border: none;
   background: none;
   position: absolute;
-  top: 0.15rem;
+  top: 0.2rem;
   right: 12px;
   opacity: 0.5;
 }
@@ -13072,7 +13095,7 @@ html[data-bs-theme=dark] #vvveb-builder #top-panel img {
   right: 5px;
 }
 #vvveb-builder .search .expand button {
-  padding: 0.1rem 0.25rem;
+  padding: 0.05rem 0.25rem;
   background: transparent;
   border: none;
   color: var(--bs-body-color);
@@ -13742,7 +13765,7 @@ html[data-bs-theme=dark] #vvveb-builder #top-panel img {
 #vvveb-builder .nav-tabs .nav-link i {
   font-size: 1rem;
   line-height: 1;
-  vertical-align: bottom;
+  vertical-align: text-top;
 }
 #vvveb-builder .nav-tabs .nav-link.active,
 #vvveb-builder .nav-tabs .nav-item.show .nav-link {
@@ -13764,7 +13787,7 @@ html[data-bs-theme=dark] #vvveb-builder #top-panel img {
   vertical-align: bottom;
 }
 #vvveb-builder .sections-tabs .nav-link i {
-  margin-right: 0.3rem;
+  margin-right: 0.1rem;
 }
 /* style for drag element */
 li[data-type] {
@@ -14808,23 +14831,23 @@ img.preview {
   left: calc(100% - 300px);
   border-radius: 2px;
   z-index: 100;
-  width: 250px;
-  min-width: 250px;
   min-height: 100px;
-  height: 500px;
-  resize: both;
   overflow: hidden;
-  border: 1px solid rgba(var(--bs-body-color-rgb), 0.15);
-  box-shadow: 0px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.05);
   background: var(--bs-body-bg);
   user-select: none;
+  resize: both;
+}
+#canvas #tree-list {
+  width: 250px;
+  min-width: 250px;
+  border: 1px solid rgba(var(--bs-body-color-rgb), 0.15);
+  box-shadow: 0px 1px 5px 0px rgba(var(--bs-body-color-rgb), 0.05);
+  height: 500px;
 }
 #left-panel #tree-list {
   position: static;
   width: auto;
-  border-top: none;
   resize: vertical;
-  height: 300px;
 }
 #left-panel #tree-list .header > div:before {
   display: none;
@@ -14839,7 +14862,7 @@ img.preview {
   cursor: grabbing;
 }
 #tree-list .header > div {
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.5rem;
 }
 #tree-list .header > div:before {
   content: "....";
@@ -14853,6 +14876,12 @@ img.preview {
   display: inline-block;
   margin-right: 10px;
   margin-top: -1rem;
+}
+#tree-list .header .btn {
+  padding: 0.2rem;
+}
+#tree-list .header .btn i {
+  font-size: 14px;
 }
 #tree-list .tree {
   padding: 0.5rem 0;
@@ -27612,7 +27641,7 @@ html[data-bs-theme=dark] .sidebar .navbar .nav-item.heading span {
   overflow-y: inherit;
 }
 .small-nav .sidebar .navbar, .small-nav .sidebar .logo {
-  margin: 1rem 0rem 0rem 0rem;
+  margin: 0.5rem 0rem 0rem 0rem;
   padding: 0rem;
 }
 .small-nav .sidebar .logo {
@@ -27621,6 +27650,9 @@ html[data-bs-theme=dark] .sidebar .navbar .nav-item.heading span {
 .small-nav .sidebar .logo .img {
   max-width: 30px;
   overflow-x: hidden;
+}
+.small-nav .sidebar .logo .img img {
+  max-height: 30px;
 }
 .small-nav .sidebar .logo a {
   display: block;

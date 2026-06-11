@@ -1553,7 +1553,7 @@ tr.no-items {
 		
 		.navbar, .logo
 		{
-			margin:1rem 0rem 0rem 0rem;
+			margin:0.5rem 0rem 0rem 0rem;
 			padding:0rem;
 		}
 		
@@ -1569,7 +1569,7 @@ tr.no-items {
 				
 				img {
 					//display:none !important;
-					//max-width:100%;
+					max-height:30px;
 				}
 			}
 			

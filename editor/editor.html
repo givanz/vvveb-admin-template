@@ -32,11 +32,6 @@
           <img src="" data-v-site-logo>
           <img src="" data-v-site-logo-dark>
         </a>
-
-        <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
-          <i class="icon-search"></i>
-        </a>
-
       </div>
 
       <!-- navbar -->
@@ -48,11 +43,6 @@
             <img src="" data-v-site-logo>
             <img src="" data-v-site-logo-dark>
           </a>
-
-          <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
-            <i class="icon-search"></i>
-          </a>
-
         </div>
 
 
@@ -60,847 +50,59 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!--
-			<div class="collapse navbar-collapse">
-
-				<ul class="nav navbar-nav flex-column" data-v-menu>
-
-					<li class="nav-item" data-v-menu-item>
-						<a class="nav-link" href="/admin" data-bs-target="#posts"
-						   data-v-menu-item-url>
-							<i class="icon-pulse-outline" data-v-menu-item-icon></i>
-							<img src class="icon-img" data-v-menu-item-icon-img></i>
-							<span class="title" data-v-menu-item-name>Dashboard</span>
-							<span class="text-muted" data-v-menu-item-subtitle>Subtitle</span>
-							<span class="badge badge-primary" data-v-menu-item-badge></span>
-						</a>
-
-
-						<ul class="collapse sub-menu fade"  data-v-submenu>
-
-							<li class="nav-item" data-v-submenu-item>
-								<a href="/adminindex.php?module=posts" class="nav-link"
-								   data-v-submenu-item-url>
-								   
-								   <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
-								   <img src class="icon-img" data-v-submenu-item-icon-img></i>
-								   <span data-v-submenu-item-name>Submenu</span>
-								   <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
-								   <span class="badge badge-primary" data-v-submenu-item-badge></span>
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-
-			</div>
-			
-			-->
 
         <div class="collapse navbar-collapse" id="sidebarNav">
+          <ul class="nav navbar-nav flex-column" id="elements-tabs">
 
-          <ul class="nav navbar-nav flex-column" data-v-menu>
+            <li class="nav-item pages-tab" role="presentation">
+              <a class="nav-link active" id="pages-tab" data-bs-toggle="tab" href="#pages-tabs" role="tab" aria-controls="pages" aria-selected="true" title="Components">
+                <i class="icon-document-outline"></i>
+                <span class="title">Pages</span>
+              </a>
+            </li>
+            <li class="nav-item components-tab" role="presentation">
+              <a class="nav-link" id="components-tab" data-bs-toggle="tab" href="#components-tabs" role="tab" aria-controls="components" aria-selected="false" title="Components">
+                <i class="icon-cube-outline"></i>
+                <span class="title">Components</span>
+              </a>
+            </li>
+            <li class="nav-item sections-tab" role="presentation">
+              <a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections" tabindex="-1">
+                <i class="icon-layers-outline"></i>
+                <span class="title">Sections</span>
+              </a>
+            </li>
 
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block " href="/admin" data-v-menu-item-url>
-                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
-                <img src="#" class="icon-img" data-v-menu-item-icon-img>
-                <span class="title" data-v-menu-item-name>Dashboard</span>
+            <li class="nav-item component-configuration-tab" role="presentation">
+              <a class="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration" role="tab" aria-controls="configuration" aria-selected="false" title="Style" tabindex="-1">
+                <i class="icon-sparkles-outline"></i>
+                <span class="title">Style</span>
+              </a>
+            </li>
+            <li class="nav-item component-properties-tab d-none" role="presentation">
+              <a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab" aria-controls="properties" aria-selected="false" title="Properties" tabindex="-1">
+                <i class="icon-settings-outline"></i>
+                <span class="title">Properties</span>
+              </a>
+            </li>
+
+            <li class="nav-item heading">
+              <a href class="nav-link">
+                <span class="title">Admin</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link d-none d-md-block " href="{$this.adminPath}index.php">
+                <i class="icon-pie-chart-outline"></i>
+                <img src="#" class="icon-img">
+                <span class="title">Dashboard</span>
                 <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
-                <span class="badge badge-primary" data-v-menu-item-badge></span>
+                <span class="badge badge-primary"></span>
               </a>
 
-              <a class="nav-link mobile d-block d-md-none" href="/admin" data-v-menu-item-url>
-                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
-                <img src="#" class="icon-img" data-v-menu-item-icon-img>
-                <span class="title" data-v-menu-item-name>Dashboard</span>
-                <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
-                <span class="badge badge-primary" data-v-menu-item-badge></span>
-              </a>
-
-
-              <ul class="dropdown-menu sub-menu fade" data-v-submenu>
-
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/adminindex.php?module=posts" class="nav-link" data-v-submenu-item-url>
-
-                    <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
-                    <img src="#" class="icon-img" data-v-submenu-item-icon-img>
-                    </i>
-                    <span data-v-submenu-item-name>Submenu</span>
-                    <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
-                    <span class="badge badge-primary" data-v-submenu-item-badge></span>
-                  </a>
-                </li>
-              </ul>
             </li>
 
-
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
-                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Edit website</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
-                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Edit website</span>
-              </a>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-target="#menu-post">
-                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Posts</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
-                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Posts</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/posts&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Posts</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Taxonomy</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/tags&amp;type=post&amp;taxonomy_id=2" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-tags" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Tags</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/categories&amp;type=post&amp;taxonomy_id=1" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-boxes" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Categories</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>General</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/comments&amp;status=0&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-comments" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Comments</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-target="#menu-pages">
-                <i class="icon-document-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Pages</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
-                <i class="icon-document-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Pages</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/posts&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-file-invoice" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Pages</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new page</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Taxonomy</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/menus&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-boxes" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Menus</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
-                <i class="icon-images-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Media library</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
-                <i class="icon-images-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Media library</span>
-              </a>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-target="#menu-users">
-                <i class="icon-people-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Users</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
-                <i class="icon-people-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Users</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=user/users" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-user" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Users</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new user</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Groups</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=user/user-groups" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-user-friends" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>User groups</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new group</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
-                <i class="icon-mail-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Messages</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
-                <i class="icon-mail-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Messages</span>
-              </a>
-            </li>
-            <li class="nav-item heading" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
-                <span class="title" data-v-menu-item-name>Ecommerce</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
-                <span class="title" data-v-menu-item-name>Ecommerce</span>
-              </a>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-target="#menu-sales">
-                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Sales</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
-                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Sales</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=order/orders" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Orders</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=order/subscriptions" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-retweet" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Subscriptions</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=order/returns" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-undo" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Returns</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Marketing</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=order/coupons" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-percentage" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Discount coupons</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=order/vouchers" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-gift" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Gift vouchers</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item align-middle columns-2" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-target="#menu-product">
-                <i class="icon-cube-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Products</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
-                <i class="icon-cube-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Products</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/products&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-box" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Products</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Taxonomy</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/tags&amp;type=product&amp;taxonomy_id=5" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-tags" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Tags</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/categories&amp;type=product&amp;taxonomy_id=4" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-boxes" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Categories</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Relations</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/manufacturers&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-industry" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Manufacturers</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/vendors&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-store" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Vendors</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Content</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/digital-assets&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-cloud-download-alt" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Digital assets</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/options&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-stream" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Options</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/attribute-groups&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-list" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Attributes</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>User feedback</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/product-reviews&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-comment" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Reviews</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=product/product-questions&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-question-circle" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Questions</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item heading" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
-                <span class="title" data-v-menu-item-name>Configuration</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
-                <span class="title" data-v-menu-item-name>Configuration</span>
-              </a>
-            </li>
-            <li class="nav-item align-top" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-target="#menu-plugins">
-                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Plugins</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
-                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Plugins</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=plugin/plugins" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plug" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Installed Plugins</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new plugin</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=editor/code&amp;type=plugins" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-code" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Code editor</span>
-                  </a>
-                </li>
-                <li class="nav-item heading" data-v-submenu-item>
-                  <a href class="nav-link " data-v-submenu-item-url>
-                    <span data-v-submenu-item-name>Plugins</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=plugins/contact-form/messages" class="nav-link " data-v-submenu-item-url>
-                    <img src="/plugins/contact-form/contact-form.svg" class="icon-img" data-v-submenu-item-icon-img>
-                    <span data-v-submenu-item-name>Contact form</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=editor/editor&amp;url=/plugins/cookie-notice/notice.html&amp;template=/plugins/cookie-notice/notice.html" class="nav-link " data-v-submenu-item-url>
-                    <img src="/plugins/cookie-notice/cookie-notice.svg" class="icon-img" data-v-submenu-item-icon-img>
-                    <span data-v-submenu-item-name>Cookie notice</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-target="#menu-themes">
-                <i class="icon-copy-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Themes</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
-                <i class="icon-copy-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Themes</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=theme/themes" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-brush" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Installed Themes</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=editor/code&amp;type=themes" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-code" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Code editor</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-target="#menu-field">
-                <i class="icon-reader-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Fields</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
-                <i class="icon-reader-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Fields</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=field/field-groups" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-brush" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Field groups</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Add new</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item align-top mega-menu" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-target="#menu-settings">
-                <i class="icon-settings-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Settings</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
-                <i class="icon-settings-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Settings</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=settings/sites" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-stop la-90" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Sites</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/sites" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-stop" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Sites</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-plus" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Add new</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=admin/users" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-user" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Admin users</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=admin/users" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Users</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=admin/user" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user-plus" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Add new user</span>
-                      </a>
-                    </li>
-                    <li class="nav-item heading" data-v-submenu-item>
-                      <a href class="nav-link " data-v-submenu-item-url>
-                        <span data-v-submenu-item-name>Roles</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=admin/roles" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user-cog" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Manage Roles</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=admin/role" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user-tag" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Add Role</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=content/menus" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Content</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/taxonomies" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-boxes" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Taxonomies</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/posts" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-file-alt" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Custom posts</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/products" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-box" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Custom products</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-stream" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Fields</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item align-top" data-v-submenu-item>
-                  <a href="/admin/?module=user/users" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-shopping-cart" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Ecommerce</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/subscription-plans" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-receipt" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Subscriptions plans</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/tax-types" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Taxes</span>
-                      </a>
-                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/tax-types" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Tax types</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/tax-rates" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Tax rates</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/order-statuses" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-tags" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Statuses</span>
-                      </a>
-                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/order-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Order</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/stock-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-box" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Stock</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/subscription-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-retweet" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Subscription</span>
-                          </a>
-                        </li>
-                        <li class="nav-item heading" data-v-submenu-item>
-                          <a href class="nav-link " data-v-submenu-item-url>
-                            <span data-v-submenu-item-name>Returns</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/return-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-undo" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Return status</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/return-resolutions" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-exchange-alt" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Return resolutions</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/return-reasons" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-undo-alt" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Return reasons</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/discount" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-ruler" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Classes</span>
-                      </a>
-                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/length-types" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-ruler-horizontal" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Length</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=settings/weight-types" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-box" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Weight</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=localization/languages" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-flag" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Localization</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=localization/languages" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-language" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Languages</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=localization/currencies" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-coins" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Currencies</span>
-                      </a>
-                    </li>
-                    <li class="nav-item align-top" data-v-submenu-item>
-                      <a href="/admin/?module=localization/region-groups" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-globe" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Geo location</span>
-                      </a>
-                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=localization/countries" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-flag" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Countries</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=localization/regions" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-city" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Regions</span>
-                          </a>
-                        </li>
-                        <li class="nav-item" data-v-submenu-item>
-                          <a href="/admin/?module=localization/region-groups" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-atlas" data-v-submenu-item-icon></i>
-                            <span data-v-submenu-item-name>Region Groups</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=settings/email" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-tools" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>System</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=settings/email" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-envelope" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Email settings</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item align-top" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-target="#menu-tools">
-                <i class="icon-globe-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Tools</span>
-              </a>
-              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
-                <i class="icon-globe-outline" data-v-menu-item-icon></i>
-                <span class="title" data-v-menu-item-name>Tools</span>
-              </a>
-              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=tools/cache" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-circle-notch" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Cache</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=tools/backup" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-server" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Backup</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=tools/cron" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-history la-90" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Cron job</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=tools/import" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-upload" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Import/Export</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item heading" data-v-submenu-item>
-                      <a href class="nav-link " data-v-submenu-item-url>
-                        <span data-v-submenu-item-name>Content</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=tools/import" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-file-import" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Import content</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=tools/export" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-file-export" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Export content</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=tools/systeminfo" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-info-circle" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>System info</span>
-                  </a>
-                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=tools/systeminfo" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-info" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>System Info</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-v-submenu-item>
-                      <a href="/admin/?module=tools/errorlog" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-bug" data-v-submenu-item-icon></i>
-                        <span data-v-submenu-item-name>Error log</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=tools/update" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-sync" data-v-submenu-item-icon></i>
-                    <span data-v-submenu-item-name>Update</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
           </ul>
         </div>
 
@@ -1140,81 +342,102 @@
 
         <div id="left-panel">
           <div>
-            <div id="filemanager">
-              <div class="header">
-                <div class="search">
-                  <input class="form-control h-100" placeholder="Pages" type="search" data-vvveb-action="searchPages" data-vvveb-on="input">
-                </div>
-
-                <div class="btns" role="group">
-
-                  <button class="btn btn-outline-secondary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
-                    <span>Add page</span>
-                    <i class="icon-add"></i>
-                  </button>
-
-                  <button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New section (Ctrl + Shift + S)" id="new-section" data-vvveb-action="newSection" data-vvveb-shortcut="">
-
-                    <i class="icon-add"></i>
-                  </button>
-                  <!--  
-			  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
-				  <i class="la la-trash"></i> <small>Delete</small>
-			  </button> -->
-                </div>
-
-              </div>
-
-              <div class="tree">
-                <ol>
-                </ol>
-              </div>
-            </div>
 
 
             <div class="drag-elements">
 
               <div class="header">
-                <ul class="nav nav-tabs  nav-fill" id="elements-tabs" role="tablist">
-                  <li class="nav-item component-tab">
-                    <a class="nav-link active" id="components-tab" data-bs-toggle="tab" href="#components-tabs" role="tab" aria-controls="components" aria-selected="true" title="Components">
-                      <i class="icon-cube-outline"></i>
-                      <!-- img src="/js/vvvebjs/icons/product.svg" height="23" -->
-                      <!-- div><small>Components</small></div -->
-                    </a>
-                  </li>
-                  <li class="nav-item sections-tab">
-                    <a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections">
-                      <i class="icon-layers-outline"></i>
-                      <!-- img src="/js/vvvebjs/icons/list_group.svg" height="23" -->
-                      <!-- div><small>Sections</small></div -->
-                    </a>
-                  </li>
-                  <!-- li class="nav-item sections-tab">
-			<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections"><img src="/js/vvvebjs/icons/list_group.svg" width="24" height="23"> <div><small>Sections</small></div></a>
-		  </li -->
-                  <li class="nav-item component-configuration-tab">
-                    <a class="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration" role="tab" aria-controls="configuration" aria-selected="false" title="Style">
-                      <i class="icon-sparkles-outline"></i>
-                      <!-- img src="/js/vvvebjs/icons/filters.svg" height="23"-->
-                      <!-- div><small>Properties</small></div -->
-                    </a>
-                  </li>
-                  <li class="nav-item component-properties-tab d-none">
-                    <a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab" aria-controls="properties" aria-selected="false" title="Properties">
-                      <i class="icon-settings-outline"></i>
-                      <!-- img src="/js/vvvebjs/icons/filters.svg" height="23"-->
-                      <!-- div><small>Properties</small></div -->
-                    </a>
-                  </li>
+                <!--
+		<ul class="nav nav-tabs  nav-fill" id="elements-tabs" role="tablist">
+		  <li class="nav-item component-tab">
+			<a class="nav-link active" id="components-tab" data-bs-toggle="tab" href="#components-tabs" role="tab" aria-controls="components" aria-selected="true" title="Components">
+				<i class="icon-cube-outline"></i>
+			</a>
+		  </li>
+		  <li class="nav-item sections-tab">
+			<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections">
+				<i class="icon-layers-outline"></i>
+			</a>
+		  </li>
+		  <li class="nav-item component-configuration-tab">
+			<a class="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration" role="tab" aria-controls="configuration" aria-selected="false" title="Style">
+				<i class="icon-sparkles-outline"></i>
+			</a>
+		  </li>		  
+		  <li class="nav-item component-properties-tab d-none">
+			<a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab" aria-controls="properties" aria-selected="false" title="Properties">
+				<i class="icon-settings-outline"></i>
+			</a>
+		  </li>
 
-                </ul>
+		</ul>
+		-->
 
                 <div class="tab-content">
 
-                  <div class="tab-pane show active" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
+                  <div class="tab-pane show active" id="pages-tabs" role="tabpanel" aria-labelledby="pages-tab">
+                    <div id="filemanager">
+                      <div class="header">
+                        <div class="search">
+                          <input class="form-control h-100" placeholder="Pages" type="search" data-vvveb-action="searchPages" data-vvveb-on="input">
+                        </div>
 
+                        <div class="btns" role="group">
 
+                          <button class="btn btn-outline-secondary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
+                            <span>Add page</span>
+                            <i class="icon-add"></i>
+                          </button>
+
+                          <button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New section (Ctrl + Shift + S)" id="new-section" data-vvveb-action="newSection" data-vvveb-shortcut="">
+
+                            <i class="icon-add"></i>
+                          </button>
+                          <!--  
+						  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
+							  <i class="la la-trash"></i> <small>Delete</small>
+						  </button> -->
+                        </div>
+
+                      </div>
+
+                      <div class="tree">
+                        <ol>
+                        </ol>
+                      </div>
+                    </div>
+                    <div id="tree-list">
+                      <div class="header">
+                        <div>Navigator</div>
+                        <span>
+                          <button class="btn btn-sm" data-vvveb-action="treeListRight" aria-pressed="true">
+                            <i class="icon-remove-outline"></i>
+                          </button>
+                          <button class="btn btn-sm" data-vvveb-action="treeListPanel" aria-pressed="true">
+                            <i class="icon-chevron-forward-outline"></i>
+                          </button>
+                          <button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
+                            <i class="icon-close"></i>
+                          </button>
+                        </span>
+                      </div>
+                      <div class="tree">
+                        <ol>
+                          <!--
+								<li data-component="Products" class="file">							
+									<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+									<input type="checkbox" id="idNaN">
+								</li>
+								<li data-component="Posts" class="file">							
+									<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+									<input type="checkbox" id="idNaN">
+								</li>
+								-->
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
                     <ul class="nav nav-tabs nav-fill sections-tabs" role="tablist">
                       <li class="nav-item components-tab">
                         <a class="nav-link active" data-bs-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="true">
@@ -1809,7 +1032,7 @@
           <div id="add-section-box" class="drag-elements">
 
             <div class="header">
-              <ul class="nav nav-tabs bg-secondary bg-opacity-10" id="box-elements-tabs" role="tablist">
+              <ul class="nav nav-tabs" id="box-elements-tabs" role="tablist">
                 <li class="nav-item component-tab">
                   <a class="nav-link px-3 active" id="box-components-tab" data-bs-toggle="tab" href="#box-components" role="tab" aria-controls="components" aria-selected="true">
                     <i class="icon-cube-outline"></i>
@@ -1952,38 +1175,6 @@
 
           </div>
           <!-- //add section box -->
-
-
-          <div id="tree-list">
-            <div class="header">
-              <div>Navigator</div>
-              <span>
-                <button class="btn btn-sm" data-vvveb-action="treeListRight" aria-pressed="true">
-                  <i class="icon-stop-outline"></i>
-                </button>
-                <button class="btn btn-sm" data-vvveb-action="treeListPanel" aria-pressed="true">
-                  <i class="icon-chevron-back-outline"></i>
-                </button>
-                <button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
-                  <i class="icon-close"></i>
-                </button>
-              </span>
-            </div>
-            <div class="tree">
-              <ol>
-                <!--
-				<li data-component="Products" class="file">							
-					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
-					<input type="checkbox" id="idNaN">
-				</li>
-				<li data-component="Posts" class="file">							
-					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
-					<input type="checkbox" id="idNaN">
-				</li>
-				-->
-              </ol>
-            </div>
-          </div>
 
         </div>
 
@@ -3022,19 +2213,14 @@
         <input type="hidden" name="csrf" data-v-csrf>
 
         <div class="modal-content">
-          <div class="modal-header">
-            <span class="modal-title text-secondary small">
-              <i class="la la-lg la-file"></i>
-              <span>New page</span>
-            </span>
-            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> -->
-            <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
-            <!-- </button> -->
-            <div id="close-section-btn" class="btn btn-outline-secondary border-0 p-1 py-0 ms-auto" data-bs-dismiss="modal">
-              <i class="la la-times"></i>
-            </div>
-          </div>
-
+          <!--
+      <div class="modal-header">
+        <span class="modal-title text-secondary small"><i class="la la-lg la-file"></i> <span>New page</span></span>
+		<div id="close-section-btn" class="btn btn-outline-secondary border-0 p-1 py-0 ms-auto" data-bs-dismiss="modal">
+		  <i class="la la-times"></i>
+		</div>
+      </div>
+	-->
           <div class="modal-body text">
             <div class="mb-3 pb-2 border-bottom">
               <input class="btn-check" type="radio" name="type" id="new-page-btn" value="page" checked>
