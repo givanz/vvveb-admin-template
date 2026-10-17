@@ -4,12 +4,7 @@ $admin-bar-color: var(--bs-body-color, #000) !default;
 $admin-bar-border-color: var(--bs-border-color, #ddd) !default;
 $admin-bar-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !default;
 $custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%555' d='M509.121,125.966c-3.838-3.838-10.055-3.838-13.893,0L256.005,365.194L16.771,125.966c-3.838-3.838-10.055-3.838-13.893,0	c-3.838,3.838-3.838,10.055,0,13.893l246.18,246.175c1.842,1.842,4.337,2.878,6.947,2.878c2.61,0,5.104-1.036,6.946-2.878 l246.17-246.175C512.959,136.021,512.959,129.804,509.121,125.966z'/%3E%3C/svg%3E");
-$la-font-path: '../fonts/line-awesome';
-$la-css-prefix-lar: 'la';
-$la-css-prefix-las: 'la';
 
-@import "ionicons";
-@import "line-awesome/line-awesome";
 
 html {
 	//margin-top:($admin-bar-height + 1) !important;
@@ -92,8 +87,8 @@ html {
 				-moz-osx-font-smoothing: grayscale;
 				line-height:$admin-bar-height;
 				
-				> i, > img {
-					font-size: 1.2rem;
+				> i, > svg, > img {
+					font-size: 1rem;
 					color:#777;
 					margin-right:0.5rem;
 					vertical-align: sub;
@@ -166,9 +161,13 @@ html {
 						&.has-submenu {
 							 :after 
 							  {
-									content: "\f105";
-									font-family:'Line Awesome Free';
-									font-weight:900;
+									content: "";
+									display: inline-block;
+									width: 0.45em;
+									height: 0.45em;
+									border-right: 2px solid currentColor;
+									border-bottom: 2px solid currentColor;
+									transform: rotate(-45deg);
 									margin-right:1rem;
 									position:absolute;
 									right:0.5rem;

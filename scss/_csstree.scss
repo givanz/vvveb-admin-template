@@ -76,16 +76,16 @@
 			{
 				background-image: url(../../../js/vvvebjs/icons/file.svg);
 				background-position:8px 4px;
-				background-size:19px 19px;
+				background-size:16px 16px;
 				background-repeat:no-repeat;
 				cursor: pointer;
 				display: block;
-				padding-left: 33px;
+				padding-left: 30px;
 				margin:0;
 				font-size:var(--tree-font-size);
 				font-weight:var(--tree-font-weight);
-				line-height:28px;
-				max-height:2rem;
+				/*line-height:28px;*/
+				max-height:1.5rem;
 
 
 				&:hover

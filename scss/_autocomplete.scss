@@ -92,7 +92,7 @@ div.autocomplete-list {
 		display:inline-block;
 		font-size:0.75rem;
 		padding:0 0.3rem;
-		border:1px solid var(--bs-primary-bg-subtle);
+		/*border:1px solid var(--bs-primary-bg-subtle);*/
 		background-color: var(--bs-primary-bg-subtle);
 		background-color: rgba(var(--bs-primary-rgb), 0.10);
 		color: var(--bs-primary-text-emphasis);
@@ -100,6 +100,7 @@ div.autocomplete-list {
 		margin:0.2rem;		
 		
 		.remove-btn {
+			font-size:10px;
 			color:var(--bs-link-color);
 		}
 	}
