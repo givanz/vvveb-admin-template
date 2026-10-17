@@ -1,0 +1,15 @@
+// SVG icon sprite (Tabler Icons, MIT)
+// Usage: <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
+// Symbol ids are Tabler icon names, see public/admin/default/img/icons.svg.
+svg.svg-icon {
+	width: 1em;
+	height: 1em;
+	font-size: 1em;
+	vertical-align: -0.25em;
+	flex-shrink: 0;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
