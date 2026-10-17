@@ -6,22 +6,22 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 				
-		<div class="actions">
+		<header class="actions">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-cube-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
 					<span>Cron</span>
 				</h4>
 			</div>
 
-		</div>
+		</header>
 
-		<div id="main-content" class="plugins card-block" data-v-plugins>
+		<section id="main-content" class="plugins card-block" data-v-plugins>
 		
 
 		@@include('../_includes/notifications.html')
@@ -58,7 +58,7 @@
 					<div class="accordion-body">
 										
 						<div>
-							<p>You need to run the following command every hour, if you don't have access then you need to call the url bellow every hour. For more info on how to configure cron jobs please read <a href="http://docs.vvveb.com/cat/cron/" target="_blank">Cron Documentation</a>.</p> 
+							<p>You need to run the following command every hour, if you don't have access then you need to call the url bellow every hour. For more info on how to configure cron jobs please read <a href="https://docs.vvveb.com/cat/cron/" target="_blank">Cron Documentation</a>.</p> 
 						</div>
 
 						<div class="card mb-3">
@@ -70,7 +70,7 @@
 										<div class="input-group-text bg-body-tertiary">Command</div>
 										<input type="text" value="php cli.php app module=cron/index"class="form-control" id="cron-cli" data-v-cron-cli>
 										<button type="button" class="btn btn-outline-secondary bg-body-tertiary" title="Copy" onclick="copyText('cron-cli')">
-											<i class="la la-copy"></i>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 										</button>
 								</div>	
 								
@@ -80,7 +80,7 @@
 										<div class="input-group-text bg-body-tertiary">URL</div>
 										<input type="text" value="https://demo.vvveb.com/run-cron/?key=fj4jf9dsi9acjd9j9m9483r"class="form-control" id="cron-url" data-v-cron-url>
 										<button type="button" class="btn btn-outline-secondary bg-body-tertiary" title="Copy" onclick="copyText('cron-url')">
-											<i class="la la-copy"></i>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 										</button>
 								</div>								
 							</div>	
@@ -115,10 +115,10 @@
 		@@include('../_includes/upload-form.html')
 
 		
-		</div>
+		</section>
 
 		@@include('../_includes/main-footer.html')
-  </div>
+  </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')

@@ -7,15 +7,15 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-browsers-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#browser"></use></svg>
 						<span>Sites</span>
 					</h4>
 				</div>
@@ -23,12 +23,12 @@
 				<div class="btns">
 					 <a href data-v-url-params='{"module":"settings/site"}' data-v-check-action-permission="settings/site/add"
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-outline"></i> <span>Add site</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add site</span>
 					</a>
 				</div>
-            </div>
+            </header>
 
-           <div id="main-content">
+           <section id="main-content">
 				
 				@@include('../_includes/notifications.html')
                 
@@ -41,13 +41,13 @@
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 									aria-controls="filters" title="Edit selected"
 									class="btn btn-primary btn-sm">
-								<i class="icon-create-outline"></i> Edit selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 							</button>
 							-->
 						   <button type="submit" name="action" value="delete" aria-expanded="false" data-v-check-permission-delete
 									title="Delete selected"
 									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-									<i class="icon-trash-outline"></i> Delete selected
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 							</button>
 						
 						</div>	
@@ -68,14 +68,14 @@
 
                                     </div>
                                 </th>
-                                <th><i class="icon-cube-outline"></i><span>Site</span></th>
-                                <th><i class="la la-link"></i><span>Url</span></th>
-                                <!-- <th><i class="la la-link"></i><span>Key</span></th> -->
-                               <!--  <th><i class="la la-link"></i><span>Host</span></th> -->
-                                <th style="width:200px;"><i class="icon-cube-outline"></i><span>Theme</span></th>
-                                <th style="width:200px;"><i class="icon-cube-outline"></i><span>Home</span> template</th>
+                                <th><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Site</span></th>
+                                <th><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#link"></use></svg><span>Url</span></th>
+                                <!-- <th><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#link"></use></svg><span>Key</span></th> -->
+                               <!--  <th><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#link"></use></svg><span>Host</span></th> -->
+                                <th style="width:200px;"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Theme</span></th>
+                                <th style="width:200px;"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Home</span> template</th>
                                 <th class="actions text-center" style="width:200px">
-									<i class="la la-edit"></i><span>Actions</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg><span>Actions</span>
 								</th>
                             </tr>
                             </thead>
@@ -101,17 +101,17 @@
 									 
 										<a aria-expanded="false" data-v-edit-url title="Edit"
 												class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="la la-pen"></i> <span> Edit</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg> <span> Edit</span> 
 										</a>
 
 										<a title="Design" data-v-view-url target="_blank"
 											class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="icon-brush-outline"></i> <span>Design</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <span>Design</span> 
 										</a>
 										
 										<a title="View" data-v-design-url target="_blank"
 											class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="icon-eye-outline"></i> <span>View</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg> <span>View</span> 
 										</a>
 
 									</div>
@@ -147,16 +147,16 @@
                                 <td class="actions">
 								
 									<div class="btn-group">
-										<a class="btn btn-icon btn-outline-secondary" data-v-edit-url><i class="la la-pencil-alt text-primary"></i> <span>Edit</span></a>
-										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<a class="btn btn-outline-secondary btn-sm" data-v-edit-url><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
 											data-bs-reference="parent">
 											
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
-										<ul class="dropdown-menu" data-v-if="count > 1">
-										  <li data-v-if="site.site_id > 1" data-v-check-permission-delete><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
+										<ul class="dropdown-menu">
+										  <li data-v-check-permission-delete><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span></a></li>
 										</ul>
 									 </div>
 								  
@@ -165,15 +165,15 @@
                             </tbody>
 							<tr data-v-if-not="this.count > 0" class="no-items">
 								<td colspan="100">
-									<div class="text-center mb-4">
+									<div class="text-center m-4">
 										<div>
-											<i class="icon-browsers-outline display-4 lh-1 text-secondary text-opacity-75"></i>
+											<svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#browser"></use></svg>
 											<div class="mb-3">No sites to display!</div>
 										</div>
 
 										<a href data-v-url-params='{"module":"settings/site"}' data-v-check-action-permission="settings/site/add"
 												class="btn btn-primary btn-icon ms-1">
-											<i class="icon-add-outline"></i> <span>Add site</span>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add site</span>
 										</a>										
 									</div>
 								</td>
@@ -196,11 +196,11 @@
                 </div>
 
 
-            </div>
+            </section>
 
 
 		@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')

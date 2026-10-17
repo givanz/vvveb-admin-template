@@ -1,0 +1,149 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Warehouse","scripts":"","base_href":"../"})
+
+<body class="warehouse">
+
+<div id="container">
+
+    @@include('../_includes/sidebar.html')
+
+    <main>
+
+	@@include('../_includes/top-header.html')
+
+	<form id="settings-form" action="" method="post" class="settings" data-v-warehouse>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <input type="hidden" name="csrf" data-v-csrf>
+
+	   <header class="actions flex-column flex-md-row">
+			<div class="title">
+					<h4 class="text-muted my-2">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#building-warehouse"></use></svg>
+						<span>Warehouse</span>
+					</h4>
+			</div>
+
+			<div class="btns">
+				<a href="{$this.adminPath}index.php?module=order/warehouses" title="Return warehouses"
+					class="btn btn-icon btn-outline-secondary">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Return to warehouses</span>
+				 </a>
+
+				  <button type="submit"
+					 class="btn btn-primary btn-icon ms-1"
+					>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save</span>
+				  </button>
+		   </div>
+	 </header>
+
+	  <section id="main-content">
+
+			@@include('../_includes/notifications.html')
+
+			<div class="px-4">
+
+				<input type="hidden" name="warehouse_id" data-v-warehouse-warehouse_id>
+
+				<div class="mb-3 row">
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="warehouse[name]" data-v-warehouse-name required>
+					</div>
+				 </div>
+
+				<div class="mb-3 row">
+					<label for="input-country" class="col-sm-2 col-form-label">Country</label>
+					<div class="col-sm-10">
+						<select name="warehouse[country_id]" id="input-country" class="form-select" data-v-warehouse-country_id data-v-countries>
+							<option value="1" data-v-country data-v-country-country_id>Country</option>
+						</select>
+					</div>
+				 </div>
+
+				<div class="mb-3 row">
+					<label for="input-region" class="col-sm-2 col-form-label">Region / State</label>
+					<div class="col-sm-10">
+						<select name="warehouse[region_id]" id="input-region" class="form-select" data-v-warehouse-region_id data-v-regions>
+							<option value="1" data-v-region data-v-region-region_id>Region</option>
+						</select>
+					</div>
+				 </div>
+
+				<div class="mb-3 row">
+					<label for="input-city" class="col-sm-2 col-form-label">City</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-city" placeholder="City" name="warehouse[city]" data-v-warehouse-city>
+					</div>
+				 </div>
+
+				<div class="mb-3 row">
+					<label for="input-postal" class="col-sm-2 col-form-label">Postal code</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-postal" placeholder="Postal code" name="warehouse[postal_code]" data-v-warehouse-postal_code>
+					</div>
+				 </div>
+
+				<div class="mb-3 row">
+					<label for="input-address" class="col-sm-2 col-form-label">Address</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="input-address" placeholder="Address" name="warehouse[address_1]" data-v-warehouse-address_1>
+					</div>
+				 </div>
+
+				<div class="mb-3 row">
+					<label for="input-sort-order" class="col-sm-2 col-form-label">Sort order</label>
+					<div class="col-sm-10">
+					  <input type="number" class="form-control" id="input-sort-order" placeholder="Sort order" name="warehouse[sort_order]" data-v-warehouse-sort_order>
+					</div>
+				 </div>
+
+				<div class="mb-3 row">
+					<label for="input-status" class="col-sm-2 col-form-label" >Status</label>
+					<div class="col-sm-10">
+						<select name="warehouse[status]" id="input-status" class="form-control" data-v-warehouse-status>
+							<option value="0" data-v-option>Inactive</option>
+							<option value="1" data-v-option>Active</option>
+						</select>
+					</div>
+				  </div>
+
+				<div class="mb-3 row">
+					<label for="input-products" class="col-sm-2 col-form-label"><span>Products</span><br>
+					<span class="form-text">Products fulfilled from this warehouse.</span></label>
+					<div class="col-sm-10">
+
+						<input name="warehouse_product" placeholder="Warehouse product" type="text" class="form-control autocomplete-list"
+							data-url="{$this.adminPath}index.php?module=product/product&action=productsAutocomplete" data-list-name="warehouse_product"/>
+
+						<div class="autocomplete-list card border-top-0" data-v-warehouse-product>
+							<div data-v-product>
+								<span data-v-product-name>Product 1</span>
+								<button type="button" class="btn-close remove-btn" aria-label="Remove"></button>
+								<input name="warehouse_product[]" value="14" type="hidden" data-v-product-product_id>
+							</div>
+						</div>
+
+					</div>
+				 </div>
+
+			</div>
+        </section>
+	</form>
+
+	@@include('../_includes/main-footer.html')
+	</main>
+</div>
+
+
+@@include('../_includes/footer-scripts.html')
+
+<script src="libs/autocomplete/autocomplete.js" data-ajax-reload="1"></script>
+
+<script>
+document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
+document.querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
+</script>
+
+<script id="functions-js" src="/js/admin/functions.js"></script>
+
+@@include('../_includes/footer.html')

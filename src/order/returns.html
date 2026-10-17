@@ -7,16 +7,16 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 			@@include('../_includes/top-header.html')
 		
 
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-return-up-back-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-back-up"></use></svg>
 						<span>Returns</span>
 					</h4>
 				</div>
@@ -25,16 +25,16 @@
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
 							class="btn btn-icon btn-outline-secondary me-1">
-						<i class="icon-funnel-outline"></i>&nbsp;
-						<i class="icon-chevron-down-outline small"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg>&nbsp;
+						<svg class="svg-icon small" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-down"></use></svg>
 					</button>
 				
 					 <a href data-v-url-params='{"module":"order/return-order"}' data-v-check-permission="order/return-order/save"
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-outline"></i> <span>Add return</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add return</span>
 					</a>
 				</div>
-            </div>
+            </header>
 			
 			<div id="filters" class="collapse mx-3">
 				<form method="get">
@@ -87,7 +87,7 @@
 
 							<div class="col-sm-2">
 								<button type="submit" id="button-filter" class="btn btn-primary btn-icon">
-									<i class="icon-funnel-outline"></i> Filter
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg> Filter
 								</button>
 							</div>
                     </div>
@@ -96,10 +96,10 @@
 				</form>
             </div>
 
-            <div id="main-content">
+            <section id="main-content">
                 @@include('../_includes/notifications.html')
 
-                <div class="returns card-block" id="main-content" data-v-return>
+                <div class="returns card-block" data-v-return>
           		<form action="" method="post">
 					<input type="hidden" name="csrf" data-v-csrf>
 					<input type="hidden" name="action" value="">
@@ -108,53 +108,42 @@
 					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 								aria-controls="filters" title="Delete selected"
 								class="btn btn-primary">
-							<i class="icon-create-outline"></i> Edit selected
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 						</button>
 						-->
 					   <button type="submit" name="action" value="delete" aria-expanded="false" 
 								title="Delete selected"
 								class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-								<i class="icon-trash-outline"></i> Delete selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 						</button>
 					</div>
 
                         <table class="table table-hover middle-align">
                             <thead>
                             <tr>
-                                <th class="col-cb">
-                                    <div class="checkbox_outer">
-
-                                        <label class="form-check">
-                                            <input type="checkbox" class="form-check-input"
-                                                   data-v-vvveb-action="table.bulkSelect">
-                                            <span class="form-check-label"></span>
-                                            <span class="custom-control-description">&nbsp;</span>
-                                        </label>
-
-                                    </div>
-                                </th>
-                                <th style="width:150px;"><i class="la la-hashtag"></i><span>Return</span> ID</th>
-                                <th><i class="la la-user"></i><span>User</span></th>
+                                @@include('../_includes/bulk-select-th.html')
+                                <th style="width:150px;"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#hash"></use></svg><span>Return</span> ID</th>
+                                <th><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg><span>User</span></th>
                                 <th style="width:150px;">
-									<i class="la la-filter"></i><span>Reason</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg><span>Reason</span>
 								</th>
                                 <th style="width:150px;">
-									<i class="la la-filter"></i><span>Status</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg><span>Status</span>
 								</th>
                                 <th style="width:150px;">
-									<i class="la la-filter"></i><span>Action</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg><span>Action</span>
 								</th>
                                 <th style="width:150px;" class="date">
-									<i class="la la-calendar"></i><span>Date ordered</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg><span>Date ordered</span>
 								</th>
                                 <th style="width:150px;" class="date">
-									<i class="la la-calendar"></i><span>Date added</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg><span>Date added</span>
 								</th>
                                 <th style="width:150px;" class="date">
-									<i class="la la-calendar"></i><span>Date updated</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg><span>Date updated</span>
 								</th>
                                 <th style="width:200px;" class="text-center">
-									<i class="la la-edit"></i><span>Actions</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg><span>Actions</span>
                                 </th>
                             </tr>
                             </thead>
@@ -185,8 +174,8 @@
 								<td class="actions" style="width:150px;">
 
 									<div class="btn-group">
-										<a class="btn btn-icon btn-outline-secondary" data-v-return-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
-										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<a class="btn btn-outline-secondary btn-sm" data-v-return-edit-url><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -199,7 +188,7 @@
 										  <li><hr class="dropdown-divider"></li>
 										  <li data-v-check-permission-delete>
 	<button type="submit" name="return_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-return-return_id>							
-		<i class="icon-trash-outline"></i><span>Delete</span>
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span>
 	</button>
 </li>
 										</ul>
@@ -245,14 +234,14 @@
                             <tr data-v-if-not="this.count >= 1">
 								<td colspan="100">
 
-									<div class="text-center mb-4">
-											<i class="icon-return-up-back-outline display-4 lh-1 text-secondary text-opacity-75"></i>
-											<div class="mt-3">No returns to display!</div>
+									<div class="text-center m-4">
+											<svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-back-up"></use></svg>
+											<div class="mt-3 text-secondary">No returns to display!</div>
 
 
 											 <a href data-v-url-params='{"module":"order/return-order"}' 
 													class="btn btn-outline-secondary btn-icon mt-4">
-												<i class="icon-add-outline"></i>&nbsp; Add return
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>&nbsp; Add return
 											</a>
 									</div>
 
@@ -277,10 +266,10 @@
                 </div>
 
 
-            </div>
+            </section>
 
 
-        </div>
+        </main>
 
 		@@include('../_includes/main-footer.html')
     </div>

@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/favicon.ico">
+
+  <base href="../">
+
+  <title>Vvveb - Queue</title>
+
+
+
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+  <div id="container">
+
+    <aside class="sidebar" data-v-component-site>
+
+      <div class="logo">
+
+        <a href="{$this.adminPath}index.php" class="img" title="{$site.description.title}">
+          <img src="" data-v-site-logo>
+          <img src="" data-v-site-logo-dark>
+        </a>
+
+        <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#search"></use></svg>
+        </a>
+
+      </div>
+
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-md">
+
+        <div class="logo">
+          <!-- h1 class="display-5"><a href="#">M.</a></h1-->
+          <a href="/admin" class="img">
+            <img src="" data-v-site-logo>
+            <img src="" data-v-site-logo-dark>
+          </a>
+
+          <a id="search-btn-mobile" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#search"></use></svg>
+          </a>
+
+        </div>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--
+			<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav flex-column" data-v-menu>
+
+					<li class="nav-item" data-v-menu-item>
+						<a class="nav-link" href="/admin" data-bs-target="#posts"
+						   data-v-menu-item-url>
+							<svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity"></use></svg>
+							<img src class="icon-img" data-v-menu-item-icon-img></i>
+							<span class="title" data-v-menu-item-name>Dashboard</span>
+							<span class="text-muted" data-v-menu-item-subtitle>Subtitle</span>
+							<span class="badge badge-primary" data-v-menu-item-badge></span>
+						</a>
+
+
+						<ul class="collapse sub-menu fade"  data-v-submenu>
+
+							<li class="nav-item" data-v-submenu-item>
+								<a href="/adminindex.php?module=posts" class="nav-link"
+								   data-v-submenu-item-url>
+								   
+								   <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity"></use></svg>
+								   <img src class="icon-img" data-v-submenu-item-icon-img></i>
+								   <span data-v-submenu-item-name>Submenu</span>
+								   <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
+								   <span class="badge badge-primary" data-v-submenu-item-badge></span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+			
+			-->
+
+        <div class="collapse navbar-collapse" id="sidebarNav">
+
+          <ul class="nav navbar-nav flex-column" data-v-menu>
+
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block " href="/admin" data-v-menu-item-url>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity"></use></svg>
+                <img src="#" class="icon-img" data-v-menu-item-icon-img>
+                <span class="title" data-v-menu-item-name>Dashboard</span>
+                <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
+                <span class="badge badge-primary" data-v-menu-item-badge></span>
+              </a>
+
+              <a class="nav-link mobile d-block d-md-none" href="/admin" data-v-menu-item-url>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity"></use></svg>
+                <img src="#" class="icon-img" data-v-menu-item-icon-img>
+                <span class="title" data-v-menu-item-name>Dashboard</span>
+                <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
+                <span class="badge badge-primary" data-v-menu-item-badge></span>
+              </a>
+
+
+              <ul class="dropdown-menu sub-menu fade" data-v-submenu>
+
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/adminindex.php?module=posts" class="nav-link" data-v-submenu-item-url>
+
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity"></use></svg>
+                    <img src="#" class="icon-img" data-v-submenu-item-icon-img>
+                    </i>
+                    <span data-v-submenu-item-name>Submenu</span>
+                    <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
+                    <span class="badge badge-primary" data-v-submenu-item-badge></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/page-builder&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg>
+                <span class="title" data-v-menu-item-name>Edit website</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=editor/page-builder&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg>
+                <span class="title" data-v-menu-item-name>Edit website</span>
+              </a>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-target="#menu-post">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
+                <span class="title" data-v-menu-item-name>Posts</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
+                <span class="title" data-v-menu-item-name>Posts</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/posts&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
+                    <span data-v-submenu-item-name>Posts</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/tags&amp;type=post&amp;taxonomy_id=2" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#tags"></use></svg>
+                    <span data-v-submenu-item-name>Tags</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/categories&amp;type=post&amp;taxonomy_id=1" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#package"></use></svg>
+                    <span data-v-submenu-item-name>Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>General</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/comments&amp;status=0&amp;type=post" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#messages"></use></svg>
+                    <span data-v-submenu-item-name>Comments</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-target="#menu-pages">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
+                <span class="title" data-v-menu-item-name>Pages</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
+                <span class="title" data-v-menu-item-name>Pages</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/posts&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt"></use></svg>
+                    <span data-v-submenu-item-name>Pages</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new page</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/menus&amp;type=page" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#package"></use></svg>
+                    <span data-v-submenu-item-name>Menus</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg>
+                <span class="title" data-v-menu-item-name>Media library</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg>
+                <span class="title" data-v-menu-item-name>Media library</span>
+              </a>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-target="#menu-users">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
+                <span class="title" data-v-menu-item-name>Users</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
+                <span class="title" data-v-menu-item-name>Users</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=user/users" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg>
+                    <span data-v-submenu-item-name>Users</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new user</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Groups</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=user/user-groups" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
+                    <span data-v-submenu-item-name>User groups</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new group</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#mail"></use></svg>
+                <span class="title" data-v-menu-item-name>Messages</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#mail"></use></svg>
+                <span class="title" data-v-menu-item-name>Messages</span>
+              </a>
+            </li>
+            <li class="nav-item heading" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
+                <span class="title" data-v-menu-item-name>Ecommerce</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=product/products" data-v-menu-item-url title="Ecommerce" data-bs-target="#menu-ecommerce">
+                <span class="title" data-v-menu-item-name>Ecommerce</span>
+              </a>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-target="#menu-sales">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-bag"></use></svg>
+                <span class="title" data-v-menu-item-name>Sales</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-bag"></use></svg>
+                <span class="title" data-v-menu-item-name>Sales</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=order/orders" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt-dollar"></use></svg>
+                    <span data-v-submenu-item-name>Orders</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=order/subscriptions" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#repeat"></use></svg>
+                    <span data-v-submenu-item-name>Subscriptions</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=order/returns" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-back-up"></use></svg>
+                    <span data-v-submenu-item-name>Returns</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Marketing</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=order/coupons" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#discount"></use></svg>
+                    <span data-v-submenu-item-name>Discount coupons</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=order/vouchers" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#gift"></use></svg>
+                    <span data-v-submenu-item-name>Gift vouchers</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-middle columns-2" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-target="#menu-product">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+                <span class="title" data-v-menu-item-name>Products</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+                <span class="title" data-v-menu-item-name>Products</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/products&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+                    <span data-v-submenu-item-name>Products</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Taxonomy</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/tags&amp;type=product&amp;taxonomy_id=5" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#tags"></use></svg>
+                    <span data-v-submenu-item-name>Tags</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/categories&amp;type=product&amp;taxonomy_id=4" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#package"></use></svg>
+                    <span data-v-submenu-item-name>Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Relations</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/manufacturers&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#building-factory"></use></svg>
+                    <span data-v-submenu-item-name>Manufacturers</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/vendors&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#building-store"></use></svg>
+                    <span data-v-submenu-item-name>Vendors</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Content</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/digital-assets&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#cloud-download"></use></svg>
+                    <span data-v-submenu-item-name>Digital assets</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/options&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity"></use></svg>
+                    <span data-v-submenu-item-name>Options</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/attribute-groups&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#list"></use></svg>
+                    <span data-v-submenu-item-name>Attributes</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>User feedback</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/product-reviews&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg>
+                    <span data-v-submenu-item-name>Reviews</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=product/product-questions&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg>
+                    <span data-v-submenu-item-name>Questions</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item heading" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
+                <span class="title" data-v-menu-item-name>Configuration</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=settings/sites" data-v-menu-item-url title="Configuration" data-bs-target="#menu-configuration">
+                <span class="title" data-v-menu-item-name>Configuration</span>
+              </a>
+            </li>
+            <li class="nav-item align-top" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-target="#menu-plugins">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#puzzle"></use></svg>
+                <span class="title" data-v-menu-item-name>Plugins</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#puzzle"></use></svg>
+                <span class="title" data-v-menu-item-name>Plugins</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=plugin/plugins" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plug"></use></svg>
+                    <span data-v-submenu-item-name>Installed Plugins</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new plugin</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=editor/code&amp;type=plugins" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#code"></use></svg>
+                    <span data-v-submenu-item-name>Code editor</span>
+                  </a>
+                </li>
+                <li class="nav-item heading" data-v-submenu-item>
+                  <a href class="nav-link " data-v-submenu-item-url>
+                    <span data-v-submenu-item-name>Plugins</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=plugins/contact-form/messages" class="nav-link " data-v-submenu-item-url>
+                    <img src="/plugins/contact-form/contact-form.svg" class="icon-img" data-v-submenu-item-icon-img>
+                    <span data-v-submenu-item-name>Contact form</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=editor/page-builder&amp;url=/plugins/cookie-notice/notice.html&amp;template=/plugins/cookie-notice/notice.html" class="nav-link " data-v-submenu-item-url>
+                    <img src="/plugins/cookie-notice/cookie-notice.svg" class="icon-img" data-v-submenu-item-icon-img>
+                    <span data-v-submenu-item-name>Cookie notice</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-target="#menu-themes">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
+                <span class="title" data-v-menu-item-name>Themes</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
+                <span class="title" data-v-menu-item-name>Themes</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=theme/themes" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg>
+                    <span data-v-submenu-item-name>Installed Themes</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=editor/code&amp;type=themes" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#code"></use></svg>
+                    <span data-v-submenu-item-name>Code editor</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-target="#menu-field">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#notebook"></use></svg>
+                <span class="title" data-v-menu-item-name>Fields</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#notebook"></use></svg>
+                <span class="title" data-v-menu-item-name>Fields</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=field/field-groups" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg>
+                    <span data-v-submenu-item-name>Field groups</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                    <span data-v-submenu-item-name>Add new</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-top mega-menu" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-target="#menu-settings">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg>
+                <span class="title" data-v-menu-item-name>Settings</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg>
+                <span class="title" data-v-menu-item-name>Settings</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=settings/sites" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#square"></use></svg>
+                    <span data-v-submenu-item-name>Sites</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/sites" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#square"></use></svg>
+                        <span data-v-submenu-item-name>Sites</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                        <span data-v-submenu-item-name>Add new</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=admin/users" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg>
+                    <span data-v-submenu-item-name>Admin users</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=admin/users" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg>
+                        <span data-v-submenu-item-name>Users</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=admin/user" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#user-plus"></use></svg>
+                        <span data-v-submenu-item-name>Add new user</span>
+                      </a>
+                    </li>
+                    <li class="nav-item heading" data-v-submenu-item>
+                      <a href class="nav-link " data-v-submenu-item-url>
+                        <span data-v-submenu-item-name>Roles</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=admin/roles" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#user-cog"></use></svg>
+                        <span data-v-submenu-item-name>Manage Roles</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=admin/role" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#id"></use></svg>
+                        <span data-v-submenu-item-name>Add Role</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=content/menus" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
+                    <span data-v-submenu-item-name>Content</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/taxonomies" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#package"></use></svg>
+                        <span data-v-submenu-item-name>Taxonomies</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/posts" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
+                        <span data-v-submenu-item-name>Custom posts</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/products" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+                        <span data-v-submenu-item-name>Custom products</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity"></use></svg>
+                        <span data-v-submenu-item-name>Fields</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item align-top" data-v-submenu-item>
+                  <a href="/admin/?module=user/users" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-cart"></use></svg>
+                    <span data-v-submenu-item-name>Ecommerce</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/subscription-plans" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt"></use></svg>
+                        <span data-v-submenu-item-name>Subscriptions plans</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/tax-types" class="nav-link items" data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt-dollar"></use></svg>
+                        <span data-v-submenu-item-name>Taxes</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/tax-types" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt"></use></svg>
+                            <span data-v-submenu-item-name>Tax types</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/tax-rates" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt-dollar"></use></svg>
+                            <span data-v-submenu-item-name>Tax rates</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/order-statuses" class="nav-link items" data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#tags"></use></svg>
+                        <span data-v-submenu-item-name>Statuses</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/order-statuses" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt"></use></svg>
+                            <span data-v-submenu-item-name>Order</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/stock-statuses" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+                            <span data-v-submenu-item-name>Stock</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/subscription-statuses" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#repeat"></use></svg>
+                            <span data-v-submenu-item-name>Subscription</span>
+                          </a>
+                        </li>
+                        <li class="nav-item heading" data-v-submenu-item>
+                          <a href class="nav-link " data-v-submenu-item-url>
+                            <span data-v-submenu-item-name>Returns</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-statuses" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-back-up"></use></svg>
+                            <span data-v-submenu-item-name>Return status</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-resolutions" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#arrows-exchange"></use></svg>
+                            <span data-v-submenu-item-name>Return resolutions</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/return-reasons" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-back-up"></use></svg>
+                            <span data-v-submenu-item-name>Return reasons</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/discount" class="nav-link items" data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#ruler"></use></svg>
+                        <span data-v-submenu-item-name>Classes</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/length-types" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#ruler"></use></svg>
+                            <span data-v-submenu-item-name>Length</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=settings/weight-types" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+                            <span data-v-submenu-item-name>Weight</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=localization/languages" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#flag"></use></svg>
+                    <span data-v-submenu-item-name>Localization</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=localization/languages" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#language"></use></svg>
+                        <span data-v-submenu-item-name>Languages</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=localization/currencies" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#coin"></use></svg>
+                        <span data-v-submenu-item-name>Currencies</span>
+                      </a>
+                    </li>
+                    <li class="nav-item align-top" data-v-submenu-item>
+                      <a href="/admin/?module=localization/region-groups" class="nav-link items" data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#globe"></use></svg>
+                        <span data-v-submenu-item-name>Geo location</span>
+                      </a>
+                      <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=localization/countries" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#flag"></use></svg>
+                            <span data-v-submenu-item-name>Countries</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=localization/regions" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#building"></use></svg>
+                            <span data-v-submenu-item-name>Regions</span>
+                          </a>
+                        </li>
+                        <li class="nav-item" data-v-submenu-item>
+                          <a href="/admin/?module=localization/region-groups" class="nav-link " data-v-submenu-item-url>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#map"></use></svg>
+                            <span data-v-submenu-item-name>Region Groups</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=settings/email" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#tools"></use></svg>
+                    <span data-v-submenu-item-name>System</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=settings/email" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#mail"></use></svg>
+                        <span data-v-submenu-item-name>Email settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item align-top" data-v-menu-item>
+              <a class="nav-link d-none d-md-block  items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-target="#menu-tools">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#globe"></use></svg>
+                <span class="title" data-v-menu-item-name>Tools</span>
+              </a>
+              <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#globe"></use></svg>
+                <span class="title" data-v-menu-item-name>Tools</span>
+              </a>
+              <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=tools/cache" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#loader-2"></use></svg>
+                    <span data-v-submenu-item-name>Cache</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=tools/backup" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#server"></use></svg>
+                    <span data-v-submenu-item-name>Backup</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=tools/cron" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#history"></use></svg>
+                    <span data-v-submenu-item-name>Cron job</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=tools/import" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#upload"></use></svg>
+                    <span data-v-submenu-item-name>Import/Export</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item heading" data-v-submenu-item>
+                      <a href class="nav-link " data-v-submenu-item-url>
+                        <span data-v-submenu-item-name>Content</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=tools/import" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-import"></use></svg>
+                        <span data-v-submenu-item-name>Import content</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=tools/export" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-export"></use></svg>
+                        <span data-v-submenu-item-name>Export content</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=tools/systeminfo" class="nav-link items" data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
+                    <span data-v-submenu-item-name>System info</span>
+                  </a>
+                  <ul class="dropdown-menu sub-menu fade " data-v-submenu>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=tools/systeminfo" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
+                        <span data-v-submenu-item-name>System Info</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-v-submenu-item>
+                      <a href="/admin/?module=tools/errorlog" class="nav-link " data-v-submenu-item-url>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#bug"></use></svg>
+                        <span data-v-submenu-item-name>Error log</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-v-submenu-item>
+                  <a href="/admin/?module=tools/update" class="nav-link " data-v-submenu-item-url>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg>
+                    <span data-v-submenu-item-name>Update</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+
+      </nav> <!-- /navbar -->
+    </aside>
+
+    <main>
+
+      <header class="top-header">
+
+        <div class="btn-group" data-v-component-sites>
+
+          <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#menu-2"></use></svg>
+          </button>
+
+
+          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg>
+            <span>View live website</span>
+          </button>
+
+
+          <div class="dropdown-menu">
+            <div data-v-site>
+              <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
+                <!-- i class="la la-circle me-2"></i -->
+                <span data-v-site-name class="flex-grow-1">Default website</span>
+                <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#external-link"></use></svg>
+              </a>
+            </div>
+
+            <div data-v-site>
+              <a class="dropdown-item" href="#" data-v-site target="_blank">
+                <!--- <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg> -->
+                <span data-v-site-name class="flex-grow-1">Blog</span>
+                <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#external-link"></use></svg>
+              </a>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/sites"}'>
+              <span class="flex-grow-1">Manage sites</span>
+              <svg class="svg-icon ms-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn px-1 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#rotate-clockwise"></use></svg>
+            <span>Clear cache</span>
+          </button>
+
+          <div class="dropdown-menu">
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
+                  <span>Assets</span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#code-off"></use></svg>
+                  <span>Templates</span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#server"></use></svg>
+                  <span>Database</span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
+                  <span>Page cache</span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg>
+                  <span>Image cache</span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#send"></use></svg>
+                  <span>Model cache</span>
+                </div>
+              </a>
+            </div>
+            <div class="dropdown-divider"></div>
+
+            <div>
+              <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+                <div class="flex-grow-1">
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg>
+                  <span>All cache</span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="float-end">
+
+          <div class="btn-group top-notifications" data-v-component-notifications>
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#bell"></use></svg>
+              <span class="badge bg-primary-subtle text-body" data-v-if="count > 0" data-v-notification-count>5</span>
+            </button>
+
+            <div class="dropdown-menu">
+              <div data-v-if="notifications.updates.core.hasUpdate">
+                <h6 class="dropdown-header">Updates</h6>
+                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                  <svg class="svg-icon text-success" aria-hidden="true"><use href="/admin/default/img/icons.svg#bolt"></use></svg>
+                  <span>Update available</span>
+                  <strong class="badge bg-success small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
+                </a>
+                <div class="dropdown-divider"></div>
+              </div>
+              <div data-v-if-not="notifications.updates.core.hasUpdate">
+                <h6 class="dropdown-header">Updates</h6>
+                <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
+                  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#bolt"></use></svg>
+                  <span>Up to date</span>
+                  <strong class="badge bg-primary small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
+                </a>
+                <div class="dropdown-divider"></div>
+              </div>
+
+              <div data-v-group>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-group-notification-url>
+                    <svg class="svg-icon" data-v-group-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-bag" data-v-group-icon-use></use></svg>
+                    <span data-v-group-notification-name>New orders</span>
+                    <strong class="badge bg-primary-subtle mx-2 bg-primary-subtle" data-v-group-notification-count>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
+                    <svg class="svg-icon" data-v-group-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#receipt"></use></svg>
+                    <span data-v-group-notification-name>Returns</span>
+                    <strong class="badge bg-danger-subtle small" data-v-group-notification-count>2</strong>
+                  </a>
+                </div>
+                <div class="dropdown-divider"></div>
+              </div>
+
+              <div data-v-group>
+                <div class="dropdown-divider"></div>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-group-notification-url>
+                    <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg>
+                    <span data-v-group-notification-name>New comments</span>
+                    <strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-group-notification-url>
+                    <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg>
+                    <span data-v-group-notification-name>Spam comments</span>
+                    <strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong>
+                  </a>
+                </div>
+              </div>
+
+              <div data-v-group>
+                <div class="dropdown-divider"></div>
+                <div>
+                  <h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-group-notification-url>
+                    <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg>
+                    <span data-v-group-notification-name>New reviews</span>
+                    <strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong>
+                  </a>
+                </div>
+                <div class="dropdown-item" data-v-group-notification>
+                  <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
+                    <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg>
+                    <span data-v-group-notification-name>Spam questions</span>
+                    <strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="btn-group" data-v-component-sites>
+            <form method="post">
+              <input type="hidden" name="csrf" data-v-csrf>
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+                <svg class="svg-icon me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#sitemap"></use></svg>
+                <span data-v-site-info-name>Default site</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+                <div data-v-site>
+                  <button class="dropdown-item" href="#" data-v-site-site_id name="site" value="default">
+                    <svg class="svg-icon me-2" data-v-if="state = 'live'" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
+                    <svg class="svg-icon me-2" data-v-if-not="state = 'live'" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
+                    <span data-v-site-name>Default website</span>
+                  </button>
+                </div>
+
+                <div data-v-site>
+                  <a class="dropdown-item" href="#" data-v-site name="site" value="default">
+                    <svg class="svg-icon me-2" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
+                    <svg class="svg-icon me-2" data-v-if-not="state = 'live'" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
+                    <span data-v-site-name>Blog</span>
+                  </a>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/site"}'>
+                  <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                  Add new
+                </a>
+              </div>
+            </form>
+          </div>
+
+          <div class="btn-group" data-v-component-states>
+            <form method="post">
+              <input type="hidden" name="csrf" data-v-csrf>
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-danger-subtle="states.active = 'live'">
+
+                <svg class="svg-icon text-success me-1" data-v-state-info-active_icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-state-info-active_icon-use></use></svg>
+                <span data-v-state-info-active_name>Live</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
+                    <svg class="svg-icon me-2" data-v-state-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast"></use></svg>
+                    <span data-v-state-name>
+                      Live
+                    </span>
+                  </button>
+                </div>
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to maintenance?')" name="state" data-state="maintenance">
+                    <svg class="svg-icon me-2" data-v-state-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#tool"></use></svg>
+                    <span data-v-state-name>
+                      Maintenance
+                    </span>
+                  </button>
+                </div>
+                <div data-v-state>
+                  <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')" name="state" data-state="coming soon">
+                    <svg class="svg-icon me-2" data-v-state-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#clock"></use></svg>
+                    <span data-v-state-name>
+                      Coming soon
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="btn-group" data-v-component-languages>
+            <form method="post">
+              <input type="hidden" name="csrf" data-v-csrf>
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+                <svg class="svg-icon me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#flag"></use></svg>
+                <span data-v-language-info-slug>English</span>
+              </button>
+
+
+              <div class="dropdown-menu">
+                <!--				
+					<div data-v-if-not="this.languagesList" class="bg-warning-subtle p-2 small">
+					 <div>No active language configured!</div>
+					</div>
+-->
+                <div data-v-language>
+                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                    <span data-v-language-name>English</span>
+                  </button>
+                </div>
+
+                <div data-v-language>
+                  <button class="dropdown-item" href="#" name="language" data-v-language-code>
+                    <span data-v-language-name>Romanian</span>
+                  </button>
+                </div>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-v-url-params='{"module":"localization/languages"}'>
+                  <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+                  Add new
+                </a>
+              </div>
+            </form>
+          </div>
+
+          <div class="vr align-middle mx-1"></div>
+
+          <button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#sun"></use></svg>
+          </button>
+
+
+          <a target="_blank" id="top-docs-btn" href="{$this.adminPath}index.php?action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn px-1" aria-expanded="false">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg>
+            <span>Docs</span>
+          </a>
+
+
+          <div class="btn-group" data-v-component-admin>
+
+            <form action="{$this.adminPath}index.php?module=user/login" method="post" enctype="multipart/form-data" data-v-url-params='{"module":"user/login"}'>
+
+              <input type="hidden" name="csrf" data-v-csrf>
+
+              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="me-2 rounded-circle avatar" src="" height="24" data-v-admin-avatar>
+                <span data-v-admin-display_name>Admin</span>
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-end">
+                <!--
+					<img class="d-block mx-auto rounded-circle" src="" height="64" data-v-admin-avatar>
+					<div class="dropdown-item">
+						<span data-v-admin-first_name>John</span>	
+						<span data-v-admin-last_name>Doe</span>	
+					</div>
+					
+					<div class="dropdown-divider"></div>
+					-->
+                <a class="dropdown-item" href="#" data-v-admin-edit-url>
+                  <span>Edit Profile</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item">
+
+                  <input type="hidden" name="logout">
+
+                  <button type="submit" value="logout" class="btn btn-primary btn-icon w-100">
+
+                    <span class="loading d-none">
+                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+                      </span>
+                      <span>Loading ...</span>...
+                    </span>
+
+                    <span class="button-text">
+                      <span>Logout</span>
+                    </span>
+
+                  </button>
+
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </header>
+
+
+      <header class="actions">
+
+        <div class="title">
+          <h4 class="text-muted my-2">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#history"></use></svg>
+            <span>Queue</span>
+          </h4>
+        </div>
+
+      </header>
+
+      <section id="main-content" class="plugins card-block" data-v-plugins>
+        <div class="notifications px-4" data-v-notifications>
+          <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+            <div class="icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg></div>
+            <div class="flex-grow-1 align-self-center" data-v-notification-text>Error message</div>
+            <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="alert alert-success d-flex alert-dismissable" role="alert" data-v-notification-success>
+            <div class="icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-check"></use></svg></div>
+            <div class="flex-grow-1 align-self-center" data-v-notification-text>Success message</div>
+            <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        </div>
+
+        <!-- Provider settings -->
+        <form method="post" action="" id="queue-settings-form">
+          <input type="hidden" name="csrf" data-v-csrf>
+          <input type="hidden" name="action" value="save">
+
+          <div class="card mb-3">
+            <div class="card-header bg-body-tertiary">Provider</div>
+            <div class="card-body">
+
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Active provider</label>
+                <div class="col-sm-9">
+                  <select class="form-select" name="settings[default]" style="max-width:280px;">
+                    <option value="database">Database</option>
+                    <option value="redis">Redis</option>
+                  </select>
+                  <small class="text-body-secondary d-block mt-1" data-v-queue-provider-note>Provider note</small>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Database driver</label>
+                <div class="col-sm-9 pt-2" data-v-queue-driver>Inherited from site database connection</div>
+              </div>
+
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Max attempts</label>
+                <div class="col-sm-9">
+                  <input type="number" min="1" max="100" name="settings[max_attempts]" value="3" class="form-control" style="max-width:140px;" id="q-max-attempts">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Retry base delay</label>
+                <div class="col-sm-9 input-group" style="max-width:320px;">
+                  <input type="number" min="1" name="settings[retry][base_delay_seconds]" value="30" class="form-control" id="q-base-delay">
+                  <span class="input-group-text bg-body-tertiary">seconds</span>
+                </div>
+                <small class="text-body-secondary offset-sm-3 col-sm-9">Exponential backoff: base delay &times; 2<sup>attempts</sup>, capped at max delay</small>
+              </div>
+
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Retry max delay</label>
+                <div class="col-sm-9 input-group" style="max-width:320px;">
+                  <input type="number" min="1" name="settings[retry][max_delay_seconds]" value="3600" class="form-control" id="q-max-delay">
+                  <span class="input-group-text bg-body-tertiary">seconds</span>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Stalled job timeout</label>
+                <div class="col-sm-9 input-group" style="max-width:320px;">
+                  <input type="number" min="10" name="settings[reserved_timeout_seconds]" value="300" class="form-control" id="q-reserved-timeout">
+                  <span class="input-group-text bg-body-tertiary">seconds</span>
+                </div>
+                <small class="text-body-secondary offset-sm-3 col-sm-9">Jobs reserved longer than this are requeued (crashed worker cleanup)</small>
+              </div>
+
+              <div class="row mb-3">
+                <div class="offset-sm-3 col-sm-9">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="cron-pass-enabled" name="settings[cron_pass][enabled]" value="1">
+                    <label class="form-check-label" for="cron-pass-enabled">Run a queue pass on every cron run</label>
+                  </div>
+                  <small class="text-body-secondary d-block">For shared hosting without a persistent worker process.</small>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-icon">
+                <span class="loading d-none"><span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span></span>
+                <span class="button-text"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-floppy"></use></svg> Save</span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Worker commands -->
+        <div class="card mb-3">
+          <div class="card-header bg-body-tertiary">Worker</div>
+          <div class="card-body">
+            <h6>Persistent worker (recommended)</h6>
+            <div class="input-group mb-3">
+              <div class="input-group-text bg-body-tertiary">CLI</div>
+              <input type="text" value="" class="form-control" id="queue-cli-worker" data-v-queue-worker-cli readonly>
+              <button type="button" class="btn btn-outline-secondary bg-body-tertiary" title="Copy" onclick="copyText('queue-cli-worker')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg></button>
+            </div>
+            <h6>Single pass</h6>
+            <div class="input-group mb-1">
+              <div class="input-group-text bg-body-tertiary">CLI</div>
+              <input type="text" value="" class="form-control" id="queue-cli-drain" data-v-queue-drain-cli readonly>
+              <button type="button" class="btn btn-outline-secondary bg-body-tertiary" title="Copy" onclick="copyText('queue-cli-drain')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg></button>
+            </div>
+            <h6 class="mt-3">Cron URL (runs cron + queue single pass)</h6>
+            <div class="input-group">
+              <div class="input-group-text bg-body-tertiary">URL</div>
+              <input type="text" value="" class="form-control" id="queue-cron-url" data-v-cron-url readonly>
+              <button type="button" class="btn btn-outline-secondary bg-body-tertiary" title="Copy" onclick="copyText('queue-cron-url')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Queues stats -->
+        <div class="card mb-3">
+          <div class="card-header bg-body-tertiary">Queues</div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Queue</th>
+                  <th class="text-end">Ready</th>
+                  <th class="text-end">Delayed</th>
+                  <th class="text-end">Reserved</th>
+                  <th class="text-end">Pending</th>
+                </tr>
+              </thead>
+              <tbody data-v-component-queues>
+                <tr data-v-queue-stat>
+                  <td><strong data-v-queue-name>default</strong></td>
+                  <td class="text-end"><span class="badge bg-primary-subtle text-body" data-v-queue-ready>0</span></td>
+                  <td class="text-end"><span class="badge bg-warning-subtle text-body" data-v-queue-delayed>0</span></td>
+                  <td class="text-end"><span class="badge bg-info-subtle text-body" data-v-queue-reserved>0</span></td>
+                  <td class="text-end"><span class="badge bg-secondary-subtle text-body" data-v-queue-size>0</span></td>
+                </tr>
+                <tr data-v-no-queues>
+                  <td colspan="5" class="text-center text-body-secondary py-3">Queue provider not available</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Failed jobs -->
+        <div class="card mb-3">
+          <div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center">
+            <span>Failed jobs (<span data-v-failed-count>0</span>)</span>
+            <form method="post" class="d-inline" data-v-queue-action>
+              <input type="hidden" name="csrf" data-v-csrf>
+              <input type="hidden" name="action" value="clearFailed">
+              <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete all failed jobs?')">Clear all</button>
+            </form>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Job</th>
+                  <th>Queue</th>
+                  <th>Error</th>
+                  <th class="text-end">Attempts</th>
+                  <th class="text-end">Failed at</th>
+                  <th class="text-end pe-4">Actions</th>
+                </tr>
+              </thead>
+              <tbody data-v-component-failed-jobs>
+                <tr data-v-failed-job>
+                  <td>
+                    <strong data-v-failed-job-job>JobName</strong>
+                    <small class="text-body-secondary d-none d-md-block" data-v-failed-job-id>uuid</small>
+                  </td>
+                  <td data-v-failed-job-queue>default</td>
+                  <td><code class="text-danger small" data-v-failed-job-error>Error message</code></td>
+                  <td class="text-end" data-v-failed-job-attempts>3/3</td>
+                  <td class="text-end" data-v-failed-job-failed_at>2024-01-01 12:00:00</td>
+                  <td class="text-end pe-4">
+                    <form method="post" class="d-inline" data-v-queue-action>
+                      <input type="hidden" name="csrf" data-v-csrf>
+                      <input type="hidden" name="action" value="retry">
+                      <input type="hidden" name="job_id" data-v-failed-job-id-value>
+                      <button type="submit" class="btn btn-sm btn-outline-success" title="Retry"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-forward-up"></use></svg></button>
+                    </form>
+                    <form method="post" class="d-inline" data-v-queue-action>
+                      <input type="hidden" name="csrf" data-v-csrf>
+                      <input type="hidden" name="action" value="delete">
+                      <input type="hidden" name="job_id" data-v-failed-job-id-value-delete>
+                      <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete" onclick="return confirm('Delete this failed job?')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg></button>
+                    </form>
+                  </td>
+                </tr>
+                <tr data-v-no-failed-jobs>
+                  <td colspan="6" class="text-center text-body-secondary py-3">No failed jobs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer bg-transparent d-flex justify-content-end gap-2">
+            <form method="post" class="d-inline" data-v-queue-action>
+              <input type="hidden" name="csrf" data-v-csrf>
+              <input type="hidden" name="action" value="retryAll">
+              <button type="submit" class="btn btn-sm btn-outline-primary">Retry all</button>
+            </form>
+          </div>
+        </div>
+
+      </section>
+
+
+<footer id="main-footer">
+        Powered by <a href="https://www.vvveb.com" target="_blank">Vvveb</a>
+      </footer>
+
+    </main>
+  </div>
+
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content">
+        <div class="modal-body p-0">
+
+          <form action="{$this.adminPath}/index.php?module=tools/search" method="get">
+            <input type="hidden" name="module" value="tools/search">
+            <div class="d-flex">
+              <div class="input-group">
+                <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
+                <button class="btn btn-outline-primary border-0" type="submit" title="Search">
+                  <div class="la-flip-horizontal">
+                    <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#search"></use></svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div class="loading d-none d-flex justify-content-center m-5">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </form>
+
+          <div class="search-results">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="page-loading-status" class="progress progress-bar"></div>
+  <!--
+<script id="jquery-js" src="js/jquery.min.js"></script>
+-->
+  <script id="popper-js" src="js/popper.min.js"></script>
+  <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
+  <script id="theme-js" src="js/theme.js"></script>
+
+  <!-- vvveb modules code -->
+  <script id="admin-js" type="module" src="/js/admin.js"></script>
+
+
+  <script>
+function copyText(id) {
+	let input = document.getElementById(id);
+    input.select();
+    document.execCommand("copy");
+}
+</script>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLoginLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title" id="heartBeatLoginLabel">
+            <h5>Session has expired</h5>
+            <span>Login to resume your work</span>
+          </span>
+
+          <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- save toast -->
+  <div class="toast-container position-fixed end-0 bottom-0 me-4 my-4">
+    <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="bottom-toast">
+      <div class="toast-header bg-success bg-opacity-10 border-0  py-1">
+        <strong class="me-auto">Page save</strong>
+        <!-- <small class="badge bg-success">status</small> -->
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body py-2">
+        <div class="flex-grow-1">
+          <div class="message">
+            <div>Elements saved!</div>
+            <div>Template backup was saved!</div>
+            <div>Template was saved!</div>
+          </div>
+          <div>
+            <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed end-0 top-0 me-4 my-4">
+      <div class="toast " role="alert" aria-live="assertive" aria-atomic="true" id="top-toast">
+        <div class="toast-header bg-success bg-opacity-10 border-0  py-1">
+          <strong class="me-auto">Page save</strong>
+          <!-- <small class="badge bg-success">status</small> -->
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body py-2">
+          <div class="flex-grow-1">
+            <div class="message">
+              <div>Elements saved!</div>
+              <div>Template backup was saved!</div>
+              <div>Template was saved!</div>
+            </div>
+            <div>
+              <!-- <a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+
+</html>

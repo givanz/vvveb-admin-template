@@ -7,15 +7,15 @@
        @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 
-		<div class="actions">
+		<header class="actions">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-reload-circle-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#rotate-clockwise"></use></svg>
 					<span>Cache</span>
 				</h4>
 			</div>
@@ -24,16 +24,16 @@
 				<!--
 				 <a href data-v-url-params='{"module":"tools/cache", "action":"stale"}' 
 						class="btn btn-outline-secondary btn-icon ms-1">
-						<i class="la la-quidditch la-lg"></i><span>Clear old cache</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trophy"></use></svg><span>Clear old cache</span>
 				</a>
 				-->
 				
 				 <a href data-v-url-params='{"module":"tools/cache", "action":"delete"}' 
 						class="btn btn-primary btn-icon ms-1">
-						<i class="icon-sync-outline"></i></i><span>Clear all cache</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg><span>Clear all cache</span>
 				</a>
 			</div>			
-		</div>			
+		</header>			
 
 		<div id="content" class="p-4">
 		
@@ -49,7 +49,7 @@
 
 
 								<div class="icons m-2">
-									<i class="icon-document-text-outline icon text-orange d-inline-block align-middle me-3"></i>
+									<svg class="svg-icon icon text-orange d-inline-block align-middle me-3" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
 									<span>Frontend assets cache</span>
 								</div>
 
@@ -70,7 +70,7 @@
                                 </div>
 								-->
 
-								<a href data-v-url-params='{"module":"tools/cache", "action":"asset"}' class="btn btn-outline-secondary btn-icon my-2"><i class="la la-broom"></i> Clear cache</a>
+								<a href data-v-url-params='{"module":"tools/cache", "action":"asset"}' class="btn btn-outline-secondary btn-icon my-2"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> Clear cache</a>
 
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                             <div class="card-body info justify-content-between p-4">
 
 								<div class="icons m-2">
-									<i class="icon-code-slash-outline icon text-purple d-inline-block align-middle me-3"></i>
+									<svg class="svg-icon icon text-purple d-inline-block align-middle me-3" aria-hidden="true"><use href="/admin/default/img/icons.svg#code-off"></use></svg>
 									<span>Compiled templates</span>
 								</div>
 
@@ -105,7 +105,7 @@
                                 </div>
 								-->
 
-								<a href data-v-url-params='{"module":"tools/cache", "action":"template"}' class="btn btn-outline-secondary btn-icon my-2"><i class="la la-broom"></i> Clear cache</a>
+								<a href data-v-url-params='{"module":"tools/cache", "action":"template"}' class="btn btn-outline-secondary btn-icon my-2"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> Clear cache</a>
 
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 
 
 								<div class="icons m-2">
-									<i class="icon-server-outline icon text-success d-inline-block align-middle me-3"></i>
+									<svg class="svg-icon icon text-success d-inline-block align-middle me-3" aria-hidden="true"><use href="/admin/default/img/icons.svg#server"></use></svg>
 									<span>Database</span>
 								</div>
 
@@ -140,7 +140,7 @@
                                 </div>
 								-->
 
-								<a href data-v-url-params='{"module":"tools/cache", "action":"database"}' class="btn btn-outline-secondary btn-icon my-2"><i class="la la-broom"></i> Clear cache</a>
+								<a href data-v-url-params='{"module":"tools/cache", "action":"database"}' class="btn btn-outline-secondary btn-icon my-2"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> Clear cache</a>
 
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                                 
 
 								<div class="icons m-2">
-									<i class="icon-document-outline icon text-warning d-inline-block align-middle me-3"></i>
+									<svg class="svg-icon icon text-warning d-inline-block align-middle me-3" aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
 									<span>Full page cache</span>
 								</div>
 
@@ -176,7 +176,7 @@
                                 </div>
 								-->
 
-								<a href data-v-url-params='{"module":"tools/cache", "action":"page"}'  class="btn btn-outline-secondary btn-icon my-2"><i class="la la-broom"></i> Clear cache</a>
+								<a href data-v-url-params='{"module":"tools/cache", "action":"page"}'  class="btn btn-outline-secondary btn-icon my-2"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> Clear cache</a>
 
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                                 
 
 								<div class="icons m-2">
-									<i class="icon-image-outline icon text-primary d-inline-block align-middle me-3"></i>
+									<svg class="svg-icon icon text-primary d-inline-block align-middle me-3" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg>
 									<span>Image resize cache</span>
 								</div>
 
@@ -212,7 +212,7 @@
                                 </div>
 								-->
 
-								<a href data-v-url-params='{"module":"tools/cache", "action":"image"}' class="btn btn-outline-secondary btn-icon my-2"><i class="la la-broom"></i> Clear cache</a>
+								<a href data-v-url-params='{"module":"tools/cache", "action":"image"}' class="btn btn-outline-secondary btn-icon my-2"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> Clear cache</a>
 
                             </div>
                         </div>
@@ -228,7 +228,7 @@
                                 
 
 								<div class="icons m-2">
-									<i class="icon-paper-plane-outline icon text-info d-inline-block align-middle me-3"></i>
+									<svg class="svg-icon icon text-info d-inline-block align-middle me-3" aria-hidden="true"><use href="/admin/default/img/icons.svg#send"></use></svg>
 									<span>Model cache</span>
 								</div>
 
@@ -248,7 +248,7 @@
                                 </div>
 								-->
 
-								<a href data-v-url-params='{"module":"tools/cache", "action":"model"}'  class="btn btn-outline-secondary btn-icon my-2"><i class="la la-broom"></i> Clear cache</a>
+								<a href data-v-url-params='{"module":"tools/cache", "action":"model"}'  class="btn btn-outline-secondary btn-icon my-2"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> Clear cache</a>
 
                             </div>
                         </div>
@@ -260,7 +260,7 @@
 			</div>
 
 		@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 
 </div>
     

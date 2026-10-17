@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-	<div class="main">
+	<main>
 
 	@@include('../_includes/top-header.html')
 	
@@ -14,10 +14,10 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions">
+	   <header class="actions">
 		  <div class="title">
 			 <h4 class="text-muted my-2">
-				<i class="icon-browsers-outline"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#browser"></use></svg>
 				<span class="ms-2">Site</span>
 			 </h4>
 		  </div>
@@ -25,34 +25,34 @@
 		  
 		  <div class="btns">
 		  
-				<a href="#" target="_blank" class="btn btn-outline-primary me-3 border-0" data-v-site-full-url>
-					<i class="la la-external-link-alt fs-6"></i>
+				<a href="#" target="_blank" class="btn btn-outline-secondary border-0" data-v-site-full-url>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#external-link"></use></svg>
 					<span data-v-site-url>site</span>
 				</a>
 
 				<a href="{$this.adminPath}index.php?module=settings/sites" title="Sites list"
 					class="btn btn-icon btn-outline-secondary">
-						<i class="la la-arrow-left"></i><span>Sites list</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Sites list</span>
 				 </a>
 
 			  <button type="submit"
 				 class="btn btn-primary btn-icon ms-1">
-					<i class="icon-create-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 					<span>Save site</span>
 			  </button>
 		   </div>
-	   </div>
+	   </header>
 	   <div>
 
-	  <div id="main-content">
+	  <section id="main-content">
 		  
-		 <div class="content site px-2">
+		 <section class="content site px-2">
 
-			@@include('../_includes/notifications.html')
+			@@include('../_includes/notifications.html', {"class":"px-4"})
 
-				<div class="content settings" data-v-site>
+				<section class="content settings" data-v-site>
 													 
-					<ul class="nav nav-tabs" id="site-tabs" role="tablist">
+					<ul class="nav nav-pills pb-3 border-bottom" id="site-tabs" role="tablist">
 					
 					  <li class="nav-item" role="presentation">
 						<button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">General</button>
@@ -70,12 +70,6 @@
 						<button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="media" aria-selected="false">Media settings</button>
 					  </li>		  
 
-					  <!--
-					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="mail-tab" data-bs-toggle="tab" data-bs-target="#mail" type="button" role="tab" aria-controls="contact" aria-selected="false">Mail</button>
-					  </li>					 
-					  -->
-
 					   <li class="nav-item" role="presentation">
 						<button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false">Comments</button>
 					  </li>					 
@@ -84,13 +78,11 @@
 						<button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false">Orders</button>
 					  </li>							  
 					  <li class="nav-item" role="presentation">
+						<button class="nav-link" id="checkout-tab" data-bs-toggle="tab" data-bs-target="#checkout" type="button" role="tab" aria-controls="checkout" aria-selected="false">Checkout</button>
+					  </li>							  
+					  <li class="nav-item" role="presentation">
 						<button class="nav-link" id="routes-tab" data-bs-toggle="tab" data-bs-target="#routes" type="button" role="tab" aria-controls="routes" aria-selected="false">Routes</button>
 					  </li>					 
-<!--
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="mail_notifications-tab" data-bs-toggle="tab" data-bs-target="#mail_notifications" type="button" role="tab" aria-controls="contact" aria-selected="false">Mail notifications</button>
-					  </li>
-					  -->
 					  <!--
 					   <li class="nav-item" role="presentation">
 						<button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
@@ -113,11 +105,6 @@
 						<div class="tab-pane" id="media" role="tabpanel" aria-labelledby="media-tab">
 							@@include('_settings_media.html')
 						</div>
-						<!--
-						<div class="tab-pane" id="mail" role="tabpanel" aria-labelledby="mail-tab">
-							@@include('_settings_mail.html')
-						</div>
-						-->
 
 						<div class="tab-pane" id="comments" role="tabpanel" aria-labelledby="comments-tab">
 							@@include('_settings_comments.html')
@@ -125,6 +112,10 @@
 
 						<div class="tab-pane" id="orders" role="tabpanel" aria-labelledby="orders-tab">
 							@@include('_settings_orders.html')
+						</div>	
+	
+						<div class="tab-pane" id="checkout" role="tabpanel" aria-labelledby="checkout-tab">
+							@@include('_settings_checkout.html')
 						</div>						
 						
 						<div class="tab-pane" id="routes" role="tabpanel" aria-labelledby="routes-tab">
@@ -140,37 +131,37 @@
 						-->
 				 
 						</div>
-				  </div>
+				  </section>
 			
-			 </div>
-		  </div>
-		</form>
+			 </section>
+		  </section>
    </div>
+		</form>
 
 	@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
 
 @@include('../_includes/footer-scripts.html')
 
 <script>
 @@include('../_includes/media-variables.html')
-let domain = "{ $this->domain }";
-let subdir = "{ $this->subdir }";
-let publicPath = '{$this->publicPath}';
+var domain = "{ $this->domain }";
+var subdir = "{ $this->subdir }";
+var publicPath = '{$this->publicPath}';
 </script>
 
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 <script id="functions-js" src="/js/admin/functions.js"></script>
-<script id="site-js" src="js/site.js"></script>
-<script id="content-js" src="js/content.js"></script>
+<script id="site-js" src="js/site.js" data-ajax-reload="1"></script>
+<script id="content-js" src="js/content.js" data-ajax-reload="1"></script>
 <script>
-let languagesCheckBox = document.querySelectorAll(".language-list input[type=checkbox]");
-let allLanguagesCheckbox = document.getElementById("all-languages-check");
+var languagesCheckBox = document.querySelectorAll(".language-list input[type=checkbox]");
+var allLanguagesCheckbox = document.getElementById("all-languages-check");
 
 languagesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 	if (this.id == "all-languages-check" && this.checked) {
@@ -181,8 +172,8 @@ languagesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 	}
 }));
 
-let currenciesCheckBox = document.querySelectorAll(".currency-list input[type=checkbox]");
-let allCurrenciesCheckbox = document.getElementById("all-currencies-check");
+var currenciesCheckBox = document.querySelectorAll(".currency-list input[type=checkbox]");
+var allCurrenciesCheckbox = document.getElementById("all-currencies-check");
 
 currenciesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 	if (this.id == "all-currencies-check" && this.checked) {
@@ -194,10 +185,10 @@ currenciesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 }));
 
 
-let homepage = document.getElementById("page-preview");
-let homepageSelect = document.getElementById("input-site-template");
-let themes = document.getElementById("input-site-theme");
-let homepageLangsSelect = document.querySelectorAll(".template-list-lang");
+var homepage = document.getElementById("page-preview");
+var homepageSelect = document.getElementById("input-site-template");
+var themes = document.getElementById("input-site-theme");
+var homepageLangsSelect = document.querySelectorAll(".template-list-lang");
 
 function changeTheme(e) {
 	fetch(window.location.pathname + window.location.search + "&action=getThemeTemplates&theme=" + this.value)
@@ -276,14 +267,14 @@ function deleteRoute(element) {
 }
 
 
-let routesContainer = document.querySelector("[data-v-routes]");
+var routesContainer = document.querySelector("[data-v-routes]");
 
 routesContainer.addEventListener("dragstart", routesdragStart);
 routesContainer.addEventListener("dragover", routesdragOver);
 routesContainer.addEventListener("dragend", routesdragEnd);
 
-let selected = null;
-let dragover = null;
+var selected = null;
+var dragover = null;
 
 //drag and drop 
 function routesdragOver(e) {

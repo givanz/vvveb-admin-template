@@ -1,7 +1,7 @@
 <div class="order_details">
 	<div class="d-flex justify-content-between mb-3">
 		<h6 class="my-2">Order Details</h6>
-		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.order_details').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
+		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.order_details').classList.toggle('edit');"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg> Edit</div>
 	</div>		
 
 	<div class="display">
@@ -88,33 +88,33 @@
 			<div class="col-sm-8"><input type="text" class="form-control" id="order_id" name="order_id" data-v-order-order_id></div>
 		</div>
 		-->
-		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Status</label>
+		<div class="mb-3 row"><label for="order-status" class="col-sm-4 col-form-label">Status</label>
 			<div class="col-sm-8">
 			
-			<select class="form-control" id="status" name="order_status_id" data-text="data-v-order-order_status" data-v-order-order_status_id>
+			<select class="form-control" id="order-status" name="order_status_id" data-text="data-v-order-order_status" data-v-order-order_status_id>
 				<option value="pending" data-v-option>Pending</option>
 				<option value="completed" data-v-option>Completed</option>
-				<option value="cancel"data-v-option>Cancel</option>
+				<option value="cancel" data-v-option>Cancel</option>
 			</select>
 			</div>
 		</div>			
-		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Payment status</label>
+		<div class="mb-3 row"><label for="payment-status" class="col-sm-4 col-form-label">Payment status</label>
 			<div class="col-sm-8">
 			
-			<select class="form-control" id="status" name="payment_status_id" data-text="data-v-order-payment_status" data-v-order-payment_status_id>
+			<select class="form-control" id="payment-status" name="payment_status_id" data-text="data-v-order-payment_status" data-v-order-payment_status_id>
 				<option value="pending" data-v-option>Pending</option>
 				<option value="completed" data-v-option>Completed</option>
-				<option value="cancel"data-v-option>Cancel</option>
+				<option value="cancel" data-v-option>Cancel</option>
 			</select>
 			</div>
 		</div>			
-		<div class="mb-3 row"><label for="status" class="col-sm-4 col-form-label">Shipping status</label>
+		<div class="mb-3 row"><label for="shipping-status" class="col-sm-4 col-form-label">Shipping status</label>
 			<div class="col-sm-8">
 			
-			<select class="form-control" id="status" name="shipping_status_id" data-text="data-v-order-shipping_status" data-v-order-shipping_status_id>
+			<select class="form-control" id="shipping-status" name="shipping_status_id" data-text="data-v-order-shipping_status" data-v-order-shipping_status_id>
 				<option value="pending" data-v-option>Pending</option>
 				<option value="completed" data-v-option>Completed</option>
-				<option value="cancel"data-v-option>Cancel</option>
+				<option value="cancel" data-v-option>Cancel</option>
 			</select>
 			</div>
 		</div>		
@@ -155,7 +155,7 @@
 
 					<div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
 						<div class="icon align-middle me-2">
-							<i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+							<svg class="svg-icon align-middle la-2x lh-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
 						</div>
 						<div class="flex-grow-1 align-self-center text-small" >
 							No payment methods enabled!
@@ -163,7 +163,7 @@
 						
 						<button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
 							<span aria-hidden="true">
-								<!-- <i class="la la-times"></i> -->
+								<!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
 							</span>
 						</button>
 						
@@ -210,7 +210,7 @@
 				
 				<div class="alert alert-warning d-flex alert-dismissable" role="alert" data-v-if="count < 1">
 					<div class="icon align-middle me-2">
-						<i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+						<svg class="svg-icon align-middle la-2x lh-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
 					</div>
 					<div class="flex-grow-1 align-self-center text-small" >
 						No shipping methods enabled!
@@ -218,7 +218,7 @@
 					
 					<button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">
-							<!-- <i class="la la-times"></i> -->
+							<!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
 						</span>
 					</button>
 					
@@ -232,7 +232,7 @@
 		<!--		
 		<div classs="mt-3">
 			<button class="btn btn-success float-end">
-				<i class="la la-save"></i> <span>Save</span>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-floppy"></use></svg> <span>Save</span>
 			</button>
 		</div>
 		-->

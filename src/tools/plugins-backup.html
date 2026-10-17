@@ -1,0 +1,257 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Plugins Backup","scripts":'<link href="libs/media/media.css" rel="stylesheet">',"base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+       @@include('../_includes/sidebar.html')
+        
+
+    <main>
+
+		@@include('../_includes/top-header.html')
+
+		<header class="actions">
+			
+			<div class="title">
+				<h4 class="text-muted my-2">
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#puzzle"></use></svg>
+					<span>Plugins Backup</span>
+				</h4>
+			</div>
+
+		</header>
+
+		<div id="content" class="px-4">
+			
+			@@include('../_includes/notifications.html')
+		
+			<div id="progress" class="px-2 d-none">
+				<div id="progress-backup" class="progress">
+					<div id="progress-bar" class="progress-bar bg-primary" style="width: 0%;"></div>
+				  </div>
+				
+				<div class="mt-2 mb-5">
+					<span id="progress-file"></span>
+					<strong id="progress-status">Processing ...</strong>
+					<span id="progress-plugin"></span> -
+					<span id="progress-position"></span>/
+					<span id="progress-count"></span>
+				</div>
+			</div>
+
+			<div class="alert alert-warning d-flex" data-v-if-not="this.hasZip">
+				<div class="icon">
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
+				</div>
+				<div class="flex-grow-1 align-self-center">
+					ZipArchive PHP extension is not available! Please enable it to use plugins backup.
+				</div>
+			</div>
+			
+			<form method="post" id="plugins-backup-form">
+			<input type="hidden" name="csrf" data-v-csrf>
+			<input type="hidden" name="action" value="">
+
+			<div class="card mb-4">
+				<div class="card-header d-flex justify-content-between align-items-center">
+					<h6 class="card-title mb-0">Select plugins to backup</h6>
+					<label class="mb-0">
+						<input class="form-check-input me-2" type="checkbox" id="toggle-all-plugins" checked>
+						<span>Toggle all</span>
+					</label>
+				</div>
+				<div class="card-body" style="max-height:400px;overflow:auto;">
+					<div class="alert alert-primary d-flex" data-v-if="this.pluginCount = 0">
+						<div class="icon">
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
+						</div>
+						<div class="flex-grow-1 align-self-center">
+							No plugins found.
+						</div>
+					</div>
+
+					<div data-v-plugins>
+						<div class="form-check d-flex align-items-center py-2 border-bottom" data-v-plugin>
+							<input class="form-check-input me-2" type="checkbox" name="plugins[]" value="" data-v-plugin-input checked id="plugin-slug">
+							<label class="form-check-label d-flex align-items-center flex-grow-1" data-v-plugin-label for="plugin-slug">
+								<img src="" data-v-plugin-thumb_url width="24" height="24" class="me-2 rounded">
+								<div class="flex-grow-1">
+									<div>
+										<strong data-v-plugin-name>Plugin name</strong>
+										<span class="badge bg-secondary-subtle text-body small ms-2" data-v-plugin-status>active</span>
+										<small class="text-muted ms-2" data-v-plugin-version>v1.0</small>
+										<small class="text-muted ms-2" data-v-plugin-slug>slug</small>
+									</div>
+									<div class="text-muted small" data-v-plugin-description>Description</div>
+								</div>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer text-end">
+					<button formaction="{$this.backupUrl}" name="action" value="save" class="btn btn-primary btn-icon plugins-backup-btn" data-v-if="this.hasZip">
+							<span class="loading d-none">
+								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+								</span>
+								<span>Backing up</span>...
+							</span>
+
+							<span class="button-text">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#archive"></use></svg> <span>Backup now</span>
+							</span>
+					</button>
+				</div>
+			</div>
+
+			</form>
+
+			<h5 class="mt-4">Existing backups</h5>
+
+			<form method="post">
+			<input type="hidden" name="csrf" data-v-csrf>
+			<input type="hidden" name="action" value="">
+
+			<div class="accordion accordion-flush" id="pluginsBackupAccordion" data-v-backups>
+				  
+				  <div class="accordion-item" data-v-backup>
+				  		<h2 class="accordion-header">
+						  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-v-backup-target>
+							 <div>
+							  <h6>
+								<svg class="svg-icon bg-success text-white p-2 rounded-3 me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#archive"></use></svg>  
+								<span data-v-backup-name>2025-08-29-12-30</span>
+								<small class="ms-2 p-1 bg-body-tertiary" data-v-backup-count>3 plugins</small>
+							  </h6>
+							  <small class="ms-5 p-2 bg-body-tertiary" data-v-backup-size>500KB</small>
+							</div>
+						  </button>
+						</h2>
+						<div data-v-backup-id class="accordion-collapse collapse" data-bs-parent="#pluginsBackupAccordion" >
+						  <div class="accordion-body">
+
+								<div class="d-flex justify-content-between mb-2">
+									<small class="p-2 bg-body-tertiary" data-v-backup-created_at>2025/08/29 12:30</small>
+									<small class="p-2 bg-body-tertiary" data-v-backup-folder>2025-08-29-12-30</small>
+								</div>
+
+								<div class="backup-files mb-3" data-v-files>
+									<div class="d-flex align-items-center justify-content-between border-bottom" data-v-file>
+										<div class="d-flex align-items-center">
+											<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#plug"></use></svg>
+											<div>
+												<div>
+													<strong data-v-file-name></strong>
+													<small class="text-muted ms-2" data-v-file-slug></small>
+												</div>
+												<small class="badge bg-light text-dark" data-v-file-size></small>
+											</div>
+										</div>
+										<div class="btn-group btn-group-sm">
+											<button class="btn btn-outline-danger btn-sm" formaction="{$backup.delete-url}" name="file" value="{$file.file_path}" data-v-file-file_path title="Delete plugin backup">
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
+											</button>
+											<button class="btn btn-outline-primary btn-sm" formaction="{$backup.download-url}" name="file" value="{$file.file_path}" data-v-file-file_path title="Download plugin backup">
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#download"></use></svg>
+											</button>
+											<button class="btn btn-success btn-sm plugin-restore-btn" formaction="{$backup.restore-url}" name="file" value="{$file.file_path}" data-v-file-file_path title="Restore plugin">
+												<span class="loading d-none">
+													<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"></span>
+													<span>Restore</span>...
+												</span>
+												<span class="button-text">
+													<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#history"></use></svg>
+												</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							
+								<div class="text-end mt-3">
+									<small class="text-muted me-2">Folder actions:</small>
+									<button class="btn btn-outline-danger btn-icon d-inline-block" formaction="{$backup.delete-url}" name="folder" value="{$backup.folder}" data-v-backup-delete-url>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> <span>Delete all</span>
+									  </button>
+									  <button class="btn btn-outline-primary d-inline-block" formaction="{$backup.download-url}" name="folder" value="{$backup.folder}" data-v-backup-download-url>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#download"></use></svg> <span>Download all</span>
+									  </button>
+									  <button class="btn btn-success btn-icon d-inline-block restore-btn" formaction="{$backup.restore-url}" name="folder" value="{$backup.folder}" data-v-backup-restore-url>
+									  
+									  	<span class="loading d-none">
+											<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+											</span>
+											<span>Restoring backup</span>...
+										</span>
+
+										<span class="button-text">
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#history"></use></svg> <span>Restore all</span>
+										</span>
+
+										
+									  </button>
+								</div>			
+							
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			</form>
+				<div class="alert alert-primary d-flex" data-v-if="count = 0">
+
+					<div class="icon">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
+					</div>
+
+					<div class="flex-grow-1 align-self-center" data-v-notification-text>
+						No plugins backups available yet. Select plugins above and click "Backup now".
+					</div>
+					
+				</div>
+	 
+			</div>
+
+			@@include('../_includes/main-footer.html')
+		</main>
+</div>
+    
+
+
+@@include('../_includes/footer-scripts.html')
+<script type="module" src="/js/admin/controller/plugins-backup.js" data-ajax-reload="1"></script>
+<script>
+document.addEventListener("click",  function(e) {
+	let element = event.target.closest(".plugins-backup-btn");
+	if (element && window.PluginsBackup && PluginsBackup.make) {
+		e.preventDefault();
+		let form = document.getElementById('plugins-backup-form');
+		let checked = form.querySelectorAll('input[name="plugins[]"]:checked');
+		let plugins = Array.from(checked).map(el => el.value);
+		if (plugins.length === 0) {
+			displayToast("danger", "Error", "Please select at least one plugin to backup!");
+			return false;
+		}
+		let params = {plugins: plugins};
+		return PluginsBackup.make(element.formAction ?? element.getAttribute('formaction') ?? false, params, element);
+	}
+	element = event.target.closest(".plugin-restore-btn");
+	if (element && window.PluginsBackup && PluginsBackup.restore) {
+		e.preventDefault();
+		let params = {file:element.value};
+		return PluginsBackup.restore(element.formAction ?? element.getAttribute('formaction') ?? false, params, element);
+	}
+	element = event.target.closest(".restore-btn");
+	if (element && window.PluginsBackup && PluginsBackup.restore) {
+		e.preventDefault();
+		let params = {folder:element.value};
+		return PluginsBackup.restore(element.formAction ?? element.getAttribute('formaction') ?? false, params, element);
+	}
+});
+
+document.getElementById('toggle-all-plugins')?.addEventListener('click', function(e) {
+	document.querySelectorAll('[data-v-plugins] input[type=checkbox]').forEach(el => el.checked = this.checked);
+});
+</script>
+
+@@include('../_includes/footer.html') 

@@ -2,7 +2,7 @@
 	
 <div class="row">
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Extra large</label>
+		<label for="input-post_xlarge_width" class="form-label">Extra large</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[post_xlarge_width]" data-v-setting="post_xlarge_width" value="1024" placeholder="Width" class="form-control">
@@ -25,7 +25,7 @@
 	</div>
 	
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Large</label>
+		<label for="input-post_large_width" class="form-label">Large</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[post_large_width]" data-v-setting="post_large_width" value="1024" placeholder="Width" class="form-control">
@@ -48,7 +48,7 @@
 	</div>
 	
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Medium</label>
+		<label for="input-post_medium_width" class="form-label">Medium</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[post_medium_width]" data-v-setting="post_medium_width" value="400" placeholder="Width" class="form-control">
@@ -71,7 +71,7 @@
 	</div>
 			
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Thumb</label>
+		<label for="input-post_thumb_width" class="form-label">Thumb</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[post_thumb_width]" data-v-setting="post_thumb_width" value="150" placeholder="Width" class="form-control">
@@ -103,7 +103,7 @@
 <div class="row">
 	
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Extra large</label>
+		<label for="input-product_xlarge_width" class="form-label">Extra large</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[product_xlarge_width]" data-v-setting="product_xlarge_width" value="1024" placeholder="Width" class="form-control">
@@ -126,7 +126,7 @@
 	</div>
 
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Large</label>
+		<label for="input-product_large_width" class="form-label">Large</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[product_large_width]" data-v-setting="product_large_width" value="1024" placeholder="Width" class="form-control">
@@ -149,7 +149,7 @@
 	</div>			
 				
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Medium</label>
+		<label for="input-product_medium_width" class="form-label">Medium</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[product_medium_width]" data-v-setting="product_medium_width" value="400" placeholder="Width" class="form-control">
@@ -172,7 +172,7 @@
 	</div>
 			
 	<div class="col-sm-12 col-md-6 col-xl-3">
-		<label for="category-width" class="form-label">Thumb</label>
+		<label for="input-product_thumb_width" class="form-label">Thumb</label>
 		<div class="input-group mb-3">
 		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
 		  <input type="number" name="settings[product_thumb_width]" data-v-setting="product_thumb_width" value="150" placeholder="Width" class="form-control">
@@ -186,6 +186,29 @@
 		<div class="input-group mb-3">
 		<label class="col-form-label pe-4 pt-2">Method</label>
 		  <select data-v-resize name="settings[product_thumb_method]" data-v-setting="product_thumb_method" class="form-select">
+				<option value="r">Resize</option>
+				<option value="s">Stretch</option>
+				<option value="c">Crop</option>
+				<option value="cs">Crop &amp; resize</option>
+		  </select>
+		</div>
+	</div>	
+	
+	<div class="col-sm-12 col-md-6 col-xl-3">
+		<label for="input-category_width" class="form-label">Category</label>
+		<div class="input-group mb-3">
+		  <label class="col-form-label pe-4 pt-2">Width</label>&nbsp;
+		  <input type="number" name="settings[category_width]" data-v-setting="category_width" value="150" placeholder="Width" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="col-form-label pe-4 pt-2">Height</label>
+		  <input type="number" name="settings[category_height]" data-v-setting="category_height" value="0" placeholder="Height" class="form-control">
+		</div>
+		
+		<div class="input-group mb-3">
+		<label class="col-form-label pe-4 pt-2">Method</label>
+		  <select data-v-resize name="settings[category_method]" data-v-setting="category_method" class="form-select">
 				<option value="r">Resize</option>
 				<option value="s">Stretch</option>
 				<option value="c">Crop</option>
@@ -224,7 +247,7 @@
 	
 
 <div class="alert alert-light d-flex align-items-center my-3" role="alert">
-  <i class="bi flex-shrink-0 me-2 la la-2x la-info-circle" ></i>
+  <svg class="svg-icon bi flex-shrink-0 me-2 la-2x"  aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
   <div>
     To keep image proportion set either height or width to 0 (zero)
   </div>

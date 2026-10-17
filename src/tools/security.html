@@ -7,15 +7,15 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
-		<div class="actions">
+		<header class="actions">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-cube-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
 					<span>Security</span>
 				</h4>
 			</div>
@@ -23,10 +23,10 @@
 			<div class="btns">
 				 <a href data-v-url-params='{"module":"product/product"}' 
 						class="btn btn-primary btn-icon ms-1">
-						<i class="la la-shield-alt la-lg"></i> <span>Check all now</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#shield"></use></svg> <span>Check all now</span>
 				</a>
 			</div>			
-		</div>			
+		</header>			
 
 		<div id="content" class="px-4">
 					
@@ -42,14 +42,14 @@
                             <div class="card-body info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">
-										<span aria-hidden="true"><i class="la la-times"></i></span>
+										<span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
 									</span>
                                 </button>
                                 <h5 class="card-title">Core files</h5>
 
-								<i class="la la-file-code icon bg-orange text-white d-inline-block "></i>
+								<svg class="svg-icon icon bg-orange text-white d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-code"></use></svg>
 								<h3 class="number d-inline-block">500</h3>
-								<button class="btn btn-outline-secondary btn-icon"><i class="la la-shield-alt la-lg"></i> Check now</button>
+								<button class="btn btn-outline-secondary btn-icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#shield"></use></svg> Check now</button>
 
                                 <div class="card-text float-end">
 									<ul class="list-unstyled">
@@ -77,14 +77,14 @@
 						<div class="card">
                             <div class="card-body info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
 
                                 <h5 class="card-title">Plugins</h5>
 
-                                <i class="la la-plug icon bg-purple text-white d-inline-block"></i>
+                                <svg class="svg-icon icon bg-purple text-white d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#plug"></use></svg>
                                 <h3 class="number d-inline-block" data-v-users-count>37</h3>
-								<button class="btn btn-outline-secondary btn-icon"><i class="la la-shield-alt la-lg"></i> Check now</button>
+								<button class="btn btn-outline-secondary btn-icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#shield"></use></svg> Check now</button>
 
 								<div class="card-text float-end">
 									<ul class="list-unstyled">
@@ -111,14 +111,14 @@
                         <div class="card bg-info-semi">
                             <div class="card-body info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                                 
                                 <h5 class="card-title">Themes</h5>
 
-                                <i class="la la-file-image icon bg-success text-white d-inline-block"></i>
+                                <svg class="svg-icon icon bg-success text-white d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg>
                                 <h3 class="number d-inline-block" data-v-comments-count>5</h3>
-								<button class="btn btn-outline-secondary btn-icon"><i class="la la-shield-alt la-lg"></i> Check now</button>
+								<button class="btn btn-outline-secondary btn-icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#shield"></use></svg> Check now</button>
 
 								<div class="card-text float-end">
 									<ul class="list-unstyled">
@@ -145,14 +145,14 @@
                         <div class="card">
                             <div class="card-body info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                                 
                                 <h5 class="card-title">Media</h5>
 
-                                <i class="la la-photo-video icon bg-warning text-dark d-inline-block"></i>
+                                <svg class="svg-icon icon bg-warning text-dark d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg>
                                 <h3 class="number d-inline-block">5</h3>
-								<button class="btn btn-outline-secondary btn-icon"><i class="la la-shield-alt la-lg"></i> Check now</button>
+								<button class="btn btn-outline-secondary btn-icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#shield"></use></svg> Check now</button>
 
 								<div class="card-text float-end">
 									<ul class="list-unstyled">
@@ -208,7 +208,7 @@
 			</div>
 
 		@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 
 </div>
     

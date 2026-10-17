@@ -1,0 +1,37 @@
+<div class="card my-5"  data-v-if="this.order.order_id">
+  
+  <div class="card-header bg-body border-bottom">
+	<strong class="card-title mt-1">
+		<svg class="svg-icon me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#ship"></use></svg> Shipments
+	</strong>
+  </div>
+  
+  <div class="card-body">
+
+		<div class="table-responsive" data-v-if="this.shipment">
+		  <table class="table">
+			<thead>
+			  <tr>
+				<th class="text-start">Method</td>
+				<th class="text-start">Tracking number</td>
+				<th class="text-start">Created</td>
+			  </tr>
+			</thead>
+			<tbody data-v-shipments>
+			  <tr data-v-shipment>
+				<td class="text-start">
+					<span data-v-shipment-shipping_method>Method</span>
+				</td>
+				<td class="text-start">
+					<span data-v-shipment-tracking_number></span>
+				</td>
+				<td class="text-start">
+					<span data-v-shipment-created_at data-filter-friendly_date>23/10/2019</span>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+
+  </div>
+</div>

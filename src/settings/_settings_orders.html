@@ -6,13 +6,13 @@
 		<div class="input-group">
 		<input type="text" name="settings[invoice_format]" data-v-setting="invoice_format" value="" placeholder="Invoice Format eg: VV-2024-0" id="input-invoice-format" class="form-control">
 		<button class="input-group-text collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceVariables" aria-expanded="false">
-			<i class="la la-lg la-plus-circle text-primary"></i>
+			<svg class="svg-icon text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-plus"></use></svg>
 		</button>		
 		</div>
 		<div class="collapse mt-1" id="invoiceVariables">
 		  <div class="card card-body text-bg-body-tertiary">
 			<span>
-			<i class="la la-info-circle fs-2 px-2 float-end"></i>
+			<svg class="svg-icon fs-2 px-2 float-end" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
 				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{year}')">year</button>
 				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{year2}')">year 2 digits</button>
 				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('invoice-format', '{month}')">month</button>
@@ -47,13 +47,13 @@
 		<div class="input-group">
 		<input type="text" name="settings[order_id_format]" data-v-setting="order_id_format" value="" placeholder="Format eg: VV2024" id="input-order-id-format" class="form-control">
 		<button class="input-group-text collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orderIdVariables" aria-expanded="false">
-			<i class="la la-lg la-plus-circle text-primary"></i>
+			<svg class="svg-icon text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-plus"></use></svg>
 		</button>		
 		</div>
 		<div class="collapse mt-1" id="orderIdVariables">
 		  <div class="card card-body text-bg-body-tertiary">
 			<span>
-			<i class="la la-info-circle fs-2 px-2 float-end"></i>
+			<svg class="svg-icon fs-2 px-2 float-end" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
 				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{year}')">year</button>
 				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{year2}')">year 2 digits</button>
 				<button class="btn btn-outline-primary btn-sm" onclick="return insertInvoiceFormat('order-id-format', '{month}')">month</button>
@@ -96,7 +96,7 @@
 	</div>
 </div>
 <div class="row mb-3">
-	<label for="input-order-status" class="col-sm-2 col-form-label" for="input-order-status">
+	<label for="input-order-status" class="col-sm-2 col-form-label">
 		<span>New Order Status</span>
 		<div class="form-text text-muted">Order status when order is placed.</div>
 	</label>

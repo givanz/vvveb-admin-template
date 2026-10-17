@@ -1,0 +1,47 @@
+<div class="row mb-3">
+	<label for="input-invoice-format" class="col-sm-2 col-form-label">
+		<span>Default shipping</span>
+	</label>
+	<div class="col-sm-10">
+
+	  <span class="form-check-label" aria-expanded="false" role="button">
+		<input class="btn-check me-1" type="radio" name="settings[shipping_method]" value="default" id="shipping-method-none">
+		<label class="btn border btn-primary-outline" aria-expanded="false" role="button" for="shipping-method-none">None</label>
+	  </span>                                        
+
+	  <span data-v-shipping>
+		<input class="btn-check me-1" type="radio" name="settings[shipping_method]" value="default" data-v-shipping-key required>
+		<label class="btn border btn-primary-outline" aria-expanded="false" role="button"  data-v-shipping-title>Default shipping</label>
+	  </span>                                        
+
+	  <span data-v-shipping>
+		<input class="btn-check me-1" type="radio" name="settings[shipping_method]" value="default" data-v-shipping-key required>
+		<label class="btn border btn-primary-outline" aria-expanded="false" role="button"  data-v-shipping-title>Default shipping 2</label>
+	  </span>                                        
+
+	</div>
+</div>
+
+<div class="row mb-3">
+	<label for="input-invoice-format" class="col-sm-2 col-form-label">
+		<span>Default payment</span>
+	</label>
+	<div class="col-sm-10">
+	
+	  <span class="form-check-label" aria-expanded="false" role="button">
+		<input class="btn-check me-1" type="radio" name="settings[payment_method]" value="default" id="payment-method-none">
+		<label class="btn border btn-primary-outline" aria-expanded="false" role="button" for="payment-method-none">None</label>
+	  </span>                                        
+
+	  <span data-v-payment>
+		<input class="btn-check me-1" type="radio" name="settings[payment_method]" value="default" data-v-payment-key required>
+		<label class="btn border btn-primary-outline" aria-expanded="false" role="button"  data-v-payment-title>Default payment</label>
+	  </span>                                        
+
+	  <span data-v-payment>
+		<input class="btn-check me-1" type="radio" name="settings[payment_method]" value="default" data-v-payment-key required>
+		<label class="btn border btn-primary-outline" aria-expanded="false" role="button"  data-v-payment-title>Default payment 2</label>
+	  </span>                                        
+
+	</div>
+</div>

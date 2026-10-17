@@ -1,0 +1,54 @@
+<div class="card my-5"  data-v-if="this.order.order_id">
+  
+  <div class="card-header bg-body border-bottom">
+	<strong class="card-title mt-1">
+		<svg class="svg-icon me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#list"></use></svg> Transactions
+	</strong>
+  </div>
+  
+  <div class="card-body">
+
+		<div class="table-responsive" data-v-if="this.transactions">
+		  <table class="table">
+			<thead>
+			  <tr>
+				<th class="text-start">Time</td>
+				<th class="text-start">Operation</td>
+				<th class="text-start">Gateway</td>
+				<th class="text-start">Reference</td>
+				<th class="text-end">Amount</td>
+				<th class="text-end">Tax</td>
+				<th class="text-start">Status</td>
+			  </tr>
+			</thead>
+			<tbody data-v-transactions>
+			  <tr data-v-transaction>
+				<td class="text-start">
+					<span data-v-transaction-created_at data-filter-friendly_date>23/10/2019</span>
+				</td>
+				<td class="text-start">
+					<span data-v-transaction-kind class="badge bg-light text-muted">purchase</span>
+				</td>
+				<td class="text-start">
+					<span data-v-transaction-gateway>stripe</span>
+				</td>
+				<td class="text-start">
+					<code data-v-transaction-reference></code>
+				</td>
+				<td class="text-end">
+					<span data-v-transaction-amount>0.00</span>
+					<span data-v-transaction-currency>USD</span>
+				</td>
+				<td class="text-end">
+					<span data-v-transaction-tax_amount>0.00</span>
+				</td>
+				<td class="text-start">
+					<span data-v-transaction-status class="badge">succeeded</span>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+
+  </div>
+</div>

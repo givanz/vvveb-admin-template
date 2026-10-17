@@ -1,7 +1,7 @@
 <div class="customer_details">
 	<div class="d-flex justify-content-between mb-3">
 		<h6 class="my-2">Customer Details</h6>
-		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.customer_details').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
+		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.customer_details').classList.toggle('edit');"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg> Edit</div>
 	</div>		
 	<div class="display mb-1 lh-lg">
 	    <div data-v-order-first_name data-first_name-text>First Name</div> 
@@ -11,9 +11,9 @@
 				
 		<a href="#" data-v-order-user_url data-v-if="this.order.user_id"><span>View Profile</span></a>
 		
-		<div data-v-if="this.order.comment">
+		<div data-v-if="this.order.notes">
 			<h6 class="mt-2">Order note</h6>
-			<div data-v-order-comment>12345678</div>
+			<div data-v-order-notes>12345678</div>
 		</div>
 	</div>	
 	<div class="edit">
@@ -37,7 +37,7 @@
 		<!--		
 		<div classs="mt-3">
 			<button class="btn btn-success float-end">
-				<i class="la la-save"></i> <span>Save</span>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-floppy"></use></svg> <span>Save</span>
 			</button>
 		</div>
 		-->

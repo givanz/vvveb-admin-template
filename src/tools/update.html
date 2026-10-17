@@ -7,15 +7,15 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
-		<div class="actions">
+		<header class="actions">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-cube-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
 					<span>Updates</span>
 				</h4>
 			</div>
@@ -23,11 +23,11 @@
 			<div class="btns">
 				 <a href data-v-url-params='{"module":"tools/update", "action":"check", "type":"all"}' 
 						class="btn btn-primary btn-icon ms-1">
-						<i class="la la-sync-alt la-lg"></i> <span>Check all</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg> <span>Check all</span>
 				</a>
 			</div>			
 			-->
-		</div>			
+		</header>			
 
 		<div id="content" class="px-4">
 					
@@ -58,7 +58,7 @@
                             <div class="card-body">
 								<div class="d-flex align-items-center">
 
-									<i class="la la-atom icon text-orange d-inline-block rounded-2 px-2"></i>
+									<svg class="svg-icon icon text-orange d-inline-block rounded-2 px-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#atom"></use></svg>
 									<div class="d-inline-block mx-4" >
 										<h5>Core</h5>
 									</div>
@@ -92,13 +92,13 @@
 											</span>
 
 											<span class="button-text">
-												<i class="la la-redo-alt la-lg"></i> Update now
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-forward-up"></use></svg> Update now
 											</span>
 										
 											
 										</a>
 										<!--
-										<a class="btn btn-success btn-icon ms-2" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}' ><i class="la la-redo-alt la-lg"></i> Upgrade to 2.0.1</a>
+										<a class="btn btn-success btn-icon ms-2" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"core"}' ><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-forward-up"></use></svg> Upgrade to 2.0.1</a>
 										-->
 
 									</div>
@@ -118,7 +118,7 @@
 												</span>
 
 												<span class="button-text">
-													<i class="la la-redo-alt la-lg"></i> Update now
+													<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-forward-up"></use></svg> Update now
 												</span>
 											
 												
@@ -132,7 +132,7 @@
 
 									<div>
 										<a class="btn btn-outline-secondary btn-icon" data-v-url-params='{"module":"tools/update", "action":"check", "type":"core"}'>
-											<i class="la la-sync-alt la-lg"></i> Check now
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg> Check now
 										</a>
 										
 									
@@ -151,7 +151,7 @@
                             <div class="card-body">
 								<div class="d-flex align-items-center">
 
-									<i class="la la-puzzle-piece icon text-purple d-inline-block rounded-2 px-2"></i>
+									<svg class="svg-icon icon text-purple d-inline-block rounded-2 px-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#puzzle"></use></svg>
 
 									<div>
 										<div class="d-inline-block mx-4" >
@@ -176,7 +176,7 @@
 
 									<div class="flex-fill mx-4">
 
-										<a class="btn btn-outline-secondary btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"plugins"}' ><i class="la la-redo-alt la-lg"></i> Update now</a>
+										<a class="btn btn-outline-secondary btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"plugins"}' ><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-forward-up"></use></svg> Update now</a>
 
 									</div>
 
@@ -184,7 +184,7 @@
 									
 									<div class="">
 										
-											<button class="btn btn-outline-secondary btn-icon"><i class="la la-sync-alt la-lg"></i> Check now</button>
+											<button class="btn btn-outline-secondary btn-icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg> Check now</button>
 										
 									</div>
                                 </div>
@@ -200,7 +200,7 @@
                             <div class="card-body">
 								<div class="d-flex align-items-center">
 
-									<i class="icon-copy-outline icon text-success d-inline-block rounded-2 px-2"></i>
+									<svg class="svg-icon icon text-success d-inline-block rounded-2 px-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 
 									<div>
 										<div class="d-inline-block mx-4" >
@@ -225,14 +225,14 @@
 
 									<div class="flex-fill mx-4">
 
-										<a class="btn btn-outline-secondary btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"themes"}' ><i class="la la-redo-alt la-lg"></i> Update now</a>
+										<a class="btn btn-outline-secondary btn-icon" href data-v-url-params='{"module":"tools/update", "action":"update", "type":"themes"}' ><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-forward-up"></use></svg> Update now</a>
 
 									</div>
 
 									<div class="separator"></div>
 
 									<div>
-										<button class="btn btn-outline-secondary btn-icon"><i class="la la-sync-alt la-lg"></i> Check now</button>
+										<button class="btn btn-outline-secondary btn-icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg> Check now</button>
 										
 									</div>
                                 </div>
@@ -249,12 +249,12 @@
 			</div>
 		
 		@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
     
 
 @@include('../_includes/footer-scripts.html')
-<script type="module" src="/js/admin/controller/update.js"></script>
+<script type="module" src="/js/admin/controller/update.js" data-ajax-reload="1"></script>
 <script>
 document.querySelector(".update-core-btn")?.addEventListener("click",  function(e) {
 	if (Update.core) {

@@ -6,23 +6,29 @@
        
     @@include('../../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 		@@include('../../_includes/top-header.html')
 	
         <div id="content">
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-language-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#language"></use></svg>
 						<span>Translations</span>
 					</h4>
 				</div>
 				
 				<div class="btns">
-				  <a class="btn btn-icon btn-outline-secondary" data-v-domains-url>
-						<i class="la la-arrow-left"></i><span>Return to domains</span>
+				  <label class="btn btn-sm mb-0" title="Translate only rows with an empty translation">
+					<input type="checkbox" id="translate-missing-only" class="form-check-input me-1" checked> <small>Only missing</small>
+				  </label>
+				  <button type="button" class="btn btn-outline-secondary btn-sm" id="translate-btn" title="Translate rows with AI">
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#language"></use></svg> <span>Translate</span>
+				  </button>
+				  <a class="btn btn-outline-secondary btn-sm" data-v-domains-url>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Return to domains</span>
 				 </a>
 				 
 					 <a href="?module=localization/translations&action=domain&lang=en_US&domain=user" data-v-save-url id="save-btn"
@@ -33,13 +39,13 @@
 							</span>
 						</span>
 						<span class="button-text">
-							<i class="icon-create-outline"></i> <span>Save</span>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save</span>
 						</span>
 					</a>
 				</div>
-            </div>
+            </header>
 
-            <div id="main-content">
+            <section id="main-content">
                 @@include('../../_includes/notifications.html')
 
 
@@ -49,7 +55,7 @@
 
 							<input name="filter" value="" placeholder="Filter" id="filter" type="search" class="form-control"/>	
 							 <button class="btn btn-icon btn-outline-primary ms-2" id="add-text">
-								<i class="icon-add-outline"></i> <span>Add text</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add text</span>
 							</button>			 
 						</div>
 
@@ -89,12 +95,12 @@
 					</div>
 				</div>
 				
-			</div>
+			</section>
         </div>
 		
 		<input type="hidden" name="csrf" id="csrf" data-v-csrf>
 		@@include('../../_includes/main-footer.html')
-    </div>
+    </main>
 </div>
 
 <style>
@@ -209,8 +215,8 @@ function nestedFormData( a ) {
 	return s.join( "&" );
 };
 
-let selectedTranslation;
-let selectedRow;
+var selectedTranslation;
+var selectedRow;
 
 document.querySelector("table[data-v-translations] tbody").addEventListener("click", function (e) {
 	let element = e.target.closest("tr");
@@ -228,7 +234,7 @@ document.querySelector("table[data-v-translations] tbody").addEventListener("cli
 	}
 });
 
-let search = function (e) {
+var search = function (e) {
 	let searchText = this.value;
 
 	delay(() => {
@@ -243,11 +249,11 @@ let search = function (e) {
 	}, 300);
 };
 
-let filter = document.getElementById("filter");
+var filter = document.getElementById("filter");
 filter.addEventListener("keyup", search);
 filter.addEventListener("search", search);
 
-let save = function (e) {
+var save = function (e) {
 	let btn = this;
 	let translations = {};
 	let saveUrl = this.href;
@@ -302,6 +308,108 @@ document.getElementById("translation-textarea").addEventListener("keyup", functi
 			selectedTranslation.innerHTML = this.value;	
 			selectedRow.classList.add("changed");
 		}, 200);
+	}
+});
+
+/* ---------- AI bulk translate (requires AI Assistant plugin) ---------- */
+var aiLocaleNames = {en:"English",ro:"Romanian",fr:"French",de:"German",es:"Spanish",it:"Italian",pt:"Portuguese",nl:"Dutch",ru:"Russian",uk:"Ukrainian",pl:"Polish",hu:"Hungarian",bg:"Bulgarian",cs:"Czech",sk:"Slovak",sl:"Slovenian",hr:"Croatian",sr:"Serbian",el:"Greek",tr:"Turkish",ar:"Arabic",he:"Hebrew",fa:"Persian",hi:"Hindi",zh:"Chinese",ja:"Japanese",ko:"Korean",vi:"Vietnamese",th:"Thai",id:"Indonesian",ms:"Malay",sv:"Swedish",da:"Danish",fi:"Finnish",no:"Norwegian",nb:"Norwegian",nn:"Norwegian",ca:"Catalan",gl:"Galician",eu:"Basque",lt:"Lithuanian",lv:"Latvian",et:"Estonian"};
+
+function aiTargetLanguage() {
+	const lang = (new URLSearchParams(location.search).get("lang") || "").trim();
+	const prefix = lang.split(/[_-]/)[0].toLowerCase();
+	return aiLocaleNames[prefix] || (lang || "the target language");
+}
+
+function aiParseJsonArray(text) {
+	let s = String(text || "").trim();
+	s = s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
+	const start = s.indexOf("[");
+	const end = s.lastIndexOf("]");
+	if (start !== -1 && end !== -1 && end > start) s = s.slice(start, end + 1);
+	const parsed = JSON.parse(s);
+	if (!Array.isArray(parsed)) throw new Error("not an array");
+	return parsed.map(v => String(v ?? ""));
+}
+
+async function aiTranslateBatch(texts, targetLang, options) {
+	const payload = VvvebAi.buildPayload({
+		text: "Translate the following texts from English to " + targetLang + ". Preserve HTML tags and placeholders like %s, {name} or {{var}} exactly as they are. Return ONLY a JSON array of translated strings in the same order, no preamble, no code fences:\n\n" + JSON.stringify(texts),
+		system: "You are a professional translator. You always reply with a raw JSON array of strings and nothing else.",
+		provider: options.provider,
+		model: options.model,
+		temperature: 0.2,
+		maxTokens: options.maxTokens,
+		contextSize: options.contextSize,
+		stream: false,
+		options: {
+			key: options.key,
+			url: options.url,
+			model: options.model,
+			temperature: 0.2,
+			max_tokens: options.maxTokens,
+			contextSize: options.contextSize,
+			apiMode: options.apiMode,
+			proxyUrl: options.proxyUrl,
+			proxyCsrf: options.csrf
+		}
+	});
+	const result = await VvvebAi.sendQuery(payload, () => {});
+	return aiParseJsonArray(result.text);
+}
+
+document.getElementById("translate-btn").addEventListener("click", async function () {
+	const btn = this;
+	const label = btn.querySelector("span");
+	const origLabel = label ? label.textContent : "";
+	if (typeof window.VvvebAi === "undefined" || typeof window.VvvebAi.sendQuery !== "function") {
+		displayToast("bg-danger", "Error", "AI assistant is unavailable. Enable the AI Assistant plugin.");
+		return;
+	}
+	const options = window.VvvebAi.options ? window.VvvebAi.options() : {};
+	if (options.apiMode !== "proxy" && !options.key) {
+		displayToast("bg-danger", "Error", "No AI API key configured! Enter a valid key in Plugins \u2192 AI Assistant \u2192 Settings.");
+		return;
+	}
+	const missingOnly = document.getElementById("translate-missing-only")?.checked;
+	const rows = Array.from(document.querySelectorAll("table[data-v-translations] tbody tr")).filter(tr => {
+		const cols = tr.querySelectorAll("td");
+		if (cols.length < 2) return false;
+		if (!cols[0].textContent.trim()) return false;
+		if (missingOnly && cols[1].textContent.trim() !== "") return false;
+		return true;
+	});
+	if (!rows.length) {
+		displayToast("bg-info", "Info", missingOnly ? "No missing translations \u2013 everything is already translated." : "No rows to translate.");
+		return;
+	}
+	const targetLang = aiTargetLanguage();
+	btn.disabled = true;
+	const BATCH = 25;
+	let done = 0, failed = 0;
+	try {
+		for (let i = 0; i < rows.length; i += BATCH) {
+			const batch = rows.slice(i, i + BATCH);
+			if (label) label.textContent = `Translating ${Math.min(i + BATCH, rows.length)}/${rows.length}\u2026`;
+			try {
+				const texts = batch.map(tr => tr.querySelectorAll("td")[0].innerHTML.trim());
+				const translated = await aiTranslateBatch(texts, targetLang, options);
+				batch.forEach((tr, idx) => {
+					if (idx >= translated.length || !translated[idx].trim()) { failed++; return; }
+					const cols = tr.querySelectorAll("td");
+					cols[1].innerHTML = translated[idx];
+					tr.classList.add("changed");
+					done++;
+				});
+			} catch (e) {
+				console.error("AI translate batch failed", e);
+				failed += batch.length;
+			}
+		}
+		if (done) displayToast("bg-success", "Translate", `Translated ${done} row${done === 1 ? "" : "s"}${failed ? ` (${failed} failed)` : ""}. Press Save to keep them.`);
+		else displayToast("bg-danger", "Error", "Translation failed, nothing was updated.");
+	} finally {
+		btn.disabled = false;
+		if (label) label.textContent = origLabel;
 	}
 });
 </script>

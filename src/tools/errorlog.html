@@ -7,7 +7,7 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
@@ -16,36 +16,42 @@
 		
 				@@include('../_includes/notifications.html')
 		
-				<p>
-					Error log: <span data-v-log-log></span> 
-					<strong data-v-if="this.log.readable">is readable</strong> 
-					<strong data-v-if-not="this.log.readable">is not readable</strong>
-					
-					<strong data-v-if="this.log.readable">
-						showing last <span data-v-log-count>0</span> lines
-					</span>
-					
-					<a class="btn btn-light border align-self-end"  data-v-url-params='{"module":"tools/errorlog", "action":"clear"}' >
-						<i class="la la-lg la-broom"></i> <span>Clear log</span>
-					</a>
-					<a class="btn btn-light border align-self-end"  data-v-url-params='{"module":"tools/errorlog", "action":"download"}' download>
-						<i class="la la-lg la-download"></i> <span>Download log</span>
-					</a>
+				<div class="d-flex justify-content-between">
+					<div>
+						Error log: <span data-v-log-log></span> 
+						<strong data-v-if="this.log.readable">is readable</strong> 
+						<strong data-v-if-not="this.log.readable">is not readable</strong>
+						
+						<strong data-v-if="this.log.readable">
+							showing last <span data-v-log-count>0</span> lines
+						</span>
+						
+						<a class="btn btn-light border align-self-end"  data-v-url-params='{"module":"tools/errorlog", "action":"clear"}' >
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <span>Clear log</span>
+						</a>
+						<a class="btn btn-light border align-self-end"  data-v-url-params='{"module":"tools/errorlog", "action":"download"}' download>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#download"></use></svg> <span>Download log</span>
+						</a>
 
-				</p>
+					</div>
+					<div class="" data-v-logs>
+						<a href="{$this.adminPath}/index.php?module=tools/errorlog&log=error_log">Error log</a> <a href="{$this.adminPath}/index.php?module=tools/errorlog&&log=mail_log">Mail log</a>
+					</div>				
 				
-				<pre class="card overflow-auto bg-body-tertiary p-3" data-v-log-text>
+				</div>
+				
+				<pre class="card overflow-auto bg-body-tertiary p-3" style="white-space: break-spaces;" data-v-log-text>
 				</pre>
 	 
 			</div>
 
 		@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
     
 
 
 @@include('../_includes/footer-scripts.html')
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 
 @@include('../_includes/footer.html')

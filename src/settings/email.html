@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-	<div class="main">
+	<main>
 
 	@@include('../_includes/top-header.html')
 	
@@ -15,38 +15,38 @@
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   <input type="hidden" name="action" id="action" value="save">
 	  
-		<div class="actions">
+		<header class="actions">
 		  <div class="title">
 			 <h4 class="text-muted my-2">
-				<i class="icon-mail-outline me-2" style="font-size: 1.8rem;"></i>
+				<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#mail"></use></svg>
 				<span>Email settings</span>
 			 </h4>
 		  </div>
 		  <div class="btns">
 			  <button type="submit"
 				 class="btn btn-primary btn-icon ms-1">
-						<i class="icon-create-outline me-2"></i>
+						<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 						<span>Save settings</span>
 			  </button>
 			</div>
-	   </div>
+	   </header>
 
-		  <div id="main-content">
+		  <section id="main-content">
 			  
 			@@include('../_includes/notifications.html')
 			 
-			 <div class="content settings px-4">
+			 <section class="content settings px-4">
 			 
 			 @@include('_settings_mail.html')
 			 
-			 </div>
+			 </section>
 			 
-		</div>
+		</section>
 			 
   </form>
 
 	@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
 
 @@include('../_includes/footer-scripts.html')
@@ -54,7 +54,7 @@
 
 
 <script>
-let Form = document.getElementById('settings-form');
+var Form = document.getElementById('settings-form');
 
 document.addEventListener('invalid', function(e){
 	//e.target.className += ' is-invalid';
@@ -98,14 +98,14 @@ function togglePasswordInput(element, input) {
 	let password = document.getElementById(input);
 	if (password.type == "password") {
 		password.type = "text"; 
-		let i = element.querySelector("i")
-		i.classList.add("icon-eye-outline")
-		i.classList.remove("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye");
+		else { let i = element.querySelector("i"); if (i) { i.classList.add("icon-eye-outline"); i.classList.remove("icon-eye-off-outline"); } }
 	} else {
 		password.type = "password";
-		let i = element.querySelector("i")
-		i.classList.remove("icon-eye-outline")
-		i.classList.add("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye-off");
+		else { let i = element.querySelector("i"); if (i) { i.classList.remove("icon-eye-outline"); i.classList.add("icon-eye-off-outline"); } }
 	}
 }
 </script>

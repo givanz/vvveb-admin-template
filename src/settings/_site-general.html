@@ -6,8 +6,8 @@
 	   <div class="col-sm-10">
 		<div class="input-group">
 		  <input type="text" class="form-control" id="input-site-name" placeholder="Site name" name="site[name]" data-v-site-name  required>
-		  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false" data-v-if="this.site.site_id > 1">
-				<i class="la la-arrow-down text-primary"></i>
+		  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteDomain" aria-expanded="false">
+				<svg class="svg-icon text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-down"></use></svg>
 			</button>
 		</div>
 	   </div>
@@ -17,13 +17,13 @@
 	   <div class="col-sm-2">
 		   <label for="input-site-host" class="col-form-label">
 			<span>Site domain/subdomain</span>
-			<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+			<span title="You can use * for wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><svg class="svg-icon text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg></span>
 			<br/>
 			<span class="form-text">Used to generate links for the site</span>
 		   </label>
 			<br/>
 			<a class="" data-bs-toggle="collapse" data-bs-target="#siteKeyInput" aria-expanded="false">
-				Advanced <i class="la la-lg la-arrow-down"></i>
+				Advanced <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-down"></use></svg>
 			</a>
 	   </div>
 	   <div class="col-sm-10">
@@ -37,7 +37,7 @@
 	   
 	   <label for="input-site-host" class="col-sm-2 col-form-label">		
 			<span>Site domain/subdomain</span>
-			<span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><i class="la la-lg la-question-circle text-primary"></i></span>
+			<span title="You can use * wildcard for subdomain, domain or tld like *.mysite.com, subdomain.*.com, subdomain.mysite.*"><svg class="svg-icon text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg></span>
 			<br/>
 			<span class="form-text">Used to match site and generate links</span>
 	   </label>
@@ -78,7 +78,7 @@
 			<input type="text" class="form-control d-none" id="input-site-path" placeholder="/" name="site[path]" data-v-site-path>
 		  
 			<button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="false">
-				<i class="la la-question-circle text-primary"></i>
+				<svg class="svg-icon text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg>
 			</button>
 		  
 		   </div>
@@ -87,7 +87,7 @@
 			<div class="collapse mt-1" id="siteKeyInfo">
 			  <div class="card card-body text-bg-body-tertiary">
 				<span>
-				<i class="la la-info-circle fs-2 px-2 float-end"></i>
+				<svg class="svg-icon fs-2 px-2 float-end" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
 				<p>Examples: 
 					<span class="badge border text-body">www.mydomain.com</span> 
 					<span class="badge border text-body">mysite.domain.com</span> 
@@ -188,6 +188,19 @@
 	</div>
 </div>
 
+<label class="form-label fw-bold border-bottom d-block mb-4 py-3">Prices</label>
+
+<div class="mb-3 row">
+   <label for="input-prices-include-tax" class="col-sm-2 col-form-label">Catalogue prices include tax</label>
+   <div class="col-sm-10">
+		<input type="hidden" name="settings[prices_include_tax]" value="0">
+		<div class="form-check form-switch">
+		  <input class="form-check-input" type="checkbox" role="switch" id="input-prices-include-tax" name="settings[prices_include_tax]" value="1" data-v-setting-prices_include_tax>
+		  <label class="form-check-label" for="input-prices-include-tax">Product prices are entered with tax included (e.g. EU gross prices), tax is backed out instead of added on top</label>
+		</div>
+   </div>
+</div>
+
 <label class="form-label fw-bold border-bottom d-block mb-4 py-3">Email</label>
 
 <div class="mb-3 row">
@@ -215,7 +228,7 @@
 
 			<label for="input-title" class="form-label d-block mb-3">Fav icon</label>
 			
-			<input type="hidden" data-v-image name="settings[favicon]" name="settings[favicon]"  data-v-setting="favicon" id="favicon-input" value="">
+			<input type="hidden" data-v-image name="settings[favicon]" data-v-setting="favicon" id="favicon-input" value="">
 						
 			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="favicon-thumb"
@@ -237,11 +250,11 @@
 							data-target-input="#favicon-input"
 							data-target-thumb="#favicon-thumb" 
 							data-type="single">
-							<i class="la la-image la-lg"></i> <span>Set image</span>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 						</button>
 
 						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('favicon')">
-							<i class="la la-times"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 						</button>
 					</div>
 				</div>
@@ -251,7 +264,7 @@
 		<div class="d-inline-block px-2">
 			<label for="input-title" class="form-label d-block mb-3">Site logo</label>
 			
-			<input type="hidden" data-v-image name="settings[logo]" name="settings[logo]"  data-v-setting="logo" id="logo-input" value="">
+			<input type="hidden" data-v-image name="settings[logo]" data-v-setting="logo" id="logo-input" value="">
 						
 			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-thumb"
@@ -273,11 +286,11 @@
 							data-target-input="#logo-input"
 							data-target-thumb="#logo-thumb" 
 							data-type="single">
-							<i class="la la-image la-lg"></i> <span>Set image</span>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 						</button>
 						
 						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('logo')">
-							<i class="la la-times"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 						</button>
 					</div>
 				</div>
@@ -287,7 +300,7 @@
 		<div class="d-inline-block px-2">
 			<label for="input-title" class="form-label d-block mb-3">Logo sticky</label>
 			
-			<input type="hidden" data-v-image name="settings[logo-sticky]" name="settings[logo-sticky]"  data-v-setting="logo-sticky" id="logo-sticky-input" value="">
+			<input type="hidden" data-v-image name="settings[logo-sticky]" data-v-setting="logo-sticky" id="logo-sticky-input" value="">
 						
 			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-sticky-thumb"
@@ -309,10 +322,10 @@
 							data-target-input="#logo-sticky-input"
 							data-target-thumb="#logo-sticky-thumb" 
 							data-type="single">
-							<i class="la la-image la-lg"></i> <span>Set image</span>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 						</button>
 						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('logo-sticky')">
-							<i class="la la-times"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 						</button>
 					</div>
 				</div>
@@ -322,7 +335,7 @@
 		<div class="d-inline-block px-2">
 			<label for="input-title" class="form-label d-block mb-3">Logo dark</label>
 			
-			<input type="hidden" data-v-image name="settings[logo-dark]" name="settings[logo-dark]"  data-v-setting="logo-dark" id="logo-dark-input" value="">
+			<input type="hidden" data-v-image name="settings[logo-dark]" data-v-setting="logo-dark" id="logo-dark-input" value="">
 						
 			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-dark-thumb"
@@ -344,10 +357,10 @@
 							data-target-input="#logo-dark-input"
 							data-target-thumb="#logo-dark-thumb" 
 							data-type="single">
-							<i class="la la-image la-lg"></i> <span>Set image</span>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 						</button>
 						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('logo-dark')">
-							<i class="la la-times"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 						</button>
 					</div>
 				</div>
@@ -357,7 +370,7 @@
 		<div class="d-inline-block px-2">
 			<label for="input-title" class="form-label d-block mb-3">Logo dark sticky</label>
 			
-			<input type="hidden" data-v-image name="settings[logo-dark-sticky]" name="settings[logo-dark-sticky]"  data-v-setting="logo-dark-sticky" id="logo-dark-sticky-input" value="">
+			<input type="hidden" data-v-image name="settings[logo-dark-sticky]" data-v-setting="logo-dark-sticky" id="logo-dark-sticky-input" value="">
 						
 			<img data-v-image src="/media/placeholder.svg" alt=""
 			 id="logo-dark-sticky-thumb"
@@ -379,10 +392,10 @@
 							data-target-input="#logo-dark-sticky-input"
 							data-target-thumb="#logo-dark-sticky-thumb" 
 							data-type="single">
-							<i class="la la-image la-lg"></i> <span>Set image</span>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 						</button>
 						<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('logo-dark-sticky')">
-							<i class="la la-times"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 						</button>
 					</div>
 				</div>
@@ -403,7 +416,7 @@
 
 				<label for="input-title" class="form-label d-block mb-3">Web app install banner</label>
 				
-				<input type="hidden" data-v-image name="settings[webbanner]" name="settings[webbanner]"  data-v-setting="webbanner" id="webbanner-input" value="">
+				<input type="hidden" data-v-image name="settings[webbanner]" data-v-setting="webbanner" id="webbanner-input" value="">
 							
 				<img data-v-image src="/media/placeholder.svg" alt=""
 				 id="webbanner-thumb"
@@ -425,11 +438,11 @@
 								data-target-input="#webbanner-input"
 								data-target-thumb="#webbanner-thumb" 
 								data-type="single">
-								<i class="la la-image la-lg"></i> <span>Set image</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 							</button>
 
 							<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('webbanner')">
-								<i class="la la-times"></i>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 							</button>
 						</div>
 					</div>

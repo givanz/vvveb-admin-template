@@ -16,6 +16,35 @@
 			<div class="form-text">e.g. -f email@mysite.com</div>
 		</div>
 	</div>
+
+	<div class="row mb-3">
+		<label for="input-mail-sender_override" class="col-sm-2 col-form-label">
+		<span>Sender</span>
+		<div class="form-text">Leave empty to use site title</div>
+		</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[mail][sender_override]" data-v-setting="mail.sender_override" value="" placeholder="Sender" id="input-mail-sender_override" class="form-control">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label for="input-mail-from_address" class="col-sm-2 col-form-label">
+		<span>From</span>
+		<div class="form-text">Leave empty to use site contact email address</div>
+		</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[mail][from_address]" data-v-setting="mail.from_address" value="" placeholder="From" id="input-mail-from_address" class="form-control">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-reply_to" class="col-sm-2 col-form-label">
+		<span>Reply to</span>
+		<div class="form-text">Leave empty to use site contact email address</div>
+		</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[mail][reply_to]" data-v-setting="mail.reply_to" value="" placeholder="Reply to" id="input-mail-reply_to" class="form-control">
+		</div>
+	</div>
 </div>
 
 <div class="mail-engine smtp">
@@ -23,8 +52,19 @@
 	<div class="row mb-3">
 		<label for="input-mail-smtp-host" class="col-sm-2 col-form-label">Hostname</label>
 		<div class="col-sm-10">
-			<input type="text" name="settings[smtp][host]" data-v-setting="smtp.host" value="" placeholder="Hostname" id="input-mail-smtp-host" class="form-control">
-			<div class="form-text">Use 'tls://' or 'ssl://' prefix for secure connection.</div>
+			<input type="text" name="settings[smtp][host]" data-v-setting="smtp.host" value="" placeholder="mail.example.com" id="input-mail-smtp-host" class="form-control">
+			<div class="form-text">Plain hostname, e.g. mail.example.com. No prefix needed, encryption is set below.</div>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="input-mail-smtp-encryption" class="col-sm-2 col-form-label">Encryption</label>
+		<div class="col-sm-10">
+			<select class="form-select" name="settings[smtp][encryption]" data-v-setting="smtp.encryption" id="input-mail-smtp-encryption">
+				<option value="">None</option>
+				<option value="tls">TLS (STARTTLS)</option>
+				<option value="ssl">SSL (SMTPS)</option>
+			</select>
+			<div class="form-text">STARTTLS upgrades the connection, usually port 587. SSL connects encrypted from the start, usually port 465.</div>
 		</div>
 	</div>
 	<div class="row mb-3">
@@ -40,7 +80,7 @@
 			<div class="input-group">
 				  <input type="password" autocorrect="off" class="form-control" placeholder="Password"  id="input-mail-smtp-password" autocomplete="off" value="" aria-label="Password" name="settings[smtp][password]" data-v-setting="smtp.password">
 				  <div class="input-group-append">
-					<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this, 'input-mail-smtp-password')"><i class="icon-eye-off-outline"></i></button>
+					<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this, 'input-mail-smtp-password')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye-off"></use></svg></button>
 				  </div>
 			  </div>
 			
@@ -50,12 +90,42 @@
 		<label for="input-mail-smtp-port" class="col-sm-2 col-form-label">Port</label>
 		<div class="col-sm-10">
 			<input type="text" name="settings[smtp][port]" data-v-setting="smtp.port" value="25" placeholder="Port" id="input-mail-smtp-port" class="form-control">
+			<div class="form-text">Common ports: 25 (plain), 587 (STARTTLS), 465 (SSL).</div>
 		</div>
 	</div>
 	<div class="row mb-3">
 		<label for="input-mail-smtp-timeout" class="col-sm-2 col-form-label">Timeout</label>
 		<div class="col-sm-10">
 			<input type="text" name="settings[smtp][timeout]" data-v-setting="smtp.timeout" value="5" placeholder="Timeout" id="input-mail-smtp-timeout" class="form-control">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label for="input-mail-smtp-sender_override" class="col-sm-2 col-form-label">
+		<span>Sender</span>
+		<div class="form-text">Leave empty to use site title</div>
+		</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][sender_override]" data-v-setting="smtp.sender_override" value="" placeholder="Sender" id="input-mail-smtp-sender" class="form-control">
+		</div>
+	</div>	
+
+	<div class="row mb-3">
+		<label for="input-mail-smtp-from_address" class="col-sm-2 col-form-label">
+		<span>From</span>
+		<div class="form-text">Leave empty to use site contact email address</div>
+		</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][from_address]" data-v-setting="smtp.from_address" value="" placeholder="From" id="input-mail-smtp-from_address" class="form-control">
+		</div>
+	</div>	
+	<div class="row mb-3">
+		<label for="input-mail-smtp-reply_to" class="col-sm-2 col-form-label">
+		<span>Reply to</span>
+		<div class="form-text">Leave empty to use site contact email address</div>
+		</label>
+		<div class="col-sm-10">
+			<input type="text" name="settings[smtp][reply_to]" data-v-setting="smtp.reply_to" value="" placeholder="Reply to" id="input-mail-smtp-reply_to" class="form-control">
 		</div>
 	</div>
 </div>
@@ -68,9 +138,9 @@
 		<div class="col-sm-10">
 		<div class="input-group mb-3">
 			<input type="text" name="to" data-v-setting="parameter" value="" placeholder="myemailaddress@domain.com" id="input-mail-parameter" class="form-control">
-			<button type="submit" name="action" value="test" class="btn btn-success btn-icon">
+			<button type="submit" name="action" value="test" class="btn btn-outline-success btn-icon">
 				<span>Send email</span>
-				<i class="lab la-telegram-plane ms-2"></i>
+				<svg class="svg-icon ms-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#brand-telegram"></use></svg>
 			  </button>
 		</div>
 	</div>

@@ -7,7 +7,7 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
@@ -22,7 +22,7 @@
 					<input type="search" name="search" class="form-control border-0 p-3 px-4" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
 					<button class="btn btn-outline-primary border-0" type="submit" title="Search">
 					  <div class="la-flip-horizontal">
-						<i class="la la-search la-lg" aria-hidden="true"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#search"></use></svg>
 					  </div>
 					</button>
 				  </div>
@@ -43,7 +43,7 @@
 					<ul class="">
 					  <li class="" data-v-item>
 						<a href="#" data-v-item-url>
-							<i class="icon-document-text-outline"  data-v-item-icon><span></span></i>
+							<svg class="svg-icon"  data-v-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
 							<img src="" width="48" data-v-item-image>
 							<div>
 								<span data-v-item-text>About</span>
@@ -61,7 +61,7 @@
 					
 					<ul class="">
 					  <li class="">
-						<i class="icon-document-text-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
 						<a href="#">
 							<span>About</span>
 						</a>
@@ -78,7 +78,7 @@
 			</div>
 			
 		</div>
-	</div>
+	</main>
 
 		@@include('../_includes/main-footer.html')
 	</div>

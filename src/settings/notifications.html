@@ -1,0 +1,302 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Notifications","scripts":"","base_href":"../"})
+
+<body>
+
+  <div id="container">
+
+	@@include('../_includes/sidebar.html')
+
+
+
+    <main>
+
+		@@include('../_includes/top-header.html')
+
+      <form id="settings-form" action="" method="post" class="needs-validation" novalidate data-v-product>
+        <input type="hidden" name="action" id="action" value="save">
+        <input type="hidden" name="csrf" data-v-csrf>
+        <header class="actions">
+          <div class="title">
+            <h4 class="text-muted my-3">
+              <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#tag"></use></svg>&ensp;
+              <span>Settings</span>
+            </h4>
+          </div>
+          <div class="btns">
+            <button type="submit" href="" class="btn btn-primary btn-icon ms-1" onclick="document.getElementById('action').value ='save';if (validator(validator_json)) document.getElementById('settings-form').submit();">
+              <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
+              <span>Save settings</span>
+            </button>
+          </div>
+        </header>
+        <div>
+          <section id="main-content">
+
+            <div class="notifications" data-v-notifications>
+
+              <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+
+                <div class="icon">
+                  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
+                </div>
+
+                <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                  Vvveb 0.2 is now available! <a href="update">Update now</a>
+                </div>
+
+
+                <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
+                  </span>
+                </button>
+              </div>
+
+              <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
+
+                <div class="icon">
+                  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-check"></use></svg>
+                </div>
+
+                <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                  You successfully read this important alert message.
+                </div>
+
+                <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
+                  </span>
+                </button>
+              </div>
+
+              <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+                <div class="icon">
+                  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
+                </div>
+
+                <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                  You successfully read this important alert message.
+                </div>
+
+                <button type="button" class="btn-close mt-3" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
+                  </span>
+                </button>
+              </div>
+
+            </div>
+
+            <section class="content clearfix settings">
+
+			<div class="row mb-3">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-events" type="button" role="tab" aria-selected="true">Events</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-providers" type="button" role="tab" aria-selected="false">Providers</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-lowstock" type="button" role="tab" aria-selected="false">Low stock</button>
+                  </li>
+                </ul>
+
+                <div class="tab-content">
+
+                  <!-- Events tab : table of registered events grouped by category -->
+                  <div class="tab-pane show active p-3" id="tab-events" role="tabpanel">
+
+                    <p class="form-text">Choose which providers deliver each notification and who receives it. Email is enabled by default.</p>
+
+                    <div class="card mb-3 events-category" data-v-notif-category>
+                      <div class="card-header py-2 d-flex align-items-center">
+                        <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#folder-open"></use></svg>
+                        <span class="fw-bold category-name" data-v-category-name>Content</span>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table table-hover align-middle events-table">
+                          <thead>
+                            <tr>
+                              <th style="width:30%">Event</th>
+                              <th style="width:18%">Recipients</th>
+                              <th style="width:16%">Providers</th>
+                              <th>Extra emails / phones / webhooks</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="event-row" data-v-event-row>
+                              <td>
+                                <strong class="event-name" data-v-event-name>post.added</strong>
+                                <div class="form-text event-desc" data-v-event-desc>A post is created</div>
+                                <div class="recipients-cell mt-1" data-v-recipients-cell>
+                                  <label class="me-2 small text-nowrap" data-v-recipient-check>
+                                    <input type="checkbox" class="form-check-input recipient-check-input" name="" value=""> <span data-v-recipient-label>Site admin</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td class="providers-cell" data-v-providers-cell>
+                                <div class="form-check" data-v-provider-check>
+                                  <input type="checkbox" class="form-check-input provider-check-input" name="" value="">
+                                  <label class="form-check-label small"><span data-v-provider-label>Email</span></label>
+                                </div>
+                              </td>
+                              <td colspan="2" class="extras-cell">
+                                <input type="text" class="form-control form-control-sm mb-1 extra-emails" name="" placeholder="Extra emails, comma separated">
+                                <input type="text" class="form-control form-control-sm mb-1 extra-phones" name="" placeholder="Extra phone numbers, comma separated">
+                                <div class="webhooks-cell" data-v-webhooks-cell>
+                                  <label class="me-2 small text-nowrap" data-v-webhook-check>
+                                    <input type="checkbox" class="form-check-input webhook-check-input" name="" value=""> <span data-v-webhook-label>My Webhook</span>
+                                  </label>
+                                  <span class="text-muted small" data-v-no-webhooks>No webhooks defined — add them in the Providers tab.</span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Providers tab : one config card per provider -->
+                  <div class="tab-pane p-3" id="tab-providers" role="tabpanel">
+
+                    <p class="form-text">A provider can be disabled here even if events still reference it — it will be skipped silently when notifications fire.</p>
+
+                    <div class="card mb-3 provider-card" data-v-provider-card>
+                      <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0 provider-name" data-v-provider-name>SMS</h5>
+                        <div class="form-check form-switch m-0">
+                          <input class="form-check-input provider-enabled-input" type="checkbox" role="switch" name="" value="1">
+                          <label class="form-check-label small">Enabled</label>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="mb-3 row provider-field" data-v-provider-field>
+                          <label class="col-sm-3 col-form-label field-label" data-v-field-label>Account SID</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control field-input" name="" value="">
+                            <div class="form-text field-desc" data-v-field-desc></div>
+                          </div>
+                        </div>
+
+                        <div class="webhooks-editor mt-2" data-v-webhooks-editor>
+                          <h6>Webhook endpoints</h6>
+                          <table class="table align-middle webhooks-table">
+                            <thead>
+                              <tr><th>Enabled</th><th>Name</th><th>URL</th><th>Method</th><th>Headers (one per line, Key: Value)</th><th></th></tr>
+                            </thead>
+                            <tbody data-v-webhook-rows>
+                              <tr data-v-webhook-row>
+                                <td><input type="checkbox" class="form-check-input wh-enabled" name="" value="1"></td>
+                                <td><input type="text" class="form-control form-control-sm wh-name" name=""></td>
+                                <td><input type="text" class="form-control form-control-sm wh-url" name=""></td>
+                                <td>
+                                  <select class="form-select form-select-sm wh-method" name="">
+                                    <option value="POST">POST</option>
+                                    <option value="PUT">PUT</option>
+                                    <option value="PATCH">PATCH</option>
+                                    <option value="GET">GET</option>
+                                  </select>
+                                </td>
+                                <td><textarea class="form-control form-control-sm wh-headers" name="" rows="2"></textarea></td>
+                                <td><button type="button" class="btn btn-sm btn-outline-danger wh-remove">&times;</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <button type="button" class="btn btn-sm btn-outline-secondary add-webhook-btn" data-v-add-webhook>+ Add webhook</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Low stock tab -->
+                  <div class="tab-pane p-3" id="tab-lowstock" role="tabpanel">
+                    <div class="mb-3 row">
+                      <label for="low-stock-threshold" class="col-sm-3 col-form-label">Low stock threshold</label>
+                      <div class="col-sm-9">
+                        <input type="number" min="0" class="form-control" id="low-stock-threshold" name="settings[low_stock_threshold]" value="">
+                        <div class="form-text">Trigger the product.lowstock notification whenever any product's stock quantity drops to or below this global value. Leave empty to disable low stock alerts.</div>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="global-cooldown" class="col-sm-3 col-form-label">Global cooldown (seconds)</label>
+                      <div class="col-sm-9">
+                        <input type="number" min="0" class="form-control" id="global-cooldown" name="settings[providers][global][cooldown]" value="">
+                        <div class="form-text">Minimum seconds between repeated identical notifications per recipient and provider. Overrides apply per provider in the Providers tab and per event via the events settings.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+      </form>
+
+	@@include('../_includes/main-footer.html')
+	</main>
+</section>
+
+@@include('../_includes/footer-scripts.html')
+
+  <!--
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/popper.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+-->
+
+  <!-- <script src="js/main.js" data-ajax-reload="1"></script>-->
+  <script id="admin-js" type="module" src="../../js/admin.js"></script>
+
+  <script data-v-validator-json=""></script>
+  <script src="js/validator.js"></script>
+
+  <script>
+    // Notifications settings: webhook endpoint rows add/remove
+    document.addEventListener('click', function (e) {
+
+      if (e.target.closest('[data-v-add-webhook]')) {
+        const btn   = e.target.closest('[data-v-add-webhook]');
+        const tbody = btn.closest('[data-v-webhooks-editor]').querySelector('[data-v-webhook-rows]');
+        const row   = tbody.querySelector('tr[data-v-webhook-row]');
+        const clone = row.cloneNode(true);
+
+        clone.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+        clone.querySelectorAll('input[type="text"], textarea, select').forEach(el => el.value = '');
+
+        const index = Math.max(0, ...Array.from(tbody.querySelectorAll('tr')).map(tr => {
+          const input = tr.querySelector('input[name*="[webhooks]"]');
+          if (!input) return -1;
+          const m = input.name.match(/\[webhooks\]\[(\d+)\]/);
+          return m ? parseInt(m[1]) : -1;
+        })) + 1;
+
+        tbody.appendChild(clone);
+        fixWebhookNames(tbody);
+      }
+
+      if (e.target.closest('.wh-remove')) {
+        const row = e.target.closest('tr');
+        const tbody = row.closest('tbody');
+
+        if (tbody.querySelectorAll('tr').length > 1) {
+          row.remove();
+          fixWebhookNames(tbody);
+        } else {
+          row.querySelectorAll('input[type="text"], textarea').forEach(el => el.value = '');
+        }
+      }
+    });
+
+    function fixWebhookNames(tbody) {
+      Array.from(tbody.querySelectorAll('tr')).forEach((tr, i) => {
+        tr.querySelectorAll('input[name*="[webhooks]["], textarea[name*="[webhooks]["], select[name*="[webhooks]["]').forEach(el => {
+          el.name = el.name.replace(/\[webhooks\]\[\d+\]/, '[webhooks][' + i + ']');
+        });
+      });
+    }
+  </script>
+
+@@include('../_includes/footer.html')

@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,10 +14,10 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 
-	   <div class="actions flex-column flex-md-row">
+	   <header class="actions flex-column flex-md-row">
 			<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-language-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#language"></use></svg>
 						<span>Language</span>
 					</h4>
 			</div>
@@ -25,18 +25,18 @@
 			<div class="btns">
 				<a href="{$this.adminPath}index.php?module=localization/languages" data-v-url-params='{"module":"localization/languages"}' title="Language list"
 					class="btn btn-icon btn-outline-secondary">
-						<i class="la la-arrow-left"></i><span>Language list</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Language list</span>
 				 </a>
 				  
 				  <button type="submit"
 					 class="btn btn-primary btn-icon ms-1"
 					>
-				  <i class="icon-create-outline"></i> <span>Save</span>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save</span>
 				  </button>
 		   </div>
-	 </div>
+	 </header>
 
-	  <div id="main-content">
+	  <section id="main-content">
 
 			@@include('../_includes/notifications.html')
 			
@@ -64,10 +64,10 @@
 						<div id="not-installed" class="mt-2 d-none">
 								<input type="hidden" name="code" value="" data-v-language-code>
 								<button name="action" value="install" class="btn btn-outline-secondary btn-icon btn-sm me-2">
-									Install language pack <i class="la la-flag"></i>
+									Install language pack <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#flag"></use></svg>
 								</button>
 						</div>
-  						<div id="not-available" class="mt-2 d-none"><a href="https://www.vvveb.com/page/contribute#language" target="_blank">Translations</a> <i class="la la-external-link-alt fs-6"></i></div>
+  						<div id="not-available" class="mt-2 d-none"><a href="https://www.vvveb.com/page/contribute#language" target="_blank">Translations</a> <svg class="svg-icon fs-6" aria-hidden="true"><use href="/admin/default/img/icons.svg#external-link"></use></svg></div>
 					</div>
 				 </div>		 
 
@@ -104,7 +104,7 @@
 		 
 
 				  <div class="mb-3 row">
-					<label for="input-site-status" class="col-sm-2 col-form-label" >Status</label>
+					<label for="input-status" class="col-sm-2 col-form-label" >Status</label>
 					<div class="col-sm-10">
 						<select name="language[status]" id="input-status" class="form-control" data-v-language-status>
 							<option value="0" data-v-option>Inactive</option>
@@ -127,9 +127,9 @@
 				  </div>
 				  
 				  <div class="mb-3 row">
-					<label for="input-site-status" class="col-sm-2 col-form-label">Default</label>
+					<label for="input-default-status" class="col-sm-2 col-form-label">Default</label>
 					<div class="col-sm-10">
-						<select name="language[default]" id="input-status" class="form-control" data-v-language-default>
+						<select name="language[default]" id="input-default-status" class="form-control" data-v-language-default>
 							<option value="0" data-v-option>No</option>
 							<option value="1" data-v-option>Yes</option>
 						</select>
@@ -144,18 +144,18 @@
 				  </div>		 
 			
 			</div>
-        </div>
+        </section>
 </form>
 
 	@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
 
 @@include('../_includes/footer-scripts.html')
 
 <script>
-let language_list = { $this->language_list };
-let languageSelect = document.getElementById("input-language");
+var language_list = { $this->language_list };
+var languageSelect = document.getElementById("input-language");
 
 for (let code in language_list) {
 	let language = language_list[code];
@@ -164,7 +164,7 @@ for (let code in language_list) {
 	));
 }
 
-let currentCode = document.getElementById("input-code").value;
+var currentCode = document.getElementById("input-code").value;
 
 if (currentCode) {
 	let language = language_list[currentCode];

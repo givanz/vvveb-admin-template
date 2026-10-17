@@ -1,8 +1,8 @@
 <div class="shipping_address">
 	<div class="d-flex justify-content-between mb-3">
 		<h6 class="my-2">Shipping Address</h6>
-		<div class="btn btn-outline-secondary btn-sm edit" onclick="copyFields('billing','shipping')"><i class="la la-copy"></i> Copy billing</div>
-		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.shipping_address').classList.toggle('edit');"><i class="la la-pen"></i> Edit</div>
+		<div class="btn btn-outline-secondary btn-sm edit" onclick="copyFields('billing','shipping')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg> Copy billing</div>
+		<div class="btn btn-outline-secondary btn-sm" onclick="document.querySelector('.shipping_address').classList.toggle('edit');"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg> Edit</div>
 	</div>		
 	<div class="display mb-1 lh-lg">
 		<div data-v-order-shipping_first_name data-shipping_first_name-text></div>
@@ -46,7 +46,7 @@
 				<select class="form-control" id="shipping_country_id" name="shipping_country_id" data-text="data-v-order-shipping_country" data-v-order-shipping_country_id>
 					<option value="1" data-v-option>Country name</option>
 					<option value="2" data-v-option>Country name</option>
-					<option value="3"data-v-option>Country name</option>
+					<option value="3" data-v-option>Country name</option>
 				</select>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 				<select class="form-control" id="shipping_region_id" name="shipping_region_id" data-text="data-v-order-shipping_region" data-v-order-shipping_region_id>
 					<option value="1" data-v-option>Country name</option>
 					<option value="2" data-v-option>Country name</option>
-					<option value="3"data-v-option>Country name</option>
+					<option value="3" data-v-option>Country name</option>
 				</select>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 		<!--		
 		<div classs="mt-3">
 			<button class="btn btn-success float-end">
-				<i class="la la-save"></i> <span>Save</span>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-floppy"></use></svg> <span>Save</span>
 			</button>
 		</div>
 		-->
