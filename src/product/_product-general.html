@@ -1,6 +1,6 @@
 <div class="tab-pane active" id="tab-general">
 
-	<ul class="nav nav-tabs language-nav" id="language-nav" data-v-languages="desc">
+	<ul class="nav nav-pills mb-1 language-nav" id="language-nav" data-v-languages="desc">
 		<li class="nav-item" data-v-language>
 			<a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true"
 			   data-v-language-link>
@@ -15,7 +15,7 @@
 
 	   <div data-v-if-not="this.languagesList" class="alert alert-warning d-flex d-flex">
 			<div class="icon">
-			  <i class="la la-exclamation-triangle"></i>
+			  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
 			</div>
 			<div class="flex-grow-1 align-self-center">No active language configured!</div>
 	   </div>
@@ -24,11 +24,11 @@
 			<input name="product_content[1][language_id]" type="hidden"
 				   data-v-product-content-language_id>
 			<div class="mb-3 required">
-				<label class="form-label" for="input-name"><span data-v-type-name>Product</span> Name</label>
+				<label class="form-label"><span data-v-type-name>Product</span> Name</label>
 				<div>
 					<input name="product_content[1][name]"
 						   value="" placeholder="Product Name"
-						   id="input-name" class="form-control" type="text"
+						   class="form-control" type="text"
 						   data-v-product-content-name required/>
 				</div>
 			</div>                               
@@ -50,16 +50,16 @@
 
 			<div class="mb-3">
 				<label class="form-label"
-					   for="input-description1">Content</label>
+					   for="input-content">Content</label>
 				<div>
 					<div class="d-flex justify-content-between py-2" data-v-if="this.product.product_id">
-						 <a data-v-design_url href="" class="btn btn-sm btn-success mb-3 ms-1 btn-icon page-editor-btn">
-							<i class="icon-color-wand-outline"></i> <span>Open in Page Editor</span>
+						 <a data-v-design_url href="" class="btn btn-sm btn-outline-primary mb-3 ms-1 btn-icon page-editor-btn">
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Open in Page Editor</span>
 						 </a>
 
-						<div>
+						<div class="content-options">
 							 <a href="" class="btn btn-outline-secondary btn-sm ms-1 copy-btn" title="Copy from default language" data-v-if-not="language.default">
-								<i class="icon-copy-outline"></i> <span>Copy from default language</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg> <span>Copy from default language</span>
 							 </a>
 
 							@@include('../_includes/revisions_dropdown.html', {"type":"product"})
@@ -68,13 +68,11 @@
 					
 
 					<div class="content-editor">
-						
-						<input name="product_content[1][has_changes]" value="1" class="has_changes" data-v-product-content-has_changes type="hidden"/>
-						   
 						<textarea name="product_content[1][content]"
 								  placeholder="Content"
 								  class="form-control html"
 								  data-v-product-content-content></textarea>
+						<input name="product_content[1][has_changes]" value="1" class="has_changes" data-v-product-content-has_changes type="hidden"/>
 					</div>
 				</div>
 			</div>
@@ -82,7 +80,7 @@
 			<div class="mb-3 required">
 				<label class="form-label">Excerpt <small class="text-muted">(optional)</small></label>
 				<div>
-				  <input name="product_content[1][excerpt]" placeholder="excerpt" placeholder="excerpt" class="form-control" type="text" data-v-product-content-excerpt/>
+				  <input name="product_content[1][excerpt]" placeholder="excerpt" class="form-control" type="text" data-v-product-content-excerpt/>
 				</div>
 			</div> 
 
@@ -90,14 +88,14 @@
 				<div class="col-md-6">
 					<label class="form-label">Meta keywords</label>
 					<div>
-					  <input name="product_content[1][meta_keywords]" placeholder="Meta keywords" placeholder="keywords" class="form-control" type="text" data-v-product-content-meta_keywords />
+					  <input name="product_content[1][meta_keywords]" placeholder="Meta keywords" class="form-control" type="text" data-v-product-content-meta_keywords />
 					</div>
 				  </div>	  
 			  
 				  <div class="col-md-6">
 					<label class="form-label">Meta description</label>
 					<div>
-					  <input name="product_content[1][meta_description]" placeholder="Meta description" placeholder="description" class="form-control" type="text" data-v-product-content-meta_description />
+					  <input name="product_content[1][meta_description]" placeholder="Meta description" class="form-control" type="text" data-v-product-content-meta_description />
 					</div>
 				  </div>
 			  </div>
@@ -132,9 +130,9 @@
 							<div class="col" data-v-field>
 								
 									<div class="input">
-									  <label for="input-name" class="col-form-label" data-v-field-label>Label</label>
+									  <label for="input-field-name" class="col-form-label" data-v-field-label>Label</label>
 									  <div class="">
-										<input readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][name]" data-v-field-name="" value="test">
+										<input readonly type="text" class="form-control" id="input-field-name" placeholder="Name" name="field[#][name]" data-v-field-name="" value="test">
 									  </div>
 									</div>
 							

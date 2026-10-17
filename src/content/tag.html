@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,42 +14,42 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions">
+	   <header class="actions">
 			<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-document-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
 						<span>Tag</span>
 					</h4>
 			</div>
 			<div>			
 				<a href="{$this.adminPath}index.php?module=content/tags&taxonomy_id={$this.taxonomy_id}&type={$this.type}" title="Tag list"
 					class="btn btn-icon btn-outline-secondary">
-						<i class="la la-arrow-left"></i><span>Tag list</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Tag list</span>
 				 </a>
 				  
 				  <button type="submit"
 					 class="btn btn-primary btn-icon ms-1"
 					>
-				  <i class="icon-create-outline"></i> <span>Save tag</span>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save tag</span>
 				  </button>
 		   </div>
-	 </div>
+	 </header>
 
-	  <div id="main-content" class="px-4">
+	  <section id="main-content" class="px-4">
 
 			@@include('../_includes/notifications.html')
 			
 			<input type="hidden" name="tag_id" data-v-tag-tag_id>
 				
 			<div class="mb-3 row">
-				<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+				<label for="input-name" class="col-sm-2 col-form-label">Name</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" id="input-name" placeholder="Name" name="tag[name]" data-v-tag-name>
 				</div>
 			 </div>		 
 
 			 <div class="mb-3 row">
-				<label for="input-site-title" class="col-sm-2 col-form-label">Slug</label>
+				<label for="input-slug" class="col-sm-2 col-form-label">Slug</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" id="input-slug" placeholder="Slug" name="tag[slug]" data-v-tag-slug>
 				</div>
@@ -58,12 +58,12 @@
 			  <div class="mb-3 row">
 				<label for="input-description" class="col-sm-2 col-form-label" >Description</label>
 				<div class="col-sm-10">
-				  <textarea type="email" class="form-control" id="input-description" placeholder="Description" name="tag[content]" data-v-tag-content></textarea>
+				  <textarea class="form-control" id="input-description" placeholder="Description" name="tag[content]" data-v-tag-content></textarea>
 				</div>
 			  </div>
 			  
 			  <div class="mb-3 row">
-					<label for="input-site-title" class="col-sm-2 col-form-label" >Image</label>
+					<label for="featured-image-input" class="col-sm-2 col-form-label" >Image</label>
 					<div class="col-sm-10">
 					  
 		
@@ -86,10 +86,10 @@
 									<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
 										data-media-gallery data-target-input="#featured-image-input"
 										data-target-thumb="#featured-image-thumb" data-type="single">
-										<i class="la la-image la-lg"></i> <span>Set image</span>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 									</button>
 									<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-										<i class="la la-times"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 									</button>
 								</div>
 							</div>
@@ -109,11 +109,11 @@
 			  </div>
 
 	
-			</div>
+			</section>
         </form>
 
 	@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 
 </div>
 
@@ -125,14 +125,14 @@
 
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js"src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js"src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <script id="functions-js" src="/js/admin/functions.js"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 <script>
-let titleInput = document.getElementById('input-name');
-let slugInput  = document.getElementById('input-slug');
-let orig = slugify(titleInput.value);
+var titleInput = document.getElementById('input-name');
+var slugInput  = document.getElementById('input-slug');
+var orig = slugify(titleInput.value);
 
 titleInput.addEventListener('keyup', function (e) {
 	let text = this.value;

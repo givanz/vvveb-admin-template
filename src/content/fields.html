@@ -6,18 +6,18 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 	
         <div id="content">
            
 
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-document-text-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
 						<span>Field Groups</span>
 					</h4>
 				</div>
@@ -26,30 +26,30 @@
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
 							class="btn btn-icon btn-outline-secondary me-1">
-						<i class="icon-funnel-outline"></i>&nbsp;
-						<i class="icon-chevron-down-outline small"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg>&nbsp;
+						<svg class="svg-icon small" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-down"></use></svg>
 					</button>
 
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Bulk edit"
 							class="btn  btn-outline-secondary">
-						<i class="icon-create-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 					</button>
 
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Delete selected"
 							class="btn btn-outline-secondary btn-outline-secondary">
-						<i class="icon-trash-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 					</button>
 
 					 <a href data-v-url-params='{"module":"content/field-group"}' 
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-outline"></i> <span>Add field group</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add field group</span>
 					</a>
 				</div>
-            </div>
+            </header>
 
-           <div id="main-content">
+           <section id="main-content">
 
                 <div class="field-groups card-block">
                     <form action="" method="field-group">
@@ -60,13 +60,13 @@
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 									aria-controls="filters" title="Delete selected"
 									class="btn btn-primary btn-sm">
-								<i class="icon-create-outline"></i> Edit selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 							</button>
 
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 									aria-controls="filters" title="Delete selected"
 									class="btn btn-outline-secondary btn-sm bg-body-tertiary text-danger">
-								<i class="icon-trash-outline"></i> Delete selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 							</button>
 						
 						</div>
@@ -78,37 +78,24 @@
 
                             <thead>
                             <tr>
-                                <th class="col-cb">
-                                    <div class="checkbox_outer">
-
-                                        <label class="form-check">
-                                            <input type="checkbox" class="form-check-input" value="4"
-                                                   name="product[]"
-                                                   data-v-vvveb-action="table.bulkSelect">
-                                            <span class="form-check-label"></span>
-                                            <span class="custom-control-description">&nbsp;</span>
-                                        </label>
-
-
-                                    </div>
-                                </th>
+                                @@include('../_includes/bulk-select-th.html', {"name": "product[]"})
                                 <th style="width:200px;text-align:center;">
-									<i class="la la-image"></i><span>Thumbnail</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg><span>Thumbnail</span>
 								</th>
                                 <th class="field-group">
-									<i class="icon-cube-outline"></i><span>Name</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Name</span>
 								</th>
                                 <th style="width:200px;text-align:center;" class="author">
-									<i class="la la-user"></i><span>Author</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg><span>Author</span>
 								</th>
                                 <th class="field-groups">
-									<i class="la la-field-groups"></i><span>Comments</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#messages"></use></svg><span>Comments</span>
 								</th>	
                                 <th class="date">
-									<i class="la la-calendar"></i><span>Date</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg><span>Date</span>
 								</th>
                                 <th class="actions text-center" style="width:200px">
-									<i class="la la-edit"></i><span>Actions</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg><span>Actions</span>
 								</th>
                             </tr>
                             </thead>
@@ -139,12 +126,12 @@
 									 
 										<a aria-expanded="false" data-v-edit-url title="Edit"
 												class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="la la-pen"></i> <span> Edit</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg> <span> Edit</span> 
 										</a>
 
 										<a title="View" data-v-view-url target="_blank"
 											class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="icon-eye-outline"></i> <span>View</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg> <span>View</span> 
 										</a>
 
 									</div>
@@ -156,7 +143,7 @@
                                        data-v-display_name>Admin</a>
                                 </td>
                                 <td class="field-groups">
-									<div class="badge bg-secondary" data-v-field-groups>0</div>
+									<div class="bg-opacity-75 badge bg-secondary" data-v-field-groups>0</div>
                                 </td>
                                 <td class="date">
                                     <span data-v-created_at data-filter-friendly_date title="data-v-created_at" href="">Date</span>
@@ -165,8 +152,8 @@
                                 <td class="actions">
 
 									<div class="btn-group">
-										<a class="btn btn-icon btn-outline-secondary" data-v-edit-url><i class="la la-pencil-alt"></i><span>Edit</span></a>
-										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<a class="btn btn-outline-secondary btn-sm" data-v-edit-url><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -176,10 +163,10 @@
 										</button>
 										<ul class="dropdown-menu">
 										  
-										  <li><a class="dropdown-item" href="#" data-v-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
-										  <li><a class="dropdown-item" href="#" data-v-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-view-url target="_blank"><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg><span>View</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-design-url target="_blank"><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <span>Design</span></a></li>
 										  <li><hr class="dropdown-divider"></li>
-										  <li><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a></li>
+										  <li><a class="dropdown-item text-danger" data-v-delete-url onclick="return confirm('Are you sure?')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span></a></li>
 										</ul>
 									 </div>
 
@@ -189,7 +176,7 @@
 							<tr data-v-if-not="this.count > 0" class="no-items">
 								<td colspan="100">
 									<div class="text-center">
-										<div class="mt-3">No fields to display!</div>
+										<div class="mt-3 text-secondary">No fields to display!</div>
 									</div>
 								</td>
 							</tr>
@@ -208,12 +195,12 @@
                 </div>
 
 
-            </div>
+            </section>
 
 
         </div>
 		@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')

@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,10 +14,10 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions flex-column flex-md-row">
+	   <header class="actions flex-column flex-md-row">
 			<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-people-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
 						<span>User Group</span>
 					</h4>
 			</div>
@@ -25,18 +25,18 @@
 			<div class="btns">
 				<a href="{$this.adminPath}index.php?module=user/user-groups" title="Return to user groups"
 					class="btn btn-icon btn-outline-secondary">
-						<i class="la la-arrow-left"></i><span>Return to user groups</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Return to user groups</span>
 				 </a>
 				  
 				  <button type="submit"
 					 class="btn btn-primary btn-icon ms-1"
 					>
-				  <i class="icon-create-outline"></i> <span>Save</span>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save</span>
 				  </button>
 		   </div>
-	 </div>
+	 </header>
 
-	  <div id="main-content">
+	  <section id="main-content">
 
 			@@include('../_includes/notifications.html')
 			
@@ -54,7 +54,7 @@
 				<div class="mb-3 row">
 					<label for="input-content" class="col-sm-2 col-form-label">Content</label>
 					<div class="col-sm-10">
-					  <textarea type="text" class="form-control" id="input-content" placeholder="Content" name="user_group[content]" data-v-user_group-content required></textarea>
+					  <textarea class="form-control" id="input-content" placeholder="Content" name="user_group[content]" data-v-user_group-content required></textarea>
 					</div>
 				 </div>		 
 
@@ -69,11 +69,11 @@
 				  </div>
 
 			</div>
-        </div>
+        </section>
 	</form>
 
 	@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
 
 
@@ -81,13 +81,13 @@
 
 <script>
 @@include('../_includes/media-variables.html')
-let usersUrl = '{ $this->usersUrl }';
+var usersUrl = '{ $this->usersUrl }';
 </script>
 
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 
 

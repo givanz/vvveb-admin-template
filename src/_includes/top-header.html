@@ -1,15 +1,14 @@
-<div class="top-header">
+<header class="top-header">
 
 	<div class="btn-group" data-v-component-sites>
 
 		<button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
-			<i class="la la-bars"></i>
-		</button>
-
-	
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#menu-2"></use></svg>
+		</button>		
+		
 		<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 			
-			<i class="icon-eye-outline"></i> 
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg> 
 			<span>View live website</span>
 		</button>
 	
@@ -17,17 +16,17 @@
 		<div class="dropdown-menu">
 			<div data-v-site>
 				<a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
-					<!-- i class="la la-circle la-lg me-2"></i -->
+					<!-- icon removed with icon fonts -->
 					<span data-v-site-name class="flex-grow-1">Default website</span>
-					<i class="la la-external-link-alt"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#external-link"></use></svg>
 				</a>
 			</div>
 			
 			<div data-v-site>
 				<a class="dropdown-item" href="#" data-v-site target="_blank">
-					<!--- <i class="icon-eye-outline la-lg me-2"></i> -->
+					<!--- <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg> -->
 					<span data-v-site-name class="flex-grow-1">Blog</span>
-					<i class="la la-external-link-alt"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#external-link"></use></svg>
 				</a>
 			</div>
 			
@@ -35,62 +34,62 @@
 				
 			<a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/sites"}'>
 				<span class="flex-grow-1">Manage sites</span>
-				<i class="la la-edit ms-2"></i>
+				<svg class="svg-icon ms-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg>
 			</a>
 		</div>
 	</div>
 	
 	<div class="btn-group">
 		<button type="button" class="btn px-1 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-			<i class="icon-reload-circle-outline"></i> 
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#rotate-clockwise"></use></svg> 
 			<span>Clear cache</span>
 		</button>
 	
 		<div class="dropdown-menu">
 			<div>
-				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
+				<a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
 					<div class="flex-grow-1">
-						<i class="icon-document-text-outline me-2 text-body-tertiary"></i>
+						<svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
 						<span>Assets</span>
 					</div>
 				</a>
 			</div>
 			<div>
-				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
+				<a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
 					<div class="flex-grow-1">
-						<i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
+						<svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#code-off"></use></svg>
 						<span>Templates</span>
 					</div>
 				</a>
 			</div>
 			<div>
-				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
+				<a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
 					<div class="flex-grow-1">
-						<i class="icon-server-outline me-2 text-body-tertiary"></i>
+						<svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#server"></use></svg>
 						<span>Database</span>
 					</div>
 				</a>
 			</div>			
 			<div>
-				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
+				<a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
 					<div class="flex-grow-1">
-						<i class="icon-document-outline me-2 text-body-tertiary"></i>
+						<svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
 						<span>Page cache</span>
 					</div>
 				</a>
 			</div>
 			<div>
-				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
+				<a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
 					<div class="flex-grow-1">
-						<i class="icon-image-outline me-2 text-body-tertiary"></i>
+						<svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg>
 						<span>Image cache</span>
 					</div>
 				</a>
 			</div>			
 			<div>
-				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
+				<a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
 					<div class="flex-grow-1">
-						<i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
+						<svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#send"></use></svg>
 						<span>Model cache</span>
 					</div>
 				</a>
@@ -98,9 +97,9 @@
 			<div class="dropdown-divider"></div>
 			
 			<div>
-				<a class="dropdown-item d-flex" href="#"target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
+				<a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
 					<div class="flex-grow-1">
-						<i class="icon-sync-outline me-2 text-body-tertiary"></i>
+						<svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg>
 						<span>All cache</span>
 					</div>
 				</a>
@@ -114,7 +113,7 @@
 
 		<div class="btn-group top-notifications" data-v-component-notifications>
 			<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-				<i class="la la-bell"></i> 
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#bell"></use></svg> 
 				<span class="badge bg-primary-subtle text-body" data-v-if="count > 0"  data-v-notification-count>5</span>
 			</button>
 		
@@ -122,7 +121,7 @@
 				<div data-v-if="notifications.updates.core.hasUpdate">
 					<h6 class="dropdown-header">Updates</h6>
 					<a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
-						<i class="icon-flash-outline text-success"></i> 
+						<svg class="svg-icon text-success" aria-hidden="true"><use href="/admin/default/img/icons.svg#bolt"></use></svg> 
 						<span>Update available</span>
 						<strong class="badge bg-success small mx-2" data-v-notification-updates-core-version>0.0.5</strong> 
 					</a>
@@ -131,7 +130,7 @@
 				<div data-v-if-not="notifications.updates.core.hasUpdate">
 					<h6 class="dropdown-header">Updates</h6>
 					<a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
-						<i class="icon-flash-outline"></i>  
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#bolt"></use></svg>  
 						<span>Up to date</span>
 						<strong class="badge bg-primary small mx-2" data-v-notification-updates-core-version>0.0.5</strong> 
 					</a>
@@ -142,14 +141,14 @@
 					<div><h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6></div>
 					<div class="dropdown-item" data-v-group-notification>
 						<a href="#" data-v-group-notification-url>
-							<i class="" data-v-group-icon></i> 
+							<svg class="svg-icon" data-v-group-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-bag" data-v-group-icon-use></use></svg> 
 							<span data-v-group-notification-name>New orders</span> 
 							<strong class="badge bg-primary-subtle mx-2 bg-primary-subtle" data-v-group-notification-count>5</strong> 
 						</a>
 					</div>
 					<div class="dropdown-item" data-v-group-notification>
 						<a  href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
-							<i class="la la-file-invoice" data-v-group-icon></i> 
+							<svg class="svg-icon" data-v-group-icon aria-hidden="true"><use data-v-group-icon-use href="/admin/default/img/icons.svg#receipt"></use></svg> 
 							<span data-v-group-notification-name>Returns</span> 
 							<strong class="badge bg-danger-subtle small" data-v-group-notification-count>2</strong> 
 						</a>
@@ -162,14 +161,14 @@
 					<div><h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Sales</h6></div>
 					<div class="dropdown-item" data-v-group-notification>
 						<a href="#" data-v-group-notification-url>
-							<i class="la la-comment"></i> 
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg> 
 							<span data-v-group-notification-name>New comments</span> 
 							<strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong> 
 						</a>
 					</div>
 					<div class="dropdown-item" data-v-group-notification>
 						<a  href="#" data-v-group-notification-url>
-							<i class="la la-comment"></i> 
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg> 
 							<span data-v-group-notification-name>Spam comments</span> 
 							<strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong> 
 						</a>
@@ -181,14 +180,14 @@
 					<div><h6 class="dropdown-header" data-v-group-name data-filter-capitalize>Products</h6></div>
 					<div class="dropdown-item" data-v-group-notification>
 						<a href="#" data-v-group-notification-url>
-							<i class="la la-comment"></i> 
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg> 
 							<span data-v-group-notification-name>New reviews</span> 
 							<strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong> 
 						</a>
 					</div>
 					<div class="dropdown-item" data-v-group-notification>
 						<a  href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
-							<i class="la la-comment"></i> 
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg> 
 							<span data-v-group-notification-name>Spam questions</span> 
 							<strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong> 
 						</a>
@@ -203,7 +202,7 @@
 				<input type="hidden" name="csrf" data-v-csrf>
 				<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 					
-					<i class="la la-sitemap me-1"></i>
+					<svg class="svg-icon me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#sitemap"></use></svg>
 					<span data-v-site-info-name>Default site</span>
 				</button>
 			
@@ -211,16 +210,16 @@
 				<div class="dropdown-menu">
 					<div data-v-site>
 						<button class="dropdown-item" href="#" data-v-site-site_id name="site" value="default">
-							<i class="la la-window-minimize la-lg me-2" data-v-if="state = 'live'" data-v-site-icon></i>
-							<i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+							<svg class="svg-icon me-2" data-v-if="state = 'live'" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
+							<svg class="svg-icon me-2" data-v-if-not="state = 'live'" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
 							<span data-v-site-name>Default website</span>
 						</button>
 					</div>
 					
 					<div data-v-site>
 						<a class="dropdown-item" href="#" data-v-site name="site" value="default">
-							<i class="la la-window-minimize la-lg me-2" data-v-site-icon></i>
-							<i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+							<svg class="svg-icon me-2" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
+							<svg class="svg-icon me-2" data-v-if-not="state = 'live'" data-v-site-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use></svg>
 							<span data-v-site-name>Blog</span>
 						</a>
 					</div>
@@ -228,7 +227,7 @@
 					<div class="dropdown-divider"></div>
 					
 					<a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/site"}'>
-						<i class="la la-plus me-2"></i>
+						<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 						Add new
 					</a>
 				</div>
@@ -240,7 +239,7 @@
 				<input type="hidden" name="csrf" data-v-csrf>
 				<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-danger-subtle="states.active = 'live'">
 					
-					<i class="la text-success me-1" data-v-state-info-active_icon></i>
+					<svg class="svg-icon text-success me-1" data-v-state-info-active_icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-state-info-active_icon-use></use></svg>
 					<span data-v-state-info-active_name>Live</span>
 				</button>
 			
@@ -248,7 +247,7 @@
 				<div class="dropdown-menu">
 					<div data-v-state>
 						<button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
-							<i class="la la-broadcast-tower la-lg me-2" data-v-state-icon></i>
+							<svg class="svg-icon me-2" data-v-state-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#broadcast" data-v-state-icon-use></use></svg>
 							<span data-v-state-name>
 							Live
 							</span>
@@ -256,7 +255,7 @@
 					</div>
 					<div data-v-state>
 						<button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to maintenance?')"  name="state" data-state="maintenance">
-							<i class="la la-wrench la-lg me-2" data-v-state-icon></i>
+							<svg class="svg-icon me-2" data-v-state-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#tool" data-v-state-icon-use></use></svg>
 							<span data-v-state-name>
 							Maintenance
 							</span>
@@ -264,7 +263,7 @@
 					</div>
 					<div data-v-state>
 						<button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')"  name="state" data-state="coming soon">
-							<i class="la la-clock la-lg me-2" data-v-state-icon></i>
+							<svg class="svg-icon me-2" data-v-state-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#clock" data-v-state-icon-use></use></svg>
 							<span data-v-state-name>
 							Coming soon
 							</span>
@@ -279,7 +278,7 @@
 				<input type="hidden" name="csrf" data-v-csrf>
 				<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 					
-					<i class="la la-flag me-1"></i>
+					<svg class="svg-icon me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#flag"></use></svg>
 					<span data-v-language-info-slug>English</span>
 				</button>
 			
@@ -304,7 +303,7 @@
 					
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#" data-v-url-params='{"module":"localization/languages"}'>
-						<i class="la la-plus me-2"></i>
+						<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 						Add new
 					</a>
 				</div>
@@ -314,12 +313,12 @@
 		<div class="vr align-middle mx-1"></div>
 
 		<button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
-			<i class="la la-sun"></i>
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#sun"></use></svg>
 		</button>
 
 		
 		<a target="_blank" id="top-docs-btn" href="{$this.adminPath}index.php?action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn px-1" aria-expanded="false">
-			<i class="la la-lg la-question-circle"></i> 
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg> 
 			<span>Docs</span>
 		</a>
 		
@@ -374,4 +373,4 @@
 		</div>
 	
 	</div>
-</div>
+</header>

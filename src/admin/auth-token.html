@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 	
@@ -15,11 +15,11 @@
 		<form id="token-form" action="" method="post" class="settings">
 		   <input type="hidden" name="action" id="action" value="save">
 		   <input type="hidden" name="csrf" data-v-csrf>
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-key-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#key"></use></svg>
 						<span>Api Auth Tokens</span>
 					</h4>
 				</div>
@@ -27,36 +27,36 @@
 				<div class="btns">
 
 					 <a href="" class="btn btn-outline-secondary btn-icon ms-1" data-v-user-url>
-						<i class="la la-arrow-left"></i> <span>User</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg> <span>User</span>
 					 </a>
 					
 					 <button onclick="addToken()" class="btn btn-outline-primary btn-icon ms-1">
-						<i class="icon-add-outline"></i> <span>Add token</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add token</span>
 					</button>
 					
 					<button type="submit" class="btn btn-primary btn-icon ms-1">
-						<i class="icon-create-outline me-2"></i>
+						<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 						<span>Save</span>
 					</button>
 				</div>
-            </div>
+            </header>
 
-            <div id="main-content">
+            <section id="main-content">
                 @@include('../_includes/notifications.html')
 
-                <div class="currencies card-block">
+                <div class="auth-tokens card-block">
 						<div class="bulk-actions px-2 mb-2" style="display:none">
 							<!--
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 									aria-controls="filters" title="Edit selected"
 									class="btn btn-primary btn-sm">
-								<i class="icon-create-outline"></i> Edit selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 							</button>
 							-->
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
 									title="Delete selected"
 									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-								<i class="icon-trash-outline"></i> Delete
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete
 							</button>
 						
 						</div>
@@ -97,26 +97,26 @@
 						  </td>
 						  <td>
 							<div class="input-group">
-								<input type="hidden" class="form-control" name="admin_auth_token[0][admin_auth_token_id]" value="" data-v-admin_auth_token-admin_auth_token_id>
-								<input type="password" name="admin_auth_token[0][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm" class="form-control" required data-v-admin_auth_token-token>
+								<input type="hidden" class="form-control" name="admin_auth_token[#admin_auth_token#][admin_auth_token_id]" value="" data-v-admin_auth_token-admin_auth_token_id>
+								<input type="password" name="admin_auth_token[#admin_auth_token#][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm" class="form-control" required data-v-admin_auth_token-token>
 								<button type="button" class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Copy" onclick="copyText(this)">
-									<i class="icon-copy-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 								</button>
 								<button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Randomize" type="button" onclick="randomizePassword(this)">
-									<i class="icon-shuffle-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrows-shuffle"></use></svg>
 								</button>
 							    <button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Toggle" type="button" onclick="togglePasswordInput(this)">
-									<i class="icon-eye-off-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye-off"></use></svg>
 							  </button>								
 							</div>	
 						  </td>
 						  <td>
-							<input type="text" class="form-control" name="admin_auth_token[0][description]" value="Frontend Rest API" data-v-admin_auth_token-description required>
+							<input type="text" class="form-control" name="admin_auth_token[#admin_auth_token#][description]" value="Frontend Rest API" data-v-admin_auth_token-description required>
 						  </td>
 						  <td data-v-admin_auth_token-created_at data-filter-friendly_date>Last month</td>
 						  <td>	
 							<button type="submit" name="action" value="delete" aria-expanded="false" title="Delete selected" class="btn btn-outline-danger btn-sm btn-icon" onclick="removeToken(this, event)">
-								<i class="icon-trash-outline"></i> Delete 
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete 
 							</button>
 						  </td>
 						</tr>
@@ -130,26 +130,26 @@
 						  </td>
 						  <td>
 							<div class="input-group">
-								<input type="hidden" class="form-control" name="admin_auth_token[0][admin_auth_token_id]" value="" data-v-admin_auth_token-admin_auth_token_id>
-								<input type="password" name="admin_auth_token[0][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm"class="form-control" required data-v-admin_auth_token-token>
+								<input type="hidden" class="form-control" name="admin_auth_token[#admin_auth_token#][admin_auth_token_id]" value="" data-v-admin_auth_token-admin_auth_token_id>
+								<input type="password" name="admin_auth_token[#admin_auth_token#][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm"class="form-control" required data-v-admin_auth_token-token>
 								<button type="button" class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Copy" onclick="copyText(this)">
-									<i class="icon-copy-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 								</button>
 								<button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Randomize" type="button" onclick="randomizePassword(this)">
-									<i class="icon-shuffle-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrows-shuffle"></use></svg>
 								</button>
 							    <button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Toggle" type="button" onclick="togglePasswordInput(this)">
-									<i class="icon-eye-off-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye-off"></use></svg>
 							  </button>								
 							</div>							  
 							</td>
 						  <td>
-							<input type="text" class="form-control" name="admin_auth_token[0][description]" value="Frontend GraphQL API" data-v-admin_auth_token-description required>
+							<input type="text" class="form-control" name="admin_auth_token[#admin_auth_token#][description]" value="Frontend GraphQL API" data-v-admin_auth_token-description required>
 						  </td>
 						  <td data-v-admin_auth_token-created_at data-filter-friendly_date>Last month</td>
 						  <td>	
 							<button type="submit" name="action" value="delete" aria-expanded="false" title="Delete selected" class="btn btn-outline-danger btn-sm btn-icon" onclick="removeToken(this, event)">
-								<i class="icon-trash-outline"></i> Delete 
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete 
 							</button>
 						  </td>
 						</tr>						
@@ -163,40 +163,40 @@
 						  </td>
 						  <td>
 							<div class="input-group">
-								<input type="hidden" class="form-control" name="admin_auth_token[#][admin_auth_token_id]" value="" disabled data-v-admin_auth_token-admin_auth_token_id>
-								<input type="text" name="admin_auth_token[#][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm"class="form-control" disabled data-v-admin_auth_token-token>
+								<input type="hidden" class="form-control" name="admin_auth_token[#admin_auth_token#][admin_auth_token_id]" value="" disabled data-v-admin_auth_token-admin_auth_token_id>
+								<input type="text" name="admin_auth_token[#admin_auth_token#][token]" value="oNa5z5S1gabs8vB/GU9KRuFxw1psuMx8rPaVjnVLm8mm./ufAiRgm"class="form-control" disabled data-v-admin_auth_token-token>
 								<button type="button" class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Copy" onclick="copyText(this)">
-									<i class="icon-copy-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 								</button>
 								<button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Randomize" type="button" onclick="randomizePassword(this)">
-									<i class="icon-shuffle-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrows-shuffle"></use></svg>
 								</button>
 							    <button class="btn btn-outline-secondary btn-sm py-0 btn-toggle fs-5" title="Toggle" type="button" onclick="togglePasswordInput(this)">
-									<i class="icon-eye-off-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye-off"></use></svg>
 							  </button>								
 							</div>							  
 							</td>
 						  <td>
-							<input type="text" class="form-control" name="admin_auth_token[#][description]" value="" data-v-admin_auth_token-description disabled required>
+							<input type="text" class="form-control" name="admin_auth_token[#admin_auth_token#][description]" value="" data-v-admin_auth_token-description disabled required>
 						  </td>
 						  <td data-v-admin_auth_token-created_at data-filter-friendly_date>Now</td>
 						  <td>	
 							<button type="submit" name="action" value="delete" aria-expanded="false" title="Delete selected" class="btn btn-outline-danger btn-sm btn-icon" onclick="removeToken(this, event)">
-								<i class="icon-trash-outline"></i> Delete 
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete 
 							</button>
 						  </td>
 						</tr>
 						<tr data-v-if-not="this.count > 0" class="no-items">
 								<td colspan="100">
-									<div class="text-center mb-4">
+									<div class="text-center m-4">
 										<div>
-											<i class="la la-key display-4 lh-1 text-secondary text-opacity-75"></i>
-											<div class="mt-3">No tokens to display!</div>
+											<svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#key"></use></svg>
+											<div class="mt-3 text-secondary">No tokens to display!</div>
 										</div>
 
 										<button data-v-url-params='{"module":"localization/admin_auth_token"}' 
 												class="btn btn-outline-secondary btn-icon mt-4" onclick="addToken()">
-											<i class="icon-add-outline"></i> <span>Add token</span>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add token</span>
 										</button>
 									</div>
 								</td>
@@ -208,12 +208,12 @@
             </div>
 
 
-        </div>
+        </section>
 
 		@@include('../_includes/main-footer.html')
     </div>
 		</form>
-</div>
+</main>
 
 @@include('../_includes/footer-scripts.html')
 <script>
@@ -224,15 +224,15 @@ function togglePasswordInput(element) {
 		if (password.type == "password") {
 			password.type = "text"; 
 			//element.innerHTML = "&#x1F513;";
-			element.firstElementChild.className = "icon-eye-outline";
+			{ let use = element.querySelector("use"); if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye"); else element.firstElementChild.className = "icon-eye-outline"; }
 		} else {
 			password.type = "password";
 			//element.innerHTML = "&#x1F512;";
-			element.firstElementChild.className = "icon-eye-off-outline";
+			{ let use = element.querySelector("use"); if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye-off"); else element.firstElementChild.className = "icon-eye-off-outline"; }
 		}
 	}			
 		
-function randomPassword(length, chars = "abcdefghijklmnopqrstuvwxyz!@$^*()-ABCDEFGHIJKLMNOP1234567890") {
+function randomPassword(length, chars = "abcdefghijklmnopqrstuvwxyz^*-_|~ABCDEFGHIJKLMNOP1234567890") {
 	let pass = "";
 	for (let x = 0; x < length; x++) {
 		let i = Math.floor(Math.random() * chars.length);

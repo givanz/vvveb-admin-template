@@ -6,18 +6,18 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 	
         <div id="content">
            
 
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-chatbox-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message-circle"></use></svg>
 						<span>@@title</span>
 					</h4>
 				</div>
@@ -25,10 +25,10 @@
 				<div class="btns">
 				</div>
 
-            </div>
+            </header>
 
 
-               <div id="main-content">
+               <section id="main-content">
 
                 @@include('../_includes/notifications.html')
 
@@ -61,13 +61,13 @@
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 									aria-controls="filters" title="Edit selected"
 									class="btn btn-primary btn-sm">
-								<i class="icon-create-outline"></i> Edit selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 							</button>
 							-->
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
 									title="Delete selected"
 									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-								<i class="icon-trash-outline"></i> 
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> 
 								<span>Delete selected</span>
 							</button>
 						
@@ -79,33 +79,21 @@
 
                             <thead>
                             <tr>
-                                <th class="col-cb">
-                                    <div class="checkbox_outer">
-
-                                        <label class="form-check">
-                                            <input type="checkbox" class="form-check-input" value="4"
-                                                   name="@@name[]"
-                                                   data-v-vvveb-action="table.bulkSelect">
-                                            <span class="form-check-label"></span>
-                                            <span class="custom-control-description">&nbsp;</span>
-                                        </label>
-
-                                    </div>
-                                </th>
+                                @@include('../_includes/bulk-select-th.html', {"name": "@@name[]"})
                                 <th class="@@name">
-									<i class="icon-cube-outline"></i><span>Name</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Name</span>
 								</th>
                                 <th style="width:200px;text-align:center;" class="author">
-									<i class="la la-user"></i><span>Author</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg><span>Author</span>
 								</th>
                                 <th class="@@list">
-									<i class="la la-@@list"></i><span>@@title</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#messages"></use></svg><span>@@title</span>
 								</th>	
                                 <th class="date">
-									<i class="la la-calendar"></i><span>Date</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg><span>Date</span>
 								</th>
                                 <th class="actions text-center" style="width:200px">
-									<i class="la la-edit"></i><span>Actions</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg><span>Actions</span>
 								</th>
                             </tr>
                             </thead>
@@ -126,19 +114,19 @@
                                         
 									<div class="secondary-actions">
 										<button type="submit" name="@@name_id" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=1" data-v-@@name-@@name_id>							
-												<i class="la la-pen"></i><span>Approve</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg><span>Approve</span>
 										</button>
 									
 										<button type="submit" name="@@name_id" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=2" data-v-@@name-@@name_id>							
-												 <i class="la la-fire-alt"></i><span>Spam</span>
+												 <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#flame"></use></svg><span>Spam</span>
 										</button>
 									
 										<button type="submit" name="@@name_id" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='save';newstatus.value=3" data-v-@@name-@@name_id>							
-												<i class="la la-trash-alt"></i><span>Trash</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Trash</span>
 										</button>
 									
 										<button type="submit" name="@@name_id[]" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary btn-sm" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-@@name-@@name_id>							
-												<i class="la la-times text-danger"></i><span>Delete</span>
+												<svg class="svg-icon text-danger" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg><span>Delete</span>
 										</button>
 									</div>
                                 </td>
@@ -152,7 +140,7 @@
 		                                <span data-v-@@name-author data-v-if-not="@@name.author-url">Admin</span>
                                 </td>
                                 <td class="@@list">
-									<div class="badge bg-secondary" data-v-@@list>0</div>
+									<div class="bg-opacity-75 badge bg-secondary" data-v-@@list>0</div>
                                 </td>
                                 <td class="date">
                                     <span data-v-@@name-created_at data-filter-friendly_date title="{$@@name.created_at}" href="">Date</span>
@@ -161,11 +149,11 @@
                                 <td class="actions">
 
 									<div class="btn-group">
-										<a class="btn btn-icon btn-outline-secondary" data-v-@@name-edit-url>
-											<i class="la la-pencil-alt"></i>
+										<a class="btn btn-outline-secondary btn-sm" data-v-@@name-edit-url>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 											<span>Edit</span>
 										</a>
-										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -176,17 +164,17 @@
 										<ul class="dropdown-menu">
 										  
 										  <li><button type="submit" name="@@name_id" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='save';newstatus.value=1" data-v-@@name-@@name_id>							
-												<i class="la la-check text-secondary"></i><span>Approve</span>
+												<svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#check"></use></svg><span>Approve</span>
 										</button></li>
 										  <li><button type="submit" name="@@name_id" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='save';newstatus.value=2" data-v-@@name-@@name_id>							
-												<i class="la la-fire-alt"></i><span>Spam</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#flame"></use></svg><span>Spam</span>
 										</button></li>
 										  <li><button type="submit" name="@@name_id" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='save';newstatus.value=3" data-v-@@name-@@name_id>							
-												<i class="la la-trash-alt"></i><span>Trash</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Trash</span>
 										</button></li>
 										  <li><hr class="dropdown-divider"></li>
 										  <li><button type="submit" name="@@name_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-@@name-@@name_id>							
-												<i class="icon-trash-outline"></i><span>Delete</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span>
 										</button></li>
 										</ul>
 									 </div>
@@ -196,9 +184,9 @@
                             </tbody>
 							<tr data-v-if-not="this.count >= 1">
 								<td colspan="100">
-									<div class="text-center mb-4">
+									<div class="text-center m-4">
 										<div>
-											<i class="la la-@@name-alt display-4 lh-1 text-secondary text-opacity-75"></i>
+											<svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg>
 											<div class="m-3">No @@title to display!</div>
 										</div>
 									</div>
@@ -216,11 +204,11 @@
 		                </div>
                   </form>
                 </div>
-            </div>
+            </section>
         </div>
 
 		@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')

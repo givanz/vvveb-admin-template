@@ -6,23 +6,23 @@
        
     @@include('../_includes/sidebar.html')
         
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 
-        <div class="actions flex-column flex-md-row mb-0">
+        <header class="actions flex-column flex-md-row mb-0">
 
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-cube-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
 					<span data-v-type-name>Product</span>
 				</h4>
 			</div>
 
             <div class="btns">
 		
-				<a href="/admin/?module=product/products" title="Product list" class="btn btn-icon btn-outline-secondary" data-v-products-list-url>
-						<i class="la la-arrow-left"></i>
+				<a href="/admin/?module=product/products" title="Product list" class="btn btn-outline-secondary btn-sm" data-v-products-list-url>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg>
 						<span>
 							<span data-v-type-name>Product</span> 
 							<span>list</span>
@@ -32,11 +32,11 @@
 				  <input type="checkbox" class="btn-check" id="btn-preview" autocomplete="off">
 				  <label class="btn btn-outline-primary btn-icon btn-preview" for="btn-preview" data-v-if="this.product.product_id">
 						<div class="preview">
-							<i class="icon-eye-outline"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg>
 							<span>Preview</span>
 						</div>
 						<div class="close">
-							<i class="icon-close-outline"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 							<span>Close</span>
 						</div>
 				  </label>
@@ -44,7 +44,7 @@
                 <button type="submit" data-v-check-permission-save
                         class="btn btn-primary btn-icon ms-1"
                         onclick="document.getElementById('form').requestSubmit();">
-                    <i class="icon-create-outline"></i> <span>Save</span> <span data-v-type-name>product</span>
+                    <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save</span> <span data-v-type-name>product</span>
                 </button>
 				
 				
@@ -52,17 +52,17 @@
 
 					<input type="radio" name="responsive-view" class="btn-check" id="btn-mobile-view" autocomplete="off">
 					<label id="mobile-view" data-view="mobile" class="btn btn-outline-secondary btn-icon" for="btn-mobile-view" title="Mobile view" onclick="previewViewport(this)">
-					  <i class="la la-mobile la-lg"></i>
+					  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-mobile"></use></svg>
 					</label>
 
 					<input type="radio" name="responsive-view" class="btn-check" id="btn-tablet-view" autocomplete="off">
 					<label id="tablet-view" data-view="tablet" class="btn btn-outline-secondary btn-icon" for="btn-tablet-view" title="Tablet view" onclick="previewViewport(this)">
-					  <i class="la la-tablet la-lg"></i>
+					  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-tablet"></use></svg>
 					</label>
 
 					<input type="radio" name="responsive-view" class="btn-check" id="btn-desktop-view" autocomplete="off">
 					<label id="desktop-view" data-view="" class="btn btn-outline-secondary btn-icon" for="btn-desktop-view" title="Desktop view" onclick="previewViewport(this)">
-					  <i class="la la-laptop la-lg"></i>
+					  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-laptop"></use></svg>
 					</label>
 
 					<div class="percent">
@@ -71,12 +71,12 @@
 					
 				  </div>				
             </div>
-        </div>
+        </header>
 
         <div id="content">
 
 
-            <div class="content">
+            <section class="content">
 
                 <form id="form" action="" method="post" class="settings" data-v-product>
                     <input type="hidden" name="csrf" data-v-csrf>
@@ -88,7 +88,7 @@
 
 							@@include('../_includes/notifications.html', {"_class":"me-3"})
 
-    						<ul class="nav nav-tabs" id="product-tabs">
+    						<ul class="nav nav-pills pb-3 mb-2 border-bottom" id="product-tabs">
 								<li class="nav-item"><a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a></li>
 								<li class="nav-item"><a class="nav-link" href="#tab-relations" data-bs-toggle="tab">Relations</a></li>
 								<li class="nav-item"><a class="nav-link" href="#tab-attribute" data-bs-toggle="tab">Attribute</a></li>
@@ -152,11 +152,11 @@
 										<button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100"
 												data-media-gallery data-target-input="#featured-image-input"
 												data-target-thumb="#featured-image-thumb" data-type="single">
-												<i class="la la-image la-lg"></i> Set featured media
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> Set featured media
 										</button>
 
 										<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-											<i class="la la-times"></i>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 										</button>
 									</div>
 							</div>
@@ -211,7 +211,7 @@
 							<div class="mb-3">
 
 								<div class="input-group">
-									<!-- div class="input-group-addon"><i class="icon-eye-outline"></i></div-->
+									<!-- div class="input-group-addon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg></div-->
 									<select class="form-select" placeholder="Visibility" name="template" data-v-templates>
 											<option value="" title="Default template used for this page">-- Default template --</option>
 											<option value="published" data-v-option>Published</option>
@@ -232,10 +232,10 @@
 					</div>
         </div>
 		</form>
-    </div>
+    </section>
 
 	</div>
-	</div>
+	</main>
  	<div id="preview-separator"><div>.. .. .. .. ..</div></div>
  	<div id="preview"><iframe id="preview-iframe"></iframe></div>
 	
@@ -276,7 +276,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary btn-icon" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary btn-icon" onclick="addVariants()">
-			<i class="la la-plus"></i>
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 			<span>Add variants</span>
 		</button>
       </div>
@@ -288,23 +288,23 @@
 
 <script>
 @@include('../_includes/media-variables.html');
-let linkUrl           = '{ $this->linkUrl }';
-let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
-let productOption     = { $this->option };
-let contentType       = 'product';
-let postType          = '{ $this->type }';
-let themeFonts        = { $this->themeFonts };
+var linkUrl           = '{ $this->linkUrl }';
+var vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+var productOption     = { $this->option };
+var contentType       = 'product';
+var postType          = '{ $this->type }';
+var themeFonts        = { $this->themeFonts };
 </script>
 
-<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
+<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js" data-ajax-reload="1"></script>	
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link id="media-css" href="libs/media/media.css" rel="stylesheet">
 
 <script id="tinymce-options-js" src="/js/libs/tinymce-options.js"></script>
 <script id="tinymce-lang-code">
-let lang = "{$this->global.locale}";
+var lang = "{$this->global.locale}";
 if (lang != "en-us") {
 	tinyMceOptions["language"] = "{$this->global.locale}";
 	tinyMceOptions["directionality"] = ("{$this->global.rtl}" == "1" ? 'rtl' : 'ltr');
@@ -323,15 +323,15 @@ if (lang != "en-us") {
 <script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
 <link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
 
-<script id="revisions-js" src="/js/admin/revisions.js"></script>
+<script id="revisions-js" src="/js/admin/revisions.js" data-ajax-reload="1"></script>
 <script id="functions-js" src="/js/admin/functions.js"></script>
-<script id="content-js"src="js/content.js"></script>
-<script id="preview-js"src="js/preview.js"></script>
+<script id="content-js"src="js/content.js" data-ajax-reload="1"></script>
+<script id="preview-js"src="js/preview.js" data-ajax-reload="1"></script>
 
 <script>
-let data = {};
-let variants = {};
-let prices = {};
+var data = {};
+var variants = {};
+var prices = {};
 
 function generateVariants() {
 	let options = document.querySelectorAll("[data-v-poption].tab-pane");
@@ -373,12 +373,12 @@ function generateVariants() {
 	});
 }
 
-let combinations = {};
-let result = {};
+var combinations = {};
+var result = {};
 
 result = comb(variants, prices);
 
-let variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
+var variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
 variantSelect.innerHTML = "";
 for (let i in result[0]) {
 	variantSelect.options.add(new Option(result[0][i], result[1][i]));
@@ -424,7 +424,7 @@ function comb(arr, optionPrices) {
 }
 
 
-let priceInput = document.getElementById("input-price");
+var priceInput = document.getElementById("input-price");
 
 function addAllVariants() {
 	//get existing variants to skip them
@@ -456,7 +456,7 @@ function addAllVariants() {
 	displayToast("success", "Variants", counter + " variants added");	
 }
 
-let selectedOptions;
+var selectedOptions;
 
 function addOptionsModal() {
 	let modalBody  = document.querySelector("#variantsModal .modal-body");
@@ -502,6 +502,52 @@ function addVariants() {
 	result = comb(variants, prices);
 	addAllVariants();
 }
+
+/*
+document.querySelectorAll(".draggable")?.forEach(listItem => {
+  listItem.addEventListener("dragstart", handleDragstart);
+  listItem.addEventListener("dragover", handleDragover);
+  listItem.addEventListener("dragleave", handleDragleave);
+  listItem.addEventListener("drop", handleDrop);
+})
+
+var draggedElement;
+
+function handleDragstart(event) {
+  draggedElement = event.target.closest("[draggable]");
+}
+
+function handleDragover(event) {
+  event.preventDefault(); // @note This is needed for drop to fire.
+  let item = event.target.closest("[draggable]");
+  item.classList.add("over");
+}
+
+function handleDragleave() {
+  event.target.closest("[draggable]").classList.remove("over");
+}
+
+function handleDrop(event) {
+  let item = event.target.closest("[draggable]")
+  item.classList.remove("over");
+  //item.parentNode.insertBefore(draggedElement, item);	
+  item.parentNode.insertBefore(draggedElement, item);	
+}
+
+function handleDragend() {
+  draggedElement = null;
+}
+
+function reorderOptionSortOrder() {
+	document.querySelectorAll("[data-v-product-poption].draggable li").forEach(listItem, index => {
+		listItem.querySelector("input[data-v-poption-sort_order]").value = index;
+	});
+}
+
+document.querySelector("[data-v-product-poption].draggable li")?.forEach(listItem => {
+	listItem.addEventListener("drop", reorderOptionSortOrder) ;
+});	
+*/
 
 /*
 document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));

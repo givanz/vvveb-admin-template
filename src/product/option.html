@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,10 +14,10 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions flex-column flex-md-row">
+	   <header class="actions flex-column flex-md-row">
 			<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-people-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
 						<span>Option</span>
 					</h4>
 			</div>
@@ -25,18 +25,18 @@
 			<div class="btns">
 				<a href="{$this.adminPath}index.php?module=product/options" title="Option list"
 					class="btn btn-icon btn-outline-secondary">
-						<i class="la la-arrow-left"></i><span>Option list</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Option list</span>
 				 </a>
 				  
 				  <button type="submit"
 					 class="btn btn-primary btn-icon ms-1"
 					>
-				  <i class="icon-create-outline"></i> <span>Save</span>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save</span>
 				  </button>
 		   </div>
-	 </div>
+	 </header>
 
-	  <div id="main-content">
+	  <section id="main-content">
 
 			@@include('../_includes/notifications.html')
 			
@@ -45,9 +45,9 @@
 				<input type="hidden" name="option_id" data-v-option-option_id>
 					
 				<div class="mb-3 row">
-					<label for="input-site-title" class="col-sm-2 col-form-label">Name</label>
+					<label for="input-name" class="col-sm-2 col-form-label">Name</label>
 					<div class="col-sm-10">
-					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="option[name]" data-v-option-name required>
+					  <input type="text" class="form-control" id="input-name" placeholder="Name" name="option[name]" data-v-option-name required>
 					</div>
 				 </div>		 
 
@@ -58,9 +58,9 @@
 						<option value="text" data-v-option>Text</option>
 					  </select>
 					</div>
-					<label for="input-site-title" class="col-sm-2 col-form-label">Sort order</label>
+					<label for="input-sort-order" class="col-sm-2 col-form-label">Sort order</label>
 					<div class="col">
-					  <input type="text" class="form-control" id="input-site-title" placeholder="Name" name="option[sort_order]" value="0" data-v-option-sort_order required>
+					  <input type="text" class="form-control" id="input-sort-order" placeholder="Name" name="option[sort_order]" value="0" data-v-option-sort_order required>
 					</div>
 				  </div>		 
 
@@ -74,7 +74,7 @@
 						  <th class="text-end" style="width:100px">Sort Order</th>
 						  <th class="text-end" style="width:100px">
 							<button type="button" onclick='addTemplate("#option-template", "option_value", "#option-value")' class="btn btn-sm btn-outline-primary btn-icon">
-							  <i class="la la-plus la-lg"></i>
+							  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 							</button>
 						  </th>
 						</tr>
@@ -83,7 +83,7 @@
 						<tr data-v-option_value>
 						  <td class="text-center">
 
-								<input type="hidden" data-v-image name="option_value[0][image]" id="option_value0-input" value="">
+								<input type="hidden" data-v-image name="option_value[#option_value#][image]" id="option_value0-input" value="">
 										
 								<img data-v-image src="/media/placeholder.svg" alt=""
 								 id="option_value0-thumb"
@@ -103,10 +103,10 @@
 											data-target-input="#option_value0-input"
 											data-target-thumb="#option_value0-thumb" 
 											data-type="single">
-											<i class="la la-image la-lg"></i> <span>Set image</span>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 										</button>
 										<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia('option_value0')">
-											<i class="la la-times"></i>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 										</button>
 									</div>
 								</div>								
@@ -114,23 +114,23 @@
 
 						  </td>
 						  <td class="text-center">
-								<input type="hidden" name="option_value[0][option_value_id]" value="" data-v-option_value-option_value_id>
-							  <input type="text" name="option_value[0][name]" value="" class="form-control" data-v-option_value-name>
+								<input type="hidden" name="option_value[#option_value#][option_value_id]" value="" data-v-option_value-option_value_id>
+							  <input type="text" name="option_value[#option_value#][name]" value="" class="form-control" data-v-option_value-name>
 							</div>
 						  </td>
 						  <td class="text-end">
-							<input type="text" name="option_value[0][sort_order]" value="0" data-v-option_value-sort_order placeholder="Sort Order" class="form-control">
+							<input type="text" name="option_value[#option_value#][sort_order]" value="0" data-v-option_value-sort_order placeholder="Sort Order" class="form-control">
 						  </td>
 						  <td class="text-end">
 							<button type="button" onclick="removeRow(this, 'option_value_id')" class="btn btn-sm btn-outline-danger btn-icon">
-							  <i class="la la-minus-circle la-lg"></i>
+							  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 							</button>
 						  </td>
 						</tr>	
 						<tr class="d-none" id="option-template">
 						  <td class="text-center">
 							
-							<input type="hidden" data-v-image name="option_value[#][image]" id="option_value#-input" value="">
+							<input type="hidden" data-v-image name="option_value[#option_value#][image]" id="option_value#-input" value="">
 									
 							<img data-v-image src="/media/placeholder.svg" alt=""
 							 id="option_value#-thumb"
@@ -148,22 +148,22 @@
 								data-target-input="#option_value#-input"
 								data-target-thumb="#option_value#-thumb"
 								data-type="single">
-								<i class="la la-image la-lg"></i> <span>Set image</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 							</button>
 						
 							
 							
 						  </td>
 						  <td class="text-center">
-							<input type="hidden" name="option_value[#][option_value_id]" value="">
-							<input type="text" name="option_value[#][name]" value="" placeholder="Option Value Name"class="form-control">
+							<input type="hidden" name="option_value[#option_value#][option_value_id]" value="">
+							<input type="text" name="option_value[#option_value#][name]" value="" placeholder="Option Value Name" class="form-control">
 						  </td>
 						  <td class="text-end">
-							<input type="text" name="option_value[#][sort_order]" value="0" size="2" placeholder="Sort Order" class="form-control">
+							<input type="text" name="option_value[#option_value#][sort_order]" value="0" size="2" placeholder="Sort Order" class="form-control">
 						  </td>
 						  <td class="text-end">
 							<button type="button" onclick="removeRow(this, 'option_value_id')" class="btn btn-sm btn-outline-danger btn-icon">
-							  <i class="la la-minus-circle la-lg"></i>
+							  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 							</button>
 						  </td>
 						</tr>
@@ -172,12 +172,12 @@
 	
 				  </div>
 			
-			</div>
+			</section>
 
 	</form>
 	
 	@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 
 </div>
 
@@ -190,8 +190,8 @@
 
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 
 

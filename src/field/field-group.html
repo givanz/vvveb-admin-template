@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,10 +14,10 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 
-	   <div class="actions flex-column flex-md-row">
+	   <header class="actions flex-column flex-md-row">
 			<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-reader-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#notebook"></use></svg>
 						<span>Field Group</span>
 					</h4>
 			</div>
@@ -25,12 +25,12 @@
 			<div class="btns">
 				<a href="/admin/?module=field/field-groups" title="Return to field groups"
 					class="btn btn-icon btn-outline-secondary me-2">
-						<i class="la la-arrow-left"></i><span>Return to field groups</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Return to field groups</span>
 				 </a>
 				 
 
 				<div class="btn-group" role="group" aria-label="Field types">
-					<button type="button" class="btn btn-outline-primary btn-icon" id="add-btn"><i class="la la-plus"></i> Add field</button>
+					<button type="button" class="btn btn-outline-primary btn-icon" id="add-btn"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> Add field</button>
 					<button type="button" class="btn btn-outline-primary btn-icon px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left:1px"></button>
 					<div class="dropdown-menu pt-0 field-types">
 						<input type="search" id="field-type-search" class="form-control form-control-sm" placeholder="Type to filter" name="search">
@@ -40,7 +40,7 @@
 							<h6 class="dropdown-header">Basic</h6>
 						  </li>
 						  <li class="field">
-							<a class="dropdown-item" href="#"><i class="icon-text-outline"></i><span>Text</span></a>
+							<a class="dropdown-item" href="#" data-type="text"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#text-size"></use></svg><span>Text</span></a>
 						  </li>
 						</ul>
 						</div>
@@ -49,13 +49,13 @@
 				 
 				  
 				  <button type="submit" onclick="saveFieldGroup(event)"  class="btn btn-primary btn-icon ms-1">
-					<i class="icon-create-outline"></i> 
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> 
 					<span>Save</span>
 				  </button>
 		   </div>
-	 </div>
+	 </header>
 
-	  <div id="main-content">
+	  <section id="main-content">
 
 			@@include('../_includes/notifications.html')
 			
@@ -84,9 +84,9 @@
 			<div class="col" draggable="true">
 				
 					<div class="input">
-                      <label for="input-name" class="col-form-label">Name</label>
+                      <label for="field-name" class="col-form-label">Name</label>
                       <div class="">
-                        <input readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][name]" data-v-field_group-name="" required="" value="test">
+                        <input readonly type="text" class="form-control" id="field-name" placeholder="Name" name="field[#][name]" data-v-field_group-name="" required="" value="test">
                       </div>
                     </div>
 
@@ -99,9 +99,9 @@
 			<div class="col" draggable="true">
 				
 					<div class="input">
-                      <label for="input-name" class="col-form-label">Slug</label>
+                      <label for="field-slug" class="col-form-label">Slug</label>
                       <div class="">
-                        <input readonly type="text" class="form-control" id="input-slug" placeholder="Name" name="field[#][slug]" data-v-field_group-slug="" required="" value="test">
+                        <input readonly type="text" class="form-control" id="field-slug" placeholder="Name" name="field[#][slug]" data-v-field_group-slug="" required="" value="test">
                       </div>
                     </div>
 
@@ -113,9 +113,9 @@
 			<div class="col" draggable="true">
 				
 					<div class="input">
-                      <label for="input-name" class="col-form-label">Description</label>
+                      <label for="field-description" class="col-form-label">Description</label>
                       <div class="">
-                        <textarea readonly type="text" class="form-control" id="input-name" placeholder="Name" name="field[#][1][name]" data-v-field_group-name="" required="" value="test">
+                        <textarea readonly type="text" class="form-control" id="field-description" placeholder="Name" name="field[#][1][name]" data-v-field_group-name="" required="" value="test">
 						</textarea>
                       </div>
                     </div>
@@ -206,19 +206,18 @@
 					<ul class="nav nav-tabs" id="settings-tabs" role="tablist" style="margin-top: -1px;margin-left: -1px;">
 					
 					  <li class="nav-item" role="presentation">
-						<button class="nav-link active" id="group-general-tab" data-bs-toggle="tab" data-bs-target="#group-general" type="button" role="tab" aria-controls="group-general" aria-selected="true"><i class="icon-settings-outline"></i> <span>General</span></button>
+						<button class="nav-link active" id="group-general-tab" data-bs-toggle="tab" data-bs-target="#group-general" type="button" role="tab" aria-controls="group-general" aria-selected="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg> <span>General</span></button>
 					  </li>
 
-<!--						
+
 					  <li class="nav-item" role="presentation">
-						<button class="nav-link" id="group-presentation-tab" data-bs-toggle="tab" data-bs-target="#group-presentation" type="button" role="tab" aria-controls="presentation" aria-selected="false" tabindex="-1"><i class="icon-brush-outline"></i> <span>Presentation</span></button>
+						<button class="nav-link" id="group-presentation-tab" data-bs-toggle="tab" data-bs-target="#group-presentation" type="button" role="tab" aria-controls="presentation" aria-selected="false" tabindex="-1"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <span>Presentation</span></button>
 					  </li>		  
--->
-<!--
+
 					   <li class="nav-item" role="presentation">
-						<button class="nav-link" id="group-conditionals-tab" data-bs-toggle="tab" data-bs-target="#group-conditionals" type="button" role="tab" aria-controls="group-conditionals" aria-selected="false" tabindex="-1"><i class="icon-help-circle-outline"></i> <span>Conditionals</span></button>
+						<button class="nav-link" id="group-conditionals-tab" data-bs-toggle="tab" data-bs-target="#group-conditionals" type="button" role="tab" aria-controls="group-conditionals" aria-selected="false" tabindex="-1"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg> <span>Conditionals</span></button>
 					  </li>					 
--->					  
+
 					</ul>
 					
 					<div class="tab-content" style="border-left: 1px solid var(--bs-border-color);border-right: 1px solid var(--bs-border-color);border-bottom: 1px solid var(--bs-border-color);">
@@ -298,7 +297,7 @@
 								 </div>	
 							</div>	
 						</div>					
-<!--						
+					
 						<div class="tab-pane" id="group-presentation" role="tabpanel" aria-labelledby="presentation-tab">					
 						
 							<div class="m-3">
@@ -310,10 +309,10 @@
 								 </div>	
 							</div>	
 						</div>							
--->						
-						<div class="tab-pane" id="group-conditionals" role="tabpanel" aria-labelledby="conditionals-tab">					
 
-							<div class="m-3">
+						<div class="tab-pane group-conditionals" id="group-conditionals" role="tabpanel" aria-labelledby="conditionals-tab">					
+
+							<div class="m-3 conditionals">
 							
 								<div class="group">
 									<label class="group-label">Show this group if</label>
@@ -328,8 +327,8 @@
 						</div>	
 					</div>	
 				 </div>	
-			</div>
-		</div>
+			</section>
+		</main>
 	</form>
 
 	@@include('../_includes/main-footer.html')
@@ -339,19 +338,19 @@
 
 <div id="actions" class="bg-body-tertiary border">
 	<button class="btn btn-sm btn-outline-primary btn-edit border-0" title="Edit">
-		<i class="la la-angle-down"></i>
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-down"></use></svg>
 	</button>
 
 	<button class="btn btn-sm btn-outline-primary btn-add border-0" title="Add new">
-		<i class="la la-plus"></i>
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 	</button>
 
 	<button class="btn btn-sm btn-outline-primary btn-clone border-0" title="Clone">
-		<i class="la la-copy"></i>
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 	</button>
 
 	<button class="btn btn-sm btn-outline-danger btn-remove border-0" title="Delete">
-		<i class="la la-times"></i>
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 	</button>
 </div>
 
@@ -377,7 +376,7 @@
 <script>
 @@include('../_includes/media-variables.html')
 
-let sortOrder = 0;
+var sortOrder = 0;
 function saveFieldGroup(e) {
 	sortOrder = 0;
 	let rows = document.querySelectorAll(".dragzone > [data-v-row].row");
@@ -399,8 +398,8 @@ function saveFieldGroup(e) {
 	//e.preventDefault();
 }
 
-let fieldSearch = document.getElementById("field-type-search");
-let fieldList = document.getElementById("field-type-list");
+var fieldSearch = document.getElementById("field-type-search");
+var fieldList = document.getElementById("field-type-list");
 fieldSearch.addEventListener("input", function (e) {
 	let text = this.value.toLowerCase();
 	fieldList.querySelectorAll("li").forEach((el) => {
@@ -412,7 +411,7 @@ fieldSearch.addEventListener("input", function (e) {
 	});
 });
 
-let groupType = document.querySelector("[data-v-field_group-type]");
+var groupType = document.querySelector("[data-v-field_group-type]");
 groupType.addEventListener("change", function (e) {
 	let value = this.value;
 	document.querySelectorAll("[data-post-subtype]").forEach(el => {
@@ -429,9 +428,9 @@ groupType.addEventListener("change", function (e) {
 groupType.dispatchEvent(new Event('change'));
 
 
-let nameInput = document.querySelector('#group-general [data-v-field_group-name]');
-let slugInput = document.querySelector('#group-general [data-v-field_group-slug]');
-let orig = slugify(nameInput.value);
+var nameInput = document.querySelector('#group-general [data-v-field_group-name]');
+var slugInput = document.querySelector('#group-general [data-v-field_group-slug]');
+var orig = slugify(nameInput.value);
 
 //change slug only if current value is the same as the text
 nameInput.addEventListener('keyup', function (e) {
@@ -453,15 +452,15 @@ nameInput.addEventListener('keyup', function (e) {
 </script>
 
 
-<script src="drag.js"></script>
+<script src="drag.js" data-ajax-reload="1"></script>
 <link href="drag.css"  rel="stylesheet"></link>
 
 @@include('../_includes/footer-scripts.html')
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link href="libs/media/media.css" rel="stylesheet">
-<script id="field-group-js" src="js/field-group.js"></script>
+<script id="field-group-js" src="js/field-group.js" data-ajax-reload="1"></script>
 
 @@include('../_includes/footer.html')

@@ -22,7 +22,7 @@
 			<th class="text-start">Price</th>
 			<th class="text-end">
 			  <button type="button" id="button-subscription" class="btn btn-sm btn-outline-primary btn-icon" onclick='addTemplate("#subscription-template", "product_subscription", "#product-subscription")'>
-				<i class="la la-plus la-lg"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 			  </button>
 			</th>
 		  </tr>
@@ -30,44 +30,44 @@
 		<tbody>
 		  <tr data-v-subscription>
 			<td class="text-start">
-			  <select name="product_subscription[0][subscription_plan_id]" class="form-select" data-v-subscription_plan_id>
+			  <select name="product_subscription[#product_subscription#][subscription_plan_id]" class="form-select" data-v-subscription_plan_id>
 				<option value="1" data-v-option>Subscription Plan 1</option>
 				<option value="2" data-v-option>Subscription Plan 2</option>
 				<option value="3" data-v-option>Subscription Plan 3</option>
 			  </select>
 			</td>
 			<td class="text-start">
-			  <select name="product_subscription[0][user_group_id]" class="form-select" data-v-user_group_id>
+			  <select name="product_subscription[#product_subscription#][user_group_id]" class="form-select" data-v-user_group_id>
 				<option value="1" data-v-option>Default group</option>
 			  </select>
 			</td>
 			<td class="text-end">
-			  <input type="number" name="product_subscription[0][trial_price]" value="0" placeholder="Trial Price" class="form-control" data-v-subscription-trial_price>
+			  <input type="number" name="product_subscription[#product_subscription#][trial_price]" value="0" placeholder="Trial Price" class="form-control" data-v-subscription-trial_price>
 			</td>
 			<td class="text-end">
-			  <input type="number" name="product_subscription[0][price]" value="0" placeholder="Price" class="form-control" data-v-subscription-price>
+			  <input type="number" name="product_subscription[#product_subscription#][price]" value="0" placeholder="Price" class="form-control" data-v-subscription-price>
 			</td>
 			<td class="text-end">
 			  <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
-				<i class="la la-minus-circle la-lg"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 			  </button>
 			</td>
 		  </tr> 
 		  <tr class="d-none" id="subscription-template">
 			<td class="text-start">
-			  <select name="product_subscription[#][subscription_plan_id]" class="form-select" data-v-subscription_plan_id>
+			  <select name="product_subscription[#product_subscription#][subscription_plan_id]" class="form-select" data-v-subscription_plan_id>
 				<option value="1" data-v-option>Subscription Plan 1</option>
 				<option value="2" data-v-option>Subscription Plan 2</option>
 				<option value="3" data-v-option>Subscription Plan 3</option>
 			  </select>
 			</td>
 			<td class="text-start">
-			  <select name="product_subscription[#][user_group_id]" class="form-select" data-v-user_group_id>
+			  <select name="product_subscription[#product_subscription#][user_group_id]" class="form-select" data-v-user_group_id>
 				<option value="1" data-v-option>Default group</option>
 			  </select>
 			</td>
 			<td class="text-end">
-			  <input type="number" name="product_subscription[#][trial_price]" value="0" placeholder="Trial Price" class="form-control" data-v-trial_price>
+			  <input type="number" name="product_subscription[#product_subscription#][trial_price]" value="0" placeholder="Trial Price" class="form-control" data-v-trial_price>
 			</td>
 			<td class="">
 				<div class="form-check form-switch form-switch-lg">
@@ -77,18 +77,18 @@
 				 </label>
 				</div>
 
-			  <select name="product_subscription[#][subscription_plan_id]" class="form-select  d-none" data-v-subscription-type>
+			  <select name="product_subscription[#product_subscription#][subscription_plan_id]" class="form-select  d-none" data-v-subscription-type>
 				<option value="p" data-v-option>Percentage off</option>
 				<option value="f" data-v-option>Amount off</option>
 				<option value="n" data-v-option>Flat rate</option>
 			  </select>
 
-			    <input type="number" name="product_subscription[#][price]" value="0" placeholder="Price" class="form-control d-none" data-v-subscription-discount>
-			    <input type="number" name="product_subscription[#][price]" value="0" placeholder="Price" class="form-control d-none" data-v-subscription-price>
+			    <input type="number" name="product_subscription[#product_subscription#][price]" value="0" placeholder="Price" class="form-control d-none" data-v-subscription-discount>
+			    <input type="number" name="product_subscription[#product_subscription#][price]" value="0" placeholder="Price" class="form-control d-none" data-v-subscription-price>
 			</td>
 			<td class="text-end">
 			  <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
-				<i class="la la-minus-circle la-lg"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 			  </button>
 			</td>
 		  </tr>

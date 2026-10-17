@@ -4,29 +4,29 @@
 
 		<button onclick="removeTaxonomy(this)" title="Remove taxonomy"
 				class="btn btn-outline-danger btn-sm border-0">
-			<i class="la la-trash"></i>
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 		</button>
 		<button onclick="addTaxonomy(this)" title="Add child taxonomy"
 				class="btn btn-outline-secondary btn-sm">
-			<i class="la la-plus"></i>
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 		</button>
 		<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 				aria-controls="filters" title="Edit"
 				class="btn btn-outline-secondary btn-sm expand-btn">
-			<i class="la la-pen"></i>
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 		</button>
 	</div>
 	<div class="dd3-content">
 
 		<label class="form-check checkbox">
 			<input type="checkbox" class="form-check-input" data-v-vvveb-action="table.selectRow" value="" name="taxonomy_item_id[]" data-v-taxonomy_item_id>
-			<i class="icon-link-outline type-icon opacity-75"></i>
+			<svg class="svg-icon type-icon opacity-75" aria-hidden="true"><use href="/admin/default/img/icons.svg#link"></use></svg>
 			<!--
-			<i class="icon-cube-outline opacity-75"          data-v-if="menu.type = 'product'"></i>
-			<i class="icon-document-outline opacity-75"      data-v-if="menu.type = 'page'"></i>
-			<i class="icon-document-text-outline opacity-75" data-v-if="menu.type = 'post'"></i>
-			<i class="icon-link-outline opacity-75"          data-v-if="menu.type = 'link'"></i>
-			<i class="icon-text-outline opacity-75"          data-v-if="menu.type = 'text'"></i>
+			<svg class="svg-icon opacity-75"          data-v-if="menu.type = 'product'" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+			<svg class="svg-icon opacity-75"      data-v-if="menu.type = 'page'" aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
+			<svg class="svg-icon opacity-75" data-v-if="menu.type = 'post'" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
+			<svg class="svg-icon opacity-75"          data-v-if="menu.type = 'link'" aria-hidden="true"><use href="/admin/default/img/icons.svg#link"></use></svg>
+			<svg class="svg-icon opacity-75"          data-v-if="menu.type = 'text'" aria-hidden="true"><use href="/admin/default/img/icons.svg#text-size"></use></svg>
 			-->
 			<span class="form-check-label" data-v-taxonomy_item-name>New item</span>
 			<span class="badge bg-body-tertiary text-muted border ms-3" data-v-taxonomy_item-url></span>
@@ -56,7 +56,7 @@
                   </span>
 
                   <span class="button-text">
-					<i class="icon-create-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
                     <span>Save changes</span>
                   </span>
 

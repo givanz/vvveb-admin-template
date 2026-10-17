@@ -1,8 +1,8 @@
 <div class="rule row g-2 mb-3">
 	<div class="col-sm-4">
-		<select class="form-select" name="field_group[conditionals][type]" data-ui="0" data-ajax="0" data-multiple="0" data-placeholder="Select" data-allow_null="0">
+		<select class="form-select" name="field_group[conditionals][type]">
 		  <optgroup label="Post">
-			<option value="post_type" selected="selected" data-i="0">Post Type</option>
+			<option value="post_type" selected="selected">Post Type</option>
 			<option value="post_template">Post Template</option>
 			<option value="post_status">Post Status</option>
 			<option value="post_format">Post Format</option>
@@ -33,25 +33,25 @@
 		</select>
 	</div>
 	<div class="col-sm-4">
-		<select class="form-select" name="field_group[conditionals][operator]" data-ui="0" data-ajax="0" data-multiple="0" data-placeholder="Select" data-allow_null="0">
-		  <option value="==" selected="selected" data-i="0">is equal to</option>
+		<select class="form-select" name="field_group[conditionals][operator]">
+		  <option value="==" selected="selected">is equal to</option>
 		  <option value="!=">is not equal to</option>
 		</select>
 	</div>
 	<div class="col-sm-4">
 		<div class="d-flex">
-			<select class="form-select" name="field_group[conditionals][value]" data-ui="0" data-ajax="0" data-multiple="0" data-placeholder="Select" data-allow_null="0">
-			   <option value="post" selected="selected" data-i="0">Post</option>
+			<select class="form-select" name="field_group[conditionals][value]">
+			   <option value="post" selected="selected">Post</option>
 			   <option value="page">Page</option>
 			   <option value="product">Product</option>
 			   <option value="shop_order">Order</option>
 			   <option value="shop_coupon">Coupon</option>
 			 </select>
 		  <button class="btn btn-outline-primary btn-icon text-nowrap mx-2 btn-add">
-			<span>and</span> <i class="la la-plus"></i>
+			<span>and</span> <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 		  </button>
-		  <button class="btn btn-danger btn-icon btn-remove">
-			<i class="la la-minus-circle"></i>
+		  <button class="btn btn-outline-danger btn-icon btn-remove">
+			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 		  </button>
 		</div>
 	</div>

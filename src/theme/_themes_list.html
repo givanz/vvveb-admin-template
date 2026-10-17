@@ -21,7 +21,7 @@
 					<div class="buttons">
 						
 						
-						<!-- div href="#" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!-- div href="#" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#check"></use></svg> <span>Active theme</span></div -->
 						<!--	
 						<a href="#" class="btn btn-outline-primary btn-sm btn-icon btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
@@ -33,18 +33,18 @@
 							</span>
 
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Activate & Import Content</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Activate & Import Content</span>
 							</span>
 							
 						</a> -->
 
 						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active">
-							<i class="icon-eye-outline"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg>
 							<span>Preview</span>
 						</a>
 						
 						
-						<button type="submit" name="theme" value="" aria-expanded="false" class="btn btn-primary btn-sm btn-icon" onclick="document.getElementById('action').value='activate';" class="btn btn-primary btn-sm btn-icon"  data-slug="landing" data-market="vvveb"  data-v-if-not="theme.active" data-v-theme-folder>							
+						<button type="submit" name="theme" value="" aria-expanded="false" class="btn btn-primary btn-sm btn-icon" onclick="document.getElementById('action').value='activate';" data-slug="landing" data-market="vvveb" data-v-if-not="theme.active" data-v-theme-folder>							
 							<span class="loading d-none">
 								<span class="progress-text">Downloading 10%</span>
 								<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -53,7 +53,7 @@
 							</span>
 
 							<span class="button-text">
-								<i class="icon-checkmark-outline"></i> <span>Activate</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#check"></use></svg> <span>Activate</span>
 							</span>
 						</button>	
 						
@@ -65,13 +65,13 @@
 				  <div class="card-footer text-muted d-flex justify-content-between">
 						<div>
 						<a href="#" class="btn btn-outline-primary btn-sm btn-icon" target="_blank" data-v-theme-edit-url>
-							<i class="icon-color-wand-outline"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg>
 							<span>Edit theme</span>
 						</a>
 <!--
 						<a href="#" class="btn btn-outline-primary btn-sm btn-icon" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Import demo content</span>
 							</span>
 						</a>
 -->						
@@ -88,13 +88,13 @@
 								</span>
 
 								<span class="button-text">
-									<i class="icon-copy-outline"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 									<span>Duplicate</span>
 								</span>
 							</button>
 
 							<a href="#" class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active" data-v-theme-code-url>
-								<i class="icon-code-outline"></i>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#code"></use></svg>
 								<span>Code</span>
 							</a>
 							-->
@@ -114,18 +114,18 @@
 										</span>
 
 										<span class="button-text">
-											<i class="icon-copy-outline"></i>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 											<span>Duplicate</span>
 										</span>
 									</button>
 								</li>
 								<li><a class="dropdown-item" href="#" target="_blank"data-v-theme-code-url>
-									<i class="icon-code-outline text-muted"></i>
+									<svg class="svg-icon text-muted" aria-hidden="true"><use href="/admin/default/img/icons.svg#code"></use></svg>
 									<span>Code</span>
 									</a>
 								</li>
 								<li><a class="dropdown-item" href="#" target="_blank" data-v-theme-fonts-url>
-									<i class="icon-language-outline text-muted"></i>
+									<svg class="svg-icon text-muted" aria-hidden="true"><use href="/admin/default/img/icons.svg#language"></use></svg>
 									<span>Custom fonts</span>
 									</a>
 								</li>
@@ -140,7 +140,7 @@
 										</span>
 
 										<span class="button-text">
-											<i class="icon-sync"></i> <span>Force update</span>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg> <span>Force update</span>
 										</span>
 									</button>
 									<button type="submit" name="theme" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-slug="landing" data-v-if-not="theme.active" data-v-theme-folder>							
@@ -152,7 +152,7 @@
 										</span>
 
 										<span class="button-text">
-											<i class="icon-close"></i> <span>Delete</span>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> <span>Delete</span>
 										</span>
 									</button>				
 								</li>
@@ -186,7 +186,7 @@
 					<div class="buttons">
 						
 						
-						<!-- div href="#" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!-- div href="#" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#check"></use></svg> <span>Active theme</span></div -->
 						<!--	
 						<a href="#" class="btn btn-outline-primary btn-sm btn-icon btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
@@ -198,13 +198,13 @@
 							</span>
 
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Activate & Import Content</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Activate & Import Content</span>
 							</span>
 							
 						</a> -->
 
 						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active">
-							<i class="icon-eye-outline"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg>
 							<span>Preview</span>
 						</a>
 						
@@ -218,7 +218,7 @@
 							</span>
 
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Activate</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Activate</span>
 							</span>
 							
 						</a>
@@ -234,7 +234,7 @@
 <!--
 						<a href="#" class="btn btn-outline-primary btn-sm btn-icon" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Import demo content</span>
 							</span>
 						</a>
 -->						
@@ -271,7 +271,7 @@
 					<div class="buttons">
 						
 						
-						<!-- div href="#" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><i class="la la-lg la-check"></i> <span>Active theme</span></div -->
+						<!-- div href="#" class="btn-success btn-sm btn-icon" data-v-if="theme.active" data-v-vvveb-action="themes.activate"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#check"></use></svg> <span>Active theme</span></div -->
 						<!--	
 						<a href="#" class="btn btn-outline-primary btn-sm btn-icon btn-preview"  data-slug="landing" data-market="vvveb" data-v-theme-activate-url data-v-if-not="theme.active">
 						
@@ -283,13 +283,13 @@
 							</span>
 
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Activate & Import Content</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Activate & Import Content</span>
 							</span>
 							
 						</a> -->
 
 						<a href="#" data-v-theme-preview-url class="btn btn-outline-secondary btn-sm btn-icon" target="_blank" data-v-if-not="theme.active">
-							<i class="icon-eye-outline"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg>
 							<span>Preview</span>
 						</a>
 						
@@ -303,7 +303,7 @@
 							</span>
 
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Activate</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Activate</span>
 							</span>
 							
 						</a>
@@ -319,7 +319,7 @@
 <!--
 						<a href="#" class="btn btn-outline-primary btn-sm btn-icon" data-v-vvveb-action="themes.importModal" data-slug="landing" data-market="vvveb">
 							<span class="button-text">
-								<i class="icon-color-wand-outline"></i> <span>Import demo content</span>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <span>Import demo content</span>
 							</span>
 						</a>
 -->						

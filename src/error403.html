@@ -6,7 +6,7 @@
        
     @@include('./_includes/sidebar.html')
 
-    <div class="main h-100">
+    <main class="h-100">
 
 	@@include('./_includes/top-header.html')
 	
@@ -17,7 +17,7 @@
 				
 				 <div class="container">
 					<div class="text-center">
-						<i class="la display-1 text-danger la-exclamation-circle"></i>
+						<svg class="svg-icon fs-1 text-danger" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-circle"></use></svg>
 					</div>
 
 					<h2 class="heading1 text-center fw-normal mb-3">Permission denied!</h2>
@@ -45,7 +45,7 @@
 			  
 
 					<div class="mx-auto text-center">
-						<a href="{$this.adminPath}" id="back-btn" class="btn btn-primary"><i class="la la-arrow-left"></i> Go back</a>
+						<a href="{$this.adminPath}" id="back-btn" class="btn btn-primary"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg> Go back</a>
 					</div>
 
 				</div> 
@@ -54,7 +54,7 @@
 		 
 		</div>
 		@@include('./_includes/main-footer.html')
-	</div>
+	</main>
 
 
 </div>

@@ -7,16 +7,16 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 
 			
-		<div class="actions">
+		<header class="actions">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-cube-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
 					<span>@@title</span>
 				</h4>
 			</div>
@@ -24,27 +24,27 @@
 			<div>
 				<a href="{$this.adminPath}index.php?module=content/menus" title="Comment list"
 					class="btn btn-icon btn-outline-secondary me-1">
-						<i class="la la-arrow-left"></i><span>@@title list</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>@@title list</span>
 				 </a>
 			 </div>
 			 
 			<div @@add_button>
 				@@if (prefix !== "taxonomy") {
 				<button class="btn btn-icon btn-outline-secondary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu-settings" aria-expanded="false">
-					<i class="la la-cog text-primary"></i>
+					<svg class="svg-icon text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg>
 				  </button>
 				}
 
 				<button type="submit" class="btn btn-primary btn-icon ms-1" onclick="addTaxonomy(this)">
-					<i class="la la-plus"></i> <span>Add item</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add item</span>
 				</button>
 			</div>
 
-		</div>
+		</header>
 
         <div id="content">
 	
-			<div class="content">
+			<section class="content">
 		
 		
             <div class="col-md-12">
@@ -74,7 +74,7 @@
 								<input type="text" class="form-control" placeholder="Slug" aria-label="Slug" name="menu_data[slug]" required data-v-slug>
 							  </div>
 							  <div class="col-auto">
-								<button type="submit" class="btn btn-primary btn-icon"><i class="icon-create-outline"></i><span>Save</span></button>
+								<button type="submit" class="btn btn-primary btn-icon"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg><span>Save</span></button>
 							  </div>
 							</div>
 							
@@ -103,7 +103,7 @@
                 <div class="dd" id="taxonomies" data-v-categories>
 					<div class="d-flex">
 						<button class="btn btn-outline-secondary btn-sm me-2 mb-1" onclick="toggleAll(this)">
-								<i class="icon-chevron-down-outline"></i>
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-down"></use></svg>
 						</button>	
 					
 						<label class="form-check">
@@ -117,13 +117,13 @@
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 									aria-controls="filters" title="Edit selected"
 									class="btn btn-primary btn-sm">
-								<i class="icon-create-outline"></i> Edit selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 							</button>
 							-->
 						   <button type="submit" name="action" value="delete" id="bulk-delete-btn" aria-expanded="false" data-v-check-permission-delete
 									title="Delete selected"
 									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger btn-sm">
-									<i class="icon-trash-outline"></i> Delete selected
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 							</button>
 						
 						</div>	
@@ -143,12 +143,12 @@
 				
 				<div data-v-class-if-d-none="this.@@prefix_id && this.count > 0" class="no-items">
                     <div>
-                      <div class="text-center mb-4">
-                        <i class="icon-cube-outline display-4 lh-1 text-secondary text-opacity-75"></i>
-                        <div class="mt-3">No items to display!</div>
+                      <div class="text-center m-4">
+                        <svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+                        <div class="mt-3 text-secondary">No items to display!</div>
 
                         <a href="#" onclick="addTaxonomy(this)" class="btn btn-outline-secondary btn-icon mt-4" data-v-class-if-not-d-none="this.@@prefix_id">
-                          <i class="icon-add-outline"></i>
+                          <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
                           <span>Add item</span>
                         </a>
 
@@ -166,10 +166,10 @@
 			@@include('@@taxonomy_template')
 		</div>
 
-        </div>
+        </section>
     </div>
 		@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
 
 @@include('../_includes/footer-scripts.html')
@@ -186,18 +186,18 @@
 
 <script id="jquery-js" src="js/jquery.min.js"></script>
 <script id="nestable-js" src="libs/nestable/jquery.nestable.js"></script>
-<script src="libs/autocomplete/autocomplete.js"></script>	
+<script src="libs/autocomplete/autocomplete.js" data-ajax-reload="1"></script>	
 <script id="functions-js" src="/js/admin/functions.js"></script>	
 
 <script>
 @@include('../_includes/media-variables.html')
-let linkUrl           = '{ $this->linkUrl }';
-let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+var linkUrl           = '{ $this->linkUrl }';
+var vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
 </script>
-<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
+<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js" data-ajax-reload="1"></script>	
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js"src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js"src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 
 <script id="tinymce-options-js" src="/js/libs/tinymce-options.js"></script>
@@ -214,7 +214,7 @@ var nestable = $('#taxonomies').nestable({
 	}
 });
 
-let editorInstances = [];
+var editorInstances = [];
 if (typeof tinyMceOptions  !== 'undefined') {
 	delete tinyMceOptions["selector"];
 }
@@ -279,8 +279,8 @@ $("#taxonomies").on("change", '.dd3-item .dd-title, [name="item_id_text"]',funct
 });
 
 
-const toastLiveExample = document.getElementById('taxonomyToast');
-const toast = new bootstrap.Toast(toastLiveExample, {animation:false});
+var toastLiveExample = document.getElementById('taxonomyToast');
+var toast = new bootstrap.Toast(toastLiveExample, {animation:false});
 
 function getOrder(item) {
 	let parent = $(item).parents(".dd3-item:first");
@@ -307,7 +307,7 @@ function saveOrder(item) {
 			data: {@@prefix_items:data, csrf: $("[name=csrf]").val()},
 			//dataType: 'json',
 			complete: function(data) {
-				$("#taxonomyToast .message").html('<i class="la la-info-circle fs-2 me-2"></i><span class="fs-6">' + data.responseText + '</span>');
+				$("#taxonomyToast .message").html('<svg class="svg-icon fs-2 me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg><span class="fs-6">' + data.responseText + '</span>');
 				toast.show();
 				//$('#cart > button').button('reset');
 			},
@@ -371,9 +371,9 @@ function deleteItem(item) {
 function save() {
 	let element = this;
 	let item = $(this).closest(".dd3-item");
-	let @@prefix_item_id = item.data("vId");
+	let @@prefix_item_id = item[0].dataset.vId;
 	let parent = $(item).parents(".dd3-item:first");
-	let parent_id = parent.data("vId");
+	let parent_id = parent[0]?.dataset.vId ?? 0;
 	let @@prefix_id = $("input[name='@@prefix_id']").val();
 
 	let instances = editorInstances[item.data("vId")];
@@ -389,7 +389,7 @@ function save() {
 	}*/
 	
 	let data = $("> .expand input:not([name=item_id]):not([name=item_id_text]),> .expand .field:visible input[name=item_id],> .expand .field:visible input[name=item_id_text],> .expand select, > .expand textarea", item).serializeArray();
-
+console.log(@@prefix_item_id);
 	if (@@prefix_item_id) data.push({"name":"@@prefix_item_id", "value": @@prefix_item_id});
 	data.push({"name":"@@prefix_id", "value": @@prefix_id});
 	data.push({"name":"parent_id", "value": parent_id ?? 0});
@@ -449,7 +449,7 @@ function save() {
 				toast.show();
 		});
 */		
-
+console.log(data);
 	$.ajax({
 			url: location.pathname + location.search + "&action=save",
 			type: 'post',
@@ -474,10 +474,15 @@ function save() {
 			if ($(element).is('button'))  {
 				$(element).removeAttr("disabled");
 			}
+	
+			item[0].dataset.vId = data.@@prefix_item_id ?? 0;
+			if (item[0].querySelector('[name="@@prefix_item_id"]')) {
+				item[0].querySelector('[name="@@prefix_item_id"]').value = data.@@prefix_item_id ?? 0;
+			}
+			if (item[0].querySelector('[name="@@prefix_item_id[]"]')) {
+				item[0].querySelector('[name="@@prefix_item_id[]"]').value = data.@@prefix_item_id ?? 0;
+			}
 
-			item[0].dataset.vId = data.menu_item_id ?? 0;
-			item[0].querySelector('[name="taxonomy_item_id[]"]').value = data.menu_item_id ?? 0;
-			item.data("vId", data.menu_item_id ?? 0);
 			$("#taxonomyToast .message").html(message);
 			toast.show();
 		})
@@ -493,7 +498,7 @@ function save() {
 }
 
 $("#taxonomies").on("click", ".btn-save", save);
-let noItems = document.querySelector(".no-items");
+var noItems = document.querySelector(".no-items");
 
 function addTaxonomy(button, event) {
 	console.log(button, event);
@@ -542,7 +547,7 @@ function removeTaxonomy(btnDelete) {
 }
 
 
-let typeFields = {
+var typeFields = {
 	'product':['product', 'img'],
 	'post':['post', 'img'],
 	'page':['page', 'img'],
@@ -616,7 +621,7 @@ document.addEventListener("click", function (e) {
 	
 });
 
-let nameInput = document.querySelector('[data-v-name]');
+var nameInput = document.querySelector('[data-v-name]');
 if (nameInput) {
 	let slugInput = document.querySelector('[data-v-slug]');
 	let orig = slugify(nameInput.value);

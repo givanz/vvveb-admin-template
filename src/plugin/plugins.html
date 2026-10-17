@@ -6,15 +6,15 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 				
-		<div class="actions mb-3">
+		<header class="actions mb-3">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-extension-puzzle-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#puzzle"></use></svg>
 					<span>Plugins</span>
 				</h4>
 			</div>
@@ -26,13 +26,13 @@
 			   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 						aria-controls="filters" title="Delete selected"
 						class="btn btn-primary">
-					<i class="icon-create-outline"></i> Edit selected
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 				</button>
 				-->
 			   <button type="button" data-bs-toggle="collapse" href="#" aria-expanded="false"
 						aria-controls="filters" title="Delete selected" onclick="var action=document.getElementById('action');action.value='delete';if(confirm('Are you sure?')) action.form.submit()"
 						class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-					<i class="icon-trash-outline"></i> Delete selected
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 				</button>
 			
 			</div>
@@ -41,7 +41,7 @@
 			
 				 <a href data-v-url-params='{"module":"plugin/plugin"}'title=""
 						class="btn btn-outline-secondary btn-icon ms-1" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
-						<i class="la la-cloud-upload-alt la-lg"></i> Upload plugin
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#cloud-upload"></use></svg> Upload plugin
 				</a>
 
 	 
@@ -49,12 +49,12 @@
 	 
 				 <a href data-v-url-params='{"module":"plugin/market"}' 
 						class="btn btn-primary btn-icon ms-1">
-					<i class="icon-add-outline"></i> Install plugin
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> Install plugin
 				</a>
 			</div>
-		</div>
+		</header>
 
-		<div id="main-content" class="plugins card-block" data-v-plugins>
+		<section id="main-content" class="plugins card-block" data-v-plugins>
 		<!--
 		<ul class="nav nav-pills pills-border small mx-2">
 		  <li class="nav-item">
@@ -80,17 +80,17 @@
 		
 		<div id="safemode" class="alert alert-warning d-flex alert-dismissable">
 			<div class="icon">
-				<i class="la la-exclamation-triangle"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
 			</div>
 			
 
-			<div class="flex-grow-1 align-self-center"data-v-notification-text>
+			<div class="flex-grow-1 align-self-center" data-v-notification-text>
 				Safe mode is active and plugins are not loaded, if you have trouble with a plugin you can disable it below.
 			</div>
 
 			<button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">
-					<!-- <i class="la la-times"></i> -->
+					<!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
 				</span>
 			</button>			
 			
@@ -106,7 +106,28 @@
 			
 			@@include('../_includes/notifications.html')
 
-				<ul class="nav nav-pills pills-border small mx-2 mb-3 float-start" data-v-plugin-categories>
+				<div class="input-group">
+					<input type="search" name="search" value="" id="plugin-search" class="form-control" placeholder="Filter plugin">
+					<div class="pills-border p-1 border">
+					  <input type="radio" name="status" value="" id="all" class="form-check-input btn-check">
+					   <label class="form-check-label btn btn-outline-secondary btn-sm" for="all">
+							<span>All</span>
+					   </label>					
+						
+						
+						<input type="radio" name="status" value="active" id="active" class="form-check-input btn-check">
+						<label class="form-check-label btn btn-outline-secondary btn-sm" for="active">
+							<span>Active</span>
+						</label>			
+						
+						<input type="radio" name="status" value="inactive" id="inactive" class="form-check-input btn-check">
+						<label class="form-check-label btn btn-outline-secondary btn-sm" for="inactive">
+							<span>Inactive</span>
+						</label>			
+					</div>
+				</div>
+				
+				<ul class="nav nav-pills pills-border small my-3" data-v-plugin-categories>
 				  <li class="nav-item">
 					<a class="nav-link" href="#"  data-v-url-params='{"module":"plugin/plugins"}'>All</a>
 				  </li>
@@ -127,33 +148,15 @@
 				  </li>  
 				</ul>
 				
-				
-				<div class="float-end pills-border">
 
-                  <input type="radio" name="status" value="" id="all" class="form-check-input btn-check">
-				   <label class="form-check-label btn btn-outline-secondary btn-sm" for="all">
-						<span>All</span>
-                   </label>					
-					
-					
-					<input type="radio" name="status" value="active" id="active" class="form-check-input btn-check">
-					<label class="form-check-label btn btn-outline-secondary btn-sm" for="active">
-						<span>Active</span>
-					</label>			
-					
-					<input type="radio" name="status" value="inactive" id="inactive" class="form-check-input btn-check">
-					<label class="form-check-label btn btn-outline-secondary btn-sm" for="inactive">
-						<span>Inactive</span>
-					</label>			
-				</div>
 
 			@@include('_plugins_list.html', {"actions":true, "thumbs":true})		
 
 		</form>
-		</div>
+		</section>
 
 		@@include('../_includes/main-footer.html')
-      </div>
+      </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')
@@ -165,14 +168,13 @@ function resizeIFrameToFitContent( iFrame ) {
 }
 
 window.addEventListener('DOMContentLoaded', function(e) {
-
     var iFrame = document.getElementById( 'plugin-check' );
     resizeIFrameToFitContent( iFrame );
 });
 </script>
 <script>
-let table = document.querySelector(".plugins-table");
-let hash = window.location.hash.replace("#", "");
+var table = document.querySelector(".plugins-table");
+var hash = window.location.hash.replace("#", "");
 function filterPluginStatus(status) {
 	table.classList.remove("active","inactive");
 	table.classList.add(status);
@@ -187,5 +189,23 @@ document.querySelectorAll('input[name="status"]').forEach(e => e.addEventListene
 if (["active", "inactive"].includes(hash)) {
 	filterPluginStatus(hash);
 }
+
+var search = document.querySelector("#plugin-search");
+
+search.addEventListener('input', function(e) {
+	let search = this.value.toLowerCase().trim();
+    for (const row of table.rows) {
+		if (search) {
+			if (row.id.indexOf(search) > -1 || row.querySelector('[data-v-plugin-description]')?.innerText.toLowerCase().indexOf(search) > -1) {
+				row.style.display = "";
+			} else {
+				row.style.display = "none";
+			}
+		} else {
+			row.style.display = "";
+		}
+	}
+});
+
 </script>
 @@include('../_includes/footer.html')

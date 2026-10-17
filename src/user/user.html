@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,34 +14,34 @@
 	   <input type="hidden" name="action" id="action" value="loginAs">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions">
+	   <header class="actions">
 			<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-person-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg>
 						<span>User</span>
 					</h4>
 			</div>
 			<div class="btns">			
 				<a href="{$this.adminPath}index.php?module=user/users" title="User list"
 					class="btn btn-icon btn-outline-secondary">
-						<i class="la la-arrow-left"></i><span>User list</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>User list</span>
 				 </a>				
 				 
 				 <button type="submit" name="action" value="loginAs" title="Login as user"
 					class="btn btn-outline-primary btn-icon" data-v-if="this.user">
-						<i class="la la-user"></i><span>Login as user</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg><span>Login as user</span>
 				 </button>
 				  
 				  <button type="submit" name="action" value="save" 
 					 class="btn btn-primary btn-icon ms-1"
 					>
-						<i class="icon-create-outline me-2"></i>
+						<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 						<span>Save user</span>
 				  </button>
 		   </div>
-	 </div>
+	 </header>
 	   
-	  <div id="main-content" class="px-4">
+	  <section id="main-content" class="px-4">
 
 				@@include('../_includes/notifications.html')
 				
@@ -79,7 +79,7 @@
 									   class="btn btn-primary btn-sm"
 									   
 									   data-v-order-url>
-											<i class="la la-hand-pointer"></i>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 									</a>
 										
 								</td>
@@ -92,7 +92,7 @@
 								<td class="text-center">$1,005.00</td>
 								<td class="text-center">
 									<a href="#" class="btn btn-primary btn-sm" >
-										<i class="la la-hand-pointer"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 									</a>
 								</td>
 							</tr>
@@ -103,8 +103,8 @@
 								<td>31/05/2018</td>
 								<td class="text-center">$1,005.00</td>
 								<td class="text-center">
-									<a href="#" class="btn btn-primary btn-sm">
-										<i class="la la-hand-pointer"></i>
+									<a href="#" class="btn btn-outline-primary btn-sm">
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 									</a>
 								</td>
 							</tr>
@@ -112,7 +112,7 @@
 							  <td colspan="100">
 								<div class="text-center">
 								  <div>
-									<i class="la la-shopping-cart "></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-cart"></use></svg>
 									<span>No orders to display!</span>
 								  </div>
 								</div>
@@ -144,10 +144,10 @@
 								  </td>
 								  <td class="text-end align-middle">
 									  <a href="" title="Edit" class="btn btn-outline-primary btn-sm border-0" data-v-user_address-url>
-										<i class="la la-pen"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 									  </a> 
 									  <a href="" title="Delete" class="btn btn-outline-danger btn-sm border-0" data-v-user_address-delete-url>
-										<i class="la la-trash"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 									  </a>
 								 </td>
 							</tr>
@@ -155,7 +155,7 @@
 							  <td colspan="100">
 								<div class="text-center">
 								  <div>
-									<i class="la la-map-pin"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#map-pin"></use></svg>
 									<span>No addresses to display!</span>
 								  </div>
 								</div>
@@ -169,8 +169,8 @@
 					
 				</div>
 			
-			</div>
-        </div>
+			</section>
+        </main>
         </form>
 
 	@@include('../_includes/main-footer.html')
@@ -184,22 +184,22 @@
 
 <script>
 @@include('../_includes/media-variables.html')
-let usersUrl = '{ $this->usersUrl }';
-let linkUrl           = '{ $this->linkUrl }';
-let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
-let contentType       = 'post';
-let postType          = '{ $this->type }';
-let themeFonts        = {};//{ $this->themeFonts };
+var usersUrl = '{ $this->usersUrl }';
+var linkUrl           = '{ $this->linkUrl }';
+var vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+var contentType       = 'post';
+var postType          = '{ $this->type }';
+var themeFonts        = {};//{ $this->themeFonts };
 </script>
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 
 <script id="tinymce-options-js" src="/js/libs/tinymce-options.js"></script>
 <script id="tinymce-lang-code">
-let lang = "{$this->global.locale}";
+var lang = "{$this->global.locale}";
 if (lang != "en-us") {
 	tinyMceOptions["language"] = "{$this->global.locale}";
 	tinyMceOptions["directionality"] = ("{$this->global.rtl}" == "1" ? 'rtl' : 'ltr');
@@ -210,5 +210,5 @@ if (lang != "en-us") {
 <script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
 <script id="oembed-js" src="/js/libs/oembed.js"></script>
 
-<script id="content-js"src="js/content.js"></script>
+<script id="content-js"src="js/content.js" data-ajax-reload="1"></script>
 @@include('../_includes/footer.html')

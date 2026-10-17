@@ -1,29 +1,17 @@
 <table class="table table-hover middle-align plugins-table">
 <thead>
 	<tr>
-		<th class="col-cb">
-			<div class="checkbox_outer">
-
-				<label class="form-check">
-					<input type="checkbox" class="form-check-input" value="4"
-						   name="plugin[]" data-v-vvveb-action="table.bulkSelect">
-					<span class="form-check-label"></span>
-					<span class="custom-control-description">&nbsp;</span>
-				</label>
-
-
-			</div>
-		</th>
+		@@include('../_includes/bulk-select-th.html', {"value": "4", "name": "plugin[]"})
         @@if (thumbs) {
-		<th style="text-align:center;"><i class="la la-image"></i><span>Thumb</span></th>
+		<th style="text-align:center;"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg><span>Thumb</span></th>
         }
-		<th><i class="icon-cube-outline"></i><span>Extension</span></th>
-		<th style="width:100px;"><i class="icon-cube-outline"></i><span>Status</span></th>
-		<th><i class="la la-comment"></i><span>Description</span></th>
+		<th><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Extension</span></th>
+		<th style="width:100px;"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Status</span></th>
+		<th><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg><span>Description</span></th>
 		
 		@@if (actions) {
 		<th style="width:250px;text-align:center;">
-		<i class="la la-edit"></i><span>Actions</span>
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg><span>Actions</span>
 		</th>
 		}
 </tr>
@@ -46,29 +34,10 @@
 	<td class="plugin">
 			<a href="#" data-v-plugin-settings data-v-if="plugin.settings && plugin.status == 'active'"><span data-v-plugin-name>Plugin name</span></a>
 			<span data-v-if-not="plugin.settings && plugin.status=='active'" data-v-plugin-name>Plugin name</span>
-			 <!--div class="secondary-actions">
-					 
-				 
-					<a aria-expanded="false" data-v-edit-url title="Edit"
-							class="btn btn-icon btn-outline-secondary btn-sm">
-						<i class="la la-pen"></i> <span> Edit</span> 
-					</a>
-
-					<a title="Design" data-v-view-url target="_blank"
-						class="btn btn-icon btn-outline-secondary btn-sm">
-						<i class="icon-brush-outline"></i> <span>Design</span> 
-					</a>
-					
-					<a title="View" data-v-design-url target="_blank"
-						class="btn btn-icon btn-outline-secondary btn-sm">
-						<i class="icon-eye-outline"></i> <span>View</span> 
-					</a>
-
-				</div -->
 	</td>
 	
 	<td class="status">
-			<span class="badge bg-success small" data-v-if="plugin.status='active'" data-v-plugin-status>active</span>
+			<span class="badge bg-success-subtle text-body small" data-v-if="plugin.status='active'" data-v-plugin-status>active</span>
 			<span class="badge bg-body-tertiary small text-muted" data-v-if="plugin.status!='active'" data-v-plugin-status>inactive</span>
 	</td>
 	<td class="description">
@@ -78,15 +47,15 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 
-				<li class="breadcrumb-item"><a href="" data-v-plugin-url><span>Plugin homepage</a> 
+				<li class="breadcrumb-item"><a href="" data-v-plugin-url><span>Homepage</a> 
 				
 				
 				<li class="breadcrumb-item" data-v-if="plugin.support">
-					<a href="" target="_blank" data-v-plugin-support-url>Support</a>
+					<a href="" class="link-dark" target="_blank" data-v-plugin-support-url>Support</a>
 				</li>
 
 				<li class="breadcrumb-item" data-v-if="plugin.chanelog">
-					<a href="" target="_blank" data-v-plugin-chanelog-url>Changelog</a>
+					<a href="" class="link-dark" target="_blank" data-v-plugin-chanelog-url>Changelog</a>
 				</li>
 				
 				<li class="breadcrumb-item">
@@ -100,7 +69,7 @@
 				
 				<li class="breadcrumb-item">
 					<span class="text-muted">By</span>
-					<a href="" target="_blank" data-v-plugin-author-url data-v-plugin-author>Visit homepage</a>
+					<a href="" class="link-dark" target="_blank" data-v-plugin-author-url data-v-plugin-author>Visit homepage</a>
 				</li>
 				
 			 </ol>
@@ -116,16 +85,16 @@
 				
 		<div class="btn-group">
 			
-			<button type="submit" name="plugin" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary" onclick="document.getElementById('action').value='deactivate';" data-v-if="plugin.status='active'" data-v-plugin-folder>							
-				<i class="la la-power-off text-danger me-1"></i><span>Deactivate</span>
+			<button type="submit" name="plugin" value="" aria-expanded="false" class="btn btn-outline-secondary" onclick="document.getElementById('action').value='deactivate';" data-v-if="plugin.status='active'" data-v-plugin-folder>							
+				<svg class="svg-icon text-danger me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#power"></use></svg><span>Deactivate</span>
 			</button>			
 			
-			<button type="submit" name="plugin" value="" aria-expanded="false" class="btn btn-icon btn-outline-secondary" onclick="document.getElementById('action').value='checkPluginAndActivate';" data-v-if="plugin.status!='active'" data-v-plugin-folder>							
-				<i class="la la-play-circle text-primary me-1"></i><span>Activate</span>
+			<button type="submit" name="plugin" value="" aria-expanded="false" class="btn btn-outline-secondary" onclick="document.getElementById('action').value='checkPluginAndActivate';" data-v-if="plugin.status!='active'" data-v-plugin-folder>							
+				<svg class="svg-icon text-primary me-1" aria-hidden="true"><use href="/admin/default/img/icons.svg#player-play"></use></svg><span>Activate</span>
 			</button>
 			
 			
-			<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+			<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 				
 				data-bs-toggle="dropdown" 
 				aria-expanded="false" 
@@ -134,27 +103,27 @@
 			  <span class="visually-hidden">Toggle primary</span>
 			</button>
 			<ul class="dropdown-menu">
-			  <li  data-v-if="plugin.settings"><a class="dropdown-item" data-v-plugin-settings><i class="la la-cog"></i><span>Settings</span></a></li>
+			  <li  data-v-if="plugin.settings"><a class="dropdown-item" data-v-plugin-settings><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg><span>Settings</span></a></li>
 			  <li class="dropdown-header">Global</li>
 			  <li>		
 				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='deactivate';" data-v-plugin-folder>							
-					<i class="la la-power-off"></i><span>Deactivate on all sites</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#power"></use></svg><span>Deactivate on all sites</span>
 				</button>
 			  </li>
 			  <li>			
 				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='checkPluginAndActivate';" data-v-plugin-folder>							
-					<i class="la la-play-circle"></i><span>Activate on all sites</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#player-play"></use></svg><span>Activate on all sites</span>
 				</button>
 	  		  </li>
 			  <li><hr class="dropdown-divider"></li>
 			  <li>			
 				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='update';return confirm('Are you sure?')" data-v-plugin-folder>							
-					<i class="la la-sync"></i><span>Force update</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg><span>Force update</span>
 				</button>
 	  		  </li>
 			  <li>
 				<button type="submit" name="plugin" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-plugin-folder>							
-					<i class="icon-trash-outline"></i><span>Delete</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span>
 				</button>			  
 			  </li>
 			</ul>

@@ -7,7 +7,7 @@
 					<th class="text-start">Value</th>
 					<th class="text-end">
 						<button type="button" class="btn btn-sm btn-outline-primary btn-icon" id="add-attribute-btn" onclick='addTemplate("#attribute-template", "product_attribute", "#attribute").querySelectorAll("[autocomplete]").forEach(el => new _AutocompleteInput(el, el.dataset));'>
-							<i class="la la-plus la-lg"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 						</button>
 					</th>
 				</tr>
@@ -15,33 +15,33 @@
 			<tbody>
 				<tr data-v-attribute>
 					<td class="text-start" style="width: 40%;">
-						<input name="product_attribute[0][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control autocomplete"
+						<input name="product_attribute[#product_attribute#][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control autocomplete"
 				data-url="{$this.adminPath}index.php?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id>
 					</td>
 					<td class="text-start">
-						<input name="product_attribute[0][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
-						<input name="product_attribute[0][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
+						<input name="product_attribute[#product_attribute#][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
+						<input name="product_attribute[#product_attribute#][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
 					</td>
 					<td class="text-end">
 						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
-							<i class="la la-minus-circle la-lg"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 						</button>
 					</td>
 				</tr>
 				<tr class="d-none" id="attribute-template">
 					<td class="text-start" style="width: 40%;">
-						<input name="product_attribute[#][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control"
+						<input name="product_attribute[#product_attribute#][attribute_id]" value="" placeholder="Attribute" autocomplete="off" type="text" class="form-control"
 				data-url="{$this.adminPath}index.php?module=product/product&action=attributesAutocomplete" data-text="" data-v-attribute-attribute_id/>
 					</td>
 					<td class="text-start">
 						<div class="input-group">
-							<input name="product_attribute[#][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
-							<input name="product_attribute[#][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
+							<input name="product_attribute[#product_attribute#][value]" type="text" placeholder="value" class="form-control" data-v-attribute-value>
+							<input name="product_attribute[#product_attribute#][language_id]" type="hidden" value="1" class="form-control" data-v-attribute-language_id>
 						</div>
 					</td>
 					<td class="text-end">
 						<button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
-							<i class="la la-minus-circle la-lg"></i>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 						</button>
 					</td>
 				</tr>

@@ -7,7 +7,7 @@
        @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
@@ -35,32 +35,32 @@
 								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 											aria-controls="filters" title="Delete selected"
 											class="btn btn-primary">
-										<i class="icon-create-outline"></i> Edit selected
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 									</button>
 									-->
 								   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 											aria-controls="filters" title="Delete selected" id="bulk-delete"
 											class="btn btn-outline-secondary btn-sm btn-icon">
-										<i class="icon-trash-outline text-danger"></i> Delete selected
+										<svg class="svg-icon text-danger" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 									</button>
 								
 								</div>
             
 								<div class="search">
-									<input type="search" id="media-search-input" placeholder="Find a file.." />
+									<input type="search" class="form-control" id="media-search-input" placeholder="Find a file.." />
 								</div>
 								
-								<button class="btn btn-outline-secondary btn-sm btn-icon me-5 float-end" 
+								<button class="btn btn-outline-secondary btn-sm btn-icon me-1" 
 								   data-bs-toggle="collapse" 
 								   data-bs-target=".upload-collapse" 
 								   aria-expanded="false" 
 								   >
-								   <i class="la la-upload la-lg"></i>
+								   <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#upload"></use></svg>
 									Upload file
 								</button>								
 								
-								<button class="btn btn-outline-secondary btn-sm btn-icon me-2 float-end btn-new-folder">
-								   <i class="la la-folder la-lg la-rotate-270"></i>
+								<button class="btn btn-outline-secondary btn-sm btn-icon btn-new-folder">
+								   <svg class="svg-icon" style="transform: rotate(270deg);" aria-hidden="true"><use href="/admin/default/img/icons.svg#folder"></use></svg>
 									New folder
 								</button>
 							</div>
@@ -71,10 +71,10 @@
 
 							<div class="upload-collapse collapse">
 							   <button id="upload-close" type="button" class="btn btn-sm" aria-label="Close" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="true">
-								   <span aria-hidden="true"><i class="la la-times la-lg"></i></span>
+								   <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
 								</button>
 							
-							   <h3>Drop or choose files to upload</h3>
+							   <h4>Drop or choose files to upload</h4>
 							   
 							   <input type="file" multiple> 
 							   
@@ -90,12 +90,12 @@
 						
 							<div class="nothingfound" style="display:none">
 								<div class="nofiles">
-									<i class="la la-folder-open"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#folder-open"></use></svg>
 								</div>
 								<div>No files here.</div>
 								<div class="mt-4">
 									<button class="btn btn-outline-secondary btn-sm btn-icon" data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false">
-									<i class="la la-upload la-lg"></i>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#upload"></use></svg>
 									Upload file 
 									</button>
 								</div>
@@ -118,7 +118,7 @@
 		</div>
 
 		@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 
 	<div id="editor-container" class="d-none" style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:1002"></div>				
 
@@ -129,17 +129,17 @@
 	<div class="offcanvas-header justify-content-between">
 		<div class="offcanvas-title">
 			<button type="button" class="btn btn-outline-secondary btn-sm" id="prev-media" style="--bs-btn-disabled-opacity:0.25">
-				<i class="la la-arrow-left la-lg"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg>
 			</button>
 
 			<button type="button" class="btn btn-outline-secondary btn-sm" id="next-media" style="--bs-btn-disabled-opacity:0.25">
-				<i class="la la-arrow-right la-lg"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-right"></use></svg>
 			</button>
 		</div>
 
 		<div>
 			<button type="button" class="btn btn-outline-secondary mx-2" aria-label="Close" id="edit-image-btn">
-				  <i class="icon-brush-outline"></i>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg>
 				  <span>Edit image</span>
 			</button>		
 		
@@ -149,12 +149,12 @@
 				  <span class="progress-text"><span>Saving</span> ... </span>
 				</span>
 				<span class="button-text">
-				  <i class="icon-save-outline"></i> <span>Save</span>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-floppy"></use></svg> <span>Save</span>
 				</span>				
 			</button>
 
 			<button type="button" class="btn btn-outline-secondary mx-2" data-bs-dismiss="offcanvas" aria-label="Close">
-				  <i class="la la-times la-lg"></i>
+				  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 			</button>
 			
 		</div>
@@ -179,7 +179,7 @@
 				<div class="mb-3 row p-4">
 						<label for="input-site-title" class="col-sm-4 col-form-label">File name</label>
 						<div class="col-sm-8">
-						  <input type="text" class="form-control bg-secondary-subtle" id="input-name" placeholder="Title" name="file" readonly>
+						  <input type="text" class="form-control bg-secondary-subtle" id="input-file-name" placeholder="Title" name="file" readonly>
 						</div>
 				 </div>		
 
@@ -202,21 +202,21 @@
 						<div class="mb-3 row">
 							<label for="input-site-title" class="col-sm-4 col-form-label">Name</label>
 							<div class="col-sm-8">
-							  <input type="text" class="form-control" id="input-name" placeholder="Title" name="content[1][name]" data-v-media-content-name>
+							  <input type="text" class="form-control" id="input-content-name" placeholder="Title" name="content[1][name]" data-v-media-content-name>
 							</div>
 						 </div>					
 						 
 						 <div class="mb-3 row">
 							<label for="input-site-title" class="col-sm-4 col-form-label">Caption</label>
 							<div class="col-sm-8">
-							  <input type="text" class="form-control" id="input-name" placeholder="Title" name="content[1][caption]" data-v-media-content-caption>
+							  <input type="text" class="form-control" id="input-content-caption" placeholder="Title" name="content[1][caption]" data-v-media-content-caption>
 							</div>
 						 </div>		 
 						  
 						  <div class="mb-3 row">
 							<label for="input-description" class="col-sm-4 col-form-label" >Description</label>
 							<div class="col-sm-8">
-							  <textarea type="email" class="form-control" id="input-description" rows="5" placeholder="Description" name="content[1][description]" data-v-media-content-description></textarea>
+							  <textarea class="form-control" id="input-description" rows="5" placeholder="Description" name="content[1][description]" data-v-media-content-description></textarea>
 							</div>
 						  </div>
 
@@ -266,16 +266,16 @@ document.addEventListener('click', function (e) {
 });
 </script>
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="media-js" src="libs/media/filerobot-image-editor.min.js"></script>
-<script id="media-js" src="libs/media/image-editor.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="filerobot-js" src="libs/media/filerobot-image-editor.min.js" data-ajax-reload="1"></script>
+<script id="image-editor-js" src="libs/media/image-editor.js" data-ajax-reload="1"></script>
 <style>
 .SfxPopper-Overlay {
 	pointer-events:none;
 }
 </style>
 
-<script src="libs/vvveb/index.js"></script>
+<script src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 
 
 @@include('../_includes/footer.html')

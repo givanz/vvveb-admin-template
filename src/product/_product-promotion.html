@@ -10,7 +10,7 @@
           <th class="text-start">To Date</th>
           <th class="text-end">
             <button type="button" id="button-subscription" class="btn btn-sm btn-outline-primary btn-icon" onclick='addTemplate("#promotion-template", "product_promotion", "#product-promotion")'>
-              <i class="la la-plus la-lg"></i>
+              <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
             </button>
           </th>
         </tr>
@@ -18,73 +18,73 @@
       <tbody>
         <tr data-v-promotion>
           <td class="text-start">
-			  <select name="product_promotion[0][user_group_id]" class="form-select" data-v-user_group_id>
+			  <select name="product_promotion[#product_promotion#][user_group_id]" class="form-select" data-v-user_group_id>
 				<option value="1" data-v-option>Default group</option>
 			  </select>
           </td>
           <td class="text-end">
-            <input name="product_promotion[0][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
+            <input name="product_promotion[#product_promotion#][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
           </td>
           <td class="text-end">
-            <input name="product_promotion[0][price]" value="90.0000" placeholder="Price" class="form-control" type="number" data-v-promotion-price>
+            <input name="product_promotion[#product_promotion#][price]" value="90.0000" placeholder="Price" class="form-control" type="number" data-v-promotion-price>
           </td>
           <td class="text-start" style="width: 20%;">
-			<input name="product_promotion[0][from_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-from_date>
+			<input name="product_promotion[#product_promotion#][from_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-from_date>
 			<!--
             <div class="input-group date">
-              <input name="product_promotion[0][from_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-from_date>
-			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+              <input name="product_promotion[#product_promotion#][from_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-from_date>
+			  <span class="input-group-text bg-body"><svg class="svg-icon fs-5" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg></span>
 			</div>
 			-->
           </td>
           <td class="text-start" style="width: 20%;">
-            <input name="product_promotion[0][to_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-to_date>
+            <input name="product_promotion[#product_promotion#][to_date]" type="date" class="form-control" value="0000-00-00" data-v-promotion-to_date>
 			<!--
             <div class="input-group">
-              <input name="product_promotion[0][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
-			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+              <input name="product_promotion[#product_promotion#][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
+			  <span class="input-group-text bg-body"><svg class="svg-icon fs-5" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg></span>
 			</div>
 			-->
           </td>
           <td class="text-end">
             <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
-				<i class="la la-minus-circle la-lg"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 			</button>
 		  </td> 
         </tr> 
 		<tr class="d-none" id="promotion-template">
           <td class="text-start">
-			  <select name="product_promotion[#][user_group_id]" class="form-select" data-v-user_group_id>
+			  <select name="product_promotion[#product_promotion#][user_group_id]" class="form-select" data-v-user_group_id>
 				<option value="1" data-v-option>Default group</option>
 			  </select>
           </td>
           <td class="text-end">
-            <input name="product_promotion[#][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
+            <input name="product_promotion[#product_promotion#][priority]" value="1" placeholder="Priority" class="form-control" type="text" data-v-promotion-priority>
           </td>
           <td class="text-end">
-            <input name="product_promotion[#][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
+            <input name="product_promotion[#product_promotion#][price]" value="90.0000" placeholder="Price" class="form-control" type="text" data-v-promotion-price>
           </td>
           <td class="text-start" style="width: 20%;">
-			<input name="product_promotion[#][from_date]" type="date" value="0000-00-00" class="form-control" data-v-promotion-from_date>	
+			<input name="product_promotion[#product_promotion#][from_date]" type="date" value="0000-00-00" class="form-control" data-v-promotion-from_date>	
 			<!--
             <div class="input-group">
-              <input name="product_promotion[#][from_date]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-from_date>
-			  <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+              <input name="product_promotion[#product_promotion#][from_date]" type="text" class="form-control datetime border-end-0" value="" data-v-promotion-from_date>
+			  <span class="input-group-text bg-body"><svg class="svg-icon fs-5" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg></span>
 			</div>
 			-->
           </td>
           <td class="text-start" style="width: 20%;">
-			<input name="product_promotion[#][to_date]" type="date" value="0000-00-00"  class="form-control" data-v-promotion-to_date>
+			<input name="product_promotion[#product_promotion#][to_date]" type="date" value="0000-00-00"  class="form-control" data-v-promotion-to_date>
 			<!--
             <div class="input-group">
-			   <input name="product_promotion[#][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
-			   <span class="input-group-text bg-body"><i class="icon-calendar-outline fs-5"></i></span>
+			   <input name="product_promotion[#product_promotion#][to_date]" type="text" class="form-control datetime border-end-0" data-v-promotion-to_date>
+			   <span class="input-group-text bg-body"><svg class="svg-icon fs-5" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg></span>
 			</div>
 			-->
           </td>
           <td class="text-end">
             <button type="button" onclick="removeRow(this)" class="btn btn-sm btn-outline-danger btn-icon">
-				<i class="la la-minus-circle la-lg"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 			</button>
 		  </td> 
       </tbody>

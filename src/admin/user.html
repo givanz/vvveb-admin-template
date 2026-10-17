@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,33 +14,33 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions">
+	   <header class="actions">
 		<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-people-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
 					<span>Admin user</span>
 				</h4>
 			</div>
 		<div class="btns">
 			<a href="{$this.adminPath}index.php?module=admin/users" title="Admin list"
 				class="btn btn-icon btn-outline-secondary">
-					<i class="la la-arrow-left"></i><span>Admin list</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Admin list</span>
 			 </a>		
 			 
 			 <a href="" title="Admin list"
 				class="btn btn-icon btn-outline-primary ms-1" data-v-admin_auth_token_url>
-					<i class="icon-key-outline"></i><span>Api Auth Tokens</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#key"></use></svg><span>Api Auth Tokens</span>
 			 </a>
 
 			  <button type="submit"
 				 class="btn btn-primary btn-icon ms-1">
-						<i class="icon-create-outline me-2"></i>
+						<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 						<span>Save user</span>
 			  </button>
 	   </div>
-	   </div>
+	   </header>
 	   <div>
-		  <div id="main-content" class="px-4">
+		  <section id="main-content" class="px-4">
 
 				@@include('../_includes/notifications.html')
 				
@@ -50,9 +50,9 @@
 				<div class="col-md-6">
 			  
 				  <div class="mb-3 row">
-					<label for="input-site-title" class="col-sm-2 col-form-label" >Role</label>
+					<label for="input-role" class="col-sm-2 col-form-label" >Role</label>
 					<div class="col-sm-10">
-					  <select class="form-control" id="input-site-title" placeholder="Display name" name="admin[role_id]" data-v-role-list>
+					  <select class="form-control" id="input-role" placeholder="Display name" name="admin[role_id]" data-v-role-list>
 					  
 						<option data-v-role></option>
 						
@@ -61,7 +61,7 @@
 				  </div>	
 				
 				 <div class="mb-3 row">
-					<label for="input-site-title" class="col-sm-2 col-form-label">Site access</label>
+					<label for="input-site-access" class="col-sm-2 col-form-label">Site access</label>
 					<div class="col-sm-10">
 
 						<div class="sites-list" data-v-sites>
@@ -106,12 +106,12 @@
 				</div>
 			</div>
 			
-			</div>
+			</section>
         </div>
         </form>
 	
 	@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 
 </div>
 
@@ -122,15 +122,15 @@
 
 <script>
 @@include('../_includes/media-variables.html')
-let usersUrl = '{ $this->usersUrl }';
-let linkUrl           = '{ $this->linkUrl }';
-let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
-let contentType       = 'post';
-let postType          = '{ $this->type }';
-let themeFonts        = {};//{ $this->themeFonts };
+var usersUrl = '{ $this->usersUrl }';
+var linkUrl           = '{ $this->linkUrl }';
+var vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+var contentType       = 'post';
+var postType          = '{ $this->type }';
+var themeFonts        = {};//{ $this->themeFonts };
 
-let sitesCheckBox = document.querySelectorAll(".sites-list input[type=checkbox]");
-let allSitesCheckbox = document.getElementById("all-sites-check");
+var sitesCheckBox = document.querySelectorAll(".sites-list input[type=checkbox]");
+var allSitesCheckbox = document.getElementById("all-sites-check");
 
 sitesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 	if (this.id == "all-sites-check" && this.checked) {
@@ -143,13 +143,13 @@ sitesCheckBox.forEach(e => e.addEventListener("change", function (e) {
 </script>
 
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <link href="libs/media/media.css" rel="stylesheet">
 
 <script id="tinymce-options-js" src="/js/libs/tinymce-options.js"></script>
 <script id="tinymce-lang-code">
-let lang = "{$this->global.locale}";
+var lang = "{$this->global.locale}";
 if (lang != "en-us") {
 	tinyMceOptions["language"] = "{$this->global.locale}";
 	tinyMceOptions["directionality"] = ("{$this->global.rtl}" == "1" ? 'rtl' : 'ltr');
@@ -160,7 +160,7 @@ if (lang != "en-us") {
 <script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
 <script id="oembed-js" src="/js/libs/oembed.js"></script>
 
-<script id="content-js"src="js/content.js"></script>
+<script id="content-js"src="js/content.js" data-ajax-reload="1"></script>
 @@include('../_includes/footer.html')
 
 @@include('../_includes/footer.html')

@@ -2,7 +2,7 @@
 
 <input name="taxonomy_id" type="hidden" data-v-taxonomy_id>
 
-<ul class="nav nav-tabs language-nav" data-v-languages="taxonomy">
+<ul class="nav nav-pills pb-3 border-bottom language-nav" data-v-languages="taxonomy">
   <li class="nav-item" data-v-language>
     <a href="#language1" class="nav-link" data-bs-toggle="tab" aria-expanded="true" data-v-language-link>
       <!-- img src="language/en-gb/en-gb.png" title="English" data-v-language-img -->
@@ -37,7 +37,7 @@
     <div class="mb-3">
 	  <label class="form-label">Content</label>
 	  <div>
-		<textarea name="taxonomy_item_content[1][content]" value="Content" placeholder="Content" class="form-control" type="text" rows="5" data-v-language-content required ></textarea>
+		<textarea name="taxonomy_item_content[1][content]" value="Content" placeholder="Content" class="form-control" rows="5" data-v-language-content required ></textarea>
 	  </div>
 	</div>
 	
@@ -95,10 +95,10 @@
 						data-target-input="#taxonomy_item-input"
 						data-target-thumb="#taxonomy_item-thumb" 
 						data-type="single">
-						<i class="la la-image la-lg"></i> <span>Set image</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 					</button>
 					<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-						<i class="la la-times"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 					</button>
 				</div>
 			</div>

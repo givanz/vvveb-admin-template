@@ -26,9 +26,9 @@
 								</label>
 								
 								<div class="input-group">
-								  <input type="password" minlength="6" autocorrect="off" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
+								  <input type="password" minlength="6" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
 								  <div class="input-group-append">
-									<button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'password')"><i class="icon-eye-off-outline"></i></button>
+									<button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'password')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye-off"></use></svg></button>
 								  </div>
 								</div>
 								
@@ -41,9 +41,9 @@
 								</label>
 								
 								<div class="input-group">
-								  <input type="password" minlength="6" autocorrect="off" autocorrect="off" class="form-control" id="confirm-password" name="confirm_password" autocomplete="off" value="" aria-label="Password" required>
+								  <input type="password" minlength="6" autocorrect="off" class="form-control" id="confirm-password" name="confirm_password" autocomplete="off" value="" aria-label="Password" required>
 								  <div class="input-group-append">
-									<button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'confirm-password')"><i class="icon-eye-off-outline"></i></button>
+									<button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'confirm-password')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye-off"></use></svg></button>
 								  </div>
 								</div>
 								
@@ -54,7 +54,7 @@
 							<div class="mb-4 mt-4">
 
 								<button type="submit" class="btn btn-primary btn-icon w-100">
-									<span>Change password</span> <i class="icon-chevron-forward-outline float-end ms-2"></i>
+									<span>Change password</span> <svg class="svg-icon float-end ms-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-right"></use></svg>
 								</button>
 									
 							</div>
@@ -76,14 +76,14 @@ function togglePasswordInput(element, input) {
 	let password = document.getElementById(input);
 	if (password.type == "password") {
 		password.type = "text"; 
-		let i = element.querySelector("i")
-		i.classList.add("icon-eye-outline")
-		i.classList.remove("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye");
+		else { let i = element.querySelector("i"); if (i) { i.classList.add("icon-eye-outline"); i.classList.remove("icon-eye-off-outline"); } }
 	} else {
 		password.type = "password";
-		let i = element.querySelector("i")
-		i.classList.remove("icon-eye-outline")
-		i.classList.add("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye-off");
+		else { let i = element.querySelector("i"); if (i) { i.classList.remove("icon-eye-outline"); i.classList.add("icon-eye-off-outline"); } }
 	}
 }
 </script>

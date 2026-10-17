@@ -6,16 +6,16 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 	
         <div id="content">
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-people-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
 						<span>User Groups</span>
 					</h4>
 				</div>
@@ -23,12 +23,12 @@
 				<div class="btns">
 					 <a href data-v-url-params='{"module":"user/user-group"}' 
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-outline"></i> <span>Add user group</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add user group</span>
 					</a>
 				</div>
-            </div>
+            </header>
 
-            <div id="main-content">
+            <section id="main-content">
                 @@include('../_includes/notifications.html')
 
                 <div class="user_group card-block">
@@ -40,7 +40,7 @@
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
 									title="Delete selected"
 									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-								<i class="icon-trash-outline"></i> Delete selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 							</button>
 						</div>
 						
@@ -51,30 +51,17 @@
 
                             <thead>
                             <tr>
-                                <th class="col-cb">
-                                    <div class="checkbox_outer">
-
-                                        <label class="form-check">
-                                            <input type="checkbox" class="form-check-input" value="4"
-                                                   name="user_group[]"
-                                                   data-v-vvveb-action="table.bulkSelect">
-                                            <span class="form-check-label"></span>
-                                            <span class="custom-control-description">&nbsp;</span>
-                                        </label>
-
-
-                                    </div>
-                                </th>
+                                @@include('../_includes/bulk-select-th.html', {"name": "user_group[]"})
                                 <th class="user_group">
-									<i class="icon-cube-outline"></i><span>Name</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Name</span>
 								</th>
 								
 								<th style="width:200px;text-align:center;">
-									<i class="la la-image"></i><span>Status</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg><span>Status</span>
 								</th>		
 
                                 <th class="actions text-center" style="width:150px">
-									<i class="la la-edit"></i><span>Actions</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg><span>Actions</span>
 								</th>
                             </tr>
                             </thead>
@@ -101,8 +88,8 @@
                                 <td class="actions" style="width:200px;">
 
 									<div class="btn-group">
-										<a class="btn btn-icon btn-outline-secondary" data-v-user_group-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
-										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<a class="btn btn-outline-secondary btn-sm" data-v-user_group-edit-url><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -114,7 +101,7 @@
 
 										  <li data-v-check-permission-delete>
 	<button type="submit" name="user_group_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-user_group-user_group_id>							
-		<i class="icon-trash-outline"></i><span>Delete</span>
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span>
 	</button>
 </li>
 										</ul>
@@ -124,15 +111,15 @@
                             </tr>
 							<tr data-v-if-not="this.count > 0" class="no-items">
 								<td colspan="100">
-									<div class="text-center mb-4">
+									<div class="text-center m-4">
 										<div>
-											<i class="icon-people-outline display-4 lh-1 text-secondary text-opacity-75"></i>
-											<div class="mt-3">No user group to display!</div>
+											<svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
+											<div class="mt-3 text-secondary">No user group to display!</div>
 										</div>
 
 										<a href data-v-url-params='{"module":"user/user-group"}' 
 												class="btn btn-outline-secondary btn-icon mt-4">
-											<i class="icon-add-outline"></i> <span>Add user group</span>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add user group</span>
 										</a>
 									</div>
 								</td>
@@ -150,11 +137,11 @@
 
                     </form>
                 </div>
-            </div>
+            </section>
         </div>
 
 	@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')

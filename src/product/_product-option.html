@@ -1,48 +1,55 @@
 <div class="tab-pane" id="tab-option">
   <div class="row">
     <div class="col-sm-2 border-end">
-      <ul class="nav nav-pills flex-column" id="option"role="tablist" data-v-product-poption>
-        <li class="nav-item">
-		  <button class="btn btn-outline-secondary btn-icon mb-3 w-100" type="button" onclick="addTab(this)">
-			<i class="la la-plus"></i> 
-			<span>Add option</span> 
-		  </button>
+	  <button class="btn btn-outline-secondary btn-icon mb-3 w-100" type="button" onclick="addTab(option)">
+		<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> 
+		<span>Add option</span> 
+	  </button>
+      <ul class="nav nav-pills flex-column" id="option" role="tablist" data-v-product-poption>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option0" class="nav-link handle handle" data-bs-toggle="pill" aria-expanded="true" data-v-poption-product_option_id>
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>Checkbox</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option0" class="nav-link" data-bs-toggle="pill" aria-expanded="true" data-v-poption-product_option_id>
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Checkbox</span></a>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option1" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>Select</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option1" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Select</span></a>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option2" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>Textarea</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option2" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Textarea</span></a>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option3" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>Radio</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option3" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Radio</span></a>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option4" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>Text</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option4" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Text</span></a>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option5" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>Date</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option5" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Date</span></a>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option6" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>File</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option6" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>File</span></a>
+        <li class="nav-item" draggable="true" data-v-poption>
+          <a href="#tab-option7" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span data-v-poption-name>Time</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
-        <li class="nav-item" data-v-poption>
-          <a href="#tab-option7" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span data-v-poption-name>Time</span></a>
-        </li>
-        <li class="nav-item d-none tab-nav-template">
-          <a href="#tab-template" class="nav-link" data-bs-toggle="pill">
-            <i class="la la-minus-circle la-lg" onclick="removeTab(this, 'product_option_id')"></i> <span>New option</span></a>
+        <li class="nav-item d-none tab-nav-template" draggable="true">
+          <a href="#tab-template" class="nav-link handle" data-bs-toggle="pill">
+            <svg class="svg-icon" onclick="removeTab(this, 'product_option_id')" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg> <span>New option</span></a>
+			<input name="product_option[0][sort_order]" value="0" type="hidden" data-v-poption-sort_order>
         </li>
       </ul>
     </div>
@@ -56,10 +63,17 @@
 			<div class="mb-3 row">
 				<label class="col-sm-2 form-label">Option</label>
 				<div class="col-sm-10">
-				  <select name="product_option[0][option_id]" class="form-select product_option_id" onchange="optionTypeChange(this)" data-v-product-option data-v-poption-option_id>
-					<option value="0" data-v-option>Text</option>
-					<option value="1" data-v-option>File</option>
-				  </select>
+				  <div class="d-flex text-nowrap">
+					  <select name="product_option[0][option_id]" class="form-select product_option_id" onchange="optionTypeChange(this)" data-v-product-option data-v-poption-option_id>
+						<option value="0" data-v-option>Text</option>
+						<option value="1" data-v-option>File</option>
+					  </select>
+				  
+					  <button type="button" class="btn btn-outline-primary btn-sm btn-icon ms-2" onclick="addAllOptionsValues(this)" id="add-variant-btn">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
+								<span>Add all values</span>
+						</button>
+					</div>
 				</div>
 			</div>
 
@@ -74,6 +88,7 @@
 				<label class="col-sm-2 form-label">Required</label>
 				<div class="col-sm-10">
 					<label class="form-check form-check-lg form-switch">
+					  <input class="hidden" type="hidden" name="product_option[0][required]" value="0" data-v-poption-required>
 					  <input class="form-check-input" type="checkbox" role="switch" name="product_option[0][required]" value="1" data-v-poption-required>
 					</label>				  
 				</div>
@@ -84,14 +99,17 @@
 				  <thead>
 					<tr>
 					  <th class="text-start">Option Value</th>
-					  <th class="text-end" width="100">Quantity</th>
-					  <th class="text-start text-nowrap" width="50">Subtract Stock</th>
+					  <th class="text-end" width="80">Quantity</th>
+					  <th class="text-start" width="50">Sub Stock</th>
 					  <th class="text-end" width="200">Price</th>
 					  <th class="text-end" width="200">Points</th>
 					  <th class="text-end" width="200">Weight</th>
+					  <th class="text-end" width="200">Width</th>
+					  <th class="text-end" width="200">Height</th>
+					  <th class="text-end" width="200">Length</th>
 					  <th>
   						<button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-outline-primary btn-icon">
-						  <i class="la la-plus la-lg"></i>
+						  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 						</button>
 					  </th>
 					</tr>
@@ -108,7 +126,7 @@
 						<input name="product_option[0][product_option_value][0][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
 					  </td>
 					  <td class="text-end">
-						<input name="product_option[0][product_option_value][0][quantity]" value="0" placeholder="Quantity" class="form-control" type="number" data-v-option-value-quantity>
+						<input name="product_option[0][product_option_value][0][quantity]" value="0" placeholder="Quantity" class="form-control form-control-sm" type="number" data-v-option-value-quantity>
 					  </td>
 					  <td class="text-center">
 						<label class="form-check form-check-lg form-switch">
@@ -121,17 +139,17 @@
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check"  utocomplete="off" value="+" title="+" data-v-option-value-price_operator>
-									<span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][0][price_operator]" class="btn-check"  autocomplete="off" value="-" title="-" data-v-option-value-price_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][0][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+							<input name="product_option[0][product_option_value][0][price]" value="0" placeholder="Price" class="form-control form-control-sm" type="text" data-v-option-value-price>
 						</div>
 					  </td>
 					  <td class="text-end">
@@ -140,17 +158,17 @@
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check"  utocomplete="off" value="+" title="+" data-v-option-value-points_operator>
-									<span  class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<span  class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][0][points_operator]" class="btn-check"  autocomplete="off" value="-" title="-" data-v-option-value-points_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][0][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+							<input name="product_option[0][product_option_value][0][points]" value="0" placeholder="Price" class="form-control form-control-sm" type="text" data-v-option-value-points>
 						</div>
 					  </td>
 					  <td class="text-end">
@@ -159,22 +177,79 @@
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-weight_operator>
-									<span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][0][weight_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-weight_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][0][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+							<input name="product_option[0][product_option_value][0][weight]" value="0" placeholder="Weight" class="form-control form-control-sm" type="text" data-v-option-value-weight>
+						</div>
+					  </td>					  
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][width_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-width_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][width_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-width_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][0][width]" value="0" placeholder="width" class="form-control form-control-sm" type="text" data-v-option-value-width>
+						</div>
+					  </td>					  
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][height_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-height_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][height_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-height_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][0][height]" value="0" placeholder="height" class="form-control form-control-sm" type="text" data-v-option-value-height>
+						</div>
+					  </td>					  
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][length_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-length_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][0][length_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-length_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][0][width]" value="0" placeholder="width" class="form-control form-control-sm" type="text" data-v-option-value-width>
 						</div>
 					  </td>
 					  <td class="text-start">
 						<button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-outline-danger btn-icon">
-						  <i class="la la-minus-circle la-lg"></i>
+						  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 						</button>
 					  </td>
 					</tr>
@@ -189,7 +264,7 @@
 						<input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
 					  </td>
 					  <td class="text-end">
-						<input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="number" data-v-option-value-quantity>
+						<input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control form-control-sm" type="number" data-v-option-value-quantity>
 					  </td>
 					  <td class="text-center">
 						<label class="form-check form-check-lg form-switch">
@@ -202,17 +277,17 @@
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check"  utocomplete="off" value="+" title="+" data-v-option-value-price_operator>
-									<span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check"  autocomplete="off" value="-" title="-" data-v-option-value-price_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][#][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+							<input name="product_option[0][product_option_value][#][price]" value="0" placeholder="Price" class="form-control form-control-sm" type="text" data-v-option-value-price>
 						</div>
 					  </td>
 					  <td class="text-end">
@@ -221,17 +296,17 @@
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check"  utocomplete="off" value="+" title="+" data-v-option-value-points_operator>
-									<span  class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<span  class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check"  autocomplete="off" value="-" title="-" data-v-option-value-points_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control form-control-sm" type="text" data-v-option-value-points>
 						</div>
 					  </td>
 					  <td class="text-end">
@@ -240,22 +315,79 @@
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-weight_operator>
-									<span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-weight_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+							<input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control form-control-sm" type="text" data-v-option-value-weight>
+						</div>
+					  </td>					  
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][width_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-width_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][width_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-width_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][width]" value="0" placeholder="width" class="form-control form-control-sm" type="text" data-v-option-value-width>
+						</div>
+					  </td>					  
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][height_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-height_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][height_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-height_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][height]" value="0" placeholder="height" class="form-control form-control-sm" type="text" data-v-option-value-height>
+						</div>
+					  </td>					  
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][length_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-length_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][length_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-length_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][length]" value="0" placeholder="length" class="form-control form-control-sm" type="text" data-v-option-value-length>
 						</div>
 					  </td>
 					  <td class="text-start">
 						<button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-outline-danger btn-icon">
-						  <i class="la la-minus-circle la-lg"></i>
+						  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 						</button>
 					  </td>
 					</tr>
@@ -296,7 +428,7 @@
 			</div>
 		  
 			<div class="table-responsive values" data-v-option-values>
-				<table id="option-value0" class="table table-bordered table-hover">
+				<table id="option-value-template" class="table table-bordered table-hover">
 				  <thead>
 					<tr>
 					  <th class="text-start">Option Value</th>
@@ -307,7 +439,7 @@
 					  <th class="text-end" width="200">Weight</th>
 					  <th>
   						<button type="button" onclick="addRow(this)" title="" class="btn btn-sm btn-outline-primary btn-icon">
-						  <i class="la la-plus la-lg"></i>
+						  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 						</button>
 					  </th>
 					</tr>
@@ -324,7 +456,7 @@
 						<input name="product_option[0][product_option_value][#][product_option_value_id]" value="" type="hidden" data-v-option-value-product_option_value_id>
 					  </td>
 					  <td class="text-end">
-						<input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control" type="number" data-v-option-value-quantity>
+						<input name="product_option[0][product_option_value][#][quantity]" value="0" placeholder="Quantity" class="form-control form-control-sm" type="number" data-v-option-value-quantity>
 					  </td>
 					  <td class="text-center">
 						<label class="form-check form-check-lg form-switch">
@@ -336,18 +468,18 @@
 							<div class="p-1 border">
 								
 								<label>
-									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check"  utocomplete="off" value="+" title="+" data-v-option-value-price_operator>
-									<span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check"  utocomplete="off" value="+" title="+" checked data-v-option-value-price_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][price_operator]" class="btn-check"  autocomplete="off" value="-" title="-" data-v-option-value-price_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][#][price]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-price>
+							<input name="product_option[0][product_option_value][#][price]" value="0" placeholder="Price" class="form-control form-control-sm" type="text" data-v-option-value-price>
 						</div>
 					  </td>
 					  <td class="text-end">
@@ -355,18 +487,18 @@
 							<div class="p-1 border">
 								
 								<label>
-									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check"  utocomplete="off" value="+" title="+" data-v-option-value-points_operator>
-									<span  class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check"  utocomplete="off" value="+" title="+" checked data-v-option-value-points_operator>
+									<span  class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][points_operator]" class="btn-check"  autocomplete="off" value="-" title="-" data-v-option-value-points_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control" type="text" data-v-option-value-points>
+							<input name="product_option[0][product_option_value][#][points]" value="0" placeholder="Price" class="form-control form-control-sm" type="text" data-v-option-value-points>
 						</div>
 					  </td>
 					  <td class="text-end">
@@ -374,23 +506,78 @@
 							<div class="p-1 border">
 								
 								<label>
-									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" utocomplete="off" value="+" title="+" data-v-option-value-weight_operator>
-									<span class="btn btn-outline-success btn-sm btn-icon fs-5 lh-1">+</span>
+									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" utocomplete="off" value="+" title="+" checked data-v-option-value-weight_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
 								</label>
 
 								
 								<label>
 									<input type="radio" name="product_option[0][product_option_value][#][weight_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-weight_operator>
-									<span class="btn btn-outline-secondary btn-sm btn-icon fs-5 lh-1">-</span>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
 								</label>
 							</div>
 						  
-							<input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control" type="text" data-v-option-value-weight>
+							<input name="product_option[0][product_option_value][#][weight]" value="0" placeholder="Weight" class="form-control form-control-sm" type="text" data-v-option-value-weight>
+						</div>
+					  </td>					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][width_operator]" class="btn-check" utocomplete="off" value="+" title="+" checked data-v-option-value-width_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][width_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-width_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][width]" value="0" placeholder="width" class="form-control form-control-sm" type="text" data-v-option-value-width>
+						</div>
+					  </td>					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][height_operator]" class="btn-check" utocomplete="off" value="+" title="+" checked data-v-option-value-height_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][height_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-height_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][height]" value="0" placeholder="height" class="form-control form-control-sm" type="text" data-v-option-value-height>
+						</div>
+					  </td>					  
+					  <td class="text-end">
+						<div class="input-group">
+							<div class="p-1 border">
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][length_operator]" class="btn-check" utocomplete="off" value="+" title="+" checked data-v-option-value-length_operator>
+									<span class="btn btn-outline-success btn-sm btn-icon">+</span>
+								</label>
+
+								
+								<label>
+									<input type="radio" name="product_option[0][product_option_value][#][length_operator]" class="btn-check" autocomplete="off" value="-" title="-" data-v-option-value-length_operator>
+									<span class="btn btn-outline-secondary btn-sm btn-icon">-</span>
+								</label>
+							</div>
+						  
+							<input name="product_option[0][product_option_value][#][length]" value="0" placeholder="length" class="form-control form-control-sm" type="text" data-v-option-value-length>
 						</div>
 					  </td>
 					  <td class="text-start">
 						<button type="button" onclick="removeRow(this, 'product_option_value_id')" title="" class="btn btn-sm btn-outline-danger btn-icon">
-						  <i class="la la-minus-circle la-lg"></i>
+						  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#circle-minus"></use></svg>
 						</button>
 					  </td>
 					</tr>

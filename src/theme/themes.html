@@ -6,15 +6,15 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 				
-		<div class="actions">
+		<header class="actions">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-copy-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
 					<span>Themes</span>
 				</h4>
 			</div>
@@ -22,18 +22,18 @@
 			<div class="btns">
 				 <a href data-v-url-params='{"module":"theme/market"}'  data-bs-toggle="collapse" data-bs-target=".upload-collapse" aria-expanded="false"
 						class="btn btn-outline-secondary btn-icon ms-1" >
-						<i class="la la-cloud-upload-alt la-lg"></i> <span>Upload theme</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#cloud-upload"></use></svg> <span>Upload theme</span>
 				</a>
 
 				 <a href data-v-url-params='{"module":"theme/market"}' 
 						class="btn btn-primary btn-icon ms-1">
-					<i class="icon-add-outline"></i> <span>Install theme</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Install theme</span>
 				</a>
 			</div>
-		</div>
+		</header>
 
                                 
-        <div class="themes" id="main-content" >
+        <section class="themes" id="main-content" >
             
 			@@include('../_includes/upload-form.html')
 
@@ -59,11 +59,11 @@
 					</div>
 									
 				</form>
-		</div>
+		</section>
 
 		@@include('../_includes/main-footer.html')                                
                                       
-	</div>
+	</main>
 </div>
 
 		<div class="modal fade modal-full show" id="importModal" tabindex="-1" role="dialog" aria-labelledby="mediaModalLabel" aria-hidden="true">
@@ -84,6 +84,7 @@
 					data-v-url-params='{"action":"import"}' 
 					data-v-vvveb-action="themes.import" 
 					data-v-vvveb-on="submit">
+					<input type="hidden" name="csrf" data-v-csrf>
 				<div id="import-options">	
 				
 				<div class="accordion" id="accordionExport" data-v-namespaces="" style="max-height:500px;overflow-x:auto;">
@@ -200,7 +201,7 @@
               </div>
 			  
 				<div class="alert alert-warning mt-3 d-flex align-items-center" role="alert">
-					<i class="la la-exclamation-triangle la-lg me-3"></i>
+					<svg class="svg-icon me-3" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
 					<div>Use remove content feature only on new installations to avoid losing data.</div>			  
 				</div>			  
 				
@@ -244,29 +245,29 @@
 						</ul>
 						
 						<span class="mt-3">Required Plugins</span>
-						<ul dataa-v-list="required_plugins">
+						<ul data-v-list="required_plugins">
 						  
 						  <li data-v-class-not-if-expand="hasChildren" data-v-list-item>
-							<input type="checkbox" id="m2"/>
+							<input type="checkbox" id="m2-req"/>
 							
-								<label for="m2" data-v-class-not-if-expand-label="hasChildren">
+								<label for="m2-req" data-v-class-not-if-expand-label="hasChildren">
 								   <span class="form-check d-inline-block">
-									<input type="checkbox" class="form-check-input" id="posts" name="posts[]"value="true" checked>
-									<label class="form-check-label" for="posts" data-v-list-item-name>Posts</label>
+									<input type="checkbox" class="form-check-input" id="posts-req" name="posts[]"value="true" checked>
+									<label class="form-check-label" for="posts-req" data-v-list-item-name>Posts</label>
 								  </span>
 								</label>
 							
 							<ul>
 							  <li data-v-list-item>
 								 <span class="form-check d-inline-block">
-									<input type="checkbox" class="form-check-input" id="posts_content" name="posts[content]"value="true" checked>
-									<label class="form-check-label" for="posts_content" data-v-list-item-name>Content</label>
+									<input type="checkbox" class="form-check-input" id="posts_content-req" name="posts[content]"value="true" checked>
+									<label class="form-check-label" for="posts_content-req" data-v-list-item-name>Content</label>
 								  </span>
 							  </li>
 							  <li data-v-list-item>
 								 <span class="form-check d-inline-block">
-									<input type="checkbox" class="form-check-input" id="posts_media" name="posts[media]"value="true" checked>
-									<label class="form-check-label" for="posts_media" data-v-list-item-name>Media</label>
+									<input type="checkbox" class="form-check-input" id="posts_media-req" name="posts[media]"value="true" checked>
+									<label class="form-check-label" for="posts_media-req" data-v-list-item-name>Media</label>
 								  </span>
 							  </li>
 
@@ -280,26 +281,26 @@
 						<ul data-v-list="recommended_plugins">
 						  
 						  <li data-v-class-not-if-expand="hasChildren" data-v-list-item>
-							<input type="checkbox" id="m2"/>
+							<input type="checkbox" id="m2-rec"/>
 							
-								<label for="m2" data-v-class-not-if-expand-label="hasChildren">
+								<label for="m2-rec" data-v-class-not-if-expand-label="hasChildren">
 								   <span class="form-check d-inline-block">
-									<input type="checkbox" class="form-check-input" id="posts" name="posts[]"value="true" checked>
-									<label class="form-check-label" for="posts" data-v-list-item-name>Posts</label>
+									<input type="checkbox" class="form-check-input" id="posts-rec" name="posts[]"value="true" checked>
+									<label class="form-check-label" for="posts-rec" data-v-list-item-name>Posts</label>
 								  </span>
 								</label>
 							
 							<ul>
 							  <li data-v-list-item>
 								 <span class="form-check d-inline-block">
-									<input type="checkbox" class="form-check-input" id="posts_content" name="posts[content]"value="true" checked>
-									<label class="form-check-label" for="posts_content" data-v-list-item-name>Content</label>
+									<input type="checkbox" class="form-check-input" id="posts_content-rec" name="posts[content]"value="true" checked>
+									<label class="form-check-label" for="posts_content-rec" data-v-list-item-name>Content</label>
 								  </span>
 							  </li>
 							  <li data-v-list-item>
 								 <span class="form-check d-inline-block">
-									<input type="checkbox" class="form-check-input" id="posts_media" name="posts[media]"value="true" checked>
-									<label class="form-check-label" for="posts_media" data-v-list-item-name>Media</label>
+									<input type="checkbox" class="form-check-input" id="posts_media-rec" name="posts[media]"value="true" checked>
+									<label class="form-check-label" for="posts_media-rec" data-v-list-item-name>Media</label>
 								  </span>
 							  </li>
 
@@ -392,10 +393,10 @@
 	
 @@include('../_includes/footer-scripts.html')
 
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 
 <script>
-const myModalAlternative = new bootstrap.Modal("#importModal");
+var myModalAlternative = new bootstrap.Modal("#importModal");
 //myModalAlternative.show();
 function duplicateTheme(e) {
 	let dest = prompt("New theme name", e.closest('.card').querySelector(".card-title").textContent);

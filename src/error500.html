@@ -6,7 +6,7 @@
        
     @@include('./_includes/sidebar.html')
 
-    <div class="main min-vh-100">
+    <main class="min-vh-100">
 
 	@@include('./_includes/top-header.html')
 
@@ -16,13 +16,13 @@
 			 <div class="d-flex align-items-center justify-content-center">
 				 <div class="container">
 					<div class="text-center">
-						<i class="la display-1 text-danger la-exclamation-circle"></i>
+						<svg class="svg-icon fs-1 text-danger" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-circle"></use></svg>
 					</div>
 
-					<h1 class="heading1 text-center fw-normal mb-r">Internal server error!</h1>
+					<h1 class="heading1 text-center fw-normal mb-3">Internal server error!</h1>
 
 					<div class="text-center">
-						<div class="alert alert-light m-auto d-inline-block my-3"data-v-if="this.message">
+						<div class="alert alert-light m-auto d-inline-block my-3" data-v-if="this.message">
 							<span data-v-message></span>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 
 
 						<div class="alert alert-warning d-flex align-items-center alert-dismissible mt-4" role="alert">
-						  <i class="la la-exclamation-triangle la-lg me-2"></i>
+						  <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#alert-triangle"></use></svg>
 						  <div>
 							If this is not a development website disable debug from <strong>env.php</strong> in the site root folder.
 						  </div>
@@ -83,7 +83,7 @@
 		 
 		</div>
 		@@include('./_includes/main-footer.html')
-	</div>
+	</main>
 	
 
 </div>

@@ -6,7 +6,7 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 
@@ -14,27 +14,27 @@
 	   <input type="hidden" name="action" id="action" value="save">
 	   <input type="hidden" name="csrf" data-v-csrf>
 	   
-	   <div class="actions">
+	   <header class="actions">
 		<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-people-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#users"></use></svg>
 					<span>Role</span>
 				</h4>
 			</div>
 		  <div class="btns">
 			<a href="{$this.adminPath}index.php?module=admin/roles" title="Roles list" class="btn btn-icon btn-outline-secondary">
-				<i class="la la-arrow-left"></i><span>Role list</span>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span>Role list</span>
 			</a>
 			  <button type="submit"
 				 class="btn btn-primary btn-icon ms-1"
 				>
-					<i class="icon-create-outline me-2"></i>
+					<svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg>
 					<span>Save settings</span>
 			  </button>
 		   </div>
-	   </div>
+	   </header>
 	   <div>
-		  <div id="main-content" class="settings">
+		  <section id="main-content" class="settings">
 
 			@@include('../_includes/notifications.html')
 			
@@ -46,7 +46,7 @@
 						
 						<label class="form-check-label">
 							<input type="hidden" value="/admin/">	
-							<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> Add</button>
+							<button class="btn btn-light border btn-sm btn-add" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> Add</button>
 							<span></span>
 						</label>
 					  
@@ -62,7 +62,7 @@
 							
 							<label class="form-check-label">
 								<input type="hidden" value="{$this.adminPath}">	
-								<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> </button>
+								<button class="btn btn-light border btn-sm btn-add" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> </button>
 								<span></span>
 							</label>
 						  
@@ -80,10 +80,10 @@
 								<!--
 								<div class="file-actions">
 									<button href="#" class="rename btn btn-outline-primary" title="Rename">
-										<i class="la la-pen"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 									</button>
 									<button href="#" class="delete btn btn-outline-danger" title="Delete">
-										<i class="la la-trash"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 									</button>
 								</div>
 								-->
@@ -97,10 +97,10 @@
 								<span>Contact us page</span>
 								<div class="file-actions">
 									<button href="#" class="rename btn btn-outline-primary" title="Rename">
-										<i class="la la-pen"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 									</button>
 									<button href="#" class="delete btn btn-outline-danger" title="Delete">
-										<i class="la la-trash"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 									</button>
 								</div>
 							</label>
@@ -114,10 +114,10 @@
 								<span>Supporters</span>
 								<div class="file-actions">
 									<button href="#" class="rename btn btn-outline-primary" title="Rename">
-										<i class="la la-pen"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 									</button>
 									<button href="#" class="delete btn btn-outline-danger" title="Delete">
-										<i class="la la-trash"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 									</button>
 								</div>
 							</label>
@@ -136,10 +136,10 @@
 										<span>Checkout</span>
 										<div class="file-actions">
 											<button href="#" class="rename btn btn-outline-primary" title="Rename">
-												<i class="la la-pen"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 											</button>
 											<button href="#" class="delete btn btn-outline-danger" title="Delete">
-												<i class="la la-trash"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 											</button>
 										</div>
 									</label>
@@ -152,10 +152,10 @@
 										<span>Confirm</span>
 										<div class="file-actions">
 											<button href="#" class="rename btn btn-outline-primary" title="Rename">
-												<i class="la la-pen"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 											</button>
 											<button href="#" class="delete btn btn-outline-danger" title="Delete">
-												<i class="la la-trash"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 											</button>
 										</div>
 									</label>
@@ -168,10 +168,10 @@
 										<span>Order</span>
 										<div class="file-actions">
 											<button href="#" class="rename btn btn-outline-primary" title="Rename">
-												<i class="la la-pen"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 											</button>
 											<button href="#" class="delete btn btn-outline-danger" title="Delete">
-												<i class="la la-trash"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 											</button>
 										</div>
 									</label>
@@ -218,7 +218,7 @@
 
 				  <div class="text-end flex-grow-1">
 					<button class="btn btn-outline-secondary btn-sm py-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="true">
-					  <i class="la la-2x la-question-circle text-primary"></i>
+					  <svg class="svg-icon la-2x text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg>
 					</button>
 				  </div>
 
@@ -231,7 +231,7 @@
 					<div class="float-start mt-2">Module access control</div>
 					
 					<button class="btn btn-light btn-sm float-end py-0" type="button" data-bs-toggle="collapse" data-bs-target="#siteKeyInfo" aria-expanded="true">
-                      <i class="la la-2x la-question-circle text-primary"></i>
+                      <svg class="svg-icon la-2x text-primary" aria-hidden="true"><use href="/admin/default/img/icons.svg#help-circle"></use></svg>
                     </button>
 
 				</div>
@@ -243,21 +243,21 @@
 				
 					<div class="collapse mb-3" id="siteKeyInfo" style="">
 						<div>
-							<div class="card-body text-bg-body-tertiary border"><i class="la la-info-circle fs-2 px-2 float-end"></i>
+							<div class="card-body text-bg-body-tertiary border"><svg class="svg-icon fs-2 px-2 float-end" aria-hidden="true"><use href="/admin/default/img/icons.svg#info-circle"></use></svg>
 							
-							<p>Click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-arrow-down"></i></button> to choose module and action or write the path directly and click <button class="btn btn-outline-secondary btn-sm" type="button"><i class="la la-plus"></i> Add rule</button></p>
+							<p>Click <button class="btn btn-outline-secondary btn-sm" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-down"></use></svg></button> to choose module and action or write the path directly and click <button class="btn btn-outline-secondary btn-sm" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> Add rule</button></p>
 							
 							<hr>
-							<p>You can use * wildcard to allow/deny multiple modules.</<p>
-							<p>Ex: <span class="badge bg-secondary">content/*</span> will apply for all content modules like post and page add/edit, menu categories etc</p>
-							<p>To deny saving for content modules use <span class="badge bg-secondary">content/*/save</span> this rule will apply for save actions for content modules, and editing and adding posts/pages/categories etc will be denied.</p>
-							<p>To deny delete for all modules use <span class="badge bg-secondary">*/delete</span> this rule will apply for delete actions for all modules.</p>
+							<p>You can use * wildcard to allow/deny multiple modules.</p>
+							<p>Ex: <span class="bg-opacity-75 badge bg-secondary">content/*</span> will apply for all content modules like post and page add/edit, menu categories etc</p>
+							<p>To deny saving for content modules use <span class="bg-opacity-75 badge bg-secondary">content/*/save</span> this rule will apply for save actions for content modules, and editing and adding posts/pages/categories etc will be denied.</p>
+							<p>To deny delete for all modules use <span class="bg-opacity-75 badge bg-secondary">*/delete</span> this rule will apply for delete actions for all modules.</p>
 							
 							<hr>
 							<p>Allow list is checked first then the deny list, if a rule allows access a deny rule can limit it.</p>
-							<p>For example you can add access to products section with <span class="badge bg-secondary">products/*</span> and only restrict product categories and delete with <span class="badge bg-secondary">products/*/delete</span> and <span class="badge bg-secondary">product/categories</span> deny rules.</p>
-							<p>With <span class="badge bg-secondary">plugins/*</span> you can restrict or allow access to plugins section and all plugins settings.</p>
-							<p>With <span class="badge bg-secondary">plugins/insert-scripts</span> you can restrict or allow access only to a specific plugin.</p>
+							<p>For example you can add access to products section with <span class="bg-opacity-75 badge bg-secondary">products/*</span> and only restrict product categories and delete with <span class="bg-opacity-75 badge bg-secondary">products/*/delete</span> and <span class="bg-opacity-75 badge bg-secondary">product/categories</span> deny rules.</p>
+							<p>With <span class="bg-opacity-75 badge bg-secondary">plugins/*</span> you can restrict or allow access to plugins section and all plugins settings.</p>
+							<p>With <span class="bg-opacity-75 badge bg-secondary">plugins/insert-scripts</span> you can restrict or allow access only to a specific plugin.</p>
 							</div>
 						</div>
 					</div>
@@ -271,7 +271,7 @@
 											<input class="form-check-input me-1" type="hidden" name="allow[]" value="admin/*"><span>admin/*</span>
 										</label>
 										<div class="float-end">
-											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><i class="la la-trash"></i> Delete</a>
+											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete</a>
 										</div>
 								  </li>
 								  <li class="list-group-item" data-v-rule>
@@ -279,7 +279,7 @@
 											<input class="form-check-input me-1" type="hidden" name="allow[]" value="content/*"><span>content/*</span>
 										</label>
 										<div class="float-end">
-											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><i class="la la-trash"></i> Delete</a>
+											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete</a>
 										</div>
 								  </li>
 							</ul>	  
@@ -287,8 +287,8 @@
 						  <div>
 							<div class="input-group">
 							  <input type="text" class="form-control" placeholder="Type or choose allow rule">
-							  <button class="btn btn-outline-secondary" type="button"  type="button" data-bs-toggle="collapse" data-bs-target="#allow-add-box" aria-expanded="true"><i class="la la-arrow-down"></i></button>
-							  <button class="btn btn-primary btn-icon btn-add" type="button"><i class="la la-plus"></i> Add rule</button>
+							  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#allow-add-box" aria-expanded="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-down"></use></svg></button>
+							  <button class="btn btn-primary btn-icon btn-add" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> Add rule</button>
 							</div>
 							
 							<div class="collapse my-3" id="allow-add-box" style="">
@@ -300,7 +300,7 @@
 												<label for="index" title="{$rule}">
 													
 													<input type="hidden" value="{$this.adminPath}">	
-													<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> </button>
+													<button class="btn btn-light border btn-sm btn-add" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> </button>
 
 													<span title="{$rule}" data-v-name>Name</span>
 													<span data-v-rule>Rule</span>
@@ -308,10 +308,10 @@
 													<!--
 													<div class="file-actions">
 														<button href="#" class="rename btn btn-outline-primary" title="Rename">
-															<i class="la la-pen"></i>
+															<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 														</button>
 														<button href="#" class="delete btn btn-outline-danger" title="Delete">
-															<i class="la la-trash"></i>
+															<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 														</button>
 													</div>
 													-->
@@ -325,10 +325,10 @@
 													<span>Contact us page</span>
 													<div class="file-actions">
 														<button href="#" class="rename btn btn-outline-primary" title="Rename">
-															<i class="la la-pen"></i>
+															<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 														</button>
 														<button href="#" class="delete btn btn-outline-danger" title="Delete">
-															<i class="la la-trash"></i>
+															<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 														</button>
 													</div>
 												</label>
@@ -342,10 +342,10 @@
 													<span>Supporters</span>
 													<div class="file-actions">
 														<button href="#" class="rename btn btn-outline-primary" title="Rename">
-															<i class="la la-pen"></i>
+															<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 														</button>
 														<button href="#" class="delete btn btn-outline-danger" title="Delete">
-															<i class="la la-trash"></i>
+															<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 														</button>
 													</div>
 												</label>
@@ -364,10 +364,10 @@
 															<span>Checkout</span>
 															<div class="file-actions">
 																<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																	<i class="la la-pen"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																</button>
 																<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																	<i class="la la-trash"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																</button>
 															</div>
 														</label>
@@ -380,10 +380,10 @@
 															<span>Confirm</span>
 															<div class="file-actions">
 																<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																	<i class="la la-pen"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																</button>
 																<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																	<i class="la la-trash"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																</button>
 															</div>
 														</label>
@@ -396,10 +396,10 @@
 															<span>Order</span>
 															<div class="file-actions">
 																<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																	<i class="la la-pen"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																</button>
 																<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																	<i class="la la-trash"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																</button>
 															</div>
 														</label>
@@ -430,7 +430,7 @@
 											<input class="form-check-input me-1" type="hidden" name="deny[]" value="admin/*"><span>admin/*</span>
 										</label>
 										<div class="float-end">
-											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><i class="la la-trash"></i> Delete</a>
+											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete</a>
 										</div>
 								  </li>
 								  <li class="list-group-item" data-v-rule>
@@ -438,7 +438,7 @@
 											<input class="form-check-input me-1" type="hidden" name="deny[]" value="content/*"><span>content/*</span>
 										</label>
 										<div class="float-end">
-											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><i class="la la-trash"></i> Delete</a>
+											<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete</a>
 										</div>
 								  </li>
 								</ul>	  
@@ -446,8 +446,8 @@
 							  <div>
 								<div class="input-group">
 								  <input type="text" class="form-control" placeholder="Type or choose deny rule">
-								  <button class="btn btn-outline-secondary" type="button"  type="button" data-bs-toggle="collapse" data-bs-target="#deny-add-box" aria-expanded="true"><i class="la la-arrow-down"></i></button>
-								  <button class="btn btn-primary btn-icon btn-add" type="button"><i class="la la-plus"></i> Add rule</button>
+								  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#deny-add-box" aria-expanded="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-down"></use></svg></button>
+								  <button class="btn btn-primary btn-icon btn-add" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> Add rule</button>
 								</div>
 								
 								
@@ -459,7 +459,7 @@
 														<label for="index" title="{$rule}">
 															
 															<input type="hidden" value="{$this.adminPath}">	
-															<button class="btn btn-light border btn-sm btn-add" type="button"><i class="la la-plus"></i> </button>
+															<button class="btn btn-light border btn-sm btn-add" type="button"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> </button>
 
 															<span title="{$rule}" data-v-name>Name</span>
 															<span data-v-rule>Rule</span>
@@ -467,10 +467,10 @@
 															<!--
 															<div class="file-actions">
 																<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																	<i class="la la-pen"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																</button>
 																<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																	<i class="la la-trash"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																</button>
 															</div>
 															-->
@@ -484,10 +484,10 @@
 															<span>Contact us page</span>
 															<div class="file-actions">
 																<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																	<i class="la la-pen"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																</button>
 																<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																	<i class="la la-trash"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																</button>
 															</div>
 														</label>
@@ -501,10 +501,10 @@
 															<span>Supporters</span>
 															<div class="file-actions">
 																<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																	<i class="la la-pen"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																</button>
 																<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																	<i class="la la-trash"></i>
+																	<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																</button>
 															</div>
 														</label>
@@ -523,10 +523,10 @@
 																	<span>Checkout</span>
 																	<div class="file-actions">
 																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																			<i class="la la-pen"></i>
+																			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																		</button>
 																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																			<i class="la la-trash"></i>
+																			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																		</button>
 																	</div>
 																</label>
@@ -539,10 +539,10 @@
 																	<span>Confirm</span>
 																	<div class="file-actions">
 																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																			<i class="la la-pen"></i>
+																			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																		</button>
 																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																			<i class="la la-trash"></i>
+																			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																		</button>
 																	</div>
 																</label>
@@ -555,10 +555,10 @@
 																	<span>Order</span>
 																	<div class="file-actions">
 																		<button href="#" class="rename btn btn-outline-primary" title="Rename">
-																			<i class="la la-pen"></i>
+																			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg>
 																		</button>
 																		<button href="#" class="delete btn btn-outline-danger" title="Delete">
-																			<i class="la la-trash"></i>
+																			<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
 																		</button>
 																	</div>
 																</label>
@@ -640,12 +640,12 @@
 			</div>	  
 				
 				
-			</div>
+			</section>
         </div>
         </form>
     
 	@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 
 </div>
 
@@ -696,13 +696,13 @@
 
 
 <script>
-let template = `<li class="list-group-item">
+var template = `<li class="list-group-item">
 	<label class="form-check-label">
 		<input class="form-check-input me-1" type="hidden" value="content/*">
 		<span>content/</span>
 	</label>
 	<div class="float-end">
-		<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><i class="la la-trash"></i> Delete</a>
+		<a class="btn btn-outline-secondary text-danger btn-sm btn-icon btn-delete"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete</a>
 	</div>
 </li>`;
 

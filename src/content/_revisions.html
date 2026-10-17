@@ -6,15 +6,15 @@
 	   
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
-		<div class="actions flex-column flex-md-row mb-0 sticky-top">
+		<header class="actions flex-column flex-md-row mb-0 sticky-top">
 			
 			<div class="title">
 				<h4 class="text-muted my-2">
-					<i class="icon-document-text-outline"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg>
 					<span data-v-type-name>@@name</span> <span>revisions</span>
 				</h4>
 			</div>
@@ -24,19 +24,19 @@
             <div class="btns">
 				<a href="{$this.adminPath}index.php?module=@@controller/@@types" title="@@name list" data-v-@@types-list-url
 					class="btn btn-icon btn-outline-secondary">
-						<i class="la la-arrow-left"></i><span><span data-v-type-name>@@names</span> <span>list</span></span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg><span><span data-v-type-name>@@names</span> <span>list</span></span>
 				 </a>
 
 
                 <button type="submit" data-v-check-permission-save
                         class="btn btn-primary btn-icon ms-1"
 						onclick="save()">
-                    <i class="icon-create-outline"></i> <span>Save</span> <span data-v-type-name>@@type</span>
+                    <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Save</span> <span data-v-type-name>@@type</span>
                 </button>
             </div>
 			
 			
-		</div>		
+		</header>		
 			
 		@@include('../_includes/notifications.html', {"_class":"px-3 pt-3 border-bottom"})
 
@@ -51,7 +51,7 @@
 				<div class="p-3 input-group">
 
 					<button class="btn btn-outline-secondary btn-icon" onclick="restore()">
-						<i class="la la-lg la-arrow-left"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-left"></use></svg>
 						<span>Apply</span>
 					</button>
 
@@ -63,12 +63,12 @@
 					<!-- <label for="revisions-select"></label> -->
 					<input type="checkbox" class="btn-check" id="line-wrapping" autocomplete="off" checked>
 					<label class="btn border" for="line-wrapping" onclick="toggleOption('lineWrapping')" title="Line wrapping">
-						<i class="la la-lg la-align-left"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#align-left"></use></svg>
 					</label>
 
 					<input type="checkbox" class="btn-check" id="line-numbers" autocomplete="off" checked>
 					<label class="btn border" for="line-numbers" onclick="toggleOption('lineNumbers')" title="Line numbers">
-						<i class="la la-lg la-sort-numeric-down"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#sort-ascending-numbers"></use></svg>
 					</label>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 	
 		<div id="content">
 		
-			<div class="content h-100">
+			<section class="content h-100">
 		   
 			   <form id="form" action="" method="post" class="h-100"  data-v-post>
 			   
@@ -93,11 +93,11 @@
 				</div>
 
 				</form>
-			</div>
+			</section>
 		</div>
 
 		@@include('../_includes/main-footer.html')
-	</div>
+	</main>
 </div>
 
 @@include('../_includes/footer-scripts.html')
@@ -105,7 +105,7 @@
 <link href="libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
 <link href="libs/codemirror/lib/merge.css" rel="stylesheet"/>
 
-<script id="index-js" src="libs/vvveb/index.js"></script>
+<script id="index-js" src="libs/vvveb/index.js" data-ajax-reload="1"></script>
 <script src="libs/codemirror/lib/codemirror.js"></script>
 <script src="libs/codemirror/lib/xml.js"></script>
 <script src="libs/codemirror/lib/formatting.js"></script>
@@ -187,7 +187,7 @@ function resize(mergeView) {
   mergeView.wrap.style.height = height + "px";
 }
 
-let options = {lineWrapping:true,lineNumbers:true};
+var options = {lineWrapping:true,lineNumbers:true};
 function toggleOption(option) {
 	//document.querySelectorAll(".CodeMirror").classList.toggle("CodeMirror-wrap");
 	//dv.edit.setOption("lineWrapping", lineWrapping);

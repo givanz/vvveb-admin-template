@@ -2,13 +2,13 @@
 
 <body class="home">
 <script>
-let chartjs = {};
+var chartjs = {};
 </script>
 <div id="container">
        
     @@include('./_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 		@@include('./_includes/top-header.html')
 
@@ -28,15 +28,15 @@ let chartjs = {};
                             <div class="card-body card-block info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">
-										<i class="la la-times"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 									</span>
                                 </button>
 								
 								<div class="flex-grow-1"></div>
 								<div class="icons">
+									<h3 class="number" data-v-notification-orders-processing-count>0</h3>
 									<h5 class="card-title">Orders</h5>
-									<i class="la la-shopping-cart icon text-success d-inline-block "></i>
-									<h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
+									<!-- <svg class="svg-icon icon text-success d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-cart"></use></svg> -->
 								</div>
 								
 								<div class="flex-grow-1"></div>
@@ -66,14 +66,14 @@ let chartjs = {};
                         <div class="card">
                             <div class="card-body card-block info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
 
 								<div class="flex-grow-1"></div>
 								<div class="icons">
+									<h3 class="number" data-v-notification-users-month-count>37</h3>
 									<h5 class="card-title">Users</h5>
-									<i class="la la-user icon text-purple d-inline-block"></i>
-									<h3 class="number d-inline-block" data-v-notification-users-month-count>37</h3>
+									<!-- <svg class="svg-icon icon text-purple d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg> -->
 								</div>
 
 								<div class="flex-grow-1"></div>
@@ -101,14 +101,14 @@ let chartjs = {};
                         <div class="card bg-info-semi">
                             <div class="card-body card-block info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                                 
 								<div class="flex-grow-1"></div>
 								<div class="icons">
+									<h3 class="number" data-v-notification-comments-pending-count>5</h3>
 									<h5 class="card-title">Comments</h5>
-									<i class="la la-comments icon text-primary d-inline-block"></i>
-									<h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
+									<!-- <svg class="svg-icon icon text-primary d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#messages"></use></svg> -->
 								</div>
 
 								<div class="flex-grow-1"></div>
@@ -139,14 +139,14 @@ let chartjs = {};
                         <div class="card">
                             <div class="card-body card-block info">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                                 
 								<div class="flex-grow-1"></div>
 								<div class="icons">
+									<h3 class="number" data-v-notification-reviews-pending-count>8</h3>
 									<h5 class="card-title">Reviews</h5>
-									<i class="la la-sms icon text-success d-inline-block"></i>
-									<h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
+									<!-- <svg class="svg-icon icon text-success d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg> -->
 								</div>
 
 								<div class="flex-grow-1"></div>
@@ -174,14 +174,14 @@ let chartjs = {};
                      
                     <div class="grid-stack-item-content">
                         <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-center py-1">
-                                <div>Sales</div>
+                            <div class="card-header d-flex justify-content-between align-items-center border-0 p-1">
+                                <div></div>
 								
-								<div class="d-flex me-3">
+								<div class="d-flex">
 									
 									<div class="dropdown me-2" id="stats-filters">
 									  <button class="btn btn-outline-secondary btn-icon btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										<i class="icon-filter-outline">
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg>
 									  </button>
 									  <ul class="dropdown-menu">
 										<li class="dropdown-item">
@@ -215,21 +215,18 @@ let chartjs = {};
 								
 									<div class="input-group input-group-sm">
 									  <input name="stats-date-range" id="stats-date-range" value="" type="text" class="form-control daterange border-end-0 form-control-sm text-end" autocomplete="off" size="16"  data-v-post-updated_at>
-									  <div class="input-group-text bg-body" onclick="updated_at.focus()"><i class="icon-calendar-outline"></i></div>
+									  <div class="input-group-text bg-body" onclick="updated_at.focus()"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#calendar"></use></svg></div>
 									</div>
 									
 									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-										<span aria-hidden="true"><i class="la la-times"></i></span>
+										<span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
 									</button>
 								</div>
 
                             </div>
                             
                             
-                            <div class="card-body">
-
-
-           
+                            <div class="card-body p-0">
 
                                 <div class="chartjs" data-chartjs="orders_users" style="height:100%">
                                     <canvas></canvas>
@@ -246,14 +243,14 @@ let chartjs = {};
                                                     data: {$stats.orders},
                                                     fill: true,
                                                     borderColor: 'rgba(255, 99, 132, 0.5)',
-                                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
                                                 }, {
                                                     label: 'Users',
                                                     fill: true,
                                                     //data: [3, 15, 7, 4, 19, 12],
                                                     data: {$stats.users},
                                                     borderColor: 'rgba(54, 162, 235, 0.5)',
-                                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                                    backgroundColor: 'rgba(54, 162, 235, 0.1)',
                                                 }]
                                         },
                                         options: {
@@ -273,12 +270,18 @@ let chartjs = {};
                                             scales: {
                                                 xAxes: [{
                                                     display: true,
+													gridLines: {
+														color: "rgba(0, 0, 0, 0)",
+													},
                                                     scaleLabel: {
                                                         display: true
                                                     }
                                                 }],
                                                 yAxes: [{
                                                     display: true,
+													gridLines: {
+														//color: "rgba(0, 0, 0, 0)",
+													},
                                                     scaleLabel: {
                                                         display: true,
                                                         //labelString: 'Sales'
@@ -302,7 +305,7 @@ let chartjs = {};
                                 Orders
 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                             </div>
                             <div class="card-body">
@@ -380,7 +383,7 @@ let chartjs = {};
                                 Latest orders
 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                             </div>
                             <div class="card-block">
@@ -409,7 +412,7 @@ let chartjs = {};
 											   class="btn btn-icon btn-outline-primary btn-sm"
                                                
                                                data-v-order-url>
-													<i class="la la-hand-pointer"></i>
+													<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
                                                 
                                         </td>
@@ -422,7 +425,7 @@ let chartjs = {};
                                         <td class="text-center">$1,005.00</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm" >
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -434,7 +437,7 @@ let chartjs = {};
                                         <td class="text-center">$1,005.00</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -464,7 +467,7 @@ let chartjs = {};
                                 New users
 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                             </div>
                             <div class="card-block">
@@ -483,7 +486,7 @@ let chartjs = {};
                                         <td width="150" data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center" width="70">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm"  data-v-user-url>
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -492,7 +495,7 @@ let chartjs = {};
                                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm" >
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -501,7 +504,7 @@ let chartjs = {};
                                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm" >
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -510,7 +513,7 @@ let chartjs = {};
                                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm"  data-v-comment-url>
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -540,7 +543,7 @@ let chartjs = {};
                                 <span>Latest products</span>
 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                             </div>
                             <div class="card-block">
@@ -564,7 +567,7 @@ let chartjs = {};
 											
 											
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm" data-v-product-url>
-													<i class="la la-hand-pointer"></i>
+													<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
                                                 
                                         </td>
@@ -598,7 +601,7 @@ let chartjs = {};
 
 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                             </div>
                             <div class="card-block">
@@ -618,7 +621,7 @@ let chartjs = {};
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm"  data-v-comment-url>
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -628,7 +631,7 @@ let chartjs = {};
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm" >
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -638,7 +641,7 @@ let chartjs = {};
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm" >
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -648,7 +651,7 @@ let chartjs = {};
                                         <td data-v-comment-content>31/05/2018</td>
                                         <td class="text-center">
 											<a href="#" class="btn btn-icon btn-outline-primary btn-sm" >
-												<i class="la la-hand-pointer"></i>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pointer"></use></svg>
 											</a>
 										</td>
                                     </tr>
@@ -681,7 +684,7 @@ let chartjs = {};
 
 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                             </div>
                             <div class="card-block">
@@ -733,7 +736,7 @@ let chartjs = {};
         </div>
 		
 		@@include('./_includes/main-footer.html')		
-	</div>
+	</main>
 </div>
 
 
@@ -747,7 +750,7 @@ let chartjs = {};
             <div class="modal-header">
                 <h5 class="modal-title" id="widgetModalLabel">Widgets</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                 </button>
             </div>
             <div class="modal-body">
@@ -772,7 +775,7 @@ let chartjs = {};
 <script id="chartjs-script"  src="libs/chart-js/chart.bundle.min.js"></script>
 
 <script type="text/javascript">
-let options = {
+var options = {
 	cellHeight: 90,
 	margin: 10,
 	cellHeightThrottle: 100,
@@ -781,16 +784,16 @@ let options = {
 	minWidth: 1200
 };
 
-let grid = GridStack.init(options);
-let chartJsInstances = {};
+var grid = GridStack.init(options);
+var chartJsInstances = {};
 
 document.querySelectorAll(".chartjs").forEach(el => {
 	ctx = el.querySelector("canvas").getContext("2d");
 	chartJsInstances[el.dataset.chartjs] = el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
 });
 
-let statsDateRange = document.getElementById('stats-date-range');
-let statsFilters   = document.getElementById('stats-filters');
+var statsDateRange = document.getElementById('stats-date-range');
+var statsFilters   = document.getElementById('stats-filters');
 
 function updateStats() {
 	let stats = {};
@@ -802,7 +805,7 @@ function updateStats() {
 	}
 	
 	const params = new URLSearchParams(stats);
-	fetch(`{$this.adminPath}?action=stats&${params}`)
+	fetch(`{$this.adminPath}index.php?action=stats&${params}`)
 	  .then((response) => response.json())
 	  .then((data) => {
 

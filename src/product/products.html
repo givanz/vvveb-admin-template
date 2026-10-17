@@ -7,18 +7,18 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 			
         <div id="content">
            
 
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-cube-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
 						<span data-v-type_name_plural>Products</span>
 					</h4>
 				</div>
@@ -27,16 +27,16 @@
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
 							class="btn btn-icon btn-outline-secondary me-1">
-						<i class="icon-funnel-outline"></i>&nbsp;
-						<i class="icon-chevron-down-outline small"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg>&nbsp;
+						<svg class="svg-icon small" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-down"></use></svg>
 					</button>
 				
 					 <a href data-v-addurl data-v-check-permission="product/product/save"
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-outline"></i> <span>Add</span> <span data-v-type-name>product</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add</span> <span data-v-type-name>product</span>
 					</a>
 				</div>
-            </div>
+            </header>
 
 
             <div id="filters" class="collapse mx-3">
@@ -195,7 +195,7 @@
 
 							<div class="col-sm-2">
 								<button type="submit" id="button-filter" class="btn btn-primary btn-icon">
-									<i class="icon-funnel-outline"></i> Filter
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg> Filter
 								</button>
 							</div>
                     </div>
@@ -204,7 +204,7 @@
 				</form>
             </div>
 
-            <div id="main-content">
+            <section id="main-content">
                 
                 @@include('../_includes/notifications.html')
 
@@ -218,13 +218,13 @@
 					   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 								aria-controls="filters" title="Edit selected"
 								class="btn btn-primary">
-							<i class="icon-create-outline"></i> Edit selected
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 						</button>
 						-->
 						   <button type="submit" name="action" value="delete" aria-expanded="false" data-v-check-permission-delete
 								title="Delete selected"
 								class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-								<i class="icon-trash-outline"></i> Delete selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 						</button>
 					</div>
 
@@ -233,31 +233,20 @@
                         <table class="table table-hover middle-align">
                             <thead>
                             <tr>
-                                <th class="col-cb">
-                                    <div class="checkbox_outer">
-
-                                        <label class="form-check">
-                                            <input type="checkbox" class="form-check-input"
-                                                   data-v-vvveb-action="table.bulkSelect">
-                                            <span class="form-check-label"></span>
-                                            <span class="custom-control-description">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </th>
+                                @@include('../_includes/bulk-select-th.html')
                                 <th style="width:200px;text-align:center;">
-									<i class="la la-image"></i><span>Thumbnail</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg><span>Thumbnail</span>
 								</th>
-                                <th style="min-width:320px;"><i class="icon-cube-outline">
-									</i><span>Product</span>
+                                <th style="min-width:320px;"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Product</span>
 								</th>
                                 <th style="width:150px;">
-									<i class="la la-tag"></i><span>Price</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#tag"></use></svg><span>Price</span>
 								</th>
                                 <th style="width:100px;">
-									<i class="icon-cube-outline"></i><span>Stock</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg><span>Stock</span>
 								</th>
                                 <th class="actions text-center" style="width:250px">
-									<i class="la la-edit"></i><span>Actions</span>
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#edit"></use></svg><span>Actions</span>
 								</th>
                             </tr>
                             </thead>
@@ -275,6 +264,9 @@
 										<figure  data-v-if="product.image">
 											<img class="rounded" src=""  data-v-product-image>
 										</figure>
+										<figure  data-v-if-not="product.image">
+											<img class="opacity-25" src="img/placeholder.svg">
+										</figure>
                                      </a>
                                 </td>
                                
@@ -289,21 +281,21 @@
 									 
 										<a aria-expanded="false" data-v-product-edit-url title="Edit"
 												class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="la la-pen"></i> <span>Edit</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#ballpen"></use></svg> <span>Edit</span> 
 										</a>
 
 										<a title="Design" data-v-product-design-url target="_blank"
 											class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="icon-brush-outline"></i> <span>Design</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <span>Design</span> 
 										</a>
 										
 										<a title="View" data-v-product-view-url target="_blank"
 											class="btn btn-icon btn-outline-secondary btn-sm">
-											<i class="icon-eye-outline"></i> <span>View</span> 
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg> <span>View</span> 
 										</a>
 
-										<button type="submit" name="product_id" value=""aria-expanded="false" onclick="document.getElementById('action').value='duplicate';" class="btn btn-icon btn-outline-secondary btn-sm" data-v-product-product_id>		
-											<i class="icon-copy-outline"></i> <span>Duplicate</span> 
+										<button type="submit" name="product_id" value="" aria-expanded="false" onclick="document.getElementById('action').value='duplicate';" class="btn btn-outline-secondary btn-sm" data-v-product-product_id>		
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg> <span>Duplicate</span> 
 										</button>
 
 									</div>
@@ -316,8 +308,8 @@
                                 <td class="actions">
 								
 									<div class="btn-group">
-										<a class="btn btn-icon btn-outline-secondary" data-v-product-edit-url><i class="la la-pencil-alt text-primary"></i><span>Edit</span></a>
-										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<a class="btn btn-outline-secondary btn-sm" data-v-product-edit-url><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg><span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -326,20 +318,20 @@
 										  <span class="visually-hidden">Toggle primary</span>
 										</button>
 										<ul class="dropdown-menu">
-										  <li><a class="dropdown-item" href="#" data-v-product-view-url target="_blank"><i class="icon-eye-outline text-secondary"></i><span>View</span></a></li>
-										  <li><a class="dropdown-item" href="#" data-v-product-design-url target="_blank"><i class="icon-brush-outline text-secondary"></i> <span>Design</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-product-view-url target="_blank"><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg><span>View</span></a></li>
+										  <li><a class="dropdown-item" href="#" data-v-product-design-url target="_blank"><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <span>Design</span></a></li>
 										  <li>
 											<button type="submit" name="product_id" value="" aria-expanded="false" class="dropdown-item" onclick="document.getElementById('action').value='duplicate';" data-v-product-product_id>							
-												<i class="icon-copy-outline"></i><span>Duplicate</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg><span>Duplicate</span>
 											</button>
-											<!-- <a class="dropdown-item" href="#" data-v-product-duplicate-url target="_blank"><i class="icon-copy-outline text-secondary"></i> <span>Duplicate</span></a>--></li>
+											<!-- <a class="dropdown-item" href="#" data-v-product-duplicate-url target="_blank"><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg> <span>Duplicate</span></a>--></li>
 										  <li><hr class="dropdown-divider"></li>
 										  <li data-v-check-permission-delete>
 											<!--  formaction="{$product.delete-url}" -->
 											<button type="submit" name="product_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-product-product_id>							
-												<i class="icon-trash-outline"></i><span>Delete</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span>
 											</button>										  
-										  <!-- <a class="dropdown-item text-danger" data-v-product-delete-url onclick="return confirm('Are you sure?')"><i class="icon-trash-outline"></i><span>Delete</span></a> --></li>
+										  <!-- <a class="dropdown-item text-danger" data-v-product-delete-url onclick="return confirm('Are you sure?')"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span></a> --></li>
 										</ul>
 									 </div>
 								  
@@ -347,13 +339,13 @@
                             </tr>
 							<tr data-v-if-not="this.count > 0" class="no-items">
 								<td colspan="100">
-									<div class="text-center mb-4">
-										<i class="icon-cube-outline display-4 lh-1 text-secondary text-opacity-75"></i>
-										<div class="mt-3">No <span data-v-type>product</span>s to display!</div>
+									<div class="text-center m-4">
+										<svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+										<div class="mt-3 text-secondary">No <span data-v-type>product</span>s to display!</div>
 
 										 <a href data-v-addurl
 												class="btn btn-outline-secondary btn-icon mt-4">
-											<i class="icon-add-outline"></i> <span>Add <span data-v-type>product</span></span>
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add <span data-v-type>product</span></span>
 										</a>
 
 									</div>
@@ -373,16 +365,16 @@
 							</div>
 						</div>
                     </form>
-                </div>
+                </section>
 		</div>
 
 	@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')
 
-<script src="libs/autocomplete/autocomplete.js"></script>	
+<script src="libs/autocomplete/autocomplete.js" data-ajax-reload="1"></script>	
 
 <script> 
 document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));

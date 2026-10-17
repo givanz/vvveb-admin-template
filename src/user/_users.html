@@ -6,18 +6,18 @@
        
     @@include('../_includes/sidebar.html')
 
-    <div class="main">
+    <main>
 
 	@@include('../_includes/top-header.html')
 	
         <div id="content">
            
 
-            <div class="actions">
+            <header class="actions">
 				
 				<div class="title">
 					<h4 class="text-muted my-2">
-						<i class="icon-person-outline"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg>
 						<span>Users</span>
 					</h4>
 				</div>
@@ -26,17 +26,17 @@
 					<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 							aria-controls="filters" title="Filter"
 							class="btn btn-icon btn-outline-secondary me-1">
-						<i class="icon-funnel-outline"></i>&nbsp;
-						<i class="icon-chevron-down-outline small"></i>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg>&nbsp;
+						<svg class="svg-icon small" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-down"></use></svg>
 					</button>
 				
 					 <a href data-v-url-params='{"module":"@@prefix/user"}' 
 							class="btn btn-primary btn-icon ms-1">
-						<i class="icon-add-outline"></i> <span>Add user</span>
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> <span>Add user</span>
 					</a>
 				</div>
 		
-            </div>
+            </header>
 
 
               <div id="filters" class="collapse mx-3">
@@ -91,7 +91,7 @@
 
 							<div class="col-sm-2">
 								<button type="submit" id="button-filter" class="btn btn-primary btn-icon">
-									<i class="icon-funnel-outline"></i> Filter
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#filter"></use></svg> Filter
 								</button>
 							</div>
                     </div>
@@ -100,7 +100,7 @@
 				</form>
             </div>
 
-            <div id="main-content">
+            <section id="main-content">
 
                 @@include('../_includes/notifications.html')
 
@@ -114,13 +114,13 @@
 						   <button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
 									aria-controls="filters" title="Delete selected"
 									class="btn btn-primary">
-								<i class="icon-create-outline"></i> Edit selected
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> Edit selected
 							</button>
 							-->
 						   <button type="submit" name="action" value="delete" aria-expanded="false" 
 									title="Delete selected"
 									class="btn btn-icon btn-outline-secondary bg-body-tertiary text-danger">
-									<i class="icon-trash-outline"></i> Delete selected
+									<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> Delete selected
 							</button>
 						</div>
 
@@ -128,19 +128,7 @@
                         <table class="table table-hover middle-align">
                             <thead>
                             <tr>
-                                <th class="col-cb">
-                                    <div class="checkbox_outer">
-
-                                        <label class="form-check">
-                                            <input type="checkbox" class="form-check-input"
-                                                   data-v-vvveb-action="table.bulkSelect">
-                                            <span class="form-check-label"></span>
-                                            <span class="custom-control-description">&nbsp;</span>
-                                        </label>
-
-
-                                    </div>
-                                </th>
+                                @@include('../_includes/bulk-select-th.html')
                                 <!-- <th style="max-width:200px;text-align:center;">Avatar</th> -->
                                 <th style="max-width:200px;text-align:center;">Avatar</th>
                                 <th style="max-width:200px;">User</th>
@@ -178,13 +166,13 @@
                                 <td><span class="small text-muted" data-v-first_name>joe</span></td>
                                 <td><span class="small text-muted" data-v-last_name>joe</span></td>
                                 <td><span class="price" data-v-email>mail@mail.com</span></td>
-                                <td><span class="price badge small bg-secondary" data-v-status>Active</span></td>
+                                <td><span class="badge bg-secondary-subtle text-body" data-v-status>Active</span></td>
 
 
 								<td class="actions">
 									<div class="btn-group">
-										<a class="btn btn-icon btn-outline-secondary" data-v-edit-url><i class="la la-pencil-alt text-primary"></i> <span>Edit</span></a>
-										<button type="button" class="btn btn-icon btn-outline-secondary dropdown-toggle dropdown-toggle-split" 
+										<a class="btn btn-outline-secondary btn-sm" data-v-edit-url><svg class="svg-icon text-secondary" aria-hidden="true"><use href="/admin/default/img/icons.svg#pencil"></use></svg> <span>Edit</span></a>
+										<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" 
 											
 											data-bs-toggle="dropdown" 
 											aria-expanded="false" 
@@ -194,13 +182,13 @@
 										</button>
 										<ul class="dropdown-menu">
 											@@if (prefix === 'admin') {
-											<li><a class="dropdown-item" data-v-auth-token-url><i class="icon-key-outline"></i><span>Api Tokens</span></a></li>
+											<li><a class="dropdown-item" data-v-auth-token-url><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#key"></use></svg><span>Api Tokens</span></a></li>
 											}									
 																			  
 										  <li><hr class="dropdown-divider"></li>
 										  </li data-v-check-permission-delete>
 											<button type="submit" name="@@prefix_id[]" value="" aria-expanded="false" class="dropdown-item text-danger" onclick="document.getElementById('action').value='delete';return confirm('Are you sure?')" data-v-@@prefix_id>							
-												<i class="icon-trash-outline"></i><span>Delete</span>
+												<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg><span>Delete</span>
 											</button>
 											</li>	
 										</ul>
@@ -211,13 +199,13 @@
                             </tbody>
 							<tr data-v-if-not="this.count >= 1">
 								<td colspan="100">
-									<div class="text-center mb-4">
-										<i class="icon-person-outline display-4 lh-1 text-secondary text-opacity-75"></i>
-										<div class="mt-3">No users to display!</div>
+									<div class="text-center m-4">
+										<svg class="svg-icon display-6 lh-1 text-secondary text-opacity-50" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg>
+										<div class="mt-3 text-secondary">No users to display!</div>
 
 										 <a href data-v-url-params='{"module":"user/user"}' 
 												class="btn btn-outline-secondary btn-icon mt-4">
-											<i class="icon-add-outline"></i> Add user
+											<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> Add user
 										</a>
 
 									</div>
@@ -240,13 +228,13 @@
 		                </div>
 
                     </form>
-                </div>
+                </section>
 
 
             </div>
 
 		@@include('../_includes/main-footer.html')
-    </div>
+    </main>
 </div>
 
 @@include('../_includes/footer-scripts.html')

@@ -7,7 +7,7 @@
     @@include('../_includes/sidebar.html')
         
 
-    <div class="main">
+    <main>
 
 		@@include('../_includes/top-header.html')
 			
@@ -36,7 +36,7 @@
 		</div>
 		
 		@@include('../_includes/main-footer.html')	
-	</div>
+	</main>
 
 </div>
 
@@ -45,7 +45,7 @@
 var mediaPath = '{ $this->mediaPath }';
 </script>
 <!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
-<script id="media-js" src="libs/media/media.js"></script>
+<script id="media-js" src="libs/media/media.js" data-ajax-reload="1"></script>
 
 @@include('../_includes/footer-scripts.html')
 @@include('../_includes/footer.html')

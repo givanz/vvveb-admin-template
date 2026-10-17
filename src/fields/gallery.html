@@ -6,7 +6,7 @@
   <div class="col">
 
 
-	<input type="hidden" data-v-image name="image[image]" id="featured-image-input" value="" name="value">
+	<input type="hidden" data-v-image name="image[image]" id="featured-image-input" value="">
 								
 	<img data-v-image src="/media/placeholder.svg" alt=""
 	 id="featured-image-thumb"
@@ -24,10 +24,10 @@
 				<button type="button" class="btn btn-outline-secondary btn-icon btn-sm"
 					data-media-gallery data-target-input="#featured-image-input"
 					data-target-thumb="#featured-image-thumb" data-type="single">
-					<i class="la la-image la-lg"></i> <span>Set image</span>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#photo"></use></svg> <span>Set image</span>
 				</button>
 				<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
-					<i class="la la-times"></i>
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 				</button>
 			</div>
 		</div>
