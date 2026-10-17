@@ -1,60 +1,61 @@
 <div id="bottom-panel">
-
 	<div>
-
 		<div class="breadcrumb-navigator" style="--bs-breadcrumb-divider: '>';">
-			
-		  <ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="#">body</a></li>
-			<li class="breadcrumb-item"><a href="#">section</a></li>
-			<li class="breadcrumb-item"><a href="#">img</a></li>
-		  </ol>		
+
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#">body</a></li>
+				<li class="breadcrumb-item"><a href="#">section</a></li>
+				<li class="breadcrumb-item"><a href="#">img</a></li>
+			</ol>
 
 
 			<ul class="nav nav-tabs nav-fill d-none" id="code-tabs" role="tablist">
-			  <li class="nav-item styles-tab" role="presentation">
-				<a class="nav-link active" data-bs-toggle="tab" href="#code-tab" role="tab" aria-controls="code" aria-selected="false" tabindex="-1">
-				  <i class="icon-code-slash-outline"></i>
-				  <span>Html</span>
-				</a>
-			  </li>
-			  <li class="nav-item css-tab" role="presentation">
-				<a class="nav-link" data-bs-toggle="tab" href="#csscode-tab" role="tab" aria-controls="css" aria-selected="true">
-				  <i class="icon-color-fill-outline"></i>
-				  <span>Css</span>
-				</a>
-			  </li>
-			</ul>	
+				<li class="nav-item styles-tab" role="presentation">
+					<a class="nav-link active" data-bs-toggle="tab" href="#code-tab" role="tab" aria-controls="code"
+						aria-selected="false" tabindex="-1">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#code-off"></use></svg>
+						<span>Html</span>
+					</a>
+				</li>
+				<li class="nav-item css-tab" role="presentation">
+					<a class="nav-link" data-bs-toggle="tab" href="#csscode-tab" role="tab" aria-controls="css"
+						aria-selected="true">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#paint"></use></svg>
+						<span>Css</span>
+					</a>
+				</li>
+			</ul>
 		</div>
 
 
-			<div class="btn-group" role="group">
+		<div class="btn-group" role="group">
 
 			<div id="toggleEditorJsExecute" class="form-check mt-1" style="display:none">
-				<input type="checkbox" class="form-check-input" id="runjs" name="runjs" data-vvveb-action="toggleEditorJsExecute">
+				<input type="checkbox" class="form-check-input" id="runjs" name="runjs"
+					data-vvveb-action="toggleEditorJsExecute">
 				<label class="form-check-label" for="runjs"><small>Run javascript code on edit</small></label>
 			</div>
-							
 
-			 <button id="code-editor-btn" data-view="mobile" class="btn btn-xs btn-outline-secondary border-0"  title="Code editor (Ctrl + E)" data-vvveb-action="toggleEditor">
-				  <i class="la la-code"></i> Code editor
-			  </button>
-			 
 
-			</div>
-							
+			<button id="code-editor-btn" data-view="mobile" class="btn btn-xs btn-outline-secondary m-1 border-0"
+				title="Code editor (Ctrl + E)" data-vvveb-action="toggleEditor">
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#code"></use></svg> Code editor
+			</button>
+
+
 		</div>
-			
-		<div id="vvveb-code-editor">
-			<div class="tab-content">
-			 <div class="tab-pane active" id="code-tab" data-section="code" role="tabpanel" aria-labelledby="code-tab">
+
+	</div>
+
+	<div id="vvveb-code-editor">
+		<div class="tab-content">
+			<div class="tab-pane active" id="code-tab" data-section="code" role="tabpanel" aria-labelledby="code-tab">
 				<textarea class="form-control"></textarea>
-			 </div>
-			
-			 <div class="tab-pane" id="csscode-tab" data-section="csscode" role="tabpanel" aria-labelledby="csscode-tab">
+			</div>
+
+			<div class="tab-pane" id="csscode-tab" data-section="csscode" role="tabpanel" aria-labelledby="csscode-tab">
 				<textarea id="css-editor" class="form-control" rows="24"></textarea>
-			 </div>
 			</div>
 		</div>
+	</div>
 </div>
-

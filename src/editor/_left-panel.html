@@ -1,4 +1,5 @@
 <div id="left-panel">
+<div class="resize-handle" id="left-resize-handle" title="Drag to resize panel" aria-hidden="true"></div>
  <div> 
 	
   
@@ -6,25 +7,25 @@
 	
 	<div class="header">
 		<!--
-		<ul class="nav nav-tabs  nav-fill" id="elements-tabs" role="tablist">
+		<ul class="nav nav-pills nav-fill" id="elements-tabs" role="tablist">
 		  <li class="nav-item component-tab">
 			<a class="nav-link active" id="components-tab" data-bs-toggle="tab" href="#components-tabs" role="tab" aria-controls="components" aria-selected="true" title="Components">
-				<i class="icon-cube-outline"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
 			</a>
 		  </li>
 		  <li class="nav-item sections-tab">
 			<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections">
-				<i class="icon-layers-outline"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#stack"></use></svg>
 			</a>
 		  </li>
 		  <li class="nav-item component-configuration-tab">
 			<a class="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration" role="tab" aria-controls="configuration" aria-selected="false" title="Style">
-				<i class="icon-sparkles-outline"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#sparkles"></use></svg>
 			</a>
 		  </li>		  
 		  <li class="nav-item component-properties-tab d-none">
 			<a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab" aria-controls="properties" aria-selected="false" title="Properties">
-				<i class="icon-settings-outline"></i>
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg>
 			</a>
 		  </li>
 
@@ -44,16 +45,16 @@
 
 						  <button class="btn btn-outline-secondary btn-sm btn-icon btn-add" title="New page (Ctrl + Shift + P)" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
 							   <span>Add page</span>
-							   <i class="icon-add"></i>
+							   <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 						  </button>
 						  
 						  <button class="btn btn-outline-primary btn-sm btn-icon btn-add" title="New section (Ctrl + Shift + S)" id="new-section" data-vvveb-action="newSection" data-vvveb-shortcut="">
 							  
-							   <i class="icon-add"></i>
+							   <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg>
 						  </button>	
 						  <!--  
 						  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
-							  <i class="la la-trash"></i> <small>Delete</small>
+							  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg> <small>Delete</small>
 						  </button> -->
 						</div>
 
@@ -69,13 +70,13 @@
 							<div>Navigator</div>
 								<span>
 									<button class="btn btn-sm" data-vvveb-action="treeListRight" aria-pressed="true">
-										<i class="icon-remove-outline"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg>
 									</button>			
 									<button class="btn btn-sm" data-vvveb-action="treeListPanel" aria-pressed="true">
-										<i class="icon-chevron-forward-outline"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#chevron-right"></use></svg>
 									</button>
 									<button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
-										<i class="icon-close"></i>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 									</button>
 								</span>
 							</div>
@@ -83,12 +84,12 @@
 							<ol>
 								<!--
 								<li data-component="Products" class="file">							
-									<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
-									<input type="checkbox" id="idNaN">
+									<label for="idNaN-products" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+									<input type="checkbox" id="idNaN-products">
 								</li>
 								<li data-component="Posts" class="file">							
-									<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
-									<input type="checkbox" id="idNaN">
+									<label for="idNaN-posts" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+									<input type="checkbox" id="idNaN-posts">
 								</li>
 								-->
 							</ol>
@@ -96,14 +97,14 @@
 					</div>				  
 			</div>
 			<div class="tab-pane" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
-					<ul class="nav nav-tabs nav-fill sections-tabs" role="tablist">
+					<ul class="nav nav-pills nav-fill sections-tabs" role="tablist">
 					  <li class="nav-item components-tab">
 						<a class="nav-link active" data-bs-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="true">
-							<i class="icon-square-outline"></i> <div><span>Components</span></div></a>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#square"></use></svg> <div><span>Components</span></div></a>
 					  </li>
 					  <li class="nav-item blocks-tab">
 						<a class="nav-link" data-bs-toggle="tab" href="#blocks" role="tab" aria-controls="components" aria-selected="false">
-							<i class="icon-copy-outline"></i> <div><span>Blocks</span></div></a>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg> <div><span>Blocks</span></div></a>
 					  </li>
 					</ul>
 			
@@ -113,13 +114,13 @@
 			  
 								<div class="search">
 									  <div class="expand">
-											  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button --> 
-											  <button title="Toggle" data-vvveb-action="toggleSections"><i class="la la-minus"></i></button> 
+											  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></button --> 
+											  <button title="Toggle" data-vvveb-action="toggleSections"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg></button> 
 									  </div>	
 
 									  <input class="form-control component-search" placeholder="Search components" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
 									  <button class="clear-backspace" data-vvveb-action="clearSearch">
-										  <i class="la la-times"></i>
+										  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 									  </button>
 								</div>
 
@@ -139,13 +140,13 @@
 
 						   <div class="search">
 								  <div class="expand">
-										  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button --> 
-										  <button title="Toggle" data-vvveb-action="toggleSections"><i class="la la-minus"></i></button> 
+										  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></button --> 
+										  <button title="Toggle" data-vvveb-action="toggleSections"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg></button> 
 								  </div>	
 
 								  <input class="form-control block-search" placeholder="Search blocks" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
 								  <button class="clear-backspace" data-vvveb-action="clearSearch">
-									  <i class="la la-times"></i>
+									  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 								  </button>
 							</div>
 
@@ -166,14 +167,14 @@
 			<div class="tab-pane show sections" id="sections" role="tabpanel" aria-labelledby="sections-tab">
 			  
 
-					<ul class="nav nav-tabs nav-fill sections-tabs" id="sections-tabs" role="tablist">
+					<ul class="nav nav-pills nav-fill sections-tabs" id="sections-tabs" role="tablist">
 					  <li class="nav-item content-tab">
 						<a class="nav-link active" data-bs-toggle="tab" href="#sections-new-tab" role="tab" aria-controls="components" aria-selected="false">
-							<i class="icon-albums-outline"></i> <div><span>Sections</span></div></a>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#library"></use></svg> <div><span>Sections</span></div></a>
 					  </li>
 					  <li class="nav-item style-tab">
 						<a class="nav-link" data-bs-toggle="tab" href="#sections-list" role="tab" aria-controls="sections" aria-selected="true">
-							<i class="icon-document-text-outline"></i> <div><span>Page Sections</span></div></a>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#file-text"></use></svg> <div><span>Page Sections</span></div></a>
 					  </li>
 					</ul>
 			
@@ -222,9 +223,9 @@
 														<div class="type">section</div>
 													</div>
 												</div>
-												<div class="buttons"> <a class="delete-btn" href="" title="Remove section"><i class="la la-trash text-danger"></i></a>
+												<div class="buttons"> <a class="delete-btn" href="" title="Remove section"><svg class="svg-icon text-danger" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg></a>
 													
-													<a class="properties-btn" href="" title="Properties"><i class="icon-settings-outline"></i></a> </div>
+													<a class="properties-btn" href="" title="Properties"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg></a> </div>
 											</div>
 											<input class="header_check" type="checkbox" id="section-components-9338">
 											<label for="section-components-9338">
@@ -246,13 +247,13 @@
 
 								   <div class="search">
 											  <div class="expand">
-												<!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button --> 
-												<button title="Toggle" data-vvveb-action="toggleSections"><i class="la la-minus"></i></button> 
+												<!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></button --> 
+												<button title="Toggle" data-vvveb-action="toggleSections"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg></button> 
 											  </div>	
 
 											  <input class="form-control section-search" placeholder="Search sections" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
 											  <button class="clear-backspace"  data-vvveb-action="clearSearch" title="Clear search">
-											  <i class="la la-times"></i>
+											  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 										  </button>
 									</div>
 
@@ -277,19 +278,19 @@
 				<div class="component-properties-sidepane">
 					<div>
 						<div class="component-properties">
-							<ul class="nav nav-tabs nav-fill" id="properties-tabs" role="tablist">
+							<ul class="nav nav-pills nav-fill" id="properties-tabs" role="tablist">
 								  <li class="nav-item content-tab">
 									<a class="nav-link content-tab active" data-bs-toggle="tab" href="#content-left-panel-tab" role="tab" aria-controls="components" aria-selected="true">
-										<i class="icon-albums-outline"></i> <span>Content</span>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#library"></use></svg> <span>Content</span>
 									</a>
 								  </li>
 								  <li class="nav-item style-tab">
 									<a class="nav-link" data-bs-toggle="tab" href="#style-left-panel-tab" role="tab" aria-controls="style" aria-selected="false">
-										<i class="icon-color-fill-outline"></i> <span>Style</span></a>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <span>Style</span></a>
 								  </li>
 								  <li class="nav-item advanced-tab">
 									<a class="nav-link" data-bs-toggle="tab" href="#advanced-left-panel-tab" role="tab" aria-controls="advanced" aria-selected="false">
-										<i class="icon-settings-outline"></i> <span>Advanced</span></a>
+										<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg> <span>Advanced</span></a>
 								  </li>
 								</ul>
 						
@@ -303,12 +304,17 @@
 									
 									 <div class="tab-pane show" id="style-left-panel-tab" data-section="style" role="tabpanel" aria-labelledby="style-tab">
 										<div class="pb-2 px-2">
-											<div class="justify-content-end d-flex">
-											<select class="form-select w-50" data-vvveb-action="setState" data-vvveb-on="change">
+											<div class="input-group">
+											<select class="form-select small-arrow" data-vvveb-action="setState" data-vvveb-on="change">
 												<option value=""> - State - </option>
 												<option value="hover">hover</option>
 												<option value="active">active</option>
 												<option value="nth-of-type(2n)">nth-of-type(2n)</option>
+											</select>
+											<select class="form-select small-arrow" data-vvveb-action="setTheme" data-vvveb-on="change">
+												<option value=""> - Theme Auto - </option>
+												<option value="light">Light</option>
+												<option value="dark">Dark</option>
 											</select>
 											</div>
 										</div>
@@ -324,19 +330,19 @@
 		
 			<div class="tab-pane" id="configuration" role="tabpanel" aria-labelledby="configuration-tab">
 				
-					<ul class="nav nav-tabs nav-fill sections-tabs" id="vars-tabs" role="tablist">
+					<ul class="nav nav-pills nav-fill sections-tabs" id="vars-tabs" role="tablist">
 					  <li class="nav-item styles-tab">
 						<a class="nav-link active" data-bs-toggle="tab" href="#styles-tab" role="tab" aria-controls="styles" aria-selected="true">
-							<i class="icon-color-wand-outline"></i> <div><span>Styles</span></div></a>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#wand"></use></svg> <div><span>Styles</span></div></a>
 					  </li>
 					  <li class="nav-item vars-tab">
 						<a class="nav-link" data-bs-toggle="tab" href="#vars-tab" role="tab" aria-controls="components" aria-selected="false">
-							<i class="icon-brush-outline"></i> <div><span>Variables</span></div></a>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg> <div><span>Variables</span></div></a>
 					  </li>
 					  <!--
 					  <li class="nav-item css-tab">
 						<a class="nav-link" data-bs-toggle="tab" href="#css-tab" role="tab" aria-controls="css" aria-selected="true">
-							<i class="icon-code-slash-outline"></i> <div><span>Css</span></div></a>
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#code-off"></use></svg> <div><span>Css</span></div></a>
 					  </li>
 					  -->
 					</ul>
@@ -347,13 +353,13 @@
 
 							   <div class="search">
 									  <div class="expand">
-										  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button --> 
-										  <button title="Toggle" data-vvveb-action="toggleSections"><i class="la la-minus"></i></button> 
+										  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></button --> 
+										  <button title="Toggle" data-vvveb-action="toggleSections"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg></button> 
 									  </div>	
 
 									  <input class="form-control block-search" placeholder="Search styles" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
 									  <button class="clear-backspace" data-vvveb-action="clearSearch">
-										  <i class="la la-times"></i>
+										  <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 									  </button>
 								</div>
 
@@ -401,7 +407,10 @@
 				
 			
 			</div><!-- end configuration tab -->
-		
+
+			<div class="tab-pane" id="ai-assistant" role="tabpanel" aria-labelledby="ai-assistant-tab">
+				@@include('./ai-assistant.html')
+			</div>
 		</div>
 	</div>							
 

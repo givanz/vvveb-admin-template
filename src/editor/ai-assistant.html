@@ -1,0 +1,242 @@
+<aside class="vv-sidebar" aria-label="AI assistant">
+    <div class="vv-resize-handle" id="vvResizeHandle" title="Drag to resize panel" aria-hidden="true"></div>
+    <!-- Header -->
+    <div class="vv-header">
+      <div class="vv-header-actions">
+        <div class="dropdown">
+          <button type="button" id="vvSessionsBtn" class="btn btn-outline-secondary btn-sm border-0" title="Sessions" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
+          </button>
+          <div class="dropdown-menu" id="vvSessionsMenu">
+            <div class="px-2 py-1"><button class="btn btn-icon btn-outline-primary" type="button" id="vvNewSessionBtn"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg> New session</button></div>
+            <hr class="dropdown-divider">
+            <div class="px-2 pb-1"><input type="text" class="form-control form-control-sm" id="vvSessionFilterInput" placeholder="Filter sessions…" aria-label="Filter sessions" autocomplete="off"></div>
+            <ul id="vvSessionsList" class="vv-sessions-list">
+              <li class="vv-sessions-empty text-muted small px-3 py-2">No previous sessions</li>
+            </ul>
+            <hr class="dropdown-divider">
+            <a class="dropdown-item text-center small text-muted" href="?module=plugins/ai-assistant/sessions-manager">View all sessions</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button type="button" id="vvOptionsBtn" class="btn btn-outline-secondary btn-sm border-0" title="Options" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="Assistant options">
+            <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg>
+          </button>
+          <ul class="dropdown-menu vv-options-menu" aria-labelledby="vvOptionsBtn">
+            <li class="dropdown-item">
+				<button type="button" id="vvToggleThinkingBtn" class="btn btn-outline-secondary btn-sm active" title="Show thinking" aria-label="Show thinking" aria-pressed="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.7 1 1.5 1 2.5h6c0-1 .2-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+			  </button> 
+			  <span class="ms-2">Thinking</span>
+			</li>
+            <li class="dropdown-item" >
+				<button type="button" class="btn btn-outline-secondary btn-sm active" id="vvToogleToolsBtn" title="Show tool calls" aria-label="Show tool calls" aria-pressed="false">
+              <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#hammer"></use></svg>
+			  </button>
+			  <span class="ms-2">Tool calls</span>
+			</li>
+
+            <li class="dropdown-item">
+			<button type="button" id="vvToggleCaptureBtn" class="btn btn-outline-secondary btn-sm active" title="Allow screenshots" aria-label="Allow screenshots" aria-pressed="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+			  </button>
+			  <span class="ms-2">Screenshots</span>
+			  </li>
+            <li class="dropdown-item">
+			<button type="button" id="vvToggleScrollBtn" class="btn btn-outline-secondary btn-sm active" title="Auto-scroll thread" aria-label="Auto-scroll thread" aria-pressed="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
+			  </button>
+			  <span class="ms-2">Auto-scroll</span>
+			  </li>
+            <li class="dropdown-item">
+			<button type="button" id="vvToggleFollowBtn" class="btn btn-outline-secondary btn-sm active" title="Follow agent changes in the page" aria-label="Follow agent changes in the page" aria-pressed="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+			  </button>
+			  <span class="ms-2">Follow</span>
+			  </li>
+            <li class="dropdown-item">
+              <button type="button" id="vvAllowDestructiveBtn" class="btn btn-outline-secondary btn-sm" title="Allow destructive actions (save/delete)" aria-label="Allow destructive actions" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18.5v.5"/></svg>
+              </button>
+              <span class="ms-2">Allow save/delete</span>
+            </li>
+          </ul>
+        </div>
+	  </div>		
+
+		
+	  
+	<div class="vv-session-row">
+		<!--
+        <select id="vvSessionSelect" class="form-select form-select-sm" title="Session">
+          <option value="">Current session</option>
+        </select>
+		-->
+		
+		<div class="dropdown vv-context-dropdown" title="Context">
+			<button class="btn btn-sm btn-outline-secondary dropdown-toggle vv-context-toggle border-0" type="button" id="vvContextDropdownBtn"
+					data-bs-toggle="dropdown" aria-expanded="false">
+			  <svg id="vvScopeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+			  <span id="vvScopeLabel"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="vvContextDropdownBtn" id="vvContextMenu" syle="--bs-dropdown-font-size:0.9em">
+			  <li><button class="dropdown-item" type="button" data-scope="element" data-label="Selected element">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+				Selected element
+			  </button></li>
+			  <li><button class="dropdown-item active" type="button" data-scope="section" data-label="Current section">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+				Current section
+			  </button></li>
+			  <li><button class="dropdown-item" type="button" data-scope="page" data-label="Whole page">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/></svg>
+				Whole page
+			  </button></li>
+			  <li><button class="dropdown-item" type="button" data-scope="site" data-label="Entire site">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6.1 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6.1-4-9s1.5-6.3 4-9z"/></svg>
+				Entire site
+			  </button></li>
+			</ul>
+		  </div>		
+      </div>
+	  
+    </div>
+
+    <!-- Context scope selector -->
+    <div class="vv-context-bar">
+
+<!--	  
+	  <button class="btn btn-secondary-outline border btn-sm" title="Toggle tools display" id="toggle-tools0display" data-bs-toggle="button" data-vvveb-action="toggleToolsDisplay" aria-pressed="true">
+                <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#stack"></use></svg>
+		</button> -->
+    </div>
+	
+	
+
+    <!-- Message thread -->
+    <div class="vv-thread show-tools show-thinking" id="vvThread">
+      <div class="vv-empty" id="vvEmptyState">
+        <div class="vv-empty-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2a10 10 0 1 0 4 19.2L22 22l-.8-6A10 10 0 0 0 12 2z"/></svg>
+        </div>
+        <h2>Ask me to build or edit this page</h2>
+        <p>I can see what's selected, attach a reference image, or talk through it by voice.</p>
+        <div class="vv-suggestions">
+          <button type="button" class="vv-suggestion-btn" data-fill="You are an expert frontend engineer and UI/UX perfectionist.
+
+Your sole job is to translate the provided mockup image into clean, production-ready, single-file HTML and CSS. 
+
+Your task is to implement a 100% pixel-perfect, responsive page based on the provided design reference and specifications. 
+
+The provided design image is the absolute Source of Truth. Do not interpret, 'improve,' redesign, or modernize anything. Reproduce it exactly as it looks.
+
+Use similar looking stock images, don't use placeholders or graphics for images.
+
+Match elements position, shape, spacing, borders, roundness, typography, font family, colors. backgrounds exactly.
+
+Verify against original design section by section meticulously, don't rush.
+
+Use bootstrap 5.">Convert attached image to design</button>
+          <button type="button" class="vv-suggestion-btn" data-fill="You are an expert frontend engineer and UI/UX perfectionist.
+
+Improve page aesthetics, styling, spacing, typography, follow solid design principles, use modern, professional, premium looks">Improve page aesthetics</button>
+          <button type="button" class="vv-suggestion-btn" data-fill="Add a new page for 'enterprise services', use the existing theme header and footer and generate the proper content and elements">Add new page</button>
+          <button type="button" class="vv-suggestion-btn" data-fill="Add a premium hero section with a headline and CTA button">Add a hero section</button>
+          <button type="button" class="vv-suggestion-btn" data-fill="Make the primary button color blue">Change button color</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Staged attachments (before sending) -->
+    <div class="vv-staged" id="vvStaged"></div>
+
+    <!-- Input -->
+    <div class="vv-inputbar">
+      <div class="vv-working vv-hidden" id="vvWorking">
+        <span class="vv-working-dots"><span></span><span></span><span></span></span>
+        <span class="vv-working-text">Working&hellip;</span>
+        <span class="vv-working-queue vv-hidden" id="vvWorkingQueue"></span>
+      </div>
+      <div class="vv-queue vv-hidden" id="vvQueue"></div>
+      <div class="vv-drop-zone" id="vvDropZone">
+        <div class="vv-input-shell">
+          <textarea id="vvTextInput" rows="1" placeholder="Describe what to build or change…"></textarea>
+		  <div>
+			<div>
+			  <button type="button" class="vv-icon-btn" id="vvAttachBtn" title="Attach file" aria-label="Attach file">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05 12.5 20a5 5 0 0 1-7.07-7.07l8.94-8.94a3.5 3.5 0 0 1 4.95 4.95L10.5 17.8a1.5 1.5 0 0 1-2.12-2.12l7.78-7.79"/></svg>
+			  </button>
+			  
+			  <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#vvSettingsRow" aria-expanded="false" aria-pressed="false" aria-controls="collapseExample">
+				<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg>
+			  </button>
+			  
+			  <input type="file" id="vvFileInput" class="visually-hidden-file" multiple accept="image/*,application/pdf,.pdf,audio/*,video/*,.txt,.md,.markdown,.csv,.json,.js,.mjs,.css,.html,.htm,.xml,.yml,.yaml,.toml,.log">
+			</div>
+			<div>
+			  <button type="button" class="vv-icon-btn vv-mic-btn" id="vvMicBtn" title="Voice input" aria-label="Voice input">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/></svg>
+			  </button>
+			  <button type="button" class="vv-send-btn" id="vvSendBtn" disabled title="Send" aria-label="Send message">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+			  </button>
+			  <button type="button" class="vv-cancel-btn vv-hidden" id="vvCancelBtn" title="Cancel response" aria-label="Cancel">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><path d="M18 6 6 18M6 6l12 12"/></svg>
+			  </button>
+			</div>
+		  </div>
+			
+			<div class="vv-settings-row collapse" id="vvSettingsRow">
+				<div class="input-group">
+				<button type="button" id="vvModelRefresh" class="btn btn-outline-secondary btn-sm border-0" title="Refresh model list"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#refresh"></use></svg></button>
+				<select id="vvModelSelect" class="form-select form-select-sm border-0" title="Model">
+				  <option value="">Auto (settings)</option>
+				</select>
+				</div>
+				<select id="vvThinkingSelect" class="form-select form-select-sm border-0" title="Thinking level">
+				  <option value="">Off</option>
+				  <option value="low">Low</option>
+				  <option value="medium" selected>Medium</option>
+				  <option value="high">High</option>
+				</select>
+			  </div>				
+        </div>
+      </div>
+
+      <div class="vv-input-hint">
+        <span id="vvHintText">Enter to send · Shift+Enter for newline</span>
+        <span class="vv-rec-live" id="vvRecLive">
+          <span class="vv-rec-bar"><span></span><span></span><span></span><span></span></span>
+          Listening…
+        </span>
+        <button type="button" class="vv-usage-toggle" id="vvUsageToggle" class="btn btn-sm" title="Show usage details" aria-expanded="false" aria-controls="vvUsageDetails" aria-label="Toggle usage details">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+
+      <div id="vvUsageDetails" class="vv-hidden">
+	  <div class="vv-token-usage small text-muted px-1 vv-hidden">
+		<span class="vv-token-details"></span>
+	  </div>
+
+	<div class="vv-context-usage d-flex align-items-center gap-2 small text-muted px-1 py-1 vv-hidden">
+		<span>Context: <strong class="vv-context-pct">0%</strong> <small class="vv-context-tokens text-muted"></small></span>
+		<div class="progress flex-grow-1"><div class="progress-bar vv-context-progressbar" role="progressbar"></div></div>
+
+	</div>
+
+
+	  <div class="vv-total-usage small text-muted px-1 d-flex gap-2 vv-hidden">
+		<div>
+			<div>Total: <strong class="vv-total-tokens">0</strong></div>
+			<div>Cache: <strong class="vv-cache-pct">0%</strong>  hit (<span class="vv-cache-hit">0</span>)</div>
+		</div>
+		<button type="button" class="btn btn-sm btn-outline-secondary py-0 px-1 vv-compact-btn" title="Compact conversation"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrows-minimize"></use></svg> Compact</button>
+	  </div>
+      </div>
+
+
+    </div>
+  </aside>

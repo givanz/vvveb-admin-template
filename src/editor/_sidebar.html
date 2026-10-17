@@ -1,0 +1,98 @@
+<aside class="sidebar" data-v-component-site>
+
+	<div class="logo">
+
+		<a href="{$this.adminPath}index.php" class="img" title="{$site.description.title}">
+			<img src="" data-v-site-logo>
+			<img src="" data-v-site-logo-dark>
+		</a>
+
+		<button class="btn px-2 menu-toggle" title="Toggle sidebar width">
+			<svg class="svg-icon small" aria-hidden="true"><use href="/admin/default/img/icons.svg#menu-2"></use></svg>
+		</button>			
+	</div>
+
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-md">
+
+		<div class="logo">
+			<!-- h1 class="display-5"><a href="#">M.</a></h1-->
+			<a href="/admin" class="img">
+				<img src="" data-v-site-logo>
+				<img src="" data-v-site-logo-dark>
+			</a>
+			
+		</div>
+
+
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNav"
+			aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<div class="collapse navbar-collapse" id="sidebarNav">
+			<ul class="nav navbar-nav flex-column" id="elements-tabs">
+				<li class="nav-item">
+					<a class="nav-link d-none d-md-block " href="{$this.adminPath}index.php">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#chart-pie"></use></svg>
+						<img src="#" class="icon-img">
+						<span class="title">Dashboard</span>
+						<!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
+						<span class="badge badge-primary"></span>
+					</a>
+
+				</li>
+
+				<li class="nav-item pages-tab" role="presentation">
+					<a class="nav-link active" id="pages-tab" data-bs-toggle="tab" href="#pages-tabs" role="tab"
+						aria-controls="pages" aria-selected="true" title="Components">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#file"></use></svg>
+						<span class="title">Pages</span>
+					</a>
+				</li>
+				<li class="nav-item components-tab" role="presentation">
+					<a class="nav-link" id="components-tab" data-bs-toggle="tab" href="#components-tabs" role="tab"
+						aria-controls="components" aria-selected="false" title="Components">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+						<span class="title">Components</span>
+					</a>
+				</li>
+				<li class="nav-item sections-tab" role="presentation">
+					<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab"
+						aria-controls="sections" aria-selected="false" title="Sections" tabindex="-1">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#stack"></use></svg>
+						<span class="title">Sections</span>
+					</a>
+				</li>
+
+				<li class="nav-item component-configuration-tab" role="presentation">
+					<a class="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration" role="tab"
+						aria-controls="configuration" aria-selected="false" title="Style" tabindex="-1">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#brush"></use></svg>
+						<span class="title">Style</span>
+					</a>
+				</li>
+				<li class="nav-item component-properties-tab d-none" role="presentation">
+					<a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab"
+						aria-controls="properties" aria-selected="false" title="Properties" tabindex="-1">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg>
+						<span class="title">Properties</span>
+					</a>
+				</li>
+
+				<li class="nav-item ai-assistant-tab" role="presentation">
+					<a class="nav-link" id="ai-assistant-tab" data-bs-toggle="tab" href="#ai-assistant" role="tab"
+						aria-controls="ai-assistant" aria-selected="false" title="Ai Assistant" tabindex="-1">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#sparkles"></use></svg>
+						<span class="title">Ai Assistant</span>
+					</a>
+				</li>
+
+
+			</ul>
+		</div>
+
+
+	</nav> <!-- /navbar -->
+</aside>

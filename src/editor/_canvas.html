@@ -1,33 +1,34 @@
 <div id="canvas">
 	<div id="iframe-wrapper">
 		<div id="iframe-layer">
-			
-			<div class="loading-message active">
-					<div class="animation-container">
-					  <div class="dot dot-1"></div>
-					  <div class="dot dot-2"></div>
-					  <div class="dot dot-3"></div>
-					</div>
 
-					<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-					  <defs>
+			<div class="loading-message active">
+				<div class="animation-container">
+					<div class="dot dot-1"></div>
+					<div class="dot dot-2"></div>
+					<div class="dot dot-3"></div>
+				</div>
+
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+					<defs>
 						<filter id="goo">
-						  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-						  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 27 -7"/>
+							<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+							<feColorMatrix in="blur" mode="matrix"
+								values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 27 -7" />
 						</filter>
-					  </defs>
-					</svg>
-					<!-- https://codepen.io/Izumenko/pen/MpWyXK -->
+					</defs>
+				</svg>
+				<!-- https://codepen.io/Izumenko/pen/MpWyXK -->
 			</div>
-			
+
 			<div id="highlight-box">
 				<div id="highlight-name">
 					<span class="name"></span>
 					<span class="type"></span>
 				</div>
-				
+
 				<div id="section-actions">
-					<a id="add-section-btn" href="" title="Add element"><i class="la la-plus"></i></a>
+					<a id="add-section-btn" href="" title="Add element"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></a>
 				</div>
 			</div>
 
@@ -50,59 +51,77 @@
 							<path clip-rule="evenodd" d="M88 40H60V108.004C60 145.56 90.4446 176.004 128 176.004C165.555 176.004 196 145.56 196 108.004V40H168V108C168 130.091 150.091 148 128 148C105.909 148 88 130.091 88 108V40ZM204 216V192H52V216H204Z" fill="#252525" fill-rule="evenodd"/>
 						</svg>
 					</a>
-					--> 
-	
+					-->
+
 					<a id="bold-btn" class="hint" href="" title="Bold" aria-label="Bold">
 						<svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-							<path d="M6,4h8a4,4,0,0,1,4,4h0a4,4,0,0,1-4,4H6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-							<path d="M6,12h9a4,4,0,0,1,4,4h0a4,4,0,0,1-4,4H6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-						</svg>	
+							<path d="M6,4h8a4,4,0,0,1,4,4h0a4,4,0,0,1-4,4H6Z" fill="none" stroke="currentColor"
+								stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+							<path d="M6,12h9a4,4,0,0,1,4,4h0a4,4,0,0,1-4,4H6Z" fill="none" stroke="currentColor"
+								stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+						</svg>
 					</a>
 					<a id="italic-btn" class="hint" href="" title="Italic" aria-label="Italic">
 						<svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="19" x2="10" y1="4" y2="4"/>
-							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="14" x2="5" y1="20" y2="20"/>
-							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="15" x2="9" y1="4" y2="20"/>
-						</svg>									
+							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								stroke-width="2" x1="19" x2="10" y1="4" y2="4" />
+							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								stroke-width="2" x1="14" x2="5" y1="20" y2="20" />
+							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								stroke-width="2" x1="15" x2="9" y1="4" y2="20" />
+						</svg>
 					</a>
 					<a id="underline-btn" class="hint" href="" title="Underline" aria-label="Underline">
 						<svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-							<path d="M6,4v7a6,6,0,0,0,6,6h0a6,6,0,0,0,6-6V4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" y1="2" y2="2"/>
-							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="4" x2="20" y1="22" y2="22"/>
+							<path d="M6,4v7a6,6,0,0,0,6,6h0a6,6,0,0,0,6-6V4" fill="none" stroke="currentColor"
+								stroke-linecap="round" stroke-linejoin="round" stroke-width="2" y1="2" y2="2" />
+							<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								stroke-width="2" x1="4" x2="20" y1="22" y2="22" />
 						</svg>
 					</a>
-					
-					
+
+
 					<a id="strike-btn" class="hint" href="" title="Strikeout" aria-label="Strikeout">
 						<del>S</del>
 					</a>
-									
-					<div class="dropdown">
-										  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<span class="hint" aria-label="Text align"><i class="la la-align-left"></i></span>
-					  </button>
 
-									  <div id="justify-btn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-											<a class="dropdown-item" href="#" data-value="Left"><i class="la la-lg la-align-left"></i> Align Left</a>
-											<a class="dropdown-item" href="#" data-value="Center"><i class="la la-lg la-align-center"></i> Align Center</a>
-											<a class="dropdown-item" href="#" data-value="Right"><i class="la la-lg la-align-right"></i> Align Right</a>
-											<a class="dropdown-item" href="#" data-value="Full"><i class="la la-lg la-align-justify"></i> Align Justify</a>
-						  </div>
+					<div class="dropdown">
+						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton"
+							data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="hint" aria-label="Text align"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#align-left"></use></svg></span>
+						</button>
+
+						<div id="justify-btn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#" data-value="Left">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#align-left"></use></svg> Align Left
+							</a>
+							<a class="dropdown-item" href="#" data-value="Center">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#align-center"></use></svg> Align Center
+							</a>
+							<a class="dropdown-item" href="#" data-value="Right">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#align-right"></use></svg> Align Right
+							</a>
+							<a class="dropdown-item" href="#" data-value="Full">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#align-justified"></use></svg> Align Justify
+							</a>
+						</div>
 					</div>
-					
+
 					<div class="separator"></div>
-	
+
 					<a id="link-btn" class="hint" href="" title="Create link" aria-label="Create link">
-						<i class="la la-link">
-					</i></a>
-					
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#link"></use></svg>
+					</a>
+
 					<div class="separator"></div>
-					
-					<input id="fore-color" name="color" type="color" aria-label="Text color" pattern="#[a-f0-9]{6}" class="form-control form-control-color hint">
-					<input id="back-color" name="background-color" type="color" aria-label="Background color" pattern="#[a-f0-9]{6}" class="form-control form-control-color hint">
-					
+
+					<input id="fore-color" name="color" type="color" aria-label="Text color" pattern="#[a-f0-9]{6}"
+						class="form-control form-control-color hint">
+					<input id="back-color" name="background-color" type="color" aria-label="Background color"
+						pattern="#[a-f0-9]{6}" class="form-control form-control-color hint">
+
 					<div class="separator"></div>
-	
+
 					<select id="font-size" class="form-select" aria-label="Font size">
 						<option value="">- Font size -</option>
 						<option value="8px">8 px</option>
@@ -127,15 +146,16 @@
 						<option value="27px">27 px</option>
 						<option value="28px">28 px</option>
 					</select>
-					
+
 					<div class="separator"></div>
-					
+
 					<select id="font-family" class="form-select" title="Font family">
 						<option value=""> - Font family - </option>
 						<optgroup label="System default">
 							<option value="Arial, Helvetica, sans-serif">Arial</option>
 							<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Lucida Grande</option>
-							<option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif">Palatino Linotype</option>
+							<option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif">Palatino Linotype
+							</option>
 							<option value="'Times New Roman', Times, serif">Times New Roman</option>
 							<option value="Georgia, serif">Georgia, serif</option>
 							<option value="Tahoma, Geneva, sans-serif">Tahoma</option>
@@ -151,20 +171,38 @@
 				</div>
 
 				<div id="select-actions">
-					<a id="drag-btn" href="" title="Drag element"><i class="la la-arrows-alt"></i></a>
-					<a id="parent-btn" href="" title="Select parent" class="la-rotate-180"><i class="la la-level-up-alt"></i></a>
-					
-					<a id="up-btn" href="" title="Move element up"><i class="la la-arrow-up"></i></a>
-					<a id="down-btn" href="" title="Move element down"><i class="la la-arrow-down"></i></a>
+					<a id="drag-btn" href="" title="Drag element">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrows-maximize"></use></svg>
+					</a>
+					<a id="parent-btn" href="" title="Select parent" class="la-rotate-180">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-up"></use></svg>
+					</a>
 
-					<a id="edit-code-btn" href="" title="Edit html code"><i class="icon-code-outline"></i></a>
-					<a id="translate-code-btn" href="" title="Translate text"><i class="icon-language-outline"></i></a>
+					<a id="up-btn" href="" title="Move element up">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-up"></use></svg>
+					</a>
+					<a id="down-btn" href="" title="Move element down">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#arrow-down"></use></svg>
+					</a>
 
-					<a id="save-reusable-btn" href="" title="Save as reusable" class="mx-2"><i class="icon-save-outline"></i></a>
-					<a id="clone-btn" href="" title="Clone element"><i class="icon-copy-outline"></i></a>
-					<a id="delete-btn" href="" title="Remove element"><i class="icon-trash-outline"></i></a>
+					<a id="edit-code-btn" href="" title="Edit html code">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#code"></use></svg>
+					</a>
+					<a id="translate-code-btn" href="" title="Translate text">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#language"></use></svg>
+					</a>
+
+					<a id="save-reusable-btn" href="" title="Save as reusable" class="mx-2">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#device-floppy"></use></svg>
+					</a>
+					<a id="clone-btn" href="" title="Clone element">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
+					</a>
+					<a id="delete-btn" href="" title="Remove element">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#trash"></use></svg>
+					</a>
 				</div>
-								
+
 				<div class="resize">
 					<!-- top -->
 					<div class="top-left">
@@ -188,13 +226,13 @@
 				</div>
 
 			</div>
-			
 
-		<div id="drop-highlight-box">
+
+			<div id="drop-highlight-box">
+			</div>
 		</div>
-	</div>
-							
-														
+
+
 		<iframe src="" id="iframe1">
 		</iframe>
 	</div>
@@ -202,120 +240,145 @@
 	<!-- add section box -->
 	<div id="add-section-box" class="drag-elements">
 
-			<div class="header">							
-				<ul class="nav nav-tabs" id="box-elements-tabs" role="tablist">
-				  <li class="nav-item component-tab">
-					<a class="nav-link px-3 active" id="box-components-tab" data-bs-toggle="tab" href="#box-components" role="tab" aria-controls="components" aria-selected="true"><i class="icon-cube-outline"></i><small>Components</small></a>
-				  </li>
-				  <li class="nav-item blocks-tab">
-					<a class="nav-link px-3" id="box-blocks-tab" data-bs-toggle="tab" href="#box-blocks" role="tab" aria-controls="blocks" aria-selected="false"><i class="icon-copy-outline"></i> <small>Blocks</small></a>
-				  </li>
-				  <li class="nav-item sections-tab">
-					<a class="nav-link px-3" id="box-sections-tab" data-bs-toggle="tab" href="#box-sections" role="tab" aria-controls="sections" aria-selected="false"><i class="icon-layers-outline"></i> <small>Sections</small></a>
-				  </li>
-				  <!--
+		<div class="header">
+			<ul class="nav nav-tabs" id="box-elements-tabs" role="tablist">
+				<li class="nav-item component-tab">
+					<a class="nav-link px-3 active" id="box-components-tab" data-bs-toggle="tab" href="#box-components"
+						role="tab" aria-controls="components" aria-selected="true">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#box"></use></svg>
+						<small>Components</small>
+					</a>
+				</li>
+				<li class="nav-item blocks-tab">
+					<a class="nav-link px-3" id="box-blocks-tab" data-bs-toggle="tab" href="#box-blocks" role="tab"
+						aria-controls="blocks" aria-selected="false">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#copy"></use></svg>
+						<small>Blocks</small>
+					</a>
+				</li>
+				<li class="nav-item sections-tab">
+					<a class="nav-link px-3" id="box-sections-tab" data-bs-toggle="tab" href="#box-sections" role="tab"
+						aria-controls="sections" aria-selected="false">
+						<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#stack"></use></svg>
+						<small>Sections</small>
+					</a>
+				</li>
+				<!--
 				  <li class="nav-item component-properties-tab" style="display:none">
-					<a class="nav-link" id="box-properties-tab" data-bs-toggle="tab" href="#box-properties" role="tab" aria-controls="properties" aria-selected="false"><i class="la la-lg la-cog"></i> <div><small>Properties</small></div></a>
+					<a class="nav-link" id="box-properties-tab" data-bs-toggle="tab" href="#box-properties" role="tab" aria-controls="properties" aria-selected="false"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#settings"></use></svg> <div><small>Properties</small></div></a>
 				  </li>
 				  -->
-				</ul>
-				
-				<div class="section-box-actions">
+			</ul>
 
-					<div id="close-section-btn" class="btn btn-outline-secondary border-0 p-1 py-0 float-end"><i class="la la-times"></i></div>
-				
-					<div class="me-4 small float-end">
-					
-						<div class="form-check d-inline-block small me-1">
-						  <input type="radio" id="add-section-insert-mode-after" value="after" checked="checked" name="add-section-insert-mode" class="form-check-input">
-						  <label class="form-check-label" for="add-section-insert-mode-after">After</label>
-						</div>
-						
-						<div class="form-check d-inline-block small">
-						  <input type="radio" id="add-section-insert-mode-inside" value="inside" name="add-section-insert-mode" class="form-check-input">
-						  <label class="form-check-label" for="add-section-insert-mode-inside">Inside</label>
-						</div>
-				
-					</div>
-					
+			<div class="section-box-actions">
+
+				<div id="close-section-btn" class="btn btn-outline-secondary border-0 p-1 py-0 float-end">
+					<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
 				</div>
-				
-				<div class="tab-content">
-				  <div class="tab-pane show active" id="box-components" role="tabpanel" aria-labelledby="components-tab">
-					  
-							<div class="search">
-								  <div class="expand">
-									  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button --> 
-									  <button title="Toggle" data-vvveb-action="toggleSections"><i class="la la-minus"></i></button> 
-								  </div>	
 
-								  <input class="form-control component-search" placeholder="Search components" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
-								  <button class="clear-backspace" data-vvveb-action="clearSearch">
-								  <i class="la la-times"></i>
-							  </button>
-						  </div>
+				<div class="me-4 small float-end">
 
-						<div class="overflow-y-auto mb-5">
-						  <div>
-							  
+					<div class="form-check d-inline-block small me-1">
+						<input type="radio" id="add-section-insert-mode-after" value="after" checked="checked"
+							name="add-section-insert-mode" class="form-check-input">
+						<label class="form-check-label" for="add-section-insert-mode-after">After</label>
+					</div>
+
+					<div class="form-check d-inline-block small">
+						<input type="radio" id="add-section-insert-mode-inside" value="inside"
+							name="add-section-insert-mode" class="form-check-input">
+						<label class="form-check-label" for="add-section-insert-mode-inside">Inside</label>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="tab-content">
+				<div class="tab-pane show active" id="box-components" role="tabpanel" aria-labelledby="components-tab">
+
+					<div class="search">
+						<div class="expand">
+							<!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></button -->
+							<button title="Toggle" data-vvveb-action="toggleSections">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg>
+							</button>
+						</div>
+
+						<input class="form-control component-search" placeholder="Search components" type="text"
+							data-vvveb-action="search" data-vvveb-on="keyup">
+						<button class="clear-backspace" data-vvveb-action="clearSearch">
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
+						</button>
+					</div>
+
+					<div class="overflow-y-auto mb-5">
+						<div>
+
 							<ul class="components-list" data-type="addbox">
 							</ul>
 
-						  </div>
 						</div>
-				  
-				  </div>
-				  <div class="tab-pane" id="box-blocks" role="tabpanel" aria-labelledby="blocks-tab">
-					  
-						<div class="search">
-								  <div class="expand">
-									  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button-->
-									  <button title="Toggle" data-vvveb-action="toggleSections"><i class="la la-minus"></i></button> 
-								  </div>	
+					</div>
 
-								  <input class="form-control block-search" placeholder="Search blocks" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
-								  <button class="clear-backspace"  data-vvveb-action="clearSearch">
-								  <i class="la la-times"></i>
-							  </button>
-						  </div>
+				</div>
+				<div class="tab-pane" id="box-blocks" role="tabpanel" aria-labelledby="blocks-tab">
 
-						<div class="overflow-y-auto mb-5">
-						  <div>
-							  
-							<ul class="blocks-list"  data-type="addbox">
+					<div class="search">
+						<div class="expand">
+							<!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></button-->
+							<button title="Toggle" data-vvveb-action="toggleSections">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg>
+							</button>
+						</div>
+
+						<input class="form-control block-search" placeholder="Search blocks" type="text"
+							data-vvveb-action="search" data-vvveb-on="keyup">
+						<button class="clear-backspace" data-vvveb-action="clearSearch">
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
+						</button>
+					</div>
+
+					<div class="overflow-y-auto mb-5">
+						<div>
+
+							<ul class="blocks-list" data-type="addbox">
 							</ul>
 
-						  </div>
 						</div>
-				  
-				  </div>						  
-				  
-				  <div class="tab-pane" id="box-sections" role="tabpanel" aria-labelledby="sections-tab">
-					  
-						<div class="search">
-								  <div class="expand">
-									  <!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button -->
-									  <button title="Toggle" data-vvveb-action="toggleSections"><i class="la la-minus"></i></button> 
-								  </div>	
+					</div>
 
-								  <input class="form-control section-search" placeholder="Search sections" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
-								  <button class="clear-backspace"  data-vvveb-action="clearSearch">
-								  <i class="la la-times"></i>
-							  </button>
-						  </div>
+				</div>
 
-						<div class="overflow-y-auto mb-5">
-						  <div>
-							  
-							<ul class="sections-list"  data-type="addbox">
+				<div class="tab-pane" id="box-sections" role="tabpanel" aria-labelledby="sections-tab">
+
+					<div class="search">
+						<div class="expand">
+							<!-- button class="text-sm" title="Expand All" data-vvveb-action="expand"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#plus"></use></svg></button -->
+							<button title="Toggle" data-vvveb-action="toggleSections">
+								<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#minus"></use></svg>
+							</button>
+						</div>
+
+						<input class="form-control section-search" placeholder="Search sections" type="text"
+							data-vvveb-action="search" data-vvveb-on="keyup">
+						<button class="clear-backspace" data-vvveb-action="clearSearch">
+							<svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg>
+						</button>
+					</div>
+
+					<div class="overflow-y-auto mb-5">
+						<div>
+
+							<ul class="sections-list" data-type="addbox">
 							</ul>
 
-						  </div>
 						</div>
-				  
-				  </div>
-				
-					<!-- div class="tab-pane" id="box-properties" role="tabpanel" aria-labelledby="blocks-tab">
+					</div>
+
+				</div>
+
+				<!-- div class="tab-pane" id="box-properties" role="tabpanel" aria-labelledby="blocks-tab">
 						<div class="component-properties-sidepane">
 							<div>
 								<div class="component-properties">
@@ -324,10 +387,10 @@
 							</div>
 						</div>
 					</div -->
-				</div>
-			</div>		
+			</div>
+		</div>
 
 	</div>
 	<!-- //add section box -->
-	
+
 </div>
