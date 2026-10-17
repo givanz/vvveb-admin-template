@@ -26,7 +26,9 @@
     <div class="d-flex align-items-end">
 
       <a id="color-theme-switch" title="Switch sidebar color theme">
-        <i class="la la-sun"></i>
+        <svg class="svg-icon" aria-hidden="true">
+          <use href="/admin/default/img/icons.svg#sun"></use>
+        </svg>
       </a>
 
     </div>
@@ -59,7 +61,9 @@
               <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
 
                 <div class="icon">
-                  <i class="la la-exclamation-triangle"></i>
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#alert-triangle"></use>
+                  </svg>
                 </div>
 
                 <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -69,7 +73,7 @@
 
                 <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
-                    <!-- <i class="la la-times"></i> -->
+                    <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                   </span>
                 </button>
               </div>
@@ -77,7 +81,9 @@
               <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
 
                 <div class="icon">
-                  <i class="la la-check-circle"></i>
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#circle-check"></use>
+                  </svg>
                 </div>
 
                 <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -86,7 +92,7 @@
 
                 <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
-                    <!-- <i class="la la-times"></i> -->
+                    <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                   </span>
                 </button>
               </div>
@@ -94,7 +100,9 @@
               <div class="alert alert-warning d-flex alert-dismissable d-flex" role="alert" data-v-notification-warning>
 
                 <div class="icon">
-                  <i class="la la-exclamation-triangle"></i>
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#alert-triangle"></use>
+                  </svg>
                 </div>
 
                 <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -103,7 +111,7 @@
 
                 <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
-                    <!-- <i class="la la-times"></i> -->
+                    <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                   </span>
                 </button>
               </div>
@@ -111,7 +119,9 @@
               <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
 
                 <div class="icon">
-                  <i class="la la-info-circle"></i>
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#info-circle"></use>
+                  </svg>
                 </div>
 
                 <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -120,12 +130,13 @@
 
                 <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
-                    <!-- <i class="la la-times"></i> -->
+                    <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                   </span>
                 </button>
               </div>
 
             </div>
+
 
 
             <div class="mb-4">
@@ -142,7 +153,9 @@
                 <input type="password" minlength="4" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
                 <div class="input-group-append">
                   <button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'password')">
-                    <i class="icon-eye-off-outline"></i>
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#eye-off"></use>
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -164,14 +177,16 @@
                   </span>
 
                   <span class="button-text">
-                    Log In <i class="icon-chevron-forward-outline float-end ms-2"></i>
+                    Log In <svg class="svg-icon float-end ms-2" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#chevron-right"></use>
+                    </svg>
                   </span>
                 </button>
 
               </div>
 
 
-              <div class="mt-3">
+              <div class="mt-3 text-secondary">
 
                 <div class="form-check float-start">
                   <input class="form-check-input" type="checkbox" value="" id="rememberme">
@@ -201,7 +216,9 @@
                 Safe mode
               </label>
               <abbr title="Use safe mode to disable plugins for this session to troubleshoot errors.">
-                <i class="la la-lg la-question-circle text-primary"></i>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#help-circle"></use>
+                </svg>
               </abbr>
             </div>
           </div>
@@ -219,14 +236,14 @@ function togglePasswordInput(element, input) {
 	let password = document.getElementById(input);
 	if (password.type == "password") {
 		password.type = "text"; 
-		let i = element.querySelector("i")
-		i.classList.add("icon-eye-outline")
-		i.classList.remove("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye");
+		else { let i = element.querySelector("i"); if (i) { i.classList.add("icon-eye-outline"); i.classList.remove("icon-eye-off-outline"); } }
 	} else {
 		password.type = "password";
-		let i = element.querySelector("i")
-		i.classList.remove("icon-eye-outline")
-		i.classList.add("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye-off");
+		else { let i = element.querySelector("i"); if (i) { i.classList.remove("icon-eye-outline"); i.classList.add("icon-eye-off-outline"); } }
 	}
 }
 </script>
@@ -242,8 +259,10 @@ function togglePasswordInput(element, input) {
               <div class="input-group">
                 <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
-                  <div class="la-flip-horizontal">
-                    <i class="la la-search la-lg" aria-hidden="true"></i>
+                  <div style="transform: scaleX(-1)">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#search"></use>
+                    </svg>
                   </div>
                 </button>
               </div>
@@ -277,11 +296,11 @@ function togglePasswordInput(element, input) {
   <script id="admin-js" type="module" src="/js/admin.js"></script>
 
   <!-- Modal -->
-  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLoginLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <span class="modal-title" id="heartBeatLogin">
+          <span class="modal-title" id="heartBeatLoginLabel">
             <h5>Session has expired</h5>
             <span>Login to resume your work</span>
           </span>

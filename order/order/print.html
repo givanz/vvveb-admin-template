@@ -22,7 +22,7 @@
 
 <body class="order">
 
-  <div class="content" data-v-order>
+  <section class="content" data-v-order>
     <div class="row g-0">
       <div class="col">
         <strong>Order details</strong>
@@ -225,7 +225,7 @@
     </div>
 
 
-  </div>
+  </section>
 
   <script>print();</script>
 
@@ -241,8 +241,10 @@
               <div class="input-group">
                 <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
-                  <div class="la-flip-horizontal">
-                    <i class="la la-search la-lg" aria-hidden="true"></i>
+                  <div style="transform: scaleX(-1)">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#search"></use>
+                    </svg>
                   </div>
                 </button>
               </div>
@@ -276,11 +278,11 @@
   <script id="admin-js" type="module" src="/js/admin.js"></script>
 
   <!-- Modal -->
-  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLoginLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <span class="modal-title" id="heartBeatLogin">
+          <span class="modal-title" id="heartBeatLoginLabel">
             <h5>Session has expired</h5>
             <span>Login to resume your work</span>
           </span>

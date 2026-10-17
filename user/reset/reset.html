@@ -45,7 +45,9 @@
             <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
 
               <div class="icon">
-                <i class="la la-exclamation-triangle"></i>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#alert-triangle"></use>
+                </svg>
               </div>
 
               <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -55,7 +57,7 @@
 
               <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
+                  <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                 </span>
               </button>
             </div>
@@ -63,7 +65,9 @@
             <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
 
               <div class="icon">
-                <i class="la la-check-circle"></i>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#circle-check"></use>
+                </svg>
               </div>
 
               <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -72,7 +76,7 @@
 
               <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
+                  <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                 </span>
               </button>
             </div>
@@ -80,7 +84,9 @@
             <div class="alert alert-warning d-flex alert-dismissable d-flex" role="alert" data-v-notification-warning>
 
               <div class="icon">
-                <i class="la la-exclamation-triangle"></i>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#alert-triangle"></use>
+                </svg>
               </div>
 
               <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -89,7 +95,7 @@
 
               <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
+                  <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                 </span>
               </button>
             </div>
@@ -97,7 +103,9 @@
             <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
 
               <div class="icon">
-                <i class="la la-info-circle"></i>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#info-circle"></use>
+                </svg>
               </div>
 
               <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -106,12 +114,13 @@
 
               <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
+                  <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
                 </span>
               </button>
             </div>
 
           </div>
+
 
           <div class="mb-4">
             <label class="form-label d-flex justify-content-between align-items-center">
@@ -119,10 +128,12 @@
             </label>
 
             <div class="input-group">
-              <input type="password" minlength="6" autocorrect="off" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
+              <input type="password" minlength="6" autocorrect="off" class="form-control" id="password" name="password" autocomplete="off" value="" aria-label="Password" required>
               <div class="input-group-append">
                 <button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'password')">
-                  <i class="icon-eye-off-outline"></i>
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#eye-off"></use>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -136,10 +147,12 @@
             </label>
 
             <div class="input-group">
-              <input type="password" minlength="6" autocorrect="off" autocorrect="off" class="form-control" id="confirm-password" name="confirm_password" autocomplete="off" value="" aria-label="Password" required>
+              <input type="password" minlength="6" autocorrect="off" class="form-control" id="confirm-password" name="confirm_password" autocomplete="off" value="" aria-label="Password" required>
               <div class="input-group-append">
                 <button class="btn px-3" type="button" onclick="togglePasswordInput(this, 'confirm-password')">
-                  <i class="icon-eye-off-outline"></i>
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#eye-off"></use>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -152,7 +165,9 @@
 
             <button type="submit" class="btn btn-primary btn-icon w-100">
               <span>Change password</span>
-              <i class="icon-chevron-forward-outline float-end ms-2"></i>
+              <svg class="svg-icon float-end ms-2" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#chevron-right"></use>
+              </svg>
             </button>
 
           </div>
@@ -174,14 +189,14 @@ function togglePasswordInput(element, input) {
 	let password = document.getElementById(input);
 	if (password.type == "password") {
 		password.type = "text"; 
-		let i = element.querySelector("i")
-		i.classList.add("icon-eye-outline")
-		i.classList.remove("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye");
+		else { let i = element.querySelector("i"); if (i) { i.classList.add("icon-eye-outline"); i.classList.remove("icon-eye-off-outline"); } }
 	} else {
 		password.type = "password";
-		let i = element.querySelector("i")
-		i.classList.remove("icon-eye-outline")
-		i.classList.add("icon-eye-off-outline");
+		let use = element.querySelector("use");
+		if (use) use.setAttribute("href", (use.getAttribute("href") || "").split("#")[0] + "#eye-off");
+		else { let i = element.querySelector("i"); if (i) { i.classList.remove("icon-eye-outline"); i.classList.add("icon-eye-off-outline"); } }
 	}
 }
 </script>

@@ -22,12 +22,11 @@
 
 <body class="home">
   <script>
-let chartjs = {};
+var chartjs = {};
 </script>
   <div id="container">
 
-    <div class="sidebar" data-v-component-site>
-
+    <aside class="sidebar" data-v-component-site>
       <div class="logo">
 
         <a href="{$this.adminPath}index.php" class="img" title="{$site.description.title}">
@@ -35,9 +34,19 @@ let chartjs = {};
           <img src="" data-v-site-logo-dark>
         </a>
 
-        <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
-          <i class="icon-search"></i>
-        </a>
+        <div>
+          <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#search"></use>
+            </svg>
+          </a>
+
+          <a id="ai-btn" title="Ai assistant" data-bs-toggle="modal" data-bs-target="#aiModal">
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#sparkles"></use>
+            </svg>
+          </a>
+        </div>
 
       </div>
 
@@ -51,8 +60,10 @@ let chartjs = {};
             <img src="" data-v-site-logo-dark>
           </a>
 
-          <a id="search-btn" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
-            <i class="icon-search"></i>
+          <a id="search-btn-mobile" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#search"></use>
+            </svg>
           </a>
 
         </div>
@@ -70,7 +81,7 @@ let chartjs = {};
 					<li class="nav-item" data-v-menu-item>
 						<a class="nav-link" href="/admin" data-bs-target="#posts"
 						   data-v-menu-item-url>
-							<i class="icon-pulse-outline" data-v-menu-item-icon></i>
+							<svg class="svg-icon" data-v-menu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#activity" data-v-menu-item-icon-use></use></svg>
 							<img src class="icon-img" data-v-menu-item-icon-img></i>
 							<span class="title" data-v-menu-item-name>Dashboard</span>
 							<span class="text-muted" data-v-menu-item-subtitle>Subtitle</span>
@@ -84,7 +95,7 @@ let chartjs = {};
 								<a href="/adminindex.php?module=posts" class="nav-link"
 								   data-v-submenu-item-url>
 								   
-								   <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
+								   <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true"><use href="/admin/default/img/icons.svg#box" data-v-submenu-item-icon-use></use></svg>
 								   <img src class="icon-img" data-v-submenu-item-icon-img></i>
 								   <span data-v-submenu-item-name>Submenu</span>
 								   <span class="text-muted" data-v-submenu-item-subtitle>Subtitle</span>
@@ -105,7 +116,9 @@ let chartjs = {};
 
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block " href="/admin" data-v-menu-item-url>
-                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#activity" data-v-menu-item-icon-use></use>
+                </svg>
                 <img src="#" class="icon-img" data-v-menu-item-icon-img>
                 <span class="title" data-v-menu-item-name>Dashboard</span>
                 <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
@@ -113,7 +126,9 @@ let chartjs = {};
               </a>
 
               <a class="nav-link mobile d-block d-md-none" href="/admin" data-v-menu-item-url>
-                <i class="icon-pulse-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#activity" data-v-menu-item-icon-use></use>
+                </svg>
                 <img src="#" class="icon-img" data-v-menu-item-icon-img>
                 <span class="title" data-v-menu-item-name>Dashboard</span>
                 <!-- span class="text-muted" data-v-menu-item-subtitle>Subtitle</span -->
@@ -126,7 +141,9 @@ let chartjs = {};
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/adminindex.php?module=posts" class="nav-link" data-v-submenu-item-url>
 
-                    <i class="icon-pulse-outline" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#box" data-v-submenu-item-icon-use></use>
+                    </svg>
                     <img src="#" class="icon-img" data-v-submenu-item-icon-img>
                     </i>
                     <span data-v-submenu-item-name>Submenu</span>
@@ -139,34 +156,46 @@ let chartjs = {};
 
 
             <li class="nav-item" data-v-menu-item>
-              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
-                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
+              <a class="nav-link d-none d-md-block  " href="/admin/?module=editor/page-builder&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#wand"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
-              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=editor/editor&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
-                <i class="icon-color-wand-outline" data-v-menu-item-icon></i>
+              <a class="nav-link mobile d-block d-md-none " href="/admin/?module=editor/page-builder&amp;url=/&amp;template=index.html" data-v-menu-item-url title="Edit website" data-bs-target="#menu-edit">
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#wand"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Edit website</span>
               </a>
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-target="#menu-post">
-                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#file-text"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=post" data-v-menu-item-url title="Posts" data-bs-toggle="dropdown" data-bs-target="#menu-post">
-                <i class="icon-document-text-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#file-text"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Posts</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/posts&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#file-text"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Posts</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -177,13 +206,17 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/tags&amp;type=post&amp;taxonomy_id=2" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-tags" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#tags"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Tags</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/categories&amp;type=post&amp;taxonomy_id=1" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#package"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Categories</span>
                   </a>
                 </li>
@@ -194,7 +227,9 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/comments&amp;status=0&amp;type=post" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-comments" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#messages"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Comments</span>
                   </a>
                 </li>
@@ -202,23 +237,31 @@ let chartjs = {};
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-target="#menu-pages">
-                <i class="icon-document-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#file"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=content/posts&amp;type=page" data-v-menu-item-url title="Pages" data-bs-toggle="dropdown" data-bs-target="#menu-pages">
-                <i class="icon-document-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#file"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Pages</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/posts&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#receipt"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Pages</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/post&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new page</span>
                   </a>
                 </li>
@@ -229,7 +272,9 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/menus&amp;type=page" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#package"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Menus</span>
                   </a>
                 </li>
@@ -237,33 +282,45 @@ let chartjs = {};
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
-                <i class="icon-images-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#photo"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
               <a class="nav-link mobile d-block d-md-none " href="/admin/?module=media/media" data-v-menu-item-url title="Media library" data-bs-target="#menu-medialibrary">
-                <i class="icon-images-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#photo"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Media library</span>
               </a>
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-target="#menu-users">
-                <i class="icon-people-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#users"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=user/users" data-v-menu-item-url title="Users" data-bs-toggle="dropdown" data-bs-target="#menu-users">
-                <i class="icon-people-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#users"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Users</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=user/users" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-user" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#user"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Users</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=user/user" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new user</span>
                   </a>
                 </li>
@@ -274,13 +331,17 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=user/user-groups" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-user-friends" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#users"></use>
+                    </svg>
                     <span data-v-submenu-item-name>User groups</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=user/user-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new group</span>
                   </a>
                 </li>
@@ -288,11 +349,15 @@ let chartjs = {};
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
-                <i class="icon-mail-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#mail"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
               <a class="nav-link mobile d-block d-md-none " href="/admin/?module=plugins/contact-form/messages" data-v-menu-item-url title="Messages" data-bs-target="#menu-messages">
-                <i class="icon-mail-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#mail"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Messages</span>
               </a>
             </li>
@@ -306,29 +371,39 @@ let chartjs = {};
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-target="#menu-sales">
-                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#shopping-bag"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=order/orders" data-v-menu-item-url title="Sales" data-bs-toggle="dropdown" data-bs-target="#menu-sales">
-                <i class="icon-bag-handle-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#shopping-bag"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Sales</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=order/orders" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#receipt-dollar"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Orders</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=order/subscriptions" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-retweet" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#repeat"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Subscriptions</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=order/returns" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-undo" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#arrow-back-up"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Returns</span>
                   </a>
                 </li>
@@ -339,13 +414,17 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=order/coupons" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-percentage" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#discount"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Discount coupons</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=order/vouchers" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-gift" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#gift"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Gift vouchers</span>
                   </a>
                 </li>
@@ -353,23 +432,31 @@ let chartjs = {};
             </li>
             <li class="nav-item align-middle columns-2" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-target="#menu-product">
-                <i class="icon-cube-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#box"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=product/products&amp;type=product" data-v-menu-item-url title="Products" data-bs-toggle="dropdown" data-bs-target="#menu-product">
-                <i class="icon-cube-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#box"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Products</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/products&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-box" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#box"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Products</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/product&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -380,13 +467,17 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/tags&amp;type=product&amp;taxonomy_id=5" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-tags" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#tags"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Tags</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/categories&amp;type=product&amp;taxonomy_id=4" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-boxes" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#package"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Categories</span>
                   </a>
                 </li>
@@ -397,13 +488,17 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/manufacturers&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-industry" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#building-factory"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Manufacturers</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/vendors&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-store" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#building-store"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Vendors</span>
                   </a>
                 </li>
@@ -414,19 +509,25 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/digital-assets&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-cloud-download-alt" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#cloud-download"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Digital assets</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/options&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-stream" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#activity"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Options</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/attribute-groups&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-list" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#list"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Attributes</span>
                   </a>
                 </li>
@@ -437,13 +538,17 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/product-reviews&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-comment" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#message"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Reviews</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=product/product-questions&amp;status=0&amp;type=product" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-question-circle" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#help-circle"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Questions</span>
                   </a>
                 </li>
@@ -459,29 +564,39 @@ let chartjs = {};
             </li>
             <li class="nav-item align-top" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-target="#menu-plugins">
-                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#puzzle"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=plugin/plugins" data-v-menu-item-url title="Plugins" data-bs-toggle="dropdown" data-bs-target="#menu-plugins">
-                <i class="icon-extension-puzzle-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#puzzle"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Plugins</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=plugin/plugins" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plug" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plug"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Installed Plugins</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=plugin/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new plugin</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=editor/code&amp;type=plugins" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-code" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#code"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Code editor</span>
                   </a>
                 </li>
@@ -497,7 +612,7 @@ let chartjs = {};
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
-                  <a href="/admin/?module=editor/editor&amp;url=/plugins/cookie-notice/notice.html&amp;template=/plugins/cookie-notice/notice.html" class="nav-link " data-v-submenu-item-url>
+                  <a href="/admin/?module=editor/page-builder&amp;url=/plugins/cookie-notice/notice.html&amp;template=/plugins/cookie-notice/notice.html" class="nav-link " data-v-submenu-item-url>
                     <img src="/plugins/cookie-notice/cookie-notice.svg" class="icon-img" data-v-submenu-item-icon-img>
                     <span data-v-submenu-item-name>Cookie notice</span>
                   </a>
@@ -506,29 +621,39 @@ let chartjs = {};
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-target="#menu-themes">
-                <i class="icon-copy-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#copy"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=theme/themes" data-v-menu-item-url title="Themes" data-bs-toggle="dropdown" data-bs-target="#menu-themes">
-                <i class="icon-copy-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#copy"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Themes</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=theme/themes" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-brush" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#brush"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Installed Themes</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=theme/market" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=editor/code&amp;type=themes" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-code" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#code"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Code editor</span>
                   </a>
                 </li>
@@ -536,23 +661,31 @@ let chartjs = {};
             </li>
             <li class="nav-item" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-target="#menu-field">
-                <i class="icon-reader-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#notebook"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=field/field-groups" data-v-menu-item-url title="Fields" data-bs-toggle="dropdown" data-bs-target="#menu-field">
-                <i class="icon-reader-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#notebook"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Fields</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=field/field-groups" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-brush" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#brush"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Field groups</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-plus" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#plus"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Add new</span>
                   </a>
                 </li>
@@ -560,29 +693,39 @@ let chartjs = {};
             </li>
             <li class="nav-item align-top mega-menu" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-target="#menu-settings">
-                <i class="icon-settings-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#settings"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=settings/sites" data-v-menu-item-url title="Settings" data-bs-toggle="dropdown" data-bs-target="#menu-settings">
-                <i class="icon-settings-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#settings"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Settings</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=settings/sites" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-stop la-90" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#square"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Sites</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/sites" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-stop" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#square"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Sites</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/site" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-plus" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#plus"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Add new</span>
                       </a>
                     </li>
@@ -590,19 +733,25 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=admin/users" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-user" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#user"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Admin users</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=admin/users" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#user"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Users</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=admin/user" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user-plus" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#user-plus"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Add new user</span>
                       </a>
                     </li>
@@ -613,13 +762,17 @@ let chartjs = {};
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=admin/roles" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user-cog" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#user-cog"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Manage Roles</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=admin/role" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-user-tag" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#id"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Add Role</span>
                       </a>
                     </li>
@@ -627,31 +780,41 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=content/menus" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#file-text"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Content</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/taxonomies" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-boxes" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#package"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Taxonomies</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/posts" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-file-alt" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#file-text"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Custom posts</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/products" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-box" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#box"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Custom products</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=field/field-group" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-stream" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#activity"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Fields</span>
                       </a>
                     </li>
@@ -659,31 +822,41 @@ let chartjs = {};
                 </li>
                 <li class="nav-item align-top" data-v-submenu-item>
                   <a href="/admin/?module=user/users" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-shopping-cart" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#shopping-cart"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Ecommerce</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/subscription-plans" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-receipt" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#receipt"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Subscriptions plans</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/tax-types" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#receipt-dollar"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Taxes</span>
                       </a>
                       <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/tax-types" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#receipt"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Tax types</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/tax-rates" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-file-invoice-dollar" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#receipt-dollar"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Tax rates</span>
                           </a>
                         </li>
@@ -691,25 +864,33 @@ let chartjs = {};
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/order-statuses" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-tags" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#tags"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Statuses</span>
                       </a>
                       <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/order-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-file-invoice" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#receipt"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Order</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/stock-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-box" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#box"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Stock</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/subscription-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-retweet" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#repeat"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Subscription</span>
                           </a>
                         </li>
@@ -720,19 +901,25 @@ let chartjs = {};
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/return-statuses" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-undo" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#arrow-back-up"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Return status</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/return-resolutions" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-exchange-alt" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#arrows-exchange"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Return resolutions</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/return-reasons" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-undo-alt" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#arrow-back-up"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Return reasons</span>
                           </a>
                         </li>
@@ -740,19 +927,25 @@ let chartjs = {};
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/discount" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-ruler" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#ruler"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Classes</span>
                       </a>
                       <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/length-types" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-ruler-horizontal" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#ruler"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Length</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=settings/weight-types" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-box" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#box"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Weight</span>
                           </a>
                         </li>
@@ -762,43 +955,57 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=localization/languages" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-flag" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#flag"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Localization</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=localization/languages" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-language" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#language"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Languages</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=localization/currencies" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-coins" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#coin"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Currencies</span>
                       </a>
                     </li>
                     <li class="nav-item align-top" data-v-submenu-item>
                       <a href="/admin/?module=localization/region-groups" class="nav-link items" data-v-submenu-item-url>
-                        <i class="la la-globe" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#globe"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Geo location</span>
                       </a>
                       <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=localization/countries" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-flag" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#flag"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Countries</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=localization/regions" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-city" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#building"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Regions</span>
                           </a>
                         </li>
                         <li class="nav-item" data-v-submenu-item>
                           <a href="/admin/?module=localization/region-groups" class="nav-link " data-v-submenu-item-url>
-                            <i class="la la-atlas" data-v-submenu-item-icon></i>
+                            <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#map"></use>
+                            </svg>
                             <span data-v-submenu-item-name>Region Groups</span>
                           </a>
                         </li>
@@ -808,13 +1015,17 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=settings/email" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-tools" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#tools"></use>
+                    </svg>
                     <span data-v-submenu-item-name>System</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=settings/email" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-envelope" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#mail"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Email settings</span>
                       </a>
                     </li>
@@ -824,35 +1035,47 @@ let chartjs = {};
             </li>
             <li class="nav-item align-top" data-v-menu-item>
               <a class="nav-link d-none d-md-block  items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-target="#menu-tools">
-                <i class="icon-globe-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#globe"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
               <a class="nav-link mobile d-block d-md-none items" href="/admin/?module=tools/cache" data-v-menu-item-url title="Tools" data-bs-toggle="dropdown" data-bs-target="#menu-tools">
-                <i class="icon-globe-outline" data-v-menu-item-icon></i>
+                <svg class="svg-icon" data-v-menu-item-icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#globe"></use>
+                </svg>
                 <span class="title" data-v-menu-item-name>Tools</span>
               </a>
               <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=tools/cache" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-circle-notch" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#loader-2"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Cache</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=tools/backup" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-server" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#server"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Backup</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=tools/cron" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-history la-90" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#history"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Cron job</span>
                   </a>
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=tools/import" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-upload" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#upload"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Import/Export</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
@@ -863,13 +1086,17 @@ let chartjs = {};
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=tools/import" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-file-import" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#file-import"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Import content</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=tools/export" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-file-export" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#file-export"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Export content</span>
                       </a>
                     </li>
@@ -877,19 +1104,25 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=tools/systeminfo" class="nav-link items" data-v-submenu-item-url>
-                    <i class="la la-info-circle" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#info-circle"></use>
+                    </svg>
                     <span data-v-submenu-item-name>System info</span>
                   </a>
                   <ul class="dropdown-menu sub-menu fade " data-v-submenu>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=tools/systeminfo" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-info" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#info-circle"></use>
+                        </svg>
                         <span data-v-submenu-item-name>System Info</span>
                       </a>
                     </li>
                     <li class="nav-item" data-v-submenu-item>
                       <a href="/admin/?module=tools/errorlog" class="nav-link " data-v-submenu-item-url>
-                        <i class="la la-bug" data-v-submenu-item-icon></i>
+                        <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#bug"></use>
+                        </svg>
                         <span data-v-submenu-item-name>Error log</span>
                       </a>
                     </li>
@@ -897,7 +1130,9 @@ let chartjs = {};
                 </li>
                 <li class="nav-item" data-v-submenu-item>
                   <a href="/admin/?module=tools/update" class="nav-link " data-v-submenu-item-url>
-                    <i class="la la-sync" data-v-submenu-item-icon></i>
+                    <svg class="svg-icon" data-v-submenu-item-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#refresh"></use>
+                    </svg>
                     <span data-v-submenu-item-name>Update</span>
                   </a>
                 </li>
@@ -908,22 +1143,354 @@ let chartjs = {};
 
 
       </nav> <!-- /navbar -->
-    </div>
+    </aside>
+    <aside class="vv-sidebar" aria-label="AI assistant">
+      <div class="vv-resize-handle" id="vvResizeHandle" title="Drag to resize panel" aria-hidden="true"></div>
+      <!-- Header -->
+      <div class="vv-header">
+        <div class="vv-header-actions">
+          <div class="dropdown">
+            <button type="button" id="vvSessionsBtn" class="btn btn-outline-secondary btn-sm border-0" title="Sessions" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#copy"></use>
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="vvSessionsMenu">
+              <div class="px-2 py-1">
+                <button class="btn btn-icon btn-outline-primary" type="button" id="vvNewSessionBtn">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#plus"></use>
+                  </svg> New session
+                </button>
+              </div>
+              <hr class="dropdown-divider">
+              <div class="px-2 pb-1">
+                <input type="text" class="form-control form-control-sm" id="vvSessionFilterInput" placeholder="Filter sessions…" aria-label="Filter sessions" autocomplete="off">
+              </div>
+              <ul id="vvSessionsList" class="vv-sessions-list">
+                <li class="vv-sessions-empty text-muted small px-3 py-2">No previous sessions</li>
+              </ul>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item text-center small text-muted" href="?module=plugins/ai-assistant/sessions-manager">View all sessions</a>
+            </div>
+          </div>
 
-    <div class="main">
+          <div class="dropdown">
+            <button type="button" id="vvOptionsBtn" class="btn btn-outline-secondary btn-sm border-0" title="Options" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="Assistant options">
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#settings"></use>
+              </svg>
+            </button>
+            <ul class="dropdown-menu vv-options-menu" aria-labelledby="vvOptionsBtn">
+              <li class="dropdown-item">
+                <button type="button" id="vvToggleThinkingBtn" class="btn btn-outline-secondary btn-sm active" title="Show thinking" aria-label="Show thinking" aria-pressed="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <path d="M9 18h6M10 21h4" />
+                    <path d="M12 3a6 6 0 0 0-4 10.5c.8.7 1 1.5 1 2.5h6c0-1 .2-1.8 1-2.5A6 6 0 0 0 12 3z" />
+                  </svg>
+                </button>
+                <span class="ms-2">Thinking</span>
+              </li>
+              <li class="dropdown-item">
+                <button type="button" class="btn btn-outline-secondary btn-sm active" id="vvToogleToolsBtn" title="Show tool calls" aria-label="Show tool calls" aria-pressed="false">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#hammer"></use>
+                  </svg>
+                </button>
+                <span class="ms-2">Tool calls</span>
+              </li>
 
-      <div class="top-header">
+              <li class="dropdown-item">
+                <button type="button" id="vvToggleCaptureBtn" class="btn btn-outline-secondary btn-sm active" title="Allow screenshots" aria-label="Allow screenshots" aria-pressed="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <path d="M4 8h3l2-3h6l2 3h3v11H4z" />
+                    <circle cx="12" cy="13" r="3.5" />
+                  </svg>
+                </button>
+                <span class="ms-2">Screenshots</span>
+              </li>
+              <li class="dropdown-item">
+                <button type="button" id="vvToggleScrollBtn" class="btn btn-outline-secondary btn-sm active" title="Auto-scroll thread" aria-label="Auto-scroll thread" aria-pressed="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <path d="M12 3v12m0 0l-4-4m4 4l4-4" />
+                    <path d="M4 21h16" />
+                  </svg>
+                </button>
+                <span class="ms-2">Auto-scroll</span>
+              </li>
+              <li class="dropdown-item">
+                <button type="button" id="vvToggleFollowBtn" class="btn btn-outline-secondary btn-sm active" title="Follow agent changes in the page" aria-label="Follow agent changes in the page" aria-pressed="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+                  </svg>
+                </button>
+                <span class="ms-2">Follow</span>
+              </li>
+              <li class="dropdown-item">
+                <button type="button" id="vvAllowDestructiveBtn" class="btn btn-outline-secondary btn-sm" title="Allow destructive actions (save/delete)" aria-label="Allow destructive actions" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <path d="M12 3l10 18H2z" />
+                    <path d="M12 10v5M12 18.5v.5" />
+                  </svg>
+                </button>
+                <span class="ms-2">Allow save/delete</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="vv-session-row">
+          <!--
+        <select id="vvSessionSelect" class="form-select form-select-sm" title="Session">
+          <option value="">Current session</option>
+        </select>
+		-->
+
+          <div class="dropdown vv-context-dropdown" title="Context">
+            <button class="btn btn-sm btn-outline-secondary dropdown-toggle vv-context-toggle border-0" type="button" id="vvContextDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg id="vvScopeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+              </svg>
+              <span id="vvScopeLabel"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="vvContextDropdownBtn" id="vvContextMenu" syle="--bs-dropdown-font-size:0.9em">
+              <li>
+                <button class="dropdown-item" type="button" data-scope="element" data-label="Selected element">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                  </svg>
+                  Selected element
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item active" type="button" data-scope="section" data-label="Current section">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                  </svg>
+                  Current section
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-scope="page" data-label="Whole page">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16v16H4z" />
+                  </svg>
+                  Whole page
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-scope="site" data-label="Entire site">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18M12 3c2.5 2.7 4 6.1 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6.1-4-9s1.5-6.3 4-9z" />
+                  </svg>
+                  Entire site
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Context scope selector -->
+      <div class="vv-context-bar">
+
+        <!--	  
+	  <button class="btn btn-secondary-outline border btn-sm" title="Toggle tools display" id="toggle-tools0display" data-bs-toggle="button" data-vvveb-action="toggleToolsDisplay" aria-pressed="true">
+                <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#stack"></use></svg>
+		</button> -->
+      </div>
+
+
+
+      <!-- Message thread -->
+      <div class="vv-thread show-tools show-thinking" id="vvThread">
+        <div class="vv-empty" id="vvEmptyState">
+          <div class="vv-empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M12 2a10 10 0 1 0 4 19.2L22 22l-.8-6A10 10 0 0 0 12 2z" />
+            </svg>
+          </div>
+          <h2>Ask me to build or edit this page</h2>
+          <p>I can see what's selected, attach a reference image, or talk through it by voice.</p>
+          <div class="vv-suggestions">
+            <button type="button" class="vv-suggestion-btn" data-fill="You are an expert frontend engineer and UI/UX perfectionist.
+
+Your sole job is to translate the provided mockup image into clean, production-ready, single-file HTML and CSS. 
+
+Your task is to implement a 100% pixel-perfect, responsive page based on the provided design reference and specifications. 
+
+The provided design image is the absolute Source of Truth. Do not interpret, 'improve,' redesign, or modernize anything. Reproduce it exactly as it looks.
+
+Use similar looking stock images, don't use placeholders or graphics for images.
+
+Match elements position, shape, spacing, borders, roundness, typography, font family, colors. backgrounds exactly.
+
+Verify against original design section by section meticulously, don't rush.
+
+Use bootstrap 5.">Convert attached image to design</button>
+            <button type="button" class="vv-suggestion-btn" data-fill="You are an expert frontend engineer and UI/UX perfectionist.
+
+Improve page aesthetics, styling, spacing, typography, follow solid design principles, use modern, professional, premium looks">Improve page aesthetics</button>
+            <button type="button" class="vv-suggestion-btn" data-fill="Add a new page for 'enterprise services', use the existing theme header and footer and generate the proper content and elements">Add new page</button>
+            <button type="button" class="vv-suggestion-btn" data-fill="Add a premium hero section with a headline and CTA button">Add a hero section</button>
+            <button type="button" class="vv-suggestion-btn" data-fill="Make the primary button color blue">Change button color</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Staged attachments (before sending) -->
+      <div class="vv-staged" id="vvStaged"></div>
+
+      <!-- Input -->
+      <div class="vv-inputbar">
+        <div class="vv-working vv-hidden" id="vvWorking">
+          <span class="vv-working-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="vv-working-text">Working&hellip;</span>
+          <span class="vv-working-queue vv-hidden" id="vvWorkingQueue"></span>
+        </div>
+        <div class="vv-queue vv-hidden" id="vvQueue"></div>
+        <div class="vv-drop-zone" id="vvDropZone">
+          <div class="vv-input-shell">
+            <textarea id="vvTextInput" rows="1" placeholder="Describe what to build or change…"></textarea>
+            <div>
+              <div>
+                <button type="button" class="vv-icon-btn" id="vvAttachBtn" title="Attach file" aria-label="Attach file">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21.44 11.05 12.5 20a5 5 0 0 1-7.07-7.07l8.94-8.94a3.5 3.5 0 0 1 4.95 4.95L10.5 17.8a1.5 1.5 0 0 1-2.12-2.12l7.78-7.79" />
+                  </svg>
+                </button>
+
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#vvSettingsRow" aria-expanded="false" aria-pressed="false" aria-controls="collapseExample">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#settings"></use>
+                  </svg>
+                </button>
+
+                <input type="file" id="vvFileInput" class="visually-hidden-file" multiple accept="image/*,application/pdf,.pdf,audio/*,video/*,.txt,.md,.markdown,.csv,.json,.js,.mjs,.css,.html,.htm,.xml,.yml,.yaml,.toml,.log">
+              </div>
+              <div>
+                <button type="button" class="vv-icon-btn vv-mic-btn" id="vvMicBtn" title="Voice input" aria-label="Voice input">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="2" width="6" height="12" rx="3" />
+                    <path d="M5 10a7 7 0 0 0 14 0M12 19v3" />
+                  </svg>
+                </button>
+                <button type="button" class="vv-send-btn" id="vvSendBtn" disabled title="Send" aria-label="Send message">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                  </svg>
+                </button>
+                <button type="button" class="vv-cancel-btn vv-hidden" id="vvCancelBtn" title="Cancel response" aria-label="Cancel">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="vv-settings-row collapse" id="vvSettingsRow">
+              <div class="input-group">
+                <button type="button" id="vvModelRefresh" class="btn btn-outline-secondary btn-sm border-0" title="Refresh model list">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#refresh"></use>
+                  </svg>
+                </button>
+                <select id="vvModelSelect" class="form-select form-select-sm border-0" title="Model">
+                  <option value="">Auto (settings)</option>
+                </select>
+              </div>
+              <select id="vvThinkingSelect" class="form-select form-select-sm border-0" title="Thinking level">
+                <option value="">Off</option>
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="vv-input-hint">
+          <span id="vvHintText">Enter to send · Shift+Enter for newline</span>
+          <span class="vv-rec-live" id="vvRecLive">
+            <span class="vv-rec-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            Listening…
+          </span>
+          <button type="button" class="vv-usage-toggle" id="vvUsageToggle" class="btn btn-sm" title="Show usage details" aria-expanded="false" aria-controls="vvUsageDetails" aria-label="Toggle usage details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+
+
+        <div id="vvUsageDetails" class="vv-hidden">
+          <div class="vv-token-usage small text-muted px-1 vv-hidden">
+            <span class="vv-token-details"></span>
+          </div>
+
+          <div class="vv-context-usage d-flex align-items-center gap-2 small text-muted px-1 py-1 vv-hidden">
+            <span>Context: <strong class="vv-context-pct">0%</strong>
+              <small class="vv-context-tokens text-muted"></small>
+            </span>
+            <div class="progress flex-grow-1">
+              <div class="progress-bar vv-context-progressbar" role="progressbar"></div>
+            </div>
+
+          </div>
+
+
+          <div class="vv-total-usage small text-muted px-1 d-flex gap-2 vv-hidden">
+            <div>
+              <div>Total: <strong class="vv-total-tokens">0</strong>
+              </div>
+              <div>Cache: <strong class="vv-cache-pct">0%</strong> hit (<span class="vv-cache-hit">0</span>)</div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary py-0 px-1 vv-compact-btn" title="Compact conversation">
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#arrows-minimize"></use>
+              </svg> Compact
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </aside>
+
+
+
+
+    <main>
+
+      <header class="top-header">
 
         <div class="btn-group" data-v-component-sites>
 
           <button class="btn px-2 ms-1 menu-toggle" title="Toggle sidebar width">
-            <i class="la la-bars"></i>
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#menu-2"></use>
+            </svg>
           </button>
-
 
           <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
-            <i class="icon-eye-outline"></i>
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#eye"></use>
+            </svg>
             <span>View live website</span>
           </button>
 
@@ -931,17 +1498,21 @@ let chartjs = {};
           <div class="dropdown-menu">
             <div data-v-site>
               <a class="dropdown-item d-flex" href="#" data-v-site-url target="_blank">
-                <!-- i class="la la-circle la-lg me-2"></i -->
+                <!-- icon removed with icon fonts -->
                 <span data-v-site-name class="flex-grow-1">Default website</span>
-                <i class="la la-external-link-alt"></i>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#external-link"></use>
+                </svg>
               </a>
             </div>
 
             <div data-v-site>
               <a class="dropdown-item" href="#" data-v-site target="_blank">
-                <!--- <i class="icon-eye-outline la-lg me-2"></i> -->
+                <!--- <svg class="svg-icon me-2" aria-hidden="true"><use href="/admin/default/img/icons.svg#eye"></use></svg> -->
                 <span data-v-site-name class="flex-grow-1">Blog</span>
-                <i class="la la-external-link-alt"></i>
+                <svg class="svg-icon" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#external-link"></use>
+                </svg>
               </a>
             </div>
 
@@ -949,14 +1520,18 @@ let chartjs = {};
 
             <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/sites"}'>
               <span class="flex-grow-1">Manage sites</span>
-              <i class="la la-edit ms-2"></i>
+              <svg class="svg-icon ms-2" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#edit"></use>
+              </svg>
             </a>
           </div>
         </div>
 
         <div class="btn-group">
           <button type="button" class="btn px-1 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="icon-reload-circle-outline"></i>
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#rotate-clockwise"></use>
+            </svg>
             <span>Clear cache</span>
           </button>
 
@@ -964,7 +1539,9 @@ let chartjs = {};
             <div>
               <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"asset"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
-                  <i class="icon-document-text-outline me-2 text-body-tertiary"></i>
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#file-text"></use>
+                  </svg>
                   <span>Assets</span>
                 </div>
               </a>
@@ -972,7 +1549,9 @@ let chartjs = {};
             <div>
               <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"template"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
-                  <i class="icon-code-slash-outline me-2 text-body-tertiary"></i>
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#code-off"></use>
+                  </svg>
                   <span>Templates</span>
                 </div>
               </a>
@@ -980,7 +1559,9 @@ let chartjs = {};
             <div>
               <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"database"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
-                  <i class="icon-server-outline me-2 text-body-tertiary"></i>
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#server"></use>
+                  </svg>
                   <span>Database</span>
                 </div>
               </a>
@@ -988,7 +1569,9 @@ let chartjs = {};
             <div>
               <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"page"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
-                  <i class="icon-document-outline me-2 text-body-tertiary"></i>
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#file"></use>
+                  </svg>
                   <span>Page cache</span>
                 </div>
               </a>
@@ -996,7 +1579,9 @@ let chartjs = {};
             <div>
               <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"image"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
-                  <i class="icon-image-outline me-2 text-body-tertiary"></i>
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#photo"></use>
+                  </svg>
                   <span>Image cache</span>
                 </div>
               </a>
@@ -1004,7 +1589,9 @@ let chartjs = {};
             <div>
               <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"model"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
-                  <i class="icon-paper-plane-outline me-2 text-body-tertiary"></i>
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#send"></use>
+                  </svg>
                   <span>Model cache</span>
                 </div>
               </a>
@@ -1014,7 +1601,9 @@ let chartjs = {};
             <div>
               <a class="dropdown-item d-flex" href="#" target="_blank" data-v-url-params='{"module":"tools/cache", "action":"delete"}' data-v-vvveb-action="cache.clear">
                 <div class="flex-grow-1">
-                  <i class="icon-sync-outline me-2 text-body-tertiary"></i>
+                  <svg class="svg-icon me-2 text-body-tertiary" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#refresh"></use>
+                  </svg>
                   <span>All cache</span>
                 </div>
               </a>
@@ -1028,7 +1617,9 @@ let chartjs = {};
 
           <div class="btn-group top-notifications" data-v-component-notifications>
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="la la-bell"></i>
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#bell"></use>
+              </svg>
               <span class="badge bg-primary-subtle text-body" data-v-if="count > 0" data-v-notification-count>5</span>
             </button>
 
@@ -1036,7 +1627,9 @@ let chartjs = {};
               <div data-v-if="notifications.updates.core.hasUpdate">
                 <h6 class="dropdown-header">Updates</h6>
                 <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
-                  <i class="icon-flash-outline text-success"></i>
+                  <svg class="svg-icon text-success" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#bolt"></use>
+                  </svg>
                   <span>Update available</span>
                   <strong class="badge bg-success small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
                 </a>
@@ -1045,7 +1638,9 @@ let chartjs = {};
               <div data-v-if-not="notifications.updates.core.hasUpdate">
                 <h6 class="dropdown-header">Updates</h6>
                 <a class="dropdown-item" href="#" data-v-site-href data-v-url-params='{"module":"tools/update"}'>
-                  <i class="icon-flash-outline"></i>
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#bolt"></use>
+                  </svg>
                   <span>Up to date</span>
                   <strong class="badge bg-primary small mx-2" data-v-notification-updates-core-version>0.0.5</strong>
                 </a>
@@ -1058,14 +1653,18 @@ let chartjs = {};
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
                   <a href="#" data-v-group-notification-url>
-                    <i class="" data-v-group-icon></i>
+                    <svg class="svg-icon" data-v-group-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#shopping-bag" data-v-group-icon-use></use>
+                    </svg>
                     <span data-v-group-notification-name>New orders</span>
                     <strong class="badge bg-primary-subtle mx-2 bg-primary-subtle" data-v-group-notification-count>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
                   <a href="#" data-v-site-href data-v-url-params='{"module":"order/orders"}'>
-                    <i class="la la-file-invoice" data-v-group-icon></i>
+                    <svg class="svg-icon" data-v-group-icon aria-hidden="true">
+                      <use data-v-group-icon-use href="/admin/default/img/icons.svg#receipt"></use>
+                    </svg>
                     <span data-v-group-notification-name>Returns</span>
                     <strong class="badge bg-danger-subtle small" data-v-group-notification-count>2</strong>
                   </a>
@@ -1080,14 +1679,18 @@ let chartjs = {};
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
                   <a href="#" data-v-group-notification-url>
-                    <i class="la la-comment"></i>
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#message"></use>
+                    </svg>
                     <span data-v-group-notification-name>New comments</span>
                     <strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
                   <a href="#" data-v-group-notification-url>
-                    <i class="la la-comment"></i>
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#message"></use>
+                    </svg>
                     <span data-v-group-notification-name>Spam comments</span>
                     <strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong>
                   </a>
@@ -1101,14 +1704,18 @@ let chartjs = {};
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
                   <a href="#" data-v-group-notification-url>
-                    <i class="la la-comment"></i>
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#message"></use>
+                    </svg>
                     <span data-v-group-notification-name>New reviews</span>
                     <strong class="badge bg-primary-subtle small mx-2" data-v-notification-value>5</strong>
                   </a>
                 </div>
                 <div class="dropdown-item" data-v-group-notification>
                   <a href="#" data-v-site-href data-v-url-params='{"module":"content/comments"}'>
-                    <i class="la la-comment"></i>
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#message"></use>
+                    </svg>
                     <span data-v-group-notification-name>Spam questions</span>
                     <strong class="badge bg-danger-subtle small" data-v-notification-value>2</strong>
                   </a>
@@ -1123,7 +1730,9 @@ let chartjs = {};
               <input type="hidden" name="csrf" data-v-csrf>
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
-                <i class="la la-sitemap me-1"></i>
+                <svg class="svg-icon me-1" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#sitemap"></use>
+                </svg>
                 <span data-v-site-info-name>Default site</span>
               </button>
 
@@ -1131,16 +1740,24 @@ let chartjs = {};
               <div class="dropdown-menu">
                 <div data-v-site>
                   <button class="dropdown-item" href="#" data-v-site-site_id name="site" value="default">
-                    <i class="la la-window-minimize la-lg me-2" data-v-if="state = 'live'" data-v-site-icon></i>
-                    <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+                    <svg class="svg-icon me-2" data-v-if="state = 'live'" data-v-site-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use>
+                    </svg>
+                    <svg class="svg-icon me-2" data-v-if-not="state = 'live'" data-v-site-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use>
+                    </svg>
                     <span data-v-site-name>Default website</span>
                   </button>
                 </div>
 
                 <div data-v-site>
                   <a class="dropdown-item" href="#" data-v-site name="site" value="default">
-                    <i class="la la-window-minimize la-lg me-2" data-v-site-icon></i>
-                    <i class="la la-lg me-2" data-v-if-not="state = 'live'" data-v-site-icon></i>
+                    <svg class="svg-icon me-2" data-v-site-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use>
+                    </svg>
+                    <svg class="svg-icon me-2" data-v-if-not="state = 'live'" data-v-site-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#broadcast" data-v-site-icon-use></use>
+                    </svg>
                     <span data-v-site-name>Blog</span>
                   </a>
                 </div>
@@ -1148,7 +1765,9 @@ let chartjs = {};
                 <div class="dropdown-divider"></div>
 
                 <a class="dropdown-item" href="#" data-v-url-params='{"module":"settings/site"}'>
-                  <i class="la la-plus me-2"></i>
+                  <svg class="svg-icon me-2" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#plus"></use>
+                  </svg>
                   Add new
                 </a>
               </div>
@@ -1160,7 +1779,9 @@ let chartjs = {};
               <input type="hidden" name="csrf" data-v-csrf>
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-v-class-if-not-bg-danger-subtle="states.active = 'live'">
 
-                <i class="la text-success me-1" data-v-state-info-active_icon></i>
+                <svg class="svg-icon text-success me-1" data-v-state-info-active_icon aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#broadcast" data-v-state-info-active_icon-use></use>
+                </svg>
                 <span data-v-state-info-active_name>Live</span>
               </button>
 
@@ -1168,7 +1789,9 @@ let chartjs = {};
               <div class="dropdown-menu">
                 <div data-v-state>
                   <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to `' + dataset.state + '` state?')" name="state" data-state="live">
-                    <i class="la la-broadcast-tower la-lg me-2" data-v-state-icon></i>
+                    <svg class="svg-icon me-2" data-v-state-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#broadcast" data-v-state-icon-use></use>
+                    </svg>
                     <span data-v-state-name>
                       Live
                     </span>
@@ -1176,7 +1799,9 @@ let chartjs = {};
                 </div>
                 <div data-v-state>
                   <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to maintenance?')" name="state" data-state="maintenance">
-                    <i class="la la-wrench la-lg me-2" data-v-state-icon></i>
+                    <svg class="svg-icon me-2" data-v-state-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#tool" data-v-state-icon-use></use>
+                    </svg>
                     <span data-v-state-name>
                       Maintenance
                     </span>
@@ -1184,7 +1809,9 @@ let chartjs = {};
                 </div>
                 <div data-v-state>
                   <button class="dropdown-item" href="#" onclick="return confirm('Are you sure you want to set your website to coming soon mode?')" name="state" data-state="coming soon">
-                    <i class="la la-clock la-lg me-2" data-v-state-icon></i>
+                    <svg class="svg-icon me-2" data-v-state-icon aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#clock" data-v-state-icon-use></use>
+                    </svg>
                     <span data-v-state-name>
                       Coming soon
                     </span>
@@ -1199,7 +1826,9 @@ let chartjs = {};
               <input type="hidden" name="csrf" data-v-csrf>
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
-                <i class="la la-flag me-1"></i>
+                <svg class="svg-icon me-1" aria-hidden="true">
+                  <use href="/admin/default/img/icons.svg#flag"></use>
+                </svg>
                 <span data-v-language-info-slug>English</span>
               </button>
 
@@ -1224,7 +1853,9 @@ let chartjs = {};
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-v-url-params='{"module":"localization/languages"}'>
-                  <i class="la la-plus me-2"></i>
+                  <svg class="svg-icon me-2" aria-hidden="true">
+                    <use href="/admin/default/img/icons.svg#plus"></use>
+                  </svg>
                   Add new
                 </a>
               </div>
@@ -1234,12 +1865,16 @@ let chartjs = {};
           <div class="vr align-middle mx-1"></div>
 
           <button id="color-theme-switch" title="Switch sidebar color theme" class="btn px-1 ms-1">
-            <i class="la la-sun"></i>
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#sun"></use>
+            </svg>
           </button>
 
 
           <a target="_blank" id="top-docs-btn" href="{$this.adminPath}index.php?action=goToHelp" onclick="this.href = window.location.href.replace('action', 'origaction') + (window.location.href.indexOf('?') > 0 ? '&' : '?') + 'action=goToHelp'" class="btn px-1" aria-expanded="false">
-            <i class="la la-lg la-question-circle"></i>
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="/admin/default/img/icons.svg#help-circle"></use>
+            </svg>
             <span>Docs</span>
           </a>
 
@@ -1294,7 +1929,7 @@ let chartjs = {};
           </div>
 
         </div>
-      </div>
+      </header>
 
 
       <div class="p-4">
@@ -1304,7 +1939,9 @@ let chartjs = {};
           <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
 
             <div class="icon">
-              <i class="la la-exclamation-triangle"></i>
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#alert-triangle"></use>
+              </svg>
             </div>
 
             <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -1314,7 +1951,7 @@ let chartjs = {};
 
             <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
-                <!-- <i class="la la-times"></i> -->
+                <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
               </span>
             </button>
           </div>
@@ -1322,7 +1959,9 @@ let chartjs = {};
           <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
 
             <div class="icon">
-              <i class="la la-check-circle"></i>
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#circle-check"></use>
+              </svg>
             </div>
 
             <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -1331,7 +1970,7 @@ let chartjs = {};
 
             <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
-                <!-- <i class="la la-times"></i> -->
+                <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
               </span>
             </button>
           </div>
@@ -1339,7 +1978,9 @@ let chartjs = {};
           <div class="alert alert-warning d-flex alert-dismissable d-flex" role="alert" data-v-notification-warning>
 
             <div class="icon">
-              <i class="la la-exclamation-triangle"></i>
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#alert-triangle"></use>
+              </svg>
             </div>
 
             <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -1348,7 +1989,7 @@ let chartjs = {};
 
             <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
-                <!-- <i class="la la-times"></i> -->
+                <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
               </span>
             </button>
           </div>
@@ -1356,7 +1997,9 @@ let chartjs = {};
           <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
 
             <div class="icon">
-              <i class="la la-info-circle"></i>
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#info-circle"></use>
+              </svg>
             </div>
 
             <div class="flex-grow-1 align-self-center" data-v-notification-text>
@@ -1365,12 +2008,13 @@ let chartjs = {};
 
             <button type="button" class="btn-close ms-2 mt-2" data-bs-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
-                <!-- <i class="la la-times"></i> -->
+                <!-- <svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg> -->
               </span>
             </button>
           </div>
 
         </div>
+
 
         <div class="grid-stack">
 
@@ -1382,15 +2026,17 @@ let chartjs = {};
                 <div class="card-body card-block info">
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
 
                   <div class="flex-grow-1"></div>
                   <div class="icons">
+                    <h3 class="number" data-v-notification-orders-processing-count>0</h3>
                     <h5 class="card-title">Orders</h5>
-                    <i class="la la-shopping-cart icon text-success d-inline-block "></i>
-                    <h3 class="number d-inline-block" data-v-notification-orders-processing-count>0</h3>
+                    <!-- <svg class="svg-icon icon text-success d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#shopping-cart"></use></svg> -->
                   </div>
 
                   <div class="flex-grow-1"></div>
@@ -1428,15 +2074,17 @@ let chartjs = {};
                 <div class="card-body card-block info">
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
 
                   <div class="flex-grow-1"></div>
                   <div class="icons">
+                    <h3 class="number" data-v-notification-users-month-count>37</h3>
                     <h5 class="card-title">Users</h5>
-                    <i class="la la-user icon text-purple d-inline-block"></i>
-                    <h3 class="number d-inline-block" data-v-notification-users-month-count>37</h3>
+                    <!-- <svg class="svg-icon icon text-purple d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#user"></use></svg> -->
                   </div>
 
                   <div class="flex-grow-1"></div>
@@ -1467,15 +2115,17 @@ let chartjs = {};
                 <div class="card-body card-block info">
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
 
                   <div class="flex-grow-1"></div>
                   <div class="icons">
+                    <h3 class="number" data-v-notification-comments-pending-count>5</h3>
                     <h5 class="card-title">Comments</h5>
-                    <i class="la la-comments icon text-primary d-inline-block"></i>
-                    <h3 class="number d-inline-block" data-v-notification-comments-pending-count>5</h3>
+                    <!-- <svg class="svg-icon icon text-primary d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#messages"></use></svg> -->
                   </div>
 
                   <div class="flex-grow-1"></div>
@@ -1510,15 +2160,17 @@ let chartjs = {};
                 <div class="card-body card-block info">
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
 
                   <div class="flex-grow-1"></div>
                   <div class="icons">
+                    <h3 class="number" data-v-notification-reviews-pending-count>8</h3>
                     <h5 class="card-title">Reviews</h5>
-                    <i class="la la-sms icon text-success d-inline-block"></i>
-                    <h3 class="number d-inline-block" data-v-notification-reviews-pending-count>8</h3>
+                    <!-- <svg class="svg-icon icon text-success d-inline-block" aria-hidden="true"><use href="/admin/default/img/icons.svg#message"></use></svg> -->
                   </div>
 
                   <div class="flex-grow-1"></div>
@@ -1550,14 +2202,16 @@ let chartjs = {};
 
             <div class="grid-stack-item-content">
               <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center py-1">
-                  <div>Sales</div>
+                <div class="card-header d-flex justify-content-between align-items-center border-0 p-1">
+                  <div></div>
 
-                  <div class="d-flex me-3">
+                  <div class="d-flex">
 
                     <div class="dropdown me-2" id="stats-filters">
                       <button class="btn btn-outline-secondary btn-icon btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="icon-filter-outline">
+                        <svg class="svg-icon" aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#filter"></use>
+                        </svg>
                       </button>
                       <ul class="dropdown-menu">
                         <li class="dropdown-item">
@@ -1592,13 +2246,17 @@ let chartjs = {};
                     <div class="input-group input-group-sm">
                       <input name="stats-date-range" id="stats-date-range" value="" type="text" class="form-control daterange border-end-0 form-control-sm text-end" autocomplete="off" size="16" data-v-post-updated_at>
                       <div class="input-group-text bg-body" onclick="updated_at.focus()">
-                        <i class="icon-calendar-outline"></i>
+                        <svg class="svg-icon" aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#calendar"></use>
+                        </svg>
                       </div>
                     </div>
 
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">
-                        <i class="la la-times"></i>
+                        <svg class="svg-icon" aria-hidden="true">
+                          <use href="/admin/default/img/icons.svg#x"></use>
+                        </svg>
                       </span>
                     </button>
                   </div>
@@ -1606,10 +2264,7 @@ let chartjs = {};
                 </div>
 
 
-                <div class="card-body">
-
-
-
+                <div class="card-body p-0">
 
                   <div class="chartjs" data-chartjs="orders_users" style="height:100%">
                     <canvas></canvas>
@@ -1626,14 +2281,14 @@ let chartjs = {};
                                                     data: {$stats.orders},
                                                     fill: true,
                                                     borderColor: 'rgba(255, 99, 132, 0.5)',
-                                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
                                                 }, {
                                                     label: 'Users',
                                                     fill: true,
                                                     //data: [3, 15, 7, 4, 19, 12],
                                                     data: {$stats.users},
                                                     borderColor: 'rgba(54, 162, 235, 0.5)',
-                                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                                    backgroundColor: 'rgba(54, 162, 235, 0.1)',
                                                 }]
                                         },
                                         options: {
@@ -1653,12 +2308,18 @@ let chartjs = {};
                                             scales: {
                                                 xAxes: [{
                                                     display: true,
+													gridLines: {
+														color: "rgba(0, 0, 0, 0)",
+													},
                                                     scaleLabel: {
                                                         display: true
                                                     }
                                                 }],
                                                 yAxes: [{
                                                     display: true,
+													gridLines: {
+														//color: "rgba(0, 0, 0, 0)",
+													},
                                                     scaleLabel: {
                                                         display: true,
                                                         //labelString: 'Sales'
@@ -1682,7 +2343,7 @@ let chartjs = {};
                                 Orders
 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                    <span aria-hidden="true"><svg class="svg-icon" aria-hidden="true"><use href="/admin/default/img/icons.svg#x"></use></svg></span>
                                 </button>
                             </div>
                             <div class="card-body">
@@ -1759,7 +2420,9 @@ let chartjs = {};
 
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1791,7 +2454,9 @@ let chartjs = {};
 
 
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm" data-v-order-url>
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
 
                         </td>
@@ -1804,7 +2469,9 @@ let chartjs = {};
                         <td class="text-center">$1,005.00</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -1816,7 +2483,9 @@ let chartjs = {};
                         <td class="text-center">$1,005.00</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -1845,7 +2514,9 @@ let chartjs = {};
 
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1867,7 +2538,9 @@ let chartjs = {};
                         <td width="150" data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center" width="70">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm" data-v-user-url>
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -1879,7 +2552,9 @@ let chartjs = {};
                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -1891,7 +2566,9 @@ let chartjs = {};
                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -1903,7 +2580,9 @@ let chartjs = {};
                         <td data-v-user-created_at data-filter-friendly_date title="data-v-user-created_at">31/05/2018</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm" data-v-comment-url>
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -1932,7 +2611,9 @@ let chartjs = {};
 
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1957,7 +2638,9 @@ let chartjs = {};
 
 
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm" data-v-product-url>
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
 
                         </td>
@@ -1989,7 +2672,9 @@ let chartjs = {};
 
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -2012,7 +2697,9 @@ let chartjs = {};
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm" data-v-comment-url>
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -2024,7 +2711,9 @@ let chartjs = {};
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -2036,7 +2725,9 @@ let chartjs = {};
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -2048,7 +2739,9 @@ let chartjs = {};
                         <td data-v-comment-content>31/05/2018</td>
                         <td class="text-center">
                           <a href="#" class="btn btn-icon btn-outline-primary btn-sm">
-                            <i class="la la-hand-pointer"></i>
+                            <svg class="svg-icon" aria-hidden="true">
+                              <use href="/admin/default/img/icons.svg#pointer"></use>
+                            </svg>
                           </a>
                         </td>
                       </tr>
@@ -2079,7 +2772,9 @@ let chartjs = {};
 
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                      <i class="la la-times"></i>
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use href="/admin/default/img/icons.svg#x"></use>
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -2147,11 +2842,11 @@ let chartjs = {};
         </div>
       </div>
 
-      <div id="main-footer">
+      <footer id="main-footer">
         Powered by <a href="https://www.vvveb.com" target="_blank">Vvveb</a>
-      </div>
+      </footer>
 
-    </div>
+    </main>
   </div>
 
 
@@ -2167,8 +2862,10 @@ let chartjs = {};
               <div class="input-group">
                 <input type="search" name="search" class="form-control border-0 p-3" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search.autocomplete" data-selector=".search-results" data-v-vvveb-on="keyup">
                 <button class="btn btn-outline-primary border-0" type="submit" title="Search">
-                  <div class="la-flip-horizontal">
-                    <i class="la la-search la-lg" aria-hidden="true"></i>
+                  <div style="transform: scaleX(-1)">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use href="/admin/default/img/icons.svg#search"></use>
+                    </svg>
                   </div>
                 </button>
               </div>
@@ -2210,7 +2907,9 @@ let chartjs = {};
           <h5 class="modal-title" id="widgetModalLabel">Widgets</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">
-              <i class="la la-times"></i>
+              <svg class="svg-icon" aria-hidden="true">
+                <use href="/admin/default/img/icons.svg#x"></use>
+              </svg>
             </span>
           </button>
         </div>
@@ -2236,7 +2935,7 @@ let chartjs = {};
   <script id="chartjs-script" src="libs/chart-js/chart.bundle.min.js"></script>
 
   <script type="text/javascript">
-let options = {
+var options = {
 	cellHeight: 90,
 	margin: 10,
 	cellHeightThrottle: 100,
@@ -2245,16 +2944,16 @@ let options = {
 	minWidth: 1200
 };
 
-let grid = GridStack.init(options);
-let chartJsInstances = {};
+var grid = GridStack.init(options);
+var chartJsInstances = {};
 
 document.querySelectorAll(".chartjs").forEach(el => {
 	ctx = el.querySelector("canvas").getContext("2d");
 	chartJsInstances[el.dataset.chartjs] = el.chartjs = new Chart(ctx, chartjs[el.dataset.chartjs]);
 });
 
-let statsDateRange = document.getElementById('stats-date-range');
-let statsFilters   = document.getElementById('stats-filters');
+var statsDateRange = document.getElementById('stats-date-range');
+var statsFilters   = document.getElementById('stats-filters');
 
 function updateStats() {
 	let stats = {};
@@ -2266,7 +2965,7 @@ function updateStats() {
 	}
 	
 	const params = new URLSearchParams(stats);
-	fetch(`{$this.adminPath}?action=stats&${params}`)
+	fetch(`{$this.adminPath}index.php?action=stats&${params}`)
 	  .then((response) => response.json())
 	  .then((data) => {
 
@@ -2320,11 +3019,11 @@ statsDateRange.addEventListener("change", updateStats);
 
 
   <!-- Modal -->
-  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLogin" aria-hidden="true">
+  <div class="modal fade" id="heartBeatLogin" data-bs-backdrop="static" tabindex="-1" aria-labelledby="heartBeatLoginLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <span class="modal-title" id="heartBeatLogin">
+          <span class="modal-title" id="heartBeatLoginLabel">
             <h5>Session has expired</h5>
             <span>Login to resume your work</span>
           </span>
