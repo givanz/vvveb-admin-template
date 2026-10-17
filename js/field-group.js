@@ -1,4 +1,4 @@
-let fields = [];
+var fields = [];
 
 function addFieldsToSelect(fieldSelect, data, field_id = 0) {
 	fieldSelect.html('<option value="0">All Fields</option>');
@@ -56,10 +56,14 @@ document.querySelector(".fields").addEventListener("click", function (event) {
 	return false;
 });
 */
-document.getElementById("group-conditionals").addEventListener("click", function (e) {
+var groupIndex = 0;
+var ruleIndex = [[0]];
+
+document.addEventListener("click", function (e) {
+//document.getElementById("group-conditionals").addEventListener("click", function (e) {
 	let element;
 
-	if (element = event.target.closest(".btn-remove")) {
+	if (element = event.target.closest(".conditionals .btn-remove")) {
 		let rule = element.closest(".rule");
 		if (rule) {
 			let group = rule.closest(".group");
@@ -74,28 +78,51 @@ document.getElementById("group-conditionals").addEventListener("click", function
 		e.preventDefault();
 	}
 	
-	if (element = event.target.closest(".btn-add")) {
+	if (element = event.target.closest(".conditionals .btn-add")) {
 		let rule = element.closest(".rule");
 		if (rule) {
 			let template = document.getElementById("field-group-rule-template").innerHTML;
 			let id = Math.floor(Math.random() * 10000);
-			template = template.replaceAll('field-id-1',"field-id-" + id)
-						.replaceAll('field[1]',"field[" + id + "]");
-						
+			
+			let gIndex = groupIndex;
+			let group = rule.closest("[data-group]");
+			let index = rule.parentNode.querySelectorAll(".rule").length;
+			
+			
+			if (group) {
+				gIndex = group.getAttribute("data-group");
+				//ruleIndex[gIndex] = (ruleIndex[gIndex] ?? 0)+ 1;
+			}
+			
+			//index = ruleIndex[gIndex];
+			
+			template = template.replaceAll("#rule#", index).replaceAll("#group#", gIndex).replaceAll('disabled', '');;
+			
+			template = addDataTemplate(rule, template);
+			
 			rule.after(generateElements(template)[0]);	
 		}
 		
 		e.preventDefault();
 	}
 
-	if (element = event.target.closest("#btn-rule-group-add")) {
+	if (group = event.target.closest(".conditionals .btn-rule-group-add")) {
+		groupIndex = group.parentNode.querySelectorAll(".group").length;;
 		let template = document.getElementById("field-group-rule-group-template").innerHTML;
 		let id = Math.floor(Math.random() * 10000);
-		template = template.replaceAll('field-id-1',"field-id-" + id)
-					.replaceAll('field[1]',"field[" + id + "]");
+		template = template.replaceAll("#rule#", ruleIndex).replaceAll("#group#", groupIndex).replaceAll('disabled', '');
+
+		const targetText = template;
+		const reg = /#([\w_-]+)#/g;
+		let result;
+		while ((result = reg.exec(targetText)) !== null) {
+			let attr = group.closest("[data-" + result[1] + "]");
+			if (attr) {
+				template = template.replaceAll("#" + result[1] + "#", attr.getAttribute("data-" + result[1]));
+			}
+		}
 					
-		element.before(generateElements(template)[0]);	
-		
+		group.before(generateElements(template)[0]);	
 		
 		e.preventDefault();
 	}

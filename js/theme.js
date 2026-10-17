@@ -1,3 +1,5 @@
+var Vvveb = {};
+
 window.delay = (function(){
   var timer = 0;
   return function(callback, ms){
@@ -6,20 +8,32 @@ window.delay = (function(){
   };
 })();
 
+//Paints the theme switch icon for the given theme
+//by swapping the svg sprite reference between #sun and #moon.
+function paintThemeIcon(theme) {
+	let button = document.querySelector("#color-theme-switch");
+	if (!button || typeof button.querySelector !== "function") return;
+	let use = button.querySelector("use");
+	if (!use || typeof use.getAttribute !== "function") return;
+	let href = use.getAttribute("href") || "";
+	use.setAttribute("href", href.split("#")[0] + (theme == "dark" ? "#moon" : "#sun"));
+}
+
 //let theme = localStorage.getItem("theme", "dark");
-let theme = document.documentElement.dataset.bsTheme;
+var theme = document.documentElement.dataset.bsTheme;
 if (theme) {
-	if (theme == "dark") {
-		let themeSwitch = document.querySelector("#color-theme-switch i");
-		themeSwitch.classList.remove("la-sun")
-		themeSwitch.classList.add("la-moon");
-	}
+	paintThemeIcon(theme);
 }
 
 //let smallNav = localStorage.getItem("sidebar-size", "small-nav");
-let smallNav = document.cookie.indexOf("sidebar-size=small-nav") > 0;
+var smallNav = document.cookie.indexOf("sidebar-size=small-nav") > -1;
 if (smallNav) {
 	document.getElementById("container").classList.add(smallNav);
+}
+
+var aiAssistant = document.cookie.indexOf("ai-assistant=true") > -1;
+if (aiAssistant) {
+	document.getElementById("container").classList.add("ai-assistant");
 }
 
 function setCookie(name, value) {
@@ -28,9 +42,14 @@ function setCookie(name, value) {
 	document.cookie = name + "=" + value + ";";
 }
 
-let onReady = function() {
-	
-	 document.querySelector(".menu-toggle")?.addEventListener("click", function(event) {  
+var onReady = function() {
+	const bindOnce = (el, type, fn) => {
+		if (!el || el.dataset.vvvebBound) return;
+		el.dataset.vvvebBound = "1";
+		el.addEventListener(type, fn);
+	};
+
+	 bindOnce(document.querySelector(".menu-toggle"), "click", function(event) {  
 		let container = document.getElementById("container");
 		if (container.classList.contains("small-nav")) {
 			container.classList.remove("small-nav");
@@ -42,27 +61,37 @@ let onReady = function() {
 		
 		//localStorage.setItem('sidebar-size', smallNav);
 		setCookie('sidebar-size', smallNav);
+	});	 
+
+	bindOnce(document.querySelector("#ai-btn"), "click", function(event) {  
+		let container = document.getElementById("container");
+		if (container.classList.contains("ai-assistant")) {
+			container.classList.remove("ai-assistant");
+			aiAssistant = "";
+		} else {
+			aiAssistant = "true"
+			container.classList.add("ai-assistant");
+		}
+		
+		//localStorage.setItem('sidebar-size', smallNav);
+		setCookie('ai-assistant', aiAssistant);
 	});
-	
-	let themeSwitch = document.querySelector("#color-theme-switch i");
-	
-	themeSwitch.addEventListener("click", function (event) {
+
+	let themeButton = document.querySelector("#color-theme-switch");
+	bindOnce(themeButton, "click", function (event) {
 		
 		let theme = document.documentElement.dataset.bsTheme;
 		
 		if (theme == "dark") {
 			theme = "light";
-			themeSwitch.classList.remove("la-moon")
-			themeSwitch.classList.add("la-sun");
 		} else if (theme == "light" || theme == "auto" || !theme) {
 			theme = "dark";
-			themeSwitch.classList.remove("la-sun")
-			themeSwitch.classList.add("la-moon");
 		} else {
 			theme = "auto";
 		}
 		
 		document.documentElement.dataset.bsTheme = theme;
+		paintThemeIcon(theme);
 		//localStorage.setItem("theme", theme);
 		setCookie("theme", theme);
 		//serverStorage.setItem();
@@ -164,7 +193,7 @@ var VvvebTheme = {};
 VvvebTheme.ajax = {
 	selector:"a",
 	//selector:"a[data-url], a[data-page-url], a[data-v-url]",
-	siteContainer:["body"],
+	siteContainer:["main"],
 	scrollContainer:"body",
 	skipUrl:[]
 }

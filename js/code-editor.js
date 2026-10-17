@@ -1,142 +1,162 @@
-let codemirror = false;
+var codemirror = false;
+
+var editFiles = [];
+
+var CODE_MODE_MAP = {
+	js: 'javascript',
+	php: 'php',
+	css: 'css',
+	html: 'htmlmixed'
+};
+
+function getCodeModal() {
+	return document.getElementById('codeEditorModal');
+}
+
+function setButtonLoading(btn, loading) {
+	if (!btn) return;
+
+	btn.querySelector(".loading")?.classList.toggle("d-none", !loading);
+	btn.querySelector(".button-text")?.classList.toggle("d-none", loading);
+}
+
+function showError(error, fallback) {
+	if (error && typeof error.text === "function") {
+		error.text().then((errorMessage) => {
+			displayToast("danger", "Error", errorMessage.substr(0, 200));
+		}).catch(() => {
+			displayToast("danger", "Error", error?.statusText ?? fallback);
+		});
+	} else {
+		displayToast("danger", "Error", error?.statusText ?? fallback);
+	}
+}
 
 function saveCodeEditor() {
-	let codeModal = document.getElementById('codeEditorModal');
-	let file = codeModal.querySelector("input[name=file]").value;
-	let type = codeModal.querySelector("input[name=type]").value;
-	let btn = codeModal.querySelector(".save-btn");
+	let codeModal = getCodeModal();
+	let fileInput = codeModal?.querySelector("input[name=file]");
+	let typeInput = codeModal?.querySelector("input[name=type]");
+	let btn = codeModal?.querySelector(".save-btn");
 	let content = "";
-	let url = `${saveUrl}&file=${file}`;
-	if (type) {
-		url += "&type=" + type;
+
+	if (typeof saveUrl === "undefined" || !codeModal || !fileInput) {
+		displayToast("danger", "Error", "Error saving!");
+		return;
+	}
+
+	let url = saveUrl + "&file=" + encodeURIComponent(fileInput.value);
+	if (typeInput?.value) {
+		url += "&type=" + encodeURIComponent(typeInput.value);
 	}
 
 	if (codemirror) {
 		content = codemirror.getValue();
 	} else {
-		content = codeModal.querySelector("textarea").value;
+		let textarea = codeModal.querySelector("textarea");
+		if (!textarea) return;
+		content = textarea.value;
 	}
 
-	btn.querySelector(".loading").classList.toggle("d-none");
-	btn.querySelector(".button-text").classList.toggle("d-none");
-	
+	setButtonLoading(btn, true);
+
 	let formData = new FormData();
 	formData.append("content", content);
 	formData.append("csrf", document.querySelector('input[name=csrf]')?.value);
-					
-	fetch(url, {method:"POST", body:formData}).
-	then((response) => {
-		if (!response.ok) { throw new Error(response) }
-		return response.json();
-	}).then(function (data) {
-		console.log(data);
-		let bg = "success";
-		if (data.success) {		
-		} else {
-			bg = "danger";
-		}
-		
-		displayToast(bg, "Save", data.message);
 
-		if (data.success) {		
+	fetch(url, {method: "POST", body: formData}).
+	then((response) => {
+		if (!response.ok) { throw response; }
+		return response.json();
+	}).then((data) => {
+		displayToast(data.success ? "success" : "danger", "Save", data.message);
+
+		if (data.success) {
 			bootstrap.Modal.getOrCreateInstance(codeModal)?.hide();
 		}
 
-		btn.querySelector(".loading").classList.toggle("d-none");
-		btn.querySelector(".button-text", btn).classList.toggle("d-none");
-	}).catch(error => {
-		console.log(error);
-		let message = error?.statusText ?? "Error saving!";
-		displayToast("danger", "Error", message);
-
-		if (error.hasOwnProperty('text')) error.text().then( errorMessage => {
-			let message = errorMessage.substr(0, 200);
-			displayToast("danger", "Error", message);
-		});
-
-		btn.querySelector(".loading").classList.toggle("d-none");
-		btn.querySelector(".button-text").classList.toggle("d-none");
+		setButtonLoading(btn, false);
+	}).catch((error) => {
+		showError(error, "Error saving!");
+		setButtonLoading(btn, false);
 	});
 }
 
 function openCodeEditorModal(file = '', name = null, fileType = 'html', type = null) {
-	let url = `${loadFileUrl}&file=${file}`;
+	if (typeof loadFileUrl === "undefined") {
+		displayToast("danger", "Error", "Error loading!");
+		return;
+	}
+
+	let url = loadFileUrl + "&file=" + encodeURIComponent(file);
 	if (type) {
-		url += "&type=" + type;
+		url += "&type=" + encodeURIComponent(type);
 	}
 
 	fetch(url).
 	then((response) => {
-		if (!response.ok) { throw new Error(response) }
+		if (!response.ok) { throw response; }
 		return response.text();
-	}).then(function (data) {
-		let codeModal = document.getElementById('codeEditorModal');
-		codeModal.querySelector(".modal-title .name").innerHTML = name ?? file;
-		codeModal.querySelector(".modal-title .file").innerHTML = file;
+	}).then((data) => {
+		let codeModal = getCodeModal();
+		if (!codeModal) return;
+
+		codeModal.querySelector(".modal-title .name").textContent = name ?? file;
+		codeModal.querySelector(".modal-title .file").textContent = file;
 		codeModal.querySelector("input[name=file]").value = file;
-		codeModal.querySelector("input[name=type]").value = type;
-		
-		if (fileType == 'js') {
-			fileType = 'javascript';
-		} else if (fileType == 'php') { 
-			fileType = 'php';
-		} else if (fileType == 'css') { 
-			fileType = 'css';
-		} else if (fileType == 'html') { 
-			fileType = 'htmlmixed';
-		} else { 
-			fileType = 'null';
-		}
+		let typeInput = codeModal.querySelector("input[name=type]");
+		if (typeInput) typeInput.value = type;
 
 		if (codemirror) {
-			var scrollInfo = codemirror.getScrollInfo();
-			codemirror.setOption("mode", fileType);
+			let scrollInfo = codemirror.getScrollInfo();
+			codemirror.setOption("mode", CODE_MODE_MAP[fileType] ?? null);
 			codemirror.setValue(data);
 			codemirror.scrollTo(scrollInfo.left, scrollInfo.top);
 			setTimeout(function() {
 				codemirror.refresh();
-			},300);
-
+			}, 300);
 		} else {
-			codeModal.querySelector("textarea").value = data;
+			let textarea = codeModal.querySelector("textarea");
+			if (textarea) textarea.value = data;
 		}
-		
-		bootstrap.Modal.getOrCreateInstance(codeModal)?.show();
-	}).catch(error => {
-		let message = error?.statusText ?? "Error loading!";
-		displayToast("danger", "Error", message);
 
-		if (error.hasOwnProperty('text')) error.text().then( errorMessage => {
-			let message = errorMessage.substr(0, 200);
-			displayToast("danger", "Error", message);
-		});
+		bootstrap.Modal.getOrCreateInstance(codeModal)?.show();
+	}).catch((error) => {
+		showError(error, "Error loading!");
 	});
 }
 
-
-window.addEventListener("mediaModal:fileActions", function(e) { 
+window.addEventListener("mediaModal:fileActions", function(e) {
 	let data = e.detail;
 	if (!data.isImage) {
-		e.detail.actions = '<a href="javascript:void(0);" class="btn btn-outline-primary btn-sm border-0" onclick="openCodeEditorModal(\'' + data.file + '\', \'' + data.name + '\', \'' + data.fileType + '\')"><i class="la la-edit"> Edit</i></a>';
+		let index = editFiles.push({file: data.file, name: data.name, fileType: data.fileType}) - 1;
+		e.detail.actions = '<a href="javascript:void(0);" data-edit-file="' + index + '" title="Edit" class="btn btn-outline-primary btn-sm border-0"><i class="la la-edit"> Edit</i></a>';
 	}
 });
 
+document.addEventListener("click", function(e) {
+	let editLink = e.target.closest?.("[data-edit-file]");
+	if (!editLink) return;
 
-if (codemirror == false) {
-	codemirror = CodeMirror.fromTextArea(document.querySelector("#codeEditorModal textarea"), {
+	let entry = editFiles[editLink.getAttribute("data-edit-file")];
+	if (!entry) return;
+
+	let li = editLink.closest("li.files");
+	let name = li?.querySelector(".info .name")?.textContent ?? entry.name;
+
+	openCodeEditorModal(entry.file, name, entry.fileType);
+});
+
+var codeEditorTextarea = document.querySelector("#codeEditorModal textarea");
+if (codeEditorTextarea && !codemirror) {
+	codemirror = CodeMirror.fromTextArea(codeEditorTextarea, {
 		mode: 'htmlmixed',
 		matchBrackets: true,
 		lineNumbers: true,
 		autofocus: true,
 		lineWrapping: true,
 		indentUnit: 4,
-        indentWithTabs: true,
-		viewportMargin:Infinity,
+		indentWithTabs: true,
+		viewportMargin: Infinity,
 		theme: 'duotone-dark'
-	});
-	
-	this.isActive = true;
-	codemirror.getDoc().on("change", function (e, v) { 
-		//delay(Vvveb.Builder.setinnerHTML = e.getValue()), 1000);
 	});
 }

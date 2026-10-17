@@ -21,7 +21,7 @@ https://github.com/givanz/VvvebJs
 if (Vvveb === undefined) var Vvveb = {};
 
 
-let mediaModal = document.getElementById("MediaModal");
+var mediaModal = document.getElementById("MediaModal");
 if (mediaModal) {
 
 	if (!Vvveb.MediaModal) {
