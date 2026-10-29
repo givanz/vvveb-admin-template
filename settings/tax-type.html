@@ -2063,7 +2063,7 @@ Improve page aesthetics, styling, spacing, typography, follow solid design princ
             </div>
 
             <div class="tax_rules" data-v-if="this.tax_type_id">
-              <button type="button" id="add-tax-rule-btn" class="btn btn-primary" aria-label="Add Rule">
+              <button type="button" id="add-tax-rule-btn" class="btn btn-outline-primary btn-icon" aria-label="Add Rule">
                 <svg class="svg-icon" aria-hidden="true">
                   <use href="/admin/default/img/icons.svg#plus"></use>
                 </svg> Add tax rule
@@ -2102,7 +2102,7 @@ Improve page aesthetics, styling, spacing, typography, follow solid design princ
                       <input type="number" name="tax_rule[#tax_rule#][priority]" value="0" size="8" min="0" placeholder="Priority" class="form-control" data-v-tax-rule-priority>
                     </td>
                     <td class="text-end">
-                      <button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+                      <button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm btn-icon">
                         <svg class="svg-icon" aria-hidden="true">
                           <use href="/admin/default/img/icons.svg#circle-minus"></use>
                         </svg>
@@ -2132,7 +2132,7 @@ Improve page aesthetics, styling, spacing, typography, follow solid design princ
                       <input type="number" name="tax_rule_template[#tax_rule#][priority]" value="0" size="8" min="0" placeholder="Priority" class="form-control" data-v-tax-rule-priority>
                     </td>
                     <td class="text-end">
-                      <button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm">
+                      <button type="button" onclick="this.closest('tr').remove();" title="Remove" class="btn btn-outline-danger btn-sm btn-icon">
                         <svg class="svg-icon" aria-hidden="true">
                           <use href="/admin/default/img/icons.svg#circle-minus"></use>
                         </svg>
@@ -2213,7 +2213,7 @@ document.getElementById("add-tax-rule-btn").addEventListener("click", function (
 	let id = Math.floor(Math.random() * 10000);
 	template = template.replaceAll('tax_rule_template[#tax_rule#]', 'tax_rule[' + id + ']').replace('d-none', '').replace('id="tax-type-template"', '');
 	
-	document.querySelector("#tax-rule tbody").appendChild(generateElements(template)[#tax_rule#]);
+	document.querySelector("#tax-rule tbody").appendChild(generateElements(template)[0]);
 	
 });
 </script>

@@ -2888,6 +2888,14 @@ img[src="#"], img[src=""] {
 
 	.search-results {
 		padding:0 1rem;
+		
+		li {
+			 svg {
+				width: 32px;
+				height: 32px;
+				margin-right: 0.5rem;
+			}
+		}
 	}
 }
 

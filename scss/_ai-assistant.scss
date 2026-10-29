@@ -160,7 +160,6 @@
   .vv-bubble{
     padding:.55rem .75rem;
     border-radius:var(--vv-radius);
-    font-size:.84rem;
     line-height:1.45;
     white-space:pre-wrap;
     word-break:break-word;
@@ -184,7 +183,7 @@
   .vv-bubble pre code{background:transparent;padding:0;color:inherit;font-size:.78rem;white-space:pre;word-break:normal;display:block}
   .vv-bubble hr{border:none;border-top:1px solid var(--vv-border);margin:.6rem 0}
   .vv-bubble img{max-width:100%;border-radius:6px;margin:.3rem 0}
-  .vv-bubble table{width:100%;border-collapse:collapse;margin:.5rem 0;font-size:.8em;display:block;overflow-x:auto;white-space:nowrap}
+  .vv-bubble table{width:100%;border-collapse:collapse;margin:.5rem 0;font-size:.9em;display:block;overflow-x:auto;white-space:nowrap}
   .vv-bubble th,.vv-bubble td{border:1px solid var(--vv-border);padding:.35rem .5rem;text-align:left;white-space:normal;word-break:break-word}
   .vv-bubble th{background:var(--vv-panel-2);font-weight:600}
   .vv-bubble tr:nth-child(even) td{background:rgba(0,0,0,.02)}
@@ -195,7 +194,7 @@
   }
   .vv-msg.assistant .vv-bubble{
     background:var(--vv-panel-2);
-    border:1px solid var(--vv-border);
+    /*border:1px solid var(--vv-border);*/
     color:var(--vv-text);
     border-bottom-left-radius:3px;
   }
@@ -384,6 +383,13 @@
     background:none;border:none;color:var(--vv-text-dim);padding:0 .1rem;line-height:0;flex-shrink:0;
   }
   .vv-queue-del:hover{color:var(--vv-danger);}
+  .vv-queue-steer{
+    background:none;border:none;color:var(--vv-accent);padding:0 .1rem;line-height:0;
+    flex-shrink:0;opacity:.9;
+  }
+  .vv-queue-steer:hover{opacity:1;}
+  .vv-queue-steer:disabled{opacity:.4;cursor:default;}
+  .vv-queue-steering{border-style:solid;}
 
   .vv-working{
     display:flex;align-items:center;gap:.45rem;
@@ -542,7 +548,7 @@
   .vv-tool-group > summary::before{content:'▸ ';color:var(--vv-text-dim);}
   .vv-tool-group[open] > summary::before{content:'▾ ';}
   .vv-group-title{font-weight:500;}
-  .vv-tool-group .vv-tool-call{margin-top:.35rem;}
+  .vv-tool-group .vv-tool-call, .vv-tool-group .ai-thinking{margin-top:.35rem;}
 
   .vv-hidden{display:none!important;}
   /* empty bubbles (tool-only turns) never take space, even mid-stream:

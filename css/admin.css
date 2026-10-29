@@ -15435,7 +15435,6 @@ img.preview {
 .vv-bubble {
   padding: 0.55rem 0.75rem;
   border-radius: var(--vv-radius);
-  font-size: 0.84rem;
   line-height: 1.45;
   white-space: pre-wrap;
   word-break: break-word;
@@ -15551,7 +15550,7 @@ img.preview {
   width: 100%;
   border-collapse: collapse;
   margin: 0.5rem 0;
-  font-size: 0.8em;
+  font-size: 0.9em;
   display: block;
   overflow-x: auto;
   white-space: nowrap;
@@ -15582,7 +15581,7 @@ img.preview {
 
 .vv-msg.assistant .vv-bubble {
   background: var(--vv-panel-2);
-  border: 1px solid var(--vv-border);
+  /*border:1px solid var(--vv-border);*/
   color: var(--vv-text);
   border-bottom-left-radius: 3px;
 }
@@ -15961,6 +15960,29 @@ img.preview {
   color: var(--vv-danger);
 }
 
+.vv-queue-steer {
+  background: none;
+  border: none;
+  color: var(--vv-accent);
+  padding: 0 0.1rem;
+  line-height: 0;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.vv-queue-steer:hover {
+  opacity: 1;
+}
+
+.vv-queue-steer:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.vv-queue-steering {
+  border-style: solid;
+}
+
 .vv-working {
   display: flex;
   align-items: center;
@@ -16321,7 +16343,7 @@ img.preview {
   font-weight: 500;
 }
 
-.vv-tool-group .vv-tool-call {
+.vv-tool-group .vv-tool-call, .vv-tool-group .ai-thinking {
   margin-top: 0.35rem;
 }
 
@@ -18570,6 +18592,11 @@ img[src="#"], img[src=""] {
 }
 #searchModal .search-results {
   padding: 0 1rem;
+}
+#searchModal .search-results li svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
 }
 
 .search-results ul {
